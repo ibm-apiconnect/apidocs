@@ -271,5 +271,7 @@
   "login_link_title": "Log into Developer Portal",
   "login_link_text": "Log in",
   "app_no_access": "No applications with access found",
-  "subscribed_creds_explanation": "Only subscribed credentials are selectable."
+  "subscribed_creds_explanation": "Only subscribed credentials are selectable.",
+  "reserved_title": "Reserved headers in use",
+  "reserved_subtitle": "This API makes use of reserved headers which will not be sent with the request."
 }
