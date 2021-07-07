@@ -15,7 +15,8 @@
       headerActive: true,
       groupByTags: true,
       validateSwagger: false,
-	  routerType: "hash"
+      explorerDir: "/apidocs/",
+      routerType: "hash"
     },
   apis: [
 {
