@@ -11,7 +11,7 @@
   attachPoint: '#root',
   options: { 
       renderSchemaView: true,
-      headerTitle: "API Connect v10.0.1.2",
+      headerTitle: "API Connect v2018.4.1.11",
       headerActive: true,
       groupByTags: true,
       validateSwagger: false,
@@ -50,13 +50,6 @@
         "summary": "Get the Log Spec object",
         "description": "Get the Log Spec object",
         "operationId": "log_spec_singletonGet",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
         "externalDocs": {
           "description": "Additional documentation",
           "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/log-spec#get"
@@ -95,13 +88,6 @@
         "summary": "Update the Log Spec object",
         "description": "Update the Log Spec object",
         "operationId": "log_spec_singletonUpdate",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
         "externalDocs": {
           "description": "Additional documentation",
           "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/log-spec#update"
@@ -154,8 +140,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a user registry.",
-        "description": "Creates a user registry.",
+        "summary": "Create a User Registry object",
+        "description": "Create a User Registry object",
         "operationId": "user_registry_create",
         "security": [
           {
@@ -213,8 +199,8 @@
         ]
       },
       "get": {
-        "summary": "Lists user registries.",
-        "description": "Returns the list of user registries belonging to a provider organization.",
+        "summary": "List the User Registry objects",
+        "description": "List the User Registry objects",
         "operationId": "user_registry_list",
         "security": [
           {
@@ -264,8 +250,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears user registries.",
-        "description": "Deletes all user registries belonging to a provider organization.",
+        "summary": "Clear the User Registry objects",
+        "description": "Clear the User Registry objects",
         "operationId": "user_registry_clear",
         "security": [
           {
@@ -308,8 +294,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a user registry.",
-        "description": "Returns a user registry.",
+        "summary": "Get the User Registry object by name or id",
+        "description": "Get the User Registry object by name or id",
         "operationId": "user_registry_get",
         "security": [
           {
@@ -353,8 +339,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a user registry.",
-        "description": "Updates a user registry.",
+        "summary": "Update the User Registry object by name or id",
+        "description": "Update the User Registry object by name or id",
         "operationId": "user_registry_update",
         "security": [
           {
@@ -407,8 +393,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a user registry.",
-        "description": "Deletes a user registry.",
+        "summary": "Delete the User Registry object by name or id",
+        "description": "Delete the User Registry object by name or id",
         "operationId": "user_registry_del",
         "security": [
           {
@@ -549,12 +535,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Error"
+                  "$ref": "#/components/schemas/TestConnectionFailedResponse"
                 }
               },
               "application/yaml": {
                 "schema": {
-                  "$ref": "#/components/schemas/Error"
+                  "$ref": "#/components/schemas/TestConnectionFailedResponse"
                 }
               }
             }
@@ -679,12 +665,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Error"
+                  "$ref": "#/components/schemas/TestConnectionFailedResponse"
                 }
               },
               "application/yaml": {
                 "schema": {
-                  "$ref": "#/components/schemas/Error"
+                  "$ref": "#/components/schemas/TestConnectionFailedResponse"
                 }
               }
             }
@@ -782,8 +768,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a user.",
-        "description": "Creates a user entry in a user registry. For user registries that are defined as <i>user managed</i>, a user record is also created in the backing (usually remote) user directory.",
+        "summary": "Create a User object",
+        "description": "Create a User object",
         "operationId": "user_create",
         "security": [
           {
@@ -841,8 +827,8 @@
         ]
       },
       "get": {
-        "summary": "Lists users.",
-        "description": "Returns a user entry from a user registry. The user entry returned comes from the API Connect configuration, rather than a from backing (remote) user directory.",
+        "summary": "List the User objects",
+        "description": "List the User objects",
         "operationId": "user_list",
         "security": [
           {
@@ -892,8 +878,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears users.",
-        "description": "Removes all user entries from a user registry. For user registries that are defined as <i>user managed</i>, user records are also removed from the backing (usually remote) user directory.",
+        "summary": "Clear the User objects",
+        "description": "Clear the User objects",
         "operationId": "user_clear",
         "security": [
           {
@@ -939,8 +925,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a user.",
-        "description": "Deletes a user entry from a user registry. For user registries that are defined as <i>user managed</i>, the user record is also deleted in the backing (usually remote) user directory.",
+        "summary": "Get the User object by name or id",
+        "description": "Get the User object by name or id",
         "operationId": "user_get",
         "security": [
           {
@@ -984,8 +970,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a user.",
-        "description": "Updates a user entry. To change a user password, see the </tt>reset-password</tt> operation.",
+        "summary": "Update the User object by name or id",
+        "description": "Update the User object by name or id",
         "operationId": "user_update",
         "security": [
           {
@@ -1038,8 +1024,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a user.",
-        "description": "Deletes a user entry from a user registry. For user registries that are defined as <i>user managed</i>, the user record is also deleted in the backing (usually remote) user directory.",
+        "summary": "Delete the User object by name or id",
+        "description": "Delete the User object by name or id",
         "operationId": "user_del",
         "security": [
           {
@@ -1754,117 +1740,10 @@
         ]
       }
     },
-    "/cloud/info": {
-      "get": {
-        "summary": "Return public information about the cloud deployment",
-        "description": "Return public information about the cloud deployment",
-        "operationId": "cloud_setting_publicInfo",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/cloud_setting#public-info"
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CloudPublicInfo"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CloudPublicInfo"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Cloud Setting"
-        ]
-      }
-    },
-    "/cloud/about": {
-      "get": {
-        "summary": "Return information about the cloud",
-        "description": "Return public information about the cloud",
-        "operationId": "cloud_setting_about",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/cloud_setting#about"
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CloudAbout"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CloudAbout"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Cloud Setting"
-        ]
-      }
-    },
     "/cloud/topology": {
       "get": {
         "summary": "Return the topology of the cloud for governance",
-        "description": "Return the topology of the cloud for governance. You MUST supply the --format option when using this command from the API Connect toolkit.",
+        "description": "Return the topology of the cloud for governance",
         "operationId": "cloud_setting_topology",
         "security": [
           {
@@ -1906,7 +1785,7 @@
     "/cloud/settings/mail-server-configured": {
       "get": {
         "summary": "Return true or false based on if mail server is configured or not",
-        "description": "Return true or false based on if mail server is configured or not. You MUST supply the --format option when using this command from the API Connect toolkit.",
+        "description": "Return true or false based on if mail server is configured or not",
         "operationId": "cloud_setting_mailServerConfigured",
         "externalDocs": {
           "description": "Additional documentation",
@@ -1924,125 +1803,6 @@
               "application/yaml": {
                 "schema": {
                   "$ref": "#/components/schemas/MailServerConfigured"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Cloud Setting"
-        ]
-      }
-    },
-    "/cloud/settings/toolkit-credentials": {
-      "get": {
-        "summary": "List credential for toolkit and consumer toolkit",
-        "description": "List credential for toolkit and consumer toolkit",
-        "operationId": "cloud_setting_toolkitCredentialsList",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/cloud_setting#toolkit-credentials"
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ToolkitCredentialsResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/ToolkitCredentialsResponse"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Cloud Setting"
-        ]
-      }
-    },
-    "/cloud/settings/designer-credentials": {
-      "get": {
-        "summary": "List credential for designer",
-        "description": "List credential for designer",
-        "operationId": "cloud_setting_designerCredentialsList",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/cloud_setting#designer-credentials"
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DesignerCredentialsResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/DesignerCredentialsResponse"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Cloud Setting"
-        ]
-      }
-    },
-    "/cloud/oauth2/certs": {
-      "get": {
-        "summary": "Support JWKS_URI endpoint, conform to OIDC specification",
-        "description": "Return JWKS that is used to issue token. You MUST supply the --format option when using this command from the API Connect toolkit.",
-        "operationId": "cloud_setting_oauth2Certs",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/cloud_setting#oauth2-certs"
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Oauth2CertsResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Oauth2CertsResponse"
                 }
               }
             }
@@ -3871,124 +3631,11 @@
           "Cloud Management",
           "Resource: Integration (All Subcollections)"
         ]
-      }
-    },
-    "/cloud/integrations/billing": {
-      "description": "The collection of Integration operations",
-      "post": {
-        "summary": "Create a Integration object",
-        "description": "Create a Integration object",
-        "operationId": "integration_createBillingSubcollection",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-billing-subcollection#create"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Integration"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/Integration"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Integration"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Integration"
-                }
-              }
-            },
-            "headers": {
-              "Location": {
-                "$ref": "#/components/headers/Location"
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Management",
-          "Resource: Integration (Billing Subcollection)"
-        ]
-      },
-      "get": {
-        "summary": "List the Integration objects",
-        "description": "List the Integration objects",
-        "operationId": "integration_listBillingSubcollection",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-billing-subcollection#list"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IntegrationList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/IntegrationList"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Management",
-          "Resource: Integration (Billing Subcollection)"
-        ]
       },
       "delete": {
-        "summary": "Clear the Integration objects",
-        "description": "Clear the Integration objects",
-        "operationId": "integration_clearBillingSubcollection",
+        "summary": "Clear all Integration objects in all collections",
+        "description": "Clear all Integration objects in all collections",
+        "operationId": "integration_clearAll",
         "security": [
           {
             "oauth": [
@@ -3998,7 +3645,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-billing-subcollection#clear"
+          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration#clear-all"
         },
         "parameters": [
           {
@@ -4015,447 +3662,7 @@
         },
         "tags": [
           "Cloud Management",
-          "Resource: Integration (Billing Subcollection)"
-        ]
-      }
-    },
-    "/cloud/integrations/billing/{integration}": {
-      "description": "Integration object operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/integration"
-        }
-      ],
-      "get": {
-        "summary": "Get the Integration object by name or id",
-        "description": "Get the Integration object by name or id",
-        "operationId": "integration_getBillingSubcollection",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-billing-subcollection#get"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Integration"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Integration"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Management",
-          "Resource: Integration (Billing Subcollection)"
-        ]
-      },
-      "patch": {
-        "summary": "Update the Integration object by name or id",
-        "description": "Update the Integration object by name or id",
-        "operationId": "integration_updateBillingSubcollection",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-billing-subcollection#update"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Integration"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/Integration"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Integration"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Integration"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Management",
-          "Resource: Integration (Billing Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Integration object by name or id",
-        "description": "Delete the Integration object by name or id",
-        "operationId": "integration_delBillingSubcollection",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-billing-subcollection#del"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful delete",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Integration"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Integration"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Management",
-          "Resource: Integration (Billing Subcollection)"
-        ]
-      }
-    },
-    "/cloud/integrations/payment-method": {
-      "description": "The collection of Integration operations",
-      "post": {
-        "summary": "Create a Integration object",
-        "description": "Create a Integration object",
-        "operationId": "integration_createPaymentMethodSubcollection",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-payment-method-subcollection#create"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Integration"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/Integration"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Integration"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Integration"
-                }
-              }
-            },
-            "headers": {
-              "Location": {
-                "$ref": "#/components/headers/Location"
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Management",
-          "Resource: Integration (PaymentMethod Subcollection)"
-        ]
-      },
-      "get": {
-        "summary": "List the Integration objects",
-        "description": "List the Integration objects",
-        "operationId": "integration_listPaymentMethodSubcollection",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-payment-method-subcollection#list"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IntegrationList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/IntegrationList"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Management",
-          "Resource: Integration (PaymentMethod Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Integration objects",
-        "description": "Clear the Integration objects",
-        "operationId": "integration_clearPaymentMethodSubcollection",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-payment-method-subcollection#clear"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/confirm"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Success"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Management",
-          "Resource: Integration (PaymentMethod Subcollection)"
-        ]
-      }
-    },
-    "/cloud/integrations/payment-method/{integration}": {
-      "description": "Integration object operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/integration"
-        }
-      ],
-      "get": {
-        "summary": "Get the Integration object by name or id",
-        "description": "Get the Integration object by name or id",
-        "operationId": "integration_getPaymentMethodSubcollection",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-payment-method-subcollection#get"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Integration"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Integration"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Management",
-          "Resource: Integration (PaymentMethod Subcollection)"
-        ]
-      },
-      "patch": {
-        "summary": "Update the Integration object by name or id",
-        "description": "Update the Integration object by name or id",
-        "operationId": "integration_updatePaymentMethodSubcollection",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-payment-method-subcollection#update"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Integration"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/Integration"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Integration"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Integration"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Management",
-          "Resource: Integration (PaymentMethod Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Integration object by name or id",
-        "description": "Delete the Integration object by name or id",
-        "operationId": "integration_delPaymentMethodSubcollection",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-payment-method-subcollection#del"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful delete",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Integration"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Integration"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Management",
-          "Resource: Integration (PaymentMethod Subcollection)"
+          "Resource: Integration (All Subcollections)"
         ]
       }
     },
@@ -5338,212 +4545,6 @@
         ]
       }
     },
-    "/cloud/api-keys": {
-      "description": "The collection of API Key operations",
-      "post": {
-        "summary": "Create a API Key object",
-        "description": "Create a API Key object",
-        "operationId": "api_key_create",
-        "security": [
-          {
-            "oauth": [
-              "my:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-key#create"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/APIKey"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/APIKey"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/APIKey"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/APIKey"
-                }
-              }
-            },
-            "headers": {
-              "Location": {
-                "$ref": "#/components/headers/Location"
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "User Management",
-          "Resource: API Key"
-        ]
-      },
-      "get": {
-        "summary": "List the API Key objects",
-        "description": "List the API Key objects",
-        "operationId": "api_key_list",
-        "security": [
-          {
-            "oauth": [
-              "my:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-key#list"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/APIKeyList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/APIKeyList"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "User Management",
-          "Resource: API Key"
-        ]
-      }
-    },
-    "/cloud/api-keys/{api-key}": {
-      "description": "API Key object operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/api-key"
-        }
-      ],
-      "get": {
-        "summary": "Get the API Key object by name or id",
-        "description": "Get the API Key object by name or id",
-        "operationId": "api_key_get",
-        "security": [
-          {
-            "oauth": [
-              "my:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-key#get"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/APIKey"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/APIKey"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "User Management",
-          "Resource: API Key"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the API Key object by name or id",
-        "description": "Delete the API Key object by name or id",
-        "operationId": "api_key_del",
-        "security": [
-          {
-            "oauth": [
-              "my:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-key#del"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful delete",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/APIKey"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/APIKey"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "User Management",
-          "Resource: API Key"
-        ]
-      }
-    },
     "/orgs/{org}/settings": {
       "description": "Organization Setting object operations",
       "parameters": [
@@ -5552,8 +4553,8 @@
         }
       ],
       "get": {
-        "summary": "Returns provider organization settings.",
-        "description": "Returns the settings for a provider organization.",
+        "summary": "Get the Organization Setting object",
+        "description": "Get the Organization Setting object",
         "operationId": "org_setting_singletonGet",
         "security": [
           {
@@ -5597,8 +4598,8 @@
         ]
       },
       "put": {
-        "summary": "Updates provider organization settings.",
-        "description": "Updates the settings for a provider organization.",
+        "summary": "Update the Organization Setting object",
+        "description": "Update the Organization Setting object",
         "operationId": "org_setting_singletonUpdate",
         "security": [
           {
@@ -5659,8 +4660,8 @@
         }
       ],
       "get": {
-        "summary": "Lists provider notification templates.",
-        "description": "Returns the list of all notification templates for a provider organization.",
+        "summary": "List all Notification Template objects in all collections",
+        "description": "List all Notification Template objects in all collections",
         "operationId": "notification_template_listAllOrgScope",
         "security": [
           {
@@ -5887,8 +4888,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a provider organization.",
-        "description": "Returns a provider organization.",
+        "summary": "Get the Organization object by name or id",
+        "description": "Get the Organization object by name or id",
         "operationId": "org_get",
         "security": [
           {
@@ -5932,8 +4933,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a provider organization.",
-        "description": "Updates a provider organization.",
+        "summary": "Update the Organization object by name or id",
+        "description": "Update the Organization object by name or id",
         "operationId": "org_update",
         "security": [
           {
@@ -5986,8 +4987,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a provider organization.",
-        "description": "Deletes a provider organization.",
+        "summary": "Delete the Organization object by name or id",
+        "description": "Delete the Organization object by name or id",
         "operationId": "org_del",
         "security": [
           {
@@ -6164,8 +5165,8 @@
         }
       ],
       "get": {
-        "summary": "Lists associates.",
-        "description": "Returns a list of associates of the given provider org.",
+        "summary": "List the Associate objects",
+        "description": "List the Associate objects",
         "operationId": "associate_listOrgScope",
         "security": [
           {
@@ -6226,8 +5227,8 @@
         }
       ],
       "get": {
-        "summary": "Returns an associate.",
-        "description": "Returns an associate of the given provider org.",
+        "summary": "Get the Associate object by name or id",
+        "description": "Get the Associate object by name or id",
         "operationId": "associate_getOrgScope",
         "security": [
           {
@@ -6279,8 +5280,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a provider organization member invitation.",
-        "description": "Creates a provider organization member invitation.",
+        "summary": "Create a Member Invitation object",
+        "description": "Create a Member Invitation object",
         "operationId": "member_invitation_createOrgScope",
         "security": [
           {
@@ -6338,8 +5339,8 @@
         ]
       },
       "get": {
-        "summary": "Lists provider organization member invitations.",
-        "description": "Returns the list of member invitations for a provider organization.",
+        "summary": "List the Member Invitation objects",
+        "description": "List the Member Invitation objects",
         "operationId": "member_invitation_listOrgScope",
         "security": [
           {
@@ -6389,8 +5390,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears provider organization member invitations.",
-        "description": "Removes all member invitations for a provider organization.",
+        "summary": "Clear the Member Invitation objects",
+        "description": "Clear the Member Invitation objects",
         "operationId": "member_invitation_clearOrgScope",
         "security": [
           {
@@ -6433,8 +5434,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a provider organization member invitation.",
-        "description": "Returns a provider organization member invitation.",
+        "summary": "Get the Member Invitation object by name or id",
+        "description": "Get the Member Invitation object by name or id",
         "operationId": "member_invitation_getOrgScope",
         "security": [
           {
@@ -6478,8 +5479,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a provider organization member invitation.",
-        "description": "Updates a member invitation to a provider organization.",
+        "summary": "Update the Member Invitation object by name or id",
+        "description": "Update the Member Invitation object by name or id",
         "operationId": "member_invitation_updateOrgScope",
         "security": [
           {
@@ -6532,8 +5533,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a provider organization member invitation.",
-        "description": "Deletes a provider organization member invitation.",
+        "summary": "Delete the Member Invitation object by name or id",
+        "description": "Delete the Member Invitation object by name or id",
         "operationId": "member_invitation_delOrgScope",
         "security": [
           {
@@ -6784,8 +5785,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a provider organization member.",
-        "description": "Adds a member to a provider organization.",
+        "summary": "Create a Member object",
+        "description": "Create a Member object",
         "operationId": "member_createOrgScope",
         "security": [
           {
@@ -6843,8 +5844,8 @@
         ]
       },
       "get": {
-        "summary": "Lists provider organization members.",
-        "description": "Returns the list of members of a provider organization.",
+        "summary": "List the Member objects",
+        "description": "List the Member objects",
         "operationId": "member_listOrgScope",
         "security": [
           {
@@ -6894,8 +5895,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears provider organization members.",
-        "description": "Removes all members from a provider organization.",
+        "summary": "Clear the Member objects",
+        "description": "Clear the Member objects",
         "operationId": "member_clearOrgScope",
         "security": [
           {
@@ -6938,8 +5939,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a provider organization member.",
-        "description": "Returns a member of a provider organization.",
+        "summary": "Get the Member object by name or id",
+        "description": "Get the Member object by name or id",
         "operationId": "member_getOrgScope",
         "security": [
           {
@@ -6983,8 +5984,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a provider organization member.",
-        "description": "Updates a member of a provider organization.",
+        "summary": "Update the Member object by name or id",
+        "description": "Update the Member object by name or id",
         "operationId": "member_updateOrgScope",
         "security": [
           {
@@ -7037,8 +6038,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a provider organization member.",
-        "description": "Removes a member from a provider organization.",
+        "summary": "Delete the Member object by name or id",
+        "description": "Delete the Member object by name or id",
         "operationId": "member_delOrgScope",
         "security": [
           {
@@ -7080,8 +6081,8 @@
     "/cloud/permissions": {
       "description": "Permission operations across all collections",
       "get": {
-        "summary": "Lists cloud-level permissions.",
-        "description": "Returns the overall list of permissions configured at the cloud level.",
+        "summary": "List all Permission objects in all collections",
+        "description": "List all Permission objects in all collections",
         "operationId": "permission_listAll",
         "externalDocs": {
           "description": "Additional documentation",
@@ -7127,8 +6128,8 @@
     "/cloud/permissions/org": {
       "description": "The collection of Permission operations",
       "get": {
-        "summary": "Lists cloud-level oorganization permissions.",
-        "description": "Returns the list of organization permissions defined at the cloud level.",
+        "summary": "List the Permission objects",
+        "description": "List the Permission objects",
         "operationId": "permission_listOrgSubcollection",
         "externalDocs": {
           "description": "Additional documentation",
@@ -7179,8 +6180,8 @@
         }
       ],
       "get": {
-        "summary": "Returns an organization permission.",
-        "description": "Returns an organization permissions instance defined at the cloud level.",
+        "summary": "Get the Permission object by name or id",
+        "description": "Get the Permission object by name or id",
         "operationId": "permission_getOrgSubcollection",
         "externalDocs": {
           "description": "Additional documentation",
@@ -7220,8 +6221,8 @@
     "/cloud/permissions/cloud": {
       "description": "The collection of Permission operations",
       "get": {
-        "summary": "Lists cloud-level cloud permissions.",
-        "description": "Returns the list of cloud permissions defined at the cloud level.",
+        "summary": "List the Permission objects",
+        "description": "List the Permission objects",
         "operationId": "permission_listCloudSubcollection",
         "externalDocs": {
           "description": "Additional documentation",
@@ -7272,8 +6273,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a cloud permission.",
-        "description": "Returns a cloud permissions instance defined at the cloud level.",
+        "summary": "Get the Permission object by name or id",
+        "description": "Get the Permission object by name or id",
         "operationId": "permission_getCloudSubcollection",
         "externalDocs": {
           "description": "Additional documentation",
@@ -7313,8 +6314,8 @@
     "/cloud/permissions/provider": {
       "description": "The collection of Permission operations",
       "get": {
-        "summary": "Lists cloud-level provider permissions.",
-        "description": "Returns the list of provider permissions defined at the cloud level.",
+        "summary": "List the Permission objects",
+        "description": "List the Permission objects",
         "operationId": "permission_listProviderSubcollection",
         "externalDocs": {
           "description": "Additional documentation",
@@ -7365,8 +6366,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a provider permission.",
-        "description": "Returns a provider permissions instance defined at the cloud level.",
+        "summary": "Get the Permission object by name or id",
+        "description": "Get the Permission object by name or id",
         "operationId": "permission_getProviderSubcollection",
         "externalDocs": {
           "description": "Additional documentation",
@@ -7406,8 +6407,8 @@
     "/cloud/permissions/consumer": {
       "description": "The collection of Permission operations",
       "get": {
-        "summary": "Lists cloud-level consumer permissions.",
-        "description": "Returns the list of consumer permissions defined at the cloud level.",
+        "summary": "List the Permission objects",
+        "description": "List the Permission objects",
         "operationId": "permission_listConsumerSubcollection",
         "externalDocs": {
           "description": "Additional documentation",
@@ -7458,8 +6459,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a consumer permission.",
-        "description": "Returns a consumer permissions instance defined at the cloud level.",
+        "summary": "Get the Permission object by name or id",
+        "description": "Get the Permission object by name or id",
         "operationId": "permission_getConsumerSubcollection",
         "externalDocs": {
           "description": "Additional documentation",
@@ -7499,8 +6500,8 @@
     "/cloud/permissions/deployment": {
       "description": "The collection of Permission operations",
       "get": {
-        "summary": "Lists cloud-level deployment permissions.",
-        "description": "Returns the list of deployment permissions defined at the cloud level.",
+        "summary": "List the Permission objects",
+        "description": "List the Permission objects",
         "operationId": "permission_listDeploymentSubcollection",
         "externalDocs": {
           "description": "Additional documentation",
@@ -7551,8 +6552,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a deployment permission.",
-        "description": "Returns a deployment permissions instance defined at the cloud level.",
+        "summary": "Get the Permission object by name or id",
+        "description": "Get the Permission object by name or id",
         "operationId": "permission_getDeploymentSubcollection",
         "externalDocs": {
           "description": "Additional documentation",
@@ -7597,8 +6598,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a provider organization role.",
-        "description": "Adds a role to a provider organization.",
+        "summary": "Create a Role object",
+        "description": "Create a Role object",
         "operationId": "role_createOrgScope",
         "security": [
           {
@@ -7656,8 +6657,8 @@
         ]
       },
       "get": {
-        "summary": "Lists provider organization roles.",
-        "description": "Returns the list of roles for a provider organization.",
+        "summary": "List the Role objects",
+        "description": "List the Role objects",
         "operationId": "role_listOrgScope",
         "security": [
           {
@@ -7707,8 +6708,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears provider organization roles.",
-        "description": "Removes all roles from a provider organization.",
+        "summary": "Clear the Role objects",
+        "description": "Clear the Role objects",
         "operationId": "role_clearOrgScope",
         "security": [
           {
@@ -7751,8 +6752,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a provider organization role.",
-        "description": "Returns a role from a provider organization.",
+        "summary": "Get the Role object by name or id",
+        "description": "Get the Role object by name or id",
         "operationId": "role_getOrgScope",
         "security": [
           {
@@ -7796,8 +6797,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a provider organization role.",
-        "description": "Updates a role in a provider organization.",
+        "summary": "Update the Role object by name or id",
+        "description": "Update the Role object by name or id",
         "operationId": "role_updateOrgScope",
         "security": [
           {
@@ -7850,8 +6851,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a provider organization role.",
-        "description": "Removes a role from a provider organization.",
+        "summary": "Delete the Role object by name or id",
+        "description": "Delete the Role object by name or id",
         "operationId": "role_delOrgScope",
         "security": [
           {
@@ -9859,59 +8860,6 @@
         ]
       }
     },
-    "/orgs/{org}/availability-zones/{availability-zone}/portal-services/{portal-service}/update-credentials": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/availability-zone"
-        },
-        {
-          "$ref": "#/components/parameters/portal-service"
-        }
-      ],
-      "post": {
-        "summary": "Update the Portal Service configuration",
-        "description": "Update the Portal Service configuration",
-        "operationId": "portal_service_updateCredentials",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/portal-service#update-credentials"
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UpdateCredentialsResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/UpdateCredentialsResponse"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Resources",
-          "Resource: Portal Service"
-        ]
-      }
-    },
     "/orgs/{org}/availability-zones/{availability-zone}/analytics-services": {
       "description": "The collection of Analytics Service operations",
       "parameters": [
@@ -10227,8 +9175,8 @@
         }
       ],
       "post": {
-        "summary": "Creates an OAuth provider.",
-        "description": "Creates an OAuth provider resource.",
+        "summary": "Create a Oauth Provider object",
+        "description": "Create a Oauth Provider object",
         "operationId": "oauth_provider_create",
         "security": [
           {
@@ -10286,8 +9234,8 @@
         ]
       },
       "get": {
-        "summary": "Lists OAuth providers.",
-        "description": "Returns the list of all OAuth provider resources.",
+        "summary": "List the Oauth Provider objects",
+        "description": "List the Oauth Provider objects",
         "operationId": "oauth_provider_list",
         "security": [
           {
@@ -10337,8 +9285,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears OAuth providers.",
-        "description": "Deletes all OAuth provider resources.",
+        "summary": "Clear the Oauth Provider objects",
+        "description": "Clear the Oauth Provider objects",
         "operationId": "oauth_provider_clear",
         "security": [
           {
@@ -10381,8 +9329,8 @@
         }
       ],
       "get": {
-        "summary": "Returns an OAuth provider.",
-        "description": "Returns an OAuth provider resource.",
+        "summary": "Get the Oauth Provider object by name or id",
+        "description": "Get the Oauth Provider object by name or id",
         "operationId": "oauth_provider_get",
         "security": [
           {
@@ -10426,8 +9374,8 @@
         ]
       },
       "patch": {
-        "summary": "Creates an OAuth provider.",
-        "description": "Updates an OAuth provider resource.",
+        "summary": "Update the Oauth Provider object by name or id",
+        "description": "Update the Oauth Provider object by name or id",
         "operationId": "oauth_provider_update",
         "security": [
           {
@@ -10480,8 +9428,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes an OAuth provider.",
-        "description": "Deletes an OAuth provider resource.",
+        "summary": "Delete the Oauth Provider object by name or id",
+        "description": "Delete the Oauth Provider object by name or id",
         "operationId": "oauth_provider_del",
         "security": [
           {
@@ -11514,8 +10462,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a TLS client profile.",
-        "description": "Creates a TLS client profile.",
+        "summary": "Create a TLS Client Profile object",
+        "description": "Create a TLS Client Profile object",
         "operationId": "tls_client_profile_create",
         "security": [
           {
@@ -11573,8 +10521,8 @@
         ]
       },
       "get": {
-        "summary": "Lists TLS client profiles.",
-        "description": "Returns the list of all TLS client profiles belonging to a provider organization.",
+        "summary": "List all TLS Client Profile objects in all collections",
+        "description": "List all TLS Client Profile objects in all collections",
         "operationId": "tls_client_profile_listAll",
         "security": [
           {
@@ -11624,8 +10572,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears TLS client profiles.",
-        "description": "Removes all TLS client profiles belonging to a provider organization.",
+        "summary": "Clear all TLS Client Profile objects in all collections",
+        "description": "Clear all TLS Client Profile objects in all collections",
         "operationId": "tls_client_profile_clearAll",
         "security": [
           {
@@ -11671,8 +10619,8 @@
         }
       ],
       "get": {
-        "summary": "Lists TLS client profile versions.",
-        "description": "Returns all versions of the named TLS client profile belonging to a provider organization.",
+        "summary": "List the TLS Client Profile objects",
+        "description": "List the TLS Client Profile objects",
         "operationId": "tls_client_profile_list",
         "security": [
           {
@@ -11722,8 +10670,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears TLS client profile versions.",
-        "description": "Removes all versions of the named TLS client profile belonging to a provider organization.",
+        "summary": "Clear the TLS Client Profile objects",
+        "description": "Clear the TLS Client Profile objects",
         "operationId": "tls_client_profile_clear",
         "security": [
           {
@@ -11766,8 +10714,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a TLS client profile.",
-        "description": "Returns a TLS client profile belonging to a provider organization.",
+        "summary": "Get the TLS Client Profile object by id",
+        "description": "Get the TLS Client Profile object by id",
         "operationId": "tls_client_profile_get",
         "security": [
           {
@@ -11811,8 +10759,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a TLS client profile.",
-        "description": "Updates a TLS client profile.",
+        "summary": "Update the TLS Client Profile object by id",
+        "description": "Update the TLS Client Profile object by id",
         "operationId": "tls_client_profile_update",
         "security": [
           {
@@ -11865,8 +10813,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a TLS client profile.",
-        "description": "Deletes a TLS client profile belonging to a provider organization.",
+        "summary": "Delete the TLS Client Profile object by id",
+        "description": "Delete the TLS Client Profile object by id",
         "operationId": "tls_client_profile_del",
         "security": [
           {
@@ -11919,8 +10867,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a TLS client profile.",
-        "description": "Returns a TLS client profile belonging to a provider organization.",
+        "summary": "Get the TLS Client Profile object by name and version",
+        "description": "Get the TLS Client Profile object by name and version",
         "operationId": "tls_client_profile_getByNameVersion",
         "security": [
           {
@@ -11964,8 +10912,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a TLS client profile.",
-        "description": "Updates a TLS client profile.",
+        "summary": "Update the TLS Client Profile object by name and version",
+        "description": "Update the TLS Client Profile object by name and version",
         "operationId": "tls_client_profile_updateByNameVersion",
         "security": [
           {
@@ -12066,8 +11014,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a keystore.",
-        "description": "Creates a keystore belonging to a provider organization.",
+        "summary": "Create a Keystore object",
+        "description": "Create a Keystore object",
         "operationId": "keystore_create",
         "security": [
           {
@@ -12125,8 +11073,8 @@
         ]
       },
       "get": {
-        "summary": "Lists keystores.",
-        "description": "Lists all keystores belonging to a provider organization.",
+        "summary": "List the Keystore objects",
+        "description": "List the Keystore objects",
         "operationId": "keystore_list",
         "security": [
           {
@@ -12176,8 +11124,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears keystores.",
-        "description": "Removes all keystores belonging to a provider organization.",
+        "summary": "Clear the Keystore objects",
+        "description": "Clear the Keystore objects",
         "operationId": "keystore_clear",
         "security": [
           {
@@ -12220,8 +11168,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a keystore.",
-        "description": "Returns a keystores belonging to a provider organization.",
+        "summary": "Get the Keystore object by name or id",
+        "description": "Get the Keystore object by name or id",
         "operationId": "keystore_get",
         "security": [
           {
@@ -12265,8 +11213,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a keystore.",
-        "description": "Updates a keystore belonging to a provider organization.",
+        "summary": "Update the Keystore object by name or id",
+        "description": "Update the Keystore object by name or id",
         "operationId": "keystore_update",
         "security": [
           {
@@ -12319,8 +11267,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a keystore.",
-        "description": "Deletes a keystore belonging to a provider organization.",
+        "summary": "Delete the Keystore object by name or id",
+        "description": "Delete the Keystore object by name or id",
         "operationId": "keystore_del",
         "security": [
           {
@@ -12367,8 +11315,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a trust store.",
-        "description": "Creates a trust store.",
+        "summary": "Create a Truststore object",
+        "description": "Create a Truststore object",
         "operationId": "truststore_create",
         "security": [
           {
@@ -12426,8 +11374,8 @@
         ]
       },
       "get": {
-        "summary": "Lists trust stores.",
-        "description": "Returns the list of all trust stores belonging to a provider organization.",
+        "summary": "List the Truststore objects",
+        "description": "List the Truststore objects",
         "operationId": "truststore_list",
         "security": [
           {
@@ -12477,8 +11425,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears trust stores.",
-        "description": "Removes all trust stores belonging to a provider organization.",
+        "summary": "Clear the Truststore objects",
+        "description": "Clear the Truststore objects",
         "operationId": "truststore_clear",
         "security": [
           {
@@ -12521,8 +11469,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a trust store.",
-        "description": "Returns a trust store.",
+        "summary": "Get the Truststore object by name or id",
+        "description": "Get the Truststore object by name or id",
         "operationId": "truststore_get",
         "security": [
           {
@@ -12566,8 +11514,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a trust store.",
-        "description": "Updates a trust store.",
+        "summary": "Update the Truststore object by name or id",
+        "description": "Update the Truststore object by name or id",
         "operationId": "truststore_update",
         "security": [
           {
@@ -12620,8 +11568,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a trust store.",
-        "description": "Deletes a trust store.",
+        "summary": "Delete the Truststore object by name or id",
+        "description": "Delete the Truststore object by name or id",
         "operationId": "truststore_del",
         "security": [
           {
@@ -12671,8 +11619,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a trust store entry.",
-        "description": "Adds an entry to a trust store.",
+        "summary": "Create a Entry object",
+        "description": "Create a Entry object",
         "operationId": "entry_createTruststoreScope",
         "security": [
           {
@@ -12730,8 +11678,8 @@
         ]
       },
       "get": {
-        "summary": "Lists trust store entries.",
-        "description": "Returns the list of entries from a trust store.",
+        "summary": "List the Entry objects",
+        "description": "List the Entry objects",
         "operationId": "entry_listTruststoreScope",
         "security": [
           {
@@ -12781,8 +11729,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears trust store entries.",
-        "description": "Deletes all entries from a trust store.",
+        "summary": "Clear the Entry objects",
+        "description": "Clear the Entry objects",
         "operationId": "entry_clearTruststoreScope",
         "security": [
           {
@@ -12828,8 +11776,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a trust store entry.",
-        "description": "Returns the given entry from a trust store.",
+        "summary": "Get the Entry object by name or id",
+        "description": "Get the Entry object by name or id",
         "operationId": "entry_getTruststoreScope",
         "security": [
           {
@@ -12873,8 +11821,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a trust store entry.",
-        "description": "Updates the given entry in a trust store.",
+        "summary": "Update the Entry object by name or id",
+        "description": "Update the Entry object by name or id",
         "operationId": "entry_updateTruststoreScope",
         "security": [
           {
@@ -12927,8 +11875,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a trust store entry.",
-        "description": "Deletes the given entry from a trust store.",
+        "summary": "Delete the Entry object by name or id",
+        "description": "Delete the Entry object by name or id",
         "operationId": "entry_delTruststoreScope",
         "security": [
           {
@@ -13900,8 +12848,8 @@
     "/me": {
       "description": "Me object operations",
       "get": {
-        "summary": "Returns the current user.",
-        "description": "Returns the user profile for the currently authenticated user.",
+        "summary": "Get the Me object",
+        "description": "Get the Me object",
         "operationId": "me_singletonGet",
         "security": [
           {
@@ -13948,8 +12896,8 @@
         ]
       },
       "put": {
-        "summary": "Updates the current user.",
-        "description": "Updates the user profile for the currently authenticated user.",
+        "summary": "Update the Me object",
+        "description": "Update the Me object",
         "operationId": "me_singletonUpdate",
         "security": [
           {
@@ -14002,8 +12950,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes the current user.",
-        "description": "Removes the currently authenticated user.",
+        "summary": "Delete the Me object",
+        "description": "Delete the Me object",
         "operationId": "me_singletonDel",
         "security": [
           {
@@ -14143,9 +13091,6 @@
           "204": {
             "description": "Success"
           },
-          "302": {
-            "description": "Success"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -14159,8 +13104,8 @@
     "/permissions": {
       "description": "The collection of My Permission operations",
       "get": {
-        "summary": "Lists the user's permissions.",
-        "description": "Returns the list of permissions for the currently authenticated user.",
+        "summary": "List the My Permission objects",
+        "description": "List the My Permission objects",
         "operationId": "my_permission_list",
         "security": [
           {
@@ -14213,8 +13158,8 @@
     "/orgs": {
       "description": "The collection of My Organization operations",
       "get": {
-        "summary": "Lists the user's organizations.",
-        "description": "Returns the list of organizations of which the currently authenticated user is a member.",
+        "summary": "List the My Organization objects",
+        "description": "List the My Organization objects",
         "operationId": "my_org_list",
         "security": [
           {
@@ -14956,7 +13901,10 @@
             "$ref": "#/components/parameters/kind"
           },
           {
-            "$ref": "#/components/parameters/target"
+            "$ref": "#/components/parameters/stale_time"
+          },
+          {
+            "$ref": "#/components/parameters/iteration"
           },
           {
             "$ref": "#/components/parameters/apply_filter"
@@ -15092,19 +14040,10 @@
           "type": "string"
         }
       },
-      "api-key": {
-        "name": "api-key",
-        "in": "path",
-        "description": "API Key name or id",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
       "api_type": {
         "name": "api_type",
         "in": "query",
-        "description": "The type of api (rest, graphql, wsdl_to_rest, or wsdl)",
+        "description": "The type of api (rest, wsdl_to_rest, or wsdl)",
         "required": false,
         "schema": {
           "type": "string"
@@ -15141,15 +14080,6 @@
         "name": "availability-zone",
         "in": "path",
         "description": "Availability Zone name or id",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "capture-id": {
-        "name": "capture-id",
-        "in": "path",
-        "description": "Capture id",
         "required": true,
         "schema": {
           "type": "string"
@@ -15200,15 +14130,6 @@
           "type": "string"
         }
       },
-      "consumer_org_url": {
-        "name": "consumer_org_url",
-        "in": "query",
-        "description": "Consumer Org Url",
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
       "context": {
         "name": "context",
         "in": "query",
@@ -15231,7 +14152,7 @@
         "name": "endpoint",
         "in": "query",
         "description": "Endpoint url",
-        "required": false,
+        "required": true,
         "schema": {
           "type": "string"
         }
@@ -15276,15 +14197,6 @@
         "name": "event_state",
         "in": "query",
         "description": "Event state to filter by",
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "expand": {
-        "name": "expand",
-        "in": "query",
-        "description": "List of transient field to expand",
         "required": false,
         "schema": {
           "type": "string"
@@ -15393,6 +14305,15 @@
         "name": "invitation_scope",
         "in": "query",
         "description": "token",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "iteration": {
+        "name": "iteration",
+        "in": "query",
+        "description": "iteration of task",
         "required": false,
         "schema": {
           "type": "string"
@@ -15578,15 +14499,6 @@
           "type": "string"
         }
       },
-      "plan": {
-        "name": "plan",
-        "in": "query",
-        "description": "Plan Name",
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
       "policy-id": {
         "name": "policy-id",
         "in": "path",
@@ -15628,15 +14540,6 @@
         "in": "path",
         "description": "Primary Event name or id",
         "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "product_url": {
-        "name": "product_url",
-        "in": "query",
-        "description": "Product Url",
-        "required": false,
         "schema": {
           "type": "string"
         }
@@ -15713,20 +14616,20 @@
           "type": "string"
         }
       },
-      "scope": {
-        "name": "scope",
-        "in": "query",
-        "description": "Scope",
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
       "snapshot": {
         "name": "snapshot",
         "in": "path",
         "description": "Snapshot name or id",
         "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "stale_time": {
+        "name": "stale_time",
+        "in": "query",
+        "description": "the time in seconds for stale tasks",
+        "required": false,
         "schema": {
           "type": "string"
         }
@@ -15758,15 +14661,6 @@
           "type": "string"
         }
       },
-      "subsystem_service_name": {
-        "name": "subsystem_service_name",
-        "in": "query",
-        "description": "Name of subsystem service",
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
       "subsystem_service_type": {
         "name": "subsystem_service_type",
         "in": "query",
@@ -15780,15 +14674,6 @@
         "name": "summary",
         "in": "query",
         "description": "token",
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "target": {
-        "name": "target",
-        "in": "query",
-        "description": "target for the task",
         "required": false,
         "schema": {
           "type": "string"
@@ -15871,15 +14756,6 @@
         "in": "query",
         "description": "token",
         "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "transaction-id": {
-        "name": "transaction-id",
-        "in": "path",
-        "description": "Transaction id",
-        "required": true,
         "schema": {
           "type": "string"
         }
@@ -16027,24 +14903,6 @@
               "Bearer"
             ]
           },
-          "third_party_at_iat": {
-            "type": "integer",
-            "nullable": true,
-            "minimum": 0,
-            "maximum": 2147483647
-          },
-          "third_party_at_expires_in": {
-            "type": "integer",
-            "nullable": true,
-            "minimum": 0,
-            "maximum": 2147483647
-          },
-          "third_party_access_token": {
-            "type": "string"
-          },
-          "third_party_refresh_token": {
-            "type": "string"
-          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -16130,25 +14988,6 @@
           "expires_at": {
             "type": "string",
             "format": "date-time"
-          },
-          "user_registry_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "identity_provider": {
-            "type": "string"
-          },
-          "username": {
-            "type": "string"
-          },
-          "first_name": {
-            "type": "string"
-          },
-          "last_name": {
-            "type": "string"
-          },
-          "consumer_org": {
-            "type": "string"
           },
           "metadata": {
             "type": "object",
@@ -16376,8 +15215,7 @@
             "type": "string",
             "enum": [
               "rest",
-              "wsdl",
-              "graphql"
+              "wsdl"
             ]
           },
           "gateway_type": {
@@ -16592,118 +15430,6 @@
           }
         }
       },
-      "APIKey": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "type": {
-            "type": "string",
-            "readOnly": true,
-            "enum": [
-              "api_key"
-            ]
-          },
-          "api_version": {
-            "type": "string",
-            "readOnly": true,
-            "enum": [
-              "2.0.0"
-            ]
-          },
-          "id": {
-            "type": "string",
-            "readOnly": true
-          },
-          "name": {
-            "type": "string",
-            "maxLength": 255
-          },
-          "title": {
-            "type": "string",
-            "maxLength": 1023
-          },
-          "summary": {
-            "type": "string",
-            "maxLength": 65535
-          },
-          "client_type": {
-            "type": "string",
-            "enum": [
-              "toolkit",
-              "atm"
-            ]
-          },
-          "realm": {
-            "type": "string"
-          },
-          "user_url": {
-            "type": "string"
-          },
-          "id_token": {
-            "type": "string"
-          },
-          "token_exp": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 2147483647
-          },
-          "token_iat": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 2147483647
-          },
-          "token_jti": {
-            "type": "string"
-          },
-          "api_key": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "ttl": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 2147483647
-          },
-          "metadata": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "url": {
-            "type": "string",
-            "readOnly": true,
-            "format": "uri"
-          }
-        }
-      },
-      "APIKeyList": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "total_results": {
-            "type": "integer"
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/APIKey"
-            }
-          }
-        }
-      },
       "App": {
         "type": "object",
         "additionalProperties": false,
@@ -16809,9 +15535,6 @@
           "application_type_url": {
             "type": "string",
             "format": "uri"
-          },
-          "consumer_org": {
-            "$ref": "#/components/schemas/ConsumerOrg"
           },
           "metadata": {
             "type": "object",
@@ -17176,13 +15899,6 @@
             "type": "string",
             "format": "uri"
           },
-          "payment_method_integration_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
           "configuration": {
             "type": "object",
             "additionalProperties": {
@@ -17200,24 +15916,6 @@
             "items": {
               "type": "string",
               "format": "uri"
-            }
-          },
-          "custom_endpoint": {
-            "$ref": "#/components/schemas/SecuredEndpoint"
-          },
-          "job_queue_status": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "queue_length": {
-                "type": "integer"
-              },
-              "head_state": {
-                "type": "string"
-              },
-              "head_error": {
-                "type": "string"
-              }
             }
           },
           "metadata": {
@@ -17296,10 +15994,6 @@
             "type": "string",
             "format": "uri"
           },
-          "org_url": {
-            "type": "string",
-            "format": "uri"
-          },
           "configured_catalog_user_registry_urls": {
             "type": "array",
             "items": {
@@ -17307,12 +16001,9 @@
               "format": "uri"
             }
           },
-          "app_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
+          "org_url": {
+            "type": "string",
+            "format": "uri"
           },
           "metadata": {
             "type": "object",
@@ -17464,7 +16155,6 @@
           "v5_endpoint_substitution_behavior": {
             "type": "object",
             "additionalProperties": false,
-            "nullable": true,
             "properties": {
               "base_endpoints": {
                 "type": "array",
@@ -17476,12 +16166,18 @@
                       "type": "string",
                       "format": "uri"
                     },
-                    "gateway_service_url": {
-                      "type": "string",
-                      "format": "uri"
-                    },
                     "description": {
                       "type": "string"
+                    },
+                    "type": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "development",
+                          "production"
+                        ]
+                      }
                     }
                   }
                 }
@@ -17649,15 +16345,6 @@
             "minimum": 0,
             "maximum": 2147483647
           },
-          "api_key_enabled": {
-            "type": "boolean",
-            "default": true
-          },
-          "api_key_expires_in": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 2147483647
-          },
           "sso_settings": {
             "type": "object",
             "properties": {
@@ -17779,6 +16466,9 @@
           "ibm_cloud": {
             "type": "boolean"
           },
+          "dynamic_dns_scheme": {
+            "type": "boolean"
+          },
           "service_type": {
             "type": "string",
             "enum": [
@@ -17789,31 +16479,6 @@
           "tls_client_profile_default_url": {
             "type": "string",
             "format": "uri"
-          },
-          "access_token_keystore_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "id_token_keystore_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "temporary_token_keystore_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "atm_base_path": {
-            "type": "string",
-            "nullable": true
           },
           "metadata": {
             "type": "object",
@@ -18033,6 +16698,9 @@
             "type": "string",
             "maxLength": 65535
           },
+          "scope": {
+            "type": "string"
+          },
           "billing_url": {
             "type": "string",
             "format": "uri"
@@ -18043,13 +16711,6 @@
           "integration_url": {
             "type": "string",
             "format": "uri"
-          },
-          "payment_method_integration_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
           },
           "configuration": {
             "type": "object",
@@ -18064,11 +16725,22 @@
               "format": "uri"
             }
           },
+          "space_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
           "org_url": {
             "type": "string",
             "format": "uri"
           },
           "catalog_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "space_url": {
             "type": "string",
             "format": "uri"
           },
@@ -18375,13 +17047,6 @@
               "format": "uri"
             }
           },
-          "catalog_setting_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
           "webhook_url": {
             "type": "string",
             "format": "uri"
@@ -18414,24 +17079,6 @@
           "space_url": {
             "type": "string",
             "format": "uri"
-          },
-          "gateway_processing_status": {
-            "$ref": "#/components/schemas/SubscriberProcessingStatus"
-          },
-          "events": {
-            "type": "object",
-            "sent_events": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/SubscriberEvent"
-              }
-            },
-            "queued_events": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/SubscriberEvent"
-              }
-            }
           },
           "metadata": {
             "type": "object",
@@ -18692,68 +17339,6 @@
                       }
                     }
                   },
-                  "third_party_security": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "basic-auth"
-                      ]
-                    }
-                  },
-                  "basic_auth": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "username": {
-                        "type": "string"
-                      },
-                      "password": {
-                        "type": "string",
-                        "nullable": true
-                      },
-                      "request_headername": {
-                        "type": "string"
-                      }
-                    }
-                  },
-                  "custom_headername_format": {
-                    "type": "string"
-                  },
-                  "third_party_cache_type": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "no-cache",
-                        "protocol",
-                        "time-to-live"
-                      ]
-                    }
-                  },
-                  "third_party_revocation_protocol": {
-                    "type": "string",
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "XML",
-                        "JSON"
-                      ]
-                    }
-                  },
-                  "time_to_live": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "cache_ttl": {
-                        "type": "integer"
-                      }
-                    }
-                  },
-                  "third_party_fail_on_error": {
-                    "type": "boolean",
-                    "default": true
-                  },
                   "owner_revocation": {
                     "type": "object",
                     "additionalProperties": false,
@@ -18871,7 +17456,7 @@
                       },
                       "password": {
                         "type": "string",
-                        "nullable": true
+                        "format": "password"
                       }
                     }
                   }
@@ -18993,7 +17578,8 @@
                   },
                   "password": {
                     "type": "string",
-                    "nullable": true
+                    "nullable": true,
+                    "format": "password"
                   }
                 }
               },
@@ -19028,23 +17614,12 @@
                       },
                       "password": {
                         "type": "string",
-                        "nullable": true
+                        "nullable": true,
+                        "format": "password"
                       }
                     }
                   }
                 }
-              },
-              "introspect_cache_type": {
-                "type": "string",
-                "default": "no-cache",
-                "enum": [
-                  "no-cache",
-                  "protocol",
-                  "time-to-live"
-                ]
-              },
-              "introspect_cache_ttl": {
-                "type": "integer"
               }
             }
           },
@@ -19195,8 +17770,7 @@
               "enum": [
                 "tls_v1.0",
                 "tls_v1.1",
-                "tls_v1.2",
-                "tls_v1.3"
+                "tls_v1.2"
               ]
             }
           },
@@ -19205,11 +17779,6 @@
             "items": {
               "type": "string",
               "enum": [
-                "TLS_AES_256_GCM_SHA384",
-                "TLS_CHACHA20_POLY1305_SHA256",
-                "TLS_AES_128_GCM_SHA256",
-                "TLS_AES_128_CCM_SHA256",
-                "TLS_AES_128_CCM_8_SHA256",
                 "ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_RSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
@@ -19433,23 +18002,6 @@
             "type": "string",
             "format": "uri"
           },
-          "group_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "subscription_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "owner": {
-            "$ref": "#/components/schemas/User"
-          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -19522,22 +18074,6 @@
             "type": "integer",
             "minimum": 0,
             "maximum": 2147483647
-          },
-          "configured_billing": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object",
-              "properties": {
-                "default_payment_method_url": {
-                  "type": "string",
-                  "format": "uri"
-                },
-                "billing_identifiers": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
-              }
-            }
           },
           "metadata": {
             "type": "object",
@@ -19659,6 +18195,63 @@
           }
         }
       },
+      "Draft": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "draft"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
       "DraftAPI": {
         "type": "object",
         "additionalProperties": false,
@@ -19732,8 +18325,7 @@
             "type": "string",
             "enum": [
               "rest",
-              "wsdl",
-              "graphql"
+              "wsdl"
             ]
           },
           "gateway_type": {
@@ -20287,7 +18879,7 @@
           "webhook_state": {
             "type": "string"
           },
-          "cloud_setting_urls": {
+          "api_urls": {
             "type": "array",
             "items": {
               "type": "string",
@@ -20301,7 +18893,7 @@
               "format": "uri"
             }
           },
-          "gateway_extension_urls": {
+          "product_urls": {
             "type": "array",
             "items": {
               "type": "string",
@@ -20717,48 +19309,6 @@
               "format": "uri"
             }
           },
-          "gateway_service_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "portal_service_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "user_registry_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "tls_client_profile_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "oauth_provider_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "billing_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -21035,18 +19585,13 @@
               "type": "string"
             }
           },
-          "error": {
-            "type": "string"
-          },
           "path": {
             "type": "string",
             "enum": [
               "subscription-update",
               "subscription-delete",
               "bulk-subscription-update",
-              "bulk-subscription-delete",
-              "payment-method-delete",
-              "payment-method-delete-consumer"
+              "bulk-subscription-delete"
             ]
           },
           "body": {
@@ -21149,9 +19694,6 @@
           "public_certificate_entry": {
             "$ref": "#/components/schemas/CertEntry"
           },
-          "public_key_jwk": {
-            "$ref": "#/components/schemas/PublicKeyJwk"
-          },
           "trusted_certificate_entries": {
             "type": "array",
             "items": {
@@ -21179,12 +19721,8 @@
               "format": "uri"
             }
           },
-          "cloud_setting_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
+          "hash_value": {
+            "type": "string"
           },
           "metadata": {
             "type": "object",
@@ -22177,68 +20715,6 @@
                       }
                     }
                   },
-                  "third_party_security": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "basic-auth"
-                      ]
-                    }
-                  },
-                  "basic_auth": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "username": {
-                        "type": "string"
-                      },
-                      "password": {
-                        "type": "string",
-                        "nullable": true
-                      },
-                      "request_headername": {
-                        "type": "string"
-                      }
-                    }
-                  },
-                  "custom_headername_format": {
-                    "type": "string"
-                  },
-                  "third_party_cache_type": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "no-cache",
-                        "protocol",
-                        "time-to-live"
-                      ]
-                    }
-                  },
-                  "third_party_revocation_protocol": {
-                    "type": "string",
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "XML",
-                        "JSON"
-                      ]
-                    }
-                  },
-                  "time_to_live": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "cache_ttl": {
-                        "type": "integer"
-                      }
-                    }
-                  },
-                  "third_party_fail_on_error": {
-                    "type": "boolean",
-                    "default": true
-                  },
                   "owner_revocation": {
                     "type": "object",
                     "additionalProperties": false,
@@ -22356,7 +20832,7 @@
                       },
                       "password": {
                         "type": "string",
-                        "nullable": true
+                        "format": "password"
                       }
                     }
                   }
@@ -22476,7 +20952,8 @@
                   },
                   "password": {
                     "type": "string",
-                    "nullable": true
+                    "nullable": true,
+                    "format": "password"
                   }
                 }
               },
@@ -22511,23 +20988,12 @@
                       },
                       "password": {
                         "type": "string",
-                        "nullable": true
+                        "nullable": true,
+                        "format": "password"
                       }
                     }
                   }
                 }
-              },
-              "introspect_cache_type": {
-                "type": "string",
-                "default": "no-cache",
-                "enum": [
-                  "no-cache",
-                  "protocol",
-                  "time-to-live"
-                ]
-              },
-              "introspect_cache_ttl": {
-                "type": "integer"
               }
             }
           },
@@ -22542,6 +21008,13 @@
             }
           },
           "tls_client_profile_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "api_urls": {
             "type": "array",
             "items": {
               "type": "string",
@@ -22638,8 +21111,7 @@
             "type": "string"
           },
           "registration_url": {
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "state": {
             "type": "string"
@@ -22761,48 +21233,6 @@
             "type": "string",
             "format": "uri"
           },
-          "gateway_service_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "portal_service_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "user_registry_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "tls_client_profile_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "oauth_provider_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "billing_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
           "group_urls": {
             "type": "array",
             "items": {
@@ -22889,9 +21319,81 @@
           "email_sender": {
             "$ref": "#/components/schemas/EmailSender"
           },
-          "atm_base_path": {
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
             "type": "string",
-            "nullable": true
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "OriginatedTask": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "originated_task"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "scope": {
+            "type": "string"
+          },
+          "scope_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "tasks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Task"
+            }
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "metadata": {
             "type": "object",
@@ -22913,6 +21415,21 @@
             "type": "string",
             "readOnly": true,
             "format": "uri"
+          }
+        }
+      },
+      "OriginatedTaskList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OriginatedTask"
+            }
           }
         }
       },
@@ -22951,10 +21468,6 @@
             "maxLength": 65535
           },
           "integration_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "consumer_org_url": {
             "type": "string",
             "format": "uri"
           },
@@ -23042,20 +21555,6 @@
           "summary": {
             "type": "string",
             "maxLength": 65535
-          },
-          "role_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "role_default_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
           },
           "metadata": {
             "type": "object",
@@ -23417,21 +21916,6 @@
           "generated_at": {
             "type": "string"
           },
-          "request_id": {
-            "type": "string"
-          },
-          "ids_in_gateway_payload": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "ids_in_consumer_payload": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -23623,51 +22107,6 @@
           "catalog_url": {
             "type": "string",
             "format": "uri"
-          },
-          "billing_identifiers": {
-            "description": "non-sensitive identifiers of billing system resources",
-            "type": "object",
-            "additionalProperties": true
-          },
-          "plans": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "additionalProperties": false,
-              "properties": {
-                "title": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "apis": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "id": {
-                        "type": "string"
-                      },
-                      "name": {
-                        "type": "string"
-                      },
-                      "title": {
-                        "type": "string"
-                      },
-                      "version": {
-                        "type": "string"
-                      },
-                      "url": {
-                        "type": "string",
-                        "format": "uri"
-                      }
-                    }
-                  }
-                }
-              }
-            }
           },
           "metadata": {
             "type": "object",
@@ -23865,9 +22304,6 @@
             "type": "integer",
             "minimum": 0,
             "maximum": 2147483647
-          },
-          "access_token_jti": {
-            "type": "string"
           },
           "third_party_rt": {
             "type": "string",
@@ -24071,13 +22507,6 @@
             }
           },
           "inherited_permission_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "member_urls": {
             "type": "array",
             "items": {
               "type": "string",
@@ -24511,34 +22940,6 @@
               "format": "uri"
             }
           },
-          "configured_gateway_service_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "configured_api_user_registry_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "configured_tls_client_profile_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "configured_oauth_provider_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
           "org_url": {
             "type": "string",
             "format": "uri"
@@ -24725,23 +23126,12 @@
             "type": "string",
             "enum": [
               "queued",
+              "replay",
+              "processing",
               "sent",
+              "retry",
               "failed"
             ]
-          },
-          "retries": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 2147483647
-          },
-          "request_id": {
-            "type": "string"
-          },
-          "ids_in_payload": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "metadata": {
             "type": "object",
@@ -24831,9 +23221,6 @@
           "plan": {
             "type": "string"
           },
-          "plan_title": {
-            "type": "string"
-          },
           "task_urls": {
             "type": "array",
             "items": {
@@ -24864,10 +23251,10 @@
             "type": "string",
             "format": "uri"
           },
-          "billing_identifiers": {
-            "description": "non-sensitive identifiers of billing system resources",
-            "type": "object",
-            "additionalProperties": true
+          "billing_url": {
+            "type": "string",
+            "format": "uri",
+            "readOnly": true
           },
           "metadata": {
             "type": "object",
@@ -24971,8 +23358,7 @@
             "type": "string"
           },
           "originator_url": {
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "originator_username": {
             "type": "string"
@@ -24993,27 +23379,6 @@
             "type": "array",
             "items": {
               "type": "string"
-            }
-          },
-          "product_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "app_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "subscription_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
             }
           },
           "org_url": {
@@ -25069,6 +23434,80 @@
           }
         }
       },
+      "TaskManager": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "task_manager"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "ready",
+              "running",
+              "idle",
+              "stopped"
+            ]
+          },
+          "run_started_at": {
+            "type": "string"
+          },
+          "last_run_at": {
+            "type": "string"
+          },
+          "stop_reason": {
+            "type": "string"
+          },
+          "processing_metrics": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
       "TaskQueue": {
         "type": "object",
         "additionalProperties": false,
@@ -25106,9 +23545,6 @@
           "scope": {
             "type": "string"
           },
-          "valid_after": {
-            "type": "string"
-          },
           "kind": {
             "type": "string",
             "enum": [
@@ -25122,8 +23558,7 @@
               "manage-stale-catalog-webhooks",
               "cleanup",
               "send",
-              "initialize",
-              "delete-expired-data"
+              "initialize"
             ]
           },
           "state": {
@@ -25134,16 +23569,17 @@
               "inprogress",
               "errored",
               "failed",
-              "completed"
+              "completed",
+              "scheduled"
             ]
           },
-          "target": {
+          "payload": {
             "type": "string"
           },
-          "payload": {
-            "type": "object"
-          },
           "owner": {
+            "type": "string"
+          },
+          "claim": {
             "type": "string"
           },
           "iteration": {
@@ -25240,8 +23676,7 @@
               "enum": [
                 "tls_v1.0",
                 "tls_v1.1",
-                "tls_v1.2",
-                "tls_v1.3"
+                "tls_v1.2"
               ]
             }
           },
@@ -25250,11 +23685,6 @@
             "items": {
               "type": "string",
               "enum": [
-                "TLS_AES_256_GCM_SHA384",
-                "TLS_CHACHA20_POLY1305_SHA256",
-                "TLS_AES_128_GCM_SHA256",
-                "TLS_AES_128_CCM_SHA256",
-                "TLS_AES_128_CCM_8_SHA256",
                 "ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_RSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
@@ -25357,7 +23787,14 @@
             "format": "uri",
             "nullable": true
           },
-          "webhook_urls": {
+          "api_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "webhook_url": {
             "type": "array",
             "items": {
               "type": "string",
@@ -25368,6 +23805,27 @@
             "$ref": "#/components/schemas/ResourceVisibility"
           },
           "configured_tls_client_profile_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "user_registry_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "configured_catalog_user_registry_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "configured_api_user_registry_urls": {
             "type": "array",
             "items": {
               "type": "string",
@@ -25510,8 +23968,7 @@
               "enum": [
                 "tls_v1.0",
                 "tls_v1.1",
-                "tls_v1.2",
-                "tls_v1.3"
+                "tls_v1.2"
               ]
             }
           },
@@ -25520,11 +23977,6 @@
             "items": {
               "type": "string",
               "enum": [
-                "TLS_AES_256_GCM_SHA384",
-                "TLS_CHACHA20_POLY1305_SHA256",
-                "TLS_AES_128_GCM_SHA256",
-                "TLS_AES_128_CCM_SHA256",
-                "TLS_AES_128_CCM_8_SHA256",
                 "ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_RSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
@@ -25728,6 +24180,9 @@
               "type": "string",
               "format": "uri"
             }
+          },
+          "hash_value": {
+            "type": "string"
           },
           "metadata": {
             "type": "object",
@@ -25982,6 +24437,20 @@
           "owned": {
             "type": "boolean"
           },
+          "api_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "catalog_setting_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
           "configured_catalog_user_registry_urls": {
             "type": "array",
             "items": {
@@ -26018,13 +24487,6 @@
             }
           },
           "user_registry_setting_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "activation_urls": {
             "type": "array",
             "items": {
               "type": "string",
@@ -26200,8 +24662,7 @@
               "offline_configured",
               "offline_resync",
               "initializing",
-              "online_pending",
-              "online_throttled"
+              "online_pending"
             ]
           },
           "state_change_reason": {
@@ -26313,20 +24774,6 @@
           "state_updated_at": {
             "type": "string",
             "format": "date-time"
-          },
-          "supported_webhook_features": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "enum": [
-                "feedback",
-                "batch",
-                "throttling",
-                "api_protection_source",
-                "external_oauth_mgmt",
-                "policy_visibility"
-              ]
-            }
           },
           "metadata": {
             "type": "object",
@@ -26692,23 +25139,6 @@
           },
           "default": {
             "type": "boolean"
-          },
-          "realm": {
-            "type": "string"
-          },
-          "oidc_type": {
-            "type": "string",
-            "nullable": true,
-            "enum": [
-              "google",
-              "github",
-              "facebook",
-              "linkedin",
-              "windows_live",
-              "slack",
-              "twitter",
-              "standard"
-            ]
           }
         }
       },
@@ -27042,45 +25472,6 @@
           }
         }
       },
-      "JWKDefinition": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "kid": {
-            "type": "string"
-          },
-          "e": {
-            "type": "string"
-          },
-          "n": {
-            "type": "string"
-          },
-          "x5c": {
-            "type": "string"
-          },
-          "kty": {
-            "type": "string"
-          },
-          "use": {
-            "type": "string"
-          },
-          "alg": {
-            "type": "string"
-          }
-        }
-      },
-      "Oauth2CertsResponse": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "keys": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/JWKDefinition"
-            }
-          }
-        }
-      },
       "RequestPasswordReset": {
         "type": "object",
         "additionalProperties": false,
@@ -27125,9 +25516,6 @@
           "refresh_token": {
             "type": "string"
           },
-          "api_key": {
-            "type": "string"
-          },
           "grant_type": {
             "type": "string",
             "enum": [
@@ -27135,8 +25523,7 @@
               "client_credentials",
               "authorization_code",
               "urn:ietf:params:oauth:grant-type:jwt-bearer",
-              "refresh_token",
-              "api_key"
+              "refresh_token"
             ]
           }
         }
@@ -27171,271 +25558,6 @@
           }
         }
       },
-      "ToolkitCredentialsResponse": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "cloud_id"
-        ],
-        "properties": {
-          "cloud_id": {
-            "type": "string"
-          },
-          "toolkit": {
-            "type": "object",
-            "properties": {
-              "endpoint": {
-                "type": "string"
-              },
-              "client_id": {
-                "type": "string"
-              },
-              "client_secret": {
-                "type": "string"
-              }
-            }
-          },
-          "consumer_toolkit": {
-            "type": "object",
-            "properties": {
-              "endpoint": {
-                "type": "string"
-              },
-              "client_id": {
-                "type": "string"
-              },
-              "client_secret": {
-                "type": "string"
-              }
-            }
-          }
-        }
-      },
-      "DesignerCredentialsResponse": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "designer"
-        ],
-        "properties": {
-          "cloud_id": {
-            "type": "string"
-          },
-          "designer": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "endpoint": {
-                "type": "string"
-              },
-              "manager_endpoint": {
-                "type": "string"
-              },
-              "client_id": {
-                "type": "string"
-              },
-              "client_secret": {
-                "type": "string"
-              }
-            }
-          }
-        }
-      },
-      "CloudPublicInfo": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "cloud_id"
-        ],
-        "properties": {
-          "cloud_id": {
-            "type": "string"
-          },
-          "admin_endpoint": {
-            "type": "string"
-          },
-          "provider_endpoint": {
-            "type": "string"
-          },
-          "api_endpoint": {
-            "type": "string"
-          },
-          "consumer_api_endpoint": {
-            "type": "string"
-          }
-        }
-      },
-      "CloudAbout": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "product_version": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "version": {
-                "type": "string"
-              },
-              "operator_build_date": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "operator_build_tag": {
-                "type": "string"
-              },
-              "operator_version": {
-                "type": "string"
-              }
-            }
-          },
-          "cloud": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              }
-            }
-          },
-          "upgrade_history": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "apim": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "schema_upgrades": {
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "additionalProperties": false,
-                      "properties": {
-                        "schema_version": {
-                          "type": "string"
-                        },
-                        "target_schema_version": {
-                          "type": "string"
-                        },
-                        "updated_at": {
-                          "type": "string",
-                          "format": "date-time"
-                        }
-                      }
-                    }
-                  },
-                  "data_upgrades": {
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "additionalProperties": false,
-                      "properties": {
-                        "data_version": {
-                          "type": "string"
-                        },
-                        "target_data_version": {
-                          "type": "string"
-                        },
-                        "updated_at": {
-                          "type": "string",
-                          "format": "date-time"
-                        }
-                      }
-                    }
-                  }
-                }
-              },
-              "lur": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "schema_upgrades": {
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "additionalProperties": false,
-                      "properties": {
-                        "schema_version": {
-                          "type": "string"
-                        },
-                        "target_schema_version": {
-                          "type": "string"
-                        },
-                        "updated_at": {
-                          "type": "string",
-                          "format": "date-time"
-                        }
-                      }
-                    }
-                  },
-                  "data_upgrades": {
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "additionalProperties": false,
-                      "properties": {
-                        "data_version": {
-                          "type": "string"
-                        },
-                        "target_data_version": {
-                          "type": "string"
-                        },
-                        "updated_at": {
-                          "type": "string",
-                          "format": "date-time"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "OriginatedTask": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "scope": {
-            "type": "string"
-          },
-          "scope_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "tasks": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Task"
-            }
-          },
-          "actions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "OriginatedTaskList": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "total_results": {
-            "type": "integer"
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/OriginatedTask"
-            }
-          }
-        }
-      },
       "IntrospectionRequest": {
         "type": "object",
         "additionalProperties": false,
@@ -27466,6 +25588,9 @@
         "properties": {
           "active": {
             "type": "boolean"
+          },
+          "client_id": {
+            "type": "string"
           },
           "username": {
             "type": "string"
@@ -27526,12 +25651,6 @@
             "type": "integer",
             "minimum": 0,
             "maximum": 2147483647
-          },
-          "access_token": {
-            "type": "string"
-          },
-          "id_token": {
-            "type": "string"
           }
         }
       },
@@ -27590,6 +25709,11 @@
           },
           "payload": {
             "type": "string"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
           }
         }
       },
@@ -27721,12 +25845,6 @@
                 },
                 {
                   "type": "boolean"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
                 }
               ]
             }
@@ -27823,16 +25941,8 @@
                 "format": "uri"
               }
             }
-          },
-          "x-ibm-languages": {
-            "type": "object",
-            "additionalProperties": true
           }
         }
-      },
-      "Draft": {
-        "type": "object",
-        "additionalProperties": false
       },
       "DraftList": {
         "type": "object",
@@ -27853,61 +25963,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/DraftProduct"
-            }
-          }
-        }
-      },
-      "Search": {
-        "type": "object",
-        "additionalProperties": false
-      },
-      "SearchList": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "total_results": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 2147483647
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "version": {
-                  "type": "string"
-                },
-                "created_at": {
-                  "type": "string"
-                },
-                "updated_at": {
-                  "type": "string"
-                },
-                "id": {
-                  "type": "string"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "api_type": {
-                  "type": "string"
-                },
-                "oai_version": {
-                  "type": "string",
-                  "enum": [
-                    "openapi2",
-                    "openapi3"
-                  ]
-                }
-              }
             }
           }
         }
@@ -27987,16 +26042,6 @@
         "type": "object",
         "additionalProperties": true,
         "properties": {
-          "title": {
-            "type": "string",
-            "maxLength": 1023
-          },
-          "cloud_name": {
-            "type": "string"
-          },
-          "cloud_id": {
-            "type": "string"
-          },
           "counts": {
             "type": "object",
             "additionalProperties": true,
@@ -28045,16 +26090,6 @@
                 "type": "integer",
                 "minimum": 0,
                 "maximum": 2147483647
-              },
-              "consumer_apps": {
-                "type": "integer",
-                "minimum": 0,
-                "maximum": 2147483647
-              },
-              "spaces": {
-                "type": "integer",
-                "minimum": 0,
-                "maximum": 2147483647
               }
             }
           },
@@ -28070,7 +26105,7 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/TopologyProviderOrg"
+                  "$ref": "#/components/schemas/ProviderOrgDetails"
                 }
               },
               "url": {
@@ -28080,7 +26115,7 @@
           }
         }
       },
-      "TopologyProviderOrg": {
+      "ProviderOrgDetails": {
         "type": "object",
         "additionalProperties": true,
         "properties": {
@@ -28153,14 +26188,14 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/TopologyCatalogs"
+                  "$ref": "#/components/schemas/Catalogs"
                 }
               }
             }
           }
         }
       },
-      "TopologyCatalogs": {
+      "Catalogs": {
         "type": "object",
         "additionalProperties": true,
         "properties": {
@@ -28243,54 +26278,39 @@
                     "maximum": 2147483647
                   }
                 }
-              }
-            }
-          },
-          "consumer_org_list_url": {
-            "type": "string"
-          },
-          "gateway_service_types": {
-            "type": "object",
-            "additionalProperties": true,
-            "properties": {
-              "total_results": {
-                "type": "integer",
-                "minimum": 0,
-                "maximum": 2147483647
               },
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/TopologyGatewayServices"
-                }
-              }
-            }
-          },
-          "spaces": {
-            "type": "object",
-            "additionalProperties": true,
-            "properties": {
-              "total_results": {
-                "type": "integer",
-                "minimum": 0,
-                "maximum": 2147483647
+              "consumer_org_list_url": {
+                "type": "string"
               },
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/TopologySpaces"
+              "spaces": {
+                "type": "object",
+                "additionalProperties": true,
+                "properties": {
+                  "total_results": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 2147483647
+                  },
+                  "results": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Spaces"
+                    }
+                  }
                 }
               }
             }
           }
         }
       },
-      "TopologySpaces": {
+      "Spaces": {
         "type": "object",
         "additionalProperties": true,
         "properties": {
           "id": {
-            "type": "string"
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2147483647
           },
           "name": {
             "type": "string"
@@ -28319,42 +26339,6 @@
                 "maximum": 2147483647
               }
             }
-          },
-          "gateway_service_types": {
-            "type": "object",
-            "additionalProperties": true,
-            "properties": {
-              "total_results": {
-                "type": "integer",
-                "minimum": 0,
-                "maximum": 2147483647
-              },
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/TopologyGatewayServices"
-                }
-              }
-            }
-          }
-        }
-      },
-      "TopologyGatewayServices": {
-        "type": "object",
-        "additionalProperties": true,
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "gateway_service_type": {
-            "type": "string",
-            "enum": [
-              "datapower-gateway",
-              "datapower-api-gateway"
-            ]
           }
         }
       },
@@ -29155,10 +27139,6 @@
         "type": "object",
         "additionalProperties": true
       },
-      "UpdateCredentialsResponse": {
-        "type": "object",
-        "additionalProperties": true
-      },
       "SubsystemServiceList": {
         "type": "object",
         "additionalProperties": false,
@@ -29173,134 +27153,6 @@
             "items": {
               "$ref": "#/components/schemas/SubsystemService"
             }
-          }
-        }
-      },
-      "LastProcessedEvent": {
-        "type": "object",
-        "required": [
-          "event_id"
-        ],
-        "additionalProperties": false,
-        "properties": {
-          "event_id": {
-            "type": "string"
-          }
-        }
-      },
-      "AssemblyDebug": {
-        "type": "object",
-        "additionalProperties": true
-      },
-      "AssemblyDebugCreateRequest": {
-        "type": "object",
-        "properties": {
-          "FilterByAPI": {
-            "type": "string"
-          }
-        }
-      },
-      "AssemblyDebugCreateResponse": {
-        "type": "object",
-        "properties": {
-          "CaptureId": {
-            "type": "object"
-          }
-        }
-      },
-      "AssemblyDebugCapture": {
-        "type": "object",
-        "additionalProperties": true
-      },
-      "AssemblyDebugCaptureTransaction": {
-        "type": "object",
-        "additionalProperties": true
-      },
-      "SubscriberProcessingStatus": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "service_state": {
-            "type": "string",
-            "enum": [
-              "green",
-              "orange",
-              "red"
-            ]
-          },
-          "service_up_to_date": {
-            "type": "boolean"
-          },
-          "last_processed_event": {
-            "type": "object",
-            "properties": {
-              "event_id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "filter": {
-                "type": "string"
-              },
-              "generated_at": {
-                "type": "string"
-              },
-              "processed_at": {
-                "type": "string"
-              },
-              "event_processing_time": {
-                "type": "integer"
-              },
-              "elapsed_time_since_last_processed_event": {
-                "type": "integer"
-              }
-            }
-          },
-          "number_of_outstanding_sent_events": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 2147483647
-          },
-          "last_sent_event": {
-            "type": "object",
-            "properties": {
-              "event_id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "sent_at": {
-                "type": "string"
-              },
-              "generated_at": {
-                "type": "string"
-              }
-            }
-          },
-          "number_of_outstanding_queued_events": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 2147483647
-          }
-        }
-      },
-      "InternalCache": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "cache_type"
-        ],
-        "properties": {
-          "cache_type": {
-            "type": "string"
-          },
-          "delete_key": {
-            "type": "string"
-          },
-          "clear_entries": {
-            "type": "boolean"
           }
         }
       },
@@ -29326,30 +27178,6 @@
             }
           }
         }
-      },
-      "PublicKeyJwk": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "kty": {
-            "type": "string"
-          },
-          "n": {
-            "type": "string"
-          },
-          "e": {
-            "type": "string"
-          },
-          "alg": {
-            "type": "string"
-          },
-          "kid": {
-            "type": "string"
-          },
-          "use": {
-            "type": "string"
-          }
-        }
       }
     },
     "responses": {
@@ -29369,6 +27197,10 @@
         }
       }
     }
+  },
+  "externalDocs": {
+    "description": "Additional documentation",
+    "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis"
   },
   "x-ibm-configuration": {
     "testable": false
@@ -29407,8 +27239,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a user registry.",
-        "description": "Creates a user registry.",
+        "summary": "Create a User Registry object",
+        "description": "Create a User Registry object",
         "operationId": "user_registry_create",
         "security": [
           {
@@ -29466,8 +27298,8 @@
         ]
       },
       "get": {
-        "summary": "Lists user registries.",
-        "description": "Returns the list of user registries belonging to a provider organization.",
+        "summary": "List the User Registry objects",
+        "description": "List the User Registry objects",
         "operationId": "user_registry_list",
         "security": [
           {
@@ -29517,8 +27349,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears user registries.",
-        "description": "Deletes all user registries belonging to a provider organization.",
+        "summary": "Clear the User Registry objects",
+        "description": "Clear the User Registry objects",
         "operationId": "user_registry_clear",
         "security": [
           {
@@ -29561,8 +27393,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a user registry.",
-        "description": "Returns a user registry.",
+        "summary": "Get the User Registry object by name or id",
+        "description": "Get the User Registry object by name or id",
         "operationId": "user_registry_get",
         "security": [
           {
@@ -29606,8 +27438,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a user registry.",
-        "description": "Updates a user registry.",
+        "summary": "Update the User Registry object by name or id",
+        "description": "Update the User Registry object by name or id",
         "operationId": "user_registry_update",
         "security": [
           {
@@ -29660,8 +27492,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a user registry.",
-        "description": "Deletes a user registry.",
+        "summary": "Delete the User Registry object by name or id",
+        "description": "Delete the User Registry object by name or id",
         "operationId": "user_registry_del",
         "security": [
           {
@@ -29802,12 +27634,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Error"
+                  "$ref": "#/components/schemas/TestConnectionFailedResponse"
                 }
               },
               "application/yaml": {
                 "schema": {
-                  "$ref": "#/components/schemas/Error"
+                  "$ref": "#/components/schemas/TestConnectionFailedResponse"
                 }
               }
             }
@@ -29932,12 +27764,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Error"
+                  "$ref": "#/components/schemas/TestConnectionFailedResponse"
                 }
               },
               "application/yaml": {
                 "schema": {
-                  "$ref": "#/components/schemas/Error"
+                  "$ref": "#/components/schemas/TestConnectionFailedResponse"
                 }
               }
             }
@@ -30035,8 +27867,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a user.",
-        "description": "Creates a user entry in a user registry. For user registries that are defined as <i>user managed</i>, a user record is also created in the backing (usually remote) user directory.",
+        "summary": "Create a User object",
+        "description": "Create a User object",
         "operationId": "user_create",
         "security": [
           {
@@ -30094,8 +27926,8 @@
         ]
       },
       "get": {
-        "summary": "Lists users.",
-        "description": "Returns a user entry from a user registry. The user entry returned comes from the API Connect configuration, rather than a from backing (remote) user directory.",
+        "summary": "List the User objects",
+        "description": "List the User objects",
         "operationId": "user_list",
         "security": [
           {
@@ -30145,8 +27977,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears users.",
-        "description": "Removes all user entries from a user registry. For user registries that are defined as <i>user managed</i>, user records are also removed from the backing (usually remote) user directory.",
+        "summary": "Clear the User objects",
+        "description": "Clear the User objects",
         "operationId": "user_clear",
         "security": [
           {
@@ -30192,8 +28024,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a user.",
-        "description": "Deletes a user entry from a user registry. For user registries that are defined as <i>user managed</i>, the user record is also deleted in the backing (usually remote) user directory.",
+        "summary": "Get the User object by name or id",
+        "description": "Get the User object by name or id",
         "operationId": "user_get",
         "security": [
           {
@@ -30237,8 +28069,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a user.",
-        "description": "Updates a user entry. To change a user password, see the </tt>reset-password</tt> operation.",
+        "summary": "Update the User object by name or id",
+        "description": "Update the User object by name or id",
         "operationId": "user_update",
         "security": [
           {
@@ -30291,8 +28123,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a user.",
-        "description": "Deletes a user entry from a user registry. For user registries that are defined as <i>user managed</i>, the user record is also deleted in the backing (usually remote) user directory.",
+        "summary": "Delete the User object by name or id",
+        "description": "Delete the User object by name or id",
         "operationId": "user_del",
         "security": [
           {
@@ -30846,212 +28678,6 @@
         ]
       }
     },
-    "/cloud/api-keys": {
-      "description": "The collection of API Key operations",
-      "post": {
-        "summary": "Create a API Key object",
-        "description": "Create a API Key object",
-        "operationId": "api_key_create",
-        "security": [
-          {
-            "oauth": [
-              "my:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-key#create"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/APIKey"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/APIKey"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/APIKey"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/APIKey"
-                }
-              }
-            },
-            "headers": {
-              "Location": {
-                "$ref": "#/components/headers/Location"
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "User Management",
-          "Resource: API Key"
-        ]
-      },
-      "get": {
-        "summary": "List the API Key objects",
-        "description": "List the API Key objects",
-        "operationId": "api_key_list",
-        "security": [
-          {
-            "oauth": [
-              "my:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-key#list"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/APIKeyList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/APIKeyList"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "User Management",
-          "Resource: API Key"
-        ]
-      }
-    },
-    "/cloud/api-keys/{api-key}": {
-      "description": "API Key object operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/api-key"
-        }
-      ],
-      "get": {
-        "summary": "Get the API Key object by name or id",
-        "description": "Get the API Key object by name or id",
-        "operationId": "api_key_get",
-        "security": [
-          {
-            "oauth": [
-              "my:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-key#get"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/APIKey"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/APIKey"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "User Management",
-          "Resource: API Key"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the API Key object by name or id",
-        "description": "Delete the API Key object by name or id",
-        "operationId": "api_key_del",
-        "security": [
-          {
-            "oauth": [
-              "my:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-key#del"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful delete",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/APIKey"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/APIKey"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "User Management",
-          "Resource: API Key"
-        ]
-      }
-    },
     "/orgs/{org}/settings": {
       "description": "Organization Setting object operations",
       "parameters": [
@@ -31060,8 +28686,8 @@
         }
       ],
       "get": {
-        "summary": "Returns provider organization settings.",
-        "description": "Returns the settings for a provider organization.",
+        "summary": "Get the Organization Setting object",
+        "description": "Get the Organization Setting object",
         "operationId": "org_setting_singletonGet",
         "security": [
           {
@@ -31105,8 +28731,8 @@
         ]
       },
       "put": {
-        "summary": "Updates provider organization settings.",
-        "description": "Updates the settings for a provider organization.",
+        "summary": "Update the Organization Setting object",
+        "description": "Update the Organization Setting object",
         "operationId": "org_setting_singletonUpdate",
         "security": [
           {
@@ -31167,8 +28793,8 @@
         }
       ],
       "get": {
-        "summary": "Lists provider notification templates.",
-        "description": "Returns the list of all notification templates for a provider organization.",
+        "summary": "List all Notification Template objects in all collections",
+        "description": "List all Notification Template objects in all collections",
         "operationId": "notification_template_listAllOrgScope",
         "security": [
           {
@@ -31226,8 +28852,8 @@
         }
       ],
       "get": {
-        "summary": "Lists provider notification templates.",
-        "description": "Returns the list of all provider notification templates set at the provider organization level.",
+        "summary": "List the Notification Template objects",
+        "description": "List the Notification Template objects",
         "operationId": "notification_template_listProviderSubcollectionOrgScope",
         "security": [
           {
@@ -31288,8 +28914,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a provider notification template.",
-        "description": "Returns a provider notification template, set at the provider organization level.",
+        "summary": "Get the Notification Template object by name or id",
+        "description": "Get the Notification Template object by name or id",
         "operationId": "notification_template_getProviderSubcollectionOrgScope",
         "security": [
           {
@@ -31333,8 +28959,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a provider notification template.",
-        "description": "Updates a provider notification template set at the provider organization level.",
+        "summary": "Update the Notification Template object by name or id",
+        "description": "Update the Notification Template object by name or id",
         "operationId": "notification_template_updateProviderSubcollectionOrgScope",
         "security": [
           {
@@ -31395,8 +29021,8 @@
         }
       ],
       "get": {
-        "summary": "Lists catalog notification templates.",
-        "description": "Returns the list of all catalog notification templates set at the provider organization level.",
+        "summary": "List the Notification Template objects",
+        "description": "List the Notification Template objects",
         "operationId": "notification_template_listCatalogSubcollectionOrgScope",
         "security": [
           {
@@ -31457,8 +29083,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a catalog notification template.",
-        "description": "Returns a catalog notification template, set at the provider organization level.",
+        "summary": "Get the Notification Template object by name or id",
+        "description": "Get the Notification Template object by name or id",
         "operationId": "notification_template_getCatalogSubcollectionOrgScope",
         "security": [
           {
@@ -31502,8 +29128,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a catalog notification template.",
-        "description": "Updates a catalog notification template set at the provider organization level.",
+        "summary": "Update the Notification Template object by name or id",
+        "description": "Update the Notification Template object by name or id",
         "operationId": "notification_template_updateCatalogSubcollectionOrgScope",
         "security": [
           {
@@ -31564,8 +29190,8 @@
         }
       ],
       "get": {
-        "summary": "Lists space notification templates.",
-        "description": "Returns the list of all space notification templates set at the provider organization level.",
+        "summary": "List the Notification Template objects",
+        "description": "List the Notification Template objects",
         "operationId": "notification_template_listSpaceSubcollectionOrgScope",
         "security": [
           {
@@ -31626,8 +29252,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a space notification template.",
-        "description": "Returns a space notification template, set at the provider organization level.",
+        "summary": "Get the Notification Template object by name or id",
+        "description": "Get the Notification Template object by name or id",
         "operationId": "notification_template_getSpaceSubcollectionOrgScope",
         "security": [
           {
@@ -31671,8 +29297,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a space notification template.",
-        "description": "Updates a space notification template set at the provider organization level.",
+        "summary": "Update the Notification Template object by name or id",
+        "description": "Update the Notification Template object by name or id",
         "operationId": "notification_template_updateSpaceSubcollectionOrgScope",
         "security": [
           {
@@ -31733,8 +29359,8 @@
         }
       ],
       "get": {
-        "summary": "Lists consumer notification templates.",
-        "description": "Returns the list of all consumer notification templates set at the provider organization level.",
+        "summary": "List the Notification Template objects",
+        "description": "List the Notification Template objects",
         "operationId": "notification_template_listConsumerSubcollectionOrgScope",
         "security": [
           {
@@ -31795,8 +29421,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a consumer notification template.",
-        "description": "Returns a consumer notification template, set at the provider organization level.",
+        "summary": "Get the Notification Template object by name or id",
+        "description": "Get the Notification Template object by name or id",
         "operationId": "notification_template_getConsumerSubcollectionOrgScope",
         "security": [
           {
@@ -31840,8 +29466,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a consumer notification template.",
-        "description": "Updates a consumer notification template set at the provider organization level.",
+        "summary": "Update the Notification Template object by name or id",
+        "description": "Update the Notification Template object by name or id",
         "operationId": "notification_template_updateConsumerSubcollectionOrgScope",
         "security": [
           {
@@ -31902,8 +29528,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a provider organization.",
-        "description": "Returns a provider organization.",
+        "summary": "Get the Organization object by name or id",
+        "description": "Get the Organization object by name or id",
         "operationId": "org_get",
         "security": [
           {
@@ -31947,8 +29573,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a provider organization.",
-        "description": "Updates a provider organization.",
+        "summary": "Update the Organization object by name or id",
+        "description": "Update the Organization object by name or id",
         "operationId": "org_update",
         "security": [
           {
@@ -32001,8 +29627,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a provider organization.",
-        "description": "Deletes a provider organization.",
+        "summary": "Delete the Organization object by name or id",
+        "description": "Delete the Organization object by name or id",
         "operationId": "org_del",
         "security": [
           {
@@ -32179,8 +29805,8 @@
         }
       ],
       "get": {
-        "summary": "Lists associates.",
-        "description": "Returns a list of associates of the given provider org.",
+        "summary": "List the Associate objects",
+        "description": "List the Associate objects",
         "operationId": "associate_listOrgScope",
         "security": [
           {
@@ -32241,8 +29867,8 @@
         }
       ],
       "get": {
-        "summary": "Returns an associate.",
-        "description": "Returns an associate of the given provider org.",
+        "summary": "Get the Associate object by name or id",
+        "description": "Get the Associate object by name or id",
         "operationId": "associate_getOrgScope",
         "security": [
           {
@@ -32294,8 +29920,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a provider organization member invitation.",
-        "description": "Creates a provider organization member invitation.",
+        "summary": "Create a Member Invitation object",
+        "description": "Create a Member Invitation object",
         "operationId": "member_invitation_createOrgScope",
         "security": [
           {
@@ -32353,8 +29979,8 @@
         ]
       },
       "get": {
-        "summary": "Lists provider organization member invitations.",
-        "description": "Returns the list of member invitations for a provider organization.",
+        "summary": "List the Member Invitation objects",
+        "description": "List the Member Invitation objects",
         "operationId": "member_invitation_listOrgScope",
         "security": [
           {
@@ -32404,8 +30030,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears provider organization member invitations.",
-        "description": "Removes all member invitations for a provider organization.",
+        "summary": "Clear the Member Invitation objects",
+        "description": "Clear the Member Invitation objects",
         "operationId": "member_invitation_clearOrgScope",
         "security": [
           {
@@ -32448,8 +30074,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a provider organization member invitation.",
-        "description": "Returns a provider organization member invitation.",
+        "summary": "Get the Member Invitation object by name or id",
+        "description": "Get the Member Invitation object by name or id",
         "operationId": "member_invitation_getOrgScope",
         "security": [
           {
@@ -32493,8 +30119,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a provider organization member invitation.",
-        "description": "Updates a member invitation to a provider organization.",
+        "summary": "Update the Member Invitation object by name or id",
+        "description": "Update the Member Invitation object by name or id",
         "operationId": "member_invitation_updateOrgScope",
         "security": [
           {
@@ -32547,8 +30173,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a provider organization member invitation.",
-        "description": "Deletes a provider organization member invitation.",
+        "summary": "Delete the Member Invitation object by name or id",
+        "description": "Delete the Member Invitation object by name or id",
         "operationId": "member_invitation_delOrgScope",
         "security": [
           {
@@ -32799,8 +30425,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a provider organization member.",
-        "description": "Adds a member to a provider organization.",
+        "summary": "Create a Member object",
+        "description": "Create a Member object",
         "operationId": "member_createOrgScope",
         "security": [
           {
@@ -32858,8 +30484,8 @@
         ]
       },
       "get": {
-        "summary": "Lists provider organization members.",
-        "description": "Returns the list of members of a provider organization.",
+        "summary": "List the Member objects",
+        "description": "List the Member objects",
         "operationId": "member_listOrgScope",
         "security": [
           {
@@ -32909,8 +30535,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears provider organization members.",
-        "description": "Removes all members from a provider organization.",
+        "summary": "Clear the Member objects",
+        "description": "Clear the Member objects",
         "operationId": "member_clearOrgScope",
         "security": [
           {
@@ -32953,8 +30579,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a provider organization member.",
-        "description": "Returns a member of a provider organization.",
+        "summary": "Get the Member object by name or id",
+        "description": "Get the Member object by name or id",
         "operationId": "member_getOrgScope",
         "security": [
           {
@@ -32998,8 +30624,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a provider organization member.",
-        "description": "Updates a member of a provider organization.",
+        "summary": "Update the Member object by name or id",
+        "description": "Update the Member object by name or id",
         "operationId": "member_updateOrgScope",
         "security": [
           {
@@ -33052,8 +30678,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a provider organization member.",
-        "description": "Removes a member from a provider organization.",
+        "summary": "Delete the Member object by name or id",
+        "description": "Delete the Member object by name or id",
         "operationId": "member_delOrgScope",
         "security": [
           {
@@ -33095,8 +30721,8 @@
     "/cloud/permissions": {
       "description": "Permission operations across all collections",
       "get": {
-        "summary": "Lists cloud-level permissions.",
-        "description": "Returns the overall list of permissions configured at the cloud level.",
+        "summary": "List all Permission objects in all collections",
+        "description": "List all Permission objects in all collections",
         "operationId": "permission_listAll",
         "externalDocs": {
           "description": "Additional documentation",
@@ -33142,8 +30768,8 @@
     "/cloud/permissions/org": {
       "description": "The collection of Permission operations",
       "get": {
-        "summary": "Lists cloud-level oorganization permissions.",
-        "description": "Returns the list of organization permissions defined at the cloud level.",
+        "summary": "List the Permission objects",
+        "description": "List the Permission objects",
         "operationId": "permission_listOrgSubcollection",
         "externalDocs": {
           "description": "Additional documentation",
@@ -33194,8 +30820,8 @@
         }
       ],
       "get": {
-        "summary": "Returns an organization permission.",
-        "description": "Returns an organization permissions instance defined at the cloud level.",
+        "summary": "Get the Permission object by name or id",
+        "description": "Get the Permission object by name or id",
         "operationId": "permission_getOrgSubcollection",
         "externalDocs": {
           "description": "Additional documentation",
@@ -33235,8 +30861,8 @@
     "/cloud/permissions/cloud": {
       "description": "The collection of Permission operations",
       "get": {
-        "summary": "Lists cloud-level cloud permissions.",
-        "description": "Returns the list of cloud permissions defined at the cloud level.",
+        "summary": "List the Permission objects",
+        "description": "List the Permission objects",
         "operationId": "permission_listCloudSubcollection",
         "externalDocs": {
           "description": "Additional documentation",
@@ -33287,8 +30913,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a cloud permission.",
-        "description": "Returns a cloud permissions instance defined at the cloud level.",
+        "summary": "Get the Permission object by name or id",
+        "description": "Get the Permission object by name or id",
         "operationId": "permission_getCloudSubcollection",
         "externalDocs": {
           "description": "Additional documentation",
@@ -33328,8 +30954,8 @@
     "/cloud/permissions/provider": {
       "description": "The collection of Permission operations",
       "get": {
-        "summary": "Lists cloud-level provider permissions.",
-        "description": "Returns the list of provider permissions defined at the cloud level.",
+        "summary": "List the Permission objects",
+        "description": "List the Permission objects",
         "operationId": "permission_listProviderSubcollection",
         "externalDocs": {
           "description": "Additional documentation",
@@ -33380,8 +31006,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a provider permission.",
-        "description": "Returns a provider permissions instance defined at the cloud level.",
+        "summary": "Get the Permission object by name or id",
+        "description": "Get the Permission object by name or id",
         "operationId": "permission_getProviderSubcollection",
         "externalDocs": {
           "description": "Additional documentation",
@@ -33421,8 +31047,8 @@
     "/cloud/permissions/consumer": {
       "description": "The collection of Permission operations",
       "get": {
-        "summary": "Lists cloud-level consumer permissions.",
-        "description": "Returns the list of consumer permissions defined at the cloud level.",
+        "summary": "List the Permission objects",
+        "description": "List the Permission objects",
         "operationId": "permission_listConsumerSubcollection",
         "externalDocs": {
           "description": "Additional documentation",
@@ -33473,8 +31099,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a consumer permission.",
-        "description": "Returns a consumer permissions instance defined at the cloud level.",
+        "summary": "Get the Permission object by name or id",
+        "description": "Get the Permission object by name or id",
         "operationId": "permission_getConsumerSubcollection",
         "externalDocs": {
           "description": "Additional documentation",
@@ -33514,8 +31140,8 @@
     "/cloud/permissions/deployment": {
       "description": "The collection of Permission operations",
       "get": {
-        "summary": "Lists cloud-level deployment permissions.",
-        "description": "Returns the list of deployment permissions defined at the cloud level.",
+        "summary": "List the Permission objects",
+        "description": "List the Permission objects",
         "operationId": "permission_listDeploymentSubcollection",
         "externalDocs": {
           "description": "Additional documentation",
@@ -33566,8 +31192,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a deployment permission.",
-        "description": "Returns a deployment permissions instance defined at the cloud level.",
+        "summary": "Get the Permission object by name or id",
+        "description": "Get the Permission object by name or id",
         "operationId": "permission_getDeploymentSubcollection",
         "externalDocs": {
           "description": "Additional documentation",
@@ -33612,8 +31238,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a provider organization role.",
-        "description": "Adds a role to a provider organization.",
+        "summary": "Create a Role object",
+        "description": "Create a Role object",
         "operationId": "role_createOrgScope",
         "security": [
           {
@@ -33671,8 +31297,8 @@
         ]
       },
       "get": {
-        "summary": "Lists provider organization roles.",
-        "description": "Returns the list of roles for a provider organization.",
+        "summary": "List the Role objects",
+        "description": "List the Role objects",
         "operationId": "role_listOrgScope",
         "security": [
           {
@@ -33722,8 +31348,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears provider organization roles.",
-        "description": "Removes all roles from a provider organization.",
+        "summary": "Clear the Role objects",
+        "description": "Clear the Role objects",
         "operationId": "role_clearOrgScope",
         "security": [
           {
@@ -33766,8 +31392,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a provider organization role.",
-        "description": "Returns a role from a provider organization.",
+        "summary": "Get the Role object by name or id",
+        "description": "Get the Role object by name or id",
         "operationId": "role_getOrgScope",
         "security": [
           {
@@ -33811,8 +31437,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a provider organization role.",
-        "description": "Updates a role in a provider organization.",
+        "summary": "Update the Role object by name or id",
+        "description": "Update the Role object by name or id",
         "operationId": "role_updateOrgScope",
         "security": [
           {
@@ -33865,8 +31491,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a provider organization role.",
-        "description": "Removes a role from a provider organization.",
+        "summary": "Delete the Role object by name or id",
+        "description": "Delete the Role object by name or id",
         "operationId": "role_delOrgScope",
         "security": [
           {
@@ -33913,8 +31539,8 @@
         }
       ],
       "get": {
-        "summary": "Lists gateway services.",
-        "description": "Returns the list of gateway services.",
+        "summary": "List the Gateway Service objects",
+        "description": "List the Gateway Service objects",
         "operationId": "gateway_service_listOrgScope",
         "security": [
           {
@@ -33975,8 +31601,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a gateway service.",
-        "description": "Returns the given gateway service.",
+        "summary": "Get the Gateway Service object by name or id",
+        "description": "Get the Gateway Service object by name or id",
         "operationId": "gateway_service_getOrgScope",
         "security": [
           {
@@ -34028,8 +31654,8 @@
         }
       ],
       "get": {
-        "summary": "Lists portal services.",
-        "description": "Returns the list of portal services belonging to a provider orgsnization.",
+        "summary": "List the Portal Service objects",
+        "description": "List the Portal Service objects",
         "operationId": "portal_service_listOrgScope",
         "security": [
           {
@@ -34090,8 +31716,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a portal service.",
-        "description": "Returns a portal service belonging to a provider orgsnization.",
+        "summary": "Get the Portal Service object by name or id",
+        "description": "Get the Portal Service object by name or id",
         "operationId": "portal_service_getOrgScope",
         "security": [
           {
@@ -34143,8 +31769,8 @@
         }
       ],
       "post": {
-        "summary": "Creates an OAuth provider.",
-        "description": "Creates an OAuth provider resource.",
+        "summary": "Create a Oauth Provider object",
+        "description": "Create a Oauth Provider object",
         "operationId": "oauth_provider_create",
         "security": [
           {
@@ -34202,8 +31828,8 @@
         ]
       },
       "get": {
-        "summary": "Lists OAuth providers.",
-        "description": "Returns the list of all OAuth provider resources.",
+        "summary": "List the Oauth Provider objects",
+        "description": "List the Oauth Provider objects",
         "operationId": "oauth_provider_list",
         "security": [
           {
@@ -34253,8 +31879,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears OAuth providers.",
-        "description": "Deletes all OAuth provider resources.",
+        "summary": "Clear the Oauth Provider objects",
+        "description": "Clear the Oauth Provider objects",
         "operationId": "oauth_provider_clear",
         "security": [
           {
@@ -34297,8 +31923,8 @@
         }
       ],
       "get": {
-        "summary": "Returns an OAuth provider.",
-        "description": "Returns an OAuth provider resource.",
+        "summary": "Get the Oauth Provider object by name or id",
+        "description": "Get the Oauth Provider object by name or id",
         "operationId": "oauth_provider_get",
         "security": [
           {
@@ -34342,8 +31968,8 @@
         ]
       },
       "patch": {
-        "summary": "Creates an OAuth provider.",
-        "description": "Updates an OAuth provider resource.",
+        "summary": "Update the Oauth Provider object by name or id",
+        "description": "Update the Oauth Provider object by name or id",
         "operationId": "oauth_provider_update",
         "security": [
           {
@@ -34396,8 +32022,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes an OAuth provider.",
-        "description": "Deletes an OAuth provider resource.",
+        "summary": "Delete the Oauth Provider object by name or id",
+        "description": "Delete the Oauth Provider object by name or id",
         "operationId": "oauth_provider_del",
         "security": [
           {
@@ -34436,501 +32062,6 @@
         ]
       }
     },
-    "/orgs/{org}/billings": {
-      "description": "The collection of Billing operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        }
-      ],
-      "post": {
-        "summary": "Create a Billing object",
-        "description": "Create a Billing object",
-        "operationId": "billing_create",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/billing#create"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Billing"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/Billing"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Billing"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Billing"
-                }
-              }
-            },
-            "headers": {
-              "Location": {
-                "$ref": "#/components/headers/Location"
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Resources",
-          "Resource: Billing"
-        ]
-      },
-      "get": {
-        "summary": "List the Billing objects",
-        "description": "List the Billing objects",
-        "operationId": "billing_list",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/billing#list"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BillingList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/BillingList"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Resources",
-          "Resource: Billing"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Billing objects",
-        "description": "Clear the Billing objects",
-        "operationId": "billing_clear",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/billing#clear"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/confirm"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Success"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Resources",
-          "Resource: Billing"
-        ]
-      }
-    },
-    "/orgs/{org}/billings/{billing}": {
-      "description": "Billing object operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/billing"
-        }
-      ],
-      "get": {
-        "summary": "Get the Billing object by name or id",
-        "description": "Get the Billing object by name or id",
-        "operationId": "billing_get",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/billing#get"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Billing"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Billing"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Resources",
-          "Resource: Billing"
-        ]
-      },
-      "patch": {
-        "summary": "Update the Billing object by name or id",
-        "description": "Update the Billing object by name or id",
-        "operationId": "billing_update",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/billing#update"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Billing"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/Billing"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Billing"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Billing"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Resources",
-          "Resource: Billing"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Billing object by name or id",
-        "description": "Delete the Billing object by name or id",
-        "operationId": "billing_del",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/billing#del"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful delete",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Billing"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Billing"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Resources",
-          "Resource: Billing"
-        ]
-      }
-    },
-    "/orgs/{org}/billings/{billing}/jobs": {
-      "description": "The collection of Job operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/billing"
-        }
-      ],
-      "get": {
-        "summary": "List the Job objects",
-        "description": "List the Job objects",
-        "operationId": "job_list",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/job#list"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/JobList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/JobList"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Resources",
-          "Resource: Job"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Job objects",
-        "description": "Clear the Job objects",
-        "operationId": "job_clear",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/job#clear"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/confirm"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Success"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Resources",
-          "Resource: Job"
-        ]
-      }
-    },
-    "/orgs/{org}/billings/{billing}/jobs/{job}": {
-      "description": "Job object operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/billing"
-        },
-        {
-          "$ref": "#/components/parameters/job"
-        }
-      ],
-      "get": {
-        "summary": "Get the Job object by name or id",
-        "description": "Get the Job object by name or id",
-        "operationId": "job_get",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/job#get"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Job"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Job"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Resources",
-          "Resource: Job"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Job object by name or id",
-        "description": "Delete the Job object by name or id",
-        "operationId": "job_del",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/job#del"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful delete",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Job"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Job"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Resources",
-          "Resource: Job"
-        ]
-      }
-    },
     "/orgs/{org}/billings/{billing}/jobs/{job}/retry": {
       "parameters": [
         {
@@ -34960,7 +32091,7 @@
         },
         "parameters": [
           {
-            "$ref": "#/components/parameters/confirm"
+            "$ref": "#/components/parameters/operation"
           }
         ],
         "responses": {
@@ -34985,8 +32116,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a TLS client profile.",
-        "description": "Creates a TLS client profile.",
+        "summary": "Create a TLS Client Profile object",
+        "description": "Create a TLS Client Profile object",
         "operationId": "tls_client_profile_create",
         "security": [
           {
@@ -35044,8 +32175,8 @@
         ]
       },
       "get": {
-        "summary": "Lists TLS client profiles.",
-        "description": "Returns the list of all TLS client profiles belonging to a provider organization.",
+        "summary": "List all TLS Client Profile objects in all collections",
+        "description": "List all TLS Client Profile objects in all collections",
         "operationId": "tls_client_profile_listAll",
         "security": [
           {
@@ -35095,8 +32226,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears TLS client profiles.",
-        "description": "Removes all TLS client profiles belonging to a provider organization.",
+        "summary": "Clear all TLS Client Profile objects in all collections",
+        "description": "Clear all TLS Client Profile objects in all collections",
         "operationId": "tls_client_profile_clearAll",
         "security": [
           {
@@ -35142,8 +32273,8 @@
         }
       ],
       "get": {
-        "summary": "Lists TLS client profile versions.",
-        "description": "Returns all versions of the named TLS client profile belonging to a provider organization.",
+        "summary": "List the TLS Client Profile objects",
+        "description": "List the TLS Client Profile objects",
         "operationId": "tls_client_profile_list",
         "security": [
           {
@@ -35193,8 +32324,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears TLS client profile versions.",
-        "description": "Removes all versions of the named TLS client profile belonging to a provider organization.",
+        "summary": "Clear the TLS Client Profile objects",
+        "description": "Clear the TLS Client Profile objects",
         "operationId": "tls_client_profile_clear",
         "security": [
           {
@@ -35237,8 +32368,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a TLS client profile.",
-        "description": "Returns a TLS client profile belonging to a provider organization.",
+        "summary": "Get the TLS Client Profile object by id",
+        "description": "Get the TLS Client Profile object by id",
         "operationId": "tls_client_profile_get",
         "security": [
           {
@@ -35282,8 +32413,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a TLS client profile.",
-        "description": "Updates a TLS client profile.",
+        "summary": "Update the TLS Client Profile object by id",
+        "description": "Update the TLS Client Profile object by id",
         "operationId": "tls_client_profile_update",
         "security": [
           {
@@ -35336,8 +32467,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a TLS client profile.",
-        "description": "Deletes a TLS client profile belonging to a provider organization.",
+        "summary": "Delete the TLS Client Profile object by id",
+        "description": "Delete the TLS Client Profile object by id",
         "operationId": "tls_client_profile_del",
         "security": [
           {
@@ -35390,8 +32521,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a TLS client profile.",
-        "description": "Returns a TLS client profile belonging to a provider organization.",
+        "summary": "Get the TLS Client Profile object by name and version",
+        "description": "Get the TLS Client Profile object by name and version",
         "operationId": "tls_client_profile_getByNameVersion",
         "security": [
           {
@@ -35435,8 +32566,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a TLS client profile.",
-        "description": "Updates a TLS client profile.",
+        "summary": "Update the TLS Client Profile object by name and version",
+        "description": "Update the TLS Client Profile object by name and version",
         "operationId": "tls_client_profile_updateByNameVersion",
         "security": [
           {
@@ -35537,8 +32668,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a keystore.",
-        "description": "Creates a keystore belonging to a provider organization.",
+        "summary": "Create a Keystore object",
+        "description": "Create a Keystore object",
         "operationId": "keystore_create",
         "security": [
           {
@@ -35596,8 +32727,8 @@
         ]
       },
       "get": {
-        "summary": "Lists keystores.",
-        "description": "Lists all keystores belonging to a provider organization.",
+        "summary": "List the Keystore objects",
+        "description": "List the Keystore objects",
         "operationId": "keystore_list",
         "security": [
           {
@@ -35647,8 +32778,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears keystores.",
-        "description": "Removes all keystores belonging to a provider organization.",
+        "summary": "Clear the Keystore objects",
+        "description": "Clear the Keystore objects",
         "operationId": "keystore_clear",
         "security": [
           {
@@ -35691,8 +32822,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a keystore.",
-        "description": "Returns a keystores belonging to a provider organization.",
+        "summary": "Get the Keystore object by name or id",
+        "description": "Get the Keystore object by name or id",
         "operationId": "keystore_get",
         "security": [
           {
@@ -35736,8 +32867,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a keystore.",
-        "description": "Updates a keystore belonging to a provider organization.",
+        "summary": "Update the Keystore object by name or id",
+        "description": "Update the Keystore object by name or id",
         "operationId": "keystore_update",
         "security": [
           {
@@ -35790,8 +32921,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a keystore.",
-        "description": "Deletes a keystore belonging to a provider organization.",
+        "summary": "Delete the Keystore object by name or id",
+        "description": "Delete the Keystore object by name or id",
         "operationId": "keystore_del",
         "security": [
           {
@@ -35838,8 +32969,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a trust store.",
-        "description": "Creates a trust store.",
+        "summary": "Create a Truststore object",
+        "description": "Create a Truststore object",
         "operationId": "truststore_create",
         "security": [
           {
@@ -35897,8 +33028,8 @@
         ]
       },
       "get": {
-        "summary": "Lists trust stores.",
-        "description": "Returns the list of all trust stores belonging to a provider organization.",
+        "summary": "List the Truststore objects",
+        "description": "List the Truststore objects",
         "operationId": "truststore_list",
         "security": [
           {
@@ -35948,8 +33079,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears trust stores.",
-        "description": "Removes all trust stores belonging to a provider organization.",
+        "summary": "Clear the Truststore objects",
+        "description": "Clear the Truststore objects",
         "operationId": "truststore_clear",
         "security": [
           {
@@ -35992,8 +33123,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a trust store.",
-        "description": "Returns a trust store.",
+        "summary": "Get the Truststore object by name or id",
+        "description": "Get the Truststore object by name or id",
         "operationId": "truststore_get",
         "security": [
           {
@@ -36037,8 +33168,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a trust store.",
-        "description": "Updates a trust store.",
+        "summary": "Update the Truststore object by name or id",
+        "description": "Update the Truststore object by name or id",
         "operationId": "truststore_update",
         "security": [
           {
@@ -36091,8 +33222,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a trust store.",
-        "description": "Deletes a trust store.",
+        "summary": "Delete the Truststore object by name or id",
+        "description": "Delete the Truststore object by name or id",
         "operationId": "truststore_del",
         "security": [
           {
@@ -36142,8 +33273,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a trust store entry.",
-        "description": "Adds an entry to a trust store.",
+        "summary": "Create a Entry object",
+        "description": "Create a Entry object",
         "operationId": "entry_createTruststoreScope",
         "security": [
           {
@@ -36201,8 +33332,8 @@
         ]
       },
       "get": {
-        "summary": "Lists trust store entries.",
-        "description": "Returns the list of entries from a trust store.",
+        "summary": "List the Entry objects",
+        "description": "List the Entry objects",
         "operationId": "entry_listTruststoreScope",
         "security": [
           {
@@ -36252,8 +33383,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears trust store entries.",
-        "description": "Deletes all entries from a trust store.",
+        "summary": "Clear the Entry objects",
+        "description": "Clear the Entry objects",
         "operationId": "entry_clearTruststoreScope",
         "security": [
           {
@@ -36299,8 +33430,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a trust store entry.",
-        "description": "Returns the given entry from a trust store.",
+        "summary": "Get the Entry object by name or id",
+        "description": "Get the Entry object by name or id",
         "operationId": "entry_getTruststoreScope",
         "security": [
           {
@@ -36344,8 +33475,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a trust store entry.",
-        "description": "Updates the given entry in a trust store.",
+        "summary": "Update the Entry object by name or id",
+        "description": "Update the Entry object by name or id",
         "operationId": "entry_updateTruststoreScope",
         "security": [
           {
@@ -36398,8 +33529,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a trust store entry.",
-        "description": "Deletes the given entry from a trust store.",
+        "summary": "Delete the Entry object by name or id",
+        "description": "Delete the Entry object by name or id",
         "operationId": "entry_delTruststoreScope",
         "security": [
           {
@@ -36449,8 +33580,8 @@
         }
       ],
       "get": {
-        "summary": "Returns catalog settings.",
-        "description": "Returns the settings for a catalog.",
+        "summary": "Get the Catalog Setting object",
+        "description": "Get the Catalog Setting object",
         "operationId": "catalog_setting_singletonGet",
         "security": [
           {
@@ -36494,8 +33625,8 @@
         ]
       },
       "put": {
-        "summary": "Updates catalog settings.",
-        "description": "Updates the settings for a catalog.",
+        "summary": "Update the Catalog Setting object",
+        "description": "Update the Catalog Setting object",
         "operationId": "catalog_setting_singletonUpdate",
         "security": [
           {
@@ -36559,8 +33690,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a configured gateway service.",
-        "description": "Adds the gateway service to the list of configured gateway services for a catalog.",
+        "summary": "Create a Configured Gateway Service object",
+        "description": "Create a Configured Gateway Service object",
         "operationId": "configured_gateway_service_createCatalogScope",
         "security": [
           {
@@ -36618,8 +33749,8 @@
         ]
       },
       "get": {
-        "summary": "Lists configured gateway services.",
-        "description": "Returns the list of configured gateway services for a catalog.",
+        "summary": "List the Configured Gateway Service objects",
+        "description": "List the Configured Gateway Service objects",
         "operationId": "configured_gateway_service_listCatalogScope",
         "security": [
           {
@@ -36669,8 +33800,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears configured gateway services.",
-        "description": "Removes all gateway services from the list of configured gateway services for a catalog.",
+        "summary": "Clear the Configured Gateway Service objects",
+        "description": "Clear the Configured Gateway Service objects",
         "operationId": "configured_gateway_service_clearCatalogScope",
         "security": [
           {
@@ -36716,8 +33847,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a configured gateway service.",
-        "description": "Returns the given gateway service from the list of configured gateway services for a catalog.",
+        "summary": "Get the Configured Gateway Service object by name or id",
+        "description": "Get the Configured Gateway Service object by name or id",
         "operationId": "configured_gateway_service_getCatalogScope",
         "security": [
           {
@@ -36761,8 +33892,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a configured gateway service.",
-        "description": "Removes the given gateway service from the list of configured gateway services for a catalog.",
+        "summary": "Delete the Configured Gateway Service object by name or id",
+        "description": "Delete the Configured Gateway Service object by name or id",
         "operationId": "configured_gateway_service_delCatalogScope",
         "security": [
           {
@@ -36815,8 +33946,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a configured gateway service.",
-        "description": "Adds the gateway service to the list of configured gateway services for a space.",
+        "summary": "Create a Configured Gateway Service object",
+        "description": "Create a Configured Gateway Service object",
         "operationId": "configured_gateway_service_createSpaceScope",
         "security": [
           {
@@ -36874,8 +34005,8 @@
         ]
       },
       "get": {
-        "summary": "Lists configured gateway services.",
-        "description": "Returns the list of configured gateway services for a space.",
+        "summary": "List the Configured Gateway Service objects",
+        "description": "List the Configured Gateway Service objects",
         "operationId": "configured_gateway_service_listSpaceScope",
         "security": [
           {
@@ -36925,8 +34056,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears configured gateway services.",
-        "description": "Removes all gateway services from the list of configured gateway services for a space.",
+        "summary": "Clear the Configured Gateway Service objects",
+        "description": "Clear the Configured Gateway Service objects",
         "operationId": "configured_gateway_service_clearSpaceScope",
         "security": [
           {
@@ -36975,8 +34106,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a configured gateway service.",
-        "description": "Returns the given gateway service from the list of configured gateway services for a space.",
+        "summary": "Get the Configured Gateway Service object by name or id",
+        "description": "Get the Configured Gateway Service object by name or id",
         "operationId": "configured_gateway_service_getSpaceScope",
         "security": [
           {
@@ -37020,8 +34151,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a configured gateway service.",
-        "description": "Removes the given gateway service from the list of configured gateway services for a space.",
+        "summary": "Delete the Configured Gateway Service object by name or id",
+        "description": "Delete the Configured Gateway Service object by name or id",
         "operationId": "configured_gateway_service_delSpaceScope",
         "security": [
           {
@@ -37071,8 +34202,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a catalog user registry.",
-        "description": "Adds a user registry to the list of catalog user registries for a catalog.",
+        "summary": "Create a Configured Catalog User Registry object",
+        "description": "Create a Configured Catalog User Registry object",
         "operationId": "configured_catalog_user_registry_create",
         "security": [
           {
@@ -37130,8 +34261,8 @@
         ]
       },
       "get": {
-        "summary": "Lists catalog user registries.",
-        "description": "Returns the list of configured catalog user registries for a catalog.",
+        "summary": "List the Configured Catalog User Registry objects",
+        "description": "List the Configured Catalog User Registry objects",
         "operationId": "configured_catalog_user_registry_list",
         "security": [
           {
@@ -37195,8 +34326,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a catalog user registry.",
-        "description": "Returns the given configured catalog user registry for a catalog.",
+        "summary": "Get the Configured Catalog User Registry object by name or id",
+        "description": "Get the Configured Catalog User Registry object by name or id",
         "operationId": "configured_catalog_user_registry_get",
         "security": [
           {
@@ -37240,8 +34371,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a catalog user registry.",
-        "description": "Removes a user registry from the list of catalog user registries for a catalog.",
+        "summary": "Delete the Configured Catalog User Registry object by name or id",
+        "description": "Delete the Configured Catalog User Registry object by name or id",
         "operationId": "configured_catalog_user_registry_del",
         "security": [
           {
@@ -37366,8 +34497,8 @@
         }
       ],
       "post": {
-        "summary": "Creates an API user registry.",
-        "description": "Adds a user registry to the list of configured API user registries for a catalog.",
+        "summary": "Create a Configured API User Registry object",
+        "description": "Create a Configured API User Registry object",
         "operationId": "configured_api_user_registry_createCatalogScope",
         "security": [
           {
@@ -37425,8 +34556,8 @@
         ]
       },
       "get": {
-        "summary": "Lists API user registries.",
-        "description": "Returns the list of configured API user registries for a catalog.",
+        "summary": "List the Configured API User Registry objects",
+        "description": "List the Configured API User Registry objects",
         "operationId": "configured_api_user_registry_listCatalogScope",
         "security": [
           {
@@ -37476,8 +34607,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears API user registries from a catalog.",
-        "description": "Removes all configured API user registries from a catalog.",
+        "summary": "Clear the Configured API User Registry objects",
+        "description": "Clear the Configured API User Registry objects",
         "operationId": "configured_api_user_registry_clearCatalogScope",
         "security": [
           {
@@ -37523,8 +34654,8 @@
         }
       ],
       "get": {
-        "summary": "Returnns an API user registry.",
-        "description": "Returns the given configured API user registry for a catalog.",
+        "summary": "Get the Configured API User Registry object by name or id",
+        "description": "Get the Configured API User Registry object by name or id",
         "operationId": "configured_api_user_registry_getCatalogScope",
         "security": [
           {
@@ -37568,8 +34699,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes an API user registry.",
-        "description": "Removes a user registry from the list of configured API user registries for a catalog.",
+        "summary": "Delete the Configured API User Registry object by name or id",
+        "description": "Delete the Configured API User Registry object by name or id",
         "operationId": "configured_api_user_registry_delCatalogScope",
         "security": [
           {
@@ -37622,8 +34753,8 @@
         }
       ],
       "post": {
-        "summary": "Creates an API user registry.",
-        "description": "Adds a user registry to the list of configured API user registries for a space.",
+        "summary": "Create a Configured API User Registry object",
+        "description": "Create a Configured API User Registry object",
         "operationId": "configured_api_user_registry_createSpaceScope",
         "security": [
           {
@@ -37681,8 +34812,8 @@
         ]
       },
       "get": {
-        "summary": "Lists API user registries.",
-        "description": "Returns the list of configured API user registries for a space.",
+        "summary": "List the Configured API User Registry objects",
+        "description": "List the Configured API User Registry objects",
         "operationId": "configured_api_user_registry_listSpaceScope",
         "security": [
           {
@@ -37732,8 +34863,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears API user registries from a space.",
-        "description": "Removes all configured API user registries from a space.",
+        "summary": "Clear the Configured API User Registry objects",
+        "description": "Clear the Configured API User Registry objects",
         "operationId": "configured_api_user_registry_clearSpaceScope",
         "security": [
           {
@@ -37782,8 +34913,8 @@
         }
       ],
       "get": {
-        "summary": "Returns an API user registry.",
-        "description": "Returns the given configured API user registry for a space.",
+        "summary": "Get the Configured API User Registry object by name or id",
+        "description": "Get the Configured API User Registry object by name or id",
         "operationId": "configured_api_user_registry_getSpaceScope",
         "security": [
           {
@@ -37827,8 +34958,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes an API user registry.",
-        "description": "Removes a user registry from the list of configured API user registries for a space.",
+        "summary": "Delete the Configured API User Registry object by name or id",
+        "description": "Delete the Configured API User Registry object by name or id",
         "operationId": "configured_api_user_registry_delSpaceScope",
         "security": [
           {
@@ -37878,8 +35009,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a configured TLS client profile.",
-        "description": "Adds a TLS client profile to the list of configured TLS client profiles for a catalog.",
+        "summary": "Create a Configured TLS Client Profile object",
+        "description": "Create a Configured TLS Client Profile object",
         "operationId": "configured_tls_client_profile_createCatalogScope",
         "security": [
           {
@@ -37937,8 +35068,8 @@
         ]
       },
       "get": {
-        "summary": "Lists TLS client profiles.",
-        "description": "Returns the list of configured TLS client profiles for a catalog.",
+        "summary": "List all Configured TLS Client Profile objects in all collections",
+        "description": "List all Configured TLS Client Profile objects in all collections",
         "operationId": "configured_tls_client_profile_listAllCatalogScope",
         "security": [
           {
@@ -37988,8 +35119,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears TLS client profiles.",
-        "description": "Removes all TLS client profiles from the list of configured TLS client profiles for a catalog.",
+        "summary": "Clear all Configured TLS Client Profile objects in all collections",
+        "description": "Clear all Configured TLS Client Profile objects in all collections",
         "operationId": "configured_tls_client_profile_clearAllCatalogScope",
         "security": [
           {
@@ -38035,8 +35166,8 @@
         }
       ],
       "get": {
-        "summary": "Lists TLS client profiles.",
-        "description": "Returns all versions of the named TLS client profile from the list of configured TLS client profiles for a catalog.",
+        "summary": "List the Configured TLS Client Profile objects",
+        "description": "List the Configured TLS Client Profile objects",
         "operationId": "configured_tls_client_profile_listCatalogScope",
         "security": [
           {
@@ -38086,8 +35217,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears TLS client profiles.",
-        "description": "Removes all versions of the named TLS client profile from the list of configured TLS client profiles for a catalog.",
+        "summary": "Clear the Configured TLS Client Profile objects",
+        "description": "Clear the Configured TLS Client Profile objects",
         "operationId": "configured_tls_client_profile_clearCatalogScope",
         "security": [
           {
@@ -38133,8 +35264,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a TLS client profile.",
-        "description": "Returns the given TLS client profile from the list of configured TLS client profiles for a catalog.",
+        "summary": "Get the Configured TLS Client Profile object by id",
+        "description": "Get the Configured TLS Client Profile object by id",
         "operationId": "configured_tls_client_profile_getCatalogScope",
         "security": [
           {
@@ -38178,8 +35309,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a TLS client profile.",
-        "description": "Removes the given TLS client profile from the list of configured TLS client profiles for a catalog.",
+        "summary": "Delete the Configured TLS Client Profile object by id",
+        "description": "Delete the Configured TLS Client Profile object by id",
         "operationId": "configured_tls_client_profile_delCatalogScope",
         "security": [
           {
@@ -38235,8 +35366,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a TLS client profile.",
-        "description": "Returns the given TLS client profile from the list of configured TLS client profiles for a catalog.",
+        "summary": "Get the Configured TLS Client Profile object by name and version",
+        "description": "Get the Configured TLS Client Profile object by name and version",
         "operationId": "configured_tls_client_profile_getByNameVersionCatalogScope",
         "security": [
           {
@@ -38334,8 +35465,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a configured TLS client profile.",
-        "description": "Adds a TLS client profile to the list of configured TLS client profiles for a space.",
+        "summary": "Create a Configured TLS Client Profile object",
+        "description": "Create a Configured TLS Client Profile object",
         "operationId": "configured_tls_client_profile_createSpaceScope",
         "security": [
           {
@@ -38393,8 +35524,8 @@
         ]
       },
       "get": {
-        "summary": "Lists TLS client profiles.",
-        "description": "Returns the list of configured TLS client profiles for a space.",
+        "summary": "List all Configured TLS Client Profile objects in all collections",
+        "description": "List all Configured TLS Client Profile objects in all collections",
         "operationId": "configured_tls_client_profile_listAllSpaceScope",
         "security": [
           {
@@ -38444,8 +35575,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears TLS client profiles.",
-        "description": "Removes all TLS client profiles from the list of configured TLS client profiles for a space.",
+        "summary": "Clear all Configured TLS Client Profile objects in all collections",
+        "description": "Clear all Configured TLS Client Profile objects in all collections",
         "operationId": "configured_tls_client_profile_clearAllSpaceScope",
         "security": [
           {
@@ -38494,8 +35625,8 @@
         }
       ],
       "get": {
-        "summary": "Lists TLS client profiles.",
-        "description": "Returns all versions of the named TLS client profile from the list of configured TLS client profiles for a space.",
+        "summary": "List the Configured TLS Client Profile objects",
+        "description": "List the Configured TLS Client Profile objects",
         "operationId": "configured_tls_client_profile_listSpaceScope",
         "security": [
           {
@@ -38545,8 +35676,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears TLS client profiles.",
-        "description": "Removes all versions of the named TLS client profile from the list of configured TLS client profiles for a space.",
+        "summary": "Clear the Configured TLS Client Profile objects",
+        "description": "Clear the Configured TLS Client Profile objects",
         "operationId": "configured_tls_client_profile_clearSpaceScope",
         "security": [
           {
@@ -38595,8 +35726,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a TLS client profile.",
-        "description": "Returns the given TLS client profile from the list of configured TLS client profiles for a space.",
+        "summary": "Get the Configured TLS Client Profile object by id",
+        "description": "Get the Configured TLS Client Profile object by id",
         "operationId": "configured_tls_client_profile_getSpaceScope",
         "security": [
           {
@@ -38640,8 +35771,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a TLS client profile.",
-        "description": "Removes the given TLS client profile from the list of configured TLS client profiles for a space.",
+        "summary": "Delete the Configured TLS Client Profile object by id",
+        "description": "Delete the Configured TLS Client Profile object by id",
         "operationId": "configured_tls_client_profile_delSpaceScope",
         "security": [
           {
@@ -38700,8 +35831,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a TLS client profile.",
-        "description": "Returns the given TLS client profile from the list of configured TLS client profiles for a space.",
+        "summary": "Get the Configured TLS Client Profile object by name and version",
+        "description": "Get the Configured TLS Client Profile object by name and version",
         "operationId": "configured_tls_client_profile_getByNameVersionSpaceScope",
         "security": [
           {
@@ -38785,259 +35916,6 @@
         ]
       }
     },
-    "/catalogs/{org}/{catalog}/configured-billings": {
-      "description": "The collection of Configured Billing operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "post": {
-        "summary": "Create a Configured Billing object",
-        "description": "Create a Configured Billing object",
-        "operationId": "configured_billing_create",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-billing#create"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ConfiguredBilling"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/ConfiguredBilling"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConfiguredBilling"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConfiguredBilling"
-                }
-              }
-            },
-            "headers": {
-              "Location": {
-                "$ref": "#/components/headers/Location"
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Configured Billing"
-        ]
-      },
-      "get": {
-        "summary": "List the Configured Billing objects",
-        "description": "List the Configured Billing objects",
-        "operationId": "configured_billing_list",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-billing#list"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConfiguredBillingList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConfiguredBillingList"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Configured Billing"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Configured Billing objects",
-        "description": "Clear the Configured Billing objects",
-        "operationId": "configured_billing_clear",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-billing#clear"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/confirm"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Success"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Configured Billing"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/configured-billings/{configured-billing}": {
-      "description": "Configured Billing object operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/configured-billing"
-        }
-      ],
-      "get": {
-        "summary": "Get the Configured Billing object by name or id",
-        "description": "Get the Configured Billing object by name or id",
-        "operationId": "configured_billing_get",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-billing#get"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConfiguredBilling"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConfiguredBilling"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Configured Billing"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Configured Billing object by name or id",
-        "description": "Delete the Configured Billing object by name or id",
-        "operationId": "configured_billing_del",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-billing#del"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful delete",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConfiguredBilling"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConfiguredBilling"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Configured Billing"
-        ]
-      }
-    },
     "/catalogs/{org}/{catalog}/configured-oauth-providers": {
       "description": "The collection of Configured Oauth Provider operations",
       "parameters": [
@@ -39049,8 +35927,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a configured OAuth provider.",
-        "description": "Adds an OAuth provider to the list of configured OAuth providers for a catalog.",
+        "summary": "Create a Configured Oauth Provider object",
+        "description": "Create a Configured Oauth Provider object",
         "operationId": "configured_oauth_provider_createCatalogScope",
         "security": [
           {
@@ -39108,8 +35986,8 @@
         ]
       },
       "get": {
-        "summary": "Lists configured OAuth providers.",
-        "description": "Returns the list of configured OAuth providers for a catalog.",
+        "summary": "List the Configured Oauth Provider objects",
+        "description": "List the Configured Oauth Provider objects",
         "operationId": "configured_oauth_provider_listCatalogScope",
         "security": [
           {
@@ -39159,8 +36037,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears configured OAuth providers.",
-        "description": "Removes all OAuth providers from the list of configured OAuth providers for a catalog.",
+        "summary": "Clear the Configured Oauth Provider objects",
+        "description": "Clear the Configured Oauth Provider objects",
         "operationId": "configured_oauth_provider_clearCatalogScope",
         "security": [
           {
@@ -39206,8 +36084,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a configured OAuth provider.",
-        "description": "Returns the given OAuth provider from the list of configured OAuth providers for a catalog.",
+        "summary": "Get the Configured Oauth Provider object by name or id",
+        "description": "Get the Configured Oauth Provider object by name or id",
         "operationId": "configured_oauth_provider_getCatalogScope",
         "security": [
           {
@@ -39251,8 +36129,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a configured OAuth provider.",
-        "description": "Removes an OAuth provider from the list of configured OAuth providers for a catalog.",
+        "summary": "Delete the Configured Oauth Provider object by name or id",
+        "description": "Delete the Configured Oauth Provider object by name or id",
         "operationId": "configured_oauth_provider_delCatalogScope",
         "security": [
           {
@@ -39305,8 +36183,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a configured OAuth provider.",
-        "description": "Adds an OAuth provider to the list of configured OAuth providers for a space.",
+        "summary": "Create a Configured Oauth Provider object",
+        "description": "Create a Configured Oauth Provider object",
         "operationId": "configured_oauth_provider_createSpaceScope",
         "security": [
           {
@@ -39364,8 +36242,8 @@
         ]
       },
       "get": {
-        "summary": "Lists configured OAuth providers.",
-        "description": "Returns the list of configured OAuth providers for a space.",
+        "summary": "List the Configured Oauth Provider objects",
+        "description": "List the Configured Oauth Provider objects",
         "operationId": "configured_oauth_provider_listSpaceScope",
         "security": [
           {
@@ -39416,7 +36294,7 @@
       },
       "delete": {
         "summary": "Clear the Configured Oauth Provider objects",
-        "description": "Removes all OAuth providers from the list of configured OAuth providers for a catalog.",
+        "description": "Clear the Configured Oauth Provider objects",
         "operationId": "configured_oauth_provider_clearSpaceScope",
         "security": [
           {
@@ -39465,8 +36343,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a configured OAuth provider.",
-        "description": "Returns the given OAuth provider from the list of configured OAuth providers for a space.",
+        "summary": "Get the Configured Oauth Provider object by name or id",
+        "description": "Get the Configured Oauth Provider object by name or id",
         "operationId": "configured_oauth_provider_getSpaceScope",
         "security": [
           {
@@ -39511,7 +36389,7 @@
       },
       "delete": {
         "summary": "Delete the Configured Oauth Provider object by name or id",
-        "description": "Removes an OAuth provider from the list of configured OAuth providers for a space.",
+        "description": "Delete the Configured Oauth Provider object by name or id",
         "operationId": "configured_oauth_provider_delSpaceScope",
         "security": [
           {
@@ -39561,8 +36439,8 @@
         }
       ],
       "get": {
-        "summary": "Lists catalog notification templates.",
-        "description": "Returns the list of all notification templates for a catalog.",
+        "summary": "List all Notification Template objects in all collections",
+        "description": "List all Notification Template objects in all collections",
         "operationId": "notification_template_listAllCatalogScope",
         "security": [
           {
@@ -39623,8 +36501,8 @@
         }
       ],
       "get": {
-        "summary": "Lists catalog notification templates.",
-        "description": "Returns the list of all catalog notification templates set at the catalog level.",
+        "summary": "List the Notification Template objects",
+        "description": "List the Notification Template objects",
         "operationId": "notification_template_listCatalogSubcollectionCatalogScope",
         "security": [
           {
@@ -39688,8 +36566,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a catalog notification template.",
-        "description": "Returns a catalog notification template, set at the catalog level.",
+        "summary": "Get the Notification Template object by name or id",
+        "description": "Get the Notification Template object by name or id",
         "operationId": "notification_template_getCatalogSubcollectionCatalogScope",
         "security": [
           {
@@ -39733,8 +36611,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a catalog notification template.",
-        "description": "Returns the list of all catalog notification templates set at the catalog level.",
+        "summary": "Update the Notification Template object by name or id",
+        "description": "Update the Notification Template object by name or id",
         "operationId": "notification_template_updateCatalogSubcollectionCatalogScope",
         "security": [
           {
@@ -39798,8 +36676,8 @@
         }
       ],
       "get": {
-        "summary": "Lists space notification templates.",
-        "description": "Returns the list of all provider notification templates set at the provider organization level.",
+        "summary": "List the Notification Template objects",
+        "description": "List the Notification Template objects",
         "operationId": "notification_template_listSpaceSubcollectionCatalogScope",
         "security": [
           {
@@ -39863,8 +36741,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a space notification template.",
-        "description": "Returns a space notification template, set at the catalog level.",
+        "summary": "Get the Notification Template object by name or id",
+        "description": "Get the Notification Template object by name or id",
         "operationId": "notification_template_getSpaceSubcollectionCatalogScope",
         "security": [
           {
@@ -39908,8 +36786,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a space notification template.",
-        "description": "Updates a space notification template set at the catalog level.",
+        "summary": "Update the Notification Template object by name or id",
+        "description": "Update the Notification Template object by name or id",
         "operationId": "notification_template_updateSpaceSubcollectionCatalogScope",
         "security": [
           {
@@ -39973,8 +36851,8 @@
         }
       ],
       "get": {
-        "summary": "Lists consumer notification templates.",
-        "description": "Returns the list of all consumer notification templates set at the catalog level.",
+        "summary": "List the Notification Template objects",
+        "description": "List the Notification Template objects",
         "operationId": "notification_template_listConsumerSubcollectionCatalogScope",
         "security": [
           {
@@ -40038,8 +36916,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a consumer notification template.",
-        "description": "Returns a consumer notification template, set at the catalog level.",
+        "summary": "Get the Notification Template object by name or id",
+        "description": "Get the Notification Template object by name or id",
         "operationId": "notification_template_getConsumerSubcollectionCatalogScope",
         "security": [
           {
@@ -40083,8 +36961,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a consumer notification template.",
-        "description": "Updates a consumer notification template set at the catalog level.",
+        "summary": "Update the Notification Template object by name or id",
+        "description": "Update the Notification Template object by name or id",
         "operationId": "notification_template_updateConsumerSubcollectionCatalogScope",
         "security": [
           {
@@ -40148,8 +37026,8 @@
         }
       ],
       "get": {
-        "summary": "Lists catalog role defaults.",
-        "description": "Returns the list of all role defaults for a catalog.",
+        "summary": "List all Role Default objects in all collections",
+        "description": "List all Role Default objects in all collections",
         "operationId": "role_default_listAllCatalogScope",
         "security": [
           {
@@ -40210,8 +37088,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a consumer organization role default.",
-        "description": "Adds a consumer organization role default to a catalog.",
+        "summary": "Create a Role Default object",
+        "description": "Create a Role Default object",
         "operationId": "role_default_createConsumerSubcollectionCatalogScope",
         "security": [
           {
@@ -40269,8 +37147,8 @@
         ]
       },
       "get": {
-        "summary": "Lists consumer organization role defaults.",
-        "description": "Returns the list of consumer organization role defaults in a catalog.",
+        "summary": "List the Role Default objects",
+        "description": "List the Role Default objects",
         "operationId": "role_default_listConsumerSubcollectionCatalogScope",
         "security": [
           {
@@ -40320,8 +37198,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears consumer organization role defaults.",
-        "description": "Removes all consumer organization role defaults from a catalog.",
+        "summary": "Clear the Role Default objects",
+        "description": "Clear the Role Default objects",
         "operationId": "role_default_clearConsumerSubcollectionCatalogScope",
         "security": [
           {
@@ -40367,8 +37245,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a consumer organization role default.",
-        "description": "Returns a consumer organization role default for a catalog.",
+        "summary": "Get the Role Default object by name or id",
+        "description": "Get the Role Default object by name or id",
         "operationId": "role_default_getConsumerSubcollectionCatalogScope",
         "security": [
           {
@@ -40412,8 +37290,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a consumer organization role default.",
-        "description": "Updates a consumer organization role default in a catalog.",
+        "summary": "Update the Role Default object by name or id",
+        "description": "Update the Role Default object by name or id",
         "operationId": "role_default_updateConsumerSubcollectionCatalogScope",
         "security": [
           {
@@ -40466,8 +37344,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a consumer organization role default.",
-        "description": "Removes a consumer organization role default from a catalog.",
+        "summary": "Delete the Role Default object by name or id",
+        "description": "Delete the Role Default object by name or id",
         "operationId": "role_default_delConsumerSubcollectionCatalogScope",
         "security": [
           {
@@ -40517,8 +37395,8 @@
         }
       ],
       "patch": {
-        "summary": "Creates a catalog property.",
-        "description": "Updates the catalog properties in a catalog.",
+        "summary": "Augment the Configuration Property with additional name/value pairs",
+        "description": "Augment the Configuration Property with additional name/value pairs",
         "operationId": "property_mapCreateCatalogScope",
         "security": [
           {
@@ -40576,8 +37454,8 @@
         ]
       },
       "get": {
-        "summary": "Lists catalog properties.",
-        "description": "Returns the list of catalog properties for a catalog.",
+        "summary": "List the Configuration Property objects",
+        "description": "List the Configuration Property objects",
         "operationId": "property_mapListCatalogScope",
         "security": [
           {
@@ -40627,8 +37505,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears catalog properties.",
-        "description": "Removes all catalog properties from a catalog.",
+        "summary": "Clear the Configuration Property objects",
+        "description": "Clear the Configuration Property objects",
         "operationId": "property_mapClearCatalogScope",
         "security": [
           {
@@ -40674,8 +37552,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a catalog property.",
-        "description": "Returns a catalog property from a catalog.",
+        "summary": "Get the Configuration Property object",
+        "description": "Get the Configuration Property object",
         "operationId": "property_mapGetCatalogScope",
         "security": [
           {
@@ -40719,8 +37597,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a catalog property.",
-        "description": "Updates a catalog property in a catalog.",
+        "summary": "Update the Configuration Property object",
+        "description": "Update the Configuration Property object",
         "operationId": "property_mapUpdateCatalogScope",
         "security": [
           {
@@ -40773,8 +37651,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a catalog property.",
-        "description": "Removes a catalog property from a catalog.",
+        "summary": "Delete the Configuration Property object",
+        "description": "Delete the Configuration Property object",
         "operationId": "property_mapDelCatalogScope",
         "security": [
           {
@@ -40821,8 +37699,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a catalog.",
-        "description": "Creates a catalog belonging to a provider org.",
+        "summary": "Create a Catalog object",
+        "description": "Create a Catalog object",
         "operationId": "catalog_create",
         "security": [
           {
@@ -40880,8 +37758,8 @@
         ]
       },
       "get": {
-        "summary": "Lists catalogs.",
-        "description": "Returns a list of catalogs belonging to the given provider org.",
+        "summary": "List the Catalog objects",
+        "description": "List the Catalog objects",
         "operationId": "catalog_list",
         "security": [
           {
@@ -40931,8 +37809,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears the catalogs in a provider organization.",
-        "description": "Removes all catalogs belonging to a provider organization.",
+        "summary": "Clear the Catalog objects",
+        "description": "Clear the Catalog objects",
         "operationId": "catalog_clear",
         "security": [
           {
@@ -40975,8 +37853,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a catalog.",
-        "description": "Returns a catalog. The catalog's CatalogSettings provides more information.",
+        "summary": "Get the Catalog object by name or id",
+        "description": "Get the Catalog object by name or id",
         "operationId": "catalog_get",
         "security": [
           {
@@ -41020,8 +37898,8 @@
         ]
       },
       "patch": {
-        "summary": "Modifies a catalog.",
-        "description": "Modifies a catalog object. Catalog settings are subordinate to the catalog itself; see also the operation to update the settings for a catalog.",
+        "summary": "Update the Catalog object by name or id",
+        "description": "Update the Catalog object by name or id",
         "operationId": "catalog_update",
         "security": [
           {
@@ -41074,8 +37952,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a catalog.",
-        "description": "Removes a catalog.",
+        "summary": "Delete the Catalog object by name or id",
+        "description": "Delete the Catalog object by name or id",
         "operationId": "catalog_del",
         "security": [
           {
@@ -41607,8 +38485,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a catalog invitation.",
-        "description": "Creates a catalog owner invitation.",
+        "summary": "Create a Catalog Invitation object",
+        "description": "Create a Catalog Invitation object",
         "operationId": "invitation_createCatalogScope",
         "security": [
           {
@@ -41666,8 +38544,8 @@
         ]
       },
       "get": {
-        "summary": "Lists catalog invitations.",
-        "description": "Returns the list of all catalog owner invitations.",
+        "summary": "List the Catalog Invitation objects",
+        "description": "List the Catalog Invitation objects",
         "operationId": "invitation_listCatalogScope",
         "security": [
           {
@@ -41717,8 +38595,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears catalog invitations.",
-        "description": "Removes all catalog owner invitations.",
+        "summary": "Clear the Catalog Invitation objects",
+        "description": "Clear the Catalog Invitation objects",
         "operationId": "invitation_clearCatalogScope",
         "security": [
           {
@@ -41761,8 +38639,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a catalog invitation.",
-        "description": "Returns a catalog owner invitation.",
+        "summary": "Get the Catalog Invitation object by name or id",
+        "description": "Get the Catalog Invitation object by name or id",
         "operationId": "invitation_getCatalogScope",
         "security": [
           {
@@ -41806,8 +38684,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a catalog invitation.",
-        "description": "Updates a catalog owner invitation.",
+        "summary": "Update the Catalog Invitation object by name or id",
+        "description": "Update the Catalog Invitation object by name or id",
         "operationId": "invitation_updateCatalogScope",
         "security": [
           {
@@ -41860,8 +38738,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a catalog invitation.",
-        "description": "Deletes a catalog owner invitation.",
+        "summary": "Delete the Catalog Invitation object by name or id",
+        "description": "Delete the Catalog Invitation object by name or id",
         "operationId": "invitation_delCatalogScope",
         "security": [
           {
@@ -42115,8 +38993,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a catalog member invitation.",
-        "description": "Creates a catalog member invitation.",
+        "summary": "Create a Member Invitation object",
+        "description": "Create a Member Invitation object",
         "operationId": "member_invitation_createCatalogScope",
         "security": [
           {
@@ -42174,8 +39052,8 @@
         ]
       },
       "get": {
-        "summary": "Lists catalog member invitations.",
-        "description": "Returns the list of member invitations for a catalog.",
+        "summary": "List the Member Invitation objects",
+        "description": "List the Member Invitation objects",
         "operationId": "member_invitation_listCatalogScope",
         "security": [
           {
@@ -42225,8 +39103,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears catalog member invitations.",
-        "description": "Removes all member invitations for a catalog.",
+        "summary": "Clear the Member Invitation objects",
+        "description": "Clear the Member Invitation objects",
         "operationId": "member_invitation_clearCatalogScope",
         "security": [
           {
@@ -42272,8 +39150,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a catalog member invitation.",
-        "description": "Returns a catalog member invitation.",
+        "summary": "Get the Member Invitation object by name or id",
+        "description": "Get the Member Invitation object by name or id",
         "operationId": "member_invitation_getCatalogScope",
         "security": [
           {
@@ -42317,8 +39195,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a catalog member invitation.",
-        "description": "Updates a member invitation to a catalog.",
+        "summary": "Update the Member Invitation object by name or id",
+        "description": "Update the Member Invitation object by name or id",
         "operationId": "member_invitation_updateCatalogScope",
         "security": [
           {
@@ -42371,8 +39249,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a catalog member invitation.",
-        "description": "Deletes a catalog member invitation.",
+        "summary": "Delete the Member Invitation object by name or id",
+        "description": "Delete the Member Invitation object by name or id",
         "operationId": "member_invitation_delCatalogScope",
         "security": [
           {
@@ -42635,8 +39513,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a catalog member.",
-        "description": "Adds a member to a catalog.",
+        "summary": "Create a Member object",
+        "description": "Create a Member object",
         "operationId": "member_createCatalogScope",
         "security": [
           {
@@ -42694,8 +39572,8 @@
         ]
       },
       "get": {
-        "summary": "Lists catalog members.",
-        "description": "Returns the list of members of a catalog.",
+        "summary": "List the Member objects",
+        "description": "List the Member objects",
         "operationId": "member_listCatalogScope",
         "security": [
           {
@@ -42745,8 +39623,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears catalog members.",
-        "description": "Removes all members from a catalog.",
+        "summary": "Clear the Member objects",
+        "description": "Clear the Member objects",
         "operationId": "member_clearCatalogScope",
         "security": [
           {
@@ -42792,8 +39670,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a catalog member.",
-        "description": "Returns a member of a catalog.",
+        "summary": "Get the Member object by name or id",
+        "description": "Get the Member object by name or id",
         "operationId": "member_getCatalogScope",
         "security": [
           {
@@ -42837,8 +39715,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a catalog member.",
-        "description": "Updates a member of a catalog.",
+        "summary": "Update the Member object by name or id",
+        "description": "Update the Member object by name or id",
         "operationId": "member_updateCatalogScope",
         "security": [
           {
@@ -42891,8 +39769,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a catalog member.",
-        "description": "Removes a member from a catalog.",
+        "summary": "Delete the Member object by name or id",
+        "description": "Delete the Member object by name or id",
         "operationId": "member_delCatalogScope",
         "security": [
           {
@@ -42942,8 +39820,8 @@
         }
       ],
       "get": {
-        "summary": "Lists catalog tasks.",
-        "description": "Returns the list of tasks (approval requests) for a catalog.",
+        "summary": "List the Task objects",
+        "description": "List the Task objects",
         "operationId": "task_listCatalogScope",
         "security": [
           {
@@ -43007,8 +39885,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a catalog task.",
-        "description": "Returns a catalog task (approval request).",
+        "summary": "Get the Task object by name or id",
+        "description": "Get the Task object by name or id",
         "operationId": "task_getCatalogScope",
         "security": [
           {
@@ -43052,8 +39930,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a catalog task.",
-        "description": "Updates a catalog task (approval request).",
+        "summary": "Update the Task object by name or id",
+        "description": "Update the Task object by name or id",
         "operationId": "task_updateCatalogScope",
         "security": [
           {
@@ -43117,8 +39995,8 @@
         }
       ],
       "get": {
-        "summary": "Lists catalog roles.",
-        "description": "Returns the list of roles for a catalog.",
+        "summary": "List the Role objects",
+        "description": "List the Role objects",
         "operationId": "role_listCatalogScope",
         "security": [
           {
@@ -43182,8 +40060,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a catalog role.",
-        "description": "Returns a role from a catalog.",
+        "summary": "Get the Role object by name or id",
+        "description": "Get the Role object by name or id",
         "operationId": "role_getCatalogScope",
         "security": [
           {
@@ -43227,8 +40105,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a catalog role.",
-        "description": "Updates a role in a catalog.",
+        "summary": "Update the Role object by name or id",
+        "description": "Update the Role object by name or id",
         "operationId": "role_updateCatalogScope",
         "security": [
           {
@@ -43295,8 +40173,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a global policy.",
-        "description": "Adds a global policy to a configured gateway service for a catalog.",
+        "summary": "Create a Global Policy object",
+        "description": "Create a Global Policy object",
         "operationId": "global_policy_createCatalogScope",
         "security": [
           {
@@ -43354,8 +40232,8 @@
         ]
       },
       "get": {
-        "summary": "Lists global policies.",
-        "description": "Returns the list of global policies from a configured gateway service for a catalog.",
+        "summary": "List all Global Policy objects in all collections",
+        "description": "List all Global Policy objects in all collections",
         "operationId": "global_policy_listAllCatalogScope",
         "security": [
           {
@@ -43405,8 +40283,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears global policies.",
-        "description": "Removes all global policies from a configured gateway service for a catalog.",
+        "summary": "Clear all Global Policy objects in all collections",
+        "description": "Clear all Global Policy objects in all collections",
         "operationId": "global_policy_clearAllCatalogScope",
         "security": [
           {
@@ -43455,8 +40333,8 @@
         }
       ],
       "get": {
-        "summary": "Lists global policy versions.",
-        "description": "Returns all versions of the named global policy from a configured gateway service for a catalog.",
+        "summary": "List the Global Policy objects",
+        "description": "List the Global Policy objects",
         "operationId": "global_policy_listCatalogScope",
         "security": [
           {
@@ -43506,8 +40384,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears global policy versions.",
-        "description": "Removes all versions of the named global policy from a configured gateway service for a catalog.",
+        "summary": "Clear the Global Policy objects",
+        "description": "Clear the Global Policy objects",
         "operationId": "global_policy_clearCatalogScope",
         "security": [
           {
@@ -43556,8 +40434,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a global policy.",
-        "description": "Returns the given global policy from a configured gateway service for a catalog.",
+        "summary": "Get the Global Policy object by id",
+        "description": "Get the Global Policy object by id",
         "operationId": "global_policy_getCatalogScope",
         "security": [
           {
@@ -43601,8 +40479,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a global policy.",
-        "description": "Updates the given global policy for a configured gateway service for a catalog.",
+        "summary": "Update the Global Policy object by id",
+        "description": "Update the Global Policy object by id",
         "operationId": "global_policy_updateCatalogScope",
         "security": [
           {
@@ -43655,8 +40533,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a global policy.",
-        "description": "Removes the given global policy from a configured gateway service for a catalog.",
+        "summary": "Delete the Global Policy object by id",
+        "description": "Delete the Global Policy object by id",
         "operationId": "global_policy_delCatalogScope",
         "security": [
           {
@@ -43715,8 +40593,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a global policy.",
-        "description": "Returns the given global policy from a configured gateway service for a catalog.",
+        "summary": "Get the Global Policy object by name and version",
+        "description": "Get the Global Policy object by name and version",
         "operationId": "global_policy_getByNameVersionCatalogScope",
         "security": [
           {
@@ -43760,8 +40638,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a global policy.",
-        "description": "Updates the given global policy for a configured gateway service for a catalog.",
+        "summary": "Update the Global Policy object by name and version",
+        "description": "Update the Global Policy object by name and version",
         "operationId": "global_policy_updateByNameVersionCatalogScope",
         "security": [
           {
@@ -43986,8 +40864,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a global policy.",
-        "description": "Adds a global policy to a configured gateway service for a space.",
+        "summary": "Create a Global Policy object",
+        "description": "Create a Global Policy object",
         "operationId": "global_policy_createSpaceScope",
         "security": [
           {
@@ -44045,8 +40923,8 @@
         ]
       },
       "get": {
-        "summary": "Lists global policies.",
-        "description": "Returns the list of global policies from a configured gateway service for a space.",
+        "summary": "List all Global Policy objects in all collections",
+        "description": "List all Global Policy objects in all collections",
         "operationId": "global_policy_listAllSpaceScope",
         "security": [
           {
@@ -44096,8 +40974,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears global policies.",
-        "description": "Removes all global policies from a configured gateway service for a space.",
+        "summary": "Clear all Global Policy objects in all collections",
+        "description": "Clear all Global Policy objects in all collections",
         "operationId": "global_policy_clearAllSpaceScope",
         "security": [
           {
@@ -44149,8 +41027,8 @@
         }
       ],
       "get": {
-        "summary": "Lists global policy versions.",
-        "description": "Returns all versions of the named global policy from a configured gateway service for a space.",
+        "summary": "List the Global Policy objects",
+        "description": "List the Global Policy objects",
         "operationId": "global_policy_listSpaceScope",
         "security": [
           {
@@ -44200,8 +41078,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears global policy versions.",
-        "description": "Removes all versions of the named global policy from a configured gateway service for a space.",
+        "summary": "Clear the Global Policy objects",
+        "description": "Clear the Global Policy objects",
         "operationId": "global_policy_clearSpaceScope",
         "security": [
           {
@@ -44253,8 +41131,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a global policy.",
-        "description": "Returns the given global policy from a configured gateway service for a space.",
+        "summary": "Get the Global Policy object by id",
+        "description": "Get the Global Policy object by id",
         "operationId": "global_policy_getSpaceScope",
         "security": [
           {
@@ -44298,8 +41176,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a global policy.",
-        "description": "Updates the given global policy for a configured gateway service for a space.",
+        "summary": "Update the Global Policy object by id",
+        "description": "Update the Global Policy object by id",
         "operationId": "global_policy_updateSpaceScope",
         "security": [
           {
@@ -44352,8 +41230,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a global policy.",
-        "description": "Removes the given global policy from a configured gateway service for a space.",
+        "summary": "Delete the Global Policy object by id",
+        "description": "Delete the Global Policy object by id",
         "operationId": "global_policy_delSpaceScope",
         "security": [
           {
@@ -44415,8 +41293,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a global policy.",
-        "description": "Returns the given global policy from a configured gateway service for a space.",
+        "summary": "Get the Global Policy object by name and version",
+        "description": "Get the Global Policy object by name and version",
         "operationId": "global_policy_getByNameVersionSpaceScope",
         "security": [
           {
@@ -44460,8 +41338,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a global policy.",
-        "description": "Updates the given global policy for a configured gateway service for a space.",
+        "summary": "Update the Global Policy object by name and version",
+        "description": "Update the Global Policy object by name and version",
         "operationId": "global_policy_updateByNameVersionSpaceScope",
         "security": [
           {
@@ -44689,8 +41567,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a policy.",
-        "description": "Adds a policy to a configured gateway service for a catalog.",
+        "summary": "Create a Policy object",
+        "description": "Create a Policy object",
         "operationId": "policy_createCatalogScope",
         "security": [
           {
@@ -44743,8 +41621,8 @@
         ]
       },
       "get": {
-        "summary": "Lists policies.",
-        "description": "Returns the list of policies from a configured gateway service for a catalog.",
+        "summary": "List all Policy objects in all collections",
+        "description": "List all Policy objects in all collections",
         "operationId": "policy_listAllCatalogScope",
         "security": [
           {
@@ -44794,8 +41672,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears policies.",
-        "description": "Removes all policies from a configured gateway service for a catalog.",
+        "summary": "Clear all Policy objects in all collections",
+        "description": "Clear all Policy objects in all collections",
         "operationId": "policy_clearAllCatalogScope",
         "security": [
           {
@@ -44844,8 +41722,8 @@
         }
       ],
       "get": {
-        "summary": "Lists policies.",
-        "description": "Returns the list of versions of the named policy from a configured gateway service for a catalog.",
+        "summary": "List the Policy objects",
+        "description": "List the Policy objects",
         "operationId": "policy_listCatalogScope",
         "security": [
           {
@@ -44895,8 +41773,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears policy versions.",
-        "description": "Removes all versions of the named policy from a configured gateway service for a catalog.",
+        "summary": "Clear the Policy objects",
+        "description": "Clear the Policy objects",
         "operationId": "policy_clearCatalogScope",
         "security": [
           {
@@ -44945,8 +41823,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a policy.",
-        "description": "Returns a policy from a configured gateway service for a catalog.",
+        "summary": "Get the Policy object by id",
+        "description": "Get the Policy object by id",
         "operationId": "policy_getCatalogScope",
         "security": [
           {
@@ -44990,8 +41868,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a policy.",
-        "description": "Updates a policy in a configured gateway service for a catalog.",
+        "summary": "Update the Policy object by id",
+        "description": "Update the Policy object by id",
         "operationId": "policy_updateCatalogScope",
         "security": [
           {
@@ -45049,8 +41927,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a policy.",
-        "description": "Removes a policy from a configured gateway service for a catalog.",
+        "summary": "Delete the Policy object by id",
+        "description": "Delete the Policy object by id",
         "operationId": "policy_delCatalogScope",
         "security": [
           {
@@ -45109,8 +41987,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a policy.",
-        "description": "Returns a policy from a configured gateway service for a catalog.",
+        "summary": "Get the Policy object by name and version",
+        "description": "Get the Policy object by name and version",
         "operationId": "policy_getByNameVersionCatalogScope",
         "security": [
           {
@@ -45154,8 +42032,8 @@
         ]
       },
       "patch": {
-        "summary": "Lists policies.",
-        "description": "Updates a policy in a configured gateway service for a catalog.",
+        "summary": "Update the Policy object by name and version",
+        "description": "Update the Policy object by name and version",
         "operationId": "policy_updateByNameVersionCatalogScope",
         "security": [
           {
@@ -45502,8 +42380,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a policy.",
-        "description": "Adds a policy to a configured gateway service for a space.",
+        "summary": "Create a Policy object",
+        "description": "Create a Policy object",
         "operationId": "policy_createSpaceScope",
         "security": [
           {
@@ -45556,8 +42434,8 @@
         ]
       },
       "get": {
-        "summary": "Lists policies.",
-        "description": "Returns the list of policies from a configured gateway service for a space.",
+        "summary": "List all Policy objects in all collections",
+        "description": "List all Policy objects in all collections",
         "operationId": "policy_listAllSpaceScope",
         "security": [
           {
@@ -45607,8 +42485,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears policies.",
-        "description": "Removes all policies from a configured gateway service for a space.",
+        "summary": "Clear all Policy objects in all collections",
+        "description": "Clear all Policy objects in all collections",
         "operationId": "policy_clearAllSpaceScope",
         "security": [
           {
@@ -45660,8 +42538,8 @@
         }
       ],
       "get": {
-        "summary": "Lists policies.",
-        "description": "Returns the list of versions of the named policy from a configured gateway service for a space.",
+        "summary": "List the Policy objects",
+        "description": "List the Policy objects",
         "operationId": "policy_listSpaceScope",
         "security": [
           {
@@ -45711,8 +42589,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears policy versions.",
-        "description": "Removes all versions of the named policy from a configured gateway service for a space.",
+        "summary": "Clear the Policy objects",
+        "description": "Clear the Policy objects",
         "operationId": "policy_clearSpaceScope",
         "security": [
           {
@@ -45764,8 +42642,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a policy.",
-        "description": "Returns a policy from a configured gateway service for a space.",
+        "summary": "Get the Policy object by id",
+        "description": "Get the Policy object by id",
         "operationId": "policy_getSpaceScope",
         "security": [
           {
@@ -45809,8 +42687,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a policy.",
-        "description": "Updates a policy in a configured gateway service for a space.",
+        "summary": "Update the Policy object by id",
+        "description": "Update the Policy object by id",
         "operationId": "policy_updateSpaceScope",
         "security": [
           {
@@ -45868,8 +42746,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a policy.",
-        "description": "Removes a policy from a configured gateway service for a space.",
+        "summary": "Delete the Policy object by id",
+        "description": "Delete the Policy object by id",
         "operationId": "policy_delSpaceScope",
         "security": [
           {
@@ -45931,8 +42809,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a policy.",
-        "description": "Returns a policy from a configured gateway service for a space.",
+        "summary": "Get the Policy object by name and version",
+        "description": "Get the Policy object by name and version",
         "operationId": "policy_getByNameVersionSpaceScope",
         "security": [
           {
@@ -45976,8 +42854,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a policy.",
-        "description": "Updates a policy in a configured gateway service for a space.",
+        "summary": "Update the Policy object by name and version",
+        "description": "Update the Policy object by name and version",
         "operationId": "policy_updateByNameVersionSpaceScope",
         "security": [
           {
@@ -46333,8 +43211,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a gateway extension.",
-        "description": "Adds a gateway extension to the set of configured gateway services for a catalog.",
+        "summary": "Create a Extension object",
+        "description": "Create a Extension object",
         "operationId": "extension_createCatalogScope",
         "security": [
           {
@@ -46392,8 +43270,8 @@
         ]
       },
       "get": {
-        "summary": "Lists gateway extensions.",
-        "description": "Returns the list of gateway extensions for the set of configured gateway services for a catalog.",
+        "summary": "List all Extension objects in all collections",
+        "description": "List all Extension objects in all collections",
         "operationId": "extension_listAllCatalogScope",
         "security": [
           {
@@ -46443,8 +43321,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears gateway extensions.",
-        "description": "Removes all gateway extensions from the set of configured gateway services for a catalog.",
+        "summary": "Clear all Extension objects in all collections",
+        "description": "Clear all Extension objects in all collections",
         "operationId": "extension_clearAllCatalogScope",
         "security": [
           {
@@ -46493,8 +43371,8 @@
         }
       ],
       "get": {
-        "summary": "Lists gateway extension versions.",
-        "description": "Returns all versions of the named gateway extension for the set of configured gateway services for a catalog.",
+        "summary": "List the Extension objects",
+        "description": "List the Extension objects",
         "operationId": "extension_listCatalogScope",
         "security": [
           {
@@ -46544,8 +43422,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears gateway extensions.",
-        "description": "Removes all versions of the named gateway extension from the set of configured gateway services for a catalog.",
+        "summary": "Clear the Extension objects",
+        "description": "Clear the Extension objects",
         "operationId": "extension_clearCatalogScope",
         "security": [
           {
@@ -46594,8 +43472,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a gateway extension.",
-        "description": "Returns the given gateway extension from the set of configured gateway services for a catalog.",
+        "summary": "Get the Extension object by id",
+        "description": "Get the Extension object by id",
         "operationId": "extension_getCatalogScope",
         "security": [
           {
@@ -46639,8 +43517,8 @@
         ]
       },
       "patch": {
-        "summary": "Lists gateway extension versions.",
-        "description": "Updates the given gateway extension in the set of configured gateway services for a catalog.",
+        "summary": "Update the Extension object by id",
+        "description": "Update the Extension object by id",
         "operationId": "extension_updateCatalogScope",
         "security": [
           {
@@ -46693,8 +43571,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a gateway extension.",
-        "description": "Removes the given gateway extension from the set of configured gateway services for a catalog.",
+        "summary": "Delete the Extension object by id",
+        "description": "Delete the Extension object by id",
         "operationId": "extension_delCatalogScope",
         "security": [
           {
@@ -46753,8 +43631,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a gateway extension.",
-        "description": "Returns the given gateway extension from the set of configured gateway services for a catalog.",
+        "summary": "Get the Extension object by name and version",
+        "description": "Get the Extension object by name and version",
         "operationId": "extension_getByNameVersionCatalogScope",
         "security": [
           {
@@ -46798,8 +43676,8 @@
         ]
       },
       "patch": {
-        "summary": "Lists gateway extension versions.",
-        "description": "Updates the given gateway extension in the set of configured gateway services for a catalog.",
+        "summary": "Update the Extension object by name and version",
+        "description": "Update the Extension object by name and version",
         "operationId": "extension_updateByNameVersionCatalogScope",
         "security": [
           {
@@ -47024,8 +43902,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a gateway extension.",
-        "description": "Adds a gateway extension to the set of configured gateway services for a catalog, as accessed through a space.",
+        "summary": "Create a Extension object",
+        "description": "Create a Extension object",
         "operationId": "extension_createSpaceScope",
         "security": [
           {
@@ -47083,8 +43961,8 @@
         ]
       },
       "get": {
-        "summary": "Lists gateway extensions.",
-        "description": "Returns the list of gateway extensions for the set of configured gateway services for a catalog, as accessed through a space.",
+        "summary": "List all Extension objects in all collections",
+        "description": "List all Extension objects in all collections",
         "operationId": "extension_listAllSpaceScope",
         "security": [
           {
@@ -47134,8 +44012,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears gateway extensions.",
-        "description": "Removes all gateway extensions from the set of configured gateway services for a catalog, as accessed through a space.",
+        "summary": "Clear all Extension objects in all collections",
+        "description": "Clear all Extension objects in all collections",
         "operationId": "extension_clearAllSpaceScope",
         "security": [
           {
@@ -47187,8 +44065,8 @@
         }
       ],
       "get": {
-        "summary": "Lists gateway extension versions.",
-        "description": "Returns all versions of the named gateway extension for the set of configured gateway services for a catalog, as accessed through a space.",
+        "summary": "List the Extension objects",
+        "description": "List the Extension objects",
         "operationId": "extension_listSpaceScope",
         "security": [
           {
@@ -47238,8 +44116,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears gateway extensions.",
-        "description": "Removes all versions of the named gateway extension from the set of configured gateway services for a catalog, as accessed through a space.",
+        "summary": "Clear the Extension objects",
+        "description": "Clear the Extension objects",
         "operationId": "extension_clearSpaceScope",
         "security": [
           {
@@ -47291,8 +44169,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a gateway extension document.",
-        "description": "Returns the given gateway extension from the set of configured gateway services for a catalog, as accessed through a space.",
+        "summary": "Get the Extension object by id",
+        "description": "Get the Extension object by id",
         "operationId": "extension_getSpaceScope",
         "security": [
           {
@@ -47336,8 +44214,8 @@
         ]
       },
       "patch": {
-        "summary": "Lists gateway extension versions.",
-        "description": "Updates the given gateway extension in the set of configured gateway services for a catalog, as accessed through a space.",
+        "summary": "Update the Extension object by id",
+        "description": "Update the Extension object by id",
         "operationId": "extension_updateSpaceScope",
         "security": [
           {
@@ -47390,8 +44268,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a gateway extension.",
-        "description": "Removes the given gateway extension from the set of configured gateway services for a catalog, as accessed through a space.",
+        "summary": "Delete the Extension object by id",
+        "description": "Delete the Extension object by id",
         "operationId": "extension_delSpaceScope",
         "security": [
           {
@@ -47453,8 +44331,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a gateway extension.",
-        "description": "Returns the given gateway extension from the set of configured gateway services for a catalog, as accessed through a space.",
+        "summary": "Get the Extension object by name and version",
+        "description": "Get the Extension object by name and version",
         "operationId": "extension_getByNameVersionSpaceScope",
         "security": [
           {
@@ -47498,8 +44376,8 @@
         ]
       },
       "patch": {
-        "summary": "Lists gateway extension versions.",
-        "description": "Updates the given gateway extension in the set of configured gateway services for a catalog, as accessed through a space.",
+        "summary": "Update the Extension object by name and version",
+        "description": "Update the Extension object by name and version",
         "operationId": "extension_updateByNameVersionSpaceScope",
         "security": [
           {
@@ -47713,278 +44591,6 @@
         ]
       }
     },
-    "/catalogs/{org}/{catalog}/subscriptions": {
-      "description": "The collection of Subscription operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "get": {
-        "summary": "List the Subscription objects",
-        "description": "List the Subscription objects",
-        "operationId": "subscription_listCatalogScope",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription-catalog-scope#list"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/product_url"
-          },
-          {
-            "$ref": "#/components/parameters/consumer_org_url"
-          },
-          {
-            "$ref": "#/components/parameters/plan"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SubscriptionList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/SubscriptionList"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Resource",
-          "Resource: Subscription (Catalog Scope)"
-        ]
-      }
-    },
-    "/spaces/{org}/{catalog}/{space}/subscriptions": {
-      "description": "The collection of Subscription operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/space"
-        }
-      ],
-      "get": {
-        "summary": "List the Subscription objects",
-        "description": "List the Subscription objects",
-        "operationId": "subscription_listSpaceScope",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription-space-scope#list"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/product_url"
-          },
-          {
-            "$ref": "#/components/parameters/consumer_org_url"
-          },
-          {
-            "$ref": "#/components/parameters/plan"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SubscriptionList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/SubscriptionList"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Space Resource",
-          "Resource: Subscription (Space Scope)"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/credentials": {
-      "description": "The collection of Credential operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "get": {
-        "summary": "List the Credential objects",
-        "description": "List the Credential objects",
-        "operationId": "credential_listCatalogScope",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-catalog-scope#list"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CredentialList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CredentialList"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Resource",
-          "Resource: Credential (Catalog Scope)"
-        ]
-      }
-    },
-    "/spaces/{org}/{catalog}/{space}/credentials": {
-      "description": "The collection of Credential operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/space"
-        }
-      ],
-      "get": {
-        "summary": "List the Credential objects",
-        "description": "List the Credential objects",
-        "operationId": "credential_listSpaceScope",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-space-scope#list"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CredentialList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CredentialList"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Space Resource",
-          "Resource: Credential (Space Scope)"
-        ]
-      }
-    },
     "/catalogs/{org}/{catalog}/configured-gateway-services/{configured-gateway-service}/services": {
       "description": "Service operations across all collections",
       "parameters": [
@@ -47999,8 +44605,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a service.",
-        "description": "Add a service to a configured gateway service for a catalog.",
+        "summary": "Create a Service object",
+        "description": "Create a Service object",
         "operationId": "service_create",
         "security": [
           {
@@ -48058,8 +44664,8 @@
         ]
       },
       "get": {
-        "summary": "Lists services.",
-        "description": "Returns the list of services from a configured gateway service for a catalog.",
+        "summary": "List all Service objects in all collections",
+        "description": "List all Service objects in all collections",
         "operationId": "service_listAll",
         "security": [
           {
@@ -48109,8 +44715,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears services.",
-        "description": "Removes all services from a configured gateway service for a catalog.",
+        "summary": "Clear all Service objects in all collections",
+        "description": "Clear all Service objects in all collections",
         "operationId": "service_clearAll",
         "security": [
           {
@@ -48159,8 +44765,8 @@
         }
       ],
       "get": {
-        "summary": "Lists service versions.",
-        "description": "Returns all versions of the named service from a configured gateway service for a catalog.",
+        "summary": "List the Service objects",
+        "description": "List the Service objects",
         "operationId": "service_list",
         "security": [
           {
@@ -48211,7 +44817,7 @@
       },
       "delete": {
         "summary": "Clear the Service objects",
-        "description": "Removes all versions of the named service from a configured gateway service for a catalog.",
+        "description": "Clear the Service objects",
         "operationId": "service_clear",
         "security": [
           {
@@ -48260,8 +44866,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a service.",
-        "description": "Returns a service from a configured gateway service for a catalog.",
+        "summary": "Get the Service object by id",
+        "description": "Get the Service object by id",
         "operationId": "service_get",
         "security": [
           {
@@ -48305,8 +44911,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a service.",
-        "description": "Updates a service for a configured gateway service for a catalog.",
+        "summary": "Update the Service object by id",
+        "description": "Update the Service object by id",
         "operationId": "service_update",
         "security": [
           {
@@ -48359,8 +44965,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a service.",
-        "description": "Remove a service from a configured gateway service for a catalog.",
+        "summary": "Delete the Service object by id",
+        "description": "Delete the Service object by id",
         "operationId": "service_del",
         "security": [
           {
@@ -48419,8 +45025,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a service.",
-        "description": "Returns a service from a configured gateway service for a catalog.",
+        "summary": "Get the Service object by name and version",
+        "description": "Get the Service object by name and version",
         "operationId": "service_getByNameVersion",
         "security": [
           {
@@ -48464,8 +45070,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a service.",
-        "description": "Updates a service for a configured gateway service for a catalog.",
+        "summary": "Update the Service object by name and version",
+        "description": "Update the Service object by name and version",
         "operationId": "service_updateByNameVersion",
         "security": [
           {
@@ -48575,8 +45181,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a service.",
-        "description": "Add a service to a configured gateway service for a space.",
+        "summary": "Create a Service object",
+        "description": "Create a Service object",
         "operationId": "service_createSpaceInitiated",
         "security": [
           {
@@ -48634,8 +45240,8 @@
         ]
       },
       "get": {
-        "summary": "Lists services.",
-        "description": "Returns the list of services from a configured gateway service for a space.",
+        "summary": "List all Service objects in all collections",
+        "description": "List all Service objects in all collections",
         "operationId": "service_listAllSpaceInitiated",
         "security": [
           {
@@ -48685,8 +45291,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears services.",
-        "description": "Removes all services from a configured gateway service for a space.",
+        "summary": "Clear all Service objects in all collections",
+        "description": "Clear all Service objects in all collections",
         "operationId": "service_clearAllSpaceInitiated",
         "security": [
           {
@@ -48738,8 +45344,8 @@
         }
       ],
       "get": {
-        "summary": "Lists services.",
-        "description": "Returns all versions of the named service from a configured gateway service for a space.",
+        "summary": "List the Service objects",
+        "description": "List the Service objects",
         "operationId": "service_listSpaceInitiated",
         "security": [
           {
@@ -48789,8 +45395,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears services.",
-        "description": "Removes all versions of the named service from a configured gateway service for a space.",
+        "summary": "Clear the Service objects",
+        "description": "Clear the Service objects",
         "operationId": "service_clearSpaceInitiated",
         "security": [
           {
@@ -48842,8 +45448,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a service.",
-        "description": "Returns a service from a configured gateway service for a space.",
+        "summary": "Get the Service object by id",
+        "description": "Get the Service object by id",
         "operationId": "service_getSpaceInitiated",
         "security": [
           {
@@ -48887,8 +45493,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a service.",
-        "description": "Updates a service for a configured gateway service for a space.",
+        "summary": "Update the Service object by id",
+        "description": "Update the Service object by id",
         "operationId": "service_updateSpaceInitiated",
         "security": [
           {
@@ -48941,8 +45547,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a service.",
-        "description": "Remove a service from a configured gateway service for a space.",
+        "summary": "Delete the Service object by id",
+        "description": "Delete the Service object by id",
         "operationId": "service_delSpaceInitiated",
         "security": [
           {
@@ -49004,8 +45610,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a service.",
-        "description": "Returns a service from a configured gateway service for a space.",
+        "summary": "Get the Service object by name and version",
+        "description": "Get the Service object by name and version",
         "operationId": "service_getByNameVersionSpaceInitiated",
         "security": [
           {
@@ -49049,8 +45655,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a service.",
-        "description": "Updates a service for a configured gateway service for a space.",
+        "summary": "Update the Service object by name and version",
+        "description": "Update the Service object by name and version",
         "operationId": "service_updateByNameVersionSpaceInitiated",
         "security": [
           {
@@ -49157,8 +45763,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a prehook global policy.",
-        "description": "Adds the given global policy pre-flow hook on a configured gateway service for a catalog.",
+        "summary": "Create the Global Policy Prehook object",
+        "description": "Create the Global Policy Prehook object",
         "operationId": "global_policy_prehook_singletonCreateCatalogScope",
         "security": [
           {
@@ -49211,8 +45817,8 @@
         ]
       },
       "get": {
-        "summary": "Returns a prehook global policy.",
-        "description": "Returns the global policy pre-flow hook for a configured gateway service for a catalog.",
+        "summary": "Get the Global Policy Prehook object",
+        "description": "Get the Global Policy Prehook object",
         "operationId": "global_policy_prehook_singletonGetCatalogScope",
         "security": [
           {
@@ -49256,8 +45862,8 @@
         ]
       },
       "put": {
-        "summary": "Updates a prehook global policy.",
-        "description": "Updates the global policy pre-flow hook for a configured gateway service for a catalog.",
+        "summary": "Update the Global Policy Prehook object",
+        "description": "Update the Global Policy Prehook object",
         "operationId": "global_policy_prehook_singletonUpdateCatalogScope",
         "security": [
           {
@@ -49310,8 +45916,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a prehook global policy.",
-        "description": "Removes the given global policy pre-flow hook from a configured gateway service for a catalog.",
+        "summary": "Delete the Global Policy Prehook object",
+        "description": "Delete the Global Policy Prehook object",
         "operationId": "global_policy_prehook_singletonDelCatalogScope",
         "security": [
           {
@@ -49367,8 +45973,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a prehook global policy.",
-        "description": "Adds the given global policy pre-flow hook on a configured gateway service for a space.",
+        "summary": "Create the Global Policy Prehook object",
+        "description": "Create the Global Policy Prehook object",
         "operationId": "global_policy_prehook_singletonCreateSpaceScope",
         "security": [
           {
@@ -49421,8 +46027,8 @@
         ]
       },
       "get": {
-        "summary": "Returns a prehook global policy.",
-        "description": "Returns the global policy pre-flow hook for a configured gateway service for a space.",
+        "summary": "Get the Global Policy Prehook object",
+        "description": "Get the Global Policy Prehook object",
         "operationId": "global_policy_prehook_singletonGetSpaceScope",
         "security": [
           {
@@ -49466,8 +46072,8 @@
         ]
       },
       "put": {
-        "summary": "Updates a prehook global policy.",
-        "description": "Updates the global policy pre-flow hook for a configured gateway service for a space.",
+        "summary": "Update the Global Policy Prehook object",
+        "description": "Update the Global Policy Prehook object",
         "operationId": "global_policy_prehook_singletonUpdateSpaceScope",
         "security": [
           {
@@ -49520,8 +46126,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a prehook global policy.",
-        "description": "Removes the given global policy pre-flow hook from a configured gateway service for a space.",
+        "summary": "Delete the Global Policy Prehook object",
+        "description": "Delete the Global Policy Prehook object",
         "operationId": "global_policy_prehook_singletonDelSpaceScope",
         "security": [
           {
@@ -49574,8 +46180,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a posthook global policy.",
-        "description": "Adds the given global policy post-flow hook on a configured gateway service for a catalog.",
+        "summary": "Create the Global Policy Posthook object",
+        "description": "Create the Global Policy Posthook object",
         "operationId": "global_policy_posthook_singletonCreateCatalogScope",
         "security": [
           {
@@ -49628,8 +46234,8 @@
         ]
       },
       "get": {
-        "summary": "Returns a posthook global policy.",
-        "description": "Returns the global policy post-flow hook for a configured gateway service for a catalog.",
+        "summary": "Get the Global Policy Posthook object",
+        "description": "Get the Global Policy Posthook object",
         "operationId": "global_policy_posthook_singletonGetCatalogScope",
         "security": [
           {
@@ -49673,8 +46279,8 @@
         ]
       },
       "put": {
-        "summary": "Updates a posthook global policy.",
-        "description": "Updates the global policy post-flow hook for a configured gateway service for a catalog.",
+        "summary": "Update the Global Policy Posthook object",
+        "description": "Update the Global Policy Posthook object",
         "operationId": "global_policy_posthook_singletonUpdateCatalogScope",
         "security": [
           {
@@ -49727,8 +46333,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a posthook global policy.",
-        "description": "Removes the given global policy post-flow hook from a configured gateway service for a catalog.",
+        "summary": "Delete the Global Policy Posthook object",
+        "description": "Delete the Global Policy Posthook object",
         "operationId": "global_policy_posthook_singletonDelCatalogScope",
         "security": [
           {
@@ -49784,8 +46390,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a posthook global policy.",
-        "description": "Adds the given global policy post-flow hook on a configured gateway service for a space.",
+        "summary": "Create the Global Policy Posthook object",
+        "description": "Create the Global Policy Posthook object",
         "operationId": "global_policy_posthook_singletonCreateSpaceScope",
         "security": [
           {
@@ -49838,8 +46444,8 @@
         ]
       },
       "get": {
-        "summary": "Returns a posthook global policy.",
-        "description": "Returns the global policy post-flow hook for a configured gateway service for a space.",
+        "summary": "Get the Global Policy Posthook object",
+        "description": "Get the Global Policy Posthook object",
         "operationId": "global_policy_posthook_singletonGetSpaceScope",
         "security": [
           {
@@ -49883,8 +46489,8 @@
         ]
       },
       "put": {
-        "summary": "Updates a posthook global policy.",
-        "description": "Updates the global policy post-flow hook for a configured gateway service for a space.",
+        "summary": "Update the Global Policy Posthook object",
+        "description": "Update the Global Policy Posthook object",
         "operationId": "global_policy_posthook_singletonUpdateSpaceScope",
         "security": [
           {
@@ -49937,8 +46543,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a posthook global policy.",
-        "description": "Removes the given global policy post-flow hook from a configured gateway service for a space.",
+        "summary": "Delete the Global Policy Posthook object",
+        "description": "Delete the Global Policy Posthook object",
         "operationId": "global_policy_posthook_singletonDelSpaceScope",
         "security": [
           {
@@ -50404,8 +47010,8 @@
         }
       ],
       "get": {
-        "summary": "Returns space settings.",
-        "description": "Returns the settings for a space.",
+        "summary": "Get the Space Setting object",
+        "description": "Get the Space Setting object",
         "operationId": "space_setting_singletonGet",
         "security": [
           {
@@ -50449,8 +47055,8 @@
         ]
       },
       "put": {
-        "summary": "Updates space settings.",
-        "description": "Updates the settings for a space.",
+        "summary": "Update the Space Setting object",
+        "description": "Update the Space Setting object",
         "operationId": "space_setting_singletonUpdate",
         "security": [
           {
@@ -50517,8 +47123,8 @@
         }
       ],
       "get": {
-        "summary": "Lists space notification templates.",
-        "description": "Returns the list of all notification templates for a space.",
+        "summary": "List all Notification Template objects in all collections",
+        "description": "List all Notification Template objects in all collections",
         "operationId": "notification_template_listAllSpaceScope",
         "security": [
           {
@@ -50582,8 +47188,8 @@
         }
       ],
       "get": {
-        "summary": "Lists space notification templates.",
-        "description": "Returns the list of all space notification templates set at the space organization level.",
+        "summary": "List the Notification Template objects",
+        "description": "List the Notification Template objects",
         "operationId": "notification_template_listSpaceSubcollectionSpaceScope",
         "security": [
           {
@@ -50650,8 +47256,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a space notification template.",
-        "description": "Returns a space notification template, set at the space level.",
+        "summary": "Get the Notification Template object by name or id",
+        "description": "Get the Notification Template object by name or id",
         "operationId": "notification_template_getSpaceSubcollectionSpaceScope",
         "security": [
           {
@@ -50695,8 +47301,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a space notification template.",
-        "description": "Updates a space notification template set at the space level.",
+        "summary": "Update the Notification Template object by name or id",
+        "description": "Update the Notification Template object by name or id",
         "operationId": "notification_template_updateSpaceSubcollectionSpaceScope",
         "security": [
           {
@@ -50763,8 +47369,8 @@
         }
       ],
       "get": {
-        "summary": "Lists consumer notification templates.",
-        "description": "Returns the list of all consumer notification templates set at the space level.",
+        "summary": "List the Notification Template objects",
+        "description": "List the Notification Template objects",
         "operationId": "notification_template_listConsumerSubcollectionSpaceScope",
         "security": [
           {
@@ -50831,8 +47437,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a consumer notification template.",
-        "description": "Returns a consumer notification template, set at the space level.",
+        "summary": "Get the Notification Template object by name or id",
+        "description": "Get the Notification Template object by name or id",
         "operationId": "notification_template_getConsumerSubcollectionSpaceScope",
         "security": [
           {
@@ -50876,8 +47482,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a consumer notification template.",
-        "description": "Updates a consumer notification template set at the space level.",
+        "summary": "Update the Notification Template object by name or id",
+        "description": "Update the Notification Template object by name or id",
         "operationId": "notification_template_updateConsumerSubcollectionSpaceScope",
         "security": [
           {
@@ -50944,8 +47550,8 @@
         }
       ],
       "get": {
-        "summary": "Lists space role defaults.",
-        "description": "Returns the list of all role defaults for a space.",
+        "summary": "List all Role Default objects in all collections",
+        "description": "List all Role Default objects in all collections",
         "operationId": "role_default_listAllSpaceScope",
         "security": [
           {
@@ -51009,8 +47615,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a consumer organization role default.",
-        "description": "Adds a consumer organization role default to a space.",
+        "summary": "Create a Role Default object",
+        "description": "Create a Role Default object",
         "operationId": "role_default_createConsumerSubcollectionSpaceScope",
         "security": [
           {
@@ -51068,8 +47674,8 @@
         ]
       },
       "get": {
-        "summary": "Lists consumer organization role defaults.",
-        "description": "Returns the list of consumer organization role defaults in a space.",
+        "summary": "List the Role Default objects",
+        "description": "List the Role Default objects",
         "operationId": "role_default_listConsumerSubcollectionSpaceScope",
         "security": [
           {
@@ -51119,8 +47725,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears consumer organization role defaults.",
-        "description": "Removes all consumer organization role defaults from a space.",
+        "summary": "Clear the Role Default objects",
+        "description": "Clear the Role Default objects",
         "operationId": "role_default_clearConsumerSubcollectionSpaceScope",
         "security": [
           {
@@ -51169,8 +47775,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a consumer organization role default.",
-        "description": "Returns a consumer organization role default for a space.",
+        "summary": "Get the Role Default object by name or id",
+        "description": "Get the Role Default object by name or id",
         "operationId": "role_default_getConsumerSubcollectionSpaceScope",
         "security": [
           {
@@ -51214,8 +47820,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a space role default.",
-        "description": "Updates a consumer organization role default in a space.",
+        "summary": "Update the Role Default object by name or id",
+        "description": "Update the Role Default object by name or id",
         "operationId": "role_default_updateConsumerSubcollectionSpaceScope",
         "security": [
           {
@@ -51268,8 +47874,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a consumer organization role default.",
-        "description": "Removes a consumer organization role default from a space.",
+        "summary": "Delete the Role Default object by name or id",
+        "description": "Delete the Role Default object by name or id",
         "operationId": "role_default_delConsumerSubcollectionSpaceScope",
         "security": [
           {
@@ -51319,8 +47925,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a space.",
-        "description": "Creates a space in a catalog.",
+        "summary": "Create a Space object",
+        "description": "Create a Space object",
         "operationId": "space_create",
         "security": [
           {
@@ -51378,8 +47984,8 @@
         ]
       },
       "get": {
-        "summary": "Lists spaces.",
-        "description": "Returns the list of spaces in a catalog.",
+        "summary": "List the Space objects",
+        "description": "List the Space objects",
         "operationId": "space_list",
         "security": [
           {
@@ -51429,8 +48035,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears spaces.",
-        "description": "Deletes all spaces from a catalog.",
+        "summary": "Clear the Space objects",
+        "description": "Clear the Space objects",
         "operationId": "space_clear",
         "security": [
           {
@@ -51476,8 +48082,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a space.",
-        "description": "Returns a space in a catalog.",
+        "summary": "Get the Space object by name or id",
+        "description": "Get the Space object by name or id",
         "operationId": "space_get",
         "security": [
           {
@@ -51521,8 +48127,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a space.",
-        "description": "Updates a space.",
+        "summary": "Update the Space object by name or id",
+        "description": "Update the Space object by name or id",
         "operationId": "space_update",
         "security": [
           {
@@ -51575,8 +48181,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a space.",
-        "description": "Deletes a spaces from a catalog.",
+        "summary": "Delete the Space object by name or id",
+        "description": "Delete the Space object by name or id",
         "operationId": "space_del",
         "security": [
           {
@@ -51987,8 +48593,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a space invitation.",
-        "description": "Creates a space owner invitation in the context of a catalog.",
+        "summary": "Create a Space Invitation object",
+        "description": "Create a Space Invitation object",
         "operationId": "invitation_createSpaceScope",
         "security": [
           {
@@ -52046,8 +48652,8 @@
         ]
       },
       "get": {
-        "summary": "Lists space invitations.",
-        "description": "Returns the list of all space owner invitations in the context of a catalog.",
+        "summary": "List the Space Invitation objects",
+        "description": "List the Space Invitation objects",
         "operationId": "invitation_listSpaceScope",
         "security": [
           {
@@ -52097,8 +48703,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears space invitations.",
-        "description": "Removes all space owner invitations.",
+        "summary": "Clear the Space Invitation objects",
+        "description": "Clear the Space Invitation objects",
         "operationId": "invitation_clearSpaceScope",
         "security": [
           {
@@ -52144,8 +48750,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a space invitation.",
-        "description": "Returns a space owner invitation.",
+        "summary": "Get the Space Invitation object by name or id",
+        "description": "Get the Space Invitation object by name or id",
         "operationId": "invitation_getSpaceScope",
         "security": [
           {
@@ -52189,8 +48795,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a space invitation.",
-        "description": "Updates a space owner invitation.",
+        "summary": "Update the Space Invitation object by name or id",
+        "description": "Update the Space Invitation object by name or id",
         "operationId": "invitation_updateSpaceScope",
         "security": [
           {
@@ -52243,8 +48849,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a space invitation.",
-        "description": "Deletes a space owner invitation.",
+        "summary": "Delete the Space Invitation object by name or id",
+        "description": "Delete the Space Invitation object by name or id",
         "operationId": "invitation_delSpaceScope",
         "security": [
           {
@@ -52510,8 +49116,8 @@
         }
       ],
       "get": {
-        "summary": "Lists space roles.",
-        "description": "Returns the list of roles for a space.",
+        "summary": "List the Role objects",
+        "description": "List the Role objects",
         "operationId": "role_listSpaceScope",
         "security": [
           {
@@ -52578,8 +49184,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a space role.",
-        "description": "Returns a role from a space.",
+        "summary": "Get the Role object by name or id",
+        "description": "Get the Role object by name or id",
         "operationId": "role_getSpaceScope",
         "security": [
           {
@@ -52623,8 +49229,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a space role.",
-        "description": "Updates a role in a space.",
+        "summary": "Update the Role object by name or id",
+        "description": "Update the Role object by name or id",
         "operationId": "role_updateSpaceScope",
         "security": [
           {
@@ -52691,8 +49297,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a space member invitation.",
-        "description": "Creates a space member invitation.",
+        "summary": "Create a Member Invitation object",
+        "description": "Create a Member Invitation object",
         "operationId": "member_invitation_createSpaceScope",
         "security": [
           {
@@ -52750,8 +49356,8 @@
         ]
       },
       "get": {
-        "summary": "Lists space member invitations.",
-        "description": "Returns the list of member invitations for a space.",
+        "summary": "List the Member Invitation objects",
+        "description": "List the Member Invitation objects",
         "operationId": "member_invitation_listSpaceScope",
         "security": [
           {
@@ -52801,8 +49407,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears space member invitations.",
-        "description": "Removes all member invitations for a space.",
+        "summary": "Clear the Member Invitation objects",
+        "description": "Clear the Member Invitation objects",
         "operationId": "member_invitation_clearSpaceScope",
         "security": [
           {
@@ -52851,8 +49457,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a space member invitation.",
-        "description": "Returns a space member invitation.",
+        "summary": "Get the Member Invitation object by name or id",
+        "description": "Get the Member Invitation object by name or id",
         "operationId": "member_invitation_getSpaceScope",
         "security": [
           {
@@ -52896,8 +49502,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a space member invitation.",
-        "description": "Updates a member invitation to a space.",
+        "summary": "Update the Member Invitation object by name or id",
+        "description": "Update the Member Invitation object by name or id",
         "operationId": "member_invitation_updateSpaceScope",
         "security": [
           {
@@ -52950,8 +49556,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a space member invitation.",
-        "description": "Deletes a space organization member invitation.",
+        "summary": "Delete the Member Invitation object by name or id",
+        "description": "Delete the Member Invitation object by name or id",
         "operationId": "member_invitation_delSpaceScope",
         "security": [
           {
@@ -53226,8 +49832,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a space member.",
-        "description": "Adds a member to a space.",
+        "summary": "Create a Member object",
+        "description": "Create a Member object",
         "operationId": "member_createSpaceScope",
         "security": [
           {
@@ -53285,8 +49891,8 @@
         ]
       },
       "get": {
-        "summary": "Lists space members.",
-        "description": "Returns the list of members of a space.",
+        "summary": "List the Member objects",
+        "description": "List the Member objects",
         "operationId": "member_listSpaceScope",
         "security": [
           {
@@ -53336,8 +49942,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears space members.",
-        "description": "Removes all members from a space.",
+        "summary": "Clear the Member objects",
+        "description": "Clear the Member objects",
         "operationId": "member_clearSpaceScope",
         "security": [
           {
@@ -53386,8 +49992,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a space member.",
-        "description": "Returns a member of a space.",
+        "summary": "Get the Member object by name or id",
+        "description": "Get the Member object by name or id",
         "operationId": "member_getSpaceScope",
         "security": [
           {
@@ -53431,8 +50037,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a space member.",
-        "description": "Updates a member of a space.",
+        "summary": "Update the Member object by name or id",
+        "description": "Update the Member object by name or id",
         "operationId": "member_updateSpaceScope",
         "security": [
           {
@@ -53485,8 +50091,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a space member.",
-        "description": "Removes a member from a space.",
+        "summary": "Delete the Member object by name or id",
+        "description": "Delete the Member object by name or id",
         "operationId": "member_delSpaceScope",
         "security": [
           {
@@ -53539,8 +50145,8 @@
         }
       ],
       "get": {
-        "summary": "Lists space tasks.",
-        "description": "Returns the list of tasks (approval requests) for a space.",
+        "summary": "List the Task objects",
+        "description": "List the Task objects",
         "operationId": "task_listSpaceScope",
         "security": [
           {
@@ -53607,8 +50213,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a space task.",
-        "description": "Returns a space task (approval request).",
+        "summary": "Get the Task object by name or id",
+        "description": "Get the Task object by name or id",
         "operationId": "task_getSpaceScope",
         "security": [
           {
@@ -53652,8 +50258,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a space task.",
-        "description": "Updates a space task (approval request).",
+        "summary": "Update the Task object by name or id",
+        "description": "Update the Task object by name or id",
         "operationId": "task_updateSpaceScope",
         "security": [
           {
@@ -53717,8 +50323,8 @@
         }
       ],
       "get": {
-        "summary": "Lists consumer apps.",
-        "description": "Returns a list of apps belonging to the given consumer org in a catalog.",
+        "summary": "List the Application objects",
+        "description": "List the Application objects",
         "operationId": "app_listCatalogScope",
         "security": [
           {
@@ -53740,9 +50346,6 @@
           },
           {
             "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/expand"
           }
         ],
         "responses": {
@@ -53785,8 +50388,8 @@
         }
       ],
       "get": {
-        "summary": "Lists consumer apps.",
-        "description": "Returns a list of apps belonging in the given catalog as accessed through the given space.",
+        "summary": "List the Application objects",
+        "description": "List the Application objects",
         "operationId": "app_listSpaceScope",
         "security": [
           {
@@ -53808,9 +50411,6 @@
           },
           {
             "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/expand"
           }
         ],
         "responses": {
@@ -53853,8 +50453,8 @@
         }
       ],
       "get": {
-        "summary": "Returns consumer organization settings.",
-        "description": "Returns the settings for the given consumer organization in a catalog.",
+        "summary": "Get the Consumer Organization Setting object",
+        "description": "Get the Consumer Organization Setting object",
         "operationId": "consumer_org_setting_singletonGet",
         "security": [
           {
@@ -53898,8 +50498,8 @@
         ]
       },
       "put": {
-        "summary": "Updates consumer organization settings.",
-        "description": "Updates the settings for the given consumer organization in a catalog.",
+        "summary": "Update the Consumer Organization Setting object",
+        "description": "Update the Consumer Organization Setting object",
         "operationId": "consumer_org_setting_singletonUpdate",
         "security": [
           {
@@ -53952,8 +50552,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes consumer organization settings.",
-        "description": "Deletes the settings from the given consumer organization in a catalog.",
+        "summary": "Delete the Consumer Organization Setting object",
+        "description": "Delete the Consumer Organization Setting object",
         "operationId": "consumer_org_setting_singletonDel",
         "security": [
           {
@@ -54009,8 +50609,8 @@
         }
       ],
       "get": {
-        "summary": "Returns consumer organization settings.",
-        "description": "Returns the settings for the given consumer organization in a catalog, as accessed through a space.",
+        "summary": "Get the Consumer Organization Setting object",
+        "description": "Get the Consumer Organization Setting object",
         "operationId": "consumer_org_setting_singletonGetSpaceInitiated",
         "security": [
           {
@@ -54054,8 +50654,8 @@
         ]
       },
       "put": {
-        "summary": "Updates consumer organization settings.",
-        "description": "Updates the settings for the given consumer organization in a catalog, as accessed through a space.",
+        "summary": "Update the Consumer Organization Setting object",
+        "description": "Update the Consumer Organization Setting object",
         "operationId": "consumer_org_setting_singletonUpdateSpaceInitiated",
         "security": [
           {
@@ -54108,8 +50708,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes consumer organization settings.",
-        "description": "Deletes the settings from the given consumer organization in a catalog, as accessed through a space.",
+        "summary": "Delete the Consumer Organization Setting object",
+        "description": "Delete the Consumer Organization Setting object",
         "operationId": "consumer_org_setting_singletonDelSpaceInitiated",
         "security": [
           {
@@ -54148,200 +50748,6 @@
         ]
       }
     },
-    "/catalogs/{org}/{catalog}/activations": {
-      "description": "The collection of Activation operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "get": {
-        "summary": "List the Activation objects",
-        "description": "List the Activation objects",
-        "operationId": "activation_listOrgScope",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/activation-org-scope#list"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ActivationList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/ActivationList"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Management",
-          "Resource: Activation (Org Scope)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Activation objects",
-        "description": "Clear the Activation objects",
-        "operationId": "activation_clearOrgScope",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/activation-org-scope#clear"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/confirm"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Success"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Management",
-          "Resource: Activation (Org Scope)"
-        ]
-      }
-    },
-    "/activations/{org}/{catalog}/{activation}": {
-      "description": "Activation object operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/activation"
-        }
-      ],
-      "get": {
-        "summary": "Get the Activation object by name or id",
-        "description": "Get the Activation object by name or id",
-        "operationId": "activation_getOrgScope",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/activation-org-scope#get"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Activation"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Activation"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Management",
-          "Resource: Activation (Org Scope)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Activation object by name or id",
-        "description": "Delete the Activation object by name or id",
-        "operationId": "activation_delOrgScope",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/activation-org-scope#del"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful delete",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Activation"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Activation"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Management",
-          "Resource: Activation (Org Scope)"
-        ]
-      }
-    },
     "/catalogs/{org}/{catalog}/consumer-org-invitations": {
       "description": "The collection of Consumer Organization Invitation operations",
       "parameters": [
@@ -54354,7 +50760,7 @@
       ],
       "post": {
         "summary": "Create a Consumer Organization Invitation object",
-        "description": "Creates a consumer organization owner invitation in the context of a catalog.",
+        "description": "Create a Consumer Organization Invitation object",
         "operationId": "invitation_createConsumerOrgScope",
         "security": [
           {
@@ -54412,8 +50818,8 @@
         ]
       },
       "get": {
-        "summary": "Lists consumer organization invitations.",
-        "description": "Returns the list of all consumer organization owner invitations in the context of a catalog.",
+        "summary": "List the Consumer Organization Invitation objects",
+        "description": "List the Consumer Organization Invitation objects",
         "operationId": "invitation_listConsumerOrgScope",
         "security": [
           {
@@ -54463,8 +50869,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears consumer organization invitations.",
-        "description": "Removes all consumer organization owner invitations from a catalog.",
+        "summary": "Clear the Consumer Organization Invitation objects",
+        "description": "Clear the Consumer Organization Invitation objects",
         "operationId": "invitation_clearConsumerOrgScope",
         "security": [
           {
@@ -54510,8 +50916,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a consumer organization invitation.",
-        "description": "Returns a consumer organization owner invitation in the context of a catalog.",
+        "summary": "Get the Consumer Organization Invitation object by name or id",
+        "description": "Get the Consumer Organization Invitation object by name or id",
         "operationId": "invitation_getConsumerOrgScope",
         "security": [
           {
@@ -54555,8 +50961,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a consumer organization invitation.",
-        "description": "Updates a consumer organization owner invitation in the context of a catalog.",
+        "summary": "Update the Consumer Organization Invitation object by name or id",
+        "description": "Update the Consumer Organization Invitation object by name or id",
         "operationId": "invitation_updateConsumerOrgScope",
         "security": [
           {
@@ -54609,8 +51015,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a consumer organization invitation.",
-        "description": "Deletes a consumer organization owner invitation in the context of a catalog.",
+        "summary": "Delete the Consumer Organization Invitation object by name or id",
+        "description": "Delete the Consumer Organization Invitation object by name or id",
         "operationId": "invitation_delConsumerOrgScope",
         "security": [
           {
@@ -54730,8 +51136,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a consumer organization invitation.",
-        "description": "Creates a consumer organization owner invitation in the context of a catalog, as accessed through a space.",
+        "summary": "Create a Consumer Organization Invitation object",
+        "description": "Create a Consumer Organization Invitation object",
         "operationId": "invitation_createConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -54789,8 +51195,8 @@
         ]
       },
       "get": {
-        "summary": "Lists consumer organization invitations.",
-        "description": "Returns the list of all consumer organization owner invitations in the context of a catalog, as accessed through a space.",
+        "summary": "List the Consumer Organization Invitation objects",
+        "description": "List the Consumer Organization Invitation objects",
         "operationId": "invitation_listConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -54840,8 +51246,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears consumer organization invitations.",
-        "description": "Removes all consumer organization owner invitations from a catalog, as accessed through a space.",
+        "summary": "Clear the Consumer Organization Invitation objects",
+        "description": "Clear the Consumer Organization Invitation objects",
         "operationId": "invitation_clearConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -54890,8 +51296,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a consumer organization invitation.",
-        "description": "Returns a consumer organization owner invitation in the context of a catalog, as accessed through a space.",
+        "summary": "Get the Consumer Organization Invitation object by name or id",
+        "description": "Get the Consumer Organization Invitation object by name or id",
         "operationId": "invitation_getConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -54935,8 +51341,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a consumer organization invitation.",
-        "description": "Updates a consumer organization owner invitation in the context of a catalog, as accessed through a space.",
+        "summary": "Update the Consumer Organization Invitation object by name or id",
+        "description": "Update the Consumer Organization Invitation object by name or id",
         "operationId": "invitation_updateConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -54989,8 +51395,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a consumer organization invitation.",
-        "description": "Deletes a consumer organization owner invitation in the context of a catalog, as accessed through a space.",
+        "summary": "Delete the Consumer Organization Invitation object by name or id",
+        "description": "Delete the Consumer Organization Invitation object by name or id",
         "operationId": "invitation_delConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -55110,8 +51516,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a consumer organization.",
-        "description": "Creates a consumer organization in a catalog.",
+        "summary": "Create a Consumer Organization object",
+        "description": "Create a Consumer Organization object",
         "operationId": "consumer_org_create",
         "security": [
           {
@@ -55169,8 +51575,8 @@
         ]
       },
       "get": {
-        "summary": "Lists consumer organizations.",
-        "description": "Returns the list of consumer organization from a catalog.",
+        "summary": "List the Consumer Organization objects",
+        "description": "List the Consumer Organization objects",
         "operationId": "consumer_org_list",
         "security": [
           {
@@ -55192,9 +51598,6 @@
           },
           {
             "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/expand"
           }
         ],
         "responses": {
@@ -55223,8 +51626,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears consumer organizations.",
-        "description": "Removes all consumer organizations from a catalog.",
+        "summary": "Clear the Consumer Organization objects",
+        "description": "Clear the Consumer Organization objects",
         "operationId": "consumer_org_clear",
         "security": [
           {
@@ -55270,8 +51673,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a consumer organization.",
-        "description": "Returns the given consumer organization from a catalog.",
+        "summary": "Get the Consumer Organization object by name or id",
+        "description": "Get the Consumer Organization object by name or id",
         "operationId": "consumer_org_get",
         "security": [
           {
@@ -55315,8 +51718,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a consumer organization.",
-        "description": "Updates a consumer organization in a catalog.",
+        "summary": "Update the Consumer Organization object by name or id",
+        "description": "Update the Consumer Organization object by name or id",
         "operationId": "consumer_org_update",
         "security": [
           {
@@ -55329,11 +51732,6 @@
           "description": "Additional documentation",
           "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org#update"
         },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          }
-        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -55374,8 +51772,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a consumer organization.",
-        "description": "Deletes a consumer organization from a catalog.",
+        "summary": "Delete the Consumer Organization object by name or id",
+        "description": "Delete the Consumer Organization object by name or id",
         "operationId": "consumer_org_del",
         "security": [
           {
@@ -55495,8 +51893,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a consumer organization.",
-        "description": "Creates a consumer organization in a catalog, as accessed through the given space.",
+        "summary": "Create a Consumer Organization object",
+        "description": "Create a Consumer Organization object",
         "operationId": "consumer_org_createSpaceInitiated",
         "security": [
           {
@@ -55554,8 +51952,8 @@
         ]
       },
       "get": {
-        "summary": "Lists consumer organizations.",
-        "description": "Returns the list of consumer organization from a catalog, as accesed through a space.",
+        "summary": "List the Consumer Organization objects",
+        "description": "List the Consumer Organization objects",
         "operationId": "consumer_org_listSpaceInitiated",
         "security": [
           {
@@ -55577,9 +51975,6 @@
           },
           {
             "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/expand"
           }
         ],
         "responses": {
@@ -55608,8 +52003,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears consumer organizations.",
-        "description": "Removes all consumer organizations from a catalog, as accessed through the given space.",
+        "summary": "Clear the Consumer Organization objects",
+        "description": "Clear the Consumer Organization objects",
         "operationId": "consumer_org_clearSpaceInitiated",
         "security": [
           {
@@ -55658,8 +52053,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a consumer organization.",
-        "description": "Returns the given consumer organization from a catalog, as accesed through a space.",
+        "summary": "Get the Consumer Organization object by name or id",
+        "description": "Get the Consumer Organization object by name or id",
         "operationId": "consumer_org_getSpaceInitiated",
         "security": [
           {
@@ -55703,8 +52098,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a consumer organization.",
-        "description": "Updates a consumer organization in a catalog, as accessed through a space.",
+        "summary": "Update the Consumer Organization object by name or id",
+        "description": "Update the Consumer Organization object by name or id",
         "operationId": "consumer_org_updateSpaceInitiated",
         "security": [
           {
@@ -55717,11 +52112,6 @@
           "description": "Additional documentation",
           "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-space-initiated#update"
         },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          }
-        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -55762,8 +52152,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a consumer organization.",
-        "description": "Deletes a consumer organization from a catalog, as accessed through the given space.",
+        "summary": "Delete the Consumer Organization object by name or id",
+        "description": "Delete the Consumer Organization object by name or id",
         "operationId": "consumer_org_delSpaceInitiated",
         "security": [
           {
@@ -55883,8 +52273,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a consumer group.",
-        "description": "Adds a consumer group to a catalog.",
+        "summary": "Create a Group object",
+        "description": "Create a Group object",
         "operationId": "group_createCatalogScope",
         "security": [
           {
@@ -55942,8 +52332,8 @@
         ]
       },
       "get": {
-        "summary": "Lists consumer groups.",
-        "description": "Returns the list of consumer groups in a catalog.",
+        "summary": "List the Group objects",
+        "description": "List the Group objects",
         "operationId": "group_listCatalogScope",
         "security": [
           {
@@ -55993,8 +52383,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears consumer groups.",
-        "description": "Removes all consumer groups from a catalog.",
+        "summary": "Clear the Group objects",
+        "description": "Clear the Group objects",
         "operationId": "group_clearCatalogScope",
         "security": [
           {
@@ -56040,8 +52430,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a consumer group.",
-        "description": "Returns a consumer group in a catalog.",
+        "summary": "Get the Group object by name or id",
+        "description": "Get the Group object by name or id",
         "operationId": "group_getCatalogScope",
         "security": [
           {
@@ -56085,8 +52475,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a consumer group.",
-        "description": "Updates a consumer group in a catalog.",
+        "summary": "Update the Group object by name or id",
+        "description": "Update the Group object by name or id",
         "operationId": "group_updateCatalogScope",
         "security": [
           {
@@ -56139,8 +52529,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a consumer group.",
-        "description": "Removes a consumer group from a catalog.",
+        "summary": "Delete the Group object by name or id",
+        "description": "Delete the Group object by name or id",
         "operationId": "group_delCatalogScope",
         "security": [
           {
@@ -56179,885 +52569,6 @@
         ]
       }
     },
-    "/spaces/{org}/{catalog}/{space}/consumer-groups": {
-      "description": "The collection of Group operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/space"
-        }
-      ],
-      "post": {
-        "summary": "Create a Group object",
-        "description": "Create a Group object",
-        "operationId": "group_createSpaceInitiated",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-space-initiated#create"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Group"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/Group"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Group"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Group"
-                }
-              }
-            },
-            "headers": {
-              "Location": {
-                "$ref": "#/components/headers/Location"
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Group"
-        ]
-      },
-      "get": {
-        "summary": "List the Group objects",
-        "description": "List the Group objects",
-        "operationId": "group_listSpaceInitiated",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-space-initiated#list"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/GroupList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/GroupList"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Group"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Group objects",
-        "description": "Clear the Group objects",
-        "operationId": "group_clearSpaceInitiated",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-space-initiated#clear"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/confirm"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Success"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Group"
-        ]
-      }
-    },
-    "/spaces/{org}/{catalog}/{space}/consumer-groups/{group}": {
-      "description": "Group object operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/space"
-        },
-        {
-          "$ref": "#/components/parameters/group"
-        }
-      ],
-      "get": {
-        "summary": "Get the Group object by name or id",
-        "description": "Get the Group object by name or id",
-        "operationId": "group_getSpaceInitiated",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-space-initiated#get"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Group"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Group"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Group"
-        ]
-      },
-      "patch": {
-        "summary": "Update the Group object by name or id",
-        "description": "Update the Group object by name or id",
-        "operationId": "group_updateSpaceInitiated",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-space-initiated#update"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Group"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/Group"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Group"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Group"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Group"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Group object by name or id",
-        "description": "Delete the Group object by name or id",
-        "operationId": "group_delSpaceInitiated",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-space-initiated#del"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful delete",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Group"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Group"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Group"
-        ]
-      }
-    },
-    "/consumer-orgs/{org}/{catalog}/{consumer-org}/payment-methods": {
-      "description": "The collection of Payment Method operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/consumer-org"
-        }
-      ],
-      "post": {
-        "summary": "Create a Payment Method object",
-        "description": "Create a Payment Method object",
-        "operationId": "payment_method_create",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method#create"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PaymentMethod"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/PaymentMethod"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              }
-            },
-            "headers": {
-              "Location": {
-                "$ref": "#/components/headers/Location"
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Payment Method"
-        ]
-      },
-      "get": {
-        "summary": "List the Payment Method objects",
-        "description": "List the Payment Method objects",
-        "operationId": "payment_method_list",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method#list"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethodList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethodList"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Payment Method"
-        ]
-      }
-    },
-    "/consumer-orgs/{org}/{catalog}/{consumer-org}/payment-methods/{payment-method}": {
-      "description": "Payment Method object operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/consumer-org"
-        },
-        {
-          "$ref": "#/components/parameters/payment-method"
-        }
-      ],
-      "get": {
-        "summary": "Get the Payment Method object by name or id",
-        "description": "Get the Payment Method object by name or id",
-        "operationId": "payment_method_get",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method#get"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Payment Method"
-        ]
-      },
-      "patch": {
-        "summary": "Update the Payment Method object by name or id",
-        "description": "Update the Payment Method object by name or id",
-        "operationId": "payment_method_update",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method#update"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PaymentMethod"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/PaymentMethod"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Payment Method"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Payment Method object by name or id",
-        "description": "Delete the Payment Method object by name or id",
-        "operationId": "payment_method_del",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method#del"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful delete",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Payment Method"
-        ]
-      }
-    },
-    "/consumer-orgs/{org}/{catalog}/{space}/{consumer-org}/payment-methods": {
-      "description": "The collection of Payment Method operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/space"
-        },
-        {
-          "$ref": "#/components/parameters/consumer-org"
-        }
-      ],
-      "post": {
-        "summary": "Create a Payment Method object",
-        "description": "Create a Payment Method object",
-        "operationId": "payment_method_createSpaceInitiated",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method-space-initiated#create"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PaymentMethod"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/PaymentMethod"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              }
-            },
-            "headers": {
-              "Location": {
-                "$ref": "#/components/headers/Location"
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Payment Method"
-        ]
-      },
-      "get": {
-        "summary": "List the Payment Method objects",
-        "description": "List the Payment Method objects",
-        "operationId": "payment_method_listSpaceInitiated",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method-space-initiated#list"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethodList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethodList"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Payment Method"
-        ]
-      }
-    },
-    "/consumer-orgs/{org}/{catalog}/{space}/{consumer-org}/payment-methods/{payment-method}": {
-      "description": "Payment Method object operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/space"
-        },
-        {
-          "$ref": "#/components/parameters/consumer-org"
-        },
-        {
-          "$ref": "#/components/parameters/payment-method"
-        }
-      ],
-      "get": {
-        "summary": "Get the Payment Method object by name or id",
-        "description": "Get the Payment Method object by name or id",
-        "operationId": "payment_method_getSpaceInitiated",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method-space-initiated#get"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Payment Method"
-        ]
-      },
-      "patch": {
-        "summary": "Update the Payment Method object by name or id",
-        "description": "Update the Payment Method object by name or id",
-        "operationId": "payment_method_updateSpaceInitiated",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method-space-initiated#update"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PaymentMethod"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/PaymentMethod"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Payment Method"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Payment Method object by name or id",
-        "description": "Delete the Payment Method object by name or id",
-        "operationId": "payment_method_delSpaceInitiated",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method-space-initiated#del"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful delete",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Payment Method"
-        ]
-      }
-    },
     "/consumer-orgs/{org}/{catalog}/{consumer-org}/roles": {
       "description": "The collection of Role operations",
       "parameters": [
@@ -57072,8 +52583,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a consumer organization role.",
-        "description": "Adds a consumer organization role to a catalog.",
+        "summary": "Create a Role object",
+        "description": "Create a Role object",
         "operationId": "role_createConsumerOrgScope",
         "security": [
           {
@@ -57131,8 +52642,8 @@
         ]
       },
       "get": {
-        "summary": "Lists consumer organization roles.",
-        "description": "Returns the list of roles for consumer organization in a catalog.",
+        "summary": "List the Role objects",
+        "description": "List the Role objects",
         "operationId": "role_listConsumerOrgScope",
         "security": [
           {
@@ -57182,8 +52693,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears consumer organization roles.",
-        "description": "Removes all roles from a consumer organization in a catalog.",
+        "summary": "Clear the Role objects",
+        "description": "Clear the Role objects",
         "operationId": "role_clearConsumerOrgScope",
         "security": [
           {
@@ -57232,8 +52743,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a consumer organization role.",
-        "description": "Returns a role from a consumer organization in a catalog.",
+        "summary": "Get the Role object by name or id",
+        "description": "Get the Role object by name or id",
         "operationId": "role_getConsumerOrgScope",
         "security": [
           {
@@ -57277,8 +52788,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a consumer organization role.",
-        "description": "Updates a role for a consumer organization in a catalog.",
+        "summary": "Update the Role object by name or id",
+        "description": "Update the Role object by name or id",
         "operationId": "role_updateConsumerOrgScope",
         "security": [
           {
@@ -57331,8 +52842,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a consumer organization role default.",
-        "description": "Removes a role from a consumer organization in a catalog.",
+        "summary": "Delete the Role object by name or id",
+        "description": "Delete the Role object by name or id",
         "operationId": "role_delConsumerOrgScope",
         "security": [
           {
@@ -57388,8 +52899,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a consumer organization role.",
-        "description": "Adds a consumer organization role to a catalog, as accessed through a space.",
+        "summary": "Create a Role object",
+        "description": "Create a Role object",
         "operationId": "role_createConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -57447,8 +52958,8 @@
         ]
       },
       "get": {
-        "summary": "Lists consumer organization roles.",
-        "description": "Returns the list of roles for consumer organization in a catalog, as accessed through a space.",
+        "summary": "List the Role objects",
+        "description": "List the Role objects",
         "operationId": "role_listConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -57498,8 +53009,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears consumer organization roles.",
-        "description": "Removes all roles from a consumer organization in a catalog, as accessed through a space.",
+        "summary": "Clear the Role objects",
+        "description": "Clear the Role objects",
         "operationId": "role_clearConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -57551,8 +53062,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a consumer organization role.",
-        "description": "Returns a role from a consumer organization in a catalog, as accessed through a space.",
+        "summary": "Get the Role object by name or id",
+        "description": "Get the Role object by name or id",
         "operationId": "role_getConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -57596,8 +53107,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a consumer organization role.",
-        "description": "Updates a role for a consumer organization in a catalog, as accessed through a space.",
+        "summary": "Update the Role object by name or id",
+        "description": "Update the Role object by name or id",
         "operationId": "role_updateConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -57650,8 +53161,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a consumer organization role default.",
-        "description": "Removes a role from a consumer organization in a catalog, as accessed through a space.",
+        "summary": "Delete the Role object by name or id",
+        "description": "Delete the Role object by name or id",
         "operationId": "role_delConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -57704,8 +53215,8 @@
         }
       ],
       "get": {
-        "summary": "Lists associates.",
-        "description": "Returns a list of associates of the given consumer org in a catalog.",
+        "summary": "List the Associate objects",
+        "description": "List the Associate objects",
         "operationId": "associate_listConsumerOrgScope",
         "security": [
           {
@@ -57772,8 +53283,8 @@
         }
       ],
       "get": {
-        "summary": "Returns an associate.",
-        "description": "Returns an associate of the given consumer org in a catalog.",
+        "summary": "Get the Associate object by name or id",
+        "description": "Get the Associate object by name or id",
         "operationId": "associate_getConsumerOrgScope",
         "security": [
           {
@@ -57834,8 +53345,8 @@
         }
       ],
       "get": {
-        "summary": "Lists associates.",
-        "description": "Returns a list of associates of the given consumer org in a catalog, as accessed through the given space.",
+        "summary": "List the Associate objects",
+        "description": "List the Associate objects",
         "operationId": "associate_listConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -57905,8 +53416,8 @@
         }
       ],
       "get": {
-        "summary": "Returns an associate.",
-        "description": "Returns an associate of the given consumer org in a catalog, as accessed through the given space.",
+        "summary": "Get the Associate object by name or id",
+        "description": "Get the Associate object by name or id",
         "operationId": "associate_getConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -57964,8 +53475,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a consummer organization member invitation.",
-        "description": "Creates a member invitation to a consumer organization in a catalog.",
+        "summary": "Create a Member Invitation object",
+        "description": "Create a Member Invitation object",
         "operationId": "member_invitation_createConsumerOrgScope",
         "security": [
           {
@@ -58023,8 +53534,8 @@
         ]
       },
       "get": {
-        "summary": "Lists consumer organization member invitations.",
-        "description": "Returns the list of member invitations for a consumer organization in a catalog.",
+        "summary": "List the Member Invitation objects",
+        "description": "List the Member Invitation objects",
         "operationId": "member_invitation_listConsumerOrgScope",
         "security": [
           {
@@ -58074,8 +53585,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears consumer organization member invitations.",
-        "description": "Removes all member invitations for a consumer organization in a catalog.",
+        "summary": "Clear the Member Invitation objects",
+        "description": "Clear the Member Invitation objects",
         "operationId": "member_invitation_clearConsumerOrgScope",
         "security": [
           {
@@ -58124,8 +53635,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a consumer organization member invitation.",
-        "description": "Returns a member invitation to a consumer organization in a catalog.",
+        "summary": "Get the Member Invitation object by name or id",
+        "description": "Get the Member Invitation object by name or id",
         "operationId": "member_invitation_getConsumerOrgScope",
         "security": [
           {
@@ -58169,8 +53680,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a consumer organization member invitation.",
-        "description": "Updates a member invitation to a consumer organization in a catalog.",
+        "summary": "Update the Member Invitation object by name or id",
+        "description": "Update the Member Invitation object by name or id",
         "operationId": "member_invitation_updateConsumerOrgScope",
         "security": [
           {
@@ -58223,8 +53734,8 @@
         ]
       },
       "delete": {
-        "summary": "Creates a consumer organization member invitation.",
-        "description": "Deletes a member invitation to a consumer organization in a catalog.",
+        "summary": "Delete the Member Invitation object by name or id",
+        "description": "Delete the Member Invitation object by name or id",
         "operationId": "member_invitation_delConsumerOrgScope",
         "security": [
           {
@@ -58350,8 +53861,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a consummer organization member invitation.",
-        "description": "Creates a member invitation to a consumer organization in a catalog, as accessed through a space.",
+        "summary": "Create a Member Invitation object",
+        "description": "Create a Member Invitation object",
         "operationId": "member_invitation_createConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -58409,8 +53920,8 @@
         ]
       },
       "get": {
-        "summary": "Lists consumer organization member invitations.",
-        "description": "Returns the list of member invitations for a consumer organization in a catalog, as accessed through a space.",
+        "summary": "List the Member Invitation objects",
+        "description": "List the Member Invitation objects",
         "operationId": "member_invitation_listConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -58460,8 +53971,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears consumer organization member invitations.",
-        "description": "Removes all member invitations for a consumer organization in a catalog, as accessed through a space.",
+        "summary": "Clear the Member Invitation objects",
+        "description": "Clear the Member Invitation objects",
         "operationId": "member_invitation_clearConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -58513,8 +54024,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a consumer organization member invitation.",
-        "description": "Returns a member invitation to a consumer organization in a catalog, as accessed through a space.",
+        "summary": "Get the Member Invitation object by name or id",
+        "description": "Get the Member Invitation object by name or id",
         "operationId": "member_invitation_getConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -58558,8 +54069,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a consumer organization member invitation.",
-        "description": "Updates a member invitation to a consumer organization in a catalog, as accessed through a space.",
+        "summary": "Update the Member Invitation object by name or id",
+        "description": "Update the Member Invitation object by name or id",
         "operationId": "member_invitation_updateConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -58612,8 +54123,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a consumer organization member invitation.",
-        "description": "Deletes a member invitation to a consumer organization in a catalog, as accessed through a space.",
+        "summary": "Delete the Member Invitation object by name or id",
+        "description": "Delete the Member Invitation object by name or id",
         "operationId": "member_invitation_delConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -58739,8 +54250,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a consumer organization member.",
-        "description": "Adds a member to a consumer org in a catalog.",
+        "summary": "Create a Member object",
+        "description": "Create a Member object",
         "operationId": "member_createConsumerOrgScope",
         "security": [
           {
@@ -58798,8 +54309,8 @@
         ]
       },
       "get": {
-        "summary": "Lists consumer organization members.",
-        "description": "Returns the list of members of a consumer organization in a catalog.",
+        "summary": "List the Member objects",
+        "description": "List the Member objects",
         "operationId": "member_listConsumerOrgScope",
         "security": [
           {
@@ -58849,8 +54360,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears consumer organization members.",
-        "description": "Removes all members from a consumer org in a catalog.",
+        "summary": "Clear the Member objects",
+        "description": "Clear the Member objects",
         "operationId": "member_clearConsumerOrgScope",
         "security": [
           {
@@ -58899,8 +54410,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a consumer organization member.",
-        "description": "Returns a member of a consumer organization in a catalog.",
+        "summary": "Get the Member object by name or id",
+        "description": "Get the Member object by name or id",
         "operationId": "member_getConsumerOrgScope",
         "security": [
           {
@@ -58944,8 +54455,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a consumer organization member.",
-        "description": "Updates a member of a consumer organization in a catalog.",
+        "summary": "Update the Member object by name or id",
+        "description": "Update the Member object by name or id",
         "operationId": "member_updateConsumerOrgScope",
         "security": [
           {
@@ -58998,8 +54509,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a consumer organization member.",
-        "description": "Removes a member from a consumer organization in a catalog.",
+        "summary": "Delete the Member object by name or id",
+        "description": "Delete the Member object by name or id",
         "operationId": "member_delConsumerOrgScope",
         "security": [
           {
@@ -59055,8 +54566,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a consumer organization member.",
-        "description": "Adds a member to a consumer organization in a catalog, as accessed through a space.",
+        "summary": "Create a Member object",
+        "description": "Create a Member object",
         "operationId": "member_createConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -59114,8 +54625,8 @@
         ]
       },
       "get": {
-        "summary": "Lists consumer organization members.",
-        "description": "Returns the list of members of a consumer organization in a catalog, as accessed through a space.",
+        "summary": "List the Member objects",
+        "description": "List the Member objects",
         "operationId": "member_listConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -59165,8 +54676,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears consumer organization members.",
-        "description": "Removes all members from a consumer org in a catalog, as accessed through a space.",
+        "summary": "Clear the Member objects",
+        "description": "Clear the Member objects",
         "operationId": "member_clearConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -59218,8 +54729,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a consumer organization member.",
-        "description": "Returns a member of a consumer organization in a catalog, as accessed through a space.",
+        "summary": "Get the Member object by name or id",
+        "description": "Get the Member object by name or id",
         "operationId": "member_getConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -59263,8 +54774,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a consumer organization member.",
-        "description": "Updates a member of a consumer organization in a catalog, as accessed through a space.",
+        "summary": "Update the Member object by name or id",
+        "description": "Update the Member object by name or id",
         "operationId": "member_updateConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -59317,8 +54828,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a consumer organization member.",
-        "description": "Removes a member from a consumer organization in a catalog, as accessed through a space.",
+        "summary": "Delete the Member object by name or id",
+        "description": "Delete the Member object by name or id",
         "operationId": "member_delConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -59371,8 +54882,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a consumer app.",
-        "description": "Creates a new app belonging to the given consumer org in a catalog.",
+        "summary": "Create a Application object",
+        "description": "Create a Application object",
         "operationId": "app_create",
         "security": [
           {
@@ -59430,8 +54941,8 @@
         ]
       },
       "get": {
-        "summary": "Lists consumer apps.",
-        "description": "Returns the list of apps belonging to the given consumer org in a catalog.",
+        "summary": "List the Application objects",
+        "description": "List the Application objects",
         "operationId": "app_list",
         "security": [
           {
@@ -59481,8 +54992,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears apps from a consumer org.",
-        "description": "Deletes all apps from the given consumer org in a catalog.",
+        "summary": "Clear the Application objects",
+        "description": "Clear the Application objects",
         "operationId": "app_clear",
         "security": [
           {
@@ -59531,8 +55042,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a consumer app.",
-        "description": "Returns the app with the given name or id belonging to the given consumer org in a catalog.",
+        "summary": "Get the Application object by name or id",
+        "description": "Get the Application object by name or id",
         "operationId": "app_get",
         "security": [
           {
@@ -59576,8 +55087,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a consumer app.",
-        "description": "Updates the given app belonging to a consumer org in a catalog.",
+        "summary": "Update the Application object by name or id",
+        "description": "Update the Application object by name or id",
         "operationId": "app_update",
         "security": [
           {
@@ -59630,8 +55141,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a consumer app.",
-        "description": "Deletes the app with the given name or id from a consumer org in a catalog.",
+        "summary": "Delete the Application object by name or id",
+        "description": "Delete the Application object by name or id",
         "operationId": "app_del",
         "security": [
           {
@@ -59687,8 +55198,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a consumer app.",
-        "description": "Creates a new app belonging to the given consumer org in a catalog, as accessed through the given space.",
+        "summary": "Create a Application object",
+        "description": "Create a Application object",
         "operationId": "app_createSpaceInitiated",
         "security": [
           {
@@ -59746,8 +55257,8 @@
         ]
       },
       "get": {
-        "summary": "Lists consumer apps.",
-        "description": "Returns a list of apps belonging to the given consumer org in a catalog, as accessed through the given space.",
+        "summary": "List the Application objects",
+        "description": "List the Application objects",
         "operationId": "app_listSpaceInitiated",
         "security": [
           {
@@ -59797,8 +55308,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears apps from a consumer org.",
-        "description": "Deletes all apps from the given consumer org in a catalog, as accessed through the given space.",
+        "summary": "Clear the Application objects",
+        "description": "Clear the Application objects",
         "operationId": "app_clearSpaceInitiated",
         "security": [
           {
@@ -59850,8 +55361,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a consumer app.",
-        "description": "Returns the app with the given name or id belonging to the given consumer org in a catalog, as accessed through the given space.",
+        "summary": "Get the Application object by name or id",
+        "description": "Get the Application object by name or id",
         "operationId": "app_getSpaceInitiated",
         "security": [
           {
@@ -59895,8 +55406,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a consumer app.",
-        "description": "Updates the given app belonging to a consumer org in a catalog, as accessed through the given space.",
+        "summary": "Update the Application object by name or id",
+        "description": "Update the Application object by name or id",
         "operationId": "app_updateSpaceInitiated",
         "security": [
           {
@@ -59949,8 +55460,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a consumer app.",
-        "description": "Deletes the app with the given name or id from a consumer org in a catalog, as accessed through the given space.",
+        "summary": "Delete the Application object by name or id",
+        "description": "Delete the Application object by name or id",
         "operationId": "app_delSpaceInitiated",
         "security": [
           {
@@ -60006,8 +55517,8 @@
         }
       ],
       "post": {
-        "summary": "Creates app credentials.",
-        "description": "Adds a new set of credentials to an app in a catalog.",
+        "summary": "Create a Application Credential object",
+        "description": "Create a Application Credential object",
         "operationId": "credential_create",
         "security": [
           {
@@ -60065,8 +55576,8 @@
         ]
       },
       "get": {
-        "summary": "Lists app credentials.",
-        "description": "Returns the list of credentials for an app in a catalog.",
+        "summary": "List the Application Credential objects",
+        "description": "List the Application Credential objects",
         "operationId": "credential_list",
         "security": [
           {
@@ -60114,6 +55625,39 @@
           "Consumer Management",
           "Resource: Application Credential"
         ]
+      },
+      "delete": {
+        "summary": "Clear the Application Credential objects",
+        "description": "Clear the Application Credential objects",
+        "operationId": "credential_clear",
+        "security": [
+          {
+            "oauth": [
+              "app:manage:all"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#clear"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/confirm"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Consumer Management",
+          "Resource: Application Credential"
+        ]
       }
     },
     "/apps/{org}/{catalog}/{consumer-org}/{app}/credentials/{credential}": {
@@ -60136,8 +55680,8 @@
         }
       ],
       "get": {
-        "summary": "Returns app credentials.",
-        "description": "Returns the given set of credentials for an app in a catalog.",
+        "summary": "Get the Application Credential object by name or id",
+        "description": "Get the Application Credential object by name or id",
         "operationId": "credential_get",
         "security": [
           {
@@ -60181,8 +55725,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates credentials for an app.",
-        "description": "Updates the given set of credentials for an app in a catalog.",
+        "summary": "Update the Application Credential object by name or id",
+        "description": "Update the Application Credential object by name or id",
         "operationId": "credential_update",
         "security": [
           {
@@ -60235,8 +55779,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes app credentials.",
-        "description": "Removes the given set of credentials from an app in a catalog.",
+        "summary": "Delete the Application Credential object by name or id",
+        "description": "Delete the Application Credential object by name or id",
         "operationId": "credential_del",
         "security": [
           {
@@ -60486,8 +56030,8 @@
         }
       ],
       "post": {
-        "summary": "Creates app credentials.",
-        "description": "Adds a new set of credentials to an app in a catalog, as accessed through a space.",
+        "summary": "Create a Application Credential object",
+        "description": "Create a Application Credential object",
         "operationId": "credential_createSpaceInitiated",
         "security": [
           {
@@ -60545,8 +56089,8 @@
         ]
       },
       "get": {
-        "summary": "Lists app credentials.",
-        "description": "Returns the list of credentials for an app in a catalog, as accessed through a space.",
+        "summary": "List the Application Credential objects",
+        "description": "List the Application Credential objects",
         "operationId": "credential_listSpaceInitiated",
         "security": [
           {
@@ -60596,8 +56140,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears app credentials.",
-        "description": "Removes all credentials for an app in a catalog, as accessed through a space.",
+        "summary": "Clear the Application Credential objects",
+        "description": "Clear the Application Credential objects",
         "operationId": "credential_clearSpaceInitiated",
         "security": [
           {
@@ -60652,8 +56196,8 @@
         }
       ],
       "get": {
-        "summary": "Returns app credentials.",
-        "description": "Returns the given set of credentials for an app in a catalog, as accessed through a space.",
+        "summary": "Get the Application Credential object by name or id",
+        "description": "Get the Application Credential object by name or id",
         "operationId": "credential_getSpaceInitiated",
         "security": [
           {
@@ -60697,8 +56241,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates credentials for an app.",
-        "description": "Updates the given set of credentials for an app in a catalog, as accessed through a space.",
+        "summary": "Update the Application Credential object by name or id",
+        "description": "Update the Application Credential object by name or id",
         "operationId": "credential_updateSpaceInitiated",
         "security": [
           {
@@ -60751,8 +56295,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes app credentials.",
-        "description": "Removes the given set of credentials from an app in a catalog, as accessed through a space.",
+        "summary": "Delete the Application Credential object by name or id",
+        "description": "Delete the Application Credential object by name or id",
         "operationId": "credential_delSpaceInitiated",
         "security": [
           {
@@ -61008,8 +56552,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a subscription.",
-        "description": "Create a subscription for an app belonging to a connsumer organization in a catalog.",
+        "summary": "Create a Subscription object",
+        "description": "Create a Subscription object",
         "operationId": "subscription_create",
         "security": [
           {
@@ -61067,8 +56611,8 @@
         ]
       },
       "get": {
-        "summary": "Lists subscriptions.",
-        "description": "Returns the list of subscriptions for an app belonging to a connsumer organization in a catalog.",
+        "summary": "List the Subscription objects",
+        "description": "List the Subscription objects",
         "operationId": "subscription_list",
         "security": [
           {
@@ -61090,12 +56634,6 @@
           },
           {
             "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/product_url"
-          },
-          {
-            "$ref": "#/components/parameters/plan"
           }
         ],
         "responses": {
@@ -61124,8 +56662,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears subscriptions.",
-        "description": "Deletes all subscriptions for an app belonging to a connsumer organization in a catalog.",
+        "summary": "Clear the Subscription objects",
+        "description": "Clear the Subscription objects",
         "operationId": "subscription_clear",
         "security": [
           {
@@ -61177,8 +56715,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a subscription.",
-        "description": "Returns a subscription for an app belonging to a connsumer organization in a catalog.",
+        "summary": "Get the Subscription object by name or id",
+        "description": "Get the Subscription object by name or id",
         "operationId": "subscription_get",
         "security": [
           {
@@ -61222,8 +56760,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a subscription.",
-        "description": "Updates a subscription for an app belonging to a connsumer organization in a catalog.",
+        "summary": "Update the Subscription object by name or id",
+        "description": "Update the Subscription object by name or id",
         "operationId": "subscription_update",
         "security": [
           {
@@ -61276,8 +56814,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a subscription.",
-        "description": "Deletes a subscriptions for an app belonging to a connsumer organization in a catalog.",
+        "summary": "Delete the Subscription object by name or id",
+        "description": "Delete the Subscription object by name or id",
         "operationId": "subscription_del",
         "security": [
           {
@@ -61336,8 +56874,8 @@
         }
       ],
       "post": {
-        "summary": "Creates a subscription.",
-        "description": "Create a subscriptions for an app belonging to a connsumer organization in a catalog, as accessed through a space.",
+        "summary": "Create a Subscription object",
+        "description": "Create a Subscription object",
         "operationId": "subscription_createSpaceInitiated",
         "security": [
           {
@@ -61395,8 +56933,8 @@
         ]
       },
       "get": {
-        "summary": "Lists subscriptions.",
-        "description": "Returns the list of subscriptions for an app belonging to a connsumer organization in a catalog, as accessed through a space.",
+        "summary": "List the Subscription objects",
+        "description": "List the Subscription objects",
         "operationId": "subscription_listSpaceInitiated",
         "security": [
           {
@@ -61418,12 +56956,6 @@
           },
           {
             "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/product_url"
-          },
-          {
-            "$ref": "#/components/parameters/plan"
           }
         ],
         "responses": {
@@ -61452,8 +56984,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears subscriptions.",
-        "description": "Deletes all subscriptions for an app belonging to a connsumer organization in a catalog, as accessed through a space.",
+        "summary": "Clear the Subscription objects",
+        "description": "Clear the Subscription objects",
         "operationId": "subscription_clearSpaceInitiated",
         "security": [
           {
@@ -61508,8 +57040,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a subscription.",
-        "description": "Returns a subscription for an app belonging to a connsumer organization in a catalog, as accessed through a space.",
+        "summary": "Get the Subscription object by name or id",
+        "description": "Get the Subscription object by name or id",
         "operationId": "subscription_getSpaceInitiated",
         "security": [
           {
@@ -61553,8 +57085,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a subscription.",
-        "description": "Updates a subscription for an app belonging to a connsumer organization in a catalog, as accessed through a space.",
+        "summary": "Update the Subscription object by name or id",
+        "description": "Update the Subscription object by name or id",
         "operationId": "subscription_updateSpaceInitiated",
         "security": [
           {
@@ -61607,8 +57139,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a subscription.",
-        "description": "Deletes a subscriptions for an app belonging to a connsumer organization in a catalog, as accessed through a space.",
+        "summary": "Delete the Subscription object by name or id",
+        "description": "Delete the Subscription object by name or id",
         "operationId": "subscription_delSpaceInitiated",
         "security": [
           {
@@ -61655,13 +57187,13 @@
         }
       ],
       "get": {
-        "summary": "Lists drafts.",
-        "description": "Returns the complete list of draft APIs and products belonging to a provider organization.",
+        "summary": "List the Draft objects",
+        "description": "List the Draft objects",
         "operationId": "draft_list",
         "security": [
           {
             "oauth": [
-              "api-drafts:view"
+              "drafts:view"
             ]
           }
         ],
@@ -61706,13 +57238,13 @@
         ]
       },
       "delete": {
-        "summary": "Deletes drafts.",
-        "description": "Removes all drafts (APIs and products).",
+        "summary": "Clear the Draft objects",
+        "description": "Clear the Draft objects",
         "operationId": "draft_clear",
         "security": [
           {
             "oauth": [
-              "api-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -61752,7 +57284,7 @@
         "security": [
           {
             "oauth": [
-              "api-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -61808,13 +57340,13 @@
         }
       ],
       "post": {
-        "summary": "Creates a draft product.",
-        "description": "Creates a draft product from the given content, which may represent an product document or a product and associated APIs.",
+        "summary": "Create a Draft Product object",
+        "description": "Create a Draft Product object",
         "operationId": "draft_product_create",
         "security": [
           {
             "oauth": [
-              "product-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -61872,13 +57404,13 @@
         ]
       },
       "get": {
-        "summary": "Lists draft products.",
-        "description": "Returns all draft products belonging to a provider organization.",
+        "summary": "List all Draft Product objects in all collections",
+        "description": "List all Draft Product objects in all collections",
         "operationId": "draft_product_listAll",
         "security": [
           {
             "oauth": [
-              "product-drafts:view"
+              "drafts:view"
             ]
           }
         ],
@@ -61923,13 +57455,13 @@
         ]
       },
       "delete": {
-        "summary": "Clears draft products.",
-        "description": "Deletes all draft products.",
+        "summary": "Clear all Draft Product objects in all collections",
+        "description": "Clear all Draft Product objects in all collections",
         "operationId": "draft_product_clearAll",
         "security": [
           {
             "oauth": [
-              "product-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -61967,13 +57499,13 @@
         }
       ],
       "get": {
-        "summary": "Lists draft product versions.",
-        "description": "Returns all versions of the named draft product.",
+        "summary": "List the Draft Product objects",
+        "description": "List the Draft Product objects",
         "operationId": "draft_product_list",
         "security": [
           {
             "oauth": [
-              "product-drafts:view"
+              "drafts:view"
             ]
           }
         ],
@@ -62018,13 +57550,13 @@
         ]
       },
       "delete": {
-        "summary": "Clears draft product versions.",
-        "description": "Deletes all versions of the named draft product.",
+        "summary": "Clear the Draft Product objects",
+        "description": "Clear the Draft Product objects",
         "operationId": "draft_product_clear",
         "security": [
           {
             "oauth": [
-              "product-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -62062,13 +57594,13 @@
         }
       ],
       "get": {
-        "summary": "Returns a draft product.",
-        "description": "Returns the given draft product.",
+        "summary": "Get the Draft Product object by id",
+        "description": "Get the Draft Product object by id",
         "operationId": "draft_product_get",
         "security": [
           {
             "oauth": [
-              "product-drafts:view"
+              "drafts:view"
             ]
           }
         ],
@@ -62107,13 +57639,13 @@
         ]
       },
       "patch": {
-        "summary": "Updates a draft product.",
-        "description": "Updates a draft product from the given content, which may represent an product document or a product and associated APIs.",
+        "summary": "Update the Draft Product object by id",
+        "description": "Update the Draft Product object by id",
         "operationId": "draft_product_update",
         "security": [
           {
             "oauth": [
-              "product-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -62166,13 +57698,13 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a draft product.",
-        "description": "Deletes the given product from drafts.",
+        "summary": "Delete the Draft Product object by id",
+        "description": "Delete the Draft Product object by id",
         "operationId": "draft_product_del",
         "security": [
           {
             "oauth": [
-              "product-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -62220,13 +57752,13 @@
         }
       ],
       "get": {
-        "summary": "Returns a draft product.",
-        "description": "Returns the given draft product.",
+        "summary": "Get the Draft Product object by name and version",
+        "description": "Get the Draft Product object by name and version",
         "operationId": "draft_product_getByNameVersion",
         "security": [
           {
             "oauth": [
-              "product-drafts:view"
+              "drafts:view"
             ]
           }
         ],
@@ -62265,13 +57797,13 @@
         ]
       },
       "patch": {
-        "summary": "Updates a draft product.",
-        "description": "Updates a draft product from the given content, which may represent an product document or a product and associated APIs.",
+        "summary": "Update the Draft Product object by name and version",
+        "description": "Update the Draft Product object by name and version",
         "operationId": "draft_product_updateByNameVersion",
         "security": [
           {
             "oauth": [
-              "product-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -62330,7 +57862,7 @@
         "security": [
           {
             "oauth": [
-              "product-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -62380,7 +57912,7 @@
         "security": [
           {
             "oauth": [
-              "product-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -62433,7 +57965,7 @@
         "security": [
           {
             "oauth": [
-              "product-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -62483,7 +58015,7 @@
         "security": [
           {
             "oauth": [
-              "product-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -62536,7 +58068,7 @@
         "security": [
           {
             "oauth": [
-              "product-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -62578,13 +58110,13 @@
         }
       ],
       "post": {
-        "summary": "Creates a draft API.",
-        "description": "Creates a draft API from the given content, which may represent an OpenAPI or WSDL-defined API.",
+        "summary": "Create a Draft API object",
+        "description": "Create a Draft API object",
         "operationId": "draft_api_create",
         "security": [
           {
             "oauth": [
-              "api-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -62659,13 +58191,13 @@
         ]
       },
       "get": {
-        "summary": "Lists draft APIs.",
-        "description": "Returns all draft APIs belonging to a provider organization.",
+        "summary": "List all Draft API objects in all collections",
+        "description": "List all Draft API objects in all collections",
         "operationId": "draft_api_listAll",
         "security": [
           {
             "oauth": [
-              "api-drafts:view"
+              "drafts:view"
             ]
           }
         ],
@@ -62710,13 +58242,13 @@
         ]
       },
       "delete": {
-        "summary": "Clears draft APIs.",
-        "description": "Removes all APIs from drafts.",
+        "summary": "Clear all Draft API objects in all collections",
+        "description": "Clear all Draft API objects in all collections",
         "operationId": "draft_api_clearAll",
         "security": [
           {
             "oauth": [
-              "api-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -62754,13 +58286,13 @@
         }
       ],
       "get": {
-        "summary": "Lists draft API versions.",
-        "description": "Returns all versions of the draft API with the given name.",
+        "summary": "List the Draft API objects",
+        "description": "List the Draft API objects",
         "operationId": "draft_api_list",
         "security": [
           {
             "oauth": [
-              "api-drafts:view"
+              "drafts:view"
             ]
           }
         ],
@@ -62805,13 +58337,13 @@
         ]
       },
       "delete": {
-        "summary": "Clears draft API versions.",
-        "description": "Removes all versions of the named API from drafts.",
+        "summary": "Clear the Draft API objects",
+        "description": "Clear the Draft API objects",
         "operationId": "draft_api_clear",
         "security": [
           {
             "oauth": [
-              "api-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -62849,13 +58381,13 @@
         }
       ],
       "get": {
-        "summary": "Returns a draft API.",
-        "description": "Returns the given draft API.",
+        "summary": "Get the Draft API object by id",
+        "description": "Get the Draft API object by id",
         "operationId": "draft_api_get",
         "security": [
           {
             "oauth": [
-              "api-drafts:view"
+              "drafts:view"
             ]
           }
         ],
@@ -62894,13 +58426,13 @@
         ]
       },
       "patch": {
-        "summary": "Updates a draft API.",
-        "description": "Updates the given draft API definition.",
+        "summary": "Update the Draft API object by id",
+        "description": "Update the Draft API object by id",
         "operationId": "draft_api_update",
         "security": [
           {
             "oauth": [
-              "api-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -62964,13 +58496,13 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a draft API.",
-        "description": "Deletes the given API from drafts.",
+        "summary": "Delete the Draft API object by id",
+        "description": "Delete the Draft API object by id",
         "operationId": "draft_api_del",
         "security": [
           {
             "oauth": [
-              "api-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -63018,13 +58550,13 @@
         }
       ],
       "get": {
-        "summary": "Returns a draft API.",
-        "description": "Returns the given draft API.",
+        "summary": "Get the Draft API object by name and version",
+        "description": "Get the Draft API object by name and version",
         "operationId": "draft_api_getByNameVersion",
         "security": [
           {
             "oauth": [
-              "api-drafts:view"
+              "drafts:view"
             ]
           }
         ],
@@ -63063,13 +58595,13 @@
         ]
       },
       "patch": {
-        "summary": "Updates a draft API.",
-        "description": "Updates the given draft API definition.",
+        "summary": "Update the Draft API object by name and version",
+        "description": "Update the Draft API object by name and version",
         "operationId": "draft_api_updateByNameVersion",
         "security": [
           {
             "oauth": [
-              "api-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -63139,7 +58671,7 @@
         "security": [
           {
             "oauth": [
-              "api-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -63189,7 +58721,7 @@
         "security": [
           {
             "oauth": [
-              "api-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -63242,7 +58774,7 @@
         "security": [
           {
             "oauth": [
-              "api-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -63292,7 +58824,7 @@
         "security": [
           {
             "oauth": [
-              "api-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -63362,7 +58894,7 @@
         "security": [
           {
             "oauth": [
-              "api-drafts:edit"
+              "drafts:edit"
             ]
           }
         ],
@@ -63429,7 +58961,7 @@
         "security": [
           {
             "oauth": [
-              "api-drafts:view"
+              "drafts:view"
             ]
           }
         ],
@@ -63482,7 +59014,7 @@
         "security": [
           {
             "oauth": [
-              "api-drafts:view"
+              "drafts:view"
             ]
           }
         ],
@@ -63532,7 +59064,7 @@
         "security": [
           {
             "oauth": [
-              "api-drafts:view"
+              "drafts:view"
             ]
           }
         ],
@@ -63587,7 +59119,7 @@
         "security": [
           {
             "oauth": [
-              "api-drafts:view"
+              "drafts:view"
             ]
           }
         ],
@@ -63634,8 +59166,8 @@
         }
       ],
       "get": {
-        "summary": "Lists products.",
-        "description": "Returns the list of products in a catalog.",
+        "summary": "List all Product objects in all collections",
+        "description": "List all Product objects in all collections",
         "operationId": "product_listAllCatalogScope",
         "security": [
           {
@@ -63685,8 +59217,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears products.",
-        "description": "Removes all products from a catalog.",
+        "summary": "Clear all Product objects in all collections",
+        "description": "Clear all Product objects in all collections",
         "operationId": "product_clearAllCatalogScope",
         "security": [
           {
@@ -63732,8 +59264,8 @@
         }
       ],
       "get": {
-        "summary": "Lists products.",
-        "description": "Returns the list of versions of the named product in a catalog.",
+        "summary": "List the Product objects",
+        "description": "List the Product objects",
         "operationId": "product_listCatalogScope",
         "security": [
           {
@@ -63783,8 +59315,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears product versions.",
-        "description": "Removes all versions of the named product from a catalog.",
+        "summary": "Clear the Product objects",
+        "description": "Clear the Product objects",
         "operationId": "product_clearCatalogScope",
         "security": [
           {
@@ -63830,8 +59362,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a product.",
-        "description": "Returns a product in a catalog.",
+        "summary": "Get the Product object by id",
+        "description": "Get the Product object by id",
         "operationId": "product_getCatalogScope",
         "security": [
           {
@@ -63875,8 +59407,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a product in a catalog.",
-        "description": "Updates a product in a catalog.",
+        "summary": "Update the Product object by id",
+        "description": "Update the Product object by id",
         "operationId": "product_updateCatalogScope",
         "security": [
           {
@@ -63929,8 +59461,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a product.",
-        "description": "Removes a product from a catalog.",
+        "summary": "Delete the Product object by id",
+        "description": "Delete the Product object by id",
         "operationId": "product_delCatalogScope",
         "security": [
           {
@@ -63986,8 +59518,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a product.",
-        "description": "Returns a product in a catalog.",
+        "summary": "Get the Product object by name and version",
+        "description": "Get the Product object by name and version",
         "operationId": "product_getByNameVersionCatalogScope",
         "security": [
           {
@@ -64031,8 +59563,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a product in a catalog.",
-        "description": "Updates a product in a catalog.",
+        "summary": "Update the Product object by name and version",
+        "description": "Update the Product object by name and version",
         "operationId": "product_updateByNameVersionCatalogScope",
         "security": [
           {
@@ -64902,8 +60434,8 @@
         }
       ],
       "get": {
-        "summary": "Lists APIs in a catalog.",
-        "description": "Returns a list of all APIs in a catalog.",
+        "summary": "List all API objects in all collections",
+        "description": "List all API objects in all collections",
         "operationId": "api_listAllCatalogScope",
         "security": [
           {
@@ -64967,8 +60499,8 @@
         }
       ],
       "get": {
-        "summary": "Lists APIs in a catalog.",
-        "description": "Returns a list of all APIs with the given name in a catalog. For a given name, multiple versions may exist.",
+        "summary": "List the API objects",
+        "description": "List the API objects",
         "operationId": "api_listCatalogScope",
         "security": [
           {
@@ -65032,8 +60564,8 @@
         }
       ],
       "get": {
-        "summary": "Returns an API object.",
-        "description": "Returns the API object with the given id in a catalog.",
+        "summary": "Get the API object by id",
+        "description": "Get the API object by id",
         "operationId": "api_getCatalogScope",
         "security": [
           {
@@ -65077,8 +60609,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates an API.",
-        "description": "Updates the API with the given id in a catalog.",
+        "summary": "Update the API object by id",
+        "description": "Update the API object by id",
         "operationId": "api_updateCatalogScope",
         "security": [
           {
@@ -65148,8 +60680,8 @@
         }
       ],
       "get": {
-        "summary": "Returns an API object.",
-        "description": "Returns the API object with the given name and version in a catalog.",
+        "summary": "Get the API object by name and version",
+        "description": "Get the API object by name and version",
         "operationId": "api_getByNameVersionCatalogScope",
         "security": [
           {
@@ -65193,8 +60725,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates an API.",
-        "description": "Updates the API with the given name and version in a catalog.",
+        "summary": "Update the API object by name and version",
+        "description": "Update the API object by name and version",
         "operationId": "api_updateByNameVersionCatalogScope",
         "security": [
           {
@@ -65483,8 +61015,8 @@
         }
       ],
       "get": {
-        "summary": "Lists products.",
-        "description": "Returns the list of products in a space.",
+        "summary": "List all Product objects in all collections",
+        "description": "List all Product objects in all collections",
         "operationId": "product_listAllSpaceScope",
         "security": [
           {
@@ -65534,8 +61066,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears products.",
-        "description": "Removes all products from a space.",
+        "summary": "Clear all Product objects in all collections",
+        "description": "Clear all Product objects in all collections",
         "operationId": "product_clearAllSpaceScope",
         "security": [
           {
@@ -65584,8 +61116,8 @@
         }
       ],
       "get": {
-        "summary": "Lists products.",
-        "description": "Returns the list of versions of the named product in a space.",
+        "summary": "List the Product objects",
+        "description": "List the Product objects",
         "operationId": "product_listSpaceScope",
         "security": [
           {
@@ -65635,8 +61167,8 @@
         ]
       },
       "delete": {
-        "summary": "Clears product versions.",
-        "description": "Removes all versions of the named product from a space.",
+        "summary": "Clear the Product objects",
+        "description": "Clear the Product objects",
         "operationId": "product_clearSpaceScope",
         "security": [
           {
@@ -65685,8 +61217,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a product.",
-        "description": "Returns a product in a space.",
+        "summary": "Get the Product object by id",
+        "description": "Get the Product object by id",
         "operationId": "product_getSpaceScope",
         "security": [
           {
@@ -65730,8 +61262,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a product in a space.",
-        "description": "Updates a product in a space.",
+        "summary": "Update the Product object by id",
+        "description": "Update the Product object by id",
         "operationId": "product_updateSpaceScope",
         "security": [
           {
@@ -65784,8 +61316,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes a product.",
-        "description": "Removes a product from a space.",
+        "summary": "Delete the Product object by id",
+        "description": "Delete the Product object by id",
         "operationId": "product_delSpaceScope",
         "security": [
           {
@@ -65844,8 +61376,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a product.",
-        "description": "Returns a product in a space.",
+        "summary": "Get the Product object by name and version",
+        "description": "Get the Product object by name and version",
         "operationId": "product_getByNameVersionSpaceScope",
         "security": [
           {
@@ -65889,8 +61421,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a product in a space.",
-        "description": "Updates a product in a space.",
+        "summary": "Update the Product object by name and version",
+        "description": "Update the Product object by name and version",
         "operationId": "product_updateByNameVersionSpaceScope",
         "security": [
           {
@@ -66799,8 +62331,8 @@
         }
       ],
       "get": {
-        "summary": "Lists APIs in a space.",
-        "description": "Returns a list of all APIs in a space within a catalog.",
+        "summary": "List all API objects in all collections",
+        "description": "List all API objects in all collections",
         "operationId": "api_listAllSpaceScope",
         "security": [
           {
@@ -66867,8 +62399,8 @@
         }
       ],
       "get": {
-        "summary": "Lists APIs in a space.",
-        "description": "Returns a list of all APIs with the given name in a space within a catalog. For a given name, multiple versions may exist.",
+        "summary": "List the API objects",
+        "description": "List the API objects",
         "operationId": "api_listSpaceScope",
         "security": [
           {
@@ -66935,8 +62467,8 @@
         }
       ],
       "get": {
-        "summary": "Returns an API object.",
-        "description": "Returns the API object with the given id in a space within a catalog.",
+        "summary": "Get the API object by id",
+        "description": "Get the API object by id",
         "operationId": "api_getSpaceScope",
         "security": [
           {
@@ -66980,8 +62512,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates an API.",
-        "description": "Updates the API with the given id in a space within a catalog.",
+        "summary": "Update the API object by id",
+        "description": "Update the API object by id",
         "operationId": "api_updateSpaceScope",
         "security": [
           {
@@ -67054,8 +62586,8 @@
         }
       ],
       "get": {
-        "summary": "Returns an API object.",
-        "description": "Returns the API object with the given name and version in a space within a catalog.",
+        "summary": "Get the API object by name and version",
+        "description": "Get the API object by name and version",
         "operationId": "api_getByNameVersionSpaceScope",
         "security": [
           {
@@ -67099,8 +62631,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates an API.",
-        "description": "Updates the API with the given name and version in a space within a catalog.",
+        "summary": "Update the API object by name and version",
+        "description": "Update the API object by name and version",
         "operationId": "api_updateByNameVersionSpaceScope",
         "security": [
           {
@@ -67390,8 +62922,8 @@
     "/me": {
       "description": "Me object operations",
       "get": {
-        "summary": "Returns the current user.",
-        "description": "Returns the user profile for the currently authenticated user.",
+        "summary": "Get the Me object",
+        "description": "Get the Me object",
         "operationId": "me_singletonGet",
         "security": [
           {
@@ -67438,8 +62970,8 @@
         ]
       },
       "put": {
-        "summary": "Updates the current user.",
-        "description": "Updates the user profile for the currently authenticated user.",
+        "summary": "Update the Me object",
+        "description": "Update the Me object",
         "operationId": "me_singletonUpdate",
         "security": [
           {
@@ -67492,8 +63024,8 @@
         ]
       },
       "delete": {
-        "summary": "Deletes the current user.",
-        "description": "Removes the currently authenticated user.",
+        "summary": "Delete the Me object",
+        "description": "Delete the Me object",
         "operationId": "me_singletonDel",
         "security": [
           {
@@ -67633,9 +63165,6 @@
           "204": {
             "description": "Success"
           },
-          "302": {
-            "description": "Success"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -67649,8 +63178,8 @@
     "/permissions": {
       "description": "The collection of My Permission operations",
       "get": {
-        "summary": "Lists the user's permissions.",
-        "description": "Returns the list of permissions for the currently authenticated user.",
+        "summary": "List the My Permission objects",
+        "description": "List the My Permission objects",
         "operationId": "my_permission_list",
         "security": [
           {
@@ -67703,8 +63232,8 @@
     "/tasks": {
       "description": "The collection of My Task operations",
       "get": {
-        "summary": "Lists the user's tasks.",
-        "description": "Returns the list of tasks (approvals) for the currently authenticated user.",
+        "summary": "List the My Task objects",
+        "description": "List the My Task objects",
         "operationId": "my_task_list",
         "security": [
           {
@@ -67757,8 +63286,8 @@
     "/originated-tasks": {
       "description": "The collection of Originated Task operations",
       "get": {
-        "summary": "Returns the user's originated tasks.",
-        "description": "Returns the list of tasks originated by the currently authenticated user.",
+        "summary": "List the Originated Task objects",
+        "description": "List the Originated Task objects",
         "operationId": "originated_task_list",
         "security": [
           {
@@ -67774,6 +63303,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
           }
         ],
         "responses": {
@@ -67805,8 +63340,8 @@
     "/orgs": {
       "description": "The collection of My Organization operations",
       "get": {
-        "summary": "Lists the user's organizations.",
-        "description": "Returns the list of organizations of which the currently authenticated user is a member.",
+        "summary": "List the My Organization objects",
+        "description": "List the My Organization objects",
         "operationId": "my_org_list",
         "security": [
           {
@@ -67859,8 +63394,8 @@
     "/catalogs": {
       "description": "The collection of My Catalog operations",
       "get": {
-        "summary": "Lists the user's catalogs.",
-        "description": "Returns the list of catalogs of which the currently authenticated user is a member.",
+        "summary": "List the My Catalog objects",
+        "description": "List the My Catalog objects",
         "operationId": "my_catalog_list",
         "security": [
           {
@@ -67913,8 +63448,8 @@
     "/spaces": {
       "description": "The collection of My Space operations",
       "get": {
-        "summary": "Lists the user's spaces.",
-        "description": "Returns the list of spaces of which the currently authenticated user is a member.",
+        "summary": "List the My Space objects",
+        "description": "List the My Space objects",
         "operationId": "my_space_list",
         "security": [
           {
@@ -67975,8 +63510,8 @@
         }
       ],
       "get": {
-        "summary": "Lists catalog webhooks.",
-        "description": "Returns the list of webhook registrations for a catalog.",
+        "summary": "List the Webhook objects",
+        "description": "List the Webhook objects",
         "operationId": "webhook_listCatalogScope",
         "security": [
           {
@@ -68042,8 +63577,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a catalog webhook.",
-        "description": "Returns a webhook registration for a catalog.",
+        "summary": "Get the Webhook object by name or id",
+        "description": "Get the Webhook object by name or id",
         "operationId": "webhook_getCatalogScope",
         "security": [
           {
@@ -68089,8 +63624,8 @@
         ]
       },
       "patch": {
-        "summary": "Updates a catalog webhook.",
-        "description": "Updates a webhook registration for a catalog.",
+        "summary": "Update the Webhook object by name or id",
+        "description": "Update the Webhook object by name or id",
         "operationId": "webhook_updateCatalogScope",
         "security": [
           {
@@ -68155,8 +63690,8 @@
         }
       ],
       "get": {
-        "summary": "Lists catalog events.",
-        "description": "Returns the list of events for a catalog.",
+        "summary": "List the Primary Event objects",
+        "description": "List the Primary Event objects",
         "operationId": "primary_event_listCatalogScope",
         "security": [
           {
@@ -68223,8 +63758,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a catalog event.",
-        "description": "Returns an event for a catalog.",
+        "summary": "Get the Primary Event object by name or id",
+        "description": "Get the Primary Event object by name or id",
         "operationId": "primary_event_getCatalogScope",
         "security": [
           {
@@ -68282,8 +63817,8 @@
         }
       ],
       "get": {
-        "summary": "Lists configured gateway service events.",
-        "description": "Returns the list of events for a catalog.",
+        "summary": "List the Primary Event objects",
+        "description": "List the Primary Event objects",
         "operationId": "primary_event_listConfiguredGatewayServiceScope",
         "security": [
           {
@@ -68353,8 +63888,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a configured gateway service event.",
-        "description": "Returns an event for a configured gateway service for a catalog.",
+        "summary": "Get the Primary Event object by name or id",
+        "description": "Get the Primary Event object by name or id",
         "operationId": "primary_event_getConfiguredGatewayServiceScope",
         "security": [
           {
@@ -68412,8 +63947,8 @@
         }
       ],
       "get": {
-        "summary": "Lists catalog webhook events.",
-        "description": "Returns the list of webhook subscriber events for a catalog.",
+        "summary": "List the Subscriber Event objects",
+        "description": "List the Subscriber Event objects",
         "operationId": "subscriber_event_listCatalogScope",
         "security": [
           {
@@ -68483,8 +64018,8 @@
         }
       ],
       "get": {
-        "summary": "Returns a catalog webhook event.",
-        "description": "Returns a webhook subscriber event for a catalog.",
+        "summary": "Get the Subscriber Event object by name or id",
+        "description": "Get the Subscriber Event object by name or id",
         "operationId": "subscriber_event_getCatalogScope",
         "security": [
           {
@@ -68612,19 +64147,10 @@
           "type": "string"
         }
       },
-      "api-key": {
-        "name": "api-key",
-        "in": "path",
-        "description": "API Key name or id",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
       "api_type": {
         "name": "api_type",
         "in": "query",
-        "description": "The type of api (rest, graphql, wsdl_to_rest, or wsdl)",
+        "description": "The type of api (rest, wsdl_to_rest, or wsdl)",
         "required": false,
         "schema": {
           "type": "string"
@@ -68679,15 +64205,6 @@
         "name": "billing",
         "in": "path",
         "description": "Billing name or id",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "capture-id": {
-        "name": "capture-id",
-        "in": "path",
-        "description": "Capture id",
         "required": true,
         "schema": {
           "type": "string"
@@ -68828,15 +64345,6 @@
           "type": "string"
         }
       },
-      "consumer_org_url": {
-        "name": "consumer_org_url",
-        "in": "query",
-        "description": "Consumer Org Url",
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
       "context": {
         "name": "context",
         "in": "query",
@@ -68931,7 +64439,7 @@
         "name": "endpoint",
         "in": "query",
         "description": "Endpoint url",
-        "required": false,
+        "required": true,
         "schema": {
           "type": "string"
         }
@@ -68976,15 +64484,6 @@
         "name": "event_state",
         "in": "query",
         "description": "Event state to filter by",
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "expand": {
-        "name": "expand",
-        "in": "query",
-        "description": "List of transient field to expand",
         "required": false,
         "schema": {
           "type": "string"
@@ -69111,6 +64610,15 @@
         "name": "invitation_scope",
         "in": "query",
         "description": "token",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "iteration": {
+        "name": "iteration",
+        "in": "query",
+        "description": "iteration of task",
         "required": false,
         "schema": {
           "type": "string"
@@ -69350,15 +64858,6 @@
           "type": "string"
         }
       },
-      "plan": {
-        "name": "plan",
-        "in": "query",
-        "description": "Plan Name",
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
       "policy-id": {
         "name": "policy-id",
         "in": "path",
@@ -69427,15 +64926,6 @@
         "in": "path",
         "description": "Product version name",
         "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "product_url": {
-        "name": "product_url",
-        "in": "query",
-        "description": "Product Url",
-        "required": false,
         "schema": {
           "type": "string"
         }
@@ -69521,24 +65011,6 @@
           "type": "string"
         }
       },
-      "scope": {
-        "name": "scope",
-        "in": "query",
-        "description": "Scope",
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "search": {
-        "name": "search",
-        "in": "path",
-        "description": "Search name or id",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
       "service-id": {
         "name": "service-id",
         "in": "path",
@@ -69584,6 +65056,15 @@
           "type": "string"
         }
       },
+      "stale_time": {
+        "name": "stale_time",
+        "in": "query",
+        "description": "the time in seconds for stale tasks",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "state": {
         "name": "state",
         "in": "query",
@@ -69620,15 +65101,6 @@
           "type": "string"
         }
       },
-      "subsystem_service_name": {
-        "name": "subsystem_service_name",
-        "in": "query",
-        "description": "Name of subsystem service",
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
       "subsystem_service_type": {
         "name": "subsystem_service_type",
         "in": "query",
@@ -69642,15 +65114,6 @@
         "name": "summary",
         "in": "query",
         "description": "token",
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "target": {
-        "name": "target",
-        "in": "query",
-        "description": "target for the task",
         "required": false,
         "schema": {
           "type": "string"
@@ -69706,15 +65169,6 @@
         "in": "query",
         "description": "token",
         "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "transaction-id": {
-        "name": "transaction-id",
-        "in": "path",
-        "description": "Transaction id",
-        "required": true,
         "schema": {
           "type": "string"
         }
@@ -69862,24 +65316,6 @@
               "Bearer"
             ]
           },
-          "third_party_at_iat": {
-            "type": "integer",
-            "nullable": true,
-            "minimum": 0,
-            "maximum": 2147483647
-          },
-          "third_party_at_expires_in": {
-            "type": "integer",
-            "nullable": true,
-            "minimum": 0,
-            "maximum": 2147483647
-          },
-          "third_party_access_token": {
-            "type": "string"
-          },
-          "third_party_refresh_token": {
-            "type": "string"
-          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -69965,25 +65401,6 @@
           "expires_at": {
             "type": "string",
             "format": "date-time"
-          },
-          "user_registry_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "identity_provider": {
-            "type": "string"
-          },
-          "username": {
-            "type": "string"
-          },
-          "first_name": {
-            "type": "string"
-          },
-          "last_name": {
-            "type": "string"
-          },
-          "consumer_org": {
-            "type": "string"
           },
           "metadata": {
             "type": "object",
@@ -70211,8 +65628,7 @@
             "type": "string",
             "enum": [
               "rest",
-              "wsdl",
-              "graphql"
+              "wsdl"
             ]
           },
           "gateway_type": {
@@ -70427,118 +65843,6 @@
           }
         }
       },
-      "APIKey": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "type": {
-            "type": "string",
-            "readOnly": true,
-            "enum": [
-              "api_key"
-            ]
-          },
-          "api_version": {
-            "type": "string",
-            "readOnly": true,
-            "enum": [
-              "2.0.0"
-            ]
-          },
-          "id": {
-            "type": "string",
-            "readOnly": true
-          },
-          "name": {
-            "type": "string",
-            "maxLength": 255
-          },
-          "title": {
-            "type": "string",
-            "maxLength": 1023
-          },
-          "summary": {
-            "type": "string",
-            "maxLength": 65535
-          },
-          "client_type": {
-            "type": "string",
-            "enum": [
-              "toolkit",
-              "atm"
-            ]
-          },
-          "realm": {
-            "type": "string"
-          },
-          "user_url": {
-            "type": "string"
-          },
-          "id_token": {
-            "type": "string"
-          },
-          "token_exp": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 2147483647
-          },
-          "token_iat": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 2147483647
-          },
-          "token_jti": {
-            "type": "string"
-          },
-          "api_key": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "ttl": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 2147483647
-          },
-          "metadata": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "url": {
-            "type": "string",
-            "readOnly": true,
-            "format": "uri"
-          }
-        }
-      },
-      "APIKeyList": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "total_results": {
-            "type": "integer"
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/APIKey"
-            }
-          }
-        }
-      },
       "App": {
         "type": "object",
         "additionalProperties": false,
@@ -70644,9 +65948,6 @@
           "application_type_url": {
             "type": "string",
             "format": "uri"
-          },
-          "consumer_org": {
-            "$ref": "#/components/schemas/ConsumerOrg"
           },
           "metadata": {
             "type": "object",
@@ -71011,13 +66312,6 @@
             "type": "string",
             "format": "uri"
           },
-          "payment_method_integration_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
           "configuration": {
             "type": "object",
             "additionalProperties": {
@@ -71035,24 +66329,6 @@
             "items": {
               "type": "string",
               "format": "uri"
-            }
-          },
-          "custom_endpoint": {
-            "$ref": "#/components/schemas/SecuredEndpoint"
-          },
-          "job_queue_status": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "queue_length": {
-                "type": "integer"
-              },
-              "head_state": {
-                "type": "string"
-              },
-              "head_error": {
-                "type": "string"
-              }
             }
           },
           "metadata": {
@@ -71131,10 +66407,6 @@
             "type": "string",
             "format": "uri"
           },
-          "org_url": {
-            "type": "string",
-            "format": "uri"
-          },
           "configured_catalog_user_registry_urls": {
             "type": "array",
             "items": {
@@ -71142,12 +66414,9 @@
               "format": "uri"
             }
           },
-          "app_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
+          "org_url": {
+            "type": "string",
+            "format": "uri"
           },
           "metadata": {
             "type": "object",
@@ -71299,7 +66568,6 @@
           "v5_endpoint_substitution_behavior": {
             "type": "object",
             "additionalProperties": false,
-            "nullable": true,
             "properties": {
               "base_endpoints": {
                 "type": "array",
@@ -71311,12 +66579,18 @@
                       "type": "string",
                       "format": "uri"
                     },
-                    "gateway_service_url": {
-                      "type": "string",
-                      "format": "uri"
-                    },
                     "description": {
                       "type": "string"
+                    },
+                    "type": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "development",
+                          "production"
+                        ]
+                      }
                     }
                   }
                 }
@@ -71484,15 +66758,6 @@
             "minimum": 0,
             "maximum": 2147483647
           },
-          "api_key_enabled": {
-            "type": "boolean",
-            "default": true
-          },
-          "api_key_expires_in": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 2147483647
-          },
           "sso_settings": {
             "type": "object",
             "properties": {
@@ -71614,6 +66879,9 @@
           "ibm_cloud": {
             "type": "boolean"
           },
+          "dynamic_dns_scheme": {
+            "type": "boolean"
+          },
           "service_type": {
             "type": "string",
             "enum": [
@@ -71624,31 +66892,6 @@
           "tls_client_profile_default_url": {
             "type": "string",
             "format": "uri"
-          },
-          "access_token_keystore_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "id_token_keystore_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "temporary_token_keystore_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "atm_base_path": {
-            "type": "string",
-            "nullable": true
           },
           "metadata": {
             "type": "object",
@@ -71868,6 +67111,9 @@
             "type": "string",
             "maxLength": 65535
           },
+          "scope": {
+            "type": "string"
+          },
           "billing_url": {
             "type": "string",
             "format": "uri"
@@ -71878,13 +67124,6 @@
           "integration_url": {
             "type": "string",
             "format": "uri"
-          },
-          "payment_method_integration_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
           },
           "configuration": {
             "type": "object",
@@ -71899,11 +67138,22 @@
               "format": "uri"
             }
           },
+          "space_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
           "org_url": {
             "type": "string",
             "format": "uri"
           },
           "catalog_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "space_url": {
             "type": "string",
             "format": "uri"
           },
@@ -72210,13 +67460,6 @@
               "format": "uri"
             }
           },
-          "catalog_setting_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
           "webhook_url": {
             "type": "string",
             "format": "uri"
@@ -72249,24 +67492,6 @@
           "space_url": {
             "type": "string",
             "format": "uri"
-          },
-          "gateway_processing_status": {
-            "$ref": "#/components/schemas/SubscriberProcessingStatus"
-          },
-          "events": {
-            "type": "object",
-            "sent_events": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/SubscriberEvent"
-              }
-            },
-            "queued_events": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/SubscriberEvent"
-              }
-            }
           },
           "metadata": {
             "type": "object",
@@ -72527,68 +67752,6 @@
                       }
                     }
                   },
-                  "third_party_security": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "basic-auth"
-                      ]
-                    }
-                  },
-                  "basic_auth": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "username": {
-                        "type": "string"
-                      },
-                      "password": {
-                        "type": "string",
-                        "nullable": true
-                      },
-                      "request_headername": {
-                        "type": "string"
-                      }
-                    }
-                  },
-                  "custom_headername_format": {
-                    "type": "string"
-                  },
-                  "third_party_cache_type": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "no-cache",
-                        "protocol",
-                        "time-to-live"
-                      ]
-                    }
-                  },
-                  "third_party_revocation_protocol": {
-                    "type": "string",
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "XML",
-                        "JSON"
-                      ]
-                    }
-                  },
-                  "time_to_live": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "cache_ttl": {
-                        "type": "integer"
-                      }
-                    }
-                  },
-                  "third_party_fail_on_error": {
-                    "type": "boolean",
-                    "default": true
-                  },
                   "owner_revocation": {
                     "type": "object",
                     "additionalProperties": false,
@@ -72706,7 +67869,7 @@
                       },
                       "password": {
                         "type": "string",
-                        "nullable": true
+                        "format": "password"
                       }
                     }
                   }
@@ -72828,7 +67991,8 @@
                   },
                   "password": {
                     "type": "string",
-                    "nullable": true
+                    "nullable": true,
+                    "format": "password"
                   }
                 }
               },
@@ -72863,23 +68027,12 @@
                       },
                       "password": {
                         "type": "string",
-                        "nullable": true
+                        "nullable": true,
+                        "format": "password"
                       }
                     }
                   }
                 }
-              },
-              "introspect_cache_type": {
-                "type": "string",
-                "default": "no-cache",
-                "enum": [
-                  "no-cache",
-                  "protocol",
-                  "time-to-live"
-                ]
-              },
-              "introspect_cache_ttl": {
-                "type": "integer"
               }
             }
           },
@@ -73030,8 +68183,7 @@
               "enum": [
                 "tls_v1.0",
                 "tls_v1.1",
-                "tls_v1.2",
-                "tls_v1.3"
+                "tls_v1.2"
               ]
             }
           },
@@ -73040,11 +68192,6 @@
             "items": {
               "type": "string",
               "enum": [
-                "TLS_AES_256_GCM_SHA384",
-                "TLS_CHACHA20_POLY1305_SHA256",
-                "TLS_AES_128_GCM_SHA256",
-                "TLS_AES_128_CCM_SHA256",
-                "TLS_AES_128_CCM_8_SHA256",
                 "ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_RSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
@@ -73268,23 +68415,6 @@
             "type": "string",
             "format": "uri"
           },
-          "group_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "subscription_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "owner": {
-            "$ref": "#/components/schemas/User"
-          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -73357,22 +68487,6 @@
             "type": "integer",
             "minimum": 0,
             "maximum": 2147483647
-          },
-          "configured_billing": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object",
-              "properties": {
-                "default_payment_method_url": {
-                  "type": "string",
-                  "format": "uri"
-                },
-                "billing_identifiers": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
-              }
-            }
           },
           "metadata": {
             "type": "object",
@@ -73494,6 +68608,63 @@
           }
         }
       },
+      "Draft": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "draft"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
       "DraftAPI": {
         "type": "object",
         "additionalProperties": false,
@@ -73567,8 +68738,7 @@
             "type": "string",
             "enum": [
               "rest",
-              "wsdl",
-              "graphql"
+              "wsdl"
             ]
           },
           "gateway_type": {
@@ -74122,7 +69292,7 @@
           "webhook_state": {
             "type": "string"
           },
-          "cloud_setting_urls": {
+          "api_urls": {
             "type": "array",
             "items": {
               "type": "string",
@@ -74136,7 +69306,7 @@
               "format": "uri"
             }
           },
-          "gateway_extension_urls": {
+          "product_urls": {
             "type": "array",
             "items": {
               "type": "string",
@@ -74552,48 +69722,6 @@
               "format": "uri"
             }
           },
-          "gateway_service_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "portal_service_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "user_registry_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "tls_client_profile_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "oauth_provider_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "billing_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -74870,18 +69998,13 @@
               "type": "string"
             }
           },
-          "error": {
-            "type": "string"
-          },
           "path": {
             "type": "string",
             "enum": [
               "subscription-update",
               "subscription-delete",
               "bulk-subscription-update",
-              "bulk-subscription-delete",
-              "payment-method-delete",
-              "payment-method-delete-consumer"
+              "bulk-subscription-delete"
             ]
           },
           "body": {
@@ -74984,9 +70107,6 @@
           "public_certificate_entry": {
             "$ref": "#/components/schemas/CertEntry"
           },
-          "public_key_jwk": {
-            "$ref": "#/components/schemas/PublicKeyJwk"
-          },
           "trusted_certificate_entries": {
             "type": "array",
             "items": {
@@ -75014,12 +70134,8 @@
               "format": "uri"
             }
           },
-          "cloud_setting_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
+          "hash_value": {
+            "type": "string"
           },
           "metadata": {
             "type": "object",
@@ -76012,68 +71128,6 @@
                       }
                     }
                   },
-                  "third_party_security": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "basic-auth"
-                      ]
-                    }
-                  },
-                  "basic_auth": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "username": {
-                        "type": "string"
-                      },
-                      "password": {
-                        "type": "string",
-                        "nullable": true
-                      },
-                      "request_headername": {
-                        "type": "string"
-                      }
-                    }
-                  },
-                  "custom_headername_format": {
-                    "type": "string"
-                  },
-                  "third_party_cache_type": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "no-cache",
-                        "protocol",
-                        "time-to-live"
-                      ]
-                    }
-                  },
-                  "third_party_revocation_protocol": {
-                    "type": "string",
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "XML",
-                        "JSON"
-                      ]
-                    }
-                  },
-                  "time_to_live": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "cache_ttl": {
-                        "type": "integer"
-                      }
-                    }
-                  },
-                  "third_party_fail_on_error": {
-                    "type": "boolean",
-                    "default": true
-                  },
                   "owner_revocation": {
                     "type": "object",
                     "additionalProperties": false,
@@ -76191,7 +71245,7 @@
                       },
                       "password": {
                         "type": "string",
-                        "nullable": true
+                        "format": "password"
                       }
                     }
                   }
@@ -76311,7 +71365,8 @@
                   },
                   "password": {
                     "type": "string",
-                    "nullable": true
+                    "nullable": true,
+                    "format": "password"
                   }
                 }
               },
@@ -76346,23 +71401,12 @@
                       },
                       "password": {
                         "type": "string",
-                        "nullable": true
+                        "nullable": true,
+                        "format": "password"
                       }
                     }
                   }
                 }
-              },
-              "introspect_cache_type": {
-                "type": "string",
-                "default": "no-cache",
-                "enum": [
-                  "no-cache",
-                  "protocol",
-                  "time-to-live"
-                ]
-              },
-              "introspect_cache_ttl": {
-                "type": "integer"
               }
             }
           },
@@ -76377,6 +71421,13 @@
             }
           },
           "tls_client_profile_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "api_urls": {
             "type": "array",
             "items": {
               "type": "string",
@@ -76473,8 +71524,7 @@
             "type": "string"
           },
           "registration_url": {
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "state": {
             "type": "string"
@@ -76596,48 +71646,6 @@
             "type": "string",
             "format": "uri"
           },
-          "gateway_service_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "portal_service_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "user_registry_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "tls_client_profile_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "oauth_provider_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "billing_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
           "group_urls": {
             "type": "array",
             "items": {
@@ -76724,9 +71732,81 @@
           "email_sender": {
             "$ref": "#/components/schemas/EmailSender"
           },
-          "atm_base_path": {
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
             "type": "string",
-            "nullable": true
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "OriginatedTask": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "originated_task"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "scope": {
+            "type": "string"
+          },
+          "scope_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "tasks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Task"
+            }
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "metadata": {
             "type": "object",
@@ -76748,6 +71828,21 @@
             "type": "string",
             "readOnly": true,
             "format": "uri"
+          }
+        }
+      },
+      "OriginatedTaskList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OriginatedTask"
+            }
           }
         }
       },
@@ -76786,10 +71881,6 @@
             "maxLength": 65535
           },
           "integration_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "consumer_org_url": {
             "type": "string",
             "format": "uri"
           },
@@ -76877,20 +71968,6 @@
           "summary": {
             "type": "string",
             "maxLength": 65535
-          },
-          "role_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "role_default_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
           },
           "metadata": {
             "type": "object",
@@ -77252,21 +72329,6 @@
           "generated_at": {
             "type": "string"
           },
-          "request_id": {
-            "type": "string"
-          },
-          "ids_in_gateway_payload": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "ids_in_consumer_payload": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -77458,51 +72520,6 @@
           "catalog_url": {
             "type": "string",
             "format": "uri"
-          },
-          "billing_identifiers": {
-            "description": "non-sensitive identifiers of billing system resources",
-            "type": "object",
-            "additionalProperties": true
-          },
-          "plans": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "additionalProperties": false,
-              "properties": {
-                "title": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "apis": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "id": {
-                        "type": "string"
-                      },
-                      "name": {
-                        "type": "string"
-                      },
-                      "title": {
-                        "type": "string"
-                      },
-                      "version": {
-                        "type": "string"
-                      },
-                      "url": {
-                        "type": "string",
-                        "format": "uri"
-                      }
-                    }
-                  }
-                }
-              }
-            }
           },
           "metadata": {
             "type": "object",
@@ -77700,9 +72717,6 @@
             "type": "integer",
             "minimum": 0,
             "maximum": 2147483647
-          },
-          "access_token_jti": {
-            "type": "string"
           },
           "third_party_rt": {
             "type": "string",
@@ -77906,13 +72920,6 @@
             }
           },
           "inherited_permission_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "member_urls": {
             "type": "array",
             "items": {
               "type": "string",
@@ -78346,34 +73353,6 @@
               "format": "uri"
             }
           },
-          "configured_gateway_service_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "configured_api_user_registry_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "configured_tls_client_profile_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "configured_oauth_provider_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
           "org_url": {
             "type": "string",
             "format": "uri"
@@ -78560,23 +73539,12 @@
             "type": "string",
             "enum": [
               "queued",
+              "replay",
+              "processing",
               "sent",
+              "retry",
               "failed"
             ]
-          },
-          "retries": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 2147483647
-          },
-          "request_id": {
-            "type": "string"
-          },
-          "ids_in_payload": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "metadata": {
             "type": "object",
@@ -78666,9 +73634,6 @@
           "plan": {
             "type": "string"
           },
-          "plan_title": {
-            "type": "string"
-          },
           "task_urls": {
             "type": "array",
             "items": {
@@ -78699,10 +73664,10 @@
             "type": "string",
             "format": "uri"
           },
-          "billing_identifiers": {
-            "description": "non-sensitive identifiers of billing system resources",
-            "type": "object",
-            "additionalProperties": true
+          "billing_url": {
+            "type": "string",
+            "format": "uri",
+            "readOnly": true
           },
           "metadata": {
             "type": "object",
@@ -78806,8 +73771,7 @@
             "type": "string"
           },
           "originator_url": {
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "originator_username": {
             "type": "string"
@@ -78828,27 +73792,6 @@
             "type": "array",
             "items": {
               "type": "string"
-            }
-          },
-          "product_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "app_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "subscription_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
             }
           },
           "org_url": {
@@ -78904,6 +73847,80 @@
           }
         }
       },
+      "TaskManager": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "task_manager"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "ready",
+              "running",
+              "idle",
+              "stopped"
+            ]
+          },
+          "run_started_at": {
+            "type": "string"
+          },
+          "last_run_at": {
+            "type": "string"
+          },
+          "stop_reason": {
+            "type": "string"
+          },
+          "processing_metrics": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
       "TaskQueue": {
         "type": "object",
         "additionalProperties": false,
@@ -78941,9 +73958,6 @@
           "scope": {
             "type": "string"
           },
-          "valid_after": {
-            "type": "string"
-          },
           "kind": {
             "type": "string",
             "enum": [
@@ -78957,8 +73971,7 @@
               "manage-stale-catalog-webhooks",
               "cleanup",
               "send",
-              "initialize",
-              "delete-expired-data"
+              "initialize"
             ]
           },
           "state": {
@@ -78969,16 +73982,17 @@
               "inprogress",
               "errored",
               "failed",
-              "completed"
+              "completed",
+              "scheduled"
             ]
           },
-          "target": {
+          "payload": {
             "type": "string"
           },
-          "payload": {
-            "type": "object"
-          },
           "owner": {
+            "type": "string"
+          },
+          "claim": {
             "type": "string"
           },
           "iteration": {
@@ -79075,8 +74089,7 @@
               "enum": [
                 "tls_v1.0",
                 "tls_v1.1",
-                "tls_v1.2",
-                "tls_v1.3"
+                "tls_v1.2"
               ]
             }
           },
@@ -79085,11 +74098,6 @@
             "items": {
               "type": "string",
               "enum": [
-                "TLS_AES_256_GCM_SHA384",
-                "TLS_CHACHA20_POLY1305_SHA256",
-                "TLS_AES_128_GCM_SHA256",
-                "TLS_AES_128_CCM_SHA256",
-                "TLS_AES_128_CCM_8_SHA256",
                 "ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_RSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
@@ -79192,7 +74200,14 @@
             "format": "uri",
             "nullable": true
           },
-          "webhook_urls": {
+          "api_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "webhook_url": {
             "type": "array",
             "items": {
               "type": "string",
@@ -79203,6 +74218,27 @@
             "$ref": "#/components/schemas/ResourceVisibility"
           },
           "configured_tls_client_profile_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "user_registry_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "configured_catalog_user_registry_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "configured_api_user_registry_urls": {
             "type": "array",
             "items": {
               "type": "string",
@@ -79345,8 +74381,7 @@
               "enum": [
                 "tls_v1.0",
                 "tls_v1.1",
-                "tls_v1.2",
-                "tls_v1.3"
+                "tls_v1.2"
               ]
             }
           },
@@ -79355,11 +74390,6 @@
             "items": {
               "type": "string",
               "enum": [
-                "TLS_AES_256_GCM_SHA384",
-                "TLS_CHACHA20_POLY1305_SHA256",
-                "TLS_AES_128_GCM_SHA256",
-                "TLS_AES_128_CCM_SHA256",
-                "TLS_AES_128_CCM_8_SHA256",
                 "ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_RSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
@@ -79563,6 +74593,9 @@
               "type": "string",
               "format": "uri"
             }
+          },
+          "hash_value": {
+            "type": "string"
           },
           "metadata": {
             "type": "object",
@@ -79817,6 +74850,20 @@
           "owned": {
             "type": "boolean"
           },
+          "api_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "catalog_setting_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
           "configured_catalog_user_registry_urls": {
             "type": "array",
             "items": {
@@ -79853,13 +74900,6 @@
             }
           },
           "user_registry_setting_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "activation_urls": {
             "type": "array",
             "items": {
               "type": "string",
@@ -80035,8 +75075,7 @@
               "offline_configured",
               "offline_resync",
               "initializing",
-              "online_pending",
-              "online_throttled"
+              "online_pending"
             ]
           },
           "state_change_reason": {
@@ -80148,20 +75187,6 @@
           "state_updated_at": {
             "type": "string",
             "format": "date-time"
-          },
-          "supported_webhook_features": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "enum": [
-                "feedback",
-                "batch",
-                "throttling",
-                "api_protection_source",
-                "external_oauth_mgmt",
-                "policy_visibility"
-              ]
-            }
           },
           "metadata": {
             "type": "object",
@@ -80527,23 +75552,6 @@
           },
           "default": {
             "type": "boolean"
-          },
-          "realm": {
-            "type": "string"
-          },
-          "oidc_type": {
-            "type": "string",
-            "nullable": true,
-            "enum": [
-              "google",
-              "github",
-              "facebook",
-              "linkedin",
-              "windows_live",
-              "slack",
-              "twitter",
-              "standard"
-            ]
           }
         }
       },
@@ -80877,45 +75885,6 @@
           }
         }
       },
-      "JWKDefinition": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "kid": {
-            "type": "string"
-          },
-          "e": {
-            "type": "string"
-          },
-          "n": {
-            "type": "string"
-          },
-          "x5c": {
-            "type": "string"
-          },
-          "kty": {
-            "type": "string"
-          },
-          "use": {
-            "type": "string"
-          },
-          "alg": {
-            "type": "string"
-          }
-        }
-      },
-      "Oauth2CertsResponse": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "keys": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/JWKDefinition"
-            }
-          }
-        }
-      },
       "RequestPasswordReset": {
         "type": "object",
         "additionalProperties": false,
@@ -80960,9 +75929,6 @@
           "refresh_token": {
             "type": "string"
           },
-          "api_key": {
-            "type": "string"
-          },
           "grant_type": {
             "type": "string",
             "enum": [
@@ -80970,8 +75936,7 @@
               "client_credentials",
               "authorization_code",
               "urn:ietf:params:oauth:grant-type:jwt-bearer",
-              "refresh_token",
-              "api_key"
+              "refresh_token"
             ]
           }
         }
@@ -81006,271 +75971,6 @@
           }
         }
       },
-      "ToolkitCredentialsResponse": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "cloud_id"
-        ],
-        "properties": {
-          "cloud_id": {
-            "type": "string"
-          },
-          "toolkit": {
-            "type": "object",
-            "properties": {
-              "endpoint": {
-                "type": "string"
-              },
-              "client_id": {
-                "type": "string"
-              },
-              "client_secret": {
-                "type": "string"
-              }
-            }
-          },
-          "consumer_toolkit": {
-            "type": "object",
-            "properties": {
-              "endpoint": {
-                "type": "string"
-              },
-              "client_id": {
-                "type": "string"
-              },
-              "client_secret": {
-                "type": "string"
-              }
-            }
-          }
-        }
-      },
-      "DesignerCredentialsResponse": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "designer"
-        ],
-        "properties": {
-          "cloud_id": {
-            "type": "string"
-          },
-          "designer": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "endpoint": {
-                "type": "string"
-              },
-              "manager_endpoint": {
-                "type": "string"
-              },
-              "client_id": {
-                "type": "string"
-              },
-              "client_secret": {
-                "type": "string"
-              }
-            }
-          }
-        }
-      },
-      "CloudPublicInfo": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "cloud_id"
-        ],
-        "properties": {
-          "cloud_id": {
-            "type": "string"
-          },
-          "admin_endpoint": {
-            "type": "string"
-          },
-          "provider_endpoint": {
-            "type": "string"
-          },
-          "api_endpoint": {
-            "type": "string"
-          },
-          "consumer_api_endpoint": {
-            "type": "string"
-          }
-        }
-      },
-      "CloudAbout": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "product_version": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "version": {
-                "type": "string"
-              },
-              "operator_build_date": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "operator_build_tag": {
-                "type": "string"
-              },
-              "operator_version": {
-                "type": "string"
-              }
-            }
-          },
-          "cloud": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              }
-            }
-          },
-          "upgrade_history": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "apim": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "schema_upgrades": {
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "additionalProperties": false,
-                      "properties": {
-                        "schema_version": {
-                          "type": "string"
-                        },
-                        "target_schema_version": {
-                          "type": "string"
-                        },
-                        "updated_at": {
-                          "type": "string",
-                          "format": "date-time"
-                        }
-                      }
-                    }
-                  },
-                  "data_upgrades": {
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "additionalProperties": false,
-                      "properties": {
-                        "data_version": {
-                          "type": "string"
-                        },
-                        "target_data_version": {
-                          "type": "string"
-                        },
-                        "updated_at": {
-                          "type": "string",
-                          "format": "date-time"
-                        }
-                      }
-                    }
-                  }
-                }
-              },
-              "lur": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "schema_upgrades": {
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "additionalProperties": false,
-                      "properties": {
-                        "schema_version": {
-                          "type": "string"
-                        },
-                        "target_schema_version": {
-                          "type": "string"
-                        },
-                        "updated_at": {
-                          "type": "string",
-                          "format": "date-time"
-                        }
-                      }
-                    }
-                  },
-                  "data_upgrades": {
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "additionalProperties": false,
-                      "properties": {
-                        "data_version": {
-                          "type": "string"
-                        },
-                        "target_data_version": {
-                          "type": "string"
-                        },
-                        "updated_at": {
-                          "type": "string",
-                          "format": "date-time"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "OriginatedTask": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "scope": {
-            "type": "string"
-          },
-          "scope_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "tasks": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Task"
-            }
-          },
-          "actions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "OriginatedTaskList": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "total_results": {
-            "type": "integer"
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/OriginatedTask"
-            }
-          }
-        }
-      },
       "IntrospectionRequest": {
         "type": "object",
         "additionalProperties": false,
@@ -81301,6 +76001,9 @@
         "properties": {
           "active": {
             "type": "boolean"
+          },
+          "client_id": {
+            "type": "string"
           },
           "username": {
             "type": "string"
@@ -81361,12 +76064,6 @@
             "type": "integer",
             "minimum": 0,
             "maximum": 2147483647
-          },
-          "access_token": {
-            "type": "string"
-          },
-          "id_token": {
-            "type": "string"
           }
         }
       },
@@ -81425,6 +76122,11 @@
           },
           "payload": {
             "type": "string"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
           }
         }
       },
@@ -81556,12 +76258,6 @@
                 },
                 {
                   "type": "boolean"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
                 }
               ]
             }
@@ -81658,16 +76354,8 @@
                 "format": "uri"
               }
             }
-          },
-          "x-ibm-languages": {
-            "type": "object",
-            "additionalProperties": true
           }
         }
-      },
-      "Draft": {
-        "type": "object",
-        "additionalProperties": false
       },
       "DraftList": {
         "type": "object",
@@ -81688,61 +76376,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/DraftProduct"
-            }
-          }
-        }
-      },
-      "Search": {
-        "type": "object",
-        "additionalProperties": false
-      },
-      "SearchList": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "total_results": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 2147483647
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "version": {
-                  "type": "string"
-                },
-                "created_at": {
-                  "type": "string"
-                },
-                "updated_at": {
-                  "type": "string"
-                },
-                "id": {
-                  "type": "string"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "api_type": {
-                  "type": "string"
-                },
-                "oai_version": {
-                  "type": "string",
-                  "enum": [
-                    "openapi2",
-                    "openapi3"
-                  ]
-                }
-              }
             }
           }
         }
@@ -81822,16 +76455,6 @@
         "type": "object",
         "additionalProperties": true,
         "properties": {
-          "title": {
-            "type": "string",
-            "maxLength": 1023
-          },
-          "cloud_name": {
-            "type": "string"
-          },
-          "cloud_id": {
-            "type": "string"
-          },
           "counts": {
             "type": "object",
             "additionalProperties": true,
@@ -81880,16 +76503,6 @@
                 "type": "integer",
                 "minimum": 0,
                 "maximum": 2147483647
-              },
-              "consumer_apps": {
-                "type": "integer",
-                "minimum": 0,
-                "maximum": 2147483647
-              },
-              "spaces": {
-                "type": "integer",
-                "minimum": 0,
-                "maximum": 2147483647
               }
             }
           },
@@ -81905,7 +76518,7 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/TopologyProviderOrg"
+                  "$ref": "#/components/schemas/ProviderOrgDetails"
                 }
               },
               "url": {
@@ -81915,7 +76528,7 @@
           }
         }
       },
-      "TopologyProviderOrg": {
+      "ProviderOrgDetails": {
         "type": "object",
         "additionalProperties": true,
         "properties": {
@@ -81988,14 +76601,14 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/TopologyCatalogs"
+                  "$ref": "#/components/schemas/Catalogs"
                 }
               }
             }
           }
         }
       },
-      "TopologyCatalogs": {
+      "Catalogs": {
         "type": "object",
         "additionalProperties": true,
         "properties": {
@@ -82078,54 +76691,39 @@
                     "maximum": 2147483647
                   }
                 }
-              }
-            }
-          },
-          "consumer_org_list_url": {
-            "type": "string"
-          },
-          "gateway_service_types": {
-            "type": "object",
-            "additionalProperties": true,
-            "properties": {
-              "total_results": {
-                "type": "integer",
-                "minimum": 0,
-                "maximum": 2147483647
               },
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/TopologyGatewayServices"
-                }
-              }
-            }
-          },
-          "spaces": {
-            "type": "object",
-            "additionalProperties": true,
-            "properties": {
-              "total_results": {
-                "type": "integer",
-                "minimum": 0,
-                "maximum": 2147483647
+              "consumer_org_list_url": {
+                "type": "string"
               },
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/TopologySpaces"
+              "spaces": {
+                "type": "object",
+                "additionalProperties": true,
+                "properties": {
+                  "total_results": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 2147483647
+                  },
+                  "results": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Spaces"
+                    }
+                  }
                 }
               }
             }
           }
         }
       },
-      "TopologySpaces": {
+      "Spaces": {
         "type": "object",
         "additionalProperties": true,
         "properties": {
           "id": {
-            "type": "string"
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2147483647
           },
           "name": {
             "type": "string"
@@ -82154,42 +76752,6 @@
                 "maximum": 2147483647
               }
             }
-          },
-          "gateway_service_types": {
-            "type": "object",
-            "additionalProperties": true,
-            "properties": {
-              "total_results": {
-                "type": "integer",
-                "minimum": 0,
-                "maximum": 2147483647
-              },
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/TopologyGatewayServices"
-                }
-              }
-            }
-          }
-        }
-      },
-      "TopologyGatewayServices": {
-        "type": "object",
-        "additionalProperties": true,
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "gateway_service_type": {
-            "type": "string",
-            "enum": [
-              "datapower-gateway",
-              "datapower-api-gateway"
-            ]
           }
         }
       },
@@ -82990,10 +77552,6 @@
         "type": "object",
         "additionalProperties": true
       },
-      "UpdateCredentialsResponse": {
-        "type": "object",
-        "additionalProperties": true
-      },
       "SubsystemServiceList": {
         "type": "object",
         "additionalProperties": false,
@@ -83008,134 +77566,6 @@
             "items": {
               "$ref": "#/components/schemas/SubsystemService"
             }
-          }
-        }
-      },
-      "LastProcessedEvent": {
-        "type": "object",
-        "required": [
-          "event_id"
-        ],
-        "additionalProperties": false,
-        "properties": {
-          "event_id": {
-            "type": "string"
-          }
-        }
-      },
-      "AssemblyDebug": {
-        "type": "object",
-        "additionalProperties": true
-      },
-      "AssemblyDebugCreateRequest": {
-        "type": "object",
-        "properties": {
-          "FilterByAPI": {
-            "type": "string"
-          }
-        }
-      },
-      "AssemblyDebugCreateResponse": {
-        "type": "object",
-        "properties": {
-          "CaptureId": {
-            "type": "object"
-          }
-        }
-      },
-      "AssemblyDebugCapture": {
-        "type": "object",
-        "additionalProperties": true
-      },
-      "AssemblyDebugCaptureTransaction": {
-        "type": "object",
-        "additionalProperties": true
-      },
-      "SubscriberProcessingStatus": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "service_state": {
-            "type": "string",
-            "enum": [
-              "green",
-              "orange",
-              "red"
-            ]
-          },
-          "service_up_to_date": {
-            "type": "boolean"
-          },
-          "last_processed_event": {
-            "type": "object",
-            "properties": {
-              "event_id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "filter": {
-                "type": "string"
-              },
-              "generated_at": {
-                "type": "string"
-              },
-              "processed_at": {
-                "type": "string"
-              },
-              "event_processing_time": {
-                "type": "integer"
-              },
-              "elapsed_time_since_last_processed_event": {
-                "type": "integer"
-              }
-            }
-          },
-          "number_of_outstanding_sent_events": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 2147483647
-          },
-          "last_sent_event": {
-            "type": "object",
-            "properties": {
-              "event_id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "sent_at": {
-                "type": "string"
-              },
-              "generated_at": {
-                "type": "string"
-              }
-            }
-          },
-          "number_of_outstanding_queued_events": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 2147483647
-          }
-        }
-      },
-      "InternalCache": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "cache_type"
-        ],
-        "properties": {
-          "cache_type": {
-            "type": "string"
-          },
-          "delete_key": {
-            "type": "string"
-          },
-          "clear_entries": {
-            "type": "boolean"
           }
         }
       },
@@ -83161,30 +77591,6 @@
             }
           }
         }
-      },
-      "PublicKeyJwk": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "kty": {
-            "type": "string"
-          },
-          "n": {
-            "type": "string"
-          },
-          "e": {
-            "type": "string"
-          },
-          "alg": {
-            "type": "string"
-          },
-          "kid": {
-            "type": "string"
-          },
-          "use": {
-            "type": "string"
-          }
-        }
       }
     },
     "responses": {
@@ -83205,6 +77611,10 @@
       }
     }
   },
+  "externalDocs": {
+    "description": "Additional documentation",
+    "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis"
+  },
   "x-ibm-configuration": {
     "testable": false
   }
@@ -83213,9 +77623,9 @@
   "openapi": "3.0.0",
   "info": {
     "x-ibm-name": "consumer",
-    "version": "2.0.0",
-    "title": "IBM API Connect Platform - Consumer API",
-    "description": "This API provides operations for accessing API consumer content",
+    "version": "1.0.0",
+    "title": "Consumer API Microservice",
+    "description": "Consumer API Microservice",
     "termsOfService": "https://www.ibm.com/legal",
     "contact": {
       "name": "IBM",
@@ -83478,9 +77888,6 @@
         },
         "responses": {
           "204": {
-            "description": "Success"
-          },
-          "302": {
             "description": "Success"
           },
           "5XX": {
@@ -84163,11 +78570,6 @@
           "description": "Additional documentation",
           "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#update"
         },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          }
-        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -85275,55 +79677,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "User Management",
-          "Resource: User"
-        ]
-      }
-    },
-    "/request-password-reset-noemail": {
-      "post": {
-        "summary": "Send reset password link to consumer",
-        "description": "Send reset password link to consumer",
-        "operationId": "user_requestPasswordResetNoEmail",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#request-password-reset"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RequestPasswordReset"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/RequestPasswordReset"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RequestPasswordResetNoEmail"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/RequestPasswordResetNoEmail"
-                }
-              }
-            }
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -88702,8 +83055,13 @@
         ]
       }
     },
-    "/billings": {
+    "/orgs/{org}/billings": {
       "description": "The collection of Billing operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
       "get": {
         "summary": "List the Billing objects",
         "description": "List the Billing objects",
@@ -88756,9 +83114,12 @@
         ]
       }
     },
-    "/billings/{billing}": {
+    "/orgs/{org}/billings/{billing}": {
       "description": "Billing object operations",
       "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
         {
           "$ref": "#/components/parameters/billing"
         }
@@ -88816,65 +83177,6 @@
           "$ref": "#/components/parameters/org"
         }
       ],
-      "post": {
-        "summary": "Create a Payment Method object",
-        "description": "Create a Payment Method object",
-        "operationId": "payment_method_create",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method#create"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PaymentMethod"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/PaymentMethod"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              }
-            },
-            "headers": {
-              "Location": {
-                "$ref": "#/components/headers/Location"
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Management",
-          "Resource: Payment Method"
-        ]
-      },
       "get": {
         "summary": "List the Payment Method objects",
         "description": "List the Payment Method objects",
@@ -89034,153 +83336,6 @@
         "tags": [
           "Organization Management",
           "Resource: Payment Method"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Payment Method object by name or id",
-        "description": "Delete the Payment Method object by name or id",
-        "operationId": "payment_method_del",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method#del"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful delete",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Management",
-          "Resource: Payment Method"
-        ]
-      }
-    },
-    "/payment-method-types": {
-      "description": "The collection of Payment Method Type operations",
-      "get": {
-        "summary": "List the Payment Method Type objects",
-        "description": "List the Payment Method Type objects",
-        "operationId": "payment_method_type_list",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method-type#list"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethodTypeList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethodTypeList"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Billing Management",
-          "Resource: Payment Method Type"
-        ]
-      }
-    },
-    "/payment-method-types/{payment-method-type}": {
-      "description": "Payment Method Type object operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/payment-method-type"
-        }
-      ],
-      "get": {
-        "summary": "Get the Payment Method Type object by name or id",
-        "description": "Get the Payment Method Type object by name or id",
-        "operationId": "payment_method_type_get",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method-type#get"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethodType"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethodType"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Billing Management",
-          "Resource: Payment Method Type"
         ]
       }
     }
@@ -89520,15 +83675,6 @@
           "type": "string"
         }
       },
-      "payment-method-type": {
-        "name": "payment-method-type",
-        "in": "path",
-        "description": "Payment Method Type name or id",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
       "permission": {
         "name": "permission",
         "in": "path",
@@ -89779,15 +83925,13 @@
             "type": "string",
             "enum": [
               "rest",
-              "wsdl",
-              "graphql"
+              "wsdl"
             ]
           },
           "oai_version": {
             "type": "string",
             "enum": [
-              "openapi2",
-              "openapi3"
+              "openapi2"
             ]
           },
           "product_urls": {
@@ -90227,12 +84371,8 @@
               "type": "string"
             }
           },
-          "payment_method_type_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
+          "visibility": {
+            "$ref": "#/components/schemas/ResourceVisibility"
           },
           "metadata": {
             "type": "object",
@@ -90381,34 +84521,6 @@
           },
           "id": {
             "type": "string",
-            "readOnly": true
-          },
-          "name": {
-            "type": "string",
-            "maxLength": 255
-          },
-          "title": {
-            "type": "string",
-            "maxLength": 1023
-          },
-          "summary": {
-            "type": "string",
-            "maxLength": 65535
-          },
-          "metadata": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time",
             "readOnly": true
           },
           "url": {
@@ -90586,6 +84698,10 @@
               "type": "string",
               "format": "uri"
             }
+          },
+          "state_pending": {
+            "type": "string",
+            "nullable": true
           },
           "org_url": {
             "type": "string",
@@ -90870,6 +84986,10 @@
               "disabled"
             ]
           },
+          "state_pending": {
+            "type": "string",
+            "nullable": true
+          },
           "owner_url": {
             "type": "string",
             "format": "uri"
@@ -90880,18 +85000,6 @@
               "type": "string",
               "format": "uri"
             }
-          },
-          "subscription_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "billing_identifiers": {
-            "description": "mapping of configured_billing ids to externally managed, non-sensitive identifiers of billing system resources",
-            "type": "object",
-            "additionalProperties": true
           },
           "metadata": {
             "type": "object",
@@ -90965,11 +85073,7 @@
             "type": "string",
             "maxLength": 65535
           },
-          "payment_method_type_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "consumer_org_url": {
+          "integration_url": {
             "type": "string",
             "format": "uri"
           },
@@ -91017,88 +85121,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/PaymentMethod"
-            }
-          }
-        }
-      },
-      "PaymentMethodType": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "type": {
-            "type": "string",
-            "readOnly": true,
-            "enum": [
-              "payment_method_type"
-            ]
-          },
-          "api_version": {
-            "type": "string",
-            "readOnly": true,
-            "enum": [
-              "2.0.0"
-            ]
-          },
-          "id": {
-            "type": "string",
-            "readOnly": true
-          },
-          "name": {
-            "type": "string",
-            "maxLength": 255
-          },
-          "title": {
-            "type": "string",
-            "maxLength": 1023
-          },
-          "summary": {
-            "type": "string",
-            "maxLength": 65535
-          },
-          "state": {
-            "type": "string",
-            "enum": [
-              "enabled",
-              "disabled"
-            ]
-          },
-          "integration": {
-            "$ref": "#/components/schemas/IntegrationDocument"
-          },
-          "metadata": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "url": {
-            "type": "string",
-            "readOnly": true,
-            "format": "uri"
-          }
-        }
-      },
-      "PaymentMethodTypeList": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "total_results": {
-            "type": "integer"
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PaymentMethodType"
             }
           }
         }
@@ -91234,17 +85256,9 @@
               "format": "uri"
             }
           },
-          "billing_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "billing_identifiers": {
-            "description": "mapping of configured_billing ids to externally managed, non-sensitive identifiers of billing system resources",
-            "type": "object",
-            "additionalProperties": true
+          "billing_url": {
+            "type": "string",
+            "format": "uri"
           },
           "superseded_by": {
             "$ref": "#/components/schemas/ProductPlanMapping"
@@ -91481,10 +85495,10 @@
             "type": "string",
             "format": "uri"
           },
-          "billing_identifiers": {
-            "description": "non-sensitive identifiers of billing system resources",
-            "type": "object",
-            "additionalProperties": true
+          "billing_url": {
+            "type": "string",
+            "format": "uri",
+            "readOnly": true
           },
           "metadata": {
             "type": "object",
@@ -91893,18 +85907,6 @@
           }
         }
       },
-      "RequestPasswordResetNoEmail": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "reset_link": {
-            "type": "string"
-          },
-          "language": {
-            "type": "string"
-          }
-        }
-      },
       "Regenerate": {
         "type": "object",
         "additionalProperties": false,
@@ -92153,9 +86155,6 @@
           },
           "default": {
             "type": "boolean"
-          },
-          "realm": {
-            "type": "string"
           }
         }
       },
@@ -92214,94 +86213,6 @@
       "APIDocument": {
         "type": "object",
         "additionalProperties": true
-      },
-      "IntegrationDocument": {
-        "type": "object",
-        "additionalProperties": true,
-        "required": [
-          "integration",
-          "info"
-        ],
-        "properties": {
-          "integration": {
-            "type": "string",
-            "enum": [
-              "1.0.0"
-            ]
-          },
-          "info": {
-            "$ref": "#/components/schemas/InfoSection"
-          }
-        },
-        "configuration_schema": {
-          "type": "object",
-          "additionalProperties": true
-        }
-      },
-      "InfoSection": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "title",
-          "version"
-        ],
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "version": {
-            "type": "string"
-          },
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "summary": {
-            "type": "string"
-          },
-          "termsOfService": {
-            "type": "string"
-          },
-          "contact": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "url": {
-                "type": "string",
-                "format": "uri"
-              },
-              "email": {
-                "type": "string",
-                "format": "email"
-              }
-            }
-          },
-          "license": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": [
-              "name"
-            ],
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "url": {
-                "type": "string",
-                "format": "uri"
-              }
-            }
-          },
-          "x-ibm-languages": {
-            "type": "object",
-            "additionalProperties": true
-          }
-        }
       },
       "ProductVisibility": {
         "type": "object",
@@ -92409,6 +86320,8 @@
         "type": "object",
         "additionalProperties": false,
         "required": [
+          "client_id",
+          "client_secret",
           "grant_type"
         ],
         "properties": {
@@ -92551,6 +86464,10 @@
         }
       }
     }
+  },
+  "externalDocs": {
+    "description": "Additional documentation",
+    "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis"
   },
   "x-ibm-configuration": {
     "testable": false
@@ -93871,3817 +87788,6 @@
   "x-ibm-configuration": {
     "testable": false
   }
-},
-{
-  "openapi": "3.0.0",
-  "info": {
-    "x-ibm-name": "portaladmin",
-    "version": "1.0.0",
-    "title": "API Connect Portal Admin API",
-    "description": "API for the API Connect Portal Admin subsystem",
-    "termsOfService": "https://ww.ibm.com/terms-of-service",
-    "contact": {
-      "name": "IBM",
-      "url": "https://www.ibm.com",
-      "email": "help@ibm.com"
-    },
-    "license": {
-      "name": "tbd",
-      "url": "https://tbd.com"
-    }
-  },
-  "servers": [
-    {
-      "url": "https://apimserver.example.com/portal",
-      "description": "Portal Admin base path"
-    }
-  ],
-  "paths": {
-    "/catalogs/{org}/{catalog}/api/list": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "get": {
-        "summary": "Shows a list of apis from a site.",
-        "description": "Show a list of apis of the provided org and catalog.",
-        "operationId": "api_list",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_api_list.html"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful output of the list apis command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Api"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/api/get": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "get": {
-        "summary": "Get a specific api from a developer portal.",
-        "description": "Get a specific api from the developer portal of the provided org and catalog. The id or name:version of a specific api needs to be provided. e.g. 'id-of-api-called-example-3' or 'example:3.0.0'.",
-        "operationId": "api_get",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_api_get.html"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/api"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the get api command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Api"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/apic-config/get": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "get": {
-        "summary": "Get the configuration object that the developer portal holds.",
-        "description": "Get the configuration object that the developer portal holds that was sent by APIM.",
-        "operationId": "apic_config_get",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_apic_config_get.html"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful output of the get apic config command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Apic Config"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/application/list": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "get": {
-        "summary": "Shows a list of applications from a site.",
-        "description": "Show a list of applications of the provided org and catalog.",
-        "operationId": "application_list",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_application_list.html"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful output of the list applications command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Application"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/application/get": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "get": {
-        "summary": "Get a specific application from a developer portal.",
-        "description": "Get a specific application from the developer portal of the provided org and catalog. The id of a specific consumer organization needs to be provided.",
-        "operationId": "application_get",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_application_get.html"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/application"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the get application command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Application"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/consumer-org/list": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "get": {
-        "summary": "Shows a list of consumer orgs from a site.",
-        "description": "Show a list of consumer orgs of the provided org and catalog.",
-        "operationId": "consumer_org_list",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_consumer_org_list.html"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful output of the list consumer orgs command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Consumer Org"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/consumer-org/get": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "get": {
-        "summary": "Get a specific consumer org from a developer portal.",
-        "description": "Get a specific consumer org from the developer portal of the provided org and catalog. The id of a specific consumer organization needs to be provided.",
-        "operationId": "consumer_org_get",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_consumer_org_get.html"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/consumer-org"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the get consumer org command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Consumer Org"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/custom-module/export": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "post": {
-        "summary": "Create a task that exports an archive that contains the custom modules of a site.",
-        "description": "You can create a task to export an archive of the custom modules of a site. You can then use that archive to quickly and simply override the custom modules on another site.",
-        "operationId": "custom_module_createExport",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_create-export.html"
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create of the task",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Task already exists",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: CustomModule"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/custom-module/export/{task_id}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/task_id"
-        }
-      ],
-      "get": {
-        "summary": "When ready, streams a custom module export artifact.",
-        "description": "When ready, streams a custom module export artifact back to the related task id that is provided in the arguments.",
-        "operationId": "custom_module_getExport",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_get-export.html"
-        },
-        "responses": {
-          "200": {
-            "description": "A stream of the export artifact.",
-            "content": {
-              "application/octet-stream": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "This task and its related artifact could not be found.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "406": {
-            "description": "The task is not an export operation and therefore an artifact cannot be streamed.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "425": {
-            "description": "The artifact related to this task is still being processed.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: CustomModule"
-        ]
-      },
-      "delete": {
-        "summary": "If running, cancels a custom module export task.",
-        "description": "If running, cancels the custom module export task and deletes any related artifacts that have been generated.",
-        "operationId": "custom_module_deleteExport",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_delete-export.html"
-        },
-        "responses": {
-          "204": {
-            "description": "The task has been cancelled and it's artifacts deleted."
-          },
-          "404": {
-            "description": "The task was not found.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: CustomModule"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/custom-module/export/{task_id}/status": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/task_id"
-        }
-      ],
-      "get": {
-        "summary": "Returns information about the status of this task.",
-        "description": "Returns information related to the task id that is provided in the arguments.",
-        "operationId": "custom_module_getExportStatus",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_get-export-status.html"
-        },
-        "responses": {
-          "200": {
-            "description": "Task is ready to be obtained",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "202": {
-            "description": "Waiting on task to finish.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "The task was not found.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "410": {
-            "description": "The task and its artifacts have expired.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: CustomModule"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/custom-module/import": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "post": {
-        "summary": "Create a task that imports an archive that contains the custom modules of a site.",
-        "description": "You can create a task to import an archive of the custom modules of a site. You can use the imported archive to quickly and simply override the custom modules for the specified site.",
-        "operationId": "custom_module_createImport",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_create-import.html"
-        },
-        "requestBody": {
-          "content": {
-            "application/octet-stream": {
-              "schema": {
-                "type": "string",
-                "format": "binary"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create of the task",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Task already exists",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: CustomModule"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/custom-module/import/{task_id}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/task_id"
-        }
-      ],
-      "delete": {
-        "summary": "If running, cancels a custom module import task.",
-        "description": "If running, cancels the custom module import task and deletes any related artifacts that have been generated.",
-        "operationId": "custom_module_deleteImport",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_delete-import.html"
-        },
-        "responses": {
-          "204": {
-            "description": "The task has been cancelled and it's artifacts deleted."
-          },
-          "404": {
-            "description": "The task was not found.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: CustomModule"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/custom-module/import/{task_id}/status": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/task_id"
-        }
-      ],
-      "get": {
-        "summary": "Get the result of the custom module import task.",
-        "description": "Get the result of the custom module import task. If the import task has completed on the portal system, this command returns the result of the command. If the import task has not completed on the portal system, it returns the current status of the task.",
-        "operationId": "custom_module_getImportStatus",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_get-import-status.html"
-        },
-        "responses": {
-          "200": {
-            "description": "Output from portal cli command request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "202": {
-            "description": "Waiting on task to finish.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "The task was not found.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "410": {
-            "description": "The task and its result have expired.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: CustomModule"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/custom-theme/export": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "post": {
-        "summary": "Create a task that exports an archive that contains the custom themes of a site.",
-        "description": "You can create a task to export an archive of the custom themes of a site. You can then use that archive to quickly and simply override the custom themes on another site.",
-        "operationId": "custom_theme_createExport",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_create-export.html"
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create of the task",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Task already exists",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: CustomTheme"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/custom-theme/export/{task_id}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/task_id"
-        }
-      ],
-      "get": {
-        "summary": "When ready, streams a custom theme export artifact.",
-        "description": "When ready, streams a custom theme export artifact back to the related task id that is provided in the arguments.",
-        "operationId": "custom_theme_getExport",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_get-export.html"
-        },
-        "responses": {
-          "200": {
-            "description": "A stream of the export artifact.",
-            "content": {
-              "application/octet-stream": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "This task and its related artifact could not be found.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "406": {
-            "description": "The task is not an export operation and therefore an artifact cannot be streamed.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "425": {
-            "description": "The artifact related to this task is still being processed.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: CustomTheme"
-        ]
-      },
-      "delete": {
-        "summary": "If running, cancels a custom theme export task.",
-        "description": "If running, cancels the custom theme export task and deletes any related artifacts that have been generated.",
-        "operationId": "custom_theme_deleteExport",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_delete-export.html"
-        },
-        "responses": {
-          "204": {
-            "description": "The task has been cancelled and it's artifacts deleted."
-          },
-          "404": {
-            "description": "The task was not found.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: CustomTheme"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/custom-theme/export/{task_id}/status": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/task_id"
-        }
-      ],
-      "get": {
-        "summary": "Returns information about the status of this task.",
-        "description": "Returns information related to the task id that is provided in the arguments.",
-        "operationId": "custom_theme_getExportStatus",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_get-export-status.html"
-        },
-        "responses": {
-          "200": {
-            "description": "Task is ready to be obtained",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "202": {
-            "description": "Waiting on task to finish.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "The task was not found.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "410": {
-            "description": "The task and its artifacts have expired.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: CustomTheme"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/custom-theme/import": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "post": {
-        "summary": "Create a task that imports an archive that contains the custom themes of a site.",
-        "description": "You can create a task to import an archive of the custom themes of a site. You can use the imported archive to quickly and simply override the custom themes for the specified site.",
-        "operationId": "custom_theme_createImport",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_create-import.html"
-        },
-        "requestBody": {
-          "content": {
-            "application/octet-stream": {
-              "schema": {
-                "type": "string",
-                "format": "binary"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create of the task",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Task already exists",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: CustomTheme"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/custom-theme/import/{task_id}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/task_id"
-        }
-      ],
-      "delete": {
-        "summary": "Cancels a running custom theme import task.",
-        "description": "Cancels the custom theme import task and deletes any generated artifacts.",
-        "operationId": "custom_theme_deleteImport",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_delete-import.html"
-        },
-        "responses": {
-          "204": {
-            "description": "The task has been cancelled and it's artifacts deleted."
-          },
-          "404": {
-            "description": "The task was not found.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: CustomTheme"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/custom-theme/import/{task_id}/status": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/task_id"
-        }
-      ],
-      "get": {
-        "summary": "Get the result of the custom theme import task.",
-        "description": "Get the result of the custom theme import task. If the import task has completed on the portal system, this command returns the result of the command. If the import task has not completed on the portal system, it returns the current status of the task.",
-        "operationId": "custom_theme_getImportStatus",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_get-import-status.html"
-        },
-        "responses": {
-          "200": {
-            "description": "Task has completed.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "202": {
-            "description": "Waiting on task to finish.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "The task was not found.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "410": {
-            "description": "The task and its result have expired.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: CustomTheme"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/entity/count": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "get": {
-        "summary": "Shows a count of entities from a site.",
-        "description": "Show a count of entities of the provided org and catalog.",
-        "operationId": "entity_count",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_api_list.html"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful output of the entity count command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Entity"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/config/export": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "post": {
-        "summary": "Create a task that exports an archive that contains the configuration of a site.",
-        "description": "You can create a task to export an archive of the configuration of a site. You can then use that archive to quickly and simply override the configuration on another site.",
-        "operationId": "site_config_createExport",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_create-export.html"
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create of the task",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Task already exists",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: SiteConfig"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/config/export/{task_id}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/task_id"
-        }
-      ],
-      "get": {
-        "summary": "When ready, streams a site configuration export artifact.",
-        "description": "When ready, streams a site configuration export artifact back to the related task id that is provided in the arguments.",
-        "operationId": "site_config_getExport",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_get-export.html"
-        },
-        "responses": {
-          "200": {
-            "description": "A stream of the export artifact.",
-            "content": {
-              "application/octet-stream": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "This task and its related artifact could not be found.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "406": {
-            "description": "The task is not an export operation and therefore an artifact cannot be streamed.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "425": {
-            "description": "The artifact related to this task is still being processed.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: SiteConfig"
-        ]
-      },
-      "delete": {
-        "summary": "If running, cancels a site configuration export task.",
-        "description": "If running, cancels the site configuration export task and deletes any related artifacts that have been generated.",
-        "operationId": "site_config_deleteExport",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_delete-export.html"
-        },
-        "responses": {
-          "204": {
-            "description": "The task has been cancelled and it's artifacts deleted."
-          },
-          "404": {
-            "description": "The task was not found.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: SiteConfig"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/config/export/{task_id}/status": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/task_id"
-        }
-      ],
-      "get": {
-        "summary": "Returns information about the status of this task.",
-        "description": "Returns information related to the task id that is provided in the arguments.",
-        "operationId": "site_config_getExportStatus",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_get-export-status.html"
-        },
-        "responses": {
-          "200": {
-            "description": "Task is ready to be obtained",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "202": {
-            "description": "Waiting on task to finish.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "The task was not found.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "410": {
-            "description": "The task and its artifacts have expired.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: SiteConfig"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/config/import": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "post": {
-        "summary": "Create a task that imports an archive that contains the configuration of a site.",
-        "description": "You can create a task to import an archive of the configuration of a site. You can use the imported archive to quickly and simply override the configuration for the specified site.",
-        "operationId": "site_config_createImport",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_create-import.html"
-        },
-        "requestBody": {
-          "content": {
-            "application/octet-stream": {
-              "schema": {
-                "type": "string",
-                "format": "binary"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create of the task",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Task already exists",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: SiteConfig"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/config/import/{task_id}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/task_id"
-        }
-      ],
-      "delete": {
-        "summary": "Cancels a running site configuration import task.",
-        "description": "Cancels the site configuration import task and deletes any generated artifacts.",
-        "operationId": "site_config_deleteImport",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_delete-import.html"
-        },
-        "responses": {
-          "204": {
-            "description": "The task has been cancelled and it's artifacts deleted."
-          },
-          "404": {
-            "description": "The task was not found.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: SiteConfig"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/config/import/{task_id}/status": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/task_id"
-        }
-      ],
-      "get": {
-        "summary": "Get the result of the site configuration import task.",
-        "description": "Get the result of the site configuration import task. If the import task has completed on the portal system, this command returns the result of the command. If the import task has not completed on the portal system, it returns the current status of the task.",
-        "operationId": "site_config_getImportStatus",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_get-import-status.html"
-        },
-        "responses": {
-          "200": {
-            "description": "Task has completed.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "202": {
-            "description": "Waiting on task to finish.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "The task was not found.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "410": {
-            "description": "The task and its artifacts have expired.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: SiteConfig"
-        ]
-      }
-    },
-    "/service/backups/list": {
-      "get": {
-        "summary": "List the backups present on the remote backup server.",
-        "description": "Lists all the backups that are currently present on the remote backup server, if one has been set.",
-        "operationId": "backups_list",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_backups_list.html"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/portal_service_name"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the list backups command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Backups"
-        ]
-      }
-    },
-    "/service/platforms/list": {
-      "get": {
-        "summary": "List the platforms present on the portal service.",
-        "description": "Lists all the platforms that are currently present on the Portal service.",
-        "operationId": "platforms_list",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_platforms_list.html"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/portal_service_name"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the list platforms command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Platforms"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/product/list": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "get": {
-        "summary": "Shows a list of products from a site.",
-        "description": "Show a list of products of the provided org and catalog.",
-        "operationId": "product_list",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_product_list.html"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful output of the list products command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Product"
-        ]
-      }
-    },
-    "/service/sites/list": {
-      "get": {
-        "summary": "List the sites present on the Portal service.",
-        "description": "Lists all the sites that are currently present on the Portal service.",
-        "operationId": "sites_list",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_sites_list.html"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/portal_service_name"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the list sites command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Sites"
-        ]
-      }
-    },
-    "/service/php-memory/list": {
-      "get": {
-        "summary": "List the PHP memory limit on the platform.",
-        "description": "Lists the PHP memory_limit setting on the portal platform.",
-        "operationId": "php_memory_list",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_php-memory_list.html"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/portal_service_name"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the php memory limits",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: PhpMemory"
-        ]
-      }
-    },
-    "/service/php-memory/update": {
-      "post": {
-        "summary": "Set the PHP memory limit on the portal platform.",
-        "description": "Sets the PHP memory limit on the portal platform for both admin and web containers",
-        "operationId": "php_memory_update",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_php-memory_update.html"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/portal_service_name"
-          },
-          {
-            "$ref": "#/components/parameters/memory_value"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Logs of the CLI command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: PhpMemory"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/modules/list": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "get": {
-        "summary": "Shows a list of available modules.",
-        "description": "Show a list of modules for the portal of the provided org and catalog.",
-        "operationId": "modules_list",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_modules_list.html"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/status"
-          },
-          {
-            "$ref": "#/components/parameters/package"
-          },
-          {
-            "$ref": "#/components/parameters/no-core"
-          },
-          {
-            "$ref": "#/components/parameters/core"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the list modules command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Modules"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/modules/enable": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "post": {
-        "summary": "Enable one or more module.",
-        "description": "Enable one or more module by providing a comma separated list.",
-        "operationId": "modules_enable",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_modules_enable.html"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/extensions"
-          },
-          {
-            "$ref": "#/components/parameters/resolve-dependencies"
-          },
-          {
-            "$ref": "#/components/parameters/skip"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the enable module(s) command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Modules"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/modules/disable": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "post": {
-        "summary": "Disable one or more modules and their dependent modules.",
-        "description": "Disable one or more modules and their dependent modules. The provided list of modules must be comma separated.",
-        "operationId": "modules_disable",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_modules_disable.html"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/modules"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the disable module(s) command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Modules"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/modules/delete": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "post": {
-        "summary": "Deletes one or more modules.",
-        "description": "Deletes one or more modules. The provided list of modules must be comma separated.",
-        "operationId": "modules_delete",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_modules_delete.html"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/modules"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the delete module(s) command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Modules"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/themes/list": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "get": {
-        "summary": "Shows a list of available themes.",
-        "description": "Show a list of themes for the portal of the provided org and catalog.",
-        "operationId": "themes_list",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_themes_list.html"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/status"
-          },
-          {
-            "$ref": "#/components/parameters/package"
-          },
-          {
-            "$ref": "#/components/parameters/no-core"
-          },
-          {
-            "$ref": "#/components/parameters/core"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the list themes command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Themes"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/themes/enable": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "post": {
-        "summary": "Enable one or more theme.",
-        "description": "Enable one or more theme by providing a comma separated list.",
-        "operationId": "themes_enable",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_themes_enable.html"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/themes"
-          },
-          {
-            "$ref": "#/components/parameters/resolve-dependencies"
-          },
-          {
-            "$ref": "#/components/parameters/skip"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the enable theme(s) command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Themes"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/themes/disable": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "post": {
-        "summary": "Disable one or more themes.",
-        "description": "Disable one or more themes and their dependent modules. The provided list of themes must be comma separated.",
-        "operationId": "themes_disable",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_themes_disable.html"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/themes"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the disable theme(s) command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Themes"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/themes/delete": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "post": {
-        "summary": "Deletes one or more themes.",
-        "description": "Deletes one or more themes. The provided list of themes must be comma separated.",
-        "operationId": "themes_delete",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_themes_delete.html"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/themes"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the delete theme(s) command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Themes"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/themes/set-default": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "post": {
-        "summary": "Set a portal's default theme.",
-        "description": "Set a portal's default theme. The theme provided must be one that is already enabled.",
-        "operationId": "themes_setDefault",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_themes_set_default.html"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/theme"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the set theme command",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CliResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Themes"
-        ]
-      }
-    }
-  },
-  "components": {
-    "parameters": {
-      "api": {
-        "name": "api",
-        "in": "query",
-        "description": "The id or name:version of a specific api. e.g. 'id-of-api-called-example-3' or 'example:3.0.0'.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "application": {
-        "name": "application",
-        "in": "query",
-        "description": "The id of a specific application.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "catalog": {
-        "name": "catalog",
-        "in": "path",
-        "description": "Name or ID of the catalog the site belongs to.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "consumer-org": {
-        "name": "consumer-org",
-        "in": "query",
-        "description": "The id of a specific consumer organization.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "core": {
-        "name": "core",
-        "in": "query",
-        "description": "Filter out extensions that are not in drupal core.",
-        "required": false,
-        "schema": {
-          "type": "boolean"
-        }
-      },
-      "extensions": {
-        "name": "extensions",
-        "in": "query",
-        "description": "A list of a single extension type (Module or Theme). You can use the * wildcard at the end of extension names to disable multiple matches.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "memory_value": {
-        "name": "memory_value",
-        "in": "query",
-        "description": "The memory value in megabytes (mb)",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "modules": {
-        "name": "modules",
-        "in": "query",
-        "description": "A list of modules separated by a comma.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "no-core": {
-        "name": "no-core",
-        "in": "query",
-        "description": "Filter out extensions that are provided by drupal core.",
-        "required": false,
-        "schema": {
-          "type": "boolean"
-        }
-      },
-      "org": {
-        "name": "org",
-        "in": "path",
-        "description": "Name or ID of the organization the catalog belongs to.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "product": {
-        "name": "product",
-        "in": "query",
-        "description": "The id or name:version of a specific application. e.g. 'id-of-product-called-example-3' or 'example:3.0.0'.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "task_id": {
-        "name": "task_id",
-        "in": "path",
-        "description": "ID of the task created on the queue.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "theme": {
-        "name": "theme",
-        "in": "query",
-        "description": "A name of a single theme.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "themes": {
-        "name": "themes",
-        "in": "query",
-        "description": "A list of themes separated by a comma.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "package": {
-        "name": "package",
-        "in": "query",
-        "description": "Filter by project packages. You can use multiple comma separated values.",
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "portal_service_name": {
-        "name": "portal_service_name",
-        "in": "query",
-        "description": "The name of the portal service",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "skip": {
-        "name": "skip",
-        "in": "query",
-        "description": "Skip automatic downloading of libraries (c.f. devel).",
-        "required": false,
-        "schema": {
-          "type": "boolean"
-        }
-      },
-      "status": {
-        "name": "status",
-        "in": "query",
-        "description": "Filter by extension status. Choices _ enabled, disabled and/or 'not installed'. You can use multiple comma separated values.",
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "resolve-dependencies": {
-        "name": "resolve-dependencies",
-        "in": "query",
-        "description": "Attempt to download any missing dependencies. At the moment, only works when the module name is the same as the project name.",
-        "required": false,
-        "schema": {
-          "type": "boolean"
-        }
-      }
-    },
-    "schemas": {
-      "SiteConfig": {
-        "type": "object",
-        "additionalProperties": true
-      },
-      "CustomModule": {
-        "type": "object",
-        "additionalProperties": true
-      },
-      "CustomTheme": {
-        "type": "object",
-        "additionalProperties": true
-      },
-      "CliResponse": {
-        "x-bhendi-schema": "custom",
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "status": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 999
-          },
-          "message": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "stdout": {
-                "type": "string"
-              },
-              "stderr": {
-                "type": "string"
-              }
-            }
-          },
-          "errors": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "Error": {
-        "x-bhendi-schema": "custom",
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "status": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 2147483647
-          },
-          "message": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "errors": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      }
-    },
-    "responses": {
-      "Error": {
-        "description": "Unexpected error",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/Error"
-            }
-          },
-          "application/yaml": {
-            "schema": {
-              "$ref": "#/components/schemas/Error"
-            }
-          }
-        }
-      }
-    }
-  },
-  "externalDocs": {
-    "description": "Additional documentation",
-    "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis"
-  },
-  "x-ibm-configuration": {
-    "testable": false
-  }
 }
   ],
   docs: [
@@ -97689,7 +87795,7 @@
   			"name": "introduction",
   			"title": "Introduction",
             "format": "b64html",
-  			"content": "PGFydGljbGUgaWQ9ImludHJvZHVjdGlvbiIgY2xhc3M9InBhZ2UiPgoKICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBpbnRyby1oZWFkZXIiPgogICAgICAgIE9wZW4gQVBJIEV4cGxvcmVyIERvY3VtZW50YXRpb24KICAgICAgPC9zcGFuPgogICAgPC9oMj4KICA8L2Rpdj4KICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfY29udGVudCBpbnRyby1jb250ZW50Ij4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+SW50cm9kdWN0aW9uPC9oMj4KICAgICAgPHA+CiAgICAgICAgVGhlIHBsYXRmb3JtIFJFU1QgQVBJcyBkb2N1bWVudGVkIGhlcmUgZm9yIElCTSBBUEkgQ29ubmVjdCB2MTAgcHJvdmlkZSBjb21wbGV0ZSBhY2Nlc3MgdG8gdGhlIGNhcGFiaWxpdHkgb2YgdGhlIHBsYXRmb3JtLiBUaGV5IG1heSBiZSB1c2VkIHRvIGF1dG9tYXRlIGFkbWluaXN0cmF0aW9uIG9mIHRoZSBwbGF0Zm9ybTsgZm9yIHNjcmlwdHMgYW5kIHRvb2xzIHRvIHN1cHBvcnQgYSBjb250aW51b3VzIGludGVncmF0aW9uIGVudmlyb25tZW50IGZvciBBUEkgZGV2ZWxvcG1lbnQgYW5kIHB1Ymxpc2hpbmc7IGFuZCBmb3IgbWFuYWdlbWVudCBvZiBjYXRhbG9ncyBvZiBBUElzIGFuZCB0aGVpciBzdWJzY3JpYmVycy4gVGhlIG9wZXJhdGlvbnMgcHJvdmlkZWQgaW4gdGhlIFJFU1QgQVBJIGFsc28gY29ycmVzcG9uZCBkaXJlY3RseSB3aXRoIGNvbW1hbmRzIGluIHRoZSB0b29sa2l0IENMSS4KICAgICAgPC9wPgogICAgPC9zZWN0aW9uPgogICAgPHNlY3Rpb24+CiAgICAgIDxoMj5BUElzPC9oMj4KICAgICAgPHA+CiAgICAgICAgVGhlIGNhcGFiaWxpdHkgb2YgdGhlIHBsYXRmb3JtIGlzIGNvbXByaXNlZCBvZiB0aHJlZSBBUElzIHdoaWNoIGFyZSBvcmllbnRlZCBhdCBkaWZmZXJlbnQgc2V0cyBvZiB1c2UgY2FzZXM6CiAgICAgIDwvcD4KICAgICAgPGRpdiBjbGFzcz0ic2hvdy1leHBsb3Jlci1hcGlzIj48L2Rpdj4KICAgIDwvc2VjdGlvbj4KICA8L2Rpdj4KPC9hcnRpY2xlPgo="
+  			"content": "PGFydGljbGUgaWQ9ImludHJvZHVjdGlvbiIgY2xhc3M9InBhZ2UiPgoKICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBpbnRyby1oZWFkZXIiPgogICAgICAgIE9wZW4gQVBJIEV4cGxvcmVyIERvY3VtZW50YXRpb24KICAgICAgPC9zcGFuPgogICAgPC9oMj4KICA8L2Rpdj4KICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfY29udGVudCBpbnRyby1jb250ZW50Ij4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+SW50cm9kdWN0aW9uPC9oMj4KICAgICAgPHA+CiAgICAgICAgVGhlIHBsYXRmb3JtIFJFU1QgQVBJcyBkb2N1bWVudGVkIGhlcmUgZm9yIElCTSBBUEkgQ29ubmVjdCAyMDE4IHByb3ZpZGUgY29tcGxldGUgYWNjZXNzIHRvIHRoZSBjYXBhYmlsaXR5IG9mIHRoZSBwbGF0Zm9ybS4gVGhleSBtYXkgYmUgdXNlZCB0byBhdXRvbWF0ZSBhZG1pbmlzdHJhdGlvbiBvZiB0aGUgcGxhdGZvcm07IGZvciBzY3JpcHRzIGFuZCB0b29scyB0byBzdXBwb3J0IGEgY29udGludW91cyBpbnRlZ3JhdGlvbiBlbnZpcm9ubWVudCBmb3IgQVBJIGRldmVsb3BtZW50IGFuZCBwdWJsaXNoaW5nOyBhbmQgZm9yIG1hbmFnZW1lbnQgb2YgY2F0YWxvZ3Mgb2YgQVBJcyBhbmQgdGhlaXIgc3Vic2NyaWJlcnMuIFRoZSBvcGVyYXRpb25zIHByb3ZpZGVkIGluIHRoZSBSRVNUIEFQSSBhbHNvIGNvcnJlc3BvbmQgZGlyZWN0bHkgd2l0aCBjb21tYW5kcyBpbiB0aGUgdG9vbGtpdCBDTEkuCiAgICAgIDwvcD4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+QVBJczwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBjYXBhYmlsaXR5IG9mIHRoZSBwbGF0Zm9ybSBpcyBjb21wcmlzZWQgb2YgdGhyZWUgQVBJcyB3aGljaCBhcmUgb3JpZW50ZWQgYXQgZGlmZmVyZW50IHNldHMgb2YgdXNlIGNhc2VzOgogICAgICA8L3A+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItYXBpcyI+PC9kaXY+CiAgICA8L3NlY3Rpb24+CiAgPC9kaXY+CjwvYXJ0aWNsZT4K"
   		},
   		{
   			"name": "concepts",
@@ -97710,7 +87816,7 @@
   					"name": "auth_bearertoken",
   					"title": "Getting and Using a Bearer Token",
   					"format": "b64html",
-  					"content": "ICA8YXJ0aWNsZSBpZD0iYmVhcmVyLXRva2VuIiBjbGFzcz0icGFnZSI+CiAgICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgICA8aDIgY2xhc3M9ImFwaWMtZXhwbG9yZXItZG9jcGFnZV90aXRsZS10ZXh0Ij4KICAgICAgICA8c3BhbiBjbGFzcz0iZXhwbG9yZXItZG9jLS1oZWFkZXIgYmVhcmVyLXRva2VuLWhlYWRlciI+CiAgICAgICAgT2J0YWluaW5nIGFuZCBVc2luZyBhIEJlYXJlciBUb2tlbgogICAgICAgIDwvc3Bhbj4KICAgICAgPC9oMj4KICAgIDwvZGl2PgogICAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgYmVhcmVyLXRva2VuLWNvbnRlbnQiPgogICAgICA8cD5DYWxscyB0byB0aGUgQVBJIENvbm5lY3QgcGxhdGZvcm0gUkVTVCBBUElzIGFyZSBhdXRoZW50aWNhdGVkIHVzaW5nIGEgYmVhcmVyIHRva2VuLCB3aGljaCBpcyBvYnRhaW5lZCBmcm9tIHRoZSA8Y29kZT4vYXBpL3Rva2VuPC9jb2RlPiBlbmRwb2ludC48L3A+CiAgICAgIDxzZWN0aW9uPgogICAgICAgIDxoMz5SZXF1ZXN0aW5nIGEgYmVhcmVyIHRva2VuPC9oMz4KICAgICAgICA8cD4KICAgICAgICAgIFRoZSByZXF1ZXN0IHRvIG9idGFpbiBhIGJlYXJlciB0b2tlbiBpcyBlcXVpdmFsZW50IHRvIGFuIE9BdXRoIDIuMCBhY2Nlc3MgdG9rZW4gcmVxdWVzdCB1c2luZwogICAgICAgICAgdGhlIFJlc291cmNlIE93bmVyIFBhc3N3b3JkIENyZWRlbnRpYWxzIGdyYW50IHR5cGUuIEhvd2V2ZXIsIHRoZSByZXF1ZXN0IGNvbnRlbnRzIG11c3QgYmUgc2VudCBhcyBhIEpTT04gcGF5bG9hZCByYXRoZXIgdGhhbiBhcyBmb3JtIGRhdGEuCiAgICAgICAgPC9wPgogICAgICAgIDxwPlRoZSBKU09OIHBheWxvYWQgZm9yIHRoZSBiZWFyZXIgdG9rZW4gcmVxdWVzdCBjb250YWlucyB0aGUgZm9sbG93aW5nIGZpZWxkczo8L3A+CiAgICAgICAgPGRsPgogICAgICAgICAgPGR0PnVzZXJuYW1lOjwvZHQ+CiAgICAgICAgICA8ZGQ+dGhlIHVzZXJuYW1lIGZvciB0aGUgQVBJIENvbm5lY3QgdXNlciBtYWtpbmcgdGhlIHJlcXVlc3Q8L2RkPgogICAgICAgICAgCiAgICAgICAgICA8ZHQ+cGFzc3dvcmQ6PC9kdD4KICAgICAgICAgIDxkZD50aGUgcGFzc3dvcmQgZm9yIHRoZSBBUEkgQ29ubmVjdCB1c2VyIG1ha2luZyB0aGUgcmVxdWVzdDwvZGQ+CiAgICAgICAgICAKICAgICAgICAgIDxkdD5yZWFsbTo8L2R0PgogICAgICAgICAgPGRkPmluZGljYXRlcyB0aGUgdXNlciByZWdpc3RyeSBpbiB3aGljaCB0aGUgQVBJIENvbm5lY3QgdXNlciBjcmVkZW50aWFscyBhcmUgaGVsZDwvZGQ+CiAgICAgICAgICAKICAgICAgICAgIDxkdD5jbGllbnRfaWQ6PC9kdD4KICAgICAgICAgIDxkZD50aGUgY2xpZW50IElEIG9mIHRoZSBhcHAgbWFraW5nIHRoZSByZXF1ZXN0PC9kZD4KICAgICAgICAgIAogICAgICAgICAgPGR0PmNsaWVudF9zZWNyZXQ6PC9kdD4KICAgICAgICAgIDxkZD50aGUgY2xpZW50IHNlY3JldCBvZiB0aGUgYXBwIG1ha2luZyB0aGUgcmVxdWVzdDwvZGQ+CiAgICAgICAgICAKICAgICAgICAgIDxkdD5ncmFudF90eXBlOjwvZHQ+CiAgICAgICAgICA8ZGQ+cGFzc3dvcmQgKGZpeGVkIHZhbHVlKTwvZGQ+CiAgICAgICAgPC9kbD4KICAgICAgICA8cD5IZXJlIGlzIGEgY3VybCBleGFtcGxlIHNob3dpbmcgYSBiZWFyZXIgdG9rZW4gcmVxdWVzdCBhbmQgc3VjY2Vzc2Z1bCByZXNwb25zZTo8L3A+CiAgICAgICAgPGg0PlJlcXVlc3Q8L2g0PgogICAgICAgIDxkaXYgaWQ9ImdldC1iZWFyZXJ0b2tlbi1yZXF1ZXN0IiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+Y3VybCAtdiAtayAtWCBQT1NUIC1kICd7InVzZXJuYW1lIjogImNocmlzIiwgInBhc3N3b3JkIjogIioqKioiLCAicmVhbG0iOiAicHJvdmlkZXIvZGVmYXVsdC1pZHAtMiIsICJjbGllbnRfaWQiOiAicmVnaXN0ZXJlZC1hcHAtY2xpZW50LWlkIiwgImNsaWVudF9zZWNyZXQiOiAicmVnaXN0ZXJlZC1hcHAtY2xpZW50LXNlY3JldCIsICJncmFudF90eXBlIjogInBhc3N3b3JkIn0nIC1IICdDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL2pzb24nIC1IICdBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24nIGh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvdG9rZW48L2Rpdj4KICAgICAgICA8cD5UaGUgPHR0PmNsaWVudF9pZDwvdHQ+IGFuZCA8dHQ+Y2xpZW50X3NlY3JldDwvdHQ+IHZhbHVlcyBhcmUgdGhlIGFwcCdzIGNyZWRlbnRpYWxzLCBhcyByZWdpc3RlcmVkIHdpdGggCiAgICAgICAgdGhlIDx0dD5hcGljIHJlZ2lzdHJhdGlvbnM6Y3JlYXRlPC90dD4gY29tbWFuZC48L3A+CiAgICAgICAgPGg0PlJlc3BvbnNlPC9oND4KICAgICAgICA8ZGl2IGlkPSJnZXQtYmVhcmVydG9rZW4tcmVzcG9uc2UiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij57CiAgImFjY2Vzc190b2tlbiI6ICJleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKcWRHa2lPaUkxTUdWbU9HUXpPQzFsTVRVeExUUTROamN0WW1Jd09TMHdOREEwTjJVeFpqTTNORGNpTENKdVlXMWxjM0JoWTJVaU9pSXpZalExT0RVNE5pMWtaR013TFRRMU5EWXRPVGhrWmkwM01tVXhNek16WWpBNVpXRTZNVFl6WkRZNE1XWXRaV1V3TUMwMFlXUmhMV0ZpTldRdFpEVmtNelJsWWpkbE9EVmpPakJqT0RRME5UZ3lMVFExWVdNdE5EUTJNeTFoT1RjMUxUaGlObVExWmpZNU1URTFaQ0lzSW1GMVpDSTZJaTloY0drdlkyeHZkV1F2Y21WbmFYTjBjbUYwYVc5dWN5OHpPVEJoTmpWaFlTMDBNMkZoTFRRM016VXRZakEwT1MwNE1UazNNakl5WkRJM1pEQWlMQ0p6ZFdJaU9pSXZZWEJwTDNWelpYSXRjbVZuYVhOMGNtbGxjeTh6WWpRMU9EVTROaTFrWkdNd0xUUTFORFl0T1Roa1ppMDNNbVV4TXpNellqQTVaV0V2TVRZelpEWTRNV1l0WldVd01DMDBZV1JoTFdGaU5XUXRaRFZrTXpSbFlqZGxPRFZqTDNWelpYSnpMekJqT0RRME5UZ3lMVFExWVdNdE5EUTJNeTFoT1RjMUxUaGlObVExWmpZNU1URTFaQ0lzSW1semN5STZJa2xDVFNCQlVFa2dRMjl1Ym1WamRDSXNJbVY0Y0NJNk1UVXpNalU0TmpFMU1pd2lhV0YwSWpveE5UTXlOVFUzTXpVeUxDSm5jbUZ1ZEY5MGVYQmxJam9pY0dGemMzZHZjbVFpTENKMWMyVnlYM0psWjJsemRISjVYM1Z5YkNJNklpOWhjR2t2ZFhObGNpMXlaV2RwYzNSeWFXVnpMek5pTkRVNE5UZzJMV1JrWXpBdE5EVTBOaTA1T0dSbUxUY3laVEV6TXpOaU1EbGxZUzh4TmpOa05qZ3haaTFsWlRBd0xUUmhaR0V0WVdJMVpDMWtOV1F6TkdWaU4yVTROV01pTENKeVpXRnNiU0k2SW5CeWIzWnBaR1Z5TDJSbFptRjFiSFF0YVdSd0xUSWlMQ0oxYzJWeWJtRnRaU0k2SW1Ob2NtbHpJaXdpYVdSZmRHOXJaVzRpT2lKbGVVcG9Za2RqYVU5cFNrbFZla2t4VG1sSmMwbHVValZqUTBrMlNXdHdXRlpEU2prdVpYbEtiV0ZZU25wa1JqbDFXVmN4YkVscWIybFJNbWg1WVZoTmFVeERTbk5aV0U0d1dESTFhR0pYVldsUGFVcE9TV2wzYVdSWVRteGpiRGx3V2tOSk5rbHRTbXBPYWtrMFRWZFZNVXhYVW14T01rbDBUa1JLYlU1cE1EUlpha2t3VEZkS2FrNXFZM2xaVkVFeVdtcFJkMDVUU1hOSmJsWjZXbGhLZFZsWE1XeEphbTlwV1RKb2VXRllUV2xNUTBwd1dWaFJhVTlxUlRGTmVra3hUbFJqZWs1VVNqa3VlbHB6VFhJME9VSmtkVTlEVWxjeGIyNHlXamRzWkRJNGJuSktSVlZEWlRBMWJtTTVNbGRSWDNkb05DSXNJbk5qYjNCbGN5STZXeUpqYkc5MVpEcDJhV1YzSWl3aVkyeHZkV1E2YldGdVlXZGxJaXdpY0hKdmRtbGtaWEl0YjNKbk9uWnBaWGNpTENKd2NtOTJhV1JsY2kxdmNtYzZiV0Z1WVdkbElpd2liM0puT25acFpYY2lMQ0p2Y21jNmJXRnVZV2RsSWl3aVpISmhablJ6T25acFpYY2lMQ0prY21GbWRITTZaV1JwZENJc0ltTm9hV3hrT25acFpYY2lMQ0pqYUdsc1pEcGpjbVZoZEdVaUxDSmphR2xzWkRwdFlXNWhaMlVpTENKd2NtOWtkV04wT25acFpYY2lMQ0p3Y205a2RXTjBPbk4wWVdkbElpd2ljSEp2WkhWamREcHRZVzVoWjJVaUxDSmhjSEJ5YjNaaGJEcDJhV1YzSWl3aVlYQndjbTkyWVd3NmJXRnVZV2RsSWl3aVlYQnBMV0Z1WVd4NWRHbGpjenAyYVdWM0lpd2lZWEJwTFdGdVlXeDVkR2xqY3pwdFlXNWhaMlVpTENKamIyNXpkVzFsY2kxdmNtYzZkbWxsZHlJc0ltTnZibk4xYldWeUxXOXlaenB0WVc1aFoyVWlMQ0poY0hBNmRtbGxkenBoYkd3aUxDSmhjSEE2YldGdVlXZGxPbUZzYkNJc0ltMTVPblpwWlhjaUxDSnRlVHB0WVc1aFoyVWlMQ0ozWldKb2IyOXJPblpwWlhjaVhYMC4xeWJlekdKckpXZ1JaOGVjNWNqeUdRVEtjV0EzaXdUYlY1QXViWENveDYwIiwKICAidG9rZW5fdHlwZSI6ICJCZWFyZXIiLAogICJleHBpcmVzX2luIjogMjg4MDAKfQogICAgICAgIDwvZGl2PgogICAgICA8L3NlY3Rpb24+CiAgICAgIDxzZWN0aW9uPgogICAgICAgIDxoMz5GaW5kaW5nIFJlYWxtIFZhbHVlczwvaDM+CiAgICAgICAgPHA+VGhlIHJlYWxtIHZhbHVlIHVzZWQgaW4gYSBiZWFyZXIgdG9rZW4gcmVxdWVzdCBpcyBhIHZhbHVlIHRoYXQgaWRlbnRpZmllcyB0aGUgdXNlciByZWdpc3RyeSBpbiB3aGljaCB0aGUgcmVxdWVzdGluZyB1c2VyJ3MgY3JlZGVudGlhbHMgYXJlIGhlbGQuIFRoaXMgbWF5IG5vdCBiZSB0aGUgc2FtZSByZWFsbSB2YWx1ZSBhcyB3YXMgdXNlZCB0byByZWdpc3RlciB0aGUgYXBwOyBpdCB3aWxsIGJlIHRoZSBzYW1lIG9ubHkgaWYgdGhlIHVzZXIgZXhlY3V0aW5nIHRoZSBhcHAgaXMgdGhlIHNhbWUgdXNlciB0aGF0IHBlcmZvcm1lZCB0aGUgYXBwIHJlZ2lzdHJhdGlvbi48L3A+CiAgICAgICAgPHA+CiAgICAgICAgICBZb3UgY2FuIHF1ZXJ5IHRoZSBzZXQgb2YgdXNlciByZWdpc3RyaWVzIHRvIG9idGFpbiB0aGUgY29uZmlndXJlZCByZWFsbSB2YWx1ZXMgdXNpbmcgYW4gdW5hdXRoZW50aWNhdGVkIGNhbGwgdG8gdGhlIDxjb2RlPi9jbG91ZC9hZG1pbi9pZGVudGl0eS1wcm92aWRlcnM8L2NvZGU+IAogICAgICAgICAgb3IgPGNvZGU+L2Nsb3VkL3Byb3ZpZGVyL2lkZW50aXR5LXByb3ZpZGVyczwvY29kZT4gVVJMIGZvciBhZG1pbiB1c2VycyBvciBBUEkgcHJvdmlkZXIgdXNlcnMgcmVzcGVjdGl2ZWx5LgogICAgICAgIDwvcD4KICAgICAgPC9zZWN0aW9uPgogICAgICA8cD5IZXJlIGlzIGFuIGV4YW1wbGUgcmVxdWVzdCBhbmQgc3VjY2Vzc2Z1bCByZXNwb25zZTo8L3A+CiAgICAgIDxoND5SZXF1ZXN0PC9oND4KICAgICAgPGRpdiBpZD0iZ2V0LXJlYWxtdmFsdWUtcmVxdWVzdCIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgpjdXJsIC12IC1rIC1IICJBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24iIGh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvY2xvdWQvcHJvdmlkZXIvaWRlbnRpdHktcHJvdmlkZXJzCiAgICAgIDwvZGl2PgogICAgICA8aDQ+UmVzcG9uc2U8L2g0PgogICAgICA8ZGl2IGlkPSJnZXQtcmVhbG12YWx1ZS1yZXNwb25zZSIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgp7CiAgInRvdGFsX3Jlc3VsdHMiOiAxLAogICJyZXN1bHRzIjogWwogICB7CiAgICAgIm5hbWUiOiAiZGVmYXVsdC1pZHAtMiIsCiAgICAgInRpdGxlIjogIkFQSSBNYW5hZ2VyIFVzZXIgUmVnaXN0cnkiLAogICAgICJkZWZhdWx0IjogdHJ1ZSwKICAgICAicmVnaXN0cnlfdHlwZSI6ICJsdXIiCiAgIH0KICBdCn0KICA8L2Rpdj4KICA8cD5BIHJlYWxtIHZhbHVlIGNvbnNpc3RzIG9mIGEgdXNlciByZWdpc3RyeSBuYW1lIHF1YWxpZmllZCB3aXRoIHRoZSBjb250ZXh0IGluIHdoaWNoIGl0IHVzZWQsIGluIHRoZSBmb3JtIGNvbnRleHQvdXNlci1yZWdpc3RyeS1uYW1lLCB3aGVyZSB0aGUgY29udGV4dCBpcyA8Y29kZT5hZG1pbjwvY29kZT4gZm9yIGNsb3VkIGFkbWluaXN0cmF0b3IgdXNlcnMgb3IgPGNvZGU+cHJvdmlkZXI8L2NvZGU+IGZvciBBUEkgcHJvdmlkZXIgdXNlcnMuIFRoZSByZWFsbSB2YWx1ZSBjb3JyZXNwb25kaW5nIHRvIHRoZSBBUEkgTWFuYWdlciBVc2VyIFJlZ2lzdHJ5IGZyb20gdGhlIGV4YW1wbGUgYWJvdmUgaXM6CiAgPC9wPgogIDxkaXYgaWQ9InJlYWxtdmFsdWUtZXhhbXBsZSIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPiAgcHJvdmlkZXIvZGVmYXVsdC1pZHAtMjwvZGl2PgogIDxwPkZvciBjb25zdW1lciB1c2VycywgdGhlIHJlYWxtIGNvbnRleHQgaXMgZ2l2ZW4gYnkgdGhlIGNhdGFsb2cgaW4gd2hpY2ggdGhlIHVzZXIgaXMgcmVnaXN0ZXJlZC4gVGhlIGxpc3Qgb2YgdXNlciByZWdpc3RyaWVzIGZvciBhIGNhdGFsb2cgY2FuIGJlIGFjY2Vzc2VkIGF0IHRoZSA8Y29kZT4vY2F0YWxvZ3Mve29yZ30ve2NhdGFsb2d9L2NvbmZpZ3VyZWQtY2F0YWxvZy11c2VyLXJlZ2lzdHJpZXM8L2NvZGU+IFVSTC4KICAgICAgICA8L3A+CiAgIDwvc2VjdGlvbj4KICA8L2Rpdj4KICAgICAgPHNlY3Rpb24+CiAgICAgICAgPGgyPlVzaW5nIGEgQmVhcmVyIFRva2VuPC9oMj4KICAgICAgICA8cD4KICAgICAgICAgIE9uY2Ugb2J0YWluZWQsIHRoZSBiZWFyZXIgdG9rZW4gbWF5IGJlIHVzZWQgdG8gbWFrZSBhdXRoZW50aWNhdGVkIEFQSSBjYWxscy4gVGhlIGJlYXJlciB0b2tlbiBpcyBzZW50IGFzIHRoZSB2YWx1ZSBvZiB0aGUgQXV0aG9yaXphdGlvbiBoZWFkZXIsIHByZWZpeGVkIGJ5IHRoZSB3b3JkIDxjb2RlPmJlYXJlcjo8L2NvZGU+IChpbmNsdWRpbmcgdGhlIGNvbG9uKS4gSGVyZSdzIGFuIGV4YW1wbGUgb2YgYW4KICAgICAgICAgIGF1dGhlbnRpY2F0ZWQgY2FsbCB0byB0aGUgPGNvZGU+L21lPC9jb2RlPiByZXNvdXJjZSB1c2luZyB0aGUgYmVhcmVyIHRva2VuIG9idGFpbmVkIGFib3ZlOgogICAgICAgIDwvcD4KICAgICAgICA8aDM+UmVxdWVzdDwvaDM+CiAgICAgICAgPGRpdiBpZD0idXNlLWJlYXJlcnRva2VuLXJlcXVlc3QiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij5jdXJsIC12IC1rIC1IICdBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24nIC1IICJBdXRob3JpemF0aW9uOiBiZWFyZXIgZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnFkR2tpT2lJMU1HVm1PR1F6T0MxbE1UVXhMVFE0TmpjdFltSXdPUzB3TkRBME4yVXhaak0zTkRjaUxDSnVZVzFsYzNCaFkyVWlPaUl6WWpRMU9EVTROaTFrWkdNd0xUUTFORFl0T1Roa1ppMDNNbVV4TXpNellqQTVaV0U2TVRZelpEWTRNV1l0WldVd01DMDBZV1JoTFdGaU5XUXRaRFZrTXpSbFlqZGxPRFZqT2pCak9EUTBOVGd5TFRRMVlXTXRORFEyTXkxaE9UYzFMVGhpTm1RMVpqWTVNVEUxWkNJc0ltRjFaQ0k2SWk5aGNHa3ZZMnh2ZFdRdmNtVm5hWE4wY21GMGFXOXVjeTh6T1RCaE5qVmhZUzAwTTJGaExUUTNNelV0WWpBME9TMDRNVGszTWpJeVpESTNaREFpTENKemRXSWlPaUl2WVhCcEwzVnpaWEl0Y21WbmFYTjBjbWxsY3k4ellqUTFPRFU0Tmkxa1pHTXdMVFExTkRZdE9UaGtaaTAzTW1VeE16TXpZakE1WldFdk1UWXpaRFk0TVdZdFpXVXdNQzAwWVdSaExXRmlOV1F0WkRWa016UmxZamRsT0RWakwzVnpaWEp6THpCak9EUTBOVGd5TFRRMVlXTXRORFEyTXkxaE9UYzFMVGhpTm1RMVpqWTVNVEUxWkNJc0ltbHpjeUk2SWtsQ1RTQkJVRWtnUTI5dWJtVmpkQ0lzSW1WNGNDSTZNVFV6TWpVNE5qRTFNaXdpYVdGMElqb3hOVE15TlRVM016VXlMQ0puY21GdWRGOTBlWEJsSWpvaWNHRnpjM2R2Y21RaUxDSjFjMlZ5WDNKbFoybHpkSEo1WDNWeWJDSTZJaTloY0drdmRYTmxjaTF5WldkcGMzUnlhV1Z6THpOaU5EVTROVGcyTFdSa1l6QXRORFUwTmkwNU9HUm1MVGN5WlRFek16TmlNRGxsWVM4eE5qTmtOamd4WmkxbFpUQXdMVFJoWkdFdFlXSTFaQzFrTldRek5HVmlOMlU0TldNaUxDSnlaV0ZzYlNJNkluQnliM1pwWkdWeUwyUmxabUYxYkhRdGFXUndMVElpTENKMWMyVnlibUZ0WlNJNkltTm9jbWx6SWl3aWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTa2xWZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNqa3VaWGxLYldGWVNucGtSamwxV1ZjeGJFbHFiMmxSTW1oNVlWaE5hVXhEU25OWldFNHdXREkxYUdKWFZXbFBhVXBPU1dsM2FXUllUbXhqYkRsd1drTkpOa2x0U21wT2FrazBUVmRWTVV4WFVteE9Na2wwVGtSS2JVNXBNRFJaYWtrd1RGZEthazVxWTNsWlZFRXlXbXBSZDA1VFNYTkpibFo2V2xoS2RWbFhNV3hKYW05cFdUSm9lV0ZZVFdsTVEwcHdXVmhSYVU5cVJURk5la2t4VGxSamVrNVVTamt1ZWxwelRYSTBPVUprZFU5RFVsY3hiMjR5V2pkc1pESTRibkpLUlZWRFpUQTFibU01TWxkUlgzZG9OQ0lzSW5OamIzQmxjeUk2V3lKamJHOTFaRHAyYVdWM0lpd2lZMnh2ZFdRNmJXRnVZV2RsSWl3aWNISnZkbWxrWlhJdGIzSm5PblpwWlhjaUxDSndjbTkyYVdSbGNpMXZjbWM2YldGdVlXZGxJaXdpYjNKbk9uWnBaWGNpTENKdmNtYzZiV0Z1WVdkbElpd2laSEpoWm5Sek9uWnBaWGNpTENKa2NtRm1kSE02WldScGRDSXNJbU5vYVd4a09uWnBaWGNpTENKamFHbHNaRHBqY21WaGRHVWlMQ0pqYUdsc1pEcHRZVzVoWjJVaUxDSndjbTlrZFdOME9uWnBaWGNpTENKd2NtOWtkV04wT25OMFlXZGxJaXdpY0hKdlpIVmpkRHB0WVc1aFoyVWlMQ0poY0hCeWIzWmhiRHAyYVdWM0lpd2lZWEJ3Y205MllXdzZiV0Z1WVdkbElpd2lZWEJwTFdGdVlXeDVkR2xqY3pwMmFXVjNJaXdpWVhCcExXRnVZV3g1ZEdsamN6cHRZVzVoWjJVaUxDSmpiMjV6ZFcxbGNpMXZjbWM2ZG1sbGR5SXNJbU52Ym5OMWJXVnlMVzl5WnpwdFlXNWhaMlVpTENKaGNIQTZkbWxsZHpwaGJHd2lMQ0poY0hBNmJXRnVZV2RsT21Gc2JDSXNJbTE1T25acFpYY2lMQ0p0ZVRwdFlXNWhaMlVpTENKM1pXSm9iMjlyT25acFpYY2lYWDAuMXliZXpHSnJKV2dSWjhlYzVjanlHUVRLY1dBM2l3VGJWNUF1YlhDb3g2MCIgaHR0cHM6Ly92Nmd3MDcyNmEuYXJnbzItc2wuZGV2LmNpb25kZW1hbmQuY29tL2FwaS9tZTwvZGl2PgogICAgICAgIDxoMz5SZXNwb25zZTwvaDM+CiAgICAgICAgPGRpdiBpZD0idXNlLWJlYXJlcnRva2VuLXJlc3BvbnNlIiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+ewogICAgICAgICAgInR5cGUiOiAibWUiLAogICAgICAgICAgImFwaV92ZXJzaW9uIjogIjIuMC4wIiwKICAgICAgICAgICJuYW1lIjogIjM0YjEwZWNhLTM4NzQtNGNkYy1hY2I4LTM4ZGU4ZTgyZWI4NSIsCiAgICAgICAgICAic3RhdGUiOiAiZW5hYmxlZCIsCiAgICAgICAgICAidXNlcm5hbWUiOiAiY2hyaXMiLAogICAgICAgICAgImVtYWlsIjogImNocmlzQGlibS5jb20iLAogICAgICAgICAgImZpcnN0X25hbWUiOiAiQ2hyaXMiLAogICAgICAgICAgImxhc3RfbmFtZSI6ICJNIiwKICAgICAgICAgICJ1cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5jb20vYXBpL3VzZXItcmVnaXN0cmllcy8zMmM2OGQ5ZS0zZmQ2LTQ1NzEtYjljOS1mYTc1NTBlMDc1NjkvMjA4MzM1OWUtNTIzNC00MDM5LWFkNGYtNDBkY2Y3Y2U1ODZlL3VzZXJzLzM0YjEwZWNhLTM4NzQtNGNkYy1hY2I4LTM4ZGU4ZTgyZWI4NSIKICAgICAgICAgIH08L2Rpdj4KICAgICAgICA8cD5UaGUgPGNvZGU+L21lPC9jb2RlPiByZXNvdXJjZSByZXR1cm5zIGluZm9ybWF0aW9uIGFib3V0IHRoZSB1c2VyIG1ha2luZyB0aGUgcmVxdWVzdC48L3A+CiAgICAgIDwvc2VjdGlvbj4KICAgIDwvZGl2PgogIDwvYXJ0aWNsZT4K"
+  					"content": "ICA8YXJ0aWNsZSBpZD0iYmVhcmVyLXRva2VuIiBjbGFzcz0icGFnZSI+CiAgICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgICA8aDIgY2xhc3M9ImFwaWMtZXhwbG9yZXItZG9jcGFnZV90aXRsZS10ZXh0Ij4KICAgICAgICA8c3BhbiBjbGFzcz0iZXhwbG9yZXItZG9jLS1oZWFkZXIgYmVhcmVyLXRva2VuLWhlYWRlciI+CiAgICAgICAgT2J0YWluaW5nIGFuZCBVc2luZyBhIEJlYXJlciBUb2tlbgogICAgICAgIDwvc3Bhbj4KICAgICAgPC9oMj4KICAgIDwvZGl2PgogICAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgYmVhcmVyLXRva2VuLWNvbnRlbnQiPgogICAgICA8cD5DYWxscyB0byB0aGUgQVBJIENvbm5lY3QgcGxhdGZvcm0gUkVTVCBBUElzIGFyZSBhdXRoZW50aWNhdGVkIHVzaW5nIGEgYmVhcmVyIHRva2VuLCB3aGljaCBpcyBvYnRhaW5lZCBmcm9tIHRoZSA8Y29kZT4vYXBpL3Rva2VuPC9jb2RlPiBlbmRwb2ludC48L3A+CiAgICAgIDxzZWN0aW9uPgogICAgICAgIDxoMz5SZXF1ZXN0aW5nIGEgYmVhcmVyIHRva2VuPC9oMz4KICAgICAgICA8cD4KICAgICAgICAgIFRoZSByZXF1ZXN0IHRvIG9idGFpbiBhIGJlYXJlciB0b2tlbiBpcyBlcXVpdmFsZW50IHRvIGFuIE9BdXRoIDIuMCBhY2Nlc3MgdG9rZW4gcmVxdWVzdCB1c2luZwogICAgICAgICAgdGhlIFJlc291cmNlIE93bmVyIFBhc3N3b3JkIENyZWRlbnRpYWxzIGdyYW50IHR5cGUuIEhvd2V2ZXIsIHRoZSByZXF1ZXN0IGNvbnRlbnRzIG11c3QgYmUgc2VudCBhcyBhIEpTT04gcGF5bG9hZCByYXRoZXIgdGhhbiBhcyBmb3JtIGRhdGEuCiAgICAgICAgPC9wPgogICAgICAgIDxwPlRoZSBKU09OIHBheWxvYWQgZm9yIHRoZSBiZWFyZXIgdG9rZW4gcmVxdWVzdCBjb250YWlucyB0aGUgZm9sbG93aW5nIGZpZWxkczo8L3A+CiAgICAgICAgPGRsPgogICAgICAgICAgPGR0PnVzZXJuYW1lOjwvZHQ+CiAgICAgICAgICA8ZGQ+dGhlIHVzZXJuYW1lIGZvciB0aGUgQVBJIENvbm5lY3QgdXNlciBtYWtpbmcgdGhlIHJlcXVlc3Q8L2RkPgogICAgICAgICAgCiAgICAgICAgICA8ZHQ+cGFzc3dvcmQ6PC9kdD4KICAgICAgICAgIDxkZD50aGUgcGFzc3dvcmQgZm9yIHRoZSBBUEkgQ29ubmVjdCB1c2VyIG1ha2luZyB0aGUgcmVxdWVzdDwvZGQ+CiAgICAgICAgICAKICAgICAgICAgIDxkdD5yZWFsbTo8L2R0PgogICAgICAgICAgPGRkPmluZGljYXRlcyB0aGUgdXNlciByZWdpc3RyeSBpbiB3aGljaCB0aGUgQVBJIENvbm5lY3QgdXNlciBjcmVkZW50aWFscyBhcmUgaGVsZDwvZGQ+CiAgICAgICAgICAKICAgICAgICAgIDxkdD5jbGllbnRfaWQ6PC9kdD4KICAgICAgICAgIDxkZD50aGUgY2xpZW50IElEIG9mIHRoZSBhcHAgbWFraW5nIHRoZSByZXF1ZXN0PC9kZD4KICAgICAgICAgIAogICAgICAgICAgPGR0PmNsaWVudF9zZWNyZXQ6PC9kdD4KICAgICAgICAgIDxkZD50aGUgY2xpZW50IHNlY3JldCBvZiB0aGUgYXBwIG1ha2luZyB0aGUgcmVxdWVzdDwvZGQ+CiAgICAgICAgICAKICAgICAgICAgIDxkdD5ncmFudF90eXBlOjwvZHQ+CiAgICAgICAgICA8ZGQ+cGFzc3dvcmQgKGZpeGVkIHZhbHVlKTwvZGQ+CiAgICAgICAgPC9kbD4KICAgICAgICA8cD5IZXJlIGlzIGEgY3VybCBleGFtcGxlIHNob3dpbmcgYSBiZWFyZXIgdG9rZW4gcmVxdWVzdCBhbmQgc3VjY2Vzc2Z1bCByZXNwb25zZTo8L3A+CiAgICAgICAgPGg0PlJlcXVlc3Q8L2g0PgogICAgICAgIDxkaXYgaWQ9ImdldC1iZWFyZXJ0b2tlbi1yZXF1ZXN0IiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+Y3VybCAtdiAtayAtWCBQT1NUIC1kICd7InVzZXJuYW1lIjogImNocmlzIiwgInBhc3N3b3JkIjogIioqKioiLCAicmVhbG0iOiAicHJvdmlkZXIvZGVmYXVsdC1pZHAtMiIsICJjbGllbnRfaWQiOiAiY2FhODdkOWEtOGNkNy00Njg2LThiNmUtZWUyY2RjNWVlMjY3IiwgImNsaWVudF9zZWNyZXQiOiAiM2VjZmYzNjMtN2ViMy00NGJlLTllMDctNmQ0Mzg2YzQ4YjBiIiwgImdyYW50X3R5cGUiOiAicGFzc3dvcmQifScgLUggJ0NvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbicgLUggJ0FjY2VwdDogYXBwbGljYXRpb24vanNvbicgaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS90b2tlbjwvZGl2PgogICAgICAgIDxoND5SZXNwb25zZTwvaDQ+CiAgICAgICAgPGRpdiBpZD0iZ2V0LWJlYXJlcnRva2VuLXJlc3BvbnNlIiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+ewogICJhY2Nlc3NfdG9rZW4iOiAiZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnFkR2tpT2lJMU1HVm1PR1F6T0MxbE1UVXhMVFE0TmpjdFltSXdPUzB3TkRBME4yVXhaak0zTkRjaUxDSnVZVzFsYzNCaFkyVWlPaUl6WWpRMU9EVTROaTFrWkdNd0xUUTFORFl0T1Roa1ppMDNNbVV4TXpNellqQTVaV0U2TVRZelpEWTRNV1l0WldVd01DMDBZV1JoTFdGaU5XUXRaRFZrTXpSbFlqZGxPRFZqT2pCak9EUTBOVGd5TFRRMVlXTXRORFEyTXkxaE9UYzFMVGhpTm1RMVpqWTVNVEUxWkNJc0ltRjFaQ0k2SWk5aGNHa3ZZMnh2ZFdRdmNtVm5hWE4wY21GMGFXOXVjeTh6T1RCaE5qVmhZUzAwTTJGaExUUTNNelV0WWpBME9TMDRNVGszTWpJeVpESTNaREFpTENKemRXSWlPaUl2WVhCcEwzVnpaWEl0Y21WbmFYTjBjbWxsY3k4ellqUTFPRFU0Tmkxa1pHTXdMVFExTkRZdE9UaGtaaTAzTW1VeE16TXpZakE1WldFdk1UWXpaRFk0TVdZdFpXVXdNQzAwWVdSaExXRmlOV1F0WkRWa016UmxZamRsT0RWakwzVnpaWEp6THpCak9EUTBOVGd5TFRRMVlXTXRORFEyTXkxaE9UYzFMVGhpTm1RMVpqWTVNVEUxWkNJc0ltbHpjeUk2SWtsQ1RTQkJVRWtnUTI5dWJtVmpkQ0lzSW1WNGNDSTZNVFV6TWpVNE5qRTFNaXdpYVdGMElqb3hOVE15TlRVM016VXlMQ0puY21GdWRGOTBlWEJsSWpvaWNHRnpjM2R2Y21RaUxDSjFjMlZ5WDNKbFoybHpkSEo1WDNWeWJDSTZJaTloY0drdmRYTmxjaTF5WldkcGMzUnlhV1Z6THpOaU5EVTROVGcyTFdSa1l6QXRORFUwTmkwNU9HUm1MVGN5WlRFek16TmlNRGxsWVM4eE5qTmtOamd4WmkxbFpUQXdMVFJoWkdFdFlXSTFaQzFrTldRek5HVmlOMlU0TldNaUxDSnlaV0ZzYlNJNkluQnliM1pwWkdWeUwyUmxabUYxYkhRdGFXUndMVElpTENKMWMyVnlibUZ0WlNJNkltTm9jbWx6SWl3aWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTa2xWZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNqa3VaWGxLYldGWVNucGtSamwxV1ZjeGJFbHFiMmxSTW1oNVlWaE5hVXhEU25OWldFNHdXREkxYUdKWFZXbFBhVXBPU1dsM2FXUllUbXhqYkRsd1drTkpOa2x0U21wT2FrazBUVmRWTVV4WFVteE9Na2wwVGtSS2JVNXBNRFJaYWtrd1RGZEthazVxWTNsWlZFRXlXbXBSZDA1VFNYTkpibFo2V2xoS2RWbFhNV3hKYW05cFdUSm9lV0ZZVFdsTVEwcHdXVmhSYVU5cVJURk5la2t4VGxSamVrNVVTamt1ZWxwelRYSTBPVUprZFU5RFVsY3hiMjR5V2pkc1pESTRibkpLUlZWRFpUQTFibU01TWxkUlgzZG9OQ0lzSW5OamIzQmxjeUk2V3lKamJHOTFaRHAyYVdWM0lpd2lZMnh2ZFdRNmJXRnVZV2RsSWl3aWNISnZkbWxrWlhJdGIzSm5PblpwWlhjaUxDSndjbTkyYVdSbGNpMXZjbWM2YldGdVlXZGxJaXdpYjNKbk9uWnBaWGNpTENKdmNtYzZiV0Z1WVdkbElpd2laSEpoWm5Sek9uWnBaWGNpTENKa2NtRm1kSE02WldScGRDSXNJbU5vYVd4a09uWnBaWGNpTENKamFHbHNaRHBqY21WaGRHVWlMQ0pqYUdsc1pEcHRZVzVoWjJVaUxDSndjbTlrZFdOME9uWnBaWGNpTENKd2NtOWtkV04wT25OMFlXZGxJaXdpY0hKdlpIVmpkRHB0WVc1aFoyVWlMQ0poY0hCeWIzWmhiRHAyYVdWM0lpd2lZWEJ3Y205MllXdzZiV0Z1WVdkbElpd2lZWEJwTFdGdVlXeDVkR2xqY3pwMmFXVjNJaXdpWVhCcExXRnVZV3g1ZEdsamN6cHRZVzVoWjJVaUxDSmpiMjV6ZFcxbGNpMXZjbWM2ZG1sbGR5SXNJbU52Ym5OMWJXVnlMVzl5WnpwdFlXNWhaMlVpTENKaGNIQTZkbWxsZHpwaGJHd2lMQ0poY0hBNmJXRnVZV2RsT21Gc2JDSXNJbTE1T25acFpYY2lMQ0p0ZVRwdFlXNWhaMlVpTENKM1pXSm9iMjlyT25acFpYY2lYWDAuMXliZXpHSnJKV2dSWjhlYzVjanlHUVRLY1dBM2l3VGJWNUF1YlhDb3g2MCIsCiAgInRva2VuX3R5cGUiOiAiQmVhcmVyIiwKICAiZXhwaXJlc19pbiI6IDI4ODAwCn0KICAgICAgICA8L2Rpdj4KICAgICAgPC9zZWN0aW9uPgogICAgICA8c2VjdGlvbj4KICAgICAgICA8aDM+RmluZGluZyBSZWFsbSBWYWx1ZXM8L2gzPgogICAgICAgIDxwPlRoZSByZWFsbSB2YWx1ZSB1c2VkIGluIGEgYmVhcmVyIHRva2VuIHJlcXVlc3QgaXMgYSB2YWx1ZSB0aGF0IGlkZW50aWZpZXMgdGhlIHVzZXIgcmVnaXN0cnkgaW4gd2hpY2ggdGhlIHJlcXVlc3RpbmcgdXNlcidzIGNyZWRlbnRpYWxzIGFyZSBoZWxkLiBUaGlzIG1heSBub3QgYmUgdGhlIHNhbWUgcmVhbG0gdmFsdWUgYXMgd2FzIHVzZWQgdG8gcmVnaXN0ZXIgdGhlIGFwcDsgaXQgd2lsbCBiZSB0aGUgc2FtZSBvbmx5IGlmIHRoZSB1c2VyIGV4ZWN1dGluZyB0aGUgYXBwIGlzIHRoZSBzYW1lIHVzZXIgdGhhdCBwZXJmb3JtZWQgdGhlIGFwcCByZWdpc3RyYXRpb24uPC9wPgogICAgICAgIDxwPgogICAgICAgICAgWW91IGNhbiBxdWVyeSB0aGUgc2V0IG9mIHVzZXIgcmVnaXN0cmllcyB0byBvYnRhaW4gdGhlIGNvbmZpZ3VyZWQgcmVhbG0gdmFsdWVzIHVzaW5nIGFuIHVuYXV0aGVudGljYXRlZCBjYWxsIHRvIHRoZSA8Y29kZT4vY2xvdWQvYWRtaW4vaWRlbnRpdHktcHJvdmlkZXJzPC9jb2RlPiAKICAgICAgICAgIG9yIDxjb2RlPi9jbG91ZC9wcm92aWRlci9pZGVudGl0eS1wcm92aWRlcnM8L2NvZGU+IFVSTCBmb3IgYWRtaW4gdXNlcnMgb3IgQVBJIHByb3ZpZGVyIHVzZXJzIHJlc3BlY3RpdmVseS4KICAgICAgICA8L3A+CiAgICAgIDwvc2VjdGlvbj4KICAgICAgPHA+SGVyZSBpcyBhbiBleGFtcGxlIHJlcXVlc3QgYW5kIHN1Y2Nlc3NmdWwgcmVzcG9uc2U6PC9wPgogICAgICA8aDQ+UmVxdWVzdDwvaDQ+CiAgICAgIDxkaXYgaWQ9ImdldC1yZWFsbXZhbHVlLXJlcXVlc3QiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij4KY3VybCAtdiAtayAtSCAiQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uIiBodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL2Nsb3VkL3Byb3ZpZGVyL2lkZW50aXR5LXByb3ZpZGVycwogICAgICA8L2Rpdj4KICAgICAgPGg0PlJlc3BvbnNlPC9oND4KICAgICAgPGRpdiBpZD0iZ2V0LXJlYWxtdmFsdWUtcmVzcG9uc2UiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij4KewogICJ0b3RhbF9yZXN1bHRzIjogMSwKICAicmVzdWx0cyI6IFsKICAgewogICAgICJuYW1lIjogImRlZmF1bHQtaWRwLTIiLAogICAgICJ0aXRsZSI6ICJBUEkgTWFuYWdlciBVc2VyIFJlZ2lzdHJ5IiwKICAgICAiZGVmYXVsdCI6IHRydWUsCiAgICAgInJlZ2lzdHJ5X3R5cGUiOiAibHVyIgogICB9CiAgXQp9CiAgPC9kaXY+CiAgPHA+QSByZWFsbSB2YWx1ZSBjb25zaXN0cyBvZiBhIHVzZXIgcmVnaXN0cnkgbmFtZSBxdWFsaWZpZWQgd2l0aCB0aGUgY29udGV4dCBpbiB3aGljaCBpdCB1c2VkLCBpbiB0aGUgZm9ybSBjb250ZXh0L3VzZXItcmVnaXN0cnktbmFtZSwgd2hlcmUgdGhlIGNvbnRleHQgaXMgPGNvZGU+YWRtaW48L2NvZGU+IGZvciBjbG91ZCBhZG1pbmlzdHJhdG9yIHVzZXJzIG9yIDxjb2RlPnByb3ZpZGVyPC9jb2RlPiBmb3IgQVBJIHByb3ZpZGVyIHVzZXJzLiBUaGUgcmVhbG0gdmFsdWUgY29ycmVzcG9uZGluZyB0byB0aGUgQVBJIE1hbmFnZXIgVXNlciBSZWdpc3RyeSBmcm9tIHRoZSBleGFtcGxlIGFib3ZlIGlzOgogIDwvcD4KICA8ZGl2IGlkPSJyZWFsbXZhbHVlLWV4YW1wbGUiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij4gIHByb3ZpZGVyL2RlZmF1bHQtaWRwLTI8L2Rpdj4KICA8cD5Gb3IgY29uc3VtZXIgdXNlcnMsIHRoZSByZWFsbSBjb250ZXh0IGlzIGdpdmVuIGJ5IHRoZSBjYXRhbG9nIGluIHdoaWNoIHRoZSB1c2VyIGlzIHJlZ2lzdGVyZWQuIFRoZSBsaXN0IG9mIHVzZXIgcmVnaXN0cmllcyBmb3IgYSBjYXRhbG9nIGNhbiBiZSBhY2Nlc3NlZCBhdCB0aGUgPGNvZGU+L2NhdGFsb2dzL3tvcmd9L3tjYXRhbG9nfS9jb25maWd1cmVkLWNhdGFsb2ctdXNlci1yZWdpc3RyaWVzPC9jb2RlPiBVUkwuCiAgICAgICAgPC9wPgogICA8L3NlY3Rpb24+CiAgPC9kaXY+CiAgICAgIDxzZWN0aW9uPgogICAgICAgIDxoMj5Vc2luZyBhIEJlYXJlciBUb2tlbjwvaDI+CiAgICAgICAgPHA+CiAgICAgICAgICBPbmNlIG9idGFpbmVkLCB0aGUgYmVhcmVyIHRva2VuIG1heSBiZSB1c2VkIHRvIG1ha2UgYXV0aGVudGljYXRlZCBBUEkgY2FsbHMuIFRoZSBiZWFyZXIgdG9rZW4gaXMgc2VudCBhcyB0aGUgdmFsdWUgb2YgdGhlIEF1dGhvcml6YXRpb24gaGVhZGVyLCBwcmVmaXhlZCBieSB0aGUgd29yZCA8Y29kZT5iZWFyZXI6PC9jb2RlPiAoaW5jbHVkaW5nIHRoZSBjb2xvbikuIEhlcmUncyBhbiBleGFtcGxlIG9mIGFuCiAgICAgICAgICBhdXRoZW50aWNhdGVkIGNhbGwgdG8gdGhlIDxjb2RlPi9tZTwvY29kZT4gcmVzb3VyY2UgdXNpbmcgdGhlIGJlYXJlciB0b2tlbiBvYnRhaW5lZCBhYm92ZToKICAgICAgICA8L3A+CiAgICAgICAgPGgzPlJlcXVlc3Q8L2gzPgogICAgICAgIDxkaXYgaWQ9InVzZS1iZWFyZXJ0b2tlbi1yZXF1ZXN0IiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+Y3VybCAtdiAtayAtSCAnQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uJyAtSCAiQXV0aG9yaXphdGlvbjogYmVhcmVyIGV5SmhiR2NpT2lKSVV6STFOaUlzSW5SNWNDSTZJa3BYVkNKOS5leUpxZEdraU9pSTFNR1ZtT0dRek9DMWxNVFV4TFRRNE5qY3RZbUl3T1Mwd05EQTBOMlV4WmpNM05EY2lMQ0p1WVcxbGMzQmhZMlVpT2lJellqUTFPRFU0Tmkxa1pHTXdMVFExTkRZdE9UaGtaaTAzTW1VeE16TXpZakE1WldFNk1UWXpaRFk0TVdZdFpXVXdNQzAwWVdSaExXRmlOV1F0WkRWa016UmxZamRsT0RWak9qQmpPRFEwTlRneUxUUTFZV010TkRRMk15MWhPVGMxTFRoaU5tUTFaalk1TVRFMVpDSXNJbUYxWkNJNklpOWhjR2t2WTJ4dmRXUXZjbVZuYVhOMGNtRjBhVzl1Y3k4ek9UQmhOalZoWVMwME0yRmhMVFEzTXpVdFlqQTBPUzA0TVRrM01qSXlaREkzWkRBaUxDSnpkV0lpT2lJdllYQnBMM1Z6WlhJdGNtVm5hWE4wY21sbGN5OHpZalExT0RVNE5pMWtaR013TFRRMU5EWXRPVGhrWmkwM01tVXhNek16WWpBNVpXRXZNVFl6WkRZNE1XWXRaV1V3TUMwMFlXUmhMV0ZpTldRdFpEVmtNelJsWWpkbE9EVmpMM1Z6WlhKekx6QmpPRFEwTlRneUxUUTFZV010TkRRMk15MWhPVGMxTFRoaU5tUTFaalk1TVRFMVpDSXNJbWx6Y3lJNklrbENUU0JCVUVrZ1EyOXVibVZqZENJc0ltVjRjQ0k2TVRVek1qVTROakUxTWl3aWFXRjBJam94TlRNeU5UVTNNelV5TENKbmNtRnVkRjkwZVhCbElqb2ljR0Z6YzNkdmNtUWlMQ0oxYzJWeVgzSmxaMmx6ZEhKNVgzVnliQ0k2SWk5aGNHa3ZkWE5sY2kxeVpXZHBjM1J5YVdWekx6TmlORFU0TlRnMkxXUmtZekF0TkRVME5pMDVPR1JtTFRjeVpURXpNek5pTURsbFlTOHhOak5rTmpneFppMWxaVEF3TFRSaFpHRXRZV0kxWkMxa05XUXpOR1ZpTjJVNE5XTWlMQ0p5WldGc2JTSTZJbkJ5YjNacFpHVnlMMlJsWm1GMWJIUXRhV1J3TFRJaUxDSjFjMlZ5Ym1GdFpTSTZJbU5vY21seklpd2lhV1JmZEc5clpXNGlPaUpsZVVwb1lrZGphVTlwU2tsVmVra3hUbWxKYzBsdVVqVmpRMGsyU1d0d1dGWkRTamt1WlhsS2JXRllTbnBrUmpsMVdWY3hiRWxxYjJsUk1taDVZVmhOYVV4RFNuTlpXRTR3V0RJMWFHSlhWV2xQYVVwT1NXbDNhV1JZVG14amJEbHdXa05KTmtsdFNtcE9ha2swVFZkVk1VeFhVbXhPTWtsMFRrUktiVTVwTURSWmFra3dURmRLYWs1cVkzbFpWRUV5V21wUmQwNVRTWE5KYmxaNldsaEtkVmxYTVd4SmFtOXBXVEpvZVdGWVRXbE1RMHB3V1ZoUmFVOXFSVEZOZWtreFRsUmplazVVU2prdWVscHpUWEkwT1VKa2RVOURVbGN4YjI0eVdqZHNaREk0Ym5KS1JWVkRaVEExYm1NNU1sZFJYM2RvTkNJc0luTmpiM0JsY3lJNld5SmpiRzkxWkRwMmFXVjNJaXdpWTJ4dmRXUTZiV0Z1WVdkbElpd2ljSEp2ZG1sa1pYSXRiM0puT25acFpYY2lMQ0p3Y205MmFXUmxjaTF2Y21jNmJXRnVZV2RsSWl3aWIzSm5PblpwWlhjaUxDSnZjbWM2YldGdVlXZGxJaXdpWkhKaFpuUnpPblpwWlhjaUxDSmtjbUZtZEhNNlpXUnBkQ0lzSW1Ob2FXeGtPblpwWlhjaUxDSmphR2xzWkRwamNtVmhkR1VpTENKamFHbHNaRHB0WVc1aFoyVWlMQ0p3Y205a2RXTjBPblpwWlhjaUxDSndjbTlrZFdOME9uTjBZV2RsSWl3aWNISnZaSFZqZERwdFlXNWhaMlVpTENKaGNIQnliM1poYkRwMmFXVjNJaXdpWVhCd2NtOTJZV3c2YldGdVlXZGxJaXdpWVhCcExXRnVZV3g1ZEdsamN6cDJhV1YzSWl3aVlYQnBMV0Z1WVd4NWRHbGpjenB0WVc1aFoyVWlMQ0pqYjI1emRXMWxjaTF2Y21jNmRtbGxkeUlzSW1OdmJuTjFiV1Z5TFc5eVp6cHRZVzVoWjJVaUxDSmhjSEE2ZG1sbGR6cGhiR3dpTENKaGNIQTZiV0Z1WVdkbE9tRnNiQ0lzSW0xNU9uWnBaWGNpTENKdGVUcHRZVzVoWjJVaUxDSjNaV0pvYjI5ck9uWnBaWGNpWFgwLjF5YmV6R0pySldnUlo4ZWM1Y2p5R1FUS2NXQTNpd1RiVjVBdWJYQ294NjAiIGh0dHBzOi8vdjZndzA3MjZhLmFyZ28yLXNsLmRldi5jaW9uZGVtYW5kLmNvbS9hcGkvbWU8L2Rpdj4KICAgICAgICA8aDM+UmVzcG9uc2U8L2gzPgogICAgICAgIDxkaXYgaWQ9InVzZS1iZWFyZXJ0b2tlbi1yZXNwb25zZSIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPnsKICAgICAgICAgICJ0eXBlIjogIm1lIiwKICAgICAgICAgICJhcGlfdmVyc2lvbiI6ICIyLjAuMCIsCiAgICAgICAgICAibmFtZSI6ICIzNGIxMGVjYS0zODc0LTRjZGMtYWNiOC0zOGRlOGU4MmViODUiLAogICAgICAgICAgInN0YXRlIjogImVuYWJsZWQiLAogICAgICAgICAgInVzZXJuYW1lIjogImNocmlzIiwKICAgICAgICAgICJlbWFpbCI6ICJjaHJpc0BpYm0uY29tIiwKICAgICAgICAgICJmaXJzdF9uYW1lIjogIkNocmlzIiwKICAgICAgICAgICJsYXN0X25hbWUiOiAiTSIsCiAgICAgICAgICAidXJsIjogImh0dHBzOi8vYXBpY29ubmVjdC1kZXYuY29tL2FwaS91c2VyLXJlZ2lzdHJpZXMvMzJjNjhkOWUtM2ZkNi00NTcxLWI5YzktZmE3NTUwZTA3NTY5LzIwODMzNTllLTUyMzQtNDAzOS1hZDRmLTQwZGNmN2NlNTg2ZS91c2Vycy8zNGIxMGVjYS0zODc0LTRjZGMtYWNiOC0zOGRlOGU4MmViODUiCiAgICAgICAgICB9PC9kaXY+CiAgICAgICAgPHA+VGhlIDxjb2RlPi9tZTwvY29kZT4gcmVzb3VyY2UgcmV0dXJucyBpbmZvcm1hdGlvbiBhYm91dCB0aGUgdXNlciBtYWtpbmcgdGhlIHJlcXVlc3QuPC9wPgogICAgICA8L3NlY3Rpb24+CiAgICA8L2Rpdj4KICA8L2FydGljbGU+Cg=="
   				}
   			]
   		}

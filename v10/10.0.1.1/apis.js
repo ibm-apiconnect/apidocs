@@ -15,7 +15,7 @@
       headerActive: true,
       groupByTags: true,
       validateSwagger: false,
-      explorerDir: "/velox/openapi-public/",
+      explorerDir: "/apidocs/",
       routerType: "hash"
     },
   apis: [
