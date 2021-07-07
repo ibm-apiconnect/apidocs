@@ -1,0 +1,24 @@
+{
+  "name": "apidocs",
+  "version": "1.0.0",
+  "description": "Public API Documentation for API Connect APIs",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  },
+  "scripts": {
+    "deploy": "gh-pages -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibm-apiconnect/apidocs.git"
+  },
+  "author": "IBM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ibm-apiconnect/apidocs/issues"
+  },
+  "homepage": "https://github.com/ibm-apiconnect/apidocs#readme"
+}
