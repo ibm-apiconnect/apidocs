@@ -17863,6 +17863,13 @@
               },
               "service_version": {
                 "type": "string"
+              },
+              "state": {
+                "type": "string",
+                "enum": [
+                  "pending",
+                  "ready"
+                ]
               }
             }
           },
@@ -18822,6 +18829,20 @@
           "oauth_shared_secret": {
             "type": "string",
             "format": "password"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "ready"
+            ]
+          },
+          "overall_state": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "ready"
+            ]
           },
           "tls_client_profile_url": {
             "type": "string",
@@ -20848,6 +20869,13 @@
                 }
               }
             }
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "ready"
+            ]
           },
           "oauth_shared_secret": {
             "type": "string",
@@ -24053,6 +24081,13 @@
             "type": "string",
             "format": "uri"
           },
+          "state": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "ready"
+            ]
+          },
           "visibility": {
             "$ref": "#/components/schemas/ResourceVisibility"
           },
@@ -25947,6 +25982,9 @@
           "originator_username": {
             "type": "string"
           },
+          "originator_name": {
+            "type": "string"
+          },
           "comments": {
             "type": "array",
             "items": {
@@ -27321,7 +27359,9 @@
                 "policy_visibility",
                 "product_replace_v2",
                 "product_retire_optimized",
-                "global_policy_error"
+                "global_policy_error",
+                "product_migrate_subscriptions",
+                "execute_migration_target"
               ]
             }
           },
@@ -71540,6 +71580,13 @@
               },
               "service_version": {
                 "type": "string"
+              },
+              "state": {
+                "type": "string",
+                "enum": [
+                  "pending",
+                  "ready"
+                ]
               }
             }
           },
@@ -72499,6 +72546,20 @@
           "oauth_shared_secret": {
             "type": "string",
             "format": "password"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "ready"
+            ]
+          },
+          "overall_state": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "ready"
+            ]
           },
           "tls_client_profile_url": {
             "type": "string",
@@ -74525,6 +74586,13 @@
                 }
               }
             }
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "ready"
+            ]
           },
           "oauth_shared_secret": {
             "type": "string",
@@ -77730,6 +77798,13 @@
             "type": "string",
             "format": "uri"
           },
+          "state": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "ready"
+            ]
+          },
           "visibility": {
             "$ref": "#/components/schemas/ResourceVisibility"
           },
@@ -79624,6 +79699,9 @@
           "originator_username": {
             "type": "string"
           },
+          "originator_name": {
+            "type": "string"
+          },
           "comments": {
             "type": "array",
             "items": {
@@ -80998,7 +81076,9 @@
                 "policy_visibility",
                 "product_replace_v2",
                 "product_retire_optimized",
-                "global_policy_error"
+                "global_policy_error",
+                "product_migrate_subscriptions",
+                "execute_migration_target"
               ]
             }
           },
