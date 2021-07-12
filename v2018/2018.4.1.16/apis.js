@@ -15,8 +15,16 @@
       headerActive: true,
       groupByTags: true,
       validateSwagger: false,
-      explorerDir: "/apidocs/",
-      routerType: "hash"
+      explorerDir: "/../",
+      routerType: "hash",
+      versions: {
+        "2018.4.1.11": "v2018/2018.4.1.11.html",
+        "2018.4.1.12": "v2018/2018.4.1.12.html",
+        "2018.4.1.13": "v2018/2018.4.1.13.html",
+        "2018.4.1.15": "v2018/2018.4.1.15.html",
+        "2018.4.1.16": "v2018/2018.4.1.16.html",
+        "2018.4.1.x": "v2018/2018.4.1.x.html"
+      }
     },
   apis: [
 {
