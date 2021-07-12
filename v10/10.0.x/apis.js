@@ -16,7 +16,16 @@
       groupByTags: true,
       validateSwagger: false,
       explorerDir: "/apidocs/",
-      routerType: "hash"
+      routerType: "hash",
+      versions: {
+        "10.0.1.1": "/apidocs/v10/10.0.1.1.html",
+        "10.0.1.2": "/apidocs/v10/10.0.1.2.html",
+        "10.0.1.4": "/apidocs/v10/10.0.1.4.html",
+        "10.0.1.x": "/apidocs/v10/10.0.1.x.html",
+        "10.0.2.0": "/apidocs/v10/10.0.2.0.html",
+        "10.0.3.0": "/apidocs/v10/10.0.3.0.html",
+        "10.0.x": "/apidocs/v10/10.0.x.html",
+      }
     },
   apis: [
 {
