@@ -15,7 +15,7 @@
       headerActive: true,
       groupByTags: true,
       validateSwagger: false,
-      explorerDir: "_NLS",
+      explorerDir: "/../",
       routerType: "hash",
       versions: {
         "10.0.1.1": "v10/10.0.1.1.html",
