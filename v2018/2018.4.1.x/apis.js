@@ -18,12 +18,13 @@
       explorerDir: "/../",
       routerType: "hash",
       versions: {
-        "2018.4.1.11": "v2018/2018.4.1.11.html",
-        "2018.4.1.12": "v2018/2018.4.1.12.html",
-        "2018.4.1.13": "v2018/2018.4.1.13.html",
-        "2018.4.1.15": "v2018/2018.4.1.15.html",
-        "2018.4.1.16": "v2018/2018.4.1.16.html",
-        "2018.4.1.x": "v2018/2018.4.1.x.html"
+        "10.0.1.1": "v2018/10.0.1.1.html",
+        "10.0.1.2": "v2018/10.0.1.2.html",
+        "10.0.1.4": "v2018/10.0.1.4.html",
+        "10.0.1.x": "v2018/10.0.1.x.html",
+        "10.0.2.0": "v2018/10.0.2.0.html",
+        "10.0.3.0": "v2018/10.0.3.0.html",
+        "10.0.x": "v2018/10.0.x.html",
       }
     },
   apis: [
@@ -65,10 +66,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/log-spec#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -110,10 +107,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/log-spec#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -172,10 +165,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -231,10 +220,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -282,10 +267,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -326,10 +307,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -371,10 +348,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -425,10 +398,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -475,10 +444,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#execute"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/operation"
@@ -530,10 +495,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#test-connection"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -594,10 +555,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#execute"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/operation"
@@ -660,10 +617,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#test-connection"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -727,10 +680,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#search"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -800,10 +749,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -859,10 +804,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -910,10 +851,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -957,10 +894,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -1002,10 +935,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -1056,10 +985,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -1091,10 +1016,6 @@
         "summary": "Send reset password link",
         "description": "Send reset password link",
         "operationId": "user_requestPasswordReset",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#request-password-reset"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -1146,10 +1067,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#reset-password"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -1190,10 +1107,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#search-admin"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -1254,10 +1167,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#search-provider"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -1311,10 +1220,6 @@
         "summary": "List Identity Providers in the admin realm",
         "description": "List Identity Providers in the admin realm",
         "operationId": "user_registry_identityProviderListAdmin",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#identity-provider-list-admin"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -1357,10 +1262,6 @@
         "summary": "List Identity Providers in the provider realm",
         "description": "List Identity Providers in the provider realm",
         "operationId": "user_registry_identityProviderListProvider",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#identity-provider-list-provider"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -1403,10 +1304,6 @@
         "summary": "Generate a token",
         "description": "Generate a token",
         "operationId": "oauth2_token",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth2#token"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -1452,10 +1349,6 @@
         "summary": "Authorization provider redirect endpoint",
         "description": "Authorization provider redirect endpoint",
         "operationId": "oauth2_redirect_get",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth2#redirect"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/state"
@@ -1496,10 +1389,6 @@
         "summary": "Authorization provider redirect endpoint",
         "description": "Authorization provider redirect endpoint",
         "operationId": "oauth2_redirect_post",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth2#redirect"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/state"
@@ -1551,10 +1440,6 @@
         "summary": "APIC authorization endpoint",
         "description": "APIC authorize endpoint",
         "operationId": "oauth2_authorize",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#identity-provider-list-provider"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/client_id"
@@ -1614,10 +1499,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/cloud-setting#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -1659,10 +1540,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/cloud-setting#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -1715,10 +1592,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/cloud_setting#audit-endpoint-test-connection"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -1774,10 +1647,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/cloud_setting#topology"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -1809,10 +1678,6 @@
         "summary": "Return true or false based on if mail server is configured or not",
         "description": "Return true or false based on if mail server is configured or not",
         "operationId": "cloud_setting_mailServerConfigured",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/cloud_setting#mail-server-configured"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -1852,10 +1717,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry-setting#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -1897,10 +1758,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry-setting#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -1954,10 +1811,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-cloud-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2008,10 +1861,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-cloud-subcollection-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2067,10 +1916,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-cloud-subcollection-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2112,10 +1957,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-cloud-subcollection-cloud-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -2169,10 +2010,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-admin-subcollection-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2228,10 +2065,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-admin-subcollection-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2273,10 +2106,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-admin-subcollection-cloud-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -2330,10 +2159,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-provider-subcollection-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2389,10 +2214,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-provider-subcollection-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2434,10 +2255,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-provider-subcollection-cloud-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -2491,10 +2308,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-catalog-subcollection-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2550,10 +2363,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-catalog-subcollection-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2595,10 +2404,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-catalog-subcollection-cloud-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -2652,10 +2457,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2711,10 +2512,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2756,10 +2553,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-cloud-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -2813,10 +2606,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2872,10 +2661,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2917,10 +2702,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-cloud-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -2974,10 +2755,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-cloud-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -3028,10 +2805,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-provider-subcollection-cloud-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -3087,10 +2860,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-provider-subcollection-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -3138,10 +2907,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-provider-subcollection-cloud-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -3179,10 +2944,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-provider-subcollection-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -3224,10 +2985,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-provider-subcollection-cloud-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -3278,10 +3035,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-provider-subcollection-cloud-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -3321,10 +3074,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-cloud-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -3380,10 +3129,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -3431,10 +3176,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-cloud-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -3472,10 +3213,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -3517,10 +3254,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-cloud-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -3571,10 +3304,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-cloud-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -3614,10 +3343,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -3665,10 +3390,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -3701,10 +3422,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-user-registry-subcollection#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -3760,10 +3477,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-user-registry-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -3811,10 +3524,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-user-registry-subcollection#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -3852,10 +3561,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-user-registry-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -3897,10 +3602,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-user-registry-subcollection#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -3951,10 +3652,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-user-registry-subcollection#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -3994,10 +3691,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-gateway-service-subcollection#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -4053,10 +3746,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-gateway-service-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -4104,10 +3793,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-gateway-service-subcollection#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -4145,10 +3830,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-gateway-service-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -4190,10 +3871,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-gateway-service-subcollection#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -4244,10 +3921,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-gateway-service-subcollection#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -4287,10 +3960,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/registration#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -4346,10 +4015,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/registration#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -4397,10 +4062,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/registration#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -4438,10 +4099,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/registration#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -4483,10 +4140,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/registration#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -4537,10 +4190,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/registration#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -4585,10 +4234,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org-setting#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -4630,10 +4275,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org-setting#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -4692,10 +4333,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-org-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -4751,10 +4388,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-admin-subcollection-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -4813,10 +4446,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-admin-subcollection-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -4858,10 +4487,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-admin-subcollection-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -4920,10 +4545,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -4965,10 +4586,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -5019,10 +4636,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -5066,10 +4679,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#transfer-owner"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -5127,10 +4736,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#searchprovider-org"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -5197,10 +4802,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/associate-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -5259,10 +4860,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/associate-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -5312,10 +4909,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -5371,10 +4964,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -5422,10 +5011,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -5466,10 +5051,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -5511,10 +5092,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -5565,10 +5142,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -5615,10 +5188,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -5672,10 +5241,6 @@
         "summary": "Register using the Member Invitation",
         "description": "Register using the Member Invitation",
         "operationId": "member_invitation_registerOrgScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#register"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -5742,10 +5307,6 @@
         "summary": "Accept using the Member Invitation",
         "description": "Accept using the Member Invitation",
         "operationId": "member_invitation_acceptOrgScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#accept"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -5817,10 +5378,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -5876,10 +5433,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -5927,10 +5480,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -5971,10 +5520,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -6016,10 +5561,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -6070,10 +5611,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -6106,10 +5643,6 @@
         "summary": "List all Permission objects in all collections",
         "description": "List all Permission objects in all collections",
         "operationId": "permission_listAll",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -6153,10 +5686,6 @@
         "summary": "List the Permission objects",
         "description": "List the Permission objects",
         "operationId": "permission_listOrgSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-org-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -6205,10 +5734,6 @@
         "summary": "Get the Permission object by name or id",
         "description": "Get the Permission object by name or id",
         "operationId": "permission_getOrgSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-org-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -6246,10 +5771,6 @@
         "summary": "List the Permission objects",
         "description": "List the Permission objects",
         "operationId": "permission_listCloudSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-cloud-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -6298,10 +5819,6 @@
         "summary": "Get the Permission object by name or id",
         "description": "Get the Permission object by name or id",
         "operationId": "permission_getCloudSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-cloud-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -6339,10 +5856,6 @@
         "summary": "List the Permission objects",
         "description": "List the Permission objects",
         "operationId": "permission_listProviderSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-provider-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -6391,10 +5904,6 @@
         "summary": "Get the Permission object by name or id",
         "description": "Get the Permission object by name or id",
         "operationId": "permission_getProviderSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-provider-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -6432,10 +5941,6 @@
         "summary": "List the Permission objects",
         "description": "List the Permission objects",
         "operationId": "permission_listConsumerSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-consumer-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -6484,10 +5989,6 @@
         "summary": "Get the Permission object by name or id",
         "description": "Get the Permission object by name or id",
         "operationId": "permission_getConsumerSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-consumer-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -6525,10 +6026,6 @@
         "summary": "List the Permission objects",
         "description": "List the Permission objects",
         "operationId": "permission_listDeploymentSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-deployment-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -6577,10 +6074,6 @@
         "summary": "Get the Permission object by name or id",
         "description": "Get the Permission object by name or id",
         "operationId": "permission_getDeploymentSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-deployment-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -6630,10 +6123,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -6689,10 +6178,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -6740,10 +6225,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -6784,10 +6265,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -6829,10 +6306,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -6883,10 +6356,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -6931,10 +6400,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/availability-zone#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -6990,10 +6455,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/availability-zone#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7041,10 +6502,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/availability-zone#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -7085,10 +6542,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/availability-zone#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7130,10 +6583,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/availability-zone#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -7184,10 +6633,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/availability-zone#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -7235,10 +6680,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-service#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -7294,10 +6735,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-service#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7345,10 +6782,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-service#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -7392,10 +6825,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-service#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7437,10 +6866,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-service#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -7491,10 +6916,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-service#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -7544,10 +6965,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-service#reset-oauth-secret"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -7598,10 +7015,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-org-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7666,10 +7079,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7734,10 +7143,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7799,10 +7204,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-org-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7860,10 +7261,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -7919,10 +7316,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -7973,10 +7366,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-org-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -8041,10 +7430,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -8109,10 +7494,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -8174,10 +7555,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-org-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -8235,10 +7612,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -8294,10 +7667,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -8348,10 +7717,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-extension-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -8397,10 +7762,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-extension-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -8442,10 +7803,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-extension-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -8501,10 +7858,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-extension-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -8554,10 +7907,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-extension#implementation"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -8596,10 +7945,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/portal-service#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -8655,10 +8000,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/portal-service#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -8706,10 +8047,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/portal-service#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -8753,10 +8090,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/portal-service#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -8798,10 +8131,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/portal-service#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -8852,10 +8181,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/portal-service#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -8903,10 +8228,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-service#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -8962,10 +8283,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-service#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -9013,10 +8330,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-service#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -9060,10 +8373,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-service#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -9105,10 +8414,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-service#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -9159,10 +8464,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-service#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -9207,10 +8508,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -9266,10 +8563,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -9317,10 +8610,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -9361,10 +8650,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -9406,10 +8691,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -9460,10 +8741,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -9508,10 +8785,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/mail-server#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -9567,10 +8840,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/mail-server#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -9618,10 +8887,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/mail-server#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -9662,10 +8927,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/mail-server#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -9707,10 +8968,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/mail-server#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -9761,10 +9018,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/mail-server#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -9811,10 +9064,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/mail-server#test-connection"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -9872,10 +9121,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/mail-server#test-connection"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -9934,10 +9179,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -9993,10 +9234,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -10044,10 +9281,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -10091,10 +9324,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -10142,10 +9371,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -10189,10 +9414,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -10234,10 +9455,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -10288,10 +9505,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#del"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/cascade"
@@ -10347,10 +9560,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -10392,10 +9601,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -10446,10 +9651,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -10494,10 +9695,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -10553,10 +9750,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -10604,10 +9797,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -10651,10 +9840,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -10702,10 +9887,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -10746,10 +9927,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -10791,10 +9968,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -10845,10 +10018,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -10899,10 +10068,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -10944,10 +10109,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -10998,10 +10159,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -11046,10 +10203,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -11105,10 +10258,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -11156,10 +10305,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -11200,10 +10345,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -11245,10 +10386,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -11299,10 +10436,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -11347,10 +10480,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -11406,10 +10535,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -11457,10 +10582,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -11501,10 +10622,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -11546,10 +10663,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -11600,10 +10713,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -11651,10 +10760,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -11710,10 +10815,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -11761,10 +10862,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -11808,10 +10905,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -11853,10 +10946,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -11907,10 +10996,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -11950,10 +11035,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -12009,10 +11090,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -12060,10 +11137,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -12101,10 +11174,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -12146,10 +11215,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -12200,10 +11265,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -12247,10 +11308,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -12301,10 +11358,6 @@
         "summary": "Register using the Organization Invitation",
         "description": "Register using the Organization Invitation",
         "operationId": "invitation_registerOrgScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#register"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -12368,10 +11421,6 @@
         "summary": "Accept using the Organization Invitation",
         "description": "Accept using the Organization Invitation",
         "operationId": "invitation_acceptOrgScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#accept"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -12438,10 +11487,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -12497,10 +11542,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -12551,10 +11592,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -12587,10 +11624,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-cloud-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -12646,10 +11679,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -12697,10 +11726,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-cloud-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -12738,10 +11763,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -12783,10 +11804,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-cloud-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -12837,10 +11854,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-cloud-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -12880,10 +11893,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -12928,10 +11937,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -12982,10 +11987,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -13024,10 +12025,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#change-password"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -13061,10 +12058,6 @@
         "summary": "Reset password",
         "description": "Reset password",
         "operationId": "me_resetPassword",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#reset-password"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -13105,10 +12098,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#sign-out"
-        },
         "responses": {
           "204": {
             "description": "Success"
@@ -13136,10 +12125,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/my-permission#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -13190,10 +12175,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/my-org#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -13245,10 +12226,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/webhook-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -13305,10 +12282,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/webhook-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -13351,10 +12324,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/webhook-cloud-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -13408,10 +12377,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/primary-event-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -13470,10 +12435,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/primary-event-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -13529,10 +12490,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/primary-event-gateway-service-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -13600,10 +12557,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/primary-event-gateway-service-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -13659,10 +12612,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/primary-event-portal-service-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -13730,10 +12679,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/primary-event-portal-service-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -13783,10 +12728,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscriber-event-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -13848,10 +12789,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscriber-event-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -13896,10 +12833,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/task-queue-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -13976,10 +12909,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/task-queue-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -27495,10 +26424,6 @@
       }
     }
   },
-  "externalDocs": {
-    "description": "Additional documentation",
-    "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis"
-  },
   "x-ibm-configuration": {
     "testable": false
   }
@@ -27546,10 +26471,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -27605,10 +26526,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -27656,10 +26573,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -27700,10 +26613,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -27745,10 +26654,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -27799,10 +26704,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -27849,10 +26750,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#execute"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/operation"
@@ -27904,10 +26801,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#test-connection"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -27968,10 +26861,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#execute"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/operation"
@@ -28034,10 +26923,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#test-connection"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -28101,10 +26986,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#search"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -28174,10 +27055,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -28233,10 +27110,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -28284,10 +27157,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -28331,10 +27200,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -28376,10 +27241,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -28430,10 +27291,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -28465,10 +27322,6 @@
         "summary": "Send reset password link",
         "description": "Send reset password link",
         "operationId": "user_requestPasswordReset",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#request-password-reset"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -28520,10 +27373,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#reset-password"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -28564,10 +27413,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#search-admin"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -28628,10 +27473,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#search-provider"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -28685,10 +27526,6 @@
         "summary": "List Identity Providers in the admin realm",
         "description": "List Identity Providers in the admin realm",
         "operationId": "user_registry_identityProviderListAdmin",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#identity-provider-list-admin"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -28731,10 +27568,6 @@
         "summary": "List Identity Providers in the provider realm",
         "description": "List Identity Providers in the provider realm",
         "operationId": "user_registry_identityProviderListProvider",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#identity-provider-list-provider"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -28777,10 +27610,6 @@
         "summary": "Generate a token",
         "description": "Generate a token",
         "operationId": "oauth2_token",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth2#token"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -28826,10 +27655,6 @@
         "summary": "Authorization provider redirect endpoint",
         "description": "Authorization provider redirect endpoint",
         "operationId": "oauth2_redirect_get",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth2#redirect"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/state"
@@ -28870,10 +27695,6 @@
         "summary": "Authorization provider redirect endpoint",
         "description": "Authorization provider redirect endpoint",
         "operationId": "oauth2_redirect_post",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth2#redirect"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/state"
@@ -28925,10 +27746,6 @@
         "summary": "APIC authorization endpoint",
         "description": "APIC authorize endpoint",
         "operationId": "oauth2_authorize",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#identity-provider-list-provider"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/client_id"
@@ -28993,10 +27810,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org-setting#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -29038,10 +27851,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org-setting#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -29100,10 +27909,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-org-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -29159,10 +27964,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-provider-subcollection-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -29221,10 +28022,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-provider-subcollection-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -29266,10 +28063,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-provider-subcollection-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -29328,10 +28121,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-catalog-subcollection-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -29390,10 +28179,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-catalog-subcollection-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -29435,10 +28220,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-catalog-subcollection-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -29497,10 +28278,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -29559,10 +28336,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -29604,10 +28377,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -29666,10 +28435,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -29728,10 +28493,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -29773,10 +28534,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -29835,10 +28592,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -29880,10 +28633,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -29934,10 +28683,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -29981,10 +28726,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#transfer-owner"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -30042,10 +28783,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#searchprovider-org"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -30112,10 +28849,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/associate-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -30174,10 +28907,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/associate-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -30227,10 +28956,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -30286,10 +29011,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -30337,10 +29058,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -30381,10 +29098,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -30426,10 +29139,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -30480,10 +29189,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -30530,10 +29235,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -30587,10 +29288,6 @@
         "summary": "Register using the Member Invitation",
         "description": "Register using the Member Invitation",
         "operationId": "member_invitation_registerOrgScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#register"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -30657,10 +29354,6 @@
         "summary": "Accept using the Member Invitation",
         "description": "Accept using the Member Invitation",
         "operationId": "member_invitation_acceptOrgScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#accept"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -30732,10 +29425,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -30791,10 +29480,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -30842,10 +29527,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -30886,10 +29567,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -30931,10 +29608,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -30985,10 +29658,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -31021,10 +29690,6 @@
         "summary": "List all Permission objects in all collections",
         "description": "List all Permission objects in all collections",
         "operationId": "permission_listAll",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31068,10 +29733,6 @@
         "summary": "List the Permission objects",
         "description": "List the Permission objects",
         "operationId": "permission_listOrgSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-org-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31120,10 +29781,6 @@
         "summary": "Get the Permission object by name or id",
         "description": "Get the Permission object by name or id",
         "operationId": "permission_getOrgSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-org-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31161,10 +29818,6 @@
         "summary": "List the Permission objects",
         "description": "List the Permission objects",
         "operationId": "permission_listCloudSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-cloud-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31213,10 +29866,6 @@
         "summary": "Get the Permission object by name or id",
         "description": "Get the Permission object by name or id",
         "operationId": "permission_getCloudSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-cloud-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31254,10 +29903,6 @@
         "summary": "List the Permission objects",
         "description": "List the Permission objects",
         "operationId": "permission_listProviderSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-provider-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31306,10 +29951,6 @@
         "summary": "Get the Permission object by name or id",
         "description": "Get the Permission object by name or id",
         "operationId": "permission_getProviderSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-provider-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31347,10 +29988,6 @@
         "summary": "List the Permission objects",
         "description": "List the Permission objects",
         "operationId": "permission_listConsumerSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-consumer-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31399,10 +30036,6 @@
         "summary": "Get the Permission object by name or id",
         "description": "Get the Permission object by name or id",
         "operationId": "permission_getConsumerSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-consumer-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31440,10 +30073,6 @@
         "summary": "List the Permission objects",
         "description": "List the Permission objects",
         "operationId": "permission_listDeploymentSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-deployment-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31492,10 +30121,6 @@
         "summary": "Get the Permission object by name or id",
         "description": "Get the Permission object by name or id",
         "operationId": "permission_getDeploymentSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-deployment-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31545,10 +30170,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -31604,10 +30225,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31655,10 +30272,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -31699,10 +30312,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31744,10 +30353,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -31798,10 +30403,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -31846,10 +30447,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-service-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31908,10 +30505,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-service-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31961,10 +30554,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/portal-service-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -32023,10 +30612,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/portal-service-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -32076,10 +30661,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -32135,10 +30716,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -32186,10 +30763,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -32230,10 +30803,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -32275,10 +30844,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -32329,10 +30894,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -32382,10 +30943,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/job#retry"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/operation"
@@ -32423,10 +30980,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -32482,10 +31035,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -32533,10 +31082,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -32580,10 +31125,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -32631,10 +31172,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -32675,10 +31212,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -32720,10 +31253,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -32774,10 +31303,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -32828,10 +31353,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -32873,10 +31394,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -32927,10 +31444,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -32975,10 +31488,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -33034,10 +31543,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -33085,10 +31590,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -33129,10 +31630,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -33174,10 +31671,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -33228,10 +31721,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -33276,10 +31765,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -33335,10 +31820,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -33386,10 +31867,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -33430,10 +31907,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -33475,10 +31948,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -33529,10 +31998,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -33580,10 +32045,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -33639,10 +32100,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -33690,10 +32147,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -33737,10 +32190,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -33782,10 +32231,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -33836,10 +32281,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -33887,10 +32328,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog-setting#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -33932,10 +32369,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog-setting#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -33997,10 +32430,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-gateway-service-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -34056,10 +32485,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-gateway-service-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -34107,10 +32532,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-gateway-service-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -34154,10 +32575,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-gateway-service-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -34199,10 +32616,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-gateway-service-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -34253,10 +32666,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-gateway-service-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -34312,10 +32721,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-gateway-service-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -34363,10 +32768,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-gateway-service-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -34413,10 +32814,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-gateway-service-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -34458,10 +32855,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-gateway-service-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -34509,10 +32902,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-catalog-user-registry#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -34568,10 +32957,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-catalog-user-registry#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -34633,10 +33018,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-catalog-user-registry#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -34678,10 +33059,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-catalog-user-registry#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -34731,10 +33108,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#search"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -34804,10 +33177,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-api-user-registry-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -34863,10 +33232,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-api-user-registry-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -34914,10 +33279,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-api-user-registry-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -34961,10 +33322,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-api-user-registry-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -35006,10 +33363,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-api-user-registry-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -35060,10 +33413,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-api-user-registry-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -35119,10 +33468,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-api-user-registry-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -35170,10 +33515,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-api-user-registry-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -35220,10 +33561,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-api-user-registry-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -35265,10 +33602,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-api-user-registry-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -35316,10 +33649,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -35375,10 +33704,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-catalog-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -35426,10 +33751,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-catalog-scope#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -35473,10 +33794,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -35524,10 +33841,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -35571,10 +33884,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -35616,10 +33925,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -35673,10 +33978,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-catalog-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -35718,10 +34019,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-catalog-scope#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -35772,10 +34069,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -35831,10 +34124,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-space-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -35882,10 +34171,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-space-scope#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -35932,10 +34217,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -35983,10 +34264,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -36033,10 +34310,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -36078,10 +34351,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -36138,10 +34407,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-space-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -36183,10 +34448,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-space-scope#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -36234,10 +34495,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-oauth-provider-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -36293,10 +34550,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-oauth-provider-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -36344,10 +34597,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-oauth-provider-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -36391,10 +34640,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-oauth-provider-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -36436,10 +34681,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-oauth-provider-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -36490,10 +34731,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-oauth-provider-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -36549,10 +34786,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-oauth-provider-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -36600,10 +34833,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-oauth-provider-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -36650,10 +34879,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-oauth-provider-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -36695,10 +34920,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-oauth-provider-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -36746,10 +34967,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-catalog-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -36808,10 +35025,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-catalog-subcollection-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -36873,10 +35086,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-catalog-subcollection-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -36918,10 +35127,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-catalog-subcollection-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -36983,10 +35188,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -37048,10 +35249,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -37093,10 +35290,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -37158,10 +35351,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -37223,10 +35412,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -37268,10 +35453,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -37333,10 +35514,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-catalog-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -37395,10 +35572,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -37454,10 +35627,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -37505,10 +35674,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -37552,10 +35717,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -37597,10 +35758,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -37651,10 +35808,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -37702,10 +35855,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/property-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -37761,10 +35910,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/property-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -37812,10 +35957,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/property-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -37859,10 +36000,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/property-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -37904,10 +36041,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/property-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -37958,10 +36091,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/property-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -38006,10 +36135,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -38065,10 +36190,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -38116,10 +36237,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -38160,10 +36277,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -38205,10 +36318,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -38259,10 +36368,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -38309,10 +36414,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#transfer-owner"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -38373,10 +36474,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#send-email"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -38440,10 +36537,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#search-catalog"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -38512,10 +36605,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#stage-draft-product"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/gateway_services"
@@ -38581,10 +36670,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#publish-draft-product"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/gateway_services"
@@ -38653,10 +36738,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#stage"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/gateway_services"
@@ -38722,10 +36803,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#publish"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/gateway_services"
@@ -38792,10 +36869,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -38851,10 +36924,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -38902,10 +36971,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -38946,10 +37011,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -38991,10 +37052,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -39045,10 +37102,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -39095,10 +37148,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-catalog-scope#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -39152,10 +37201,6 @@
         "summary": "Register using the Catalog Invitation",
         "description": "Register using the Catalog Invitation",
         "operationId": "invitation_registerCatalogScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-catalog-scope#register"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -39222,10 +37267,6 @@
         "summary": "Accept using the Catalog Invitation",
         "description": "Accept using the Catalog Invitation",
         "operationId": "invitation_acceptCatalogScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-catalog-scope#accept"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -39300,10 +37341,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -39359,10 +37396,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -39410,10 +37443,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -39457,10 +37486,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -39502,10 +37527,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -39556,10 +37577,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -39609,10 +37626,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-catalog-scope#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -39669,10 +37682,6 @@
         "summary": "Register using the Member Invitation",
         "description": "Register using the Member Invitation",
         "operationId": "member_invitation_registerCatalogScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-catalog-scope#register"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -39742,10 +37751,6 @@
         "summary": "Accept using the Member Invitation",
         "description": "Accept using the Member Invitation",
         "operationId": "member_invitation_acceptCatalogScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-catalog-scope#accept"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -39820,10 +37825,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -39879,10 +37880,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -39930,10 +37927,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -39977,10 +37970,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -40022,10 +38011,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -40076,10 +38061,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -40127,10 +38108,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/task-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -40192,10 +38169,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/task-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -40237,10 +38210,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/task-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -40302,10 +38271,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -40367,10 +38332,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -40412,10 +38373,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -40480,10 +38437,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -40539,10 +38492,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -40590,10 +38539,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -40640,10 +38585,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -40691,10 +38632,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -40741,10 +38678,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -40786,10 +38719,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -40840,10 +38769,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -40900,10 +38825,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -40945,10 +38866,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -40999,10 +38916,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -41055,10 +38968,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -41114,10 +39023,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -41171,10 +39076,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -41230,10 +39131,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -41281,10 +39178,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -41334,10 +39227,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -41385,10 +39274,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -41438,10 +39323,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -41483,10 +39364,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -41537,10 +39414,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -41600,10 +39473,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -41645,10 +39514,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -41699,10 +39564,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -41758,10 +39619,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -41820,10 +39677,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -41874,10 +39727,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -41928,10 +39777,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -41979,10 +39824,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -42029,10 +39870,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -42080,10 +39917,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -42130,10 +39963,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -42175,10 +40004,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -42234,10 +40059,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -42294,10 +40115,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -42339,10 +40156,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -42398,10 +40211,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -42454,10 +40263,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -42513,10 +40318,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -42569,10 +40370,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy#implementation"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -42629,10 +40426,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy#implementation"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -42687,10 +40480,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -42741,10 +40530,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -42792,10 +40577,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -42845,10 +40626,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -42896,10 +40673,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -42949,10 +40722,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -42994,10 +40763,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -43053,10 +40818,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -43116,10 +40877,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -43161,10 +40918,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -43220,10 +40973,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -43279,10 +41028,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -43341,10 +41086,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -43400,10 +41141,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy#implementation"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -43463,10 +41200,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy#implementation"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -43518,10 +41251,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -43577,10 +41306,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -43628,10 +41353,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -43678,10 +41399,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -43729,10 +41446,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -43779,10 +41492,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -43824,10 +41533,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -43878,10 +41583,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -43938,10 +41639,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -43983,10 +41680,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -44037,10 +41730,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -44093,10 +41782,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -44152,10 +41837,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -44209,10 +41890,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -44268,10 +41945,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -44319,10 +41992,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -44372,10 +42041,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -44423,10 +42088,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -44476,10 +42137,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -44521,10 +42178,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -44575,10 +42228,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -44638,10 +42287,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -44683,10 +42328,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -44737,10 +42378,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -44796,10 +42433,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -44858,10 +42491,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -44909,10 +42538,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -44977,10 +42602,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -45042,10 +42663,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -45107,10 +42724,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -45172,10 +42785,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -45231,10 +42840,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -45282,10 +42887,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -45332,10 +42933,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -45383,10 +42980,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -45433,10 +43026,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -45478,10 +43067,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -45532,10 +43117,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -45592,10 +43173,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -45637,10 +43214,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -45691,10 +43264,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -45748,10 +43317,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -45807,10 +43372,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -45858,10 +43419,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -45911,10 +43468,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -45962,10 +43515,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -46015,10 +43564,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -46060,10 +43605,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -46114,10 +43655,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -46177,10 +43714,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -46222,10 +43755,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -46276,10 +43805,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -46330,10 +43855,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-prehook-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -46384,10 +43905,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-prehook-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -46429,10 +43946,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-prehook-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -46483,10 +43996,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-prehook-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -46540,10 +44049,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-prehook-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -46594,10 +44099,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-prehook-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -46639,10 +44140,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-prehook-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -46693,10 +44190,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-prehook-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -46747,10 +44240,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-posthook-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -46801,10 +44290,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-posthook-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -46846,10 +44331,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-posthook-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -46900,10 +44381,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-posthook-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -46957,10 +44434,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-posthook-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -47011,10 +44484,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-posthook-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -47056,10 +44525,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-posthook-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -47110,10 +44575,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-posthook-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -47161,10 +44622,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-service-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -47226,10 +44683,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-service-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -47288,10 +44741,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-catalog-scope#create"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/query"
@@ -47366,10 +44815,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-service-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -47434,10 +44879,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-service-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -47499,10 +44940,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-space-scope#create"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/query"
@@ -47577,10 +45014,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space-setting#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -47622,10 +45055,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space-setting#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -47690,10 +45119,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -47755,10 +45180,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -47823,10 +45244,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -47868,10 +45285,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -47936,10 +45349,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -48004,10 +45413,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -48049,10 +45454,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -48117,10 +45518,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-space-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -48182,10 +45579,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -48241,10 +45634,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -48292,10 +45681,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -48342,10 +45727,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -48387,10 +45768,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -48441,10 +45818,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -48492,10 +45865,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -48551,10 +45920,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -48602,10 +45967,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -48649,10 +46010,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -48694,10 +46051,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -48748,10 +46101,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -48801,10 +46150,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#transfer-owner"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -48868,10 +46213,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#stage-draft-product"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/gateway_services"
@@ -48940,10 +46281,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#publish-draft-product"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/gateway_services"
@@ -49015,10 +46352,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#stage"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/gateway_services"
@@ -49087,10 +46420,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#publish"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/gateway_services"
@@ -49160,10 +46489,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -49219,10 +46544,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -49270,10 +46591,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -49317,10 +46634,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -49362,10 +46675,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -49416,10 +46725,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -49469,10 +46774,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-space-scope#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -49529,10 +46830,6 @@
         "summary": "Register using the Space Invitation",
         "description": "Register using the Space Invitation",
         "operationId": "invitation_registerSpaceScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-space-scope#register"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -49602,10 +46899,6 @@
         "summary": "Accept using the Space Invitation",
         "description": "Accept using the Space Invitation",
         "operationId": "invitation_acceptSpaceScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-space-scope#accept"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -49683,10 +46976,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -49751,10 +47040,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -49796,10 +47081,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -49864,10 +47145,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -49923,10 +47200,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -49974,10 +47247,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -50024,10 +47293,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -50069,10 +47334,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -50123,10 +47384,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -50179,10 +47436,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-space-scope#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -50242,10 +47495,6 @@
         "summary": "Register using the Member Invitation",
         "description": "Register using the Member Invitation",
         "operationId": "member_invitation_registerSpaceScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-space-scope#register"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -50318,10 +47567,6 @@
         "summary": "Accept using the Member Invitation",
         "description": "Accept using the Member Invitation",
         "operationId": "member_invitation_acceptSpaceScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-space-scope#accept"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -50399,10 +47644,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -50458,10 +47699,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -50509,10 +47746,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -50559,10 +47792,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -50604,10 +47833,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -50658,10 +47883,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -50712,10 +47933,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/task-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -50780,10 +47997,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/task-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -50825,10 +48038,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/task-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -50890,10 +48099,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -50958,10 +48163,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -51026,10 +48227,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-setting#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -51071,10 +48268,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-setting#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -51125,10 +48318,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-setting#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -51182,10 +48371,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-setting-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -51227,10 +48412,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-setting-space-initiated#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -51281,10 +48462,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-setting-space-initiated#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -51332,10 +48509,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -51391,10 +48564,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -51442,10 +48611,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -51489,10 +48654,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -51534,10 +48695,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -51588,10 +48745,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -51641,10 +48794,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -51709,10 +48858,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope-space-initiated#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -51768,10 +48913,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -51819,10 +48960,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope-space-initiated#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -51869,10 +49006,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -51914,10 +49047,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope-space-initiated#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -51968,10 +49097,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope-space-initiated#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -52024,10 +49149,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope-space-initiated#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -52089,10 +49210,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -52148,10 +49265,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -52202,10 +49315,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -52249,10 +49358,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -52297,10 +49402,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -52351,10 +49452,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -52404,10 +49501,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org#transfer-owner"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -52472,10 +49565,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-space-initiated#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -52531,10 +49620,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -52582,10 +49667,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-space-initiated#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -52632,10 +49713,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -52677,10 +49754,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-space-initiated#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -52731,10 +49804,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-space-initiated#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -52787,10 +49856,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-space-initiated#transfer-owner"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -52852,10 +49917,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -52911,10 +49972,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -52962,10 +50019,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -53009,10 +50062,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -53054,10 +50103,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -53108,10 +50153,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -53162,10 +50203,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -53221,10 +50258,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -53272,10 +50305,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -53322,10 +50351,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -53367,10 +50392,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -53421,10 +50442,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -53478,10 +50495,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope-space-initiated#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -53537,10 +50550,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -53588,10 +50597,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope-space-initiated#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -53641,10 +50646,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -53686,10 +50687,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope-space-initiated#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -53740,10 +50737,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope-space-initiated#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -53794,10 +50787,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/associate-consumer-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -53862,10 +50851,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/associate-consumer-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -53924,10 +50909,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/associate-consumer-org-scope-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -53995,10 +50976,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/associate-consumer-org-scope-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -54054,10 +51031,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -54113,10 +51086,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -54164,10 +51133,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -54214,10 +51179,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -54259,10 +51220,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -54313,10 +51270,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -54369,10 +51322,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -54440,10 +51389,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope-space-initiated#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -54499,10 +51444,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -54550,10 +51491,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope-space-initiated#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -54603,10 +51540,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -54648,10 +51581,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope-space-initiated#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -54702,10 +51631,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope-space-initiated#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -54761,10 +51686,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope-space-initiated#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -54829,10 +51750,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -54888,10 +51805,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -54939,10 +51852,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -54989,10 +51898,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -55034,10 +51939,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -55088,10 +51989,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -55145,10 +52042,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope-space-initiated#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -55204,10 +52097,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -55255,10 +52144,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope-space-initiated#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -55308,10 +52193,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -55353,10 +52234,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope-space-initiated#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -55407,10 +52284,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope-space-initiated#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -55461,10 +52334,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -55520,10 +52389,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -55571,10 +52436,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -55621,10 +52482,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -55669,10 +52526,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -55723,10 +52576,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -55780,10 +52629,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app-space-initiated#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -55839,10 +52684,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -55893,10 +52734,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app-space-initiated#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -55946,10 +52783,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -55994,10 +52827,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app-space-initiated#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -56048,10 +52877,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app-space-initiated#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -56105,10 +52930,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -56164,10 +52985,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -56235,10 +53052,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -56280,10 +53093,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -56334,10 +53143,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -56393,10 +53198,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#reset"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -56452,10 +53253,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#reset-client-secret"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -56511,10 +53308,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#verify-client-secret"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -56585,10 +53378,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-space-initiated#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -56644,10 +53433,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -56695,10 +53480,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-space-initiated#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -56751,10 +53532,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -56796,10 +53573,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-space-initiated#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -56850,10 +53623,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-space-initiated#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -56912,10 +53681,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-space-initiated#reset"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -56974,10 +53739,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-space-initiated#reset-client-secret"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -57036,10 +53797,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-space-initiated#verify-client-secret"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -57107,10 +53864,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -57166,10 +53919,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -57217,10 +53966,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -57270,10 +54015,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -57318,10 +54059,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -57372,10 +54109,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -57432,10 +54165,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription-space-initiated#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -57491,10 +54220,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -57545,10 +54270,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription-space-initiated#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -57601,10 +54322,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -57649,10 +54366,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription-space-initiated#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -57703,10 +54416,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription-space-initiated#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -57751,10 +54460,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -57802,10 +54507,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -57842,10 +54543,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft#introspect-wsdl"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/wsdl_services"
@@ -57904,10 +54601,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -57968,10 +54661,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -58019,10 +54708,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -58063,10 +54748,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -58114,10 +54795,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -58158,10 +54835,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -58203,10 +54876,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -58262,10 +54931,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -58316,10 +54981,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -58361,10 +55022,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -58420,10 +55077,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -58470,10 +55123,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#validate"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -58523,10 +55172,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#validate"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -58573,10 +55218,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -58626,10 +55267,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -58674,10 +55311,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#create"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/api_type"
@@ -58755,10 +55388,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -58806,10 +55435,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -58850,10 +55475,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -58901,10 +55522,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -58945,10 +55562,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -58990,10 +55603,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#update"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/api_type"
@@ -59060,10 +55669,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -59114,10 +55719,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -59159,10 +55760,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#update-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/api_type"
@@ -59229,10 +55826,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -59279,10 +55872,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#validate"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -59332,10 +55921,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#validate"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -59382,10 +55967,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#add-target-service"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/wsdl_service"
@@ -59452,10 +56033,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#add-target-service"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/wsdl_service"
@@ -59519,10 +56096,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -59572,10 +56145,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -59622,10 +56191,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#wsdl"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -59677,10 +56242,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#wsdl"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -59730,10 +56291,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -59784,10 +56341,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -59831,10 +56384,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -59885,10 +56434,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -59932,10 +56477,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -59980,10 +56521,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -60034,10 +56571,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -60091,10 +56624,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -60139,10 +56668,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -60193,10 +56718,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -60246,10 +56767,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#replace"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -60313,10 +56830,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#supersede"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -60380,10 +56893,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#set-migration-target"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -60447,10 +56956,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#migrate-subscriptions"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -60514,10 +57019,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#execute-migration-target"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -60570,10 +57071,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#replace"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -60640,10 +57137,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#supersede"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -60710,10 +57203,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#set-migration-target"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -60780,10 +57269,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#migrate-subscriptions"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -60850,10 +57335,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#execute-migration-target"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -60903,10 +57384,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -60959,10 +57436,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -61010,10 +57483,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-catalog-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -61078,10 +57547,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -61146,10 +57611,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -61194,10 +57655,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -61265,10 +57722,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-catalog-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -61313,10 +57766,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-catalog-scope#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -61380,10 +57829,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -61436,10 +57881,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -61489,10 +57930,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#wsdl"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -61547,10 +57984,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#wsdl"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -61603,10 +58036,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -61657,10 +58086,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -61707,10 +58132,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -61761,10 +58182,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -61811,10 +58228,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -61859,10 +58272,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -61913,10 +58322,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -61973,10 +58378,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -62021,10 +58422,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -62075,10 +58472,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -62131,10 +58524,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#replace"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -62201,10 +58590,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#supersede"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -62271,10 +58656,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#set-migration-target"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -62341,10 +58722,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#migrate-subscriptions"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -62411,10 +58788,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#execute-migration-target"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -62470,10 +58843,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#replace"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -62543,10 +58912,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#supersede"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -62616,10 +58981,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#set-migration-target"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -62689,10 +59050,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#migrate-subscriptions"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -62762,10 +59119,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#execute-migration-target"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -62818,10 +59171,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -62877,10 +59226,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -62931,10 +59276,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-space-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -63002,10 +59343,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -63073,10 +59410,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -63121,10 +59454,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -63195,10 +59524,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-space-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -63243,10 +59568,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-space-scope#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -63313,10 +59634,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -63372,10 +59689,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -63428,10 +59741,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#wsdl"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -63489,10 +59798,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#wsdl"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -63534,10 +59839,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -63582,10 +59883,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -63636,10 +59933,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -63678,10 +59971,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#change-password"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -63715,10 +60004,6 @@
         "summary": "Reset password",
         "description": "Reset password",
         "operationId": "me_resetPassword",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#reset-password"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -63759,10 +60044,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#sign-out"
-        },
         "responses": {
           "204": {
             "description": "Success"
@@ -63790,10 +60071,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/my-permission#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -63844,10 +60121,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/my-task#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -63898,10 +60171,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/originated-task#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -63952,10 +60221,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/my-org#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -64006,10 +60271,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/my-catalog#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -64060,10 +60321,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/my-space#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -64124,10 +60381,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/webhook-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -64191,10 +60444,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/webhook-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -64237,10 +60486,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/webhook-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -64302,10 +60547,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/primary-event-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -64370,10 +60611,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/primary-event-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -64429,10 +60666,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/primary-event-configured-gateway-service-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -64500,10 +60733,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/primary-event-configured-gateway-service-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -64559,10 +60788,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscriber-event-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -64630,10 +60855,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscriber-event-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -78488,10 +74709,6 @@
       }
     }
   },
-  "externalDocs": {
-    "description": "Additional documentation",
-    "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis"
-  },
   "x-ibm-configuration": {
     "testable": false
   }
@@ -78534,10 +74751,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -78582,10 +74795,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -78636,10 +74845,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -78678,10 +74883,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#change-password"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -78715,10 +74916,6 @@
         "summary": "Reset password",
         "description": "Reset password",
         "operationId": "me_resetPassword",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#reset-password"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -78759,10 +74956,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#sign-out"
-        },
         "responses": {
           "204": {
             "description": "Success"
@@ -78790,10 +74983,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/my-permission#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -78844,10 +75033,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/my-org#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -78903,10 +75088,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/my-org#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -78950,10 +75131,6 @@
         "summary": "List all Permission objects in all collections",
         "description": "List all Permission objects in all collections",
         "operationId": "permission_listAll",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -78997,10 +75174,6 @@
         "summary": "List the Permission objects",
         "description": "List the Permission objects",
         "operationId": "permission_listOrgSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-org-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -79049,10 +75222,6 @@
         "summary": "Get the Permission object by name or id",
         "description": "Get the Permission object by name or id",
         "operationId": "permission_getOrgSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-org-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -79090,10 +75259,6 @@
         "summary": "List the Permission objects",
         "description": "List the Permission objects",
         "operationId": "permission_listConsumerSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-consumer-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -79142,10 +75307,6 @@
         "summary": "Get the Permission object by name or id",
         "description": "Get the Permission object by name or id",
         "operationId": "permission_getConsumerSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-consumer-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -79182,10 +75343,6 @@
         "summary": "Generate a token",
         "description": "Generate a token",
         "operationId": "oauth2_token",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth2#token"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -79231,10 +75388,6 @@
         "summary": "Authorization provider redirect endpoint",
         "description": "Authorization provider redirect endpoint",
         "operationId": "oauth2_redirect_get",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth2#redirect"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/state"
@@ -79275,10 +75428,6 @@
         "summary": "Authorization provider redirect endpoint",
         "description": "Authorization provider redirect endpoint",
         "operationId": "oauth2_redirect_post",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth2#redirect"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/state"
@@ -79330,10 +75479,6 @@
         "summary": "APIC authorization endpoint",
         "description": "APIC authorize endpoint",
         "operationId": "oauth2_authorize",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#identity-provider-list-provider"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/client_id"
@@ -79398,10 +75543,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -79443,10 +75584,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -79497,10 +75634,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#del"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/cascade"
@@ -79549,10 +75682,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#transfer-owner"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -79611,10 +75740,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -79656,10 +75781,6 @@
         "summary": "Register using the Organization Invitation",
         "description": "Register using the Organization Invitation",
         "operationId": "invitation_registerOrgScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#register"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -79723,10 +75844,6 @@
         "summary": "Accept using the Organization Invitation",
         "description": "Accept using the Organization Invitation",
         "operationId": "invitation_acceptOrgScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#accept"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -79798,10 +75915,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -79857,10 +75970,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -79908,10 +76017,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -79952,10 +76057,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -79997,10 +76098,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -80047,10 +76144,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -80104,10 +76197,6 @@
         "summary": "Register using the Member Invitation",
         "description": "Register using the Member Invitation",
         "operationId": "member_invitation_registerOrgScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#register"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -80174,10 +76263,6 @@
         "summary": "Accept using the Member Invitation",
         "description": "Accept using the Member Invitation",
         "operationId": "member_invitation_acceptOrgScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#accept"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -80244,10 +76329,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -80303,10 +76384,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -80355,10 +76432,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#search"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -80428,10 +76501,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -80468,10 +76537,6 @@
         "summary": "Sign up a user",
         "description": "Sign up a user",
         "operationId": "user_signUp",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/sign-up"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -80510,10 +76575,6 @@
         "summary": "Activates the sign up",
         "description": "Activates the sign up",
         "operationId": "user_activate",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/activate"
-        },
         "responses": {
           "204": {
             "description": "Success"
@@ -80533,10 +76594,6 @@
         "summary": "Send reset password link",
         "description": "Send reset password link",
         "operationId": "user_requestPasswordReset",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#request-password-reset"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -80570,10 +76627,6 @@
         "summary": "List Identity Providers in the consumer realm",
         "description": "List Identity Providers in the consumer realm",
         "operationId": "user_registry_identityProviderListCatalog",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#identity-provider-list-consumer"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -80629,10 +76682,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/associate-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -80691,10 +76740,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/associate-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -80744,10 +76789,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -80803,10 +76844,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -80854,10 +76891,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -80901,10 +76934,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -80946,10 +76975,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -81000,10 +77025,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#del"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/cascade"
@@ -81053,10 +77074,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -81112,10 +77129,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -81163,10 +77176,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -81207,10 +77216,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -81252,10 +77257,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -81306,10 +77307,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -81342,10 +77339,6 @@
         "summary": "List all Product objects in all collections",
         "description": "List all Product objects in all collections",
         "operationId": "product_listAll",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -81394,10 +77387,6 @@
         "summary": "List the Product objects",
         "description": "List the Product objects",
         "operationId": "product_list",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -81446,10 +77435,6 @@
         "summary": "Get the Product object by id",
         "description": "Get the Product object by id",
         "operationId": "product_get",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -81495,10 +77480,6 @@
         "summary": "Get the Product object by name and version",
         "description": "Get the Product object by name and version",
         "operationId": "product_getByNameVersion",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -81540,10 +77521,6 @@
         "summary": "Get the Product document",
         "description": "Get the Product document",
         "operationId": "product_getDocument",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -81583,10 +77560,6 @@
         "summary": "Get the Product document by name and version",
         "description": "Get the Product document by name and version",
         "operationId": "product_getDocumentByNameVersion",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -81619,10 +77592,6 @@
         "summary": "List all API objects in all collections",
         "description": "List all API objects in all collections",
         "operationId": "api_listAll",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -81671,10 +77640,6 @@
         "summary": "List the API objects",
         "description": "List the API objects",
         "operationId": "api_list",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -81723,10 +77688,6 @@
         "summary": "Get the API object by id",
         "description": "Get the API object by id",
         "operationId": "api_get",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -81772,10 +77733,6 @@
         "summary": "Get the API object by name and version",
         "description": "Get the API object by name and version",
         "operationId": "api_getByNameVersion",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -81817,10 +77774,6 @@
         "summary": "Get the API document",
         "description": "Get the API document",
         "operationId": "api_getDocument",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -81860,10 +77813,6 @@
         "summary": "Get the API document by name and version",
         "description": "Get the API document by name and version",
         "operationId": "api_getDocumentByNameVersion",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -81900,10 +77849,6 @@
         "summary": "Get the API wsdl document",
         "description": "Get the API wsdl document",
         "operationId": "api_getWsdl",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#wsdl"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/endpoint"
@@ -81950,10 +77895,6 @@
         "summary": "Get the API wsdl document by name and version",
         "description": "Get the API wsdl document by name and version",
         "operationId": "api_getWsdlByNameVersion",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#wsdl"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/endpoint"
@@ -82000,10 +77941,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-org-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -82059,10 +77996,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -82118,10 +78051,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -82174,10 +78103,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-org-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -82226,10 +78151,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -82276,10 +78197,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -82319,10 +78236,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-org-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -82378,10 +78291,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -82437,10 +78346,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -82493,10 +78398,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-org-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -82545,10 +78446,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -82595,10 +78492,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -82642,10 +78535,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#wsdl"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/endpoint"
@@ -82699,10 +78588,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#wsdl"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/endpoint"
@@ -82754,10 +78639,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -82813,10 +78694,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -82864,10 +78741,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -82908,10 +78781,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -82953,10 +78822,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -83007,10 +78872,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -83043,10 +78904,6 @@
         "summary": "List the Application Type objects",
         "description": "List the Application Type objects",
         "operationId": "application_type_list",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/application-type#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -83095,10 +78952,6 @@
         "summary": "Get the Application Type object by name or id",
         "description": "Get the Application Type object by name or id",
         "operationId": "application_type_get",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/application-type#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -83151,10 +79004,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -83210,10 +79059,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -83261,10 +79106,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -83308,10 +79149,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -83353,10 +79190,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -83407,10 +79240,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -83460,10 +79289,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#reset"
-        },
         "responses": {
           "201": {
             "description": "Success",
@@ -83518,10 +79343,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#reset-client-secret"
-        },
         "responses": {
           "201": {
             "description": "Success",
@@ -83576,10 +79397,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#verify-client-secret"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -83646,10 +79463,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -83705,10 +79518,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -83756,10 +79565,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -83803,10 +79608,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -83848,10 +79649,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -83902,10 +79699,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -83950,10 +79743,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/billing#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -84012,10 +79801,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/billing#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -84065,10 +79850,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -84127,10 +79908,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -84172,10 +79949,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -87341,10 +83114,6 @@
         }
       }
     }
-  },
-  "externalDocs": {
-    "description": "Additional documentation",
-    "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis"
   },
   "x-ibm-configuration": {
     "testable": false
