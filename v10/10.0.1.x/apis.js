@@ -27330,7 +27330,8 @@
                 "policy_visibility",
                 "product_replace_v2",
                 "product_retire_optimized",
-                "global_policy_error"
+                "global_policy_error",
+                "product_migrate_subscriptions"
               ]
             }
           },
@@ -81007,7 +81008,8 @@
                 "policy_visibility",
                 "product_replace_v2",
                 "product_retire_optimized",
-                "global_policy_error"
+                "global_policy_error",
+                "product_migrate_subscriptions"
               ]
             }
           },
@@ -94905,7 +94907,7 @@
       ],
       "get": {
         "summary": "Get a specific application from a developer portal.",
-        "description": "Get a specific application from the developer portal of the provided org and catalog. The id of a specific consumer organization needs to be provided.",
+        "description": "Get a specific application from the developer portal of the provided org and catalog. The id of a specific application needs to be provided.",
         "operationId": "application_get",
         "security": [
           {
