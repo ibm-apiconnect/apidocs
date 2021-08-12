@@ -27331,7 +27331,8 @@
                 "product_replace_v2",
                 "product_retire_optimized",
                 "global_policy_error",
-                "product_migrate_subscriptions"
+                "product_migrate_subscriptions",
+                "execute_migration_target"
               ]
             }
           },
@@ -81009,7 +81010,8 @@
                 "product_replace_v2",
                 "product_retire_optimized",
                 "global_policy_error",
-                "product_migrate_subscriptions"
+                "product_migrate_subscriptions",
+                "execute_migration_target"
               ]
             }
           },
@@ -94593,7 +94595,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_api_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=api-apic-apilist"
         },
         "responses": {
           "200": {
@@ -94673,7 +94675,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_api_get.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=api-apic-apiget"
         },
         "parameters": [
           {
@@ -94758,7 +94760,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_apic_config_get.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=config-apic-apic-configget"
         },
         "responses": {
           "200": {
@@ -94838,7 +94840,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_application_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=application-apic-applicationlist"
         },
         "responses": {
           "200": {
@@ -94918,7 +94920,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_application_get.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=application-apic-applicationget"
         },
         "parameters": [
           {
@@ -95003,7 +95005,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_consumer_org_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=org-apic-consumer-orglist"
         },
         "responses": {
           "200": {
@@ -95083,7 +95085,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_consumer_org_get.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=org-apic-consumer-orgget"
         },
         "parameters": [
           {
@@ -95161,7 +95163,7 @@
         "operationId": "custom_module_createExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_create-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-modulecreate-export"
         },
         "responses": {
           "201": {
@@ -95237,7 +95239,7 @@
         "operationId": "custom_module_getExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_get-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduleget-export"
         },
         "responses": {
           "200": {
@@ -95311,7 +95313,7 @@
         "operationId": "custom_module_deleteExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_delete-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduledelete-export"
         },
         "responses": {
           "204": {
@@ -95360,7 +95362,7 @@
         "operationId": "custom_module_getExportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_get-export-status.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduleget-export-status"
         },
         "responses": {
           "200": {
@@ -95463,7 +95465,7 @@
         "operationId": "custom_module_createImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_create-import.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-modulecreate-import"
         },
         "requestBody": {
           "content": {
@@ -95549,7 +95551,7 @@
         "operationId": "custom_module_deleteImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_delete-import.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduledelete-import"
         },
         "responses": {
           "204": {
@@ -95598,7 +95600,7 @@
         "operationId": "custom_module_getImportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_get-import-status.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduleget-import-status"
         },
         "responses": {
           "200": {
@@ -95701,7 +95703,7 @@
         "operationId": "custom_theme_createExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_create-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-modulecreate-export"
         },
         "responses": {
           "201": {
@@ -95777,7 +95779,7 @@
         "operationId": "custom_theme_getExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_get-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduleget-export"
         },
         "responses": {
           "200": {
@@ -95851,7 +95853,7 @@
         "operationId": "custom_theme_deleteExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_delete-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduledelete-export"
         },
         "responses": {
           "204": {
@@ -95900,7 +95902,7 @@
         "operationId": "custom_theme_getExportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_get-export-status.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduleget-export-status"
         },
         "responses": {
           "200": {
@@ -96003,7 +96005,7 @@
         "operationId": "custom_theme_createImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_create-import.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-modulecreate-import"
         },
         "requestBody": {
           "content": {
@@ -96089,7 +96091,7 @@
         "operationId": "custom_theme_deleteImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_delete-import.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduledelete-import"
         },
         "responses": {
           "204": {
@@ -96138,7 +96140,7 @@
         "operationId": "custom_theme_getImportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_get-import-status.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduleget-import-status"
         },
         "responses": {
           "200": {
@@ -96226,6 +96228,86 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/site/check": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Run a platform check against a portal site",
+        "description": "Performs filesystem, database and API Manager checks against a portal site. This command is useful when trying to identify platform related problems if you are having issues with your portal site.",
+        "operationId": "site_check",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=site-apic-sitecheck"
+        },
+        "responses": {
+          "200": {
+            "description": "Task has completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Site"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/entity/count": {
       "parameters": [
         {
@@ -96248,7 +96330,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_api_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=api-apic-apilist"
         },
         "responses": {
           "200": {
@@ -96328,7 +96410,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_security_clearbans.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=security-apic-securityclear-bans"
         },
         "responses": {
           "200": {
@@ -96401,7 +96483,7 @@
         "operationId": "site_config_createExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_create-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=config-apic-site-configcreate-export"
         },
         "responses": {
           "201": {
@@ -96477,7 +96559,7 @@
         "operationId": "site_config_getExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_get-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=config-apic-site-configget-export"
         },
         "responses": {
           "200": {
@@ -96551,7 +96633,7 @@
         "operationId": "site_config_deleteExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_delete-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=config-apic-site-configdelete-export"
         },
         "responses": {
           "204": {
@@ -96600,7 +96682,7 @@
         "operationId": "site_config_getExportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_get-export-status.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=config-apic-site-configget-export-status"
         },
         "responses": {
           "200": {
@@ -96703,7 +96785,7 @@
         "operationId": "site_config_createImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_create-import.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=config-apic-site-configcreate-import"
         },
         "requestBody": {
           "content": {
@@ -96789,7 +96871,7 @@
         "operationId": "site_config_deleteImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_delete-import.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=config-apic-site-configdelete-import"
         },
         "responses": {
           "204": {
@@ -96838,7 +96920,7 @@
         "operationId": "site_config_getImportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_get-import-status.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=config-apic-site-configget-import-status"
         },
         "responses": {
           "200": {
@@ -96933,7 +97015,7 @@
         "operationId": "backups_list",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_backups_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=backups-apic-backupslist"
         },
         "parameters": [
           {
@@ -97003,7 +97085,7 @@
         "operationId": "platforms_list",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_platforms_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=platforms-apic-platformslist"
         },
         "parameters": [
           {
@@ -97088,7 +97170,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_product_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=product-apic-productlist"
         },
         "responses": {
           "200": {
@@ -97146,6 +97228,168 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/product/get": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get a specific product from a developer portal.",
+        "description": "Get a specific product from the developer portal of the provided org and catalog. The id or name:version of a specific api needs to be provided. e.g. 'id-of-api-called-example-3' or 'example:3.0.0'.",
+        "operationId": "product_get",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=product-apic-productget"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/product"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the get product command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Product"
+        ]
+      }
+    },
+    "/service/sites/check": {
+      "get": {
+        "summary": "Run a platform check against all portal sites present on a portal service.",
+        "description": "Performs filesystem, database and API Manager checks against all portal sites on a given portal service. This command is useful when trying to identify platform related problems on one of more of your portal sites.",
+        "operationId": "sites_check",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=sites-apic-sitescheck"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/portal_service_name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the check sites command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: sites"
+        ]
+      }
+    },
     "/service/sites/list": {
       "get": {
         "summary": "List the sites present on the Portal service.",
@@ -97153,7 +97397,7 @@
         "operationId": "sites_list",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_sites_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=sites-apic-siteslist"
         },
         "parameters": [
           {
@@ -97216,6 +97460,86 @@
         ]
       }
     },
+    "/service/ip-security-enabled": {
+      "post": {
+        "summary": "Enable or disable IP security functionality within the Developer Portal",
+        "description": "Enable or disable IP security functionality within the Developer Portal",
+        "operationId": "ip_security_enabled_update",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=enabled-apic-ip-security-enabledupdate"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/portal_service_name"
+          },
+          {
+            "$ref": "#/components/parameters/ip_security_enabled"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output message of the security functionality being set",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: IpSecurityEnabled"
+        ]
+      }
+    },
     "/service/php-memory/list": {
       "get": {
         "summary": "List the PHP memory limit on the platform.",
@@ -97230,7 +97554,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_php-memory_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=memory-apic-php-memorylist"
         },
         "parameters": [
           {
@@ -97307,7 +97631,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_php-memory_update.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=memory-apic-php-memoryupdate"
         },
         "parameters": [
           {
@@ -97387,7 +97711,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_product_ip_allowlist_add.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=allowlist-apic-service-ip-allowlistadd"
         },
         "parameters": [
           {
@@ -97467,7 +97791,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_product_ip_allowlist_remove.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=allowlist-apic-service-ip-allowlistremove"
         },
         "parameters": [
           {
@@ -97547,7 +97871,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_product_ip_allowlist_delete.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=allowlist-apic-service-ip-allowlistdelete"
         },
         "parameters": [
           {
@@ -97624,7 +97948,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_product_ip_allowlist_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=allowlist-apic-service-ip-allowlistlist"
         },
         "parameters": [
           {
@@ -97709,7 +98033,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_modules_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=modules-apic-moduleslist"
         },
         "parameters": [
           {
@@ -97803,7 +98127,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_modules_enable.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=modules-apic-modulesenable"
         },
         "parameters": [
           {
@@ -97894,7 +98218,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_modules_disable.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=modules-apic-modulesdisable"
         },
         "parameters": [
           {
@@ -97979,7 +98303,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_modules_delete.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=modules-apic-modulesdelete"
         },
         "parameters": [
           {
@@ -98064,7 +98388,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_themes_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=themes-apic-themeslist"
         },
         "parameters": [
           {
@@ -98158,7 +98482,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_themes_enable.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=themes-apic-themesenable"
         },
         "parameters": [
           {
@@ -98243,7 +98567,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_themes_disable.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=themes-apic-themesdisable"
         },
         "parameters": [
           {
@@ -98328,7 +98652,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_themes_delete.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=themes-apic-themesdelete"
         },
         "parameters": [
           {
@@ -98413,7 +98737,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_themes_set_default.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=themes-apic-themesset-default"
         },
         "parameters": [
           {
