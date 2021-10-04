@@ -1,7 +1,7 @@
 /********************************************************* {COPYRIGHT-TOP} ***
  * Licensed Materials - Property of IBM
  *
- * (C) Copyright IBM Corporation 2017, 2020
+ * (C) Copyright IBM Corporation 2017, 2021
  *
  * All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or disclosure
@@ -2210,49 +2210,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createCloudSubcollectionCloudScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Cloud Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -2279,23 +2236,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Cloud Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearCloudSubcollectionCloudScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -2380,35 +2320,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Cloud Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delCloudSubcollectionCloudScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -2587,49 +2498,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createAdminSubcollectionCloudScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Admin Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -2656,23 +2524,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Admin Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearAdminSubcollectionCloudScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -2757,35 +2608,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Admin Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delAdminSubcollectionCloudScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -2964,49 +2786,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createProviderSubcollectionCloudScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Provider Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -3033,23 +2812,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Provider Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearProviderSubcollectionCloudScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -3134,35 +2896,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Provider Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delProviderSubcollectionCloudScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -3341,49 +3074,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createCatalogSubcollectionCloudScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Catalog Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -3410,23 +3100,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Catalog Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearCatalogSubcollectionCloudScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -3511,35 +3184,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Catalog Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delCatalogSubcollectionCloudScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -3718,49 +3362,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createSpaceSubcollectionCloudScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Space Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -3787,23 +3388,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Space Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearSpaceSubcollectionCloudScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -3888,35 +3472,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Space Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delSpaceSubcollectionCloudScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -4095,49 +3650,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createConsumerSubcollectionCloudScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Consumer Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -4164,23 +3676,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Consumer Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearConsumerSubcollectionCloudScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -4265,35 +3760,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Consumer Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delConsumerSubcollectionCloudScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -6640,49 +6106,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createAdminSubcollectionOrgScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Admin Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -6709,23 +6132,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Admin Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearAdminSubcollectionOrgScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -6813,35 +6219,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Admin Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delAdminSubcollectionOrgScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -18404,6 +17781,14 @@
           "case_sensitive": {
             "type": "boolean"
           },
+          "email_required": {
+            "type": "boolean",
+            "default": false
+          },
+          "email_unique_if_exist": {
+            "type": "boolean",
+            "default": true
+          },
           "identity_providers": {
             "type": "array",
             "items": {
@@ -18676,6 +18061,14 @@
           },
           "case_sensitive": {
             "type": "boolean"
+          },
+          "email_required": {
+            "type": "boolean",
+            "default": false
+          },
+          "email_unique_if_exist": {
+            "type": "boolean",
+            "default": true
           },
           "identity_providers": {
             "type": "array",
@@ -26951,6 +26344,14 @@
           "case_sensitive": {
             "type": "boolean"
           },
+          "email_required": {
+            "type": "boolean",
+            "default": false
+          },
+          "email_unique_if_exist": {
+            "type": "boolean",
+            "default": true
+          },
           "identity_providers": {
             "type": "array",
             "items": {
@@ -32649,49 +32050,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createProviderSubcollectionOrgScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Provider Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -32718,23 +32076,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Provider Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearProviderSubcollectionOrgScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -32822,35 +32163,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Provider Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delProviderSubcollectionOrgScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -33040,49 +32352,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createCatalogSubcollectionOrgScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Catalog Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -33109,23 +32378,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Catalog Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearCatalogSubcollectionOrgScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -33213,35 +32465,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Catalog Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delCatalogSubcollectionOrgScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -33431,49 +32654,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createSpaceSubcollectionOrgScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Space Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -33500,23 +32680,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Space Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearSpaceSubcollectionOrgScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -33604,35 +32767,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Space Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delSpaceSubcollectionOrgScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -33822,49 +32956,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createConsumerSubcollectionOrgScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Consumer Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -33891,23 +32982,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Consumer Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearConsumerSubcollectionOrgScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -33995,35 +33069,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Consumer Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delConsumerSubcollectionOrgScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -41345,49 +40390,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createCatalogSubcollectionCatalogScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Notification Template (Catalog Scope) (Catalog Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -41414,23 +40416,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Notification Template (Catalog Scope) (Catalog Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearCatalogSubcollectionCatalogScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -41521,35 +40506,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Notification Template (Catalog Scope) (Catalog Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delCatalogSubcollectionCatalogScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -41748,49 +40704,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createSpaceSubcollectionCatalogScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Notification Template (Catalog Scope) (Space Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -41817,23 +40730,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Notification Template (Catalog Scope) (Space Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearSpaceSubcollectionCatalogScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -41924,35 +40820,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Notification Template (Catalog Scope) (Space Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delSpaceSubcollectionCatalogScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -42151,49 +41018,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createConsumerSubcollectionCatalogScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Notification Template (Catalog Scope) (Consumer Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -42220,23 +41044,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Notification Template (Catalog Scope) (Consumer Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearConsumerSubcollectionCatalogScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -42327,35 +41134,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Notification Template (Catalog Scope) (Consumer Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delConsumerSubcollectionCatalogScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -52014,49 +50792,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createSpaceSubcollectionSpaceScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Space Settings",
-          "Resource: Notification Template (Space Scope) (Space Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -52083,23 +50818,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Space Settings",
-          "Resource: Notification Template (Space Scope) (Space Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearSpaceSubcollectionSpaceScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -52193,35 +50911,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Space Settings",
-          "Resource: Notification Template (Space Scope) (Space Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delSpaceSubcollectionSpaceScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -52429,49 +51118,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createConsumerSubcollectionSpaceScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Space Settings",
-          "Resource: Notification Template (Space Scope) (Consumer Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -52498,23 +51144,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Space Settings",
-          "Resource: Notification Template (Space Scope) (Consumer Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearConsumerSubcollectionSpaceScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -52608,35 +51237,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Space Settings",
-          "Resource: Notification Template (Space Scope) (Consumer Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delConsumerSubcollectionSpaceScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -72083,6 +70683,14 @@
           "case_sensitive": {
             "type": "boolean"
           },
+          "email_required": {
+            "type": "boolean",
+            "default": false
+          },
+          "email_unique_if_exist": {
+            "type": "boolean",
+            "default": true
+          },
           "identity_providers": {
             "type": "array",
             "items": {
@@ -72355,6 +70963,14 @@
           },
           "case_sensitive": {
             "type": "boolean"
+          },
+          "email_required": {
+            "type": "boolean",
+            "default": false
+          },
+          "email_unique_if_exist": {
+            "type": "boolean",
+            "default": true
           },
           "identity_providers": {
             "type": "array",
@@ -80629,6 +79245,14 @@
           },
           "case_sensitive": {
             "type": "boolean"
+          },
+          "email_required": {
+            "type": "boolean",
+            "default": false
+          },
+          "email_unique_if_exist": {
+            "type": "boolean",
+            "default": true
           },
           "identity_providers": {
             "type": "array",
@@ -92346,6 +90970,14 @@
           "case_sensitive": {
             "type": "boolean"
           },
+          "email_required": {
+            "type": "boolean",
+            "default": false
+          },
+          "email_unique_if_exist": {
+            "type": "boolean",
+            "default": true
+          },
           "identity_providers": {
             "type": "array",
             "items": {
@@ -93087,7 +91719,8 @@
               "password",
               "client_credentials",
               "authorization_code",
-              "refresh_token"
+              "refresh_token",
+              "urn:ietf:params:oauth:grant-type:jwt-bearer"
             ]
           }
         }
@@ -94739,6 +93372,91 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/api/get-document": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get a specific entire api document from a developer portal.",
+        "description": "Get a specific entire api document from the developer portal of the provided org and catalog. The id or name:version of a specific api needs to be provided. e.g. 'id-of-api-called-example-3' or 'example:3.0.0'.",
+        "operationId": "api_getDocument",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=api-apic-apiget-document"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the get-document api command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Api"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/apic-config/get": {
       "parameters": [
         {
@@ -95704,7 +94422,7 @@
         "operationId": "custom_theme_createExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-modulecreate-export"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=theme-apic-custom-themecreate-export"
         },
         "responses": {
           "201": {
@@ -95780,7 +94498,7 @@
         "operationId": "custom_theme_getExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduleget-export"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=theme-apic-custom-themeget-export"
         },
         "responses": {
           "200": {
@@ -95854,7 +94572,7 @@
         "operationId": "custom_theme_deleteExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduledelete-export"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=theme-apic-custom-themedelete-export"
         },
         "responses": {
           "204": {
@@ -95903,7 +94621,7 @@
         "operationId": "custom_theme_getExportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduleget-export-status"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=theme-apic-custom-themeget-export-status"
         },
         "responses": {
           "200": {
@@ -96006,7 +94724,7 @@
         "operationId": "custom_theme_createImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-modulecreate-import"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=theme-apic-custom-themecreate-import"
         },
         "requestBody": {
           "content": {
@@ -96092,7 +94810,7 @@
         "operationId": "custom_theme_deleteImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduledelete-import"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=theme-apic-custom-themedelete-import"
         },
         "responses": {
           "204": {
@@ -96141,7 +94859,7 @@
         "operationId": "custom_theme_getImportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduleget-import-status"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=theme-apic-custom-themeget-import-status"
         },
         "responses": {
           "200": {
@@ -96309,6 +95027,86 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/site/state": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Obtain the current state of a portal site",
+        "description": "Returns the state of a portal site. This command is useful as a general health check analysis of the portal site.",
+        "operationId": "site_state",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=site-apic-sitestate"
+        },
+        "responses": {
+          "200": {
+            "description": "An output of the state of the portal site",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Site"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/entity/count": {
       "parameters": [
         {
@@ -96331,7 +95129,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=api-apic-apilist"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=entity-apic-entitycount"
         },
         "responses": {
           "200": {
@@ -96469,7 +95267,339 @@
         ]
       }
     },
-    "/catalogs/{org}/{catalog}/config/export": {
+    "/catalogs/{org}/{catalog}/drupal-config": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get the Config object",
+        "description": "Get the Config object or a specific config key value.",
+        "operationId": "drupal_config_get",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=config-apic-drupal-configget"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/config_name"
+          },
+          {
+            "$ref": "#/components/parameters/config_key_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Task has completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: DrupalConfig"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Config object.",
+        "description": "Delete the Config object or a specific config key.",
+        "operationId": "drupal_config_delete",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=config-apic-drupal-configdelete"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/config_name"
+          },
+          {
+            "$ref": "#/components/parameters/config_key_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Task has completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: DrupalConfig"
+        ]
+      },
+      "post": {
+        "summary": "Set a config value.",
+        "description": "Can set a new config value or update an already existing key-value.",
+        "operationId": "drupal_config_set",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=config-apic-drupal-configset"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/config_name"
+          },
+          {
+            "$ref": "#/components/parameters/config_key"
+          },
+          {
+            "$ref": "#/components/parameters/config_value"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Task has completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: DrupalConfig"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/drupal-config/list": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "List the config names by prefix",
+        "description": "List the config names by prefix or provide no prefix to see all.",
+        "operationId": "drupal_config_list",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=config-apic-drupal-configlist"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/prefix"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Task has completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: DrupalConfig"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/site-config/export": {
       "parameters": [
         {
           "$ref": "#/components/parameters/org"
@@ -96542,7 +95672,7 @@
         ]
       }
     },
-    "/catalogs/{org}/{catalog}/config/export/{task_id}": {
+    "/catalogs/{org}/{catalog}/site-config/export/{task_id}": {
       "parameters": [
         {
           "$ref": "#/components/parameters/org"
@@ -96665,7 +95795,7 @@
         ]
       }
     },
-    "/catalogs/{org}/{catalog}/config/export/{task_id}/status": {
+    "/catalogs/{org}/{catalog}/site-config/export/{task_id}/status": {
       "parameters": [
         {
           "$ref": "#/components/parameters/org"
@@ -96771,7 +95901,7 @@
         ]
       }
     },
-    "/catalogs/{org}/{catalog}/config/import": {
+    "/catalogs/{org}/{catalog}/site-config/import": {
       "parameters": [
         {
           "$ref": "#/components/parameters/org"
@@ -96854,7 +95984,7 @@
         ]
       }
     },
-    "/catalogs/{org}/{catalog}/config/import/{task_id}": {
+    "/catalogs/{org}/{catalog}/site-config/import/{task_id}": {
       "parameters": [
         {
           "$ref": "#/components/parameters/org"
@@ -96903,7 +96033,7 @@
         ]
       }
     },
-    "/catalogs/{org}/{catalog}/config/import/{task_id}/status": {
+    "/catalogs/{org}/{catalog}/site-config/import/{task_id}/status": {
       "parameters": [
         {
           "$ref": "#/components/parameters/org"
@@ -97261,6 +96391,91 @@
         "responses": {
           "200": {
             "description": "Successful output of the get product command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Product"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/product/get-document": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get a specific entire product document from a developer portal.",
+        "description": "Get a specific entire product document from the developer portal of the provided org and catalog. The id or name:version of a specific api needs to be provided. e.g. 'id-of-api-called-example-3' or 'example:3.0.0'.",
+        "operationId": "product_getDocument",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=product-apic-productgetdocument"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/product"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the get product document command",
             "content": {
               "application/json": {
                 "schema": {
@@ -98367,6 +97582,86 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/site/cache-rebuild": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Rebuilds the cache of a specific Portal site.",
+        "description": "Clears the existing cache and rebuilds a new one for a specific Portal site.",
+        "operationId": "site_cache_rebuild",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=site-apic-sitecache-rebuild"
+        },
+        "responses": {
+          "200": {
+            "description": "Task has completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Site"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/themes/list": {
       "parameters": [
         {
@@ -98800,6 +98095,246 @@
           "Resource: Themes"
         ]
       }
+    },
+    "/catalogs/{org}/{catalog}/twig/debug-enable": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Enables twig debugging on a specific Portal site.",
+        "description": "Enables twig debugging on a specific Portal site. Helps locate twig template issues.",
+        "operationId": "twig_debugEnable",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=twig-apic-twigdebug-enable"
+        },
+        "responses": {
+          "200": {
+            "description": "Task has completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Twig"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/twig/debug-disable": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Disable twig debugging on a specific Portal site.",
+        "description": "Disable twig debugging on a specific Portal site. Helps locate twig template issues.",
+        "operationId": "twig_debugDisable",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=twig-apic-twigdebug-disable"
+        },
+        "responses": {
+          "200": {
+            "description": "Task has completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Twig"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/twig/debug-status": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Shows the current state of twig debugging of a specific Portal site.",
+        "description": "View the current state of twig debugging of a specific Portal site, if you are unsure of it.",
+        "operationId": "twig_debugStatus",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=twig-apic-twigdebug-status"
+        },
+        "responses": {
+          "200": {
+            "description": "Task has completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Twig"
+        ]
+      }
     }
   },
   "components": {
@@ -98840,6 +98375,42 @@
           "type": "string"
         }
       },
+      "config_key": {
+        "name": "config_key",
+        "in": "query",
+        "description": "A config key, for example \"page.front\".",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "config_key_optional": {
+        "name": "config_key",
+        "in": "query",
+        "description": "A config key, for example \"page.front\".",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "config_name": {
+        "name": "config_name",
+        "in": "query",
+        "description": "The config object name, for example \"system.site\".",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "config_value": {
+        "name": "config_value",
+        "in": "query",
+        "description": "The value to assign to the config key.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
       "core": {
         "name": "core",
         "in": "query",
@@ -98853,6 +98424,15 @@
         "name": "extensions",
         "in": "query",
         "description": "A list of a single extension type (Module or Theme). You can use the * wildcard at the end of extension names to disable multiple matches.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "ip_security_enabled": {
+        "name": "enabled",
+        "in": "query",
+        "description": "set to true or false to enable or disable IP security",
         "required": true,
         "schema": {
           "type": "string"
