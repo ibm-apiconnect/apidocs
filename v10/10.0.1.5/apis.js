@@ -97387,7 +97387,7 @@
         },
         "tags": [
           "Portal",
-          "Resource: sites"
+          "Resource: Sites"
         ]
       }
     },
