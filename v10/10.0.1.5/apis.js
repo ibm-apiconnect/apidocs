@@ -11,7 +11,7 @@
   attachPoint: '#root',
   options: { 
       renderSchemaView: true,
-      headerTitle: "API Connect v10.0.2.0",
+      headerTitle: "API Connect v10.0.1.5",
       headerActive: true,
       groupByTags: true,
       validateSwagger: false,
@@ -67,10 +67,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/log-spec#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -112,10 +108,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/log-spec#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -174,10 +166,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -233,10 +221,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -284,10 +268,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -328,10 +308,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -373,10 +349,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -427,10 +399,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -477,10 +445,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#execute"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/operation"
@@ -532,10 +496,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#test-connection"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -596,10 +556,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#execute"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/operation"
@@ -662,10 +618,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#test-connection"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -729,10 +681,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#search"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -802,10 +750,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -861,10 +805,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -912,10 +852,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -959,10 +895,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -1004,10 +936,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -1058,10 +986,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -1093,10 +1017,6 @@
         "summary": "Send reset password link",
         "description": "Send reset password link",
         "operationId": "user_requestPasswordReset",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#request-password-reset"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -1148,10 +1068,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#reset-password"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -1192,10 +1108,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#search-admin"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -1256,10 +1168,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#search-provider"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -1313,10 +1221,6 @@
         "summary": "List Identity Providers in the admin realm",
         "description": "List Identity Providers in the admin realm",
         "operationId": "user_registry_identityProviderListAdmin",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#identity-provider-list-admin"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -1359,10 +1263,6 @@
         "summary": "List Identity Providers in the provider realm",
         "description": "List Identity Providers in the provider realm",
         "operationId": "user_registry_identityProviderListProvider",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#identity-provider-list-provider"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -1405,10 +1305,6 @@
         "summary": "Generate a token",
         "description": "Generate a token",
         "operationId": "oauth2_token",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth2#token"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -1454,10 +1350,6 @@
         "summary": "Authorization provider redirect endpoint",
         "description": "Authorization provider redirect endpoint",
         "operationId": "oauth2_redirect_get",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth2#redirect"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/state"
@@ -1498,10 +1390,6 @@
         "summary": "Authorization provider redirect endpoint",
         "description": "Authorization provider redirect endpoint",
         "operationId": "oauth2_redirect_post",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth2#redirect"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/state"
@@ -1553,10 +1441,6 @@
         "summary": "APIC authorization endpoint",
         "description": "APIC authorize endpoint",
         "operationId": "oauth2_authorize",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#identity-provider-list-provider"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/client_id"
@@ -1616,10 +1500,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/cloud-setting#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -1661,10 +1541,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/cloud-setting#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -1717,10 +1593,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/cloud_setting#audit-endpoint-test-connection"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -1769,10 +1641,6 @@
         "summary": "Return public information about the cloud deployment",
         "description": "Return public information about the cloud deployment",
         "operationId": "cloud_setting_publicInfo",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/cloud_setting#public-info"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -1826,10 +1694,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/cloud_setting#about"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -1883,10 +1747,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/cloud_setting#topology"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -1918,10 +1778,6 @@
         "summary": "Return true or false based on if mail server is configured or not",
         "description": "Return true or false based on if mail server is configured or not. You MUST supply the --format option when using this command from the API Connect toolkit.",
         "operationId": "cloud_setting_mailServerConfigured",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/cloud_setting#mail-server-configured"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -1960,10 +1816,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/cloud_setting#toolkit-credentials"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -2002,10 +1854,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/cloud_setting#designer-credentials"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -2037,10 +1885,6 @@
         "summary": "Support JWKS_URI endpoint, conform to OIDC specification",
         "description": "Return JWKS that is used to issue token. You MUST supply the --format option when using this command from the API Connect toolkit.",
         "operationId": "cloud_setting_oauth2Certs",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/cloud_setting#oauth2-certs"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -2080,10 +1924,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry-setting#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2125,10 +1965,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry-setting#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -2182,10 +2018,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-cloud-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2236,10 +2068,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-cloud-subcollection-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2295,10 +2123,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-cloud-subcollection-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2340,10 +2164,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-cloud-subcollection-cloud-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -2384,6 +2204,234 @@
         ]
       }
     },
+    "/cloud/settings/notification-templates/cloud/{notification-template}/notification-languages": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/notification-template"
+        }
+      ],
+      "post": {
+        "summary": "Create a Notification template language object",
+        "description": "Create a Notification template language object",
+        "operationId": "notification_language_createCloudSubcollectionCloudScope",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Cloud Subcollection)"
+        ]
+      },
+      "get": {
+        "summary": "List the Notification language objects",
+        "description": "List the Notification language objects",
+        "operationId": "notification_language_listCloudSubcollectionCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Cloud Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Notification language objects",
+        "description": "Clear the Notification language objects",
+        "operationId": "notification_language_clearCloudSubcollectionCloudScope",
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Cloud Subcollection)"
+        ]
+      }
+    },
+    "/cloud/settings/notification-templates/cloud/{notification-template}/notification-languages/{notification-language}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/notification-template"
+        },
+        {
+          "$ref": "#/components/parameters/notification-language"
+        }
+      ],
+      "get": {
+        "summary": "Get the Notification template language by name or id",
+        "description": "Get the Notification template language by name or id",
+        "operationId": "notification_language_getCloudSubcollectionCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Cloud Subcollection)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Notification template language object",
+        "description": "Update the Notification template language object",
+        "operationId": "notification_language_updateCloudSubcollectionCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Cloud Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Notification template language object by name or id",
+        "description": "Delete the Notification template language object by name or id",
+        "operationId": "notification_language_delCloudSubcollectionCloudScope",
+        "responses": {
+          "200": {
+            "description": "Success delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Cloud Subcollection)"
+        ]
+      }
+    },
     "/cloud/settings/notification-templates/admin": {
       "description": "The collection of Notification Template operations",
       "get": {
@@ -2397,10 +2445,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-admin-subcollection-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2456,10 +2500,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-admin-subcollection-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2501,10 +2541,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-admin-subcollection-cloud-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -2545,6 +2581,234 @@
         ]
       }
     },
+    "/cloud/settings/notification-templates/admin/{notification-template}/notification-languages": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/notification-template"
+        }
+      ],
+      "post": {
+        "summary": "Create a Notification template language object",
+        "description": "Create a Notification template language object",
+        "operationId": "notification_language_createAdminSubcollectionCloudScope",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Admin Subcollection)"
+        ]
+      },
+      "get": {
+        "summary": "List the Notification language objects",
+        "description": "List the Notification language objects",
+        "operationId": "notification_language_listAdminSubcollectionCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Admin Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Notification language objects",
+        "description": "Clear the Notification language objects",
+        "operationId": "notification_language_clearAdminSubcollectionCloudScope",
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Admin Subcollection)"
+        ]
+      }
+    },
+    "/cloud/settings/notification-templates/admin/{notification-template}/notification-languages/{notification-language}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/notification-template"
+        },
+        {
+          "$ref": "#/components/parameters/notification-language"
+        }
+      ],
+      "get": {
+        "summary": "Get the Notification template language by name or id",
+        "description": "Get the Notification template language by name or id",
+        "operationId": "notification_language_getAdminSubcollectionCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Admin Subcollection)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Notification template language object",
+        "description": "Update the Notification template language object",
+        "operationId": "notification_language_updateAdminSubcollectionCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Admin Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Notification template language object by name or id",
+        "description": "Delete the Notification template language object by name or id",
+        "operationId": "notification_language_delAdminSubcollectionCloudScope",
+        "responses": {
+          "200": {
+            "description": "Success delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Admin Subcollection)"
+        ]
+      }
+    },
     "/cloud/settings/notification-templates/provider": {
       "description": "The collection of Notification Template operations",
       "get": {
@@ -2558,10 +2822,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-provider-subcollection-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2617,10 +2877,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-provider-subcollection-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2662,10 +2918,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-provider-subcollection-cloud-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -2706,6 +2958,234 @@
         ]
       }
     },
+    "/cloud/settings/notification-templates/provider/{notification-template}/notification-languages": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/notification-template"
+        }
+      ],
+      "post": {
+        "summary": "Create a Notification template language object",
+        "description": "Create a Notification template language object",
+        "operationId": "notification_language_createProviderSubcollectionCloudScope",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Provider Subcollection)"
+        ]
+      },
+      "get": {
+        "summary": "List the Notification language objects",
+        "description": "List the Notification language objects",
+        "operationId": "notification_language_listProviderSubcollectionCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Provider Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Notification language objects",
+        "description": "Clear the Notification language objects",
+        "operationId": "notification_language_clearProviderSubcollectionCloudScope",
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Provider Subcollection)"
+        ]
+      }
+    },
+    "/cloud/settings/notification-templates/provider/{notification-template}/notification-languages/{notification-language}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/notification-template"
+        },
+        {
+          "$ref": "#/components/parameters/notification-language"
+        }
+      ],
+      "get": {
+        "summary": "Get the Notification template language by name or id",
+        "description": "Get the Notification template language by name or id",
+        "operationId": "notification_language_getProviderSubcollectionCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Provider Subcollection)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Notification template language object",
+        "description": "Update the Notification template language object",
+        "operationId": "notification_language_updateProviderSubcollectionCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Provider Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Notification template language object by name or id",
+        "description": "Delete the Notification template language object by name or id",
+        "operationId": "notification_language_delProviderSubcollectionCloudScope",
+        "responses": {
+          "200": {
+            "description": "Success delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Provider Subcollection)"
+        ]
+      }
+    },
     "/cloud/settings/notification-templates/catalog": {
       "description": "The collection of Notification Template operations",
       "get": {
@@ -2719,10 +3199,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-catalog-subcollection-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2778,10 +3254,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-catalog-subcollection-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2823,10 +3295,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-catalog-subcollection-cloud-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -2867,6 +3335,234 @@
         ]
       }
     },
+    "/cloud/settings/notification-templates/catalog/{notification-template}/notification-languages": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/notification-template"
+        }
+      ],
+      "post": {
+        "summary": "Create a Notification template language object",
+        "description": "Create a Notification template language object",
+        "operationId": "notification_language_createCatalogSubcollectionCloudScope",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Catalog Subcollection)"
+        ]
+      },
+      "get": {
+        "summary": "List the Notification language objects",
+        "description": "List the Notification language objects",
+        "operationId": "notification_language_listCatalogSubcollectionCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Catalog Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Notification language objects",
+        "description": "Clear the Notification language objects",
+        "operationId": "notification_language_clearCatalogSubcollectionCloudScope",
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Catalog Subcollection)"
+        ]
+      }
+    },
+    "/cloud/settings/notification-templates/catalog/{notification-template}/notification-languages/{notification-language}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/notification-template"
+        },
+        {
+          "$ref": "#/components/parameters/notification-language"
+        }
+      ],
+      "get": {
+        "summary": "Get the Notification template language by name or id",
+        "description": "Get the Notification template language by name or id",
+        "operationId": "notification_language_getCatalogSubcollectionCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Catalog Subcollection)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Notification template language object",
+        "description": "Update the Notification template language object",
+        "operationId": "notification_language_updateCatalogSubcollectionCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Catalog Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Notification template language object by name or id",
+        "description": "Delete the Notification template language object by name or id",
+        "operationId": "notification_language_delCatalogSubcollectionCloudScope",
+        "responses": {
+          "200": {
+            "description": "Success delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Catalog Subcollection)"
+        ]
+      }
+    },
     "/cloud/settings/notification-templates/space": {
       "description": "The collection of Notification Template operations",
       "get": {
@@ -2880,10 +3576,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2939,10 +3631,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -2984,10 +3672,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-cloud-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -3028,6 +3712,234 @@
         ]
       }
     },
+    "/cloud/settings/notification-templates/space/{notification-template}/notification-languages": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/notification-template"
+        }
+      ],
+      "post": {
+        "summary": "Create a Notification template language object",
+        "description": "Create a Notification template language object",
+        "operationId": "notification_language_createSpaceSubcollectionCloudScope",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Space Subcollection)"
+        ]
+      },
+      "get": {
+        "summary": "List the Notification language objects",
+        "description": "List the Notification language objects",
+        "operationId": "notification_language_listSpaceSubcollectionCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Space Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Notification language objects",
+        "description": "Clear the Notification language objects",
+        "operationId": "notification_language_clearSpaceSubcollectionCloudScope",
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Space Subcollection)"
+        ]
+      }
+    },
+    "/cloud/settings/notification-templates/space/{notification-template}/notification-languages/{notification-language}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/notification-template"
+        },
+        {
+          "$ref": "#/components/parameters/notification-language"
+        }
+      ],
+      "get": {
+        "summary": "Get the Notification template language by name or id",
+        "description": "Get the Notification template language by name or id",
+        "operationId": "notification_language_getSpaceSubcollectionCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Space Subcollection)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Notification template language object",
+        "description": "Update the Notification template language object",
+        "operationId": "notification_language_updateSpaceSubcollectionCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Space Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Notification template language object by name or id",
+        "description": "Delete the Notification template language object by name or id",
+        "operationId": "notification_language_delSpaceSubcollectionCloudScope",
+        "responses": {
+          "200": {
+            "description": "Success delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Space Subcollection)"
+        ]
+      }
+    },
     "/cloud/settings/notification-templates/consumer": {
       "description": "The collection of Notification Template operations",
       "get": {
@@ -3041,10 +3953,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -3100,10 +4008,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -3145,10 +4049,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-cloud-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -3189,6 +4089,234 @@
         ]
       }
     },
+    "/cloud/settings/notification-templates/consumer/{notification-template}/notification-languages": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/notification-template"
+        }
+      ],
+      "post": {
+        "summary": "Create a Notification template language object",
+        "description": "Create a Notification template language object",
+        "operationId": "notification_language_createConsumerSubcollectionCloudScope",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Consumer Subcollection)"
+        ]
+      },
+      "get": {
+        "summary": "List the Notification language objects",
+        "description": "List the Notification language objects",
+        "operationId": "notification_language_listConsumerSubcollectionCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Consumer Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Notification language objects",
+        "description": "Clear the Notification language objects",
+        "operationId": "notification_language_clearConsumerSubcollectionCloudScope",
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Consumer Subcollection)"
+        ]
+      }
+    },
+    "/cloud/settings/notification-templates/consumer/{notification-template}/notification-languages/{notification-language}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/notification-template"
+        },
+        {
+          "$ref": "#/components/parameters/notification-language"
+        }
+      ],
+      "get": {
+        "summary": "Get the Notification template language by name or id",
+        "description": "Get the Notification template language by name or id",
+        "operationId": "notification_language_getConsumerSubcollectionCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Consumer Subcollection)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Notification template language object",
+        "description": "Update the Notification template language object",
+        "operationId": "notification_language_updateConsumerSubcollectionCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Consumer Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Notification template language object by name or id",
+        "description": "Delete the Notification template language object by name or id",
+        "operationId": "notification_language_delConsumerSubcollectionCloudScope",
+        "responses": {
+          "200": {
+            "description": "Success delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Template (Cloud Scope) (Consumer Subcollection)"
+        ]
+      }
+    },
     "/cloud/settings/role-defaults": {
       "description": "Role Default operations across all collections",
       "get": {
@@ -3202,10 +4330,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-cloud-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -3256,10 +4380,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-provider-subcollection-cloud-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -3315,10 +4435,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-provider-subcollection-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -3366,10 +4482,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-provider-subcollection-cloud-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -3407,10 +4519,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-provider-subcollection-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -3452,10 +4560,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-provider-subcollection-cloud-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -3506,10 +4610,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-provider-subcollection-cloud-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -3538,65 +4638,6 @@
     },
     "/cloud/settings/role-defaults/consumer": {
       "description": "The collection of Role Default operations",
-      "post": {
-        "summary": "Create a Role Default object",
-        "description": "Create a Role Default object",
-        "operationId": "role_default_createConsumerSubcollectionCloudScope",
-        "security": [
-          {
-            "oauth": [
-              "cloud:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-cloud-scope#create"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RoleDefault"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/RoleDefault"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleDefault"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleDefault"
-                }
-              }
-            },
-            "headers": {
-              "Location": {
-                "$ref": "#/components/headers/Location"
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Role Default (Cloud Scope) (Consumer Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Role Default objects",
         "description": "List the Role Default objects",
@@ -3608,10 +4649,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -3647,39 +4684,6 @@
           "Cloud Settings",
           "Resource: Role Default (Cloud Scope) (Consumer Subcollection)"
         ]
-      },
-      "delete": {
-        "summary": "Clear the Role Default objects",
-        "description": "Clear the Role Default objects",
-        "operationId": "role_default_clearConsumerSubcollectionCloudScope",
-        "security": [
-          {
-            "oauth": [
-              "cloud:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-cloud-scope#clear"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/confirm"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Success"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Role Default (Cloud Scope) (Consumer Subcollection)"
-        ]
       }
     },
     "/cloud/settings/role-defaults/consumer/{role-default}": {
@@ -3700,10 +4704,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -3712,100 +4712,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleDefault"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleDefault"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Role Default (Cloud Scope) (Consumer Subcollection)"
-        ]
-      },
-      "patch": {
-        "summary": "Update the Role Default object by name or id",
-        "description": "Update the Role Default object by name or id",
-        "operationId": "role_default_updateConsumerSubcollectionCloudScope",
-        "security": [
-          {
-            "oauth": [
-              "cloud:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-cloud-scope#update"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RoleDefault"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/RoleDefault"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleDefault"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleDefault"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Role Default (Cloud Scope) (Consumer Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Role Default object by name or id",
-        "description": "Delete the Role Default object by name or id",
-        "operationId": "role_default_delConsumerSubcollectionCloudScope",
-        "security": [
-          {
-            "oauth": [
-              "cloud:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-cloud-scope#del"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -3842,10 +4748,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -3896,10 +4798,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-billing-subcollection#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -3955,10 +4853,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-billing-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -4006,10 +4900,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-billing-subcollection#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -4047,10 +4937,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-billing-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -4092,10 +4978,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-billing-subcollection#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -4146,10 +5028,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-billing-subcollection#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -4189,10 +5067,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-payment-method-subcollection#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -4248,10 +5122,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-payment-method-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -4299,10 +5169,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-payment-method-subcollection#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -4340,10 +5206,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-payment-method-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -4385,10 +5247,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-payment-method-subcollection#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -4439,10 +5297,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-payment-method-subcollection#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -4482,10 +5336,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-user-registry-subcollection#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -4541,10 +5391,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-user-registry-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -4592,10 +5438,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-user-registry-subcollection#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -4633,10 +5475,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-user-registry-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -4678,10 +5516,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-user-registry-subcollection#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -4732,10 +5566,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-user-registry-subcollection#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -4775,10 +5605,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-gateway-service-subcollection#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -4834,10 +5660,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-gateway-service-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -4885,10 +5707,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-gateway-service-subcollection#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -4926,10 +5744,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-gateway-service-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -4971,10 +5785,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-gateway-service-subcollection#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -5025,10 +5835,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/integration-gateway-service-subcollection#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -5068,10 +5874,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/registration#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -5127,10 +5929,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/registration#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -5178,10 +5976,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/registration#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -5219,10 +6013,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/registration#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -5264,10 +6054,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/registration#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -5318,10 +6104,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/registration#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -5361,10 +6143,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-key#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -5420,10 +6198,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-key#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -5479,10 +6253,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-key#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -5524,10 +6294,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-key#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -5572,10 +6338,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org-setting#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -5617,10 +6379,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org-setting#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -5679,10 +6437,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-org-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -5738,10 +6492,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-admin-subcollection-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -5800,10 +6550,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-admin-subcollection-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -5845,10 +6591,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-admin-subcollection-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -5889,6 +6631,240 @@
         ]
       }
     },
+    "/orgs/{org}/settings/notification-templates/admin/{notification-template}/notification-languages": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/notification-template"
+        }
+      ],
+      "post": {
+        "summary": "Create a Notification template language object",
+        "description": "Create a Notification template language object",
+        "operationId": "notification_language_createAdminSubcollectionOrgScope",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Admin Subcollection)"
+        ]
+      },
+      "get": {
+        "summary": "List the Notification language objects",
+        "description": "List the Notification language objects",
+        "operationId": "notification_language_listAdminSubcollectionOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Admin Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Notification language objects",
+        "description": "Clear the Notification language objects",
+        "operationId": "notification_language_clearAdminSubcollectionOrgScope",
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Admin Subcollection)"
+        ]
+      }
+    },
+    "/orgs/{org}/settings/notification-templates/admin/{notification-template}/notification-languages/{notification-language}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/notification-template"
+        },
+        {
+          "$ref": "#/components/parameters/notification-language"
+        }
+      ],
+      "get": {
+        "summary": "Get the Notification template language by name or id",
+        "description": "Get the Notification template language by name or id",
+        "operationId": "notification_language_getAdminSubcollectionOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Admin Subcollection)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Notification template language object",
+        "description": "Update the Notification template language object",
+        "operationId": "notification_language_updateAdminSubcollectionOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Admin Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Notification template language object by name or id",
+        "description": "Delete the Notification template language object by name or id",
+        "operationId": "notification_language_delAdminSubcollectionOrgScope",
+        "responses": {
+          "200": {
+            "description": "Success delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Admin Subcollection)"
+        ]
+      }
+    },
     "/orgs/{org}": {
       "description": "Organization object operations",
       "parameters": [
@@ -5907,10 +6883,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -5952,10 +6924,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -6006,10 +6974,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -6053,10 +7017,11 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#transfer-owner"
-        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cascade"
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -6114,10 +7079,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#searchprovider-org"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -6184,10 +7145,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/associate-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -6246,10 +7203,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/associate-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -6299,10 +7252,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -6358,10 +7307,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -6409,10 +7354,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -6453,10 +7394,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -6498,10 +7435,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -6552,10 +7485,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -6602,10 +7531,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -6659,10 +7584,6 @@
         "summary": "Register using the Member Invitation",
         "description": "Register using the Member Invitation",
         "operationId": "member_invitation_registerOrgScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#register"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -6729,10 +7650,6 @@
         "summary": "Accept using the Member Invitation",
         "description": "Accept using the Member Invitation",
         "operationId": "member_invitation_acceptOrgScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#accept"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -6804,10 +7721,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -6863,10 +7776,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -6914,10 +7823,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -6958,10 +7863,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7003,10 +7904,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -7057,10 +7954,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -7093,10 +7986,6 @@
         "summary": "Lists cloud-level permissions.",
         "description": "Returns the overall list of permissions configured at the cloud level.",
         "operationId": "permission_listAll",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7140,10 +8029,6 @@
         "summary": "Lists cloud-level oorganization permissions.",
         "description": "Returns the list of organization permissions defined at the cloud level.",
         "operationId": "permission_listOrgSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-org-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7192,10 +8077,6 @@
         "summary": "Returns an organization permission.",
         "description": "Returns an organization permissions instance defined at the cloud level.",
         "operationId": "permission_getOrgSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-org-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7233,10 +8114,6 @@
         "summary": "Lists cloud-level cloud permissions.",
         "description": "Returns the list of cloud permissions defined at the cloud level.",
         "operationId": "permission_listCloudSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-cloud-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7285,10 +8162,6 @@
         "summary": "Returns a cloud permission.",
         "description": "Returns a cloud permissions instance defined at the cloud level.",
         "operationId": "permission_getCloudSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-cloud-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7326,10 +8199,6 @@
         "summary": "Lists cloud-level provider permissions.",
         "description": "Returns the list of provider permissions defined at the cloud level.",
         "operationId": "permission_listProviderSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-provider-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7378,10 +8247,6 @@
         "summary": "Returns a provider permission.",
         "description": "Returns a provider permissions instance defined at the cloud level.",
         "operationId": "permission_getProviderSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-provider-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7419,10 +8284,6 @@
         "summary": "Lists cloud-level consumer permissions.",
         "description": "Returns the list of consumer permissions defined at the cloud level.",
         "operationId": "permission_listConsumerSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-consumer-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7471,10 +8332,6 @@
         "summary": "Returns a consumer permission.",
         "description": "Returns a consumer permissions instance defined at the cloud level.",
         "operationId": "permission_getConsumerSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-consumer-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7512,10 +8369,6 @@
         "summary": "Lists cloud-level deployment permissions.",
         "description": "Returns the list of deployment permissions defined at the cloud level.",
         "operationId": "permission_listDeploymentSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-deployment-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7564,10 +8417,6 @@
         "summary": "Returns a deployment permission.",
         "description": "Returns a deployment permissions instance defined at the cloud level.",
         "operationId": "permission_getDeploymentSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-deployment-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7617,10 +8466,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -7676,10 +8521,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7727,10 +8568,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -7771,10 +8608,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -7816,10 +8649,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -7870,10 +8699,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -7918,10 +8743,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/availability-zone#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -7977,10 +8798,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/availability-zone#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -8028,10 +8845,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/availability-zone#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -8072,10 +8885,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/availability-zone#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -8117,10 +8926,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/availability-zone#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -8171,10 +8976,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/availability-zone#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -8222,10 +9023,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-service#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -8281,10 +9078,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-service#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -8332,10 +9125,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-service#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -8379,10 +9168,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-service#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -8424,10 +9209,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-service#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -8478,10 +9259,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-service#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -8531,10 +9308,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-service#reset-oauth-secret"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -8585,10 +9358,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-org-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -8653,10 +9422,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -8721,10 +9486,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -8786,10 +9547,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-org-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -8847,10 +9604,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -8906,10 +9659,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -8960,10 +9709,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-org-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -9028,10 +9773,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -9096,10 +9837,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -9161,10 +9898,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-org-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -9222,10 +9955,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -9281,10 +10010,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -9335,10 +10060,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-extension-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -9384,10 +10105,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-extension-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -9429,10 +10146,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-extension-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -9488,10 +10201,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-extension-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -9541,10 +10250,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-extension#implementation"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -9583,10 +10288,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/portal-service#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -9642,10 +10343,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/portal-service#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -9693,10 +10390,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/portal-service#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -9740,10 +10433,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/portal-service#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -9785,10 +10474,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/portal-service#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -9839,10 +10524,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/portal-service#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -9892,10 +10573,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/portal-service#update-credentials"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -9943,10 +10620,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-service#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -10002,10 +10675,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-service#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -10053,10 +10722,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-service#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -10100,10 +10765,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-service#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -10145,10 +10806,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-service#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -10199,10 +10856,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-service#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -10247,10 +10900,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -10306,10 +10955,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -10357,10 +11002,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -10401,10 +11042,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -10446,10 +11083,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -10500,10 +11133,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -10548,10 +11177,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/mail-server#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -10607,10 +11232,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/mail-server#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -10658,10 +11279,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/mail-server#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -10702,10 +11319,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/mail-server#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -10747,10 +11360,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/mail-server#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -10801,10 +11410,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/mail-server#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -10851,10 +11456,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/mail-server#test-connection"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -10912,10 +11513,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/mail-server#test-connection"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -10974,10 +11571,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -11033,10 +11626,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -11084,10 +11673,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -11131,10 +11716,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -11182,10 +11763,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -11229,10 +11806,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -11274,10 +11847,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -11328,10 +11897,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#del"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/cascade"
@@ -11387,10 +11952,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -11432,10 +11993,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -11486,10 +12043,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-server-profile#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -11534,10 +12087,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -11593,10 +12142,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -11644,10 +12189,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -11691,10 +12232,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -11742,10 +12279,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -11786,10 +12319,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -11831,10 +12360,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -11885,10 +12410,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -11939,10 +12460,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -11984,10 +12501,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -12038,10 +12551,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -12086,10 +12595,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -12145,10 +12650,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -12196,10 +12697,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -12240,10 +12737,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -12285,10 +12778,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -12339,10 +12828,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -12387,10 +12872,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -12446,10 +12927,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -12497,10 +12974,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -12541,10 +13014,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -12586,10 +13055,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -12640,10 +13105,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -12691,10 +13152,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -12750,10 +13207,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -12801,10 +13254,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -12848,10 +13297,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -12893,10 +13338,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -12947,10 +13388,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -12990,10 +13427,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -13049,10 +13482,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -13100,10 +13529,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -13141,10 +13566,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -13186,10 +13607,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -13240,10 +13657,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -13287,10 +13700,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -13341,10 +13750,6 @@
         "summary": "Register using the Organization Invitation",
         "description": "Register using the Organization Invitation",
         "operationId": "invitation_registerOrgScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#register"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -13408,10 +13813,6 @@
         "summary": "Accept using the Organization Invitation",
         "description": "Accept using the Organization Invitation",
         "operationId": "invitation_acceptOrgScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#accept"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -13478,10 +13879,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -13537,10 +13934,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -13591,10 +13984,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -13627,10 +14016,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-cloud-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -13686,10 +14071,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -13737,10 +14118,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-cloud-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -13778,10 +14155,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -13823,10 +14196,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-cloud-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -13877,10 +14246,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-cloud-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -13920,10 +14285,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -13968,10 +14329,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -14022,10 +14379,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -14064,10 +14417,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#change-password"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -14101,10 +14450,6 @@
         "summary": "Reset password",
         "description": "Reset password",
         "operationId": "me_resetPassword",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#reset-password"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -14145,10 +14490,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#sign-out"
-        },
         "responses": {
           "204": {
             "description": "Success"
@@ -14179,10 +14520,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/my-permission#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -14233,10 +14570,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/my-org#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -14288,10 +14621,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/webhook-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -14348,10 +14677,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/webhook-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -14394,10 +14719,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/webhook-cloud-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -14451,10 +14772,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/primary-event-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -14513,10 +14830,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/primary-event-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -14572,10 +14885,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/primary-event-gateway-service-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -14643,10 +14952,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/primary-event-gateway-service-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -14702,10 +15007,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/primary-event-portal-service-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -14773,10 +15074,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/primary-event-portal-service-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -14826,10 +15123,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscriber-event-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -14891,10 +15184,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscriber-event-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -14939,10 +15228,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/task-queue-cloud-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -15016,10 +15301,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/task-queue-cloud-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -15062,10 +15343,90 @@
           "Resource: Task Queue (Cloud Scope)"
         ]
       }
+    },
+    "/cloud/emails/send-to-owners": {
+      "post": {
+        "summary": "Email provider org owners",
+        "description": "Send an email to owners of provider orgs",
+        "operationId": "cloud_emails_send",
+        "security": [
+          {
+            "oauth": [
+              "provider-org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/cloudemails#send"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmailProviderOrgOwners"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/EmailProviderOrgOwners"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmailProviderOrgOwnersResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmailProviderOrgOwnersResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Provider Management",
+          "Resource: Organization"
+        ]
+      }
     }
   },
   "components": {
     "parameters": {
+      "notification-language": {
+        "name": "notification-language",
+        "in": "path",
+        "description": "Notification Language name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
       "X-IBM-Client-Id": {
         "name": "X-IBM-Client-Id",
         "in": "header",
@@ -15357,7 +15718,7 @@
       "gateway_type": {
         "name": "gateway_type",
         "in": "query",
-        "description": "The type of the gateway (datapower-gateway, datapower-api-gateway)",
+        "description": "The type of the gateway (datapower-gateway, datapower-api-gateway, event-gateway)",
         "required": false,
         "schema": {
           "type": "string"
@@ -16160,6 +16521,13 @@
           "consumer_org": {
             "type": "string"
           },
+          "state": {
+            "type": "string",
+            "enum": [
+              "active",
+              "pending"
+            ]
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -16395,7 +16763,8 @@
             "type": "string",
             "enum": [
               "datapower-gateway",
-              "datapower-api-gateway"
+              "datapower-api-gateway",
+              "event-gateway"
             ]
           },
           "oai_version": {
@@ -16572,6 +16941,31 @@
           "catalog_url": {
             "type": "string",
             "format": "uri"
+          },
+          "oauth_providers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "provider_type": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            }
           },
           "metadata": {
             "type": "object",
@@ -16830,7 +17224,48 @@
             "format": "uri"
           },
           "consumer_org": {
-            "$ref": "#/components/schemas/ConsumerOrg"
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          },
+          "credentials": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "client_id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            }
           },
           "metadata": {
             "type": "object",
@@ -17435,6 +17870,9 @@
               },
               "webhook_state": {
                 "type": "string"
+              },
+              "service_version": {
+                "type": "string"
               }
             }
           },
@@ -17467,6 +17905,23 @@
           },
           "consumer_self_service_onboarding": {
             "type": "boolean"
+          },
+          "consumer_self_service_onboarding_approval": {
+            "type": "boolean"
+          },
+          "consumer_org_invitations_enabled": {
+            "type": "boolean"
+          },
+          "consumer_org_invitation_roles": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "administrator",
+                "developer",
+                "viewer"
+              ]
+            }
           },
           "invitation_ttl": {
             "type": "integer",
@@ -17507,7 +17962,8 @@
               },
               "unenforced_api_base_endpoint": {
                 "type": "string",
-                "format": "uri"
+                "format": "uri",
+                "nullable": true
               }
             }
           },
@@ -17658,6 +18114,10 @@
           "provision_sandbox_catalog": {
             "type": "boolean"
           },
+          "restrict_member_manage_permission": {
+            "type": "boolean",
+            "default": false
+          },
           "access_token_expires_in": {
             "type": "integer",
             "minimum": 0,
@@ -17754,6 +18214,15 @@
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
+                    "endpoint_type": {
+                      "type": "string",
+                      "enum": [
+                        "http",
+                        "syslog_udp",
+                        "syslog_tcp",
+                        "syslog_tls"
+                      ]
+                    },
                     "endpoint": {
                       "$ref": "#/components/schemas/SecuredEndpoint"
                     },
@@ -17764,7 +18233,10 @@
                       },
                       "nullable": true
                     }
-                  }
+                  },
+                  "required": [
+                    "endpoint"
+                  ]
                 }
               }
             }
@@ -17916,6 +18388,10 @@
           },
           "user_registry_managed": {
             "type": "boolean"
+          },
+          "external_group_mapping_enabled": {
+            "type": "boolean",
+            "default": false
           },
           "onboarding": {
             "type": "string",
@@ -18186,6 +18662,10 @@
           "user_registry_managed": {
             "type": "boolean"
           },
+          "external_group_mapping_enabled": {
+            "type": "boolean",
+            "default": false
+          },
           "onboarding": {
             "type": "string",
             "nullable": true,
@@ -18331,8 +18811,7 @@
             "type": "string"
           },
           "catalog_base": {
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "sni": {
             "type": "array",
@@ -18442,18 +18921,24 @@
           },
           "events": {
             "type": "object",
-            "sent_events": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/SubscriberEvent"
-              }
-            },
-            "queued_events": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/SubscriberEvent"
+            "properties": {
+              "sent_events": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SubscriberEvent"
+                }
+              },
+              "queued_events": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SubscriberEvent"
+                }
               }
             }
+          },
+          "service_version": {
+            "type": "string",
+            "nullable": true
           },
           "metadata": {
             "type": "object",
@@ -18585,7 +19070,22 @@
                 "type": "boolean"
               },
               "default_validator_endpoint": {
-                "$ref": "#/components/schemas/SecuredEndpoint"
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true,
+                "required": [
+                  "endpoint"
+                ],
+                "properties": {
+                  "endpoint": {
+                    "type": "string"
+                  },
+                  "tls_client_profile_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "nullable": true
+                  }
+                }
               },
               "request_query": {
                 "type": "string"
@@ -18700,7 +19200,22 @@
                     "type": "string"
                   },
                   "third_party_endpoint": {
-                    "$ref": "#/components/schemas/SecuredEndpoint"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "nullable": true,
+                    "required": [
+                      "endpoint"
+                    ],
+                    "properties": {
+                      "endpoint": {
+                        "type": "string"
+                      },
+                      "tls_client_profile_url": {
+                        "type": "string",
+                        "format": "uri",
+                        "nullable": true
+                      }
+                    }
                   },
                   "application_revocation": {
                     "type": "object",
@@ -18820,7 +19335,22 @@
                     }
                   },
                   "external_endpoint": {
-                    "$ref": "#/components/schemas/SecuredEndpoint"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "nullable": true,
+                    "required": [
+                      "endpoint"
+                    ],
+                    "properties": {
+                      "endpoint": {
+                        "type": "string"
+                      },
+                      "tls_client_profile_url": {
+                        "type": "string",
+                        "format": "uri",
+                        "nullable": true
+                      }
+                    }
                   },
                   "header_name_token": {
                     "type": "string"
@@ -18992,7 +19522,22 @@
                 "format": "uri"
               },
               "introspection_endpoint": {
-                "$ref": "#/components/schemas/SecuredEndpoint"
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true,
+                "required": [
+                  "endpoint"
+                ],
+                "properties": {
+                  "endpoint": {
+                    "type": "string"
+                  },
+                  "tls_client_profile_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "nullable": true
+                  }
+                }
               },
               "security": {
                 "type": "array",
@@ -19056,6 +19601,10 @@
                     }
                   }
                 }
+              },
+              "auth_header_pass_thru": {
+                "type": "boolean",
+                "default": false
               },
               "introspect_cache_type": {
                 "type": "string",
@@ -19751,6 +20300,17 @@
               }
             }
           },
+          "remote_api": {
+            "type": "object",
+            "properties": {
+              "endpoint": {
+                "type": "string"
+              },
+              "auth_header": {
+                "type": "string"
+              }
+            }
+          },
           "api_type": {
             "type": "string",
             "enum": [
@@ -19760,11 +20320,15 @@
               "asyncapi"
             ]
           },
+          "enforced": {
+            "type": "boolean"
+          },
           "gateway_type": {
             "type": "string",
             "enum": [
               "datapower-gateway",
-              "datapower-api-gateway"
+              "datapower-api-gateway",
+              "event-gateway"
             ]
           },
           "oai_version": {
@@ -19895,7 +20459,8 @@
               "type": "string",
               "enum": [
                 "datapower-gateway",
-                "datapower-api-gateway"
+                "datapower-api-gateway",
+                "event-gateway"
               ]
             }
           },
@@ -20348,6 +20913,10 @@
             "type": "string",
             "format": "uri"
           },
+          "service_version": {
+            "type": "string",
+            "nullable": true
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -20465,6 +21034,13 @@
               "format": "uri"
             }
           },
+          "global_policy_error_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
           "org_url": {
             "type": "string",
             "format": "uri"
@@ -20516,6 +21092,99 @@
             "items": {
               "$ref": "#/components/schemas/GlobalPolicy"
             }
+          }
+        }
+      },
+      "GlobalPolicyError": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "global_policy_error"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "scope": {
+            "type": "string"
+          },
+          "global_policy_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "user_registry_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "tls_client_profile_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "policy_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "org_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "catalog_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "space_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
           }
         }
       },
@@ -22091,7 +22760,22 @@
                 "type": "boolean"
               },
               "default_validator_endpoint": {
-                "$ref": "#/components/schemas/SecuredEndpoint"
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true,
+                "required": [
+                  "endpoint"
+                ],
+                "properties": {
+                  "endpoint": {
+                    "type": "string"
+                  },
+                  "tls_client_profile_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "nullable": true
+                  }
+                }
               },
               "request_query": {
                 "type": "string"
@@ -22206,7 +22890,22 @@
                     "type": "string"
                   },
                   "third_party_endpoint": {
-                    "$ref": "#/components/schemas/SecuredEndpoint"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "nullable": true,
+                    "required": [
+                      "endpoint"
+                    ],
+                    "properties": {
+                      "endpoint": {
+                        "type": "string"
+                      },
+                      "tls_client_profile_url": {
+                        "type": "string",
+                        "format": "uri",
+                        "nullable": true
+                      }
+                    }
                   },
                   "application_revocation": {
                     "type": "object",
@@ -22326,7 +23025,22 @@
                     }
                   },
                   "external_endpoint": {
-                    "$ref": "#/components/schemas/SecuredEndpoint"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "nullable": true,
+                    "required": [
+                      "endpoint"
+                    ],
+                    "properties": {
+                      "endpoint": {
+                        "type": "string"
+                      },
+                      "tls_client_profile_url": {
+                        "type": "string",
+                        "format": "uri",
+                        "nullable": true
+                      }
+                    }
                   },
                   "header_name_token": {
                     "type": "string"
@@ -22496,7 +23210,22 @@
                 "format": "uri"
               },
               "introspection_endpoint": {
-                "$ref": "#/components/schemas/SecuredEndpoint"
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true,
+                "required": [
+                  "endpoint"
+                ],
+                "properties": {
+                  "endpoint": {
+                    "type": "string"
+                  },
+                  "tls_client_profile_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "nullable": true
+                  }
+                }
               },
               "security": {
                 "type": "array",
@@ -22560,6 +23289,10 @@
                     }
                   }
                 }
+              },
+              "auth_header_pass_thru": {
+                "type": "boolean",
+                "default": false
               },
               "introspect_cache_type": {
                 "type": "string",
@@ -23358,6 +24091,10 @@
             "type": "string",
             "format": "uri"
           },
+          "service_version": {
+            "type": "string",
+            "nullable": true
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -23595,7 +24332,8 @@
               "type": "string",
               "enum": [
                 "datapower-gateway",
-                "datapower-api-gateway"
+                "datapower-api-gateway",
+                "event-gateway"
               ]
             }
           },
@@ -23712,6 +24450,92 @@
                       }
                     }
                   }
+                }
+              }
+            }
+          },
+          "apis": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            }
+          },
+          "approval_history": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "user": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "username": {
+                      "type": "string"
+                    },
+                    "first_name": {
+                      "type": "string"
+                    },
+                    "last_name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "target_life_cycle": {
+                  "type": "string",
+                  "enum": [
+                    "staged",
+                    "published",
+                    "deprecated",
+                    "retired",
+                    "archived",
+                    "replace",
+                    "supersede"
+                  ]
+                },
+                "user_action": {
+                  "type": "string",
+                  "enum": [
+                    "requested",
+                    "approved",
+                    "rejected",
+                    "cancelled"
+                  ]
+                },
+                "comment": {
+                  "type": "string"
+                },
+                "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "display_text": {
+                  "type": "string"
                 }
               }
             }
@@ -25104,7 +25928,8 @@
             "enum": [
               "product_lifecycle",
               "subscription",
-              "application_lifecycle"
+              "application_lifecycle",
+              "consumer_onboarding"
             ]
           },
           "state": {
@@ -26503,9 +27328,27 @@
                 "throttling",
                 "api_protection_source",
                 "external_oauth_mgmt",
-                "policy_visibility"
+                "policy_visibility",
+                "product_replace_v2",
+                "product_retire_optimized",
+                "global_policy_error",
+                "product_migrate_subscriptions",
+                "execute_migration_target"
               ]
             }
+          },
+          "apic_version": {
+            "type": "string"
+          },
+          "available_webhook_features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "service_version": {
+            "type": "string",
+            "nullable": true
           },
           "metadata": {
             "type": "object",
@@ -28539,7 +29382,8 @@
             "type": "string",
             "enum": [
               "datapower-gateway",
-              "datapower-api-gateway"
+              "datapower-api-gateway",
+              "event-gateway"
             ]
           }
         }
@@ -28553,6 +29397,10 @@
             "format": "uri"
           },
           "new_owner_member_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "new_owner_user_url": {
             "type": "string",
             "format": "uri"
           },
@@ -28848,6 +29696,130 @@
       "SendEmailResponse": {
         "type": "object",
         "additionalProperties": false
+      },
+      "EmailToOwners": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "consumer_org_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "consumer_group_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "subject": {
+            "type": "string",
+            "minLength": 1
+          },
+          "body": {
+            "type": "string",
+            "minLength": 1
+          },
+          "content_type": {
+            "type": "string",
+            "enum": [
+              "text",
+              "html"
+            ]
+          }
+        },
+        "required": [
+          "subject",
+          "body",
+          "content_type"
+        ]
+      },
+      "EmailToOwnersResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "num_emails_sent": {
+            "type": "integer"
+          },
+          "failed_emails": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "org_url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "owner_email": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "EmailProviderOrgOwners": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "org_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "subject": {
+            "type": "string",
+            "minLength": 1
+          },
+          "body": {
+            "type": "string",
+            "minLength": 1
+          },
+          "content_type": {
+            "type": "string",
+            "enum": [
+              "text",
+              "html"
+            ]
+          }
+        },
+        "required": [
+          "org_urls",
+          "subject",
+          "body",
+          "content_type"
+        ]
+      },
+      "EmailProviderOrgOwnersResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "num_emails_sent": {
+            "type": "integer"
+          },
+          "failed_emails": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "org_url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "owner_email": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
       },
       "MailServerSavedTestConnection": {
         "type": "object",
@@ -29536,6 +30508,119 @@
             "type": "string"
           }
         }
+      },
+      "NotificationLanguage": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "notification_language"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "scope": {
+            "type": "string"
+          },
+          "variables": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "subject": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "notification_template_name": {
+            "type": "string"
+          },
+          "notification_template_type": {
+            "type": "string"
+          },
+          "org_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "catalog_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "space_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "consumer_org_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "notification_template_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "NotificationLanguageList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NotificationLanguage"
+            }
+          }
+        }
       }
     },
     "responses": {
@@ -29550,6 +30635,136 @@
           "application/yaml": {
             "schema": {
               "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "oauth": {
+        "type": "oauth2",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "/api/oauth2/authorize",
+            "scopes": {
+              "api-analytics:view": "Create an Analytics object",
+              "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
+              "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
+              "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
+              "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
+              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id",
+              "child:create": "Create a Catalog object, Create a Space object",
+              "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
+              "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
+              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
+              "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
+              "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
+              "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id",
+              "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
+              "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
+              "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
+              "product:view": "List all Product objects in all collections, List the Product objects, Get the Product object by id, Get the Product object by name and version, List all API objects in all collections, List the API objects, Get the API object by id, Get the API object by name and version",
+              "provider-org:manage": "Create an Organization Invitation object, Clear the Organization Invitation objects, Update the Organization Invitation object by name or id, Delete the Organization Invitation object by name or id, Create a Group object, Clear the Group objects, Update the Group object by name or id, Delete the Group object by name or id",
+              "provider-org:view": "List the Organization Invitation objects, Get the Organization Invitation object by name or id, List the Group objects, Get the Group object by name or id",
+              "webhook:manage": "Create a Webhook object, Update the Webhook object by name or id, Delete the Webhook object by name or id",
+              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id, List the Snapshot objects, Get the Snapshot object by name or id"
+            }
+          },
+          "password": {
+            "tokenUrl": "/api/token",
+            "refreshUrl": "/api/token",
+            "scopes": {
+              "api-analytics:view": "Create an Analytics object",
+              "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
+              "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
+              "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
+              "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
+              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id",
+              "child:create": "Create a Catalog object, Create a Space object",
+              "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
+              "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
+              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
+              "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
+              "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
+              "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id",
+              "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
+              "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
+              "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
+              "product:view": "List all Product objects in all collections, List the Product objects, Get the Product object by id, Get the Product object by name and version, List all API objects in all collections, List the API objects, Get the API object by id, Get the API object by name and version",
+              "provider-org:manage": "Create an Organization Invitation object, Clear the Organization Invitation objects, Update the Organization Invitation object by name or id, Delete the Organization Invitation object by name or id, Create a Group object, Clear the Group objects, Update the Group object by name or id, Delete the Group object by name or id",
+              "provider-org:view": "List the Organization Invitation objects, Get the Organization Invitation object by name or id, List the Group objects, Get the Group object by name or id",
+              "webhook:manage": "Create a Webhook object, Update the Webhook object by name or id, Delete the Webhook object by name or id",
+              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id, List the Snapshot objects, Get the Snapshot object by name or id"
+            }
+          },
+          "clientCredentials": {
+            "tokenUrl": "/api/token",
+            "scopes": {
+              "api-analytics:view": "Create an Analytics object",
+              "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
+              "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
+              "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
+              "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
+              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id",
+              "child:create": "Create a Catalog object, Create a Space object",
+              "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
+              "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
+              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
+              "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
+              "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
+              "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id",
+              "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
+              "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
+              "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
+              "product:view": "List all Product objects in all collections, List the Product objects, Get the Product object by id, Get the Product object by name and version, List all API objects in all collections, List the API objects, Get the API object by id, Get the API object by name and version",
+              "provider-org:manage": "Create an Organization Invitation object, Clear the Organization Invitation objects, Update the Organization Invitation object by name or id, Delete the Organization Invitation object by name or id, Create a Group object, Clear the Group objects, Update the Group object by name or id, Delete the Group object by name or id",
+              "provider-org:view": "List the Organization Invitation objects, Get the Organization Invitation object by name or id, List the Group objects, Get the Group object by name or id",
+              "webhook:manage": "Create a Webhook object, Update the Webhook object by name or id, Delete the Webhook object by name or id",
+              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id, List the Snapshot objects, Get the Snapshot object by name or id"
+            }
+          },
+          "authorizationCode": {
+            "authorizationUrl": "/api/oauth2/authorize",
+            "tokenUrl": "/api/token",
+            "refreshUrl": "/api/token",
+            "scopes": {
+              "api-analytics:view": "Create an Analytics object",
+              "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
+              "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
+              "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
+              "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
+              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id",
+              "child:create": "Create a Catalog object, Create a Space object",
+              "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
+              "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
+              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
+              "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
+              "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
+              "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id",
+              "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
+              "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
+              "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
+              "product:view": "List all Product objects in all collections, List the Product objects, Get the Product object by id, Get the Product object by name and version, List all API objects in all collections, List the API objects, Get the API object by id, Get the API object by name and version",
+              "provider-org:manage": "Create an Organization Invitation object, Clear the Organization Invitation objects, Update the Organization Invitation object by name or id, Delete the Organization Invitation object by name or id, Create a Group object, Clear the Group objects, Update the Group object by name or id, Delete the Group object by name or id",
+              "provider-org:view": "List the Organization Invitation objects, Get the Organization Invitation object by name or id, List the Group objects, Get the Group object by name or id",
+              "webhook:manage": "Create a Webhook object, Update the Webhook object by name or id, Delete the Webhook object by name or id",
+              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id, List the Snapshot objects, Get the Snapshot object by name or id"
             }
           }
         }
@@ -29603,10 +30818,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -29662,10 +30873,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -29713,10 +30920,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -29757,10 +30960,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -29802,10 +31001,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -29856,10 +31051,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -29906,10 +31097,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#execute"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/operation"
@@ -29961,10 +31148,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#test-connection"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -30025,10 +31208,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#execute"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/operation"
@@ -30091,10 +31270,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#test-connection"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -30158,10 +31333,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#search"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -30231,10 +31402,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -30290,10 +31457,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -30341,10 +31504,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -30388,10 +31547,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -30433,10 +31588,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -30487,10 +31638,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -30522,10 +31669,6 @@
         "summary": "Send reset password link",
         "description": "Send reset password link",
         "operationId": "user_requestPasswordReset",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#request-password-reset"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -30577,10 +31720,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#reset-password"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -30621,10 +31760,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#search-admin"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -30685,10 +31820,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#search-provider"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -30742,10 +31873,6 @@
         "summary": "List Identity Providers in the admin realm",
         "description": "List Identity Providers in the admin realm",
         "operationId": "user_registry_identityProviderListAdmin",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#identity-provider-list-admin"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -30788,10 +31915,6 @@
         "summary": "List Identity Providers in the provider realm",
         "description": "List Identity Providers in the provider realm",
         "operationId": "user_registry_identityProviderListProvider",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#identity-provider-list-provider"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -30834,10 +31957,6 @@
         "summary": "Generate a token",
         "description": "Generate a token",
         "operationId": "oauth2_token",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth2#token"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -30883,10 +32002,6 @@
         "summary": "Authorization provider redirect endpoint",
         "description": "Authorization provider redirect endpoint",
         "operationId": "oauth2_redirect_get",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth2#redirect"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/state"
@@ -30927,10 +32042,6 @@
         "summary": "Authorization provider redirect endpoint",
         "description": "Authorization provider redirect endpoint",
         "operationId": "oauth2_redirect_post",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth2#redirect"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/state"
@@ -30982,10 +32093,6 @@
         "summary": "APIC authorization endpoint",
         "description": "APIC authorize endpoint",
         "operationId": "oauth2_authorize",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#identity-provider-list-provider"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/client_id"
@@ -31045,10 +32152,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-key#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -31104,10 +32207,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-key#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31163,10 +32262,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-key#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31208,10 +32303,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-key#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -31256,10 +32347,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org-setting#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31301,10 +32388,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org-setting#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -31363,10 +32446,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-org-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31422,10 +32501,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-provider-subcollection-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31484,10 +32559,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-provider-subcollection-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31529,10 +32600,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-provider-subcollection-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -31573,6 +32640,240 @@
         ]
       }
     },
+    "/orgs/{org}/settings/notification-templates/provider/{notification-template}/notification-languages": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/notification-template"
+        }
+      ],
+      "post": {
+        "summary": "Create a Notification template language object",
+        "description": "Create a Notification template language object",
+        "operationId": "notification_language_createProviderSubcollectionOrgScope",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Provider Subcollection)"
+        ]
+      },
+      "get": {
+        "summary": "List the Notification language objects",
+        "description": "List the Notification language objects",
+        "operationId": "notification_language_listProviderSubcollectionOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Provider Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Notification language objects",
+        "description": "Clear the Notification language objects",
+        "operationId": "notification_language_clearProviderSubcollectionOrgScope",
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Provider Subcollection)"
+        ]
+      }
+    },
+    "/orgs/{org}/settings/notification-templates/provider/{notification-template}/notification-languages/{notification-language}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/notification-template"
+        },
+        {
+          "$ref": "#/components/parameters/notification-language"
+        }
+      ],
+      "get": {
+        "summary": "Get the Notification template language by name or id",
+        "description": "Get the Notification template language by name or id",
+        "operationId": "notification_language_getProviderSubcollectionOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Provider Subcollection)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Notification template language object",
+        "description": "Update the Notification template language object",
+        "operationId": "notification_language_updateProviderSubcollectionOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Provider Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Notification template language object by name or id",
+        "description": "Delete the Notification template language object by name or id",
+        "operationId": "notification_language_delProviderSubcollectionOrgScope",
+        "responses": {
+          "200": {
+            "description": "Success delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Provider Subcollection)"
+        ]
+      }
+    },
     "/orgs/{org}/settings/notification-templates/catalog": {
       "description": "The collection of Notification Template operations",
       "parameters": [
@@ -31591,10 +32892,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-catalog-subcollection-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31653,10 +32950,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-catalog-subcollection-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31698,10 +32991,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-catalog-subcollection-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -31742,6 +33031,240 @@
         ]
       }
     },
+    "/orgs/{org}/settings/notification-templates/catalog/{notification-template}/notification-languages": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/notification-template"
+        }
+      ],
+      "post": {
+        "summary": "Create a Notification template language object",
+        "description": "Create a Notification template language object",
+        "operationId": "notification_language_createCatalogSubcollectionOrgScope",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Catalog Subcollection)"
+        ]
+      },
+      "get": {
+        "summary": "List the Notification language objects",
+        "description": "List the Notification language objects",
+        "operationId": "notification_language_listCatalogSubcollectionOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Catalog Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Notification language objects",
+        "description": "Clear the Notification language objects",
+        "operationId": "notification_language_clearCatalogSubcollectionOrgScope",
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Catalog Subcollection)"
+        ]
+      }
+    },
+    "/orgs/{org}/settings/notification-templates/catalog/{notification-template}/notification-languages/{notification-language}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/notification-template"
+        },
+        {
+          "$ref": "#/components/parameters/notification-language"
+        }
+      ],
+      "get": {
+        "summary": "Get the Notification template language by name or id",
+        "description": "Get the Notification template language by name or id",
+        "operationId": "notification_language_getCatalogSubcollectionOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Catalog Subcollection)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Notification template language object",
+        "description": "Update the Notification template language object",
+        "operationId": "notification_language_updateCatalogSubcollectionOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Catalog Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Notification template language object by name or id",
+        "description": "Delete the Notification template language object by name or id",
+        "operationId": "notification_language_delCatalogSubcollectionOrgScope",
+        "responses": {
+          "200": {
+            "description": "Success delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Catalog Subcollection)"
+        ]
+      }
+    },
     "/orgs/{org}/settings/notification-templates/space": {
       "description": "The collection of Notification Template operations",
       "parameters": [
@@ -31760,10 +33283,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31822,10 +33341,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31867,10 +33382,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -31911,6 +33422,240 @@
         ]
       }
     },
+    "/orgs/{org}/settings/notification-templates/space/{notification-template}/notification-languages": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/notification-template"
+        }
+      ],
+      "post": {
+        "summary": "Create a Notification template language object",
+        "description": "Create a Notification template language object",
+        "operationId": "notification_language_createSpaceSubcollectionOrgScope",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Space Subcollection)"
+        ]
+      },
+      "get": {
+        "summary": "List the Notification language objects",
+        "description": "List the Notification language objects",
+        "operationId": "notification_language_listSpaceSubcollectionOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Space Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Notification language objects",
+        "description": "Clear the Notification language objects",
+        "operationId": "notification_language_clearSpaceSubcollectionOrgScope",
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Space Subcollection)"
+        ]
+      }
+    },
+    "/orgs/{org}/settings/notification-templates/space/{notification-template}/notification-languages/{notification-language}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/notification-template"
+        },
+        {
+          "$ref": "#/components/parameters/notification-language"
+        }
+      ],
+      "get": {
+        "summary": "Get the Notification template language by name or id",
+        "description": "Get the Notification template language by name or id",
+        "operationId": "notification_language_getSpaceSubcollectionOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Space Subcollection)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Notification template language object",
+        "description": "Update the Notification template language object",
+        "operationId": "notification_language_updateSpaceSubcollectionOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Space Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Notification template language object by name or id",
+        "description": "Delete the Notification template language object by name or id",
+        "operationId": "notification_language_delSpaceSubcollectionOrgScope",
+        "responses": {
+          "200": {
+            "description": "Success delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Space Subcollection)"
+        ]
+      }
+    },
     "/orgs/{org}/settings/notification-templates/consumer": {
       "description": "The collection of Notification Template operations",
       "parameters": [
@@ -31929,10 +33674,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -31991,10 +33732,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -32036,10 +33773,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -32080,6 +33813,240 @@
         ]
       }
     },
+    "/orgs/{org}/settings/notification-templates/consumer/{notification-template}/notification-languages": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/notification-template"
+        }
+      ],
+      "post": {
+        "summary": "Create a Notification template language object",
+        "description": "Create a Notification template language object",
+        "operationId": "notification_language_createConsumerSubcollectionOrgScope",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Consumer Subcollection)"
+        ]
+      },
+      "get": {
+        "summary": "List the Notification language objects",
+        "description": "List the Notification language objects",
+        "operationId": "notification_language_listConsumerSubcollectionOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Consumer Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Notification language objects",
+        "description": "Clear the Notification language objects",
+        "operationId": "notification_language_clearConsumerSubcollectionOrgScope",
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Consumer Subcollection)"
+        ]
+      }
+    },
+    "/orgs/{org}/settings/notification-templates/consumer/{notification-template}/notification-languages/{notification-language}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/notification-template"
+        },
+        {
+          "$ref": "#/components/parameters/notification-language"
+        }
+      ],
+      "get": {
+        "summary": "Get the Notification template language by name or id",
+        "description": "Get the Notification template language by name or id",
+        "operationId": "notification_language_getConsumerSubcollectionOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Consumer Subcollection)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Notification template language object",
+        "description": "Update the Notification template language object",
+        "operationId": "notification_language_updateConsumerSubcollectionOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Consumer Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Notification template language object by name or id",
+        "description": "Delete the Notification template language object by name or id",
+        "operationId": "notification_language_delConsumerSubcollectionOrgScope",
+        "responses": {
+          "200": {
+            "description": "Success delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Settings",
+          "Resource: Notification Template (Org Scope) (Consumer Subcollection)"
+        ]
+      }
+    },
     "/orgs/{org}": {
       "description": "Organization object operations",
       "parameters": [
@@ -32098,10 +34065,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -32143,10 +34106,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -32197,10 +34156,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -32244,10 +34199,11 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#transfer-owner"
-        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cascade"
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -32305,10 +34261,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#searchprovider-org"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -32375,10 +34327,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/associate-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -32437,10 +34385,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/associate-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -32490,10 +34434,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -32549,10 +34489,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -32600,10 +34536,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -32644,10 +34576,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -32689,10 +34617,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -32743,10 +34667,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -32793,10 +34713,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -32850,10 +34766,6 @@
         "summary": "Register using the Member Invitation",
         "description": "Register using the Member Invitation",
         "operationId": "member_invitation_registerOrgScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#register"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -32920,10 +34832,6 @@
         "summary": "Accept using the Member Invitation",
         "description": "Accept using the Member Invitation",
         "operationId": "member_invitation_acceptOrgScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#accept"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -32995,10 +34903,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -33054,10 +34958,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -33105,10 +35005,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -33149,10 +35045,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -33194,10 +35086,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -33248,10 +35136,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -33284,10 +35168,6 @@
         "summary": "Lists cloud-level permissions.",
         "description": "Returns the overall list of permissions configured at the cloud level.",
         "operationId": "permission_listAll",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -33331,10 +35211,6 @@
         "summary": "Lists cloud-level oorganization permissions.",
         "description": "Returns the list of organization permissions defined at the cloud level.",
         "operationId": "permission_listOrgSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-org-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -33383,10 +35259,6 @@
         "summary": "Returns an organization permission.",
         "description": "Returns an organization permissions instance defined at the cloud level.",
         "operationId": "permission_getOrgSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-org-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -33424,10 +35296,6 @@
         "summary": "Lists cloud-level cloud permissions.",
         "description": "Returns the list of cloud permissions defined at the cloud level.",
         "operationId": "permission_listCloudSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-cloud-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -33476,10 +35344,6 @@
         "summary": "Returns a cloud permission.",
         "description": "Returns a cloud permissions instance defined at the cloud level.",
         "operationId": "permission_getCloudSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-cloud-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -33517,10 +35381,6 @@
         "summary": "Lists cloud-level provider permissions.",
         "description": "Returns the list of provider permissions defined at the cloud level.",
         "operationId": "permission_listProviderSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-provider-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -33569,10 +35429,6 @@
         "summary": "Returns a provider permission.",
         "description": "Returns a provider permissions instance defined at the cloud level.",
         "operationId": "permission_getProviderSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-provider-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -33610,10 +35466,6 @@
         "summary": "Lists cloud-level consumer permissions.",
         "description": "Returns the list of consumer permissions defined at the cloud level.",
         "operationId": "permission_listConsumerSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-consumer-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -33662,10 +35514,6 @@
         "summary": "Returns a consumer permission.",
         "description": "Returns a consumer permissions instance defined at the cloud level.",
         "operationId": "permission_getConsumerSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-consumer-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -33703,10 +35551,6 @@
         "summary": "Lists cloud-level deployment permissions.",
         "description": "Returns the list of deployment permissions defined at the cloud level.",
         "operationId": "permission_listDeploymentSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-deployment-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -33755,10 +35599,6 @@
         "summary": "Returns a deployment permission.",
         "description": "Returns a deployment permissions instance defined at the cloud level.",
         "operationId": "permission_getDeploymentSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-deployment-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -33808,10 +35648,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -33867,10 +35703,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -33918,10 +35750,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -33962,10 +35790,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -34007,10 +35831,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -34061,10 +35881,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -34109,10 +35925,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-service-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -34171,10 +35983,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/gateway-service-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -34224,10 +36032,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/portal-service-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -34286,10 +36090,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/portal-service-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -34339,10 +36139,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -34398,10 +36194,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -34449,10 +36241,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -34493,10 +36281,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -34538,10 +36322,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -34592,10 +36372,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth-provider#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -34640,10 +36416,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/billing#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -34699,10 +36471,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/billing#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -34750,10 +36518,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/billing#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -34794,10 +36558,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/billing#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -34839,10 +36599,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/billing#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -34893,10 +36649,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/billing#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -34944,10 +36696,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/job#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -34995,10 +36743,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/job#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -35042,10 +36786,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/job#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -35087,10 +36827,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/job#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -35140,10 +36876,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/job#retry"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -35181,10 +36913,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -35240,10 +36968,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -35291,10 +37015,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -35338,10 +37058,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -35389,10 +37105,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -35433,10 +37145,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -35478,10 +37186,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -35532,10 +37236,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -35586,10 +37286,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -35631,10 +37327,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -35685,10 +37377,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/tls-client-profile#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -35733,10 +37421,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -35792,10 +37476,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -35843,10 +37523,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -35887,10 +37563,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -35932,10 +37604,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -35986,10 +37654,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/keystore#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -36034,10 +37698,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -36093,10 +37753,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -36144,10 +37800,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -36188,10 +37840,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -36233,10 +37881,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -36287,10 +37931,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/truststore#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -36338,10 +37978,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -36397,10 +38033,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -36448,10 +38080,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -36495,10 +38123,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -36540,10 +38164,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -36594,10 +38214,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/entry-truststore-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -36645,10 +38261,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog-setting#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -36690,10 +38302,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog-setting#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -36755,10 +38363,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-gateway-service-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -36814,10 +38418,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-gateway-service-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -36865,10 +38465,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-gateway-service-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -36912,10 +38508,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-gateway-service-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -36957,10 +38549,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-gateway-service-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -37011,10 +38599,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-gateway-service-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -37070,10 +38654,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-gateway-service-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -37121,10 +38701,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-gateway-service-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -37171,10 +38747,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-gateway-service-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -37216,10 +38788,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-gateway-service-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -37267,10 +38835,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-catalog-user-registry#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -37326,10 +38890,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-catalog-user-registry#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -37391,10 +38951,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-catalog-user-registry#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -37436,10 +38992,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-catalog-user-registry#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -37489,10 +39041,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#search"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -37562,10 +39110,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-api-user-registry-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -37621,10 +39165,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-api-user-registry-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -37672,10 +39212,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-api-user-registry-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -37719,10 +39255,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-api-user-registry-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -37764,10 +39296,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-api-user-registry-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -37818,10 +39346,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-api-user-registry-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -37877,10 +39401,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-api-user-registry-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -37928,10 +39448,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-api-user-registry-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -37978,10 +39494,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-api-user-registry-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -38023,10 +39535,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-api-user-registry-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -38074,10 +39582,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -38133,10 +39637,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-catalog-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -38184,10 +39684,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-catalog-scope#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -38231,10 +39727,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -38282,10 +39774,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -38329,10 +39817,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -38374,10 +39858,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -38431,10 +39911,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-catalog-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -38476,10 +39952,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-catalog-scope#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -38530,10 +40002,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -38589,10 +40057,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-space-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -38640,10 +40104,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-space-scope#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -38690,10 +40150,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -38741,10 +40197,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -38791,10 +40243,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -38836,10 +40284,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -38896,10 +40340,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-space-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -38941,10 +40381,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-tls-client-profile-space-scope#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -38992,10 +40428,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-billing#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -39051,10 +40483,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-billing#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -39102,10 +40530,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-billing#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -39149,10 +40573,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-billing#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -39194,10 +40614,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-billing#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -39245,10 +40661,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-oauth-provider-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -39304,10 +40716,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-oauth-provider-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -39355,10 +40763,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-oauth-provider-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -39402,10 +40806,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-oauth-provider-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -39447,10 +40847,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-oauth-provider-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -39501,10 +40897,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-oauth-provider-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -39560,10 +40952,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-oauth-provider-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -39611,10 +40999,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-oauth-provider-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -39661,10 +41045,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-oauth-provider-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -39706,10 +41086,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/configured-oauth-provider-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -39757,10 +41133,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-catalog-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -39819,10 +41191,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-catalog-subcollection-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -39884,10 +41252,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-catalog-subcollection-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -39929,10 +41293,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-catalog-subcollection-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -39973,6 +41333,246 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/settings/notification-templates/catalog/{notification-template}/notification-languages": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/notification-template"
+        }
+      ],
+      "post": {
+        "summary": "Create a Notification template language object",
+        "description": "Create a Notification template language object",
+        "operationId": "notification_language_createCatalogSubcollectionCatalogScope",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Template (Catalog Scope) (Catalog Subcollection)"
+        ]
+      },
+      "get": {
+        "summary": "List the Notification language objects",
+        "description": "List the Notification language objects",
+        "operationId": "notification_language_listCatalogSubcollectionCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Template (Catalog Scope) (Catalog Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Notification language objects",
+        "description": "Clear the Notification language objects",
+        "operationId": "notification_language_clearCatalogSubcollectionCatalogScope",
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Template (Catalog Scope) (Catalog Subcollection)"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/settings/notification-templates/catalog/{notification-template}/notification-languages/{notification-language}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/notification-template"
+        },
+        {
+          "$ref": "#/components/parameters/notification-language"
+        }
+      ],
+      "get": {
+        "summary": "Get the Notification template language by name or id",
+        "description": "Get the Notification template language by name or id",
+        "operationId": "notification_language_getCatalogSubcollectionCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Template (Catalog Scope) (Catalog Subcollection)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Notification template language object",
+        "description": "Update the Notification template language object",
+        "operationId": "notification_language_updateCatalogSubcollectionCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Template (Catalog Scope) (Catalog Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Notification template language object by name or id",
+        "description": "Delete the Notification template language object by name or id",
+        "operationId": "notification_language_delCatalogSubcollectionCatalogScope",
+        "responses": {
+          "200": {
+            "description": "Success delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Template (Catalog Scope) (Catalog Subcollection)"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/settings/notification-templates/space": {
       "description": "The collection of Notification Template operations",
       "parameters": [
@@ -39994,10 +41594,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -40059,10 +41655,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -40104,10 +41696,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -40148,6 +41736,246 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/settings/notification-templates/space/{notification-template}/notification-languages": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/notification-template"
+        }
+      ],
+      "post": {
+        "summary": "Create a Notification template language object",
+        "description": "Create a Notification template language object",
+        "operationId": "notification_language_createSpaceSubcollectionCatalogScope",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Template (Catalog Scope) (Space Subcollection)"
+        ]
+      },
+      "get": {
+        "summary": "List the Notification language objects",
+        "description": "List the Notification language objects",
+        "operationId": "notification_language_listSpaceSubcollectionCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Template (Catalog Scope) (Space Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Notification language objects",
+        "description": "Clear the Notification language objects",
+        "operationId": "notification_language_clearSpaceSubcollectionCatalogScope",
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Template (Catalog Scope) (Space Subcollection)"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/settings/notification-templates/space/{notification-template}/notification-languages/{notification-language}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/notification-template"
+        },
+        {
+          "$ref": "#/components/parameters/notification-language"
+        }
+      ],
+      "get": {
+        "summary": "Get the Notification template language by name or id",
+        "description": "Get the Notification template language by name or id",
+        "operationId": "notification_language_getSpaceSubcollectionCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Template (Catalog Scope) (Space Subcollection)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Notification template language object",
+        "description": "Update the Notification template language object",
+        "operationId": "notification_language_updateSpaceSubcollectionCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Template (Catalog Scope) (Space Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Notification template language object by name or id",
+        "description": "Delete the Notification template language object by name or id",
+        "operationId": "notification_language_delSpaceSubcollectionCatalogScope",
+        "responses": {
+          "200": {
+            "description": "Success delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Template (Catalog Scope) (Space Subcollection)"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/settings/notification-templates/consumer": {
       "description": "The collection of Notification Template operations",
       "parameters": [
@@ -40169,10 +41997,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -40234,10 +42058,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -40279,10 +42099,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -40323,6 +42139,246 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/settings/notification-templates/consumer/{notification-template}/notification-languages": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/notification-template"
+        }
+      ],
+      "post": {
+        "summary": "Create a Notification template language object",
+        "description": "Create a Notification template language object",
+        "operationId": "notification_language_createConsumerSubcollectionCatalogScope",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Template (Catalog Scope) (Consumer Subcollection)"
+        ]
+      },
+      "get": {
+        "summary": "List the Notification language objects",
+        "description": "List the Notification language objects",
+        "operationId": "notification_language_listConsumerSubcollectionCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Template (Catalog Scope) (Consumer Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Notification language objects",
+        "description": "Clear the Notification language objects",
+        "operationId": "notification_language_clearConsumerSubcollectionCatalogScope",
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Template (Catalog Scope) (Consumer Subcollection)"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/settings/notification-templates/consumer/{notification-template}/notification-languages/{notification-language}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/notification-template"
+        },
+        {
+          "$ref": "#/components/parameters/notification-language"
+        }
+      ],
+      "get": {
+        "summary": "Get the Notification template language by name or id",
+        "description": "Get the Notification template language by name or id",
+        "operationId": "notification_language_getConsumerSubcollectionCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Template (Catalog Scope) (Consumer Subcollection)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Notification template language object",
+        "description": "Update the Notification template language object",
+        "operationId": "notification_language_updateConsumerSubcollectionCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Template (Catalog Scope) (Consumer Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Notification template language object by name or id",
+        "description": "Delete the Notification template language object by name or id",
+        "operationId": "notification_language_delConsumerSubcollectionCatalogScope",
+        "responses": {
+          "200": {
+            "description": "Success delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Template (Catalog Scope) (Consumer Subcollection)"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/role-defaults": {
       "description": "Role Default operations across all collections",
       "parameters": [
@@ -40344,10 +42400,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-catalog-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -40395,65 +42447,6 @@
           "$ref": "#/components/parameters/catalog"
         }
       ],
-      "post": {
-        "summary": "Creates a consumer organization role default.",
-        "description": "Adds a consumer organization role default to a catalog.",
-        "operationId": "role_default_createConsumerSubcollectionCatalogScope",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-catalog-scope#create"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RoleDefault"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/RoleDefault"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleDefault"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleDefault"
-                }
-              }
-            },
-            "headers": {
-              "Location": {
-                "$ref": "#/components/headers/Location"
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Role Default (Catalog Scope) (Consumer Subcollection)"
-        ]
-      },
       "get": {
         "summary": "Lists consumer organization role defaults.",
         "description": "Returns the list of consumer organization role defaults in a catalog.",
@@ -40465,10 +42458,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -40504,39 +42493,6 @@
           "Catalog Settings",
           "Resource: Role Default (Catalog Scope) (Consumer Subcollection)"
         ]
-      },
-      "delete": {
-        "summary": "Clears consumer organization role defaults.",
-        "description": "Removes all consumer organization role defaults from a catalog.",
-        "operationId": "role_default_clearConsumerSubcollectionCatalogScope",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-catalog-scope#clear"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/confirm"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Success"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Role Default (Catalog Scope) (Consumer Subcollection)"
-        ]
       }
     },
     "/catalogs/{org}/{catalog}/role-defaults/consumer/{role-default}": {
@@ -40563,10 +42519,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -40575,100 +42527,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleDefault"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleDefault"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Role Default (Catalog Scope) (Consumer Subcollection)"
-        ]
-      },
-      "patch": {
-        "summary": "Updates a consumer organization role default.",
-        "description": "Updates a consumer organization role default in a catalog.",
-        "operationId": "role_default_updateConsumerSubcollectionCatalogScope",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-catalog-scope#update"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RoleDefault"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/RoleDefault"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleDefault"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleDefault"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Role Default (Catalog Scope) (Consumer Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Deletes a consumer organization role default.",
-        "description": "Removes a consumer organization role default from a catalog.",
-        "operationId": "role_default_delConsumerSubcollectionCatalogScope",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-catalog-scope#del"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -40713,10 +42571,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/property-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -40772,10 +42626,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/property-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -40823,10 +42673,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/property-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -40870,10 +42716,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/property-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -40915,10 +42757,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/property-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -40969,10 +42807,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/property-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -41017,10 +42851,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -41076,10 +42906,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -41127,10 +42953,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -41171,10 +42993,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -41216,10 +43034,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -41270,10 +43084,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -41320,10 +43130,11 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#transfer-owner"
-        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cascade"
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -41384,10 +43195,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#send-email"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -41431,6 +43238,85 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/email-to-owners": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Send email to owners of consumer organizations",
+        "description": "Send email to owners of consumer organizations, given consumer org and consumer group urls. For consumer group, email owners of all consumer orgs in the group.",
+        "operationId": "catalog_emailToOwners",
+        "security": [
+          {
+            "oauth": [
+              "consumer-org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#email-to-owners"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmailToOwners"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/EmailToOwners"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmailToOwnersResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmailToOwnersResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Management",
+          "Resource: Catalog"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/search/user": {
       "parameters": [
         {
@@ -41451,10 +43337,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#search-catalog"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -41523,10 +43405,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#stage-draft-product"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/gateway_services"
@@ -41592,10 +43470,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#publish-draft-product"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/gateway_services"
@@ -41664,10 +43538,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#stage"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/gateway_services"
@@ -41733,10 +43603,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/catalog#publish"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/gateway_services"
@@ -41803,10 +43669,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -41862,10 +43724,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -41913,10 +43771,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -41957,10 +43811,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -42002,10 +43852,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -42056,10 +43902,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -42106,10 +43948,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-catalog-scope#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -42163,10 +44001,6 @@
         "summary": "Register using the Catalog Invitation",
         "description": "Register using the Catalog Invitation",
         "operationId": "invitation_registerCatalogScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-catalog-scope#register"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -42233,10 +44067,6 @@
         "summary": "Accept using the Catalog Invitation",
         "description": "Accept using the Catalog Invitation",
         "operationId": "invitation_acceptCatalogScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-catalog-scope#accept"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -42311,10 +44141,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -42370,10 +44196,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -42421,10 +44243,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -42468,10 +44286,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -42513,10 +44327,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -42567,10 +44377,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -42620,10 +44426,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-catalog-scope#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -42680,10 +44482,6 @@
         "summary": "Register using the Member Invitation",
         "description": "Register using the Member Invitation",
         "operationId": "member_invitation_registerCatalogScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-catalog-scope#register"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -42753,10 +44551,6 @@
         "summary": "Accept using the Member Invitation",
         "description": "Accept using the Member Invitation",
         "operationId": "member_invitation_acceptCatalogScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-catalog-scope#accept"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -42831,10 +44625,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -42890,10 +44680,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -42941,10 +44727,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -42988,10 +44770,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -43033,10 +44811,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -43087,10 +44861,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -43138,10 +44908,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/task-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -43203,10 +44969,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/task-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -43248,10 +45010,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/task-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -43313,10 +45071,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -43378,10 +45132,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -43423,10 +45173,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -43491,10 +45237,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -43550,10 +45292,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -43601,10 +45339,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -43651,10 +45385,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -43702,10 +45432,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -43752,10 +45478,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -43797,10 +45519,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -43851,10 +45569,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -43911,10 +45625,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -43956,10 +45666,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -44010,10 +45716,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-catalog-scope#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -44066,10 +45768,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -44125,10 +45823,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -44182,10 +45876,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -44241,10 +45931,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -44292,10 +45978,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -44345,10 +46027,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -44396,10 +46074,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -44449,10 +46123,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -44494,10 +46164,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -44548,10 +46214,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -44611,10 +46273,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -44656,10 +46314,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -44710,10 +46364,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-space-scope#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -44769,10 +46419,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -44831,10 +46477,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -44885,10 +46527,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -44939,10 +46577,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -44990,10 +46624,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -45040,10 +46670,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -45091,10 +46717,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -45141,10 +46763,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -45186,10 +46804,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -45245,10 +46859,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -45305,10 +46915,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -45350,10 +46956,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -45409,10 +47011,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-catalog-scope#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -45465,10 +47063,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -45524,10 +47118,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -45580,10 +47170,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy#implementation"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -45640,10 +47226,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy#implementation"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -45698,10 +47280,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -45752,10 +47330,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -45803,10 +47377,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -45856,10 +47426,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -45907,10 +47473,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -45960,10 +47522,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -46005,10 +47563,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -46064,10 +47618,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -46127,10 +47677,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -46172,10 +47718,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -46231,10 +47773,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy-space-scope#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -46290,10 +47828,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -46352,10 +47886,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -46411,10 +47941,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy#implementation"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -46474,10 +48000,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/policy#implementation"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -46529,10 +48051,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -46588,10 +48106,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -46639,10 +48153,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -46689,10 +48199,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -46740,10 +48246,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -46790,10 +48292,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -46835,10 +48333,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -46889,10 +48383,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -46949,10 +48439,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -46994,10 +48480,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -47048,10 +48530,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-catalog-scope#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -47104,10 +48582,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -47163,10 +48637,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -47220,10 +48690,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -47279,10 +48745,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -47330,10 +48792,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -47383,10 +48841,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -47434,10 +48888,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -47487,10 +48937,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -47532,10 +48978,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -47586,10 +49028,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -47649,10 +49087,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -47694,10 +49128,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -47748,10 +49178,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension-space-scope#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -47807,10 +49233,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -47869,10 +49291,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/extension#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -47920,10 +49338,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -47997,10 +49411,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -48071,10 +49481,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -48136,10 +49542,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -48177,579 +49579,6 @@
         ]
       }
     },
-    "/catalogs/{org}/{catalog}/configured-gateway-services/{configured-gateway-service}/services": {
-      "description": "Service operations across all collections",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/configured-gateway-service"
-        }
-      ],
-      "post": {
-        "summary": "Creates a service.",
-        "description": "Add a service to a configured gateway service for a catalog.",
-        "operationId": "service_create",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#create"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Service"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/Service"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Service"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Service"
-                }
-              }
-            },
-            "headers": {
-              "Location": {
-                "$ref": "#/components/headers/Location"
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Resources",
-          "Resource: Service by Id"
-        ]
-      },
-      "get": {
-        "summary": "Lists services.",
-        "description": "Returns the list of services from a configured gateway service for a catalog.",
-        "operationId": "service_listAll",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#list-all"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ServiceList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/ServiceList"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Resources",
-          "Resource: Service by Id"
-        ]
-      },
-      "delete": {
-        "summary": "Clears services.",
-        "description": "Removes all services from a configured gateway service for a catalog.",
-        "operationId": "service_clearAll",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#clear-all"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/confirm"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Success"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Resources",
-          "Resource: Service by Id"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/configured-gateway-services/{configured-gateway-service}/services/{service-name}": {
-      "description": "The collection of Service operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/configured-gateway-service"
-        },
-        {
-          "$ref": "#/components/parameters/service-name"
-        }
-      ],
-      "get": {
-        "summary": "Lists service versions.",
-        "description": "Returns all versions of the named service from a configured gateway service for a catalog.",
-        "operationId": "service_list",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#list"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ServiceList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/ServiceList"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Resources",
-          "Resource: Service by Id"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Service objects",
-        "description": "Removes all versions of the named service from a configured gateway service for a catalog.",
-        "operationId": "service_clear",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#clear"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/confirm"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Success"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Resources",
-          "Resource: Service by Id"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/configured-gateway-services/{configured-gateway-service}/services/{service-id}": {
-      "description": "Service object operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/configured-gateway-service"
-        },
-        {
-          "$ref": "#/components/parameters/service-id"
-        }
-      ],
-      "get": {
-        "summary": "Returns a service.",
-        "description": "Returns a service from a configured gateway service for a catalog.",
-        "operationId": "service_get",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#get"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Service"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Service"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Resources",
-          "Resource: Service by Id"
-        ]
-      },
-      "patch": {
-        "summary": "Updates a service.",
-        "description": "Updates a service for a configured gateway service for a catalog.",
-        "operationId": "service_update",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#update"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Service"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/Service"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Service"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Service"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Resources",
-          "Resource: Service by Id"
-        ]
-      },
-      "delete": {
-        "summary": "Deletes a service.",
-        "description": "Remove a service from a configured gateway service for a catalog.",
-        "operationId": "service_del",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#del"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful delete",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Service"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Service"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Resources",
-          "Resource: Service by Id"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/configured-gateway-services/{configured-gateway-service}/services/{service-name}/{service-version}": {
-      "description": "Service object operations by name and version",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/configured-gateway-service"
-        },
-        {
-          "$ref": "#/components/parameters/service-name"
-        },
-        {
-          "$ref": "#/components/parameters/service-version"
-        }
-      ],
-      "get": {
-        "summary": "Returns a service.",
-        "description": "Returns a service from a configured gateway service for a catalog.",
-        "operationId": "service_getByNameVersion",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#get-by-name-version"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Service"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Service"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Resources",
-          "Resource: Service by Id"
-        ]
-      },
-      "patch": {
-        "summary": "Updates a service.",
-        "description": "Updates a service for a configured gateway service for a catalog.",
-        "operationId": "service_updateByNameVersion",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#update-by-name-version"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Service"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/Service"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Service"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Service"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Resources",
-          "Resource: Service by Id"
-        ]
-      },
-      "delete": {
-        "summary": "Delete a Service",
-        "description": "Delete a Service",
-        "operationId": "service_delByNameVersion",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service#del-by-name-version"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful delete",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Service"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Service"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Resources",
-          "Resource: Service by Id"
-        ]
-      }
-    },
     "/spaces/{org}/{catalog}/{space}/configured-gateway-services/{configured-gateway-service}/services": {
       "description": "Service operations across all collections",
       "parameters": [
@@ -48777,10 +49606,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -48836,10 +49661,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -48887,10 +49708,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -48940,10 +49757,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -48991,10 +49804,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -49044,10 +49853,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -49089,10 +49894,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -49143,10 +49944,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -49206,10 +50003,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -49251,10 +50044,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -49305,10 +50094,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/service-space-initiated#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -49332,6 +50117,391 @@
         "tags": [
           "Space Resources",
           "Resource: Service by Id"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/configured-gateway-services/{configured-gateway-service}/global-policy-error": {
+      "description": "Global Policy Error object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/configured-gateway-service"
+        }
+      ],
+      "post": {
+        "summary": "Create the Global Policy Error object",
+        "description": "Create the Global Policy Error object",
+        "operationId": "global_policy_error_singletonCreateCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GlobalPolicyError"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/GlobalPolicyError"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalPolicyError"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalPolicyError"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Resources",
+          "Resource: Global Policy Error (Catalog Scope)"
+        ]
+      },
+      "get": {
+        "summary": "Get the Global Policy Error object",
+        "description": "Get the Global Policy Error object",
+        "operationId": "global_policy_error_singletonGetCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalPolicyError"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalPolicyError"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Resources",
+          "Resource: Global Policy Error (Catalog Scope)"
+        ]
+      },
+      "put": {
+        "summary": "Update the Global Policy Error object",
+        "description": "Update the Global Policy Error object",
+        "operationId": "global_policy_error_singletonUpdateCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GlobalPolicyError"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/GlobalPolicyError"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalPolicyError"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalPolicyError"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Resources",
+          "Resource: Global Policy Error (Catalog Scope)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Global Policy Error object",
+        "description": "Delete the Global Policy Error object",
+        "operationId": "global_policy_error_singletonDelCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalPolicyError"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalPolicyError"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Resources",
+          "Resource: Global Policy Error (Catalog Scope)"
+        ]
+      }
+    },
+    "/spaces/{org}/{catalog}/{space}/configured-gateway-services/{configured-gateway-service}/global-policy-error": {
+      "description": "Global Policy Error object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/configured-gateway-service"
+        }
+      ],
+      "post": {
+        "summary": "Create the Global Policy Error object",
+        "description": "Create the Global Policy Error object",
+        "operationId": "global_policy_error_singletonCreateSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GlobalPolicyError"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/GlobalPolicyError"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalPolicyError"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalPolicyError"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Space Resources",
+          "Resource: Global Policy Error (Space Scope)"
+        ]
+      },
+      "get": {
+        "summary": "Get the Global Policy Error object",
+        "description": "Get the Global Policy Error object",
+        "operationId": "global_policy_error_singletonGetSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalPolicyError"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalPolicyError"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Space Resources",
+          "Resource: Global Policy Error (Space Scope)"
+        ]
+      },
+      "put": {
+        "summary": "Update the Global Policy Error object",
+        "description": "Update the Global Policy Error object",
+        "operationId": "global_policy_error_singletonUpdateSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GlobalPolicyError"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/GlobalPolicyError"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalPolicyError"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalPolicyError"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Space Resources",
+          "Resource: Global Policy Error (Space Scope)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Global Policy Error object",
+        "description": "Delete the Global Policy Error object",
+        "operationId": "global_policy_error_singletonDelSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalPolicyError"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalPolicyError"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Space Resources",
+          "Resource: Global Policy Error (Space Scope)"
         ]
       }
     },
@@ -49359,10 +50529,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-prehook-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -49413,10 +50579,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-prehook-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -49458,10 +50620,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-prehook-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -49512,10 +50670,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-prehook-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -49569,10 +50723,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-prehook-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -49623,10 +50773,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-prehook-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -49668,10 +50814,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-prehook-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -49722,10 +50864,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-prehook-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -49776,10 +50914,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-posthook-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -49830,10 +50964,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-posthook-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -49875,10 +51005,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-posthook-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -49929,10 +51055,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-posthook-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -49986,10 +51108,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-posthook-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -50040,10 +51158,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-posthook-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -50085,10 +51199,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-posthook-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -50139,10 +51249,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/global-policy-posthook-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -50190,10 +51296,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-service-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -50255,10 +51357,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-service-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -50317,10 +51415,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-catalog-scope#create"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/query"
@@ -50395,10 +51489,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-service-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -50463,10 +51553,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-service-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -50528,10 +51614,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/analytics-space-scope#create"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/query"
@@ -50606,10 +51688,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space-setting#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -50651,10 +51729,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space-setting#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -50719,10 +51793,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -50784,10 +51854,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -50852,10 +51918,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -50897,10 +51959,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-space-subcollection-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -50941,6 +51999,252 @@
         ]
       }
     },
+    "/spaces/{org}/{catalog}/{space}/settings/notification-templates/space/{notification-template}/notification-languages": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/notification-template"
+        }
+      ],
+      "post": {
+        "summary": "Create a Notification template language object",
+        "description": "Create a Notification template language object",
+        "operationId": "notification_language_createSpaceSubcollectionSpaceScope",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Space Settings",
+          "Resource: Notification Template (Space Scope) (Space Subcollection)"
+        ]
+      },
+      "get": {
+        "summary": "List the Notification language objects",
+        "description": "List the Notification language objects",
+        "operationId": "notification_language_listSpaceSubcollectionSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Space Settings",
+          "Resource: Notification Template (Space Scope) (Space Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Notification language objects",
+        "description": "Clear the Notification language objects",
+        "operationId": "notification_language_clearSpaceSubcollectionSpaceScope",
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Space Settings",
+          "Resource: Notification Template (Space Scope) (Space Subcollection)"
+        ]
+      }
+    },
+    "/spaces/{org}/{catalog}/{space}/settings/notification-templates/space/{notification-template}/notification-languages/{notification-language}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/notification-template"
+        },
+        {
+          "$ref": "#/components/parameters/notification-language"
+        }
+      ],
+      "get": {
+        "summary": "Get the Notification template language by name or id",
+        "description": "Get the Notification template language by name or id",
+        "operationId": "notification_language_getSpaceSubcollectionSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Space Settings",
+          "Resource: Notification Template (Space Scope) (Space Subcollection)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Notification template language object",
+        "description": "Update the Notification template language object",
+        "operationId": "notification_language_updateSpaceSubcollectionSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Space Settings",
+          "Resource: Notification Template (Space Scope) (Space Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Notification template language object by name or id",
+        "description": "Delete the Notification template language object by name or id",
+        "operationId": "notification_language_delSpaceSubcollectionSpaceScope",
+        "responses": {
+          "200": {
+            "description": "Success delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Space Settings",
+          "Resource: Notification Template (Space Scope) (Space Subcollection)"
+        ]
+      }
+    },
     "/spaces/{org}/{catalog}/{space}/settings/notification-templates/consumer": {
       "description": "The collection of Notification Template operations",
       "parameters": [
@@ -50965,10 +52269,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -51033,10 +52333,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -51078,10 +52374,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/notification-template-consumer-subcollection-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -51122,6 +52414,252 @@
         ]
       }
     },
+    "/spaces/{org}/{catalog}/{space}/settings/notification-templates/consumer/{notification-template}/notification-languages": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/notification-template"
+        }
+      ],
+      "post": {
+        "summary": "Create a Notification template language object",
+        "description": "Create a Notification template language object",
+        "operationId": "notification_language_createConsumerSubcollectionSpaceScope",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Space Settings",
+          "Resource: Notification Template (Space Scope) (Consumer Subcollection)"
+        ]
+      },
+      "get": {
+        "summary": "List the Notification language objects",
+        "description": "List the Notification language objects",
+        "operationId": "notification_language_listConsumerSubcollectionSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguageList"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Space Settings",
+          "Resource: Notification Template (Space Scope) (Consumer Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Notification language objects",
+        "description": "Clear the Notification language objects",
+        "operationId": "notification_language_clearConsumerSubcollectionSpaceScope",
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Space Settings",
+          "Resource: Notification Template (Space Scope) (Consumer Subcollection)"
+        ]
+      }
+    },
+    "/spaces/{org}/{catalog}/{space}/settings/notification-templates/consumer/{notification-template}/notification-languages/{notification-language}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/notification-template"
+        },
+        {
+          "$ref": "#/components/parameters/notification-language"
+        }
+      ],
+      "get": {
+        "summary": "Get the Notification template language by name or id",
+        "description": "Get the Notification template language by name or id",
+        "operationId": "notification_language_getConsumerSubcollectionSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Space Settings",
+          "Resource: Notification Template (Space Scope) (Consumer Subcollection)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Notification template language object",
+        "description": "Update the Notification template language object",
+        "operationId": "notification_language_updateConsumerSubcollectionSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationLanguage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Space Settings",
+          "Resource: Notification Template (Space Scope) (Consumer Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Notification template language object by name or id",
+        "description": "Delete the Notification template language object by name or id",
+        "operationId": "notification_language_delConsumerSubcollectionSpaceScope",
+        "responses": {
+          "200": {
+            "description": "Success delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationLanguage"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Space Settings",
+          "Resource: Notification Template (Space Scope) (Consumer Subcollection)"
+        ]
+      }
+    },
     "/spaces/{org}/{catalog}/{space}/role-defaults": {
       "description": "Role Default operations across all collections",
       "parameters": [
@@ -51146,10 +52684,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-space-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -51200,65 +52734,6 @@
           "$ref": "#/components/parameters/space"
         }
       ],
-      "post": {
-        "summary": "Creates a consumer organization role default.",
-        "description": "Adds a consumer organization role default to a space.",
-        "operationId": "role_default_createConsumerSubcollectionSpaceScope",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-space-scope#create"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RoleDefault"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/RoleDefault"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleDefault"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleDefault"
-                }
-              }
-            },
-            "headers": {
-              "Location": {
-                "$ref": "#/components/headers/Location"
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Space Settings",
-          "Resource: Role Default (Space Scope) (Consumer Subcollection)"
-        ]
-      },
       "get": {
         "summary": "Lists consumer organization role defaults.",
         "description": "Returns the list of consumer organization role defaults in a space.",
@@ -51270,10 +52745,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -51300,39 +52771,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Space Settings",
-          "Resource: Role Default (Space Scope) (Consumer Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clears consumer organization role defaults.",
-        "description": "Removes all consumer organization role defaults from a space.",
-        "operationId": "role_default_clearConsumerSubcollectionSpaceScope",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-space-scope#clear"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/confirm"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -51371,10 +52809,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -51383,100 +52817,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleDefault"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleDefault"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Space Settings",
-          "Resource: Role Default (Space Scope) (Consumer Subcollection)"
-        ]
-      },
-      "patch": {
-        "summary": "Updates a space role default.",
-        "description": "Updates a consumer organization role default in a space.",
-        "operationId": "role_default_updateConsumerSubcollectionSpaceScope",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-space-scope#update"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RoleDefault"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/RoleDefault"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleDefault"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleDefault"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Space Settings",
-          "Resource: Role Default (Space Scope) (Consumer Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Deletes a consumer organization role default.",
-        "description": "Removes a consumer organization role default from a space.",
-        "operationId": "role_default_delConsumerSubcollectionSpaceScope",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-default-consumer-subcollection-space-scope#del"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -51521,10 +52861,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -51580,10 +52916,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -51631,10 +52963,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -51678,10 +53006,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -51723,10 +53047,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -51777,10 +53097,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -51830,10 +53146,11 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#transfer-owner"
-        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cascade"
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -51874,6 +53191,88 @@
         ]
       }
     },
+    "/spaces/{org}/{catalog}/{space}/email-to-owners": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "post": {
+        "summary": "Send email to owners of consumer organizations",
+        "description": "Send email to owners of consumer organizations, given consumer org and consumer group urls. For consumer group, email owners of all consumer orgs in the group.",
+        "operationId": "space_emailToOwners",
+        "security": [
+          {
+            "oauth": [
+              "consumer-org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#email-to-owners"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmailToOwners"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/EmailToOwners"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmailToOwnersResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmailToOwnersResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Space Management",
+          "Resource: Space"
+        ]
+      }
+    },
     "/spaces/{org}/{catalog}/{space}/stage-draft-product": {
       "parameters": [
         {
@@ -51897,10 +53296,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#stage-draft-product"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/gateway_services"
@@ -51969,10 +53364,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#publish-draft-product"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/gateway_services"
@@ -52044,10 +53435,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#stage"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/gateway_services"
@@ -52116,10 +53503,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/space#publish"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/gateway_services"
@@ -52189,10 +53572,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -52248,10 +53627,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -52299,10 +53674,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -52346,10 +53717,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -52391,10 +53758,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -52445,10 +53808,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -52498,10 +53857,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-space-scope#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -52558,10 +53913,6 @@
         "summary": "Register using the Space Invitation",
         "description": "Register using the Space Invitation",
         "operationId": "invitation_registerSpaceScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-space-scope#register"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -52631,10 +53982,6 @@
         "summary": "Accept using the Space Invitation",
         "description": "Accept using the Space Invitation",
         "operationId": "invitation_acceptSpaceScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-space-scope#accept"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -52712,10 +54059,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -52780,10 +54123,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -52825,10 +54164,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -52893,10 +54228,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -52952,10 +54283,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -53003,10 +54330,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -53053,10 +54376,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -53098,10 +54417,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -53152,10 +54467,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -53208,10 +54519,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-space-scope#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -53271,10 +54578,6 @@
         "summary": "Register using the Member Invitation",
         "description": "Register using the Member Invitation",
         "operationId": "member_invitation_registerSpaceScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-space-scope#register"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -53347,10 +54650,6 @@
         "summary": "Accept using the Member Invitation",
         "description": "Accept using the Member Invitation",
         "operationId": "member_invitation_acceptSpaceScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-space-scope#accept"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -53428,10 +54727,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-space-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -53487,10 +54782,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -53538,10 +54829,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -53588,10 +54875,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -53633,10 +54916,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -53687,10 +54966,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -53741,10 +55016,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/task-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -53809,10 +55080,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/task-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -53854,10 +55121,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/task-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -53919,10 +55182,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -53987,10 +55246,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -54055,10 +55310,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-setting#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -54100,10 +55351,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-setting#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -54154,10 +55401,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-setting#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -54211,10 +55454,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-setting-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -54256,10 +55495,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-setting-space-initiated#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -54310,10 +55545,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-setting-space-initiated#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -54361,10 +55592,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/activation-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -54412,10 +55639,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/activation-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -54459,10 +55682,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/activation-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -54504,10 +55723,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/activation-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -54555,10 +55770,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -54614,10 +55825,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -54665,10 +55872,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -54712,10 +55915,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -54757,10 +55956,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -54811,10 +56006,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -54864,10 +56055,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -54932,10 +56119,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope-space-initiated#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -54991,10 +56174,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -55042,10 +56221,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope-space-initiated#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -55092,10 +56267,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -55137,10 +56308,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope-space-initiated#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -55191,10 +56358,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope-space-initiated#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -55247,10 +56410,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-consumer-org-scope-space-initiated#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -55312,10 +56471,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -55371,10 +56526,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -55425,10 +56576,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -55472,10 +56619,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -55517,10 +56660,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org#update"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -55576,10 +56715,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -55629,10 +56764,11 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org#transfer-owner"
-        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cascade"
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -55697,10 +56833,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-space-initiated#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -55756,10 +56888,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -55810,10 +56938,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-space-initiated#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -55860,10 +56984,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -55905,10 +57025,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-space-initiated#update"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -55964,10 +57080,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-space-initiated#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -56020,10 +57132,11 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/consumer-org-space-initiated#transfer-owner"
-        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cascade"
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -56085,10 +57198,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-catalog-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -56144,10 +57253,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -56195,10 +57300,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -56242,10 +57343,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -56287,10 +57384,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -56341,10 +57434,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -56395,10 +57484,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-space-initiated#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -56454,10 +57539,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -56505,10 +57586,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-space-initiated#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -56555,10 +57632,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -56600,10 +57673,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-space-initiated#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -56654,10 +57723,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group-space-initiated#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -56708,10 +57773,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -56767,10 +57828,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -56835,10 +57892,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -56880,10 +57933,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -56934,10 +57983,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -56991,10 +58036,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method-space-initiated#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -57050,10 +58091,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -57121,10 +58158,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -57166,10 +58199,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method-space-initiated#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -57220,10 +58249,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method-space-initiated#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -57263,65 +58288,6 @@
           "$ref": "#/components/parameters/consumer-org"
         }
       ],
-      "post": {
-        "summary": "Creates a consumer organization role.",
-        "description": "Adds a consumer organization role to a catalog.",
-        "operationId": "role_createConsumerOrgScope",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope#create"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Role"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/Role"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Role"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Role"
-                }
-              }
-            },
-            "headers": {
-              "Location": {
-                "$ref": "#/components/headers/Location"
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Role (ConsumerOrg Scope)"
-        ]
-      },
       "get": {
         "summary": "Lists consumer organization roles.",
         "description": "Returns the list of roles for consumer organization in a catalog.",
@@ -57333,10 +58299,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -57363,39 +58325,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Role (ConsumerOrg Scope)"
-        ]
-      },
-      "delete": {
-        "summary": "Clears consumer organization roles.",
-        "description": "Removes all roles from a consumer organization in a catalog.",
-        "operationId": "role_clearConsumerOrgScope",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope#clear"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/confirm"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -57434,10 +58363,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -57446,100 +58371,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Role"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Role"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Role (ConsumerOrg Scope)"
-        ]
-      },
-      "patch": {
-        "summary": "Updates a consumer organization role.",
-        "description": "Updates a role for a consumer organization in a catalog.",
-        "operationId": "role_updateConsumerOrgScope",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope#update"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Role"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/Role"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Role"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Role"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Role (ConsumerOrg Scope)"
-        ]
-      },
-      "delete": {
-        "summary": "Deletes a consumer organization role default.",
-        "description": "Removes a role from a consumer organization in a catalog.",
-        "operationId": "role_delConsumerOrgScope",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope#del"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -57579,65 +58410,6 @@
           "$ref": "#/components/parameters/consumer-org"
         }
       ],
-      "post": {
-        "summary": "Creates a consumer organization role.",
-        "description": "Adds a consumer organization role to a catalog, as accessed through a space.",
-        "operationId": "role_createConsumerOrgScopeSpaceInitiated",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope-space-initiated#create"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Role"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/Role"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Role"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Role"
-                }
-              }
-            },
-            "headers": {
-              "Location": {
-                "$ref": "#/components/headers/Location"
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Role (ConsumerOrg Scope)"
-        ]
-      },
       "get": {
         "summary": "Lists consumer organization roles.",
         "description": "Returns the list of roles for consumer organization in a catalog, as accessed through a space.",
@@ -57649,10 +58421,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -57679,39 +58447,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Role (ConsumerOrg Scope)"
-        ]
-      },
-      "delete": {
-        "summary": "Clears consumer organization roles.",
-        "description": "Removes all roles from a consumer organization in a catalog, as accessed through a space.",
-        "operationId": "role_clearConsumerOrgScopeSpaceInitiated",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope-space-initiated#clear"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/confirm"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -57753,10 +58488,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -57765,100 +58496,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Role"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Role"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Role (ConsumerOrg Scope)"
-        ]
-      },
-      "patch": {
-        "summary": "Updates a consumer organization role.",
-        "description": "Updates a role for a consumer organization in a catalog, as accessed through a space.",
-        "operationId": "role_updateConsumerOrgScopeSpaceInitiated",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope-space-initiated#update"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Role"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/Role"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Role"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Role"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Role (ConsumerOrg Scope)"
-        ]
-      },
-      "delete": {
-        "summary": "Deletes a consumer organization role default.",
-        "description": "Removes a role from a consumer organization in a catalog, as accessed through a space.",
-        "operationId": "role_delConsumerOrgScopeSpaceInitiated",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-consumer-org-scope-space-initiated#del"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -57906,10 +58543,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/associate-consumer-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -57974,10 +58607,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/associate-consumer-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -58036,10 +58665,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/associate-consumer-org-scope-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -58107,10 +58732,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/associate-consumer-org-scope-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -58166,10 +58787,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -58225,10 +58842,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -58276,10 +58889,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -58326,10 +58935,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -58371,10 +58976,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -58425,10 +59026,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -58481,10 +59078,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -58552,10 +59145,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope-space-initiated#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -58611,10 +59200,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -58662,10 +59247,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope-space-initiated#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -58715,10 +59296,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -58760,10 +59337,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope-space-initiated#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -58814,10 +59387,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope-space-initiated#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -58873,10 +59442,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-consumer-org-scope-space-initiated#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -58941,10 +59506,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -59000,10 +59561,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -59051,10 +59608,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -59101,10 +59654,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -59146,10 +59695,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -59200,10 +59745,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -59257,10 +59798,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope-space-initiated#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -59316,10 +59853,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -59367,10 +59900,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope-space-initiated#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -59420,10 +59949,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -59465,10 +59990,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope-space-initiated#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -59519,10 +60040,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-consumer-org-scope-space-initiated#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -59573,10 +60090,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -59632,10 +60145,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -59683,10 +60192,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -59733,10 +60238,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -59778,10 +60279,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -59832,10 +60329,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -59889,10 +60382,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app-space-initiated#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -59948,10 +60437,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -59999,10 +60484,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app-space-initiated#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -60052,10 +60533,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -60097,10 +60574,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app-space-initiated#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -60151,10 +60624,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app-space-initiated#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -60208,10 +60677,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -60267,10 +60732,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -60338,10 +60799,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -60383,10 +60840,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -60437,10 +60890,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -60496,10 +60945,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#reset"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -60555,10 +61000,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#reset-client-secret"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -60614,10 +61055,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#verify-client-secret"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -60688,10 +61125,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-space-initiated#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -60747,10 +61180,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -60798,10 +61227,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-space-initiated#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -60854,10 +61279,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -60899,10 +61320,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-space-initiated#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -60953,10 +61370,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-space-initiated#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -61015,10 +61428,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-space-initiated#reset"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -61077,10 +61486,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-space-initiated#reset-client-secret"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -61139,10 +61544,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential-space-initiated#verify-client-secret"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -61210,10 +61611,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -61269,10 +61666,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -61326,10 +61719,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -61379,10 +61768,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -61424,10 +61809,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -61478,10 +61859,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -61538,10 +61915,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription-space-initiated#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -61597,10 +61970,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription-space-initiated#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -61654,10 +62023,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription-space-initiated#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -61710,10 +62075,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription-space-initiated#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -61755,10 +62116,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription-space-initiated#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -61809,10 +62166,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription-space-initiated#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -61857,10 +62210,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -61908,10 +62257,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -61948,10 +62293,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft#introspect-wsdl"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/wsdl_services"
@@ -62010,10 +62351,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -62074,10 +62411,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -62125,10 +62458,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -62169,10 +62498,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -62220,10 +62545,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -62264,10 +62585,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -62309,10 +62626,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -62368,10 +62681,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -62422,10 +62731,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -62467,10 +62772,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -62526,10 +62827,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -62576,10 +62873,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#validate"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -62629,10 +62922,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#validate"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -62679,10 +62968,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -62732,10 +63017,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-product#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -62780,10 +63061,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#create"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/api_type"
@@ -62861,10 +63138,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -62912,10 +63185,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -62956,10 +63225,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -63007,10 +63272,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -63051,10 +63312,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -63096,10 +63353,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#update"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/api_type"
@@ -63166,10 +63419,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -63220,10 +63469,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -63265,10 +63510,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#update-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/api_type"
@@ -63335,10 +63576,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -63385,10 +63622,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#validate"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -63438,10 +63671,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#validate"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -63488,10 +63717,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#add-target-service"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/wsdl_service"
@@ -63558,10 +63783,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#add-target-service"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/wsdl_service"
@@ -63581,6 +63802,119 @@
         },
         "responses": {
           "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DraftAPIDocument"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DraftAPIDocument"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Drafts",
+          "Resource: Draft API by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/drafts/draft-apis/{draft-api-id}/update-wsdl": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/draft-api-id"
+        }
+      ],
+      "post": {
+        "summary": "Update with a new wsdl",
+        "description": "Update with a new wsdl",
+        "operationId": "draft_api_updateWsdl",
+        "security": [
+          {
+            "oauth": [
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/TargetServiceMultipart"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DraftAPIDocument"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DraftAPIDocument"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Drafts",
+          "Resource: Draft API by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/drafts/draft-apis/{draft-api-name}/{draft-api-version}/update-wsdl": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/draft-api-name"
+        },
+        {
+          "$ref": "#/components/parameters/draft-api-version"
+        }
+      ],
+      "post": {
+        "summary": "Update with a new wsdl",
+        "description": "Update with a new wsdl",
+        "operationId": "draft_api_updateWsdlByNameVersion",
+        "security": [
+          {
+            "oauth": [
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/TargetServiceMultipart"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
             "description": "Success",
             "content": {
               "application/json": {
@@ -63625,10 +63959,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -63678,10 +64008,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -63728,10 +64054,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#wsdl"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -63783,10 +64105,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/draft-api#wsdl"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -63836,10 +64154,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -63849,6 +64163,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/expand"
           }
         ],
         "responses": {
@@ -63887,10 +64204,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -63934,10 +64247,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -63947,6 +64256,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/expand"
           }
         ],
         "responses": {
@@ -63985,10 +64297,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -64032,10 +64340,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -64077,10 +64381,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -64131,10 +64431,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -64188,10 +64484,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -64233,10 +64525,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -64287,10 +64575,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -64340,10 +64624,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#replace"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -64407,10 +64687,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#supersede"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -64474,10 +64750,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#set-migration-target"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -64541,10 +64813,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#migrate-subscriptions"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -64608,10 +64876,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#execute-migration-target"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -64664,10 +64928,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#replace"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -64734,10 +64994,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#supersede"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -64804,10 +65060,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#set-migration-target"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -64874,10 +65126,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#migrate-subscriptions"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -64944,10 +65192,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-catalog-scope#execute-migration-target"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -64997,10 +65241,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -65053,10 +65293,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -65104,10 +65340,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-catalog-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -65120,6 +65352,9 @@
           },
           {
             "$ref": "#/components/parameters/api_type"
+          },
+          {
+            "$ref": "#/components/parameters/expand"
           }
         ],
         "responses": {
@@ -65172,10 +65407,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -65185,6 +65416,12 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/api_type"
+          },
+          {
+            "$ref": "#/components/parameters/expand"
           }
         ],
         "responses": {
@@ -65237,10 +65474,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -65282,10 +65515,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -65353,10 +65582,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-catalog-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -65398,10 +65623,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-catalog-scope#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -65465,10 +65686,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -65521,10 +65738,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -65574,10 +65787,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#wsdl"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -65632,10 +65841,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#wsdl"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -65688,10 +65893,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -65701,6 +65902,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/expand"
           }
         ],
         "responses": {
@@ -65739,10 +65943,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#clear-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -65789,10 +65989,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -65802,6 +65998,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/expand"
           }
         ],
         "responses": {
@@ -65840,10 +66039,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -65890,10 +66085,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -65935,10 +66126,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -65989,10 +66176,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -66049,10 +66232,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -66094,10 +66273,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -66148,10 +66323,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#del-by-name-version"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -66204,10 +66375,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#replace"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -66274,10 +66441,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#supersede"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -66344,10 +66507,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#set-migration-target"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -66414,10 +66573,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#migrate-subscriptions"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -66484,10 +66639,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#execute-migration-target"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -66543,10 +66694,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#replace"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -66616,10 +66763,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#supersede"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -66689,10 +66832,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#set-migration-target"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -66762,10 +66901,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#migrate-subscriptions"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -66835,10 +66970,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-space-scope#execute-migration-target"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -66891,10 +67022,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -66950,10 +67077,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -67004,10 +67127,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-space-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -67020,6 +67139,9 @@
           },
           {
             "$ref": "#/components/parameters/api_type"
+          },
+          {
+            "$ref": "#/components/parameters/expand"
           }
         ],
         "responses": {
@@ -67075,10 +67197,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-space-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -67088,6 +67206,12 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/api_type"
+          },
+          {
+            "$ref": "#/components/parameters/expand"
           }
         ],
         "responses": {
@@ -67143,10 +67267,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-space-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -67188,10 +67308,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-space-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -67262,10 +67378,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-space-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -67307,10 +67419,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-space-scope#update-by-name-version"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -67377,10 +67485,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -67436,10 +67540,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -67492,10 +67592,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#wsdl"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -67553,10 +67649,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#wsdl"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -67598,10 +67690,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -67646,10 +67734,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -67700,10 +67784,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -67742,10 +67822,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#change-password"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -67779,10 +67855,6 @@
         "summary": "Reset password",
         "description": "Reset password",
         "operationId": "me_resetPassword",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#reset-password"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -67823,10 +67895,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#sign-out"
-        },
         "responses": {
           "204": {
             "description": "Success"
@@ -67857,10 +67925,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/my-permission#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -67911,10 +67975,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/my-task#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -67965,10 +68025,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/originated-task#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -68013,10 +68069,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/my-org#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -68067,10 +68119,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/my-catalog#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -68121,10 +68169,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/my-space#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -68185,10 +68229,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/webhook-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -68252,10 +68292,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/webhook-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -68298,10 +68334,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/webhook-catalog-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -68363,10 +68395,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/primary-event-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -68431,10 +68459,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/primary-event-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -68490,10 +68514,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/primary-event-configured-gateway-service-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -68561,10 +68581,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/primary-event-configured-gateway-service-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -68620,10 +68636,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscriber-event-catalog-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -68691,10 +68703,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscriber-event-catalog-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -68729,6 +68737,15 @@
   },
   "components": {
     "parameters": {
+      "notification-language": {
+        "name": "notification-language",
+        "in": "path",
+        "description": "Notification Language name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
       "X-IBM-Client-Id": {
         "name": "X-IBM-Client-Id",
         "in": "header",
@@ -69245,7 +69262,7 @@
       "gateway_type": {
         "name": "gateway_type",
         "in": "query",
-        "description": "The type of the gateway (datapower-gateway, datapower-api-gateway)",
+        "description": "The type of the gateway (datapower-gateway, datapower-api-gateway, event-gateway)",
         "required": false,
         "schema": {
           "type": "string"
@@ -70183,6 +70200,13 @@
           "consumer_org": {
             "type": "string"
           },
+          "state": {
+            "type": "string",
+            "enum": [
+              "active",
+              "pending"
+            ]
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -70418,7 +70442,8 @@
             "type": "string",
             "enum": [
               "datapower-gateway",
-              "datapower-api-gateway"
+              "datapower-api-gateway",
+              "event-gateway"
             ]
           },
           "oai_version": {
@@ -70595,6 +70620,31 @@
           "catalog_url": {
             "type": "string",
             "format": "uri"
+          },
+          "oauth_providers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "provider_type": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            }
           },
           "metadata": {
             "type": "object",
@@ -70853,7 +70903,48 @@
             "format": "uri"
           },
           "consumer_org": {
-            "$ref": "#/components/schemas/ConsumerOrg"
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          },
+          "credentials": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "client_id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            }
           },
           "metadata": {
             "type": "object",
@@ -71458,6 +71549,9 @@
               },
               "webhook_state": {
                 "type": "string"
+              },
+              "service_version": {
+                "type": "string"
               }
             }
           },
@@ -71490,6 +71584,23 @@
           },
           "consumer_self_service_onboarding": {
             "type": "boolean"
+          },
+          "consumer_self_service_onboarding_approval": {
+            "type": "boolean"
+          },
+          "consumer_org_invitations_enabled": {
+            "type": "boolean"
+          },
+          "consumer_org_invitation_roles": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "administrator",
+                "developer",
+                "viewer"
+              ]
+            }
           },
           "invitation_ttl": {
             "type": "integer",
@@ -71530,7 +71641,8 @@
               },
               "unenforced_api_base_endpoint": {
                 "type": "string",
-                "format": "uri"
+                "format": "uri",
+                "nullable": true
               }
             }
           },
@@ -71681,6 +71793,10 @@
           "provision_sandbox_catalog": {
             "type": "boolean"
           },
+          "restrict_member_manage_permission": {
+            "type": "boolean",
+            "default": false
+          },
           "access_token_expires_in": {
             "type": "integer",
             "minimum": 0,
@@ -71777,6 +71893,15 @@
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
+                    "endpoint_type": {
+                      "type": "string",
+                      "enum": [
+                        "http",
+                        "syslog_udp",
+                        "syslog_tcp",
+                        "syslog_tls"
+                      ]
+                    },
                     "endpoint": {
                       "$ref": "#/components/schemas/SecuredEndpoint"
                     },
@@ -71787,7 +71912,10 @@
                       },
                       "nullable": true
                     }
-                  }
+                  },
+                  "required": [
+                    "endpoint"
+                  ]
                 }
               }
             }
@@ -71939,6 +72067,10 @@
           },
           "user_registry_managed": {
             "type": "boolean"
+          },
+          "external_group_mapping_enabled": {
+            "type": "boolean",
+            "default": false
           },
           "onboarding": {
             "type": "string",
@@ -72209,6 +72341,10 @@
           "user_registry_managed": {
             "type": "boolean"
           },
+          "external_group_mapping_enabled": {
+            "type": "boolean",
+            "default": false
+          },
           "onboarding": {
             "type": "string",
             "nullable": true,
@@ -72354,8 +72490,7 @@
             "type": "string"
           },
           "catalog_base": {
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "sni": {
             "type": "array",
@@ -72465,18 +72600,24 @@
           },
           "events": {
             "type": "object",
-            "sent_events": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/SubscriberEvent"
-              }
-            },
-            "queued_events": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/SubscriberEvent"
+            "properties": {
+              "sent_events": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SubscriberEvent"
+                }
+              },
+              "queued_events": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SubscriberEvent"
+                }
               }
             }
+          },
+          "service_version": {
+            "type": "string",
+            "nullable": true
           },
           "metadata": {
             "type": "object",
@@ -72608,7 +72749,22 @@
                 "type": "boolean"
               },
               "default_validator_endpoint": {
-                "$ref": "#/components/schemas/SecuredEndpoint"
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true,
+                "required": [
+                  "endpoint"
+                ],
+                "properties": {
+                  "endpoint": {
+                    "type": "string"
+                  },
+                  "tls_client_profile_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "nullable": true
+                  }
+                }
               },
               "request_query": {
                 "type": "string"
@@ -72723,7 +72879,22 @@
                     "type": "string"
                   },
                   "third_party_endpoint": {
-                    "$ref": "#/components/schemas/SecuredEndpoint"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "nullable": true,
+                    "required": [
+                      "endpoint"
+                    ],
+                    "properties": {
+                      "endpoint": {
+                        "type": "string"
+                      },
+                      "tls_client_profile_url": {
+                        "type": "string",
+                        "format": "uri",
+                        "nullable": true
+                      }
+                    }
                   },
                   "application_revocation": {
                     "type": "object",
@@ -72843,7 +73014,22 @@
                     }
                   },
                   "external_endpoint": {
-                    "$ref": "#/components/schemas/SecuredEndpoint"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "nullable": true,
+                    "required": [
+                      "endpoint"
+                    ],
+                    "properties": {
+                      "endpoint": {
+                        "type": "string"
+                      },
+                      "tls_client_profile_url": {
+                        "type": "string",
+                        "format": "uri",
+                        "nullable": true
+                      }
+                    }
                   },
                   "header_name_token": {
                     "type": "string"
@@ -73015,7 +73201,22 @@
                 "format": "uri"
               },
               "introspection_endpoint": {
-                "$ref": "#/components/schemas/SecuredEndpoint"
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true,
+                "required": [
+                  "endpoint"
+                ],
+                "properties": {
+                  "endpoint": {
+                    "type": "string"
+                  },
+                  "tls_client_profile_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "nullable": true
+                  }
+                }
               },
               "security": {
                 "type": "array",
@@ -73079,6 +73280,10 @@
                     }
                   }
                 }
+              },
+              "auth_header_pass_thru": {
+                "type": "boolean",
+                "default": false
               },
               "introspect_cache_type": {
                 "type": "string",
@@ -73774,6 +73979,17 @@
               }
             }
           },
+          "remote_api": {
+            "type": "object",
+            "properties": {
+              "endpoint": {
+                "type": "string"
+              },
+              "auth_header": {
+                "type": "string"
+              }
+            }
+          },
           "api_type": {
             "type": "string",
             "enum": [
@@ -73783,11 +73999,15 @@
               "asyncapi"
             ]
           },
+          "enforced": {
+            "type": "boolean"
+          },
           "gateway_type": {
             "type": "string",
             "enum": [
               "datapower-gateway",
-              "datapower-api-gateway"
+              "datapower-api-gateway",
+              "event-gateway"
             ]
           },
           "oai_version": {
@@ -73918,7 +74138,8 @@
               "type": "string",
               "enum": [
                 "datapower-gateway",
-                "datapower-api-gateway"
+                "datapower-api-gateway",
+                "event-gateway"
               ]
             }
           },
@@ -74371,6 +74592,10 @@
             "type": "string",
             "format": "uri"
           },
+          "service_version": {
+            "type": "string",
+            "nullable": true
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -74488,6 +74713,13 @@
               "format": "uri"
             }
           },
+          "global_policy_error_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
           "org_url": {
             "type": "string",
             "format": "uri"
@@ -74539,6 +74771,99 @@
             "items": {
               "$ref": "#/components/schemas/GlobalPolicy"
             }
+          }
+        }
+      },
+      "GlobalPolicyError": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "global_policy_error"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "scope": {
+            "type": "string"
+          },
+          "global_policy_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "user_registry_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "tls_client_profile_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "policy_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "org_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "catalog_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "space_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
           }
         }
       },
@@ -76114,7 +76439,22 @@
                 "type": "boolean"
               },
               "default_validator_endpoint": {
-                "$ref": "#/components/schemas/SecuredEndpoint"
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true,
+                "required": [
+                  "endpoint"
+                ],
+                "properties": {
+                  "endpoint": {
+                    "type": "string"
+                  },
+                  "tls_client_profile_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "nullable": true
+                  }
+                }
               },
               "request_query": {
                 "type": "string"
@@ -76229,7 +76569,22 @@
                     "type": "string"
                   },
                   "third_party_endpoint": {
-                    "$ref": "#/components/schemas/SecuredEndpoint"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "nullable": true,
+                    "required": [
+                      "endpoint"
+                    ],
+                    "properties": {
+                      "endpoint": {
+                        "type": "string"
+                      },
+                      "tls_client_profile_url": {
+                        "type": "string",
+                        "format": "uri",
+                        "nullable": true
+                      }
+                    }
                   },
                   "application_revocation": {
                     "type": "object",
@@ -76349,7 +76704,22 @@
                     }
                   },
                   "external_endpoint": {
-                    "$ref": "#/components/schemas/SecuredEndpoint"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "nullable": true,
+                    "required": [
+                      "endpoint"
+                    ],
+                    "properties": {
+                      "endpoint": {
+                        "type": "string"
+                      },
+                      "tls_client_profile_url": {
+                        "type": "string",
+                        "format": "uri",
+                        "nullable": true
+                      }
+                    }
                   },
                   "header_name_token": {
                     "type": "string"
@@ -76519,7 +76889,22 @@
                 "format": "uri"
               },
               "introspection_endpoint": {
-                "$ref": "#/components/schemas/SecuredEndpoint"
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true,
+                "required": [
+                  "endpoint"
+                ],
+                "properties": {
+                  "endpoint": {
+                    "type": "string"
+                  },
+                  "tls_client_profile_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "nullable": true
+                  }
+                }
               },
               "security": {
                 "type": "array",
@@ -76583,6 +76968,10 @@
                     }
                   }
                 }
+              },
+              "auth_header_pass_thru": {
+                "type": "boolean",
+                "default": false
               },
               "introspect_cache_type": {
                 "type": "string",
@@ -77381,6 +77770,10 @@
             "type": "string",
             "format": "uri"
           },
+          "service_version": {
+            "type": "string",
+            "nullable": true
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -77618,7 +78011,8 @@
               "type": "string",
               "enum": [
                 "datapower-gateway",
-                "datapower-api-gateway"
+                "datapower-api-gateway",
+                "event-gateway"
               ]
             }
           },
@@ -77735,6 +78129,92 @@
                       }
                     }
                   }
+                }
+              }
+            }
+          },
+          "apis": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            }
+          },
+          "approval_history": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "user": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "username": {
+                      "type": "string"
+                    },
+                    "first_name": {
+                      "type": "string"
+                    },
+                    "last_name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "target_life_cycle": {
+                  "type": "string",
+                  "enum": [
+                    "staged",
+                    "published",
+                    "deprecated",
+                    "retired",
+                    "archived",
+                    "replace",
+                    "supersede"
+                  ]
+                },
+                "user_action": {
+                  "type": "string",
+                  "enum": [
+                    "requested",
+                    "approved",
+                    "rejected",
+                    "cancelled"
+                  ]
+                },
+                "comment": {
+                  "type": "string"
+                },
+                "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "display_text": {
+                  "type": "string"
                 }
               }
             }
@@ -79127,7 +79607,8 @@
             "enum": [
               "product_lifecycle",
               "subscription",
-              "application_lifecycle"
+              "application_lifecycle",
+              "consumer_onboarding"
             ]
           },
           "state": {
@@ -80526,9 +81007,27 @@
                 "throttling",
                 "api_protection_source",
                 "external_oauth_mgmt",
-                "policy_visibility"
+                "policy_visibility",
+                "product_replace_v2",
+                "product_retire_optimized",
+                "global_policy_error",
+                "product_migrate_subscriptions",
+                "execute_migration_target"
               ]
             }
+          },
+          "apic_version": {
+            "type": "string"
+          },
+          "available_webhook_features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "service_version": {
+            "type": "string",
+            "nullable": true
           },
           "metadata": {
             "type": "object",
@@ -82562,7 +83061,8 @@
             "type": "string",
             "enum": [
               "datapower-gateway",
-              "datapower-api-gateway"
+              "datapower-api-gateway",
+              "event-gateway"
             ]
           }
         }
@@ -82576,6 +83076,10 @@
             "format": "uri"
           },
           "new_owner_member_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "new_owner_user_url": {
             "type": "string",
             "format": "uri"
           },
@@ -82871,6 +83375,130 @@
       "SendEmailResponse": {
         "type": "object",
         "additionalProperties": false
+      },
+      "EmailToOwners": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "consumer_org_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "consumer_group_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "subject": {
+            "type": "string",
+            "minLength": 1
+          },
+          "body": {
+            "type": "string",
+            "minLength": 1
+          },
+          "content_type": {
+            "type": "string",
+            "enum": [
+              "text",
+              "html"
+            ]
+          }
+        },
+        "required": [
+          "subject",
+          "body",
+          "content_type"
+        ]
+      },
+      "EmailToOwnersResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "num_emails_sent": {
+            "type": "integer"
+          },
+          "failed_emails": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "org_url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "owner_email": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "EmailProviderOrgOwners": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "org_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "subject": {
+            "type": "string",
+            "minLength": 1
+          },
+          "body": {
+            "type": "string",
+            "minLength": 1
+          },
+          "content_type": {
+            "type": "string",
+            "enum": [
+              "text",
+              "html"
+            ]
+          }
+        },
+        "required": [
+          "org_urls",
+          "subject",
+          "body",
+          "content_type"
+        ]
+      },
+      "EmailProviderOrgOwnersResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "num_emails_sent": {
+            "type": "integer"
+          },
+          "failed_emails": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "org_url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "owner_email": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
       },
       "MailServerSavedTestConnection": {
         "type": "object",
@@ -83559,6 +84187,119 @@
             "type": "string"
           }
         }
+      },
+      "NotificationLanguage": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "notification_language"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "scope": {
+            "type": "string"
+          },
+          "variables": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "subject": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "notification_template_name": {
+            "type": "string"
+          },
+          "notification_template_type": {
+            "type": "string"
+          },
+          "org_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "catalog_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "space_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "consumer_org_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "notification_template_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "NotificationLanguageList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NotificationLanguage"
+            }
+          }
+        }
       }
     },
     "responses": {
@@ -83573,6 +84314,136 @@
           "application/yaml": {
             "schema": {
               "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "oauth": {
+        "type": "oauth2",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "/api/oauth2/authorize",
+            "scopes": {
+              "api-analytics:view": "Create an Analytics object",
+              "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
+              "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
+              "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
+              "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
+              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id",
+              "child:create": "Create a Catalog object, Create a Space object",
+              "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
+              "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
+              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
+              "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
+              "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
+              "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id",
+              "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
+              "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
+              "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
+              "product:view": "List all Product objects in all collections, List the Product objects, Get the Product object by id, Get the Product object by name and version, List all API objects in all collections, List the API objects, Get the API object by id, Get the API object by name and version",
+              "provider-org:manage": "Create an Organization Invitation object, Clear the Organization Invitation objects, Update the Organization Invitation object by name or id, Delete the Organization Invitation object by name or id, Create a Group object, Clear the Group objects, Update the Group object by name or id, Delete the Group object by name or id",
+              "provider-org:view": "List the Organization Invitation objects, Get the Organization Invitation object by name or id, List the Group objects, Get the Group object by name or id",
+              "webhook:manage": "Create a Webhook object, Update the Webhook object by name or id, Delete the Webhook object by name or id",
+              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id, List the Snapshot objects, Get the Snapshot object by name or id"
+            }
+          },
+          "password": {
+            "tokenUrl": "/api/token",
+            "refreshUrl": "/api/token",
+            "scopes": {
+              "api-analytics:view": "Create an Analytics object",
+              "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
+              "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
+              "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
+              "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
+              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id",
+              "child:create": "Create a Catalog object, Create a Space object",
+              "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
+              "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
+              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
+              "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
+              "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
+              "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id",
+              "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
+              "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
+              "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
+              "product:view": "List all Product objects in all collections, List the Product objects, Get the Product object by id, Get the Product object by name and version, List all API objects in all collections, List the API objects, Get the API object by id, Get the API object by name and version",
+              "provider-org:manage": "Create an Organization Invitation object, Clear the Organization Invitation objects, Update the Organization Invitation object by name or id, Delete the Organization Invitation object by name or id, Create a Group object, Clear the Group objects, Update the Group object by name or id, Delete the Group object by name or id",
+              "provider-org:view": "List the Organization Invitation objects, Get the Organization Invitation object by name or id, List the Group objects, Get the Group object by name or id",
+              "webhook:manage": "Create a Webhook object, Update the Webhook object by name or id, Delete the Webhook object by name or id",
+              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id, List the Snapshot objects, Get the Snapshot object by name or id"
+            }
+          },
+          "clientCredentials": {
+            "tokenUrl": "/api/token",
+            "scopes": {
+              "api-analytics:view": "Create an Analytics object",
+              "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
+              "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
+              "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
+              "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
+              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id",
+              "child:create": "Create a Catalog object, Create a Space object",
+              "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
+              "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
+              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
+              "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
+              "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
+              "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id",
+              "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
+              "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
+              "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
+              "product:view": "List all Product objects in all collections, List the Product objects, Get the Product object by id, Get the Product object by name and version, List all API objects in all collections, List the API objects, Get the API object by id, Get the API object by name and version",
+              "provider-org:manage": "Create an Organization Invitation object, Clear the Organization Invitation objects, Update the Organization Invitation object by name or id, Delete the Organization Invitation object by name or id, Create a Group object, Clear the Group objects, Update the Group object by name or id, Delete the Group object by name or id",
+              "provider-org:view": "List the Organization Invitation objects, Get the Organization Invitation object by name or id, List the Group objects, Get the Group object by name or id",
+              "webhook:manage": "Create a Webhook object, Update the Webhook object by name or id, Delete the Webhook object by name or id",
+              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id, List the Snapshot objects, Get the Snapshot object by name or id"
+            }
+          },
+          "authorizationCode": {
+            "authorizationUrl": "/api/oauth2/authorize",
+            "tokenUrl": "/api/token",
+            "refreshUrl": "/api/token",
+            "scopes": {
+              "api-analytics:view": "Create an Analytics object",
+              "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
+              "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
+              "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
+              "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
+              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id",
+              "child:create": "Create a Catalog object, Create a Space object",
+              "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
+              "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
+              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
+              "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
+              "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
+              "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id",
+              "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
+              "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
+              "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
+              "product:view": "List all Product objects in all collections, List the Product objects, Get the Product object by id, Get the Product object by name and version, List all API objects in all collections, List the API objects, Get the API object by id, Get the API object by name and version",
+              "provider-org:manage": "Create an Organization Invitation object, Clear the Organization Invitation objects, Update the Organization Invitation object by name or id, Delete the Organization Invitation object by name or id, Create a Group object, Clear the Group objects, Update the Group object by name or id, Delete the Group object by name or id",
+              "provider-org:view": "List the Organization Invitation objects, Get the Organization Invitation object by name or id, List the Group objects, Get the Group object by name or id",
+              "webhook:manage": "Create a Webhook object, Update the Webhook object by name or id, Delete the Webhook object by name or id",
+              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id, List the Snapshot objects, Get the Snapshot object by name or id"
             }
           }
         }
@@ -83621,10 +84492,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -83669,10 +84536,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -83723,10 +84586,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -83765,10 +84624,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#change-password"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -83802,10 +84657,6 @@
         "summary": "Reset password",
         "description": "Reset password",
         "operationId": "me_resetPassword",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#reset-password"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -83846,10 +84697,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/me#sign-out"
-        },
         "responses": {
           "204": {
             "description": "Success"
@@ -83880,10 +84727,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/my-permission#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -83934,10 +84777,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/my-org#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -83993,10 +84832,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/my-org#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -84040,10 +84875,6 @@
         "summary": "List all Permission objects in all collections",
         "description": "List all Permission objects in all collections",
         "operationId": "permission_listAll",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -84087,10 +84918,6 @@
         "summary": "List the Permission objects",
         "description": "List the Permission objects",
         "operationId": "permission_listOrgSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-org-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -84139,10 +84966,6 @@
         "summary": "Get the Permission object by name or id",
         "description": "Get the Permission object by name or id",
         "operationId": "permission_getOrgSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-org-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -84180,10 +85003,6 @@
         "summary": "List the Permission objects",
         "description": "List the Permission objects",
         "operationId": "permission_listConsumerSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-consumer-subcollection#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -84232,10 +85051,6 @@
         "summary": "Get the Permission object by name or id",
         "description": "Get the Permission object by name or id",
         "operationId": "permission_getConsumerSubcollection",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/permission-consumer-subcollection#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -84272,10 +85087,6 @@
         "summary": "Generate a token",
         "description": "Generate a token",
         "operationId": "oauth2_token",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth2#token"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -84306,6 +85117,9 @@
               }
             }
           },
+          "201": {
+            "description": "Success"
+          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -84321,10 +85135,6 @@
         "summary": "Authorization provider redirect endpoint",
         "description": "Authorization provider redirect endpoint",
         "operationId": "oauth2_redirect_get",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth2#redirect"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/state"
@@ -84365,10 +85175,6 @@
         "summary": "Authorization provider redirect endpoint",
         "description": "Authorization provider redirect endpoint",
         "operationId": "oauth2_redirect_post",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/oauth2#redirect"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/state"
@@ -84420,10 +85226,6 @@
         "summary": "APIC authorization endpoint",
         "description": "APIC authorize endpoint",
         "operationId": "oauth2_authorize",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#identity-provider-list-provider"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/client_id"
@@ -84491,10 +85293,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -84536,10 +85334,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#update"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -84595,10 +85389,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#del"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/cascade"
@@ -84647,10 +85437,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/org#transfer-owner"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -84709,10 +85495,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/group#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -84754,10 +85536,6 @@
         "summary": "Register using the Organization Invitation",
         "description": "Register using the Organization Invitation",
         "operationId": "invitation_registerOrgScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#register"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -84821,10 +85599,6 @@
         "summary": "Accept using the Organization Invitation",
         "description": "Accept using the Organization Invitation",
         "operationId": "invitation_acceptOrgScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/invitation-org-scope#accept"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -84896,10 +85670,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -84955,10 +85725,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -85006,10 +85772,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -85050,10 +85812,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -85095,10 +85853,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -85145,10 +85899,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#regenerate"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -85202,10 +85952,6 @@
         "summary": "Register using the Member Invitation",
         "description": "Register using the Member Invitation",
         "operationId": "member_invitation_registerOrgScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#register"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -85272,10 +86018,6 @@
         "summary": "Accept using the Member Invitation",
         "description": "Accept using the Member Invitation",
         "operationId": "member_invitation_acceptOrgScope",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-invitation-org-scope#accept"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/X-IBM-Client-Id"
@@ -85342,10 +86084,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -85401,10 +86139,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -85453,10 +86187,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user-registry#search"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/offset"
@@ -85526,10 +86256,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -85566,10 +86292,6 @@
         "summary": "Sign up a user",
         "description": "Sign up a user",
         "operationId": "user_signUp",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/sign-up"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -85586,6 +86308,9 @@
         },
         "responses": {
           "204": {
+            "description": "Success"
+          },
+          "201": {
             "description": "Success"
           },
           "5XX": {
@@ -85608,10 +86333,6 @@
         "summary": "Activates the sign up",
         "description": "Activates the sign up",
         "operationId": "user_activate",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/activate"
-        },
         "responses": {
           "204": {
             "description": "Success"
@@ -85631,10 +86352,6 @@
         "summary": "Send reset password link",
         "description": "Send reset password link",
         "operationId": "user_requestPasswordReset",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#request-password-reset"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -85668,10 +86385,6 @@
         "summary": "Send reset password link to consumer",
         "description": "Send reset password link to consumer",
         "operationId": "user_requestPasswordResetNoEmail",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#request-password-reset"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -85717,10 +86430,6 @@
         "summary": "List Identity Providers in the consumer realm",
         "description": "List Identity Providers in the consumer realm",
         "operationId": "user_registry_identityProviderListCatalog",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/user#identity-provider-list-consumer"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -85776,10 +86485,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/associate-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -85838,10 +86543,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/associate-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -85891,10 +86592,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -85950,10 +86647,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -86001,10 +86694,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -86048,10 +86737,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -86093,10 +86778,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -86147,10 +86828,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/member-org-scope#del"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/cascade"
@@ -86189,65 +86866,6 @@
           "$ref": "#/components/parameters/org"
         }
       ],
-      "post": {
-        "summary": "Create a Role object",
-        "description": "Create a Role object",
-        "operationId": "role_createOrgScope",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#create"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Role"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/Role"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Role"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Role"
-                }
-              }
-            },
-            "headers": {
-              "Location": {
-                "$ref": "#/components/headers/Location"
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Management",
-          "Resource: Role (Org Scope)"
-        ]
-      },
       "get": {
         "summary": "List the Role objects",
         "description": "List the Role objects",
@@ -86259,10 +86877,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -86298,39 +86912,6 @@
           "Organization Management",
           "Resource: Role (Org Scope)"
         ]
-      },
-      "delete": {
-        "summary": "Clear the Role objects",
-        "description": "Clear the Role objects",
-        "operationId": "role_clearOrgScope",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#clear"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/confirm"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Success"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Management",
-          "Resource: Role (Org Scope)"
-        ]
       }
     },
     "/orgs/{org}/roles/{role}": {
@@ -86354,10 +86935,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -86387,100 +86964,6 @@
           "Organization Management",
           "Resource: Role (Org Scope)"
         ]
-      },
-      "patch": {
-        "summary": "Update the Role object by name or id",
-        "description": "Update the Role object by name or id",
-        "operationId": "role_updateOrgScope",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#update"
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Role"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/Role"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Role"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Role"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Management",
-          "Resource: Role (Org Scope)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Role object by name or id",
-        "description": "Delete the Role object by name or id",
-        "operationId": "role_delOrgScope",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/role-org-scope#del"
-        },
-        "responses": {
-          "200": {
-            "description": "Successful delete",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Role"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Role"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Management",
-          "Resource: Role (Org Scope)"
-        ]
       }
     },
     "/public-products": {
@@ -86489,10 +86972,6 @@
         "summary": "List all Product objects in all collections",
         "description": "List all Product objects in all collections",
         "operationId": "product_listAll",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -86541,10 +87020,6 @@
         "summary": "List the Product objects",
         "description": "List the Product objects",
         "operationId": "product_list",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -86593,10 +87068,6 @@
         "summary": "Get the Product object by id",
         "description": "Get the Product object by id",
         "operationId": "product_get",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -86642,10 +87113,6 @@
         "summary": "Get the Product object by name and version",
         "description": "Get the Product object by name and version",
         "operationId": "product_getByNameVersion",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -86687,10 +87154,6 @@
         "summary": "Get the Product document",
         "description": "Get the Product document",
         "operationId": "product_getDocument",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -86730,10 +87193,6 @@
         "summary": "Get the Product document by name and version",
         "description": "Get the Product document by name and version",
         "operationId": "product_getDocumentByNameVersion",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -86766,10 +87225,6 @@
         "summary": "List all API objects in all collections",
         "description": "List all API objects in all collections",
         "operationId": "api_listAll",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -86821,10 +87276,6 @@
         "summary": "List the API objects",
         "description": "List the API objects",
         "operationId": "api_list",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -86873,10 +87324,6 @@
         "summary": "Get the API object by id",
         "description": "Get the API object by id",
         "operationId": "api_get",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -86922,10 +87369,6 @@
         "summary": "Get the API object by name and version",
         "description": "Get the API object by name and version",
         "operationId": "api_getByNameVersion",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -86967,10 +87410,6 @@
         "summary": "Get the API document",
         "description": "Get the API document",
         "operationId": "api_getDocument",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -87010,10 +87449,6 @@
         "summary": "Get the API document by name and version",
         "description": "Get the API document by name and version",
         "operationId": "api_getDocumentByNameVersion",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -87050,10 +87485,6 @@
         "summary": "Get the API wsdl document",
         "description": "Get the API wsdl document",
         "operationId": "api_getWsdl",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#wsdl"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/endpoint"
@@ -87100,10 +87531,6 @@
         "summary": "Get the API wsdl document by name and version",
         "description": "Get the API wsdl document by name and version",
         "operationId": "api_getWsdlByNameVersion",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#wsdl"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/endpoint"
@@ -87150,10 +87577,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-org-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -87209,10 +87632,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -87268,10 +87687,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -87324,10 +87739,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product-org-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -87376,10 +87787,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -87426,10 +87833,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/product#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -87469,10 +87872,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-org-scope#list-all"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -87531,10 +87930,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-org-scope#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -87590,10 +87985,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-org-scope#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -87646,10 +88037,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api-org-scope#get-by-name-version"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -87698,10 +88085,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -87748,10 +88131,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#document"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -87795,10 +88174,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#wsdl"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/endpoint"
@@ -87852,10 +88227,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/api#wsdl"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/endpoint"
@@ -87907,10 +88278,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -87966,10 +88333,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -88017,10 +88380,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -88061,10 +88420,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -88106,10 +88461,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -88160,10 +88511,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/app#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -88196,10 +88543,6 @@
         "summary": "List the Application Type objects",
         "description": "List the Application Type objects",
         "operationId": "application_type_list",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/application-type#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -88248,10 +88591,6 @@
         "summary": "Get the Application Type object by name or id",
         "description": "Get the Application Type object by name or id",
         "operationId": "application_type_get",
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/application-type#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -88304,10 +88643,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -88363,10 +88698,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -88414,10 +88745,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -88461,10 +88788,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -88506,10 +88829,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -88560,10 +88879,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -88613,10 +88928,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#reset"
-        },
         "responses": {
           "201": {
             "description": "Success",
@@ -88671,10 +88982,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#reset-client-secret"
-        },
         "responses": {
           "201": {
             "description": "Success",
@@ -88729,10 +89036,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#verify-client-secret"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -88799,10 +89102,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -88858,10 +89157,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -88909,10 +89204,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#clear"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
@@ -88956,10 +89247,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -89001,10 +89288,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -89055,10 +89338,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/subscription#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -89098,10 +89377,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/billing#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -89157,10 +89432,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/billing#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -89210,10 +89481,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method#create"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -89269,10 +89536,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -89331,10 +89594,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -89376,10 +89635,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method#update"
-        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -89430,10 +89685,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method#del"
-        },
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -89473,10 +89724,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method-type#list"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -89532,10 +89779,6 @@
             ]
           }
         ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/payment-method-type#get"
-        },
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -92633,11 +92876,11 @@
           },
           "info": {
             "$ref": "#/components/schemas/InfoSection"
+          },
+          "configuration_schema": {
+            "type": "object",
+            "additionalProperties": true
           }
-        },
-        "configuration_schema": {
-          "type": "object",
-          "additionalProperties": true
         }
       },
       "InfoSection": {
@@ -92948,6 +93191,38 @@
           "application/yaml": {
             "schema": {
               "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "oauth": {
+        "type": "oauth2",
+        "flows": {
+          "password": {
+            "tokenUrl": "/consumer-api/token",
+            "refreshUrl": "/api/token",
+            "scopes": {
+              "app:manage": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Clear the Application Credential objects, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
+              "app:view": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
+              "my:manage": "Update the Me object, Delete the Me object",
+              "my:view": "Get the Me object, List the My Permission objects, List the My Organization objects",
+              "org:manage": "Create a My Organization object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
+              "org:view": "Get the Organization object by name or id, Get the Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the User Registry objects, Get the User Registry object by name or id, Get the User object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, Get the Billing object by name or id, List the Billing objects, List the Payment Method objects, Get the Payment Method object by name or id, List the Payment Method Type objects, Get the Payment Method Type object by name or id"
+            }
+          },
+          "authorizationCode": {
+            "authorizationUrl": "/consumer-api/oauth2/authorize",
+            "tokenUrl": "/consumer-api/token",
+            "refreshUrl": "/api/token",
+            "scopes": {
+              "app:manage": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Clear the Application Credential objects, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
+              "app:view": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
+              "my:manage": "Update the Me object, Delete the Me object",
+              "my:view": "Get the Me object, List the My Permission objects, List the My Organization objects",
+              "org:manage": "Create a My Organization object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
+              "org:view": "Get the Organization object by name or id, Get the Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the User Registry objects, Get the User Registry object by name or id, Get the User object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, Get the Billing object by name or id, List the Billing objects, List the Payment Method objects, Get the Payment Method object by name or id, List the Payment Method Type objects, Get the Payment Method Type object by name or id"
             }
           }
         }
@@ -94321,7 +94596,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_api_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=api-apic-apilist"
         },
         "responses": {
           "200": {
@@ -94401,7 +94676,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_api_get.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=api-apic-apiget"
         },
         "parameters": [
           {
@@ -94486,7 +94761,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_apic_config_get.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=config-apic-apic-configget"
         },
         "responses": {
           "200": {
@@ -94566,7 +94841,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_application_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=application-apic-applicationlist"
         },
         "responses": {
           "200": {
@@ -94635,7 +94910,7 @@
       ],
       "get": {
         "summary": "Get a specific application from a developer portal.",
-        "description": "Get a specific application from the developer portal of the provided org and catalog. The id of a specific consumer organization needs to be provided.",
+        "description": "Get a specific application from the developer portal of the provided org and catalog. The id of a specific application needs to be provided.",
         "operationId": "application_get",
         "security": [
           {
@@ -94646,7 +94921,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_application_get.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=application-apic-applicationget"
         },
         "parameters": [
           {
@@ -94731,7 +95006,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_consumer_org_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=org-apic-consumer-orglist"
         },
         "responses": {
           "200": {
@@ -94811,7 +95086,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_consumer_org_get.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=org-apic-consumer-orgget"
         },
         "parameters": [
           {
@@ -94889,7 +95164,7 @@
         "operationId": "custom_module_createExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_create-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-modulecreate-export"
         },
         "responses": {
           "201": {
@@ -94965,7 +95240,7 @@
         "operationId": "custom_module_getExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_get-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduleget-export"
         },
         "responses": {
           "200": {
@@ -95039,7 +95314,7 @@
         "operationId": "custom_module_deleteExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_delete-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduledelete-export"
         },
         "responses": {
           "204": {
@@ -95088,7 +95363,7 @@
         "operationId": "custom_module_getExportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_get-export-status.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduleget-export-status"
         },
         "responses": {
           "200": {
@@ -95191,7 +95466,7 @@
         "operationId": "custom_module_createImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_create-import.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-modulecreate-import"
         },
         "requestBody": {
           "content": {
@@ -95277,7 +95552,7 @@
         "operationId": "custom_module_deleteImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_delete-import.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduledelete-import"
         },
         "responses": {
           "204": {
@@ -95326,7 +95601,7 @@
         "operationId": "custom_module_getImportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_get-import-status.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduleget-import-status"
         },
         "responses": {
           "200": {
@@ -95429,7 +95704,7 @@
         "operationId": "custom_theme_createExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_create-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-modulecreate-export"
         },
         "responses": {
           "201": {
@@ -95505,7 +95780,7 @@
         "operationId": "custom_theme_getExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_get-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduleget-export"
         },
         "responses": {
           "200": {
@@ -95579,7 +95854,7 @@
         "operationId": "custom_theme_deleteExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_delete-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduledelete-export"
         },
         "responses": {
           "204": {
@@ -95628,7 +95903,7 @@
         "operationId": "custom_theme_getExportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_get-export-status.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduleget-export-status"
         },
         "responses": {
           "200": {
@@ -95731,7 +96006,7 @@
         "operationId": "custom_theme_createImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_create-import.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-modulecreate-import"
         },
         "requestBody": {
           "content": {
@@ -95817,7 +96092,7 @@
         "operationId": "custom_theme_deleteImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_delete-import.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduledelete-import"
         },
         "responses": {
           "204": {
@@ -95866,7 +96141,7 @@
         "operationId": "custom_theme_getImportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_get-import-status.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=module-apic-custom-moduleget-import-status"
         },
         "responses": {
           "200": {
@@ -95954,6 +96229,86 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/site/check": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Run a platform check against a portal site",
+        "description": "Performs filesystem, database and API Manager checks against a portal site. This command is useful when trying to identify platform related problems if you are having issues with your portal site.",
+        "operationId": "site_check",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=site-apic-sitecheck"
+        },
+        "responses": {
+          "200": {
+            "description": "Task has completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Site"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/entity/count": {
       "parameters": [
         {
@@ -95976,7 +96331,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_api_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=api-apic-apilist"
         },
         "responses": {
           "200": {
@@ -96034,6 +96389,86 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/security/clearbans": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Clear all bans for a site.",
+        "description": "Clear any existing User/IP bans.",
+        "operationId": "security_clearbans",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=security-apic-securityclear-bans"
+        },
+        "responses": {
+          "200": {
+            "description": "Successful output of the clearbans security command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Security"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/config/export": {
       "parameters": [
         {
@@ -96049,7 +96484,7 @@
         "operationId": "site_config_createExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_create-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=config-apic-site-configcreate-export"
         },
         "responses": {
           "201": {
@@ -96125,7 +96560,7 @@
         "operationId": "site_config_getExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_get-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=config-apic-site-configget-export"
         },
         "responses": {
           "200": {
@@ -96199,7 +96634,7 @@
         "operationId": "site_config_deleteExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_delete-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=config-apic-site-configdelete-export"
         },
         "responses": {
           "204": {
@@ -96248,7 +96683,7 @@
         "operationId": "site_config_getExportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_get-export-status.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=config-apic-site-configget-export-status"
         },
         "responses": {
           "200": {
@@ -96351,7 +96786,7 @@
         "operationId": "site_config_createImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_create-import.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=config-apic-site-configcreate-import"
         },
         "requestBody": {
           "content": {
@@ -96437,7 +96872,7 @@
         "operationId": "site_config_deleteImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_delete-import.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=config-apic-site-configdelete-import"
         },
         "responses": {
           "204": {
@@ -96486,7 +96921,7 @@
         "operationId": "site_config_getImportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_get-import-status.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=config-apic-site-configget-import-status"
         },
         "responses": {
           "200": {
@@ -96581,7 +97016,7 @@
         "operationId": "backups_list",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_backups_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=backups-apic-backupslist"
         },
         "parameters": [
           {
@@ -96651,7 +97086,7 @@
         "operationId": "platforms_list",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_platforms_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=platforms-apic-platformslist"
         },
         "parameters": [
           {
@@ -96736,7 +97171,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_product_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=product-apic-productlist"
         },
         "responses": {
           "200": {
@@ -96794,6 +97229,168 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/product/get": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get a specific product from a developer portal.",
+        "description": "Get a specific product from the developer portal of the provided org and catalog. The id or name:version of a specific api needs to be provided. e.g. 'id-of-api-called-example-3' or 'example:3.0.0'.",
+        "operationId": "product_get",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=product-apic-productget"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/product"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the get product command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Product"
+        ]
+      }
+    },
+    "/service/sites/check": {
+      "get": {
+        "summary": "Run a platform check against all portal sites present on a portal service.",
+        "description": "Performs filesystem, database and API Manager checks against all portal sites on a given portal service. This command is useful when trying to identify platform related problems on one of more of your portal sites.",
+        "operationId": "sites_check",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=sites-apic-sitescheck"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/portal_service_name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the check sites command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: sites"
+        ]
+      }
+    },
     "/service/sites/list": {
       "get": {
         "summary": "List the sites present on the Portal service.",
@@ -96801,7 +97398,7 @@
         "operationId": "sites_list",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_sites_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=sites-apic-siteslist"
         },
         "parameters": [
           {
@@ -96864,6 +97461,86 @@
         ]
       }
     },
+    "/service/ip-security-enabled": {
+      "post": {
+        "summary": "Enable or disable IP security functionality within the Developer Portal",
+        "description": "Enable or disable IP security functionality within the Developer Portal",
+        "operationId": "ip_security_enabled_update",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=enabled-apic-ip-security-enabledupdate"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/portal_service_name"
+          },
+          {
+            "$ref": "#/components/parameters/ip_security_enabled"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output message of the security functionality being set",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: IpSecurityEnabled"
+        ]
+      }
+    },
     "/service/php-memory/list": {
       "get": {
         "summary": "List the PHP memory limit on the platform.",
@@ -96878,7 +97555,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_php-memory_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=memory-apic-php-memorylist"
         },
         "parameters": [
           {
@@ -96955,7 +97632,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_php-memory_update.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=memory-apic-php-memoryupdate"
         },
         "parameters": [
           {
@@ -97021,6 +97698,320 @@
         ]
       }
     },
+    "/service/ip-allowlist/add": {
+      "post": {
+        "summary": "Add IP(s) to the allowlist.",
+        "description": "Add IP(s) to the allowlist",
+        "operationId": "ip_allowlist_add",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=allowlist-apic-service-ip-allowlistadd"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/portal_service_name"
+          },
+          {
+            "$ref": "#/components/parameters/ips"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Output from portal cli command request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: IpAllowlist"
+        ]
+      }
+    },
+    "/service/ip-allowlist/remove": {
+      "post": {
+        "summary": "Remove IP(s) from the allowlist.",
+        "description": "Remove IP(s) from the allowlist",
+        "operationId": "ip_allowlist_remove",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=allowlist-apic-service-ip-allowlistremove"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/portal_service_name"
+          },
+          {
+            "$ref": "#/components/parameters/ips"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Output from portal cli command request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: IpAllowlist"
+        ]
+      }
+    },
+    "/service/ip-allowlist": {
+      "delete": {
+        "summary": "Remove all IPs the allowlist.",
+        "description": "Remove all IPs from the allowlist",
+        "operationId": "ip_allowlist_singletonDel",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=allowlist-apic-service-ip-allowlistdelete"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/portal_service_name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Output from portal cli command request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: IpAllowlist"
+        ]
+      }
+    },
+    "/service/ip-allowlist/list": {
+      "get": {
+        "summary": "List IP(s) currently on the allowlist.",
+        "description": "List IP(s) currently on the allowlist.",
+        "operationId": "ip_allowlist_list",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=allowlist-apic-service-ip-allowlistlist"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/portal_service_name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Output from portal cli command request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: IpAllowlist"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/modules/list": {
       "parameters": [
         {
@@ -97043,7 +98034,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_modules_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=modules-apic-moduleslist"
         },
         "parameters": [
           {
@@ -97137,7 +98128,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_modules_enable.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=modules-apic-modulesenable"
         },
         "parameters": [
           {
@@ -97228,7 +98219,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_modules_disable.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=modules-apic-modulesdisable"
         },
         "parameters": [
           {
@@ -97313,7 +98304,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_modules_delete.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=modules-apic-modulesdelete"
         },
         "parameters": [
           {
@@ -97398,7 +98389,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_themes_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=themes-apic-themeslist"
         },
         "parameters": [
           {
@@ -97492,17 +98483,11 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_themes_enable.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=themes-apic-themesenable"
         },
         "parameters": [
           {
             "$ref": "#/components/parameters/themes"
-          },
-          {
-            "$ref": "#/components/parameters/resolve-dependencies"
-          },
-          {
-            "$ref": "#/components/parameters/skip"
           }
         ],
         "responses": {
@@ -97583,7 +98568,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_themes_disable.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=themes-apic-themesdisable"
         },
         "parameters": [
           {
@@ -97668,7 +98653,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_themes_delete.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=themes-apic-themesdelete"
         },
         "parameters": [
           {
@@ -97753,7 +98738,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_themes_set_default.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=themes-apic-themesset-default"
         },
         "parameters": [
           {
@@ -97989,9 +98974,26 @@
         "schema": {
           "type": "boolean"
         }
+      },
+      "ips": {
+        "name": "ips",
+        "in": "query",
+        "description": "Comma seperated list of IPs.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
       }
     },
     "schemas": {
+      "IpAllowlist": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "Security": {
+        "type": "object",
+        "additionalProperties": true
+      },
       "SiteConfig": {
         "type": "object",
         "additionalProperties": true
@@ -98076,10 +99078,6 @@
         }
       }
     }
-  },
-  "externalDocs": {
-    "description": "Additional documentation",
-    "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis"
   },
   "x-ibm-configuration": {
     "testable": false
