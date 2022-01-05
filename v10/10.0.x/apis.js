@@ -1,7 +1,7 @@
 /********************************************************* {COPYRIGHT-TOP} ***
  * Licensed Materials - Property of IBM
  *
- * (C) Copyright IBM Corporation 2017, 2021
+ * (C) Copyright IBM Corporation 2017, 2022
  *
  * All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or disclosure
@@ -9,7 +9,7 @@
  ********************************************************** {COPYRIGHT-END} **/
  window.apiConnectExplorer = {
   attachPoint: '#root',
-  options: { 
+  options: {
       renderSchemaView: true,
       headerTitle: "API Connect v10.0.x",
       headerActive: true,
@@ -25,6 +25,7 @@
         "10.0.1.x": "10.0.1.x.html",
         "10.0.2.0": "10.0.2.0.html",
         "10.0.3.0": "10.0.3.0.html",
+        "10.0.4.0": "10.0.4.0.html",
         "10.0.x": "10.0.x.html",
       }
     },
@@ -99,7 +100,7 @@
       },
       "put": {
         "summary": "Update the Log Spec object",
-        "description": "Update the Log Spec object",
+        "description": "Update the Log Spec object\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url",
         "operationId": "log_spec_singletonUpdate",
         "security": [
           {
@@ -157,7 +158,7 @@
       ],
       "post": {
         "summary": "Creates a user registry.",
-        "description": "Creates a user registry.",
+        "description": "Creates a user registry.\nRequired fields:\\ - integration_url\nFields not allowed:\\ - owned\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
         "operationId": "user_registry_create",
         "security": [
           {
@@ -340,7 +341,7 @@
       },
       "patch": {
         "summary": "Updates a user registry.",
-        "description": "Updates a user registry.",
+        "description": "Updates a user registry.\nFields not allowed:\\ - owned - registry_type - user_registry_managed - correlation_data - integration_url\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
         "operationId": "user_registry_update",
         "security": [
           {
@@ -741,7 +742,7 @@
       ],
       "post": {
         "summary": "Creates a user.",
-        "description": "Creates a user entry in a user registry. For user registries that are defined as <i>user managed</i>, a user record is also created in the backing (usually remote) user directory.",
+        "description": "Creates a user entry in a user registry. For user registries that are defined as <i>user managed</i>, a user record is also created in the backing (usually remote) user directory.\nRequired fields:\\ - username\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - user_registry_url",
         "operationId": "user_create",
         "security": [
           {
@@ -927,7 +928,7 @@
       },
       "patch": {
         "summary": "Updates a user.",
-        "description": "Updates a user entry. To change a user password, see the </tt>reset-password</tt> operation.",
+        "description": "Updates a user entry. To change a user password, see the </tt>reset-password</tt> operation.\nFields not allowed:\\ - identity_provider - username - salt - correlation_data - force_password_change - last_login_at\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - user_registry_url",
         "operationId": "user_update",
         "security": [
           {
@@ -1532,7 +1533,7 @@
       },
       "put": {
         "summary": "Update the Cloud Setting object",
-        "description": "Update the Cloud Setting object",
+        "description": "Update the Cloud Setting object\nFields not allowed to be null:\\ - email_sender - tls_client_profile_default_url\nFields not allowed:\\ - service_type - cloud_id\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url",
         "operationId": "cloud_setting_singletonUpdate",
         "security": [
           {
@@ -1956,7 +1957,7 @@
       },
       "put": {
         "summary": "Update the User Registry Setting object",
-        "description": "Update the User Registry Setting object",
+        "description": "Update the User Registry Setting object\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url",
         "operationId": "user_registry_setting_singletonUpdate",
         "security": [
           {
@@ -2002,6 +2003,100 @@
         "tags": [
           "Cloud Settings",
           "Resource: User Registry Setting"
+        ]
+      }
+    },
+    "/cloud/settings/notification-style": {
+      "description": "Notification Style object operations",
+      "get": {
+        "summary": "Get the Notification Style object",
+        "description": "Get the Notification Style object",
+        "operationId": "notification_style_singletonGetCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Style (Cloud Scope)"
+        ]
+      },
+      "put": {
+        "summary": "Update the Notification Style object",
+        "description": "Update the Notification Style object\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url",
+        "operationId": "notification_style_singletonUpdateCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationStyle"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationStyle"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Resource: Notification Style (Cloud Scope)"
         ]
       }
     },
@@ -2155,7 +2250,7 @@
       },
       "patch": {
         "summary": "Update the Notification Template object by name or id",
-        "description": "Update the Notification Template object by name or id",
+        "description": "Update the Notification Template object by name or id\nFields not allowed:\\ - name - notification_template_type\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "notification_template_updateCloudSubcollectionCloudScope",
         "security": [
           {
@@ -2210,49 +2305,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createCloudSubcollectionCloudScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Cloud Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -2279,23 +2331,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Cloud Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearCloudSubcollectionCloudScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -2380,35 +2415,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Cloud Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delCloudSubcollectionCloudScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -2532,7 +2538,7 @@
       },
       "patch": {
         "summary": "Update the Notification Template object by name or id",
-        "description": "Update the Notification Template object by name or id",
+        "description": "Update the Notification Template object by name or id\nFields not allowed:\\ - name - notification_template_type\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "notification_template_updateAdminSubcollectionCloudScope",
         "security": [
           {
@@ -2587,49 +2593,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createAdminSubcollectionCloudScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Admin Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -2656,23 +2619,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Admin Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearAdminSubcollectionCloudScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -2757,35 +2703,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Admin Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delAdminSubcollectionCloudScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -2909,7 +2826,7 @@
       },
       "patch": {
         "summary": "Update the Notification Template object by name or id",
-        "description": "Update the Notification Template object by name or id",
+        "description": "Update the Notification Template object by name or id\nFields not allowed:\\ - name - notification_template_type\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "notification_template_updateProviderSubcollectionCloudScope",
         "security": [
           {
@@ -2964,49 +2881,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createProviderSubcollectionCloudScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Provider Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -3033,23 +2907,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Provider Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearProviderSubcollectionCloudScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -3134,35 +2991,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Provider Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delProviderSubcollectionCloudScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -3286,7 +3114,7 @@
       },
       "patch": {
         "summary": "Update the Notification Template object by name or id",
-        "description": "Update the Notification Template object by name or id",
+        "description": "Update the Notification Template object by name or id\nFields not allowed:\\ - name - notification_template_type\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "notification_template_updateCatalogSubcollectionCloudScope",
         "security": [
           {
@@ -3341,49 +3169,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createCatalogSubcollectionCloudScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Catalog Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -3410,23 +3195,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Catalog Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearCatalogSubcollectionCloudScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -3511,35 +3279,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Catalog Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delCatalogSubcollectionCloudScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -3663,7 +3402,7 @@
       },
       "patch": {
         "summary": "Update the Notification Template object by name or id",
-        "description": "Update the Notification Template object by name or id",
+        "description": "Update the Notification Template object by name or id\nFields not allowed:\\ - name - notification_template_type\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "notification_template_updateSpaceSubcollectionCloudScope",
         "security": [
           {
@@ -3718,49 +3457,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createSpaceSubcollectionCloudScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Space Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -3787,23 +3483,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Space Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearSpaceSubcollectionCloudScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -3888,35 +3567,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Space Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delSpaceSubcollectionCloudScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -4040,7 +3690,7 @@
       },
       "patch": {
         "summary": "Update the Notification Template object by name or id",
-        "description": "Update the Notification Template object by name or id",
+        "description": "Update the Notification Template object by name or id\nFields not allowed:\\ - name - notification_template_type\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "notification_template_updateConsumerSubcollectionCloudScope",
         "security": [
           {
@@ -4095,49 +3745,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createConsumerSubcollectionCloudScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Consumer Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -4164,23 +3771,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Consumer Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearConsumerSubcollectionCloudScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -4286,35 +3876,6 @@
           "Cloud Settings",
           "Resource: Notification Template (Cloud Scope) (Consumer Subcollection)"
         ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delConsumerSubcollectionCloudScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Cloud Settings",
-          "Resource: Notification Template (Cloud Scope) (Consumer Subcollection)"
-        ]
       }
     },
     "/cloud/settings/role-defaults": {
@@ -4371,7 +3932,7 @@
       "description": "The collection of Role Default operations",
       "post": {
         "summary": "Create a Role Default object",
-        "description": "Create a Role Default object",
+        "description": "Create a Role Default object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "role_default_createProviderSubcollectionCloudScope",
         "security": [
           {
@@ -4551,7 +4112,7 @@
       },
       "patch": {
         "summary": "Update the Role Default object by name or id",
-        "description": "Update the Role Default object by name or id",
+        "description": "Update the Role Default object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "role_default_updateProviderSubcollectionCloudScope",
         "security": [
           {
@@ -4789,7 +4350,7 @@
       "description": "The collection of Integration operations",
       "post": {
         "summary": "Create a Integration object",
-        "description": "Create a Integration object",
+        "description": "Create a Integration object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "integration_createBillingSubcollection",
         "security": [
           {
@@ -4969,7 +4530,7 @@
       },
       "patch": {
         "summary": "Update the Integration object by name or id",
-        "description": "Update the Integration object by name or id",
+        "description": "Update the Integration object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "integration_updateBillingSubcollection",
         "security": [
           {
@@ -5058,7 +4619,7 @@
       "description": "The collection of Integration operations",
       "post": {
         "summary": "Create a Integration object",
-        "description": "Create a Integration object",
+        "description": "Create a Integration object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "integration_createPaymentMethodSubcollection",
         "security": [
           {
@@ -5238,7 +4799,7 @@
       },
       "patch": {
         "summary": "Update the Integration object by name or id",
-        "description": "Update the Integration object by name or id",
+        "description": "Update the Integration object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "integration_updatePaymentMethodSubcollection",
         "security": [
           {
@@ -5327,7 +4888,7 @@
       "description": "The collection of Integration operations",
       "post": {
         "summary": "Create a Integration object",
-        "description": "Create a Integration object",
+        "description": "Create a Integration object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "integration_createUserRegistrySubcollection",
         "security": [
           {
@@ -5507,7 +5068,7 @@
       },
       "patch": {
         "summary": "Update the Integration object by name or id",
-        "description": "Update the Integration object by name or id",
+        "description": "Update the Integration object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "integration_updateUserRegistrySubcollection",
         "security": [
           {
@@ -5596,7 +5157,7 @@
       "description": "The collection of Integration operations",
       "post": {
         "summary": "Create a Integration object",
-        "description": "Create a Integration object",
+        "description": "Create a Integration object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "integration_createGatewayServiceSubcollection",
         "security": [
           {
@@ -5776,7 +5337,7 @@
       },
       "patch": {
         "summary": "Update the Integration object by name or id",
-        "description": "Update the Integration object by name or id",
+        "description": "Update the Integration object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "integration_updateGatewayServiceSubcollection",
         "security": [
           {
@@ -5865,7 +5426,7 @@
       "description": "The collection of Registration operations",
       "post": {
         "summary": "Create a Registration object",
-        "description": "Create a Registration object",
+        "description": "Create a Registration object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "registration_create",
         "security": [
           {
@@ -6045,7 +5606,7 @@
       },
       "patch": {
         "summary": "Update the Registration object by name or id",
-        "description": "Update the Registration object by name or id",
+        "description": "Update the Registration object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "registration_update",
         "security": [
           {
@@ -6134,7 +5695,7 @@
       "description": "The collection of API Key operations",
       "post": {
         "summary": "Create a API Key object",
-        "description": "Create a API Key object",
+        "description": "Create a API Key object\nRequired fields:\\ - client_type - description\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "api_key_create",
         "security": [
           {
@@ -6370,7 +5931,7 @@
       },
       "put": {
         "summary": "Updates provider organization settings.",
-        "description": "Updates the settings for a provider organization.",
+        "description": "Updates the settings for a provider organization.\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url",
         "operationId": "org_setting_singletonUpdate",
         "security": [
           {
@@ -6582,7 +6143,7 @@
       },
       "patch": {
         "summary": "Update the Notification Template object by name or id",
-        "description": "Update the Notification Template object by name or id",
+        "description": "Update the Notification Template object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "notification_template_updateAdminSubcollectionOrgScope",
         "security": [
           {
@@ -6640,49 +6201,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createAdminSubcollectionOrgScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Admin Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -6709,23 +6227,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Admin Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearAdminSubcollectionOrgScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -6834,35 +6335,6 @@
           "Organization Settings",
           "Resource: Notification Template (Org Scope) (Admin Subcollection)"
         ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delAdminSubcollectionOrgScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Admin Subcollection)"
-        ]
       }
     },
     "/orgs/{org}": {
@@ -6915,7 +6387,7 @@
       },
       "patch": {
         "summary": "Updates a provider organization.",
-        "description": "Updates a provider organization.",
+        "description": "Updates a provider organization.\nFields not allowed:\\ - name - org_type\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "org_update",
         "security": [
           {
@@ -7020,6 +6492,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/cascade"
+          },
+          {
+            "$ref": "#/components/parameters/delete_old_owner"
           }
         ],
         "requestBody": {
@@ -7243,7 +6718,7 @@
       ],
       "post": {
         "summary": "Creates a provider organization member invitation.",
-        "description": "Creates a provider organization member invitation.",
+        "description": "Creates a provider organization member invitation.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url",
         "operationId": "member_invitation_createOrgScope",
         "security": [
           {
@@ -7426,7 +6901,7 @@
       },
       "patch": {
         "summary": "Updates a provider organization member invitation.",
-        "description": "Updates a member invitation to a provider organization.",
+        "description": "Updates a member invitation to a provider organization.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url",
         "operationId": "member_invitation_updateOrgScope",
         "security": [
           {
@@ -7712,7 +7187,7 @@
       ],
       "post": {
         "summary": "Creates a provider organization member.",
-        "description": "Adds a member to a provider organization.",
+        "description": "Adds a member to a provider organization.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url - user_registry_url",
         "operationId": "member_createOrgScope",
         "security": [
           {
@@ -7895,7 +7370,7 @@
       },
       "patch": {
         "summary": "Updates a provider organization member.",
-        "description": "Updates a member of a provider organization.",
+        "description": "Updates a member of a provider organization.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url - user_registry_url",
         "operationId": "member_updateOrgScope",
         "security": [
           {
@@ -8457,7 +7932,7 @@
       ],
       "post": {
         "summary": "Creates a provider organization role.",
-        "description": "Adds a role to a provider organization.",
+        "description": "Adds a role to a provider organization.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url",
         "operationId": "role_createOrgScope",
         "security": [
           {
@@ -8640,7 +8115,7 @@
       },
       "patch": {
         "summary": "Updates a provider organization role.",
-        "description": "Updates a role in a provider organization.",
+        "description": "Updates a role in a provider organization.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url",
         "operationId": "role_updateOrgScope",
         "security": [
           {
@@ -8734,7 +8209,7 @@
       ],
       "post": {
         "summary": "Create a Availability Zone object",
-        "description": "Create a Availability Zone object",
+        "description": "Create a Availability Zone object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
         "operationId": "availability_zone_create",
         "security": [
           {
@@ -8917,7 +8392,7 @@
       },
       "patch": {
         "summary": "Update the Availability Zone object by name or id",
-        "description": "Update the Availability Zone object by name or id",
+        "description": "Update the Availability Zone object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
         "operationId": "availability_zone_update",
         "security": [
           {
@@ -9014,7 +8489,7 @@
       ],
       "post": {
         "summary": "Create a Gateway Service object",
-        "description": "Create a Gateway Service object",
+        "description": "Create a Gateway Service object\nRequired fields:\\ - endpoint - api_endpoint_base - sni\nFields not allowed:\\ - owned\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - availability_zone_url",
         "operationId": "gateway_service_create",
         "security": [
           {
@@ -9200,7 +8675,7 @@
       },
       "patch": {
         "summary": "Update the Gateway Service object by name or id",
-        "description": "Update the Gateway Service object by name or id",
+        "description": "Update the Gateway Service object by name or id\nFields not allowed to be null:\\ - endpoint - api_endpoint_base - sni\nFields not allowed:\\ - owned - endpoint - integration_url - gateway_service_type\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - availability_zone_url",
         "operationId": "gateway_service_update",
         "security": [
           {
@@ -10051,7 +9526,7 @@
       ],
       "post": {
         "summary": "Create the Gateway Extension object",
-        "description": "Create the Gateway Extension object",
+        "description": "Create the Gateway Extension object\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url",
         "operationId": "gateway_extension_singletonCreateOrgScope",
         "security": [
           {
@@ -10137,7 +9612,7 @@
       },
       "put": {
         "summary": "Update the Gateway Extension object",
-        "description": "Update the Gateway Extension object",
+        "description": "Update the Gateway Extension object\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url",
         "operationId": "gateway_extension_singletonUpdateOrgScope",
         "security": [
           {
@@ -10254,6 +9729,16 @@
           "200": {
             "description": "Success",
             "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Implementation"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Implementation"
+                }
+              },
               "application/zip": {}
             }
           },
@@ -10279,7 +9764,7 @@
       ],
       "post": {
         "summary": "Create a Portal Service object",
-        "description": "Create a Portal Service object",
+        "description": "Create a Portal Service object\nRequired fields:\\ - endpoint - web_endpoint_base\nFields not allowed:\\ - owned\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - availability_zone_url",
         "operationId": "portal_service_create",
         "security": [
           {
@@ -10465,7 +9950,7 @@
       },
       "patch": {
         "summary": "Update the Portal Service object by name or id",
-        "description": "Update the Portal Service object by name or id",
+        "description": "Update the Portal Service object by name or id\nFields not allowed to be null:\\ - endpoint_tls_client_profile_url - web_endpoint_base\nFields not allowed:\\ - owned - endpoint\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - availability_zone_url",
         "operationId": "portal_service_update",
         "security": [
           {
@@ -10611,7 +10096,7 @@
       ],
       "post": {
         "summary": "Create a Analytics Service object",
-        "description": "Create a Analytics Service object",
+        "description": "Create a Analytics Service object\nRequired fields:\\ - endpoint\nFields not allowed:\\ - gateway_service_urls - ingestion_endpoint - client_endpoint\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - availability_zone_url",
         "operationId": "analytics_service_create",
         "security": [
           {
@@ -10797,7 +10282,7 @@
       },
       "patch": {
         "summary": "Update the Analytics Service object by name or id",
-        "description": "Update the Analytics Service object by name or id",
+        "description": "Update the Analytics Service object by name or id\nFields not allowed to be null:\\ - ingestion_endpoint_tls_client_profile_url - client_endpoint_tls_client_profile_url\nFields not allowed:\\ - endpoint - ingestion_endpoint - client_endpoint\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - availability_zone_url",
         "operationId": "analytics_service_update",
         "security": [
           {
@@ -10891,7 +10376,7 @@
       ],
       "post": {
         "summary": "Creates an OAuth provider.",
-        "description": "Creates an OAuth provider resource.",
+        "description": "Creates an OAuth provider resource.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
         "operationId": "oauth_provider_create",
         "security": [
           {
@@ -11074,7 +10559,7 @@
       },
       "patch": {
         "summary": "Creates an OAuth provider.",
-        "description": "Updates an OAuth provider resource.",
+        "description": "Updates an OAuth provider resource.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
         "operationId": "oauth_provider_update",
         "security": [
           {
@@ -11168,7 +10653,7 @@
       ],
       "post": {
         "summary": "Create a Mail Server object",
-        "description": "Create a Mail Server object",
+        "description": "Create a Mail Server object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "mail_server_create",
         "security": [
           {
@@ -11351,7 +10836,7 @@
       },
       "patch": {
         "summary": "Update the Mail Server object by name or id",
-        "description": "Update the Mail Server object by name or id",
+        "description": "Update the Mail Server object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "mail_server_update",
         "security": [
           {
@@ -11562,7 +11047,7 @@
       ],
       "post": {
         "summary": "Create a TLS Server Profile object",
-        "description": "Create a TLS Server Profile object",
+        "description": "Create a TLS Server Profile object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "tls_server_profile_create",
         "security": [
           {
@@ -11838,7 +11323,7 @@
       },
       "patch": {
         "summary": "Update the TLS Server Profile object by id",
-        "description": "Update the TLS Server Profile object by id",
+        "description": "Update the TLS Server Profile object by id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "tls_server_profile_update",
         "security": [
           {
@@ -11984,7 +11469,7 @@
       },
       "patch": {
         "summary": "Update the TLS Server Profile object by name and version",
-        "description": "Update the TLS Server Profile object by name and version",
+        "description": "Update the TLS Server Profile object by name and version\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "tls_server_profile_updateByNameVersion",
         "security": [
           {
@@ -12078,7 +11563,7 @@
       ],
       "post": {
         "summary": "Creates a TLS client profile.",
-        "description": "Creates a TLS client profile.",
+        "description": "Creates a TLS client profile.\nFields not allowed:\\ - owned\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
         "operationId": "tls_client_profile_create",
         "security": [
           {
@@ -12351,7 +11836,7 @@
       },
       "patch": {
         "summary": "Updates a TLS client profile.",
-        "description": "Updates a TLS client profile.",
+        "description": "Updates a TLS client profile.\nFields not allowed:\\ - owned\nFields not allowed to be null:\\ - ciphers - protocols\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
         "operationId": "tls_client_profile_update",
         "security": [
           {
@@ -12492,7 +11977,7 @@
       },
       "patch": {
         "summary": "Updates a TLS client profile.",
-        "description": "Updates a TLS client profile.",
+        "description": "Updates a TLS client profile.\nFields not allowed:\\ - owned\nFields not allowed to be null:\\ - ciphers - protocols\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
         "operationId": "tls_client_profile_updateByNameVersion",
         "security": [
           {
@@ -12586,7 +12071,7 @@
       ],
       "post": {
         "summary": "Creates a keystore.",
-        "description": "Creates a keystore belonging to a provider organization.",
+        "description": "Creates a keystore belonging to a provider organization.\nRequired fields:\\ - keystore\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "keystore_create",
         "security": [
           {
@@ -12769,7 +12254,7 @@
       },
       "patch": {
         "summary": "Updates a keystore.",
-        "description": "Updates a keystore belonging to a provider organization.",
+        "description": "Updates a keystore belonging to a provider organization.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "keystore_update",
         "security": [
           {
@@ -12863,7 +12348,7 @@
       ],
       "post": {
         "summary": "Creates a trust store.",
-        "description": "Creates a trust store.",
+        "description": "Creates a trust store.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "truststore_create",
         "security": [
           {
@@ -13046,7 +12531,7 @@
       },
       "patch": {
         "summary": "Updates a trust store.",
-        "description": "Updates a trust store.",
+        "description": "Updates a trust store.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "truststore_update",
         "security": [
           {
@@ -13143,7 +12628,7 @@
       ],
       "post": {
         "summary": "Creates a trust store entry.",
-        "description": "Adds an entry to a trust store.",
+        "description": "Adds an entry to a trust store.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "entry_createTruststoreScope",
         "security": [
           {
@@ -13329,7 +12814,7 @@
       },
       "patch": {
         "summary": "Updates a trust store entry.",
-        "description": "Updates the given entry in a trust store.",
+        "description": "Updates the given entry in a trust store.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "entry_updateTruststoreScope",
         "security": [
           {
@@ -13418,7 +12903,7 @@
       "description": "The collection of Organization Invitation operations",
       "post": {
         "summary": "Create an Organization Invitation object",
-        "description": "Create an Organization Invitation object",
+        "description": "Create an Organization Invitation object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url",
         "operationId": "invitation_createOrgScope",
         "security": [
           {
@@ -13598,7 +13083,7 @@
       },
       "patch": {
         "summary": "Update the Organization Invitation object by name or id",
-        "description": "Update the Organization Invitation object by name or id",
+        "description": "Update the Organization Invitation object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url",
         "operationId": "invitation_updateOrgScope",
         "security": [
           {
@@ -13870,7 +13355,7 @@
       "description": "The collection of Organization operations",
       "post": {
         "summary": "Create an Organization object",
-        "description": "Create an Organization object",
+        "description": "Create an Organization object\nRequired fields:\\ - owner_url\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "org_create",
         "security": [
           {
@@ -14007,7 +13492,7 @@
       "description": "The collection of Group operations",
       "post": {
         "summary": "Create a Group object",
-        "description": "Create a Group object",
+        "description": "Create a Group object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "group_createCloudScope",
         "security": [
           {
@@ -14187,7 +13672,7 @@
       },
       "patch": {
         "summary": "Update the Group object by name or id",
-        "description": "Update the Group object by name or id",
+        "description": "Update the Group object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "group_updateCloudScope",
         "security": [
           {
@@ -14320,7 +13805,7 @@
       },
       "put": {
         "summary": "Updates the current user.",
-        "description": "Updates the user profile for the currently authenticated user.",
+        "description": "Updates the user profile for the currently authenticated user.\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url",
         "operationId": "me_singletonUpdate",
         "security": [
           {
@@ -14709,7 +14194,7 @@
       },
       "patch": {
         "summary": "Update the Webhook object by name or id",
-        "description": "Update the Webhook object by name or id",
+        "description": "Update the Webhook object by name or id\nFields not allowed:\\ - state_change_history\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "webhook_updateCloudScope",
         "security": [
           {
@@ -15535,6 +15020,15 @@
           "type": "boolean"
         }
       },
+      "catalog_name": {
+        "name": "catalog_name",
+        "in": "query",
+        "description": "Name of a catalog",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "catalog_url": {
         "name": "catalog_url",
         "in": "query",
@@ -15587,6 +15081,15 @@
         "required": false,
         "schema": {
           "type": "string"
+        }
+      },
+      "delete_old_owner": {
+        "name": "delete_old_owner",
+        "in": "query",
+        "description": "Delete old owner",
+        "required": false,
+        "schema": {
+          "type": "boolean"
         }
       },
       "disable_ws_security": {
@@ -15706,6 +15209,15 @@
           "type": "string"
         }
       },
+      "gateway_service_names": {
+        "name": "gateway_service_names",
+        "in": "query",
+        "description": "Names of Gateway Services",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "gateway_services": {
         "name": "gateway_services",
         "in": "query",
@@ -15819,6 +15331,15 @@
         "in": "path",
         "description": "Member Invitation name or id",
         "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "metadata": {
+        "name": "metadata",
+        "in": "query",
+        "description": "List of metadata fields in the api to filter on",
+        "required": false,
         "schema": {
           "type": "string"
         }
@@ -16087,7 +15608,7 @@
       "scope": {
         "name": "scope",
         "in": "query",
-        "description": "Scope",
+        "description": "Scope of the call",
         "required": false,
         "schema": {
           "type": "string"
@@ -16098,6 +15619,15 @@
         "in": "path",
         "description": "Snapshot name or id",
         "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "space_name": {
+        "name": "space_name",
+        "in": "query",
+        "description": "Name of a space",
+        "required": false,
         "schema": {
           "type": "string"
         }
@@ -16289,6 +15819,15 @@
         "required": true,
         "schema": {
           "type": "string"
+        }
+      },
+      "validate_apis": {
+        "name": "validate_apis",
+        "in": "query",
+        "description": "Whether to validate APIs also",
+        "required": false,
+        "schema": {
+          "type": "boolean"
         }
       },
       "webhook": {
@@ -16778,6 +16317,7 @@
             "type": "string",
             "enum": [
               "asyncapi2.0",
+              "asyncapi2.1",
               "openapi2",
               "openapi3"
             ]
@@ -17873,6 +17413,13 @@
               },
               "service_version": {
                 "type": "string"
+              },
+              "state": {
+                "type": "string",
+                "enum": [
+                  "pending",
+                  "ready"
+                ]
               }
             }
           },
@@ -18037,6 +17584,12 @@
           "default_catalog": {
             "type": "boolean"
           },
+          "product_publish_validations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -18139,6 +17692,10 @@
             "type": "integer",
             "minimum": 0,
             "maximum": 2147483647
+          },
+          "api_key_multiple_uses": {
+            "type": "boolean",
+            "default": false
           },
           "sso_settings": {
             "type": "object",
@@ -18403,6 +17960,14 @@
           },
           "case_sensitive": {
             "type": "boolean"
+          },
+          "email_required": {
+            "type": "boolean",
+            "default": false
+          },
+          "email_unique_if_exist": {
+            "type": "boolean",
+            "default": true
           },
           "identity_providers": {
             "type": "array",
@@ -18677,6 +18242,14 @@
           "case_sensitive": {
             "type": "boolean"
           },
+          "email_required": {
+            "type": "boolean",
+            "default": false
+          },
+          "email_unique_if_exist": {
+            "type": "boolean",
+            "default": true
+          },
           "identity_providers": {
             "type": "array",
             "items": {
@@ -18832,6 +18405,20 @@
           "oauth_shared_secret": {
             "type": "string",
             "format": "password"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "ready"
+            ]
+          },
+          "overall_state": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "ready"
+            ]
           },
           "tls_client_profile_url": {
             "type": "string",
@@ -19448,11 +19035,10 @@
                       },
                       "redirect_endpoint": {
                         "type": "string",
-                        "format": "uri",
                         "nullable": true
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -19479,7 +19065,7 @@
                         ]
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -19488,11 +19074,11 @@
                     "additionalProperties": false,
                     "properties": {
                       "application_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint",
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform",
                         "nullable": true
                       },
                       "owner_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint",
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform",
                         "nullable": true
                       }
                     }
@@ -19514,12 +19100,10 @@
                 ]
               },
               "authorize_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "token_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "introspection_endpoint": {
                 "type": "object",
@@ -20342,6 +19926,7 @@
             "type": "string",
             "enum": [
               "asyncapi2.0",
+              "asyncapi2.1",
               "openapi2",
               "openapi3"
             ]
@@ -20858,6 +20443,13 @@
                 }
               }
             }
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "ready"
+            ]
           },
           "oauth_shared_secret": {
             "type": "string",
@@ -22569,6 +22161,90 @@
           }
         }
       },
+      "NotificationStyle": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "notification_style"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "scope": {
+            "type": "string"
+          },
+          "allowed_html_tags": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "org_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "catalog_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "space_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "consumer_org_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
       "NotificationTemplate": {
         "type": "object",
         "additionalProperties": false,
@@ -22620,6 +22296,19 @@
           },
           "body": {
             "type": "string"
+          },
+          "body_html": {
+            "type": "string"
+          },
+          "content_type": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "text",
+                "html"
+              ]
+            }
           },
           "org_url": {
             "type": "string",
@@ -23138,11 +22827,10 @@
                       },
                       "redirect_endpoint": {
                         "type": "string",
-                        "format": "uri",
                         "nullable": true
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -23169,7 +22857,7 @@
                         ]
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -23178,10 +22866,10 @@
                     "additionalProperties": false,
                     "properties": {
                       "application_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       },
                       "owner_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   }
@@ -23202,12 +22890,10 @@
                 ]
               },
               "authorize_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "token_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "introspection_endpoint": {
                 "type": "object",
@@ -24063,6 +23749,13 @@
             "type": "string",
             "format": "uri"
           },
+          "state": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "ready"
+            ]
+          },
           "visibility": {
             "$ref": "#/components/schemas/ResourceVisibility"
           },
@@ -24538,6 +24231,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
           },
           "metadata": {
@@ -25957,6 +25656,9 @@
           "originator_username": {
             "type": "string"
           },
+          "originator_name": {
+            "type": "string"
+          },
           "comments": {
             "type": "array",
             "items": {
@@ -26951,6 +26653,14 @@
           "case_sensitive": {
             "type": "boolean"
           },
+          "email_required": {
+            "type": "boolean",
+            "default": false
+          },
+          "email_unique_if_exist": {
+            "type": "boolean",
+            "default": true
+          },
           "identity_providers": {
             "type": "array",
             "items": {
@@ -27331,7 +27041,9 @@
                 "policy_visibility",
                 "product_replace_v2",
                 "product_retire_optimized",
-                "global_policy_error"
+                "global_policy_error",
+                "product_migrate_subscriptions",
+                "execute_migration_target"
               ]
             }
           },
@@ -29576,6 +29288,83 @@
           }
         }
       },
+      "Visibility": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "view",
+          "subscribe"
+        ],
+        "properties": {
+          "view": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "public",
+                  "authenticated",
+                  "custom"
+                ]
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "tags": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "orgs": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "subscribe": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "authenticated",
+                  "custom"
+                ]
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "tags": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "orgs": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
       "PrivateKeyEntry": {
         "type": "object",
         "additionalProperties": false,
@@ -29721,11 +29510,15 @@
             "type": "string",
             "minLength": 1
           },
+          "body_html": {
+            "type": "string"
+          },
           "content_type": {
             "type": "string",
             "enum": [
               "text",
-              "html"
+              "html",
+              "html_and_text"
             ]
           }
         },
@@ -29779,11 +29572,15 @@
             "type": "string",
             "minLength": 1
           },
+          "body_html": {
+            "type": "string"
+          },
           "content_type": {
             "type": "string",
             "enum": [
               "text",
-              "html"
+              "html",
+              "html_and_text"
             ]
           }
         },
@@ -29892,6 +29689,24 @@
           }
         }
       },
+      "SecuredEndpointWithoutEndpointTransform": {
+        "type": "object",
+        "additionalProperties": false,
+        "nullable": true,
+        "required": [
+          "endpoint"
+        ],
+        "properties": {
+          "endpoint": {
+            "type": "string"
+          },
+          "tls_client_profile_url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          }
+        }
+      },
       "IntrospectWsdlMultipart": {
         "type": "object",
         "properties": {
@@ -29943,6 +29758,9 @@
             "items": {
               "$ref": "#/components/schemas/ProductDefinition"
             }
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/Visibility"
           },
           "openapi": {
             "type": "array",
@@ -30021,6 +29839,9 @@
           "draft_product_url": {
             "type": "string",
             "format": "uri"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/Visibility"
           }
         }
       },
@@ -30556,6 +30377,19 @@
           "body": {
             "type": "string"
           },
+          "body_html": {
+            "type": "string"
+          },
+          "content_type": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "text",
+                "html"
+              ]
+            }
+          },
           "notification_template_name": {
             "type": "string"
           },
@@ -30619,6 +30453,23 @@
             }
           }
         }
+      },
+      "AllowedProductPublishValidation": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          }
+        }
       }
     },
     "responses": {
@@ -30643,7 +30494,7 @@
         "type": "oauth2",
         "flows": {
           "implicit": {
-            "authorizationUrl": "/api/oauth2/authorize",
+            "authorizationUrl": "/oauth2/authorize",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -30654,8 +30505,8 @@
               "child:create": "Create a Catalog object, Create a Space object",
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
-              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
-              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Update the Notification Style object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
               "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
@@ -30673,8 +30524,8 @@
             }
           },
           "password": {
-            "tokenUrl": "/api/token",
-            "refreshUrl": "/api/token",
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -30685,8 +30536,8 @@
               "child:create": "Create a Catalog object, Create a Space object",
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
-              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
-              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Update the Notification Style object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
               "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
@@ -30704,7 +30555,7 @@
             }
           },
           "clientCredentials": {
-            "tokenUrl": "/api/token",
+            "tokenUrl": "/token",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -30715,8 +30566,8 @@
               "child:create": "Create a Catalog object, Create a Space object",
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
-              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
-              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Update the Notification Style object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
               "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
@@ -30734,9 +30585,9 @@
             }
           },
           "authorizationCode": {
-            "authorizationUrl": "/api/oauth2/authorize",
-            "tokenUrl": "/api/token",
-            "refreshUrl": "/api/token",
+            "authorizationUrl": "/oauth2/authorize",
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -30747,8 +30598,8 @@
               "child:create": "Create a Catalog object, Create a Space object",
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
-              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
-              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Update the Notification Style object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
               "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
@@ -32137,11 +31988,384 @@
         ]
       }
     },
+    "/orgs/{org}/settings/notification-style": {
+      "description": "Notification Style object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Create the Notification Style object",
+        "description": "Create the Notification Style object\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url",
+        "operationId": "notification_style_singletonCreateOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationStyle"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationStyle"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Org Settings",
+          "Resource: Notification Style (Org Scope)"
+        ]
+      },
+      "get": {
+        "summary": "Get the Notification Style object",
+        "description": "Get the Notification Style object",
+        "operationId": "notification_style_singletonGetOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Org Settings",
+          "Resource: Notification Style (Org Scope)"
+        ]
+      },
+      "put": {
+        "summary": "Update the Notification Style object",
+        "description": "Update the Notification Style object\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url",
+        "operationId": "notification_style_singletonUpdateOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationStyle"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationStyle"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Org Settings",
+          "Resource: Notification Style (Org Scope)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Notification Style object",
+        "description": "Delete the Notification Style object",
+        "operationId": "notification_style_singletonDelOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Org Settings",
+          "Resource: Notification Style (Org Scope)"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/settings/notification-style": {
+      "description": "Notification Style object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Create the Notification Style object",
+        "description": "Create the Notification Style object\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url",
+        "operationId": "notification_style_singletonCreateCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationStyle"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationStyle"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Style (Catalog Scope)"
+        ]
+      },
+      "get": {
+        "summary": "Get the Notification Style object",
+        "description": "Get the Notification Style object",
+        "operationId": "notification_style_singletonGetCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Style (Catalog Scope)"
+        ]
+      },
+      "put": {
+        "summary": "Update the Notification Style object",
+        "description": "Update the Notification Style object\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url",
+        "operationId": "notification_style_singletonUpdateCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationStyle"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationStyle"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Style (Catalog Scope)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Notification Style object",
+        "description": "Delete the Notification Style object",
+        "operationId": "notification_style_singletonDelCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Style (Catalog Scope)"
+        ]
+      }
+    },
     "/cloud/api-keys": {
       "description": "The collection of API Key operations",
       "post": {
         "summary": "Create a API Key object",
-        "description": "Create a API Key object",
+        "description": "Create a API Key object\nRequired fields:\\ - client_type - description\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "api_key_create",
         "security": [
           {
@@ -32647,49 +32871,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createProviderSubcollectionOrgScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Provider Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -32716,23 +32897,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Provider Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearProviderSubcollectionOrgScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -32820,35 +32984,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Provider Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delProviderSubcollectionOrgScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -33038,49 +33173,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createCatalogSubcollectionOrgScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Catalog Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -33107,23 +33199,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Catalog Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearCatalogSubcollectionOrgScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -33211,35 +33286,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Catalog Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delCatalogSubcollectionOrgScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -33429,49 +33475,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createSpaceSubcollectionOrgScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Space Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -33498,23 +33501,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Space Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearSpaceSubcollectionOrgScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -33602,35 +33588,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Space Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delSpaceSubcollectionOrgScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -33820,49 +33777,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createConsumerSubcollectionOrgScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Consumer Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -33889,23 +33803,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Consumer Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearConsumerSubcollectionOrgScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -33993,35 +33890,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Settings",
-          "Resource: Notification Template (Org Scope) (Consumer Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delConsumerSubcollectionOrgScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -34200,6 +34068,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/cascade"
+          },
+          {
+            "$ref": "#/components/parameters/delete_old_owner"
           }
         ],
         "requestBody": {
@@ -36405,7 +36276,7 @@
       ],
       "post": {
         "summary": "Create a Billing object",
-        "description": "Create a Billing object",
+        "description": "Create a Billing object\nRequired fields:\\ - integration_url\nFields not allowed:\\ - job_queue_status\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "billing_create",
         "security": [
           {
@@ -36588,7 +36459,7 @@
       },
       "patch": {
         "summary": "Update the Billing object by name or id",
-        "description": "Update the Billing object by name or id",
+        "description": "Update the Billing object by name or id\nFields not allowed to be null:\\ - integration_url\nFields not allowed:\\ - job_queue_status\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "billing_update",
         "security": [
           {
@@ -38326,6 +38197,52 @@
               "application/yaml": {
                 "schema": {
                   "$ref": "#/components/schemas/CatalogSetting"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Catalog Setting"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/settings/allowed-product-publish-validations": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "List of allowed product publish validations",
+        "description": "List of allowed product publish validations",
+        "operationId": "catalog_setting_allowedProductPublishValidation",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AllowedProductPublishValidation"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AllowedProductPublishValidation"
                 }
               }
             }
@@ -40417,7 +40334,7 @@
       ],
       "post": {
         "summary": "Create a Configured Billing object",
-        "description": "Create a Configured Billing object",
+        "description": "Create a Configured Billing object\nRequired fields:\\ - billing_url\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url",
         "operationId": "configured_billing_create",
         "security": [
           {
@@ -41343,49 +41260,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createCatalogSubcollectionCatalogScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Notification Template (Catalog Scope) (Catalog Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -41412,23 +41286,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Notification Template (Catalog Scope) (Catalog Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearCatalogSubcollectionCatalogScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -41519,35 +41376,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Notification Template (Catalog Scope) (Catalog Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delCatalogSubcollectionCatalogScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -41746,49 +41574,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createSpaceSubcollectionCatalogScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Notification Template (Catalog Scope) (Space Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -41815,23 +41600,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Notification Template (Catalog Scope) (Space Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearSpaceSubcollectionCatalogScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -41922,35 +41690,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Notification Template (Catalog Scope) (Space Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delSpaceSubcollectionCatalogScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -42149,49 +41888,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createConsumerSubcollectionCatalogScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Notification Template (Catalog Scope) (Consumer Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -42218,23 +41914,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Notification Template (Catalog Scope) (Consumer Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearConsumerSubcollectionCatalogScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -42325,35 +42004,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Notification Template (Catalog Scope) (Consumer Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delConsumerSubcollectionCatalogScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -43131,6 +42781,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/cascade"
+          },
+          {
+            "$ref": "#/components/parameters/delete_old_owner"
           }
         ],
         "requestBody": {
@@ -50133,7 +49786,7 @@
       ],
       "post": {
         "summary": "Create the Global Policy Error object",
-        "description": "Create the Global Policy Error object",
+        "description": "Create the Global Policy Error object\nRequired fields:\\ - global_policy_url\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url",
         "operationId": "global_policy_error_singletonCreateCatalogScope",
         "security": [
           {
@@ -50224,7 +49877,7 @@
       },
       "put": {
         "summary": "Update the Global Policy Error object",
-        "description": "Update the Global Policy Error object",
+        "description": "Update the Global Policy Error object\nFields not allowed to be null:\\ - global_policy_url\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url",
         "operationId": "global_policy_error_singletonUpdateCatalogScope",
         "security": [
           {
@@ -50327,7 +49980,7 @@
       ],
       "post": {
         "summary": "Create the Global Policy Error object",
-        "description": "Create the Global Policy Error object",
+        "description": "Create the Global Policy Error object\nRequired fields:\\ - global_policy_url\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url",
         "operationId": "global_policy_error_singletonCreateSpaceScope",
         "security": [
           {
@@ -50418,7 +50071,7 @@
       },
       "put": {
         "summary": "Update the Global Policy Error object",
-        "description": "Update the Global Policy Error object",
+        "description": "Update the Global Policy Error object\nFields not allowed to be null:\\ - global_policy_url\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url",
         "operationId": "global_policy_error_singletonUpdateSpaceScope",
         "security": [
           {
@@ -51404,7 +51057,7 @@
       ],
       "post": {
         "summary": "Create an Analytics object",
-        "description": "Create an Analytics object",
+        "description": "Create an Analytics object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "analytics_createCatalogScope",
         "security": [
           {
@@ -51603,7 +51256,7 @@
       ],
       "post": {
         "summary": "Create an Analytics object",
-        "description": "Create an Analytics object",
+        "description": "Create an Analytics object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "analytics_createSpaceScope",
         "security": [
           {
@@ -52012,49 +51665,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createSpaceSubcollectionSpaceScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Space Settings",
-          "Resource: Notification Template (Space Scope) (Space Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -52081,23 +51691,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Space Settings",
-          "Resource: Notification Template (Space Scope) (Space Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearSpaceSubcollectionSpaceScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -52191,35 +51784,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Space Settings",
-          "Resource: Notification Template (Space Scope) (Space Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delSpaceSubcollectionSpaceScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -52427,49 +51991,6 @@
           "$ref": "#/components/parameters/notification-template"
         }
       ],
-      "post": {
-        "summary": "Create a Notification template language object",
-        "description": "Create a Notification template language object",
-        "operationId": "notification_language_createConsumerSubcollectionSpaceScope",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationLanguage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Space Settings",
-          "Resource: Notification Template (Space Scope) (Consumer Subcollection)"
-        ]
-      },
       "get": {
         "summary": "List the Notification language objects",
         "description": "List the Notification language objects",
@@ -52496,23 +52017,6 @@
                 }
               }
             }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Space Settings",
-          "Resource: Notification Template (Space Scope) (Consumer Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Clear the Notification language objects",
-        "description": "Clear the Notification language objects",
-        "operationId": "notification_language_clearConsumerSubcollectionSpaceScope",
-        "responses": {
-          "204": {
-            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -52606,35 +52110,6 @@
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationLanguage"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Space Settings",
-          "Resource: Notification Template (Space Scope) (Consumer Subcollection)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete the Notification template language object by name or id",
-        "description": "Delete the Notification template language object by name or id",
-        "operationId": "notification_language_delConsumerSubcollectionSpaceScope",
-        "responses": {
-          "200": {
-            "description": "Success delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -53147,6 +52622,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/cascade"
+          },
+          {
+            "$ref": "#/components/parameters/delete_old_owner"
           }
         ],
         "requestBody": {
@@ -56765,6 +56243,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/cascade"
+          },
+          {
+            "$ref": "#/components/parameters/delete_old_owner"
           }
         ],
         "requestBody": {
@@ -57133,6 +56614,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/cascade"
+          },
+          {
+            "$ref": "#/components/parameters/delete_old_owner"
           }
         ],
         "requestBody": {
@@ -57473,7 +56957,7 @@
       ],
       "post": {
         "summary": "Create a Group object",
-        "description": "Create a Group object",
+        "description": "Create a Group object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "group_createSpaceInitiated",
         "security": [
           {
@@ -57662,7 +57146,7 @@
       },
       "patch": {
         "summary": "Update the Group object by name or id",
-        "description": "Update the Group object by name or id",
+        "description": "Update the Group object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "group_updateSpaceInitiated",
         "security": [
           {
@@ -57762,7 +57246,7 @@
       ],
       "post": {
         "summary": "Create a Payment Method object",
-        "description": "Create a Payment Method object",
+        "description": "Create a Payment Method object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - consumer_org_url",
         "operationId": "payment_method_create",
         "security": [
           {
@@ -57922,7 +57406,7 @@
       },
       "patch": {
         "summary": "Update the Payment Method object by name or id",
-        "description": "Update the Payment Method object by name or id",
+        "description": "Update the Payment Method object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - consumer_org_url",
         "operationId": "payment_method_update",
         "security": [
           {
@@ -58025,7 +57509,7 @@
       ],
       "post": {
         "summary": "Create a Payment Method object",
-        "description": "Create a Payment Method object",
+        "description": "Create a Payment Method object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - consumer_org_url",
         "operationId": "payment_method_createSpaceInitiated",
         "security": [
           {
@@ -58188,7 +57672,7 @@
       },
       "patch": {
         "summary": "Update the Payment Method object by name or id",
-        "description": "Update the Payment Method object by name or id",
+        "description": "Update the Payment Method object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - consumer_org_url",
         "operationId": "payment_method_updateSpaceInitiated",
         "security": [
           {
@@ -62871,6 +62355,23 @@
             ]
           }
         ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/scope"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name"
+          },
+          {
+            "$ref": "#/components/parameters/space_name"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_names"
+          },
+          {
+            "$ref": "#/components/parameters/validate_apis"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -62918,6 +62419,23 @@
             "oauth": [
               "product-drafts:edit"
             ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/scope"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name"
+          },
+          {
+            "$ref": "#/components/parameters/space_name"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_names"
+          },
+          {
+            "$ref": "#/components/parameters/validate_apis"
           }
         ],
         "responses": {
@@ -65353,6 +64871,9 @@
           },
           {
             "$ref": "#/components/parameters/expand"
+          },
+          {
+            "$ref": "#/components/parameters/metadata"
           }
         ],
         "responses": {
@@ -65420,6 +64941,9 @@
           },
           {
             "$ref": "#/components/parameters/expand"
+          },
+          {
+            "$ref": "#/components/parameters/metadata"
           }
         ],
         "responses": {
@@ -67140,6 +66664,9 @@
           },
           {
             "$ref": "#/components/parameters/expand"
+          },
+          {
+            "$ref": "#/components/parameters/metadata"
           }
         ],
         "responses": {
@@ -67210,6 +66737,9 @@
           },
           {
             "$ref": "#/components/parameters/expand"
+          },
+          {
+            "$ref": "#/components/parameters/metadata"
           }
         ],
         "responses": {
@@ -68924,6 +68454,15 @@
           "type": "string"
         }
       },
+      "catalog_name": {
+        "name": "catalog_name",
+        "in": "query",
+        "description": "Name of a catalog",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "catalog_url": {
         "name": "catalog_url",
         "in": "query",
@@ -69066,6 +68605,15 @@
         "required": true,
         "schema": {
           "type": "string"
+        }
+      },
+      "delete_old_owner": {
+        "name": "delete_old_owner",
+        "in": "query",
+        "description": "Delete old owner",
+        "required": false,
+        "schema": {
+          "type": "boolean"
         }
       },
       "disable_ws_security": {
@@ -69248,6 +68796,15 @@
           "type": "string"
         }
       },
+      "gateway_service_names": {
+        "name": "gateway_service_names",
+        "in": "query",
+        "description": "Names of Gateway Services",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "gateway_services": {
         "name": "gateway_services",
         "in": "query",
@@ -69379,6 +68936,15 @@
         "in": "path",
         "description": "Member Invitation name or id",
         "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "metadata": {
+        "name": "metadata",
+        "in": "query",
+        "description": "List of metadata fields in the api to filter on",
+        "required": false,
         "schema": {
           "type": "string"
         }
@@ -69737,7 +69303,7 @@
       "scope": {
         "name": "scope",
         "in": "query",
-        "description": "Scope",
+        "description": "Scope of the call",
         "required": false,
         "schema": {
           "type": "string"
@@ -69793,6 +69359,15 @@
         "in": "path",
         "description": "Space name or id",
         "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "space_name": {
+        "name": "space_name",
+        "in": "query",
+        "description": "Name of a space",
+        "required": false,
         "schema": {
           "type": "string"
         }
@@ -69966,6 +69541,15 @@
         "required": true,
         "schema": {
           "type": "string"
+        }
+      },
+      "validate_apis": {
+        "name": "validate_apis",
+        "in": "query",
+        "description": "Whether to validate APIs also",
+        "required": false,
+        "schema": {
+          "type": "boolean"
         }
       },
       "webhook": {
@@ -70455,6 +70039,7 @@
             "type": "string",
             "enum": [
               "asyncapi2.0",
+              "asyncapi2.1",
               "openapi2",
               "openapi3"
             ]
@@ -71550,6 +71135,13 @@
               },
               "service_version": {
                 "type": "string"
+              },
+              "state": {
+                "type": "string",
+                "enum": [
+                  "pending",
+                  "ready"
+                ]
               }
             }
           },
@@ -71714,6 +71306,12 @@
           "default_catalog": {
             "type": "boolean"
           },
+          "product_publish_validations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -71816,6 +71414,10 @@
             "type": "integer",
             "minimum": 0,
             "maximum": 2147483647
+          },
+          "api_key_multiple_uses": {
+            "type": "boolean",
+            "default": false
           },
           "sso_settings": {
             "type": "object",
@@ -72080,6 +71682,14 @@
           },
           "case_sensitive": {
             "type": "boolean"
+          },
+          "email_required": {
+            "type": "boolean",
+            "default": false
+          },
+          "email_unique_if_exist": {
+            "type": "boolean",
+            "default": true
           },
           "identity_providers": {
             "type": "array",
@@ -72354,6 +71964,14 @@
           "case_sensitive": {
             "type": "boolean"
           },
+          "email_required": {
+            "type": "boolean",
+            "default": false
+          },
+          "email_unique_if_exist": {
+            "type": "boolean",
+            "default": true
+          },
           "identity_providers": {
             "type": "array",
             "items": {
@@ -72509,6 +72127,20 @@
           "oauth_shared_secret": {
             "type": "string",
             "format": "password"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "ready"
+            ]
+          },
+          "overall_state": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "ready"
+            ]
           },
           "tls_client_profile_url": {
             "type": "string",
@@ -73125,11 +72757,10 @@
                       },
                       "redirect_endpoint": {
                         "type": "string",
-                        "format": "uri",
                         "nullable": true
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -73156,7 +72787,7 @@
                         ]
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -73165,11 +72796,11 @@
                     "additionalProperties": false,
                     "properties": {
                       "application_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint",
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform",
                         "nullable": true
                       },
                       "owner_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint",
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform",
                         "nullable": true
                       }
                     }
@@ -73191,12 +72822,10 @@
                 ]
               },
               "authorize_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "token_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "introspection_endpoint": {
                 "type": "object",
@@ -74019,6 +73648,7 @@
             "type": "string",
             "enum": [
               "asyncapi2.0",
+              "asyncapi2.1",
               "openapi2",
               "openapi3"
             ]
@@ -74535,6 +74165,13 @@
                 }
               }
             }
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "ready"
+            ]
           },
           "oauth_shared_secret": {
             "type": "string",
@@ -76246,6 +75883,90 @@
           }
         }
       },
+      "NotificationStyle": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "notification_style"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "scope": {
+            "type": "string"
+          },
+          "allowed_html_tags": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "org_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "catalog_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "space_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "consumer_org_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
       "NotificationTemplate": {
         "type": "object",
         "additionalProperties": false,
@@ -76297,6 +76018,19 @@
           },
           "body": {
             "type": "string"
+          },
+          "body_html": {
+            "type": "string"
+          },
+          "content_type": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "text",
+                "html"
+              ]
+            }
           },
           "org_url": {
             "type": "string",
@@ -76815,11 +76549,10 @@
                       },
                       "redirect_endpoint": {
                         "type": "string",
-                        "format": "uri",
                         "nullable": true
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -76846,7 +76579,7 @@
                         ]
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -76855,10 +76588,10 @@
                     "additionalProperties": false,
                     "properties": {
                       "application_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       },
                       "owner_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   }
@@ -76879,12 +76612,10 @@
                 ]
               },
               "authorize_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "token_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "introspection_endpoint": {
                 "type": "object",
@@ -77740,6 +77471,13 @@
             "type": "string",
             "format": "uri"
           },
+          "state": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "ready"
+            ]
+          },
           "visibility": {
             "$ref": "#/components/schemas/ResourceVisibility"
           },
@@ -78215,6 +77953,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
           },
           "metadata": {
@@ -79634,6 +79378,9 @@
           "originator_username": {
             "type": "string"
           },
+          "originator_name": {
+            "type": "string"
+          },
           "comments": {
             "type": "array",
             "items": {
@@ -80628,6 +80375,14 @@
           "case_sensitive": {
             "type": "boolean"
           },
+          "email_required": {
+            "type": "boolean",
+            "default": false
+          },
+          "email_unique_if_exist": {
+            "type": "boolean",
+            "default": true
+          },
           "identity_providers": {
             "type": "array",
             "items": {
@@ -81008,7 +80763,9 @@
                 "policy_visibility",
                 "product_replace_v2",
                 "product_retire_optimized",
-                "global_policy_error"
+                "global_policy_error",
+                "product_migrate_subscriptions",
+                "execute_migration_target"
               ]
             }
           },
@@ -83253,6 +83010,83 @@
           }
         }
       },
+      "Visibility": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "view",
+          "subscribe"
+        ],
+        "properties": {
+          "view": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "public",
+                  "authenticated",
+                  "custom"
+                ]
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "tags": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "orgs": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "subscribe": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "authenticated",
+                  "custom"
+                ]
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "tags": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "orgs": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
       "PrivateKeyEntry": {
         "type": "object",
         "additionalProperties": false,
@@ -83398,11 +83232,15 @@
             "type": "string",
             "minLength": 1
           },
+          "body_html": {
+            "type": "string"
+          },
           "content_type": {
             "type": "string",
             "enum": [
               "text",
-              "html"
+              "html",
+              "html_and_text"
             ]
           }
         },
@@ -83456,11 +83294,15 @@
             "type": "string",
             "minLength": 1
           },
+          "body_html": {
+            "type": "string"
+          },
           "content_type": {
             "type": "string",
             "enum": [
               "text",
-              "html"
+              "html",
+              "html_and_text"
             ]
           }
         },
@@ -83569,6 +83411,24 @@
           }
         }
       },
+      "SecuredEndpointWithoutEndpointTransform": {
+        "type": "object",
+        "additionalProperties": false,
+        "nullable": true,
+        "required": [
+          "endpoint"
+        ],
+        "properties": {
+          "endpoint": {
+            "type": "string"
+          },
+          "tls_client_profile_url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          }
+        }
+      },
       "IntrospectWsdlMultipart": {
         "type": "object",
         "properties": {
@@ -83620,6 +83480,9 @@
             "items": {
               "$ref": "#/components/schemas/ProductDefinition"
             }
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/Visibility"
           },
           "openapi": {
             "type": "array",
@@ -83698,6 +83561,9 @@
           "draft_product_url": {
             "type": "string",
             "format": "uri"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/Visibility"
           }
         }
       },
@@ -84233,6 +84099,19 @@
           "body": {
             "type": "string"
           },
+          "body_html": {
+            "type": "string"
+          },
+          "content_type": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "text",
+                "html"
+              ]
+            }
+          },
           "notification_template_name": {
             "type": "string"
           },
@@ -84296,6 +84175,23 @@
             }
           }
         }
+      },
+      "AllowedProductPublishValidation": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          }
+        }
       }
     },
     "responses": {
@@ -84320,7 +84216,7 @@
         "type": "oauth2",
         "flows": {
           "implicit": {
-            "authorizationUrl": "/api/oauth2/authorize",
+            "authorizationUrl": "/oauth2/authorize",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -84331,8 +84227,8 @@
               "child:create": "Create a Catalog object, Create a Space object",
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
-              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
-              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Update the Notification Style object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
               "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
@@ -84350,8 +84246,8 @@
             }
           },
           "password": {
-            "tokenUrl": "/api/token",
-            "refreshUrl": "/api/token",
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -84362,8 +84258,8 @@
               "child:create": "Create a Catalog object, Create a Space object",
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
-              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
-              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Update the Notification Style object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
               "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
@@ -84381,7 +84277,7 @@
             }
           },
           "clientCredentials": {
-            "tokenUrl": "/api/token",
+            "tokenUrl": "/token",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -84392,8 +84288,8 @@
               "child:create": "Create a Catalog object, Create a Space object",
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
-              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
-              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Update the Notification Style object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
               "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
@@ -84411,9 +84307,9 @@
             }
           },
           "authorizationCode": {
-            "authorizationUrl": "/api/oauth2/authorize",
-            "tokenUrl": "/api/token",
-            "refreshUrl": "/api/token",
+            "authorizationUrl": "/oauth2/authorize",
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -84424,8 +84320,8 @@
               "child:create": "Create a Catalog object, Create a Space object",
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
-              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
-              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Update the Notification Style object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
               "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
@@ -84523,7 +84419,7 @@
       },
       "put": {
         "summary": "Update the Me object",
-        "description": "Update the Me object",
+        "description": "Update the Me object\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url",
         "operationId": "me_singletonUpdate",
         "security": [
           {
@@ -84764,7 +84660,7 @@
       "description": "The collection of My Organization operations",
       "post": {
         "summary": "Create a My Organization object",
-        "description": "Create a My Organization object",
+        "description": "Create a My Organization object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "my_org_create",
         "security": [
           {
@@ -85321,7 +85217,7 @@
       },
       "patch": {
         "summary": "Update the Organization object by name or id",
-        "description": "Update the Organization object by name or id",
+        "description": "Update the Organization object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
         "operationId": "org_update",
         "security": [
           {
@@ -85657,7 +85553,7 @@
       ],
       "post": {
         "summary": "Create a Member Invitation object",
-        "description": "Create a Member Invitation object",
+        "description": "Create a Member Invitation object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
         "operationId": "member_invitation_createOrgScope",
         "security": [
           {
@@ -86579,7 +86475,7 @@
       ],
       "post": {
         "summary": "Create a Member object",
-        "description": "Create a Member object",
+        "description": "Create a Member object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - user_registry_url",
         "operationId": "member_createOrgScope",
         "security": [
           {
@@ -86765,7 +86661,7 @@
       },
       "patch": {
         "summary": "Update the Member object by name or id",
-        "description": "Update the Member object by name or id",
+        "description": "Update the Member object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - user_registry_url",
         "operationId": "member_updateOrgScope",
         "security": [
           {
@@ -88265,7 +88161,7 @@
       ],
       "post": {
         "summary": "Create a Application object",
-        "description": "Create a Application object",
+        "description": "Create a Application object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
         "operationId": "app_create",
         "security": [
           {
@@ -88448,7 +88344,7 @@
       },
       "patch": {
         "summary": "Update the Application object by name or id",
-        "description": "Update the Application object by name or id",
+        "description": "Update the Application object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
         "operationId": "app_update",
         "security": [
           {
@@ -88630,7 +88526,7 @@
       ],
       "post": {
         "summary": "Create a Application Credential object",
-        "description": "Create a Application Credential object",
+        "description": "Create a Application Credential object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - app_url",
         "operationId": "credential_create",
         "security": [
           {
@@ -88816,7 +88712,7 @@
       },
       "patch": {
         "summary": "Update the Application Credential object by name or id",
-        "description": "Update the Application Credential object by name or id",
+        "description": "Update the Application Credential object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - app_url",
         "operationId": "credential_update",
         "security": [
           {
@@ -89089,7 +88985,7 @@
       ],
       "post": {
         "summary": "Create a Subscription object",
-        "description": "Create a Subscription object",
+        "description": "Create a Subscription object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - app_url",
         "operationId": "subscription_create",
         "security": [
           {
@@ -89275,7 +89171,7 @@
       },
       "patch": {
         "summary": "Update the Subscription object by name or id",
-        "description": "Update the Subscription object by name or id",
+        "description": "Update the Subscription object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - app_url",
         "operationId": "subscription_update",
         "security": [
           {
@@ -89468,7 +89364,7 @@
       ],
       "post": {
         "summary": "Create a Payment Method object",
-        "description": "Create a Payment Method object",
+        "description": "Create a Payment Method object\nRequired fields:\\ - payment_method_type_url - billing_url - configuration\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - consumer_org_url",
         "operationId": "payment_method_create",
         "security": [
           {
@@ -89622,7 +89518,7 @@
       },
       "patch": {
         "summary": "Update the Payment Method object by name or id",
-        "description": "Update the Payment Method object by name or id",
+        "description": "Update the Payment Method object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - consumer_org_url",
         "operationId": "payment_method_update",
         "security": [
           {
@@ -89884,7 +89780,7 @@
       "api_type": {
         "name": "api_type",
         "in": "query",
-        "description": "api_type",
+        "description": "The type of api (asyncapi, rest, graphql, wsdl_to_rest, or wsdl)",
         "required": false,
         "schema": {
           "type": "string"
@@ -90389,29 +90285,6 @@
                     "type": "string"
                   }
                 }
-              }
-            }
-          },
-          "wsdl": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": [
-              "content_type",
-              "content"
-            ],
-            "properties": {
-              "content_type": {
-                "type": "string",
-                "enum": [
-                  "application/wsdl",
-                  "application/wsdl+xml",
-                  "text/xml",
-                  "application/zip"
-                ]
-              },
-              "content": {
-                "type": "string",
-                "format": "binary"
               }
             }
           },
@@ -92342,6 +92215,14 @@
           "case_sensitive": {
             "type": "boolean"
           },
+          "email_required": {
+            "type": "boolean",
+            "default": false
+          },
+          "email_unique_if_exist": {
+            "type": "boolean",
+            "default": true
+          },
           "identity_providers": {
             "type": "array",
             "items": {
@@ -93083,7 +92964,8 @@
               "password",
               "client_credentials",
               "authorization_code",
-              "refresh_token"
+              "refresh_token",
+              "urn:ietf:params:oauth:grant-type:jwt-bearer"
             ]
           }
         }
@@ -93197,8 +93079,8 @@
         "type": "oauth2",
         "flows": {
           "password": {
-            "tokenUrl": "/consumer-api/token",
-            "refreshUrl": "/api/token",
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
             "scopes": {
               "app:manage": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Clear the Application Credential objects, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
@@ -93209,9 +93091,9 @@
             }
           },
           "authorizationCode": {
-            "authorizationUrl": "/consumer-api/oauth2/authorize",
-            "tokenUrl": "/consumer-api/token",
-            "refreshUrl": "/api/token",
+            "authorizationUrl": "/oauth2/authorize",
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
             "scopes": {
               "app:manage": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Clear the Application Credential objects, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
@@ -94592,7 +94474,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_api_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=api-apic-apilist"
         },
         "responses": {
           "200": {
@@ -94672,7 +94554,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_api_get.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=api-apic-apiget"
         },
         "parameters": [
           {
@@ -94682,6 +94564,91 @@
         "responses": {
           "200": {
             "description": "Successful output of the get api command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Api"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/api/get-document": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get a specific entire api document from a developer portal.",
+        "description": "Get a specific entire api document from the developer portal of the provided org and catalog. The id or name:version of a specific api needs to be provided. e.g. 'id-of-api-called-example-3' or 'example:3.0.0'.",
+        "operationId": "api_getDocument",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=api-apic-apiget-document"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the get-document api command",
             "content": {
               "application/json": {
                 "schema": {
@@ -94757,7 +94724,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_apic_config_get.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-apic-configget"
         },
         "responses": {
           "200": {
@@ -94837,7 +94804,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_application_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=application-apic-applicationlist"
         },
         "responses": {
           "200": {
@@ -94906,7 +94873,7 @@
       ],
       "get": {
         "summary": "Get a specific application from a developer portal.",
-        "description": "Get a specific application from the developer portal of the provided org and catalog. The id of a specific consumer organization needs to be provided.",
+        "description": "Get a specific application from the developer portal of the provided org and catalog. The id of a specific application needs to be provided.",
         "operationId": "application_get",
         "security": [
           {
@@ -94917,7 +94884,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_application_get.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=application-apic-applicationget"
         },
         "parameters": [
           {
@@ -95002,7 +94969,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_consumer_org_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=org-apic-consumer-orglist"
         },
         "responses": {
           "200": {
@@ -95082,7 +95049,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_consumer_org_get.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=org-apic-consumer-orgget"
         },
         "parameters": [
           {
@@ -95160,7 +95127,7 @@
         "operationId": "custom_module_createExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_create-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=module-apic-custom-modulecreate-export"
         },
         "responses": {
           "201": {
@@ -95236,7 +95203,7 @@
         "operationId": "custom_module_getExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_get-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=module-apic-custom-moduleget-export"
         },
         "responses": {
           "200": {
@@ -95310,7 +95277,7 @@
         "operationId": "custom_module_deleteExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_delete-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=module-apic-custom-moduledelete-export"
         },
         "responses": {
           "204": {
@@ -95359,7 +95326,7 @@
         "operationId": "custom_module_getExportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_get-export-status.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=module-apic-custom-moduleget-export-status"
         },
         "responses": {
           "200": {
@@ -95462,7 +95429,7 @@
         "operationId": "custom_module_createImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_create-import.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=module-apic-custom-modulecreate-import"
         },
         "requestBody": {
           "content": {
@@ -95548,7 +95515,7 @@
         "operationId": "custom_module_deleteImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_delete-import.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=module-apic-custom-moduledelete-import"
         },
         "responses": {
           "204": {
@@ -95597,7 +95564,7 @@
         "operationId": "custom_module_getImportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-module_get-import-status.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=module-apic-custom-moduleget-import-status"
         },
         "responses": {
           "200": {
@@ -95700,7 +95667,7 @@
         "operationId": "custom_theme_createExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_create-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=theme-apic-custom-themecreate-export"
         },
         "responses": {
           "201": {
@@ -95776,7 +95743,7 @@
         "operationId": "custom_theme_getExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_get-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=theme-apic-custom-themeget-export"
         },
         "responses": {
           "200": {
@@ -95850,7 +95817,7 @@
         "operationId": "custom_theme_deleteExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_delete-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=theme-apic-custom-themedelete-export"
         },
         "responses": {
           "204": {
@@ -95899,7 +95866,7 @@
         "operationId": "custom_theme_getExportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_get-export-status.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=theme-apic-custom-themeget-export-status"
         },
         "responses": {
           "200": {
@@ -96002,7 +95969,7 @@
         "operationId": "custom_theme_createImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_create-import.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=theme-apic-custom-themecreate-import"
         },
         "requestBody": {
           "content": {
@@ -96088,7 +96055,7 @@
         "operationId": "custom_theme_deleteImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_delete-import.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=theme-apic-custom-themedelete-import"
         },
         "responses": {
           "204": {
@@ -96137,7 +96104,7 @@
         "operationId": "custom_theme_getImportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_custom-theme_get-import-status.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=theme-apic-custom-themeget-import-status"
         },
         "responses": {
           "200": {
@@ -96225,6 +96192,990 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/custom-translation/export": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Create a task that exports an archive that contains the custom translation of a site.",
+        "description": "You can create a task to export an archive of the custom translation of a site. You can then use that archive to quickly and simply override the custom translations on another site.",
+        "operationId": "custom_translation_createExport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=translation-apic-custom-translationcreate-export"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/langcodes"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful create of the task",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Task already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomTranslation"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/custom-translation/export/{task_id}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "get": {
+        "summary": "When ready, streams a custom translation export artifact.",
+        "description": "When ready, streams a custom translation export artifact back to the related task id that is provided in the arguments.",
+        "operationId": "custom_translation_getExport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=translation-apic-custom-translationget-export"
+        },
+        "responses": {
+          "200": {
+            "description": "The export artifact stream.",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "This task and its related artifact could not be found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "The task is not an export operation and therefore an artifact cannot be streamed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "425": {
+            "description": "The artifact related to this task is still being processed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomTranslation"
+        ]
+      },
+      "delete": {
+        "summary": "If running, cancels a custom translation export task.",
+        "description": "If running, cancels the custom translation export task and deletes any related artifacts that have been generated.",
+        "operationId": "custom_translation_deleteExport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=translation-apic-custom-translationdelete-export"
+        },
+        "responses": {
+          "204": {
+            "description": "The task has been cancelled and it's artifacts deleted."
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomTranslation"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/custom-translation/export/{task_id}/status": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "get": {
+        "summary": "Returns information about the status of this task.",
+        "description": "Returns information related to the task id that is provided in the arguments.",
+        "operationId": "custom_translation_getExportStatus",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=translation-apic-custom-translationget-export-status"
+        },
+        "responses": {
+          "200": {
+            "description": "Task is ready to be obtained",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Waiting on task to finish.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "The task and its artifacts have expired.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomTranslation"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/custom-translation/import": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Create a task that imports an archive that contains the custom translations of a site.",
+        "description": "You can create a task to import an archive of the custom translations of a site. You can use the imported archive to quickly and simply override the custom translations for the specified site.",
+        "operationId": "custom_translation_createImport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=translation-apic-custom-translationcreate-import"
+        },
+        "requestBody": {
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful create of the task",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Task already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomTranslation"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/custom-translation/import/{task_id}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "delete": {
+        "summary": "If running, cancels a custom translation import task.",
+        "description": "If running, cancels the custom translation import task and deletes any related artifacts that have been generated.",
+        "operationId": "custom_translation_deleteImport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=translation-apic-custom-translationdelete-import"
+        },
+        "responses": {
+          "204": {
+            "description": "The task has been cancelled and it's artifacts deleted."
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomTranslation"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/custom-translation/import/{task_id}/status": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "get": {
+        "summary": "Get the result of the custom translation import task.",
+        "description": "Get the result of the custom translation import task. If the import task has completed on the portal system, this command returns the result of the command. If the import task has not completed on the portal system, it returns the current status of the task.",
+        "operationId": "custom_translation_getImportStatus",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=translation-apic-custom-translationget-import-status"
+        },
+        "responses": {
+          "200": {
+            "description": "Output from portal cli command request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Waiting on task to finish.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "The task and its result have expired.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomTranslation"
+        ]
+      }
+    },
+    "/service/custom-webserver-page": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/portal_service_name"
+        },
+        {
+          "$ref": "#/components/parameters/page_type"
+        }
+      ],
+      "get": {
+        "summary": "Get the HTML for a web server page.",
+        "description": "Get the web server HTML content of a specific web server page (index, 404, 40x, 50x).",
+        "operationId": "custom_webserver_page_get",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=page-apic-custom-webserver-pageget"
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The resource was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomWebserverPage"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the custom HTML for a web server page.",
+        "description": "Delete the custom web server HTML content of a specific web server page (index, 404, 40x, 50x). (Will fallback to a default.)",
+        "operationId": "custom_webserver_page_delete",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=page-apic-custom-webserver-pagedelete"
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The resource was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomWebserverPage"
+        ]
+      },
+      "post": {
+        "summary": "Set a custom HTML page for a web server page type.",
+        "description": "Set the custom web server HTML content of a specific web server page (index, 404, 40x, 50x). Maximum size of 8 MB.",
+        "operationId": "custom_webserver_page_set",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=page-apic-custom-webserver-pageset"
+        },
+        "requestBody": {
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The resource was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomWebserverPage"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/site/check": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Run a platform check against a portal site",
+        "description": "Performs filesystem, database and API Manager checks against a portal site. This command is useful when trying to identify platform related problems if you are having issues with your portal site.",
+        "operationId": "site_check",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-sitecheck"
+        },
+        "responses": {
+          "200": {
+            "description": "Task has completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Site"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/site/state": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Obtain the current state of a portal site",
+        "description": "Returns the state of a portal site. This command is useful as a general health check analysis of the portal site.",
+        "operationId": "site_state",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-sitestate"
+        },
+        "responses": {
+          "200": {
+            "description": "An output of the state of the portal site",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Site"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/entity/count": {
       "parameters": [
         {
@@ -96247,7 +97198,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_api_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=entity-apic-entitycount"
         },
         "responses": {
           "200": {
@@ -96327,7 +97278,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_security_clearbans.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=security-apic-securityclear-bans"
         },
         "responses": {
           "200": {
@@ -96385,7 +97336,580 @@
         ]
       }
     },
-    "/catalogs/{org}/{catalog}/config/export": {
+    "/catalogs/{org}/{catalog}/drupal-config": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get the Config object",
+        "description": "Get the Config object or a specific config key value.",
+        "operationId": "drupal_config_get",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-drupal-configget"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/config_name"
+          },
+          {
+            "$ref": "#/components/parameters/config_key_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Task has completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: DrupalConfig"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Config object.",
+        "description": "Delete the Config object or a specific config key.",
+        "operationId": "drupal_config_delete",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-drupal-configdelete"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/config_name"
+          },
+          {
+            "$ref": "#/components/parameters/config_key_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Task has completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: DrupalConfig"
+        ]
+      },
+      "post": {
+        "summary": "Set a config value.",
+        "description": "Can set a new config value or update an already existing key-value.",
+        "operationId": "drupal_config_set",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-drupal-configset"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/config_name"
+          },
+          {
+            "$ref": "#/components/parameters/config_key"
+          },
+          {
+            "$ref": "#/components/parameters/config_value"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Task has completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: DrupalConfig"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/drupal-config/list": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "List the config names by prefix",
+        "description": "List the config names by prefix or provide no prefix to see all.",
+        "operationId": "drupal_config_list",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-drupal-configlist"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/prefix"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Task has completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: DrupalConfig"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/drupal-state": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get the State key",
+        "description": "Get the State key value.",
+        "operationId": "drupal_state_get",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=state-apic-drupal-stateget"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/state_key"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The resource was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: DrupalState"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the State key.",
+        "description": "Delete the specific state key.",
+        "operationId": "drupal_state_delete",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=state-apic-drupal-statedelete"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/state_key"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The resource was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: DrupalState"
+        ]
+      },
+      "post": {
+        "summary": "Set a state key value.",
+        "description": "Can set a new state value or update an already existing key-value.",
+        "operationId": "drupal_state_set",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=state-apic-drupal-stateset"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/state_key"
+          },
+          {
+            "$ref": "#/components/parameters/state_value"
+          },
+          {
+            "$ref": "#/components/parameters/input_format"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The resource was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: DrupalState"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/site-config/export": {
       "parameters": [
         {
           "$ref": "#/components/parameters/org"
@@ -96400,7 +97924,7 @@
         "operationId": "site_config_createExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_create-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-site-configcreate-export"
         },
         "responses": {
           "201": {
@@ -96458,7 +97982,7 @@
         ]
       }
     },
-    "/catalogs/{org}/{catalog}/config/export/{task_id}": {
+    "/catalogs/{org}/{catalog}/site-config/export/{task_id}": {
       "parameters": [
         {
           "$ref": "#/components/parameters/org"
@@ -96476,7 +98000,7 @@
         "operationId": "site_config_getExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_get-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-site-configget-export"
         },
         "responses": {
           "200": {
@@ -96550,7 +98074,7 @@
         "operationId": "site_config_deleteExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_delete-export.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-site-configdelete-export"
         },
         "responses": {
           "204": {
@@ -96581,7 +98105,7 @@
         ]
       }
     },
-    "/catalogs/{org}/{catalog}/config/export/{task_id}/status": {
+    "/catalogs/{org}/{catalog}/site-config/export/{task_id}/status": {
       "parameters": [
         {
           "$ref": "#/components/parameters/org"
@@ -96599,7 +98123,7 @@
         "operationId": "site_config_getExportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_get-export-status.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-site-configget-export-status"
         },
         "responses": {
           "200": {
@@ -96687,7 +98211,7 @@
         ]
       }
     },
-    "/catalogs/{org}/{catalog}/config/import": {
+    "/catalogs/{org}/{catalog}/site-config/import": {
       "parameters": [
         {
           "$ref": "#/components/parameters/org"
@@ -96702,7 +98226,7 @@
         "operationId": "site_config_createImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_create-import.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-site-configcreate-import"
         },
         "requestBody": {
           "content": {
@@ -96770,7 +98294,7 @@
         ]
       }
     },
-    "/catalogs/{org}/{catalog}/config/import/{task_id}": {
+    "/catalogs/{org}/{catalog}/site-config/import/{task_id}": {
       "parameters": [
         {
           "$ref": "#/components/parameters/org"
@@ -96788,7 +98312,7 @@
         "operationId": "site_config_deleteImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_delete-import.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-site-configdelete-import"
         },
         "responses": {
           "204": {
@@ -96819,7 +98343,7 @@
         ]
       }
     },
-    "/catalogs/{org}/{catalog}/config/import/{task_id}/status": {
+    "/catalogs/{org}/{catalog}/site-config/import/{task_id}/status": {
       "parameters": [
         {
           "$ref": "#/components/parameters/org"
@@ -96837,7 +98361,7 @@
         "operationId": "site_config_getImportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_site-config_get-import-status.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-site-configget-import-status"
         },
         "responses": {
           "200": {
@@ -96932,7 +98456,7 @@
         "operationId": "backups_list",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_backups_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=backups-apic-backupslist"
         },
         "parameters": [
           {
@@ -97002,7 +98526,7 @@
         "operationId": "platforms_list",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_platforms_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=platforms-apic-platformslist"
         },
         "parameters": [
           {
@@ -97087,7 +98611,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_product_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=product-apic-productlist"
         },
         "responses": {
           "200": {
@@ -97145,6 +98669,253 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/product/get": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get a specific product from a developer portal.",
+        "description": "Get a specific product from the developer portal of the provided org and catalog. The id or name:version of a specific api needs to be provided. e.g. 'id-of-api-called-example-3' or 'example:3.0.0'.",
+        "operationId": "product_get",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=product-apic-productget"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/product"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the get product command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Product"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/product/get-document": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get a specific entire product document from a developer portal.",
+        "description": "Get a specific entire product document from the developer portal of the provided org and catalog. The id or name:version of a specific api needs to be provided. e.g. 'id-of-api-called-example-3' or 'example:3.0.0'.",
+        "operationId": "product_getDocument",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=product-apic-productgetdocument"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/product"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the get product document command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Product"
+        ]
+      }
+    },
+    "/service/sites/check": {
+      "get": {
+        "summary": "Run a platform check against all portal sites present on a portal service.",
+        "description": "Performs filesystem, database and API Manager checks against all portal sites on a given portal service. This command is useful when trying to identify platform related problems on one of more of your portal sites.",
+        "operationId": "sites_check",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=sites-apic-sitescheck"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/portal_service_name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the check sites command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Sites"
+        ]
+      }
+    },
     "/service/sites/list": {
       "get": {
         "summary": "List the sites present on the Portal service.",
@@ -97152,7 +98923,7 @@
         "operationId": "sites_list",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_sites_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=sites-apic-siteslist"
         },
         "parameters": [
           {
@@ -97215,6 +98986,166 @@
         ]
       }
     },
+    "/service/factory-reset": {
+      "delete": {
+        "summary": "Factory resets the Developer Portal.",
+        "description": "Performs a factory reset of the Developer Portal, deleting the portal service and all portal sites. This command is irreversible - please ensure you have backups configured.",
+        "operationId": "factory_reset_singletonDel",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=reset-apic-service-factory-resetdelete"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/portal_service_name"
+          },
+          {
+            "$ref": "#/components/parameters/execute_reset"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Output from portal cli command request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: FactoryReset"
+        ]
+      }
+    },
+    "/service/ip-security-enabled": {
+      "post": {
+        "summary": "Enable or disable IP security functionality within the Developer Portal",
+        "description": "Enable or disable IP security functionality within the Developer Portal",
+        "operationId": "ip_security_enabled_update",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=enabled-apic-ip-security-enabledupdate"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/portal_service_name"
+          },
+          {
+            "$ref": "#/components/parameters/ip_security_enabled"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output message of the security functionality being set",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: IpSecurityEnabled"
+        ]
+      }
+    },
     "/service/php-memory/list": {
       "get": {
         "summary": "List the PHP memory limit on the platform.",
@@ -97229,7 +99160,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_php-memory_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=memory-apic-php-memorylist"
         },
         "parameters": [
           {
@@ -97306,7 +99237,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_php-memory_update.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=memory-apic-php-memoryupdate"
         },
         "parameters": [
           {
@@ -97386,7 +99317,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_product_ip_allowlist_add.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=allowlist-apic-service-ip-allowlistadd"
         },
         "parameters": [
           {
@@ -97466,7 +99397,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_product_ip_allowlist_remove.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=allowlist-apic-service-ip-allowlistremove"
         },
         "parameters": [
           {
@@ -97546,7 +99477,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_product_ip_allowlist_delete.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=allowlist-apic-service-ip-allowlistdelete"
         },
         "parameters": [
           {
@@ -97623,7 +99554,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_product_ip_allowlist_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=allowlist-apic-service-ip-allowlistlist"
         },
         "parameters": [
           {
@@ -97708,7 +99639,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_modules_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=modules-apic-moduleslist"
         },
         "parameters": [
           {
@@ -97802,17 +99733,11 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_modules_enable.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=modules-apic-modulesenable"
         },
         "parameters": [
           {
-            "$ref": "#/components/parameters/extensions"
-          },
-          {
-            "$ref": "#/components/parameters/resolve-dependencies"
-          },
-          {
-            "$ref": "#/components/parameters/skip"
+            "$ref": "#/components/parameters/modules"
           }
         ],
         "responses": {
@@ -97893,7 +99818,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_modules_disable.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=modules-apic-modulesdisable"
         },
         "parameters": [
           {
@@ -97965,9 +99890,9 @@
           "$ref": "#/components/parameters/catalog"
         }
       ],
-      "post": {
+      "delete": {
         "summary": "Deletes one or more modules.",
-        "description": "Deletes one or more modules. The provided list of modules must be comma separated.",
+        "description": "Deletes one or more modules. The provided list of modules must be comma separated. Running this command with the force option will make sure the Drupal table's are purged of any reference to the module.",
         "operationId": "modules_delete",
         "security": [
           {
@@ -97978,11 +99903,14 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_modules_delete.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=modules-apic-modulesdelete"
         },
         "parameters": [
           {
             "$ref": "#/components/parameters/modules"
+          },
+          {
+            "$ref": "#/components/parameters/force"
           }
         ],
         "responses": {
@@ -98041,6 +99969,86 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/site/cache-rebuild": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Rebuilds the cache of a specific Portal site.",
+        "description": "Clears the existing cache and rebuilds a new one for a specific Portal site.",
+        "operationId": "site_cache_rebuild",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-sitecache-rebuild"
+        },
+        "responses": {
+          "200": {
+            "description": "Task has completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Site"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/themes/list": {
       "parameters": [
         {
@@ -98063,7 +100071,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_themes_list.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=themes-apic-themeslist"
         },
         "parameters": [
           {
@@ -98157,7 +100165,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_themes_enable.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=themes-apic-themesenable"
         },
         "parameters": [
           {
@@ -98242,7 +100250,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_themes_disable.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=themes-apic-themesdisable"
         },
         "parameters": [
           {
@@ -98314,7 +100322,7 @@
           "$ref": "#/components/parameters/catalog"
         }
       ],
-      "post": {
+      "delete": {
         "summary": "Deletes one or more themes.",
         "description": "Deletes one or more themes. The provided list of themes must be comma separated.",
         "operationId": "themes_delete",
@@ -98327,7 +100335,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_themes_delete.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=themes-apic-themesdelete"
         },
         "parameters": [
           {
@@ -98412,7 +100420,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/support/knowledgecenter/SSMNED_v10/com.ibm.apic.portalcliref.doc/apic_themes_set_default.html"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=themes-apic-themesset-default"
         },
         "parameters": [
           {
@@ -98474,6 +100482,246 @@
           "Resource: Themes"
         ]
       }
+    },
+    "/catalogs/{org}/{catalog}/twig/debug-enable": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Enables twig debugging on a specific Portal site.",
+        "description": "Enables twig debugging on a specific Portal site. Helps locate twig template issues.",
+        "operationId": "twig_debugEnable",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=twig-apic-twigdebug-enable"
+        },
+        "responses": {
+          "200": {
+            "description": "Task has completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Twig"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/twig/debug-disable": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Disable twig debugging on a specific Portal site.",
+        "description": "Disable twig debugging on a specific Portal site. Helps locate twig template issues.",
+        "operationId": "twig_debugDisable",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=twig-apic-twigdebug-disable"
+        },
+        "responses": {
+          "200": {
+            "description": "Task has completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Twig"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/twig/debug-status": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Shows the current state of twig debugging of a specific Portal site.",
+        "description": "View the current state of twig debugging of a specific Portal site, if you are unsure of it.",
+        "operationId": "twig_debugStatus",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=twig-apic-twigdebug-status"
+        },
+        "responses": {
+          "200": {
+            "description": "Task has completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Twig"
+        ]
+      }
     }
   },
   "components": {
@@ -98514,6 +100762,42 @@
           "type": "string"
         }
       },
+      "config_key": {
+        "name": "config_key",
+        "in": "query",
+        "description": "A config key, for example \"page.front\".",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "config_key_optional": {
+        "name": "config_key",
+        "in": "query",
+        "description": "A config key, for example \"page.front\".",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "config_name": {
+        "name": "config_name",
+        "in": "query",
+        "description": "The config object name, for example \"system.site\".",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "config_value": {
+        "name": "config_value",
+        "in": "query",
+        "description": "The value to assign to the config key.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
       "core": {
         "name": "core",
         "in": "query",
@@ -98523,10 +100807,46 @@
           "type": "boolean"
         }
       },
-      "extensions": {
-        "name": "extensions",
+      "execute_reset": {
+        "name": "execute_reset",
         "in": "query",
-        "description": "A list of a single extension type (Module or Theme). You can use the * wildcard at the end of extension names to disable multiple matches.",
+        "description": "set to true to trigger the Developer Portal reset",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "force": {
+        "name": "force",
+        "in": "query",
+        "description": "Provides the force flag to the subsequent command. The force action is dependent on the command. Please read the command description.",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "langcodes": {
+        "name": "langcodes",
+        "in": "query",
+        "description": "A comma separated list of language codes e.g. \"es,zh-hans\"",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "input_format": {
+        "name": "input_format",
+        "in": "query",
+        "description": "The input format of the value for the state key. Values: string, integer, float, boolean, json, yaml. [default: auto]",
+        "required": false,
+        "schema": {
+          "$ref": "#/components/schemas/InputFormat"
+        }
+      },
+      "ip_security_enabled": {
+        "name": "enabled",
+        "in": "query",
+        "description": "set to true or false to enable or disable IP security",
         "required": true,
         "schema": {
           "type": "string"
@@ -98566,6 +100886,15 @@
         "required": true,
         "schema": {
           "type": "string"
+        }
+      },
+      "page_type": {
+        "name": "page_type",
+        "in": "query",
+        "description": "The page type you want to run this command against. Values: index, 404, 40x, 50x",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/PageType"
         }
       },
       "product": {
@@ -98622,13 +100951,22 @@
           "type": "string"
         }
       },
-      "skip": {
-        "name": "skip",
+      "state_key": {
+        "name": "state_key",
         "in": "query",
-        "description": "Skip automatic downloading of libraries (c.f. devel).",
-        "required": false,
+        "description": "The state key, for example \"system.cron_last\".",
+        "required": true,
         "schema": {
-          "type": "boolean"
+          "type": "string"
+        }
+      },
+      "state_value": {
+        "name": "state_value",
+        "in": "query",
+        "description": "The value to assign to the state key.",
+        "required": true,
+        "schema": {
+          "type": "string"
         }
       },
       "status": {
@@ -98638,15 +100976,6 @@
         "required": false,
         "schema": {
           "type": "string"
-        }
-      },
-      "resolve-dependencies": {
-        "name": "resolve-dependencies",
-        "in": "query",
-        "description": "Attempt to download any missing dependencies. At the moment, only works when the module name is the same as the project name.",
-        "required": false,
-        "schema": {
-          "type": "boolean"
         }
       },
       "ips": {
@@ -98660,25 +100989,30 @@
       }
     },
     "schemas": {
-      "IpAllowlist": {
-        "type": "object",
-        "additionalProperties": true
+      "InputFormat": {
+        "name": "InputFormat",
+        "type": "string",
+        "default": "auto",
+        "enum": [
+          "auto",
+          "string",
+          "integer",
+          "float",
+          "boolean",
+          "json",
+          "yaml"
+        ]
       },
-      "Security": {
-        "type": "object",
-        "additionalProperties": true
-      },
-      "SiteConfig": {
-        "type": "object",
-        "additionalProperties": true
-      },
-      "CustomModule": {
-        "type": "object",
-        "additionalProperties": true
-      },
-      "CustomTheme": {
-        "type": "object",
-        "additionalProperties": true
+      "PageType": {
+        "name": "PageType",
+        "type": "string",
+        "default": "index",
+        "enum": [
+          "index",
+          "404",
+          "40x",
+          "50x"
+        ]
       },
       "CliResponse": {
         "x-bhendi-schema": "custom",
