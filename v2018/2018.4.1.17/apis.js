@@ -11,7 +11,7 @@
   attachPoint: '#root',
   options: {
       renderSchemaView: true,
-      headerTitle: "API Connect v2018.4.1.12",
+      headerTitle: "API Connect v2018.4.1.17",
       headerActive: true,
       groupByTags: true,
       validateSwagger: false,
@@ -59,6 +59,13 @@
         "summary": "Get the Log Spec object",
         "description": "Get the Log Spec object",
         "operationId": "log_spec_singletonGet",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
         "externalDocs": {
           "description": "Additional documentation",
           "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/log-spec#get"
@@ -97,6 +104,13 @@
         "summary": "Update the Log Spec object",
         "description": "Update the Log Spec object",
         "operationId": "log_spec_singletonUpdate",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
         "externalDocs": {
           "description": "Additional documentation",
           "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/log-spec#update"
@@ -17870,6 +17884,9 @@
             "items": {
               "type": "string",
               "enum": [
+                "TLS_AES_256_GCM_SHA384",
+                "TLS_CHACHA20_POLY1305_SHA256",
+                "TLS_AES_128_GCM_SHA256",
                 "ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_RSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
@@ -23832,7 +23849,8 @@
               "manage-stale-catalog-webhooks",
               "cleanup",
               "send",
-              "initialize"
+              "initialize",
+              "maintenance"
             ]
           },
           "state": {
@@ -23959,6 +23977,9 @@
             "items": {
               "type": "string",
               "enum": [
+                "TLS_AES_256_GCM_SHA384",
+                "TLS_CHACHA20_POLY1305_SHA256",
+                "TLS_AES_128_GCM_SHA256",
                 "ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_RSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
@@ -24251,6 +24272,9 @@
             "items": {
               "type": "string",
               "enum": [
+                "TLS_AES_256_GCM_SHA384",
+                "TLS_CHACHA20_POLY1305_SHA256",
+                "TLS_AES_128_GCM_SHA256",
                 "ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_RSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
@@ -56180,39 +56204,6 @@
           "Consumer Management",
           "Resource: Application Credential"
         ]
-      },
-      "delete": {
-        "summary": "Clear the Application Credential objects",
-        "description": "Clear the Application Credential objects",
-        "operationId": "credential_clear",
-        "security": [
-          {
-            "oauth": [
-              "app:manage:all"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis/credential#clear"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/confirm"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Success"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Management",
-          "Resource: Application Credential"
-        ]
       }
     },
     "/apps/{org}/{catalog}/{consumer-org}/{app}/credentials/{credential}": {
@@ -68886,6 +68877,9 @@
             "items": {
               "type": "string",
               "enum": [
+                "TLS_AES_256_GCM_SHA384",
+                "TLS_CHACHA20_POLY1305_SHA256",
+                "TLS_AES_128_GCM_SHA256",
                 "ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_RSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
@@ -74848,7 +74842,8 @@
               "manage-stale-catalog-webhooks",
               "cleanup",
               "send",
-              "initialize"
+              "initialize",
+              "maintenance"
             ]
           },
           "state": {
@@ -74975,6 +74970,9 @@
             "items": {
               "type": "string",
               "enum": [
+                "TLS_AES_256_GCM_SHA384",
+                "TLS_CHACHA20_POLY1305_SHA256",
+                "TLS_AES_128_GCM_SHA256",
                 "ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_RSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
@@ -75267,6 +75265,9 @@
             "items": {
               "type": "string",
               "enum": [
+                "TLS_AES_256_GCM_SHA384",
+                "TLS_CHACHA20_POLY1305_SHA256",
+                "TLS_AES_128_GCM_SHA256",
                 "ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_RSA_WITH_AES_256_GCM_SHA384",
                 "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",

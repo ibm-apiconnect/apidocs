@@ -1,7 +1,7 @@
 /********************************************************* {COPYRIGHT-TOP} ***
  * Licensed Materials - Property of IBM
  *
- * (C) Copyright IBM Corporation 2017, 2021
+ * (C) Copyright IBM Corporation 2017, 2022
  *
  * All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or disclosure
@@ -9,7 +9,7 @@
  ********************************************************** {COPYRIGHT-END} **/
  window.apiConnectExplorer = {
   attachPoint: '#root',
-  options: { 
+  options: {
       renderSchemaView: true,
       headerTitle: "API Connect v2018.4.1.16",
       headerActive: true,
@@ -23,6 +23,7 @@
         "2018.4.1.13": "2018.4.1.13.html",
         "2018.4.1.15": "2018.4.1.15.html",
         "2018.4.1.16": "2018.4.1.16.html",
+        "2018.4.1.17": "2018.4.1.17.html",
         "2018.4.1.x": "2018.4.1.x.html"
       }
     },
