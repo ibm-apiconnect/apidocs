@@ -93785,7 +93785,7 @@
             "value": "now-7d"
           },
           "iso": {
-            "value": "2020-01-01T00:00:00"
+            "value": "2020-01-01T00:00:00+00:00"
           },
           "epoch_millis": {
             "value": 1577836800000
@@ -93805,7 +93805,7 @@
             "value": "now-6M"
           },
           "iso": {
-            "value": "2018-01-01T00:00:00"
+            "value": "2018-01-01T00:00:00+00:00"
           },
           "epoch_millis": {
             "value": 1514764800000
@@ -94199,7 +94199,7 @@
                 "$ref": "#/components/schemas/Before"
               }
             ],
-            "example": "2020-01-01T00:00:00"
+            "example": "2020-01-01T00:00:00+00:00"
           },
           "after": {
             "allOf": [
@@ -99004,7 +99004,7 @@
         },
         "parameters": [
           {
-            "$ref": "#/components/parameters/portal_service_name"
+            "$ref": "#/components/parameters/portal_service_endpoint"
           },
           {
             "$ref": "#/components/parameters/execute_reset"
@@ -100949,6 +100949,16 @@
         "required": true,
         "schema": {
           "type": "string"
+        }
+      },
+      "portal_service_endpoint": {
+        "name": "portal_service_endpoint",
+        "in": "query",
+        "description": "The URL endpoint of the portal service",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uri"
         }
       },
       "state_key": {
