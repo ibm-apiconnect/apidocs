@@ -11,7 +11,7 @@
   attachPoint: '#root',
   options: {
       renderSchemaView: true,
-      headerTitle: "API Connect v10.0.1.5",
+      headerTitle: "API Connect v10.0.1.6",
       headerActive: true,
       groupByTags: true,
       validateSwagger: false,
@@ -7333,6 +7333,11 @@
             ]
           }
         ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cascade"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -9633,6 +9638,16 @@
           "200": {
             "description": "Success",
             "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Implementation"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Implementation"
+                }
+              },
               "application/zip": {}
             }
           },
@@ -17688,6 +17703,13 @@
             "type": "string",
             "nullable": true
           },
+          "temporary_token_format": {
+            "type": "string",
+            "enum": [
+              "jwt",
+              "b64"
+            ]
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -18843,11 +18865,10 @@
                       },
                       "redirect_endpoint": {
                         "type": "string",
-                        "format": "uri",
                         "nullable": true
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -18874,7 +18895,7 @@
                         ]
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -18883,11 +18904,11 @@
                     "additionalProperties": false,
                     "properties": {
                       "application_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint",
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform",
                         "nullable": true
                       },
                       "owner_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint",
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform",
                         "nullable": true
                       }
                     }
@@ -18909,12 +18930,10 @@
                 ]
               },
               "authorize_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "token_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "introspection_endpoint": {
                 "type": "object",
@@ -22533,11 +22552,10 @@
                       },
                       "redirect_endpoint": {
                         "type": "string",
-                        "format": "uri",
                         "nullable": true
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -22564,7 +22582,7 @@
                         ]
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -22573,10 +22591,10 @@
                     "additionalProperties": false,
                     "properties": {
                       "application_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       },
                       "owner_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   }
@@ -22597,12 +22615,10 @@
                 ]
               },
               "authorize_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "token_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "introspection_endpoint": {
                 "type": "object",
@@ -28981,6 +28997,83 @@
           }
         }
       },
+      "Visibility": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "view",
+          "subscribe"
+        ],
+        "properties": {
+          "view": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "public",
+                  "authenticated",
+                  "custom"
+                ]
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "tags": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "orgs": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "subscribe": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "authenticated",
+                  "custom"
+                ]
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "tags": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "orgs": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
       "PrivateKeyEntry": {
         "type": "object",
         "additionalProperties": false,
@@ -29297,6 +29390,24 @@
           }
         }
       },
+      "SecuredEndpointWithoutEndpointTransform": {
+        "type": "object",
+        "additionalProperties": false,
+        "nullable": true,
+        "required": [
+          "endpoint"
+        ],
+        "properties": {
+          "endpoint": {
+            "type": "string"
+          },
+          "tls_client_profile_url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          }
+        }
+      },
       "IntrospectWsdlMultipart": {
         "type": "object",
         "properties": {
@@ -29348,6 +29459,9 @@
             "items": {
               "$ref": "#/components/schemas/ProductDefinition"
             }
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/Visibility"
           },
           "openapi": {
             "type": "array",
@@ -29426,6 +29540,9 @@
           "draft_product_url": {
             "type": "string",
             "format": "uri"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/Visibility"
           }
         }
       },
@@ -30048,7 +30165,7 @@
         "type": "oauth2",
         "flows": {
           "implicit": {
-            "authorizationUrl": "/api/oauth2/authorize",
+            "authorizationUrl": "/oauth2/authorize",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -30078,8 +30195,8 @@
             }
           },
           "password": {
-            "tokenUrl": "/api/token",
-            "refreshUrl": "/api/token",
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -30109,7 +30226,7 @@
             }
           },
           "clientCredentials": {
-            "tokenUrl": "/api/token",
+            "tokenUrl": "/token",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -30139,9 +30256,9 @@
             }
           },
           "authorizationCode": {
-            "authorizationUrl": "/api/oauth2/authorize",
-            "tokenUrl": "/api/token",
-            "refreshUrl": "/api/token",
+            "authorizationUrl": "/oauth2/authorize",
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -34181,6 +34298,11 @@
             "oauth": [
               "org:manage"
             ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cascade"
           }
         ],
         "responses": {
@@ -43639,6 +43761,11 @@
             "oauth": [
               "org:manage"
             ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cascade"
           }
         ],
         "responses": {
@@ -53566,6 +53693,11 @@
             "oauth": [
               "org:manage"
             ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cascade"
           }
         ],
         "responses": {
@@ -70590,6 +70722,13 @@
             "type": "string",
             "nullable": true
           },
+          "temporary_token_format": {
+            "type": "string",
+            "enum": [
+              "jwt",
+              "b64"
+            ]
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -71745,11 +71884,10 @@
                       },
                       "redirect_endpoint": {
                         "type": "string",
-                        "format": "uri",
                         "nullable": true
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -71776,7 +71914,7 @@
                         ]
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -71785,11 +71923,11 @@
                     "additionalProperties": false,
                     "properties": {
                       "application_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint",
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform",
                         "nullable": true
                       },
                       "owner_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint",
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform",
                         "nullable": true
                       }
                     }
@@ -71811,12 +71949,10 @@
                 ]
               },
               "authorize_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "token_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "introspection_endpoint": {
                 "type": "object",
@@ -75435,11 +75571,10 @@
                       },
                       "redirect_endpoint": {
                         "type": "string",
-                        "format": "uri",
                         "nullable": true
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -75466,7 +75601,7 @@
                         ]
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -75475,10 +75610,10 @@
                     "additionalProperties": false,
                     "properties": {
                       "application_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       },
                       "owner_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   }
@@ -75499,12 +75634,10 @@
                 ]
               },
               "authorize_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "token_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "introspection_endpoint": {
                 "type": "object",
@@ -81883,6 +82016,83 @@
           }
         }
       },
+      "Visibility": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "view",
+          "subscribe"
+        ],
+        "properties": {
+          "view": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "public",
+                  "authenticated",
+                  "custom"
+                ]
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "tags": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "orgs": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "subscribe": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "authenticated",
+                  "custom"
+                ]
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "tags": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "orgs": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
       "PrivateKeyEntry": {
         "type": "object",
         "additionalProperties": false,
@@ -82199,6 +82409,24 @@
           }
         }
       },
+      "SecuredEndpointWithoutEndpointTransform": {
+        "type": "object",
+        "additionalProperties": false,
+        "nullable": true,
+        "required": [
+          "endpoint"
+        ],
+        "properties": {
+          "endpoint": {
+            "type": "string"
+          },
+          "tls_client_profile_url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          }
+        }
+      },
       "IntrospectWsdlMultipart": {
         "type": "object",
         "properties": {
@@ -82250,6 +82478,9 @@
             "items": {
               "$ref": "#/components/schemas/ProductDefinition"
             }
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/Visibility"
           },
           "openapi": {
             "type": "array",
@@ -82328,6 +82559,9 @@
           "draft_product_url": {
             "type": "string",
             "format": "uri"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/Visibility"
           }
         }
       },
@@ -82950,7 +83184,7 @@
         "type": "oauth2",
         "flows": {
           "implicit": {
-            "authorizationUrl": "/api/oauth2/authorize",
+            "authorizationUrl": "/oauth2/authorize",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -82980,8 +83214,8 @@
             }
           },
           "password": {
-            "tokenUrl": "/api/token",
-            "refreshUrl": "/api/token",
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -83011,7 +83245,7 @@
             }
           },
           "clientCredentials": {
-            "tokenUrl": "/api/token",
+            "tokenUrl": "/token",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -83041,9 +83275,9 @@
             }
           },
           "authorizationCode": {
-            "authorizationUrl": "/api/oauth2/authorize",
-            "tokenUrl": "/api/token",
-            "refreshUrl": "/api/token",
+            "authorizationUrl": "/oauth2/authorize",
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -89022,29 +89256,6 @@
               }
             }
           },
-          "wsdl": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": [
-              "content_type",
-              "content"
-            ],
-            "properties": {
-              "content_type": {
-                "type": "string",
-                "enum": [
-                  "application/wsdl",
-                  "application/wsdl+xml",
-                  "text/xml",
-                  "application/zip"
-                ]
-              },
-              "content": {
-                "type": "string",
-                "format": "binary"
-              }
-            }
-          },
           "api_type": {
             "type": "string",
             "enum": [
@@ -91836,8 +92047,8 @@
         "type": "oauth2",
         "flows": {
           "password": {
-            "tokenUrl": "/consumer-api/token",
-            "refreshUrl": "/api/token",
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
             "scopes": {
               "app:manage": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Clear the Application Credential objects, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
@@ -91848,9 +92059,9 @@
             }
           },
           "authorizationCode": {
-            "authorizationUrl": "/consumer-api/oauth2/authorize",
-            "tokenUrl": "/consumer-api/token",
-            "refreshUrl": "/api/token",
+            "authorizationUrl": "/oauth2/authorize",
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
             "scopes": {
               "app:manage": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Clear the Application Credential objects, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
@@ -92542,7 +92753,7 @@
             "value": "now-7d"
           },
           "iso": {
-            "value": "2020-01-01T00:00:00"
+            "value": "2020-01-01T00:00:00+00:00"
           },
           "epoch_millis": {
             "value": 1577836800000
@@ -92562,7 +92773,7 @@
             "value": "now-6M"
           },
           "iso": {
-            "value": "2018-01-01T00:00:00"
+            "value": "2018-01-01T00:00:00+00:00"
           },
           "epoch_millis": {
             "value": 1514764800000
@@ -92956,7 +93167,7 @@
                 "$ref": "#/components/schemas/Before"
               }
             ],
-            "example": "2020-01-01T00:00:00"
+            "example": "2020-01-01T00:00:00+00:00"
           },
           "after": {
             "allOf": [
@@ -94949,6 +95160,830 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/custom-translation/export": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Create a task that exports an archive that contains the custom translation of a site.",
+        "description": "You can create a task to export an archive of the custom translation of a site. You can then use that archive to quickly and simply override the custom translations on another site.",
+        "operationId": "custom_translation_createExport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=translation-apic-custom-translationcreate-export"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/langcodes"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful create of the task",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Task already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomTranslation"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/custom-translation/export/{task_id}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "get": {
+        "summary": "When ready, streams a custom translation export artifact.",
+        "description": "When ready, streams a custom translation export artifact back to the related task id that is provided in the arguments.",
+        "operationId": "custom_translation_getExport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=translation-apic-custom-translationget-export"
+        },
+        "responses": {
+          "200": {
+            "description": "The export artifact stream.",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "This task and its related artifact could not be found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "The task is not an export operation and therefore an artifact cannot be streamed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "425": {
+            "description": "The artifact related to this task is still being processed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomTranslation"
+        ]
+      },
+      "delete": {
+        "summary": "If running, cancels a custom translation export task.",
+        "description": "If running, cancels the custom translation export task and deletes any related artifacts that have been generated.",
+        "operationId": "custom_translation_deleteExport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=translation-apic-custom-translationdelete-export"
+        },
+        "responses": {
+          "204": {
+            "description": "The task has been cancelled and it's artifacts deleted."
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomTranslation"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/custom-translation/export/{task_id}/status": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "get": {
+        "summary": "Returns information about the status of this task.",
+        "description": "Returns information related to the task id that is provided in the arguments.",
+        "operationId": "custom_translation_getExportStatus",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=translation-apic-custom-translationget-export-status"
+        },
+        "responses": {
+          "200": {
+            "description": "Task is ready to be obtained",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Waiting on task to finish.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "The task and its artifacts have expired.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomTranslation"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/custom-translation/import": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Create a task that imports an archive that contains the custom translations of a site.",
+        "description": "You can create a task to import an archive of the custom translations of a site. You can use the imported archive to quickly and simply override the custom translations for the specified site.",
+        "operationId": "custom_translation_createImport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=translation-apic-custom-translationcreate-import"
+        },
+        "requestBody": {
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful create of the task",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Task already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomTranslation"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/custom-translation/import/{task_id}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "delete": {
+        "summary": "If running, cancels a custom translation import task.",
+        "description": "If running, cancels the custom translation import task and deletes any related artifacts that have been generated.",
+        "operationId": "custom_translation_deleteImport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=translation-apic-custom-translationdelete-import"
+        },
+        "responses": {
+          "204": {
+            "description": "The task has been cancelled and it's artifacts deleted."
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomTranslation"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/custom-translation/import/{task_id}/status": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "get": {
+        "summary": "Get the result of the custom translation import task.",
+        "description": "Get the result of the custom translation import task. If the import task has completed on the portal system, this command returns the result of the command. If the import task has not completed on the portal system, it returns the current status of the task.",
+        "operationId": "custom_translation_getImportStatus",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=translation-apic-custom-translationget-import-status"
+        },
+        "responses": {
+          "200": {
+            "description": "Output from portal cli command request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Waiting on task to finish.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "The task and its result have expired.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomTranslation"
+        ]
+      }
+    },
+    "/service/custom-webserver-page": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/portal_service_name"
+        },
+        {
+          "$ref": "#/components/parameters/page_type"
+        }
+      ],
+      "get": {
+        "summary": "Get the HTML for a web server page.",
+        "description": "Get the web server HTML content of a specific web server page (index, 404, 40x, 50x).",
+        "operationId": "custom_webserver_page_get",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=page-apic-custom-webserver-pageget"
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The resource was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomWebserverPage"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the custom HTML for a web server page.",
+        "description": "Delete the custom web server HTML content of a specific web server page (index, 404, 40x, 50x). (Will fallback to a default.)",
+        "operationId": "custom_webserver_page_delete",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=page-apic-custom-webserver-pagedelete"
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The resource was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomWebserverPage"
+        ]
+      },
+      "post": {
+        "summary": "Set a custom HTML page for a web server page type.",
+        "description": "Set the custom web server HTML content of a specific web server page (index, 404, 40x, 50x). Maximum size of 8 MB.",
+        "operationId": "custom_webserver_page_set",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=page-apic-custom-webserver-pageset"
+        },
+        "requestBody": {
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The resource was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomWebserverPage"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/site/check": {
       "parameters": [
         {
@@ -95598,6 +96633,247 @@
         "tags": [
           "Portal",
           "Resource: DrupalConfig"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/drupal-state": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get the State key",
+        "description": "Get the State key value.",
+        "operationId": "drupal_state_get",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=state-apic-drupal-stateget"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/state_key"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The resource was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: DrupalState"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the State key.",
+        "description": "Delete the specific state key.",
+        "operationId": "drupal_state_delete",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=state-apic-drupal-statedelete"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/state_key"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The resource was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: DrupalState"
+        ]
+      },
+      "post": {
+        "summary": "Set a state key value.",
+        "description": "Can set a new state value or update an already existing key-value.",
+        "operationId": "drupal_state_set",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=state-apic-drupal-stateset"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/state_key"
+          },
+          {
+            "$ref": "#/components/parameters/state_value"
+          },
+          {
+            "$ref": "#/components/parameters/input_format"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The resource was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: DrupalState"
         ]
       }
     },
@@ -96678,6 +97954,86 @@
         ]
       }
     },
+    "/service/factory-reset": {
+      "delete": {
+        "summary": "Factory resets the Developer Portal.",
+        "description": "Performs a factory reset of the Developer Portal, deleting the portal service and all portal sites. This command is irreversible - please ensure you have backups configured.",
+        "operationId": "factory_reset_singletonDel",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=reset-apic-service-factory-resetdelete"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/portal_service_endpoint"
+          },
+          {
+            "$ref": "#/components/parameters/execute_reset"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Output from portal cli command request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: FactoryReset"
+        ]
+      }
+    },
     "/service/ip-security-enabled": {
       "post": {
         "summary": "Enable or disable IP security functionality within the Developer Portal",
@@ -97349,13 +98705,7 @@
         },
         "parameters": [
           {
-            "$ref": "#/components/parameters/extensions"
-          },
-          {
-            "$ref": "#/components/parameters/resolve-dependencies"
-          },
-          {
-            "$ref": "#/components/parameters/skip"
+            "$ref": "#/components/parameters/modules"
           }
         ],
         "responses": {
@@ -97508,9 +98858,9 @@
           "$ref": "#/components/parameters/catalog"
         }
       ],
-      "post": {
+      "delete": {
         "summary": "Deletes one or more modules.",
-        "description": "Deletes one or more modules. The provided list of modules must be comma separated.",
+        "description": "Deletes one or more modules. The provided list of modules must be comma separated. Running this command with the force option will make sure the Drupal table's are purged of any reference to the module.",
         "operationId": "modules_delete",
         "security": [
           {
@@ -97526,6 +98876,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/modules"
+          },
+          {
+            "$ref": "#/components/parameters/force"
           }
         ],
         "responses": {
@@ -97937,7 +99290,7 @@
           "$ref": "#/components/parameters/catalog"
         }
       ],
-      "post": {
+      "delete": {
         "summary": "Deletes one or more themes.",
         "description": "Deletes one or more themes. The provided list of themes must be comma separated.",
         "operationId": "themes_delete",
@@ -98422,13 +99775,40 @@
           "type": "boolean"
         }
       },
-      "extensions": {
-        "name": "extensions",
+      "execute_reset": {
+        "name": "execute_reset",
         "in": "query",
-        "description": "A list of a single extension type (Module or Theme). You can use the * wildcard at the end of extension names to disable multiple matches.",
-        "required": true,
+        "description": "set to true to trigger the Developer Portal reset",
+        "required": false,
         "schema": {
           "type": "string"
+        }
+      },
+      "force": {
+        "name": "force",
+        "in": "query",
+        "description": "Provides the force flag to the subsequent command. The force action is dependent on the command. Please read the command description.",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "langcodes": {
+        "name": "langcodes",
+        "in": "query",
+        "description": "A comma separated list of language codes e.g. \"es,zh-hans\"",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "input_format": {
+        "name": "input_format",
+        "in": "query",
+        "description": "The input format of the value for the state key. Values: string, integer, float, boolean, json, yaml. [default: auto]",
+        "required": false,
+        "schema": {
+          "$ref": "#/components/schemas/InputFormat"
         }
       },
       "ip_security_enabled": {
@@ -98474,6 +99854,15 @@
         "required": true,
         "schema": {
           "type": "string"
+        }
+      },
+      "page_type": {
+        "name": "page_type",
+        "in": "query",
+        "description": "The page type you want to run this command against. Values: index, 404, 40x, 50x",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/PageType"
         }
       },
       "product": {
@@ -98530,13 +99919,32 @@
           "type": "string"
         }
       },
-      "skip": {
-        "name": "skip",
+      "portal_service_endpoint": {
+        "name": "portal_service_endpoint",
         "in": "query",
-        "description": "Skip automatic downloading of libraries (c.f. devel).",
-        "required": false,
+        "description": "The URL endpoint of the portal service",
+        "required": true,
         "schema": {
-          "type": "boolean"
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "state_key": {
+        "name": "state_key",
+        "in": "query",
+        "description": "The state key, for example \"system.cron_last\".",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "state_value": {
+        "name": "state_value",
+        "in": "query",
+        "description": "The value to assign to the state key.",
+        "required": true,
+        "schema": {
+          "type": "string"
         }
       },
       "status": {
@@ -98546,15 +99954,6 @@
         "required": false,
         "schema": {
           "type": "string"
-        }
-      },
-      "resolve-dependencies": {
-        "name": "resolve-dependencies",
-        "in": "query",
-        "description": "Attempt to download any missing dependencies. At the moment, only works when the module name is the same as the project name.",
-        "required": false,
-        "schema": {
-          "type": "boolean"
         }
       },
       "ips": {
@@ -98568,25 +99967,30 @@
       }
     },
     "schemas": {
-      "IpAllowlist": {
-        "type": "object",
-        "additionalProperties": true
+      "InputFormat": {
+        "name": "InputFormat",
+        "type": "string",
+        "default": "auto",
+        "enum": [
+          "auto",
+          "string",
+          "integer",
+          "float",
+          "boolean",
+          "json",
+          "yaml"
+        ]
       },
-      "Security": {
-        "type": "object",
-        "additionalProperties": true
-      },
-      "SiteConfig": {
-        "type": "object",
-        "additionalProperties": true
-      },
-      "CustomModule": {
-        "type": "object",
-        "additionalProperties": true
-      },
-      "CustomTheme": {
-        "type": "object",
-        "additionalProperties": true
+      "PageType": {
+        "name": "PageType",
+        "type": "string",
+        "default": "index",
+        "enum": [
+          "index",
+          "404",
+          "40x",
+          "50x"
+        ]
       },
       "CliResponse": {
         "x-bhendi-schema": "custom",
