@@ -17702,6 +17702,13 @@
             "type": "string",
             "nullable": true
           },
+          "temporary_token_format": {
+            "type": "string",
+            "enum": [
+              "jwt",
+              "b64"
+            ]
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -70713,6 +70720,13 @@
           "atm_base_path": {
             "type": "string",
             "nullable": true
+          },
+          "temporary_token_format": {
+            "type": "string",
+            "enum": [
+              "jwt",
+              "b64"
+            ]
           },
           "metadata": {
             "type": "object",
