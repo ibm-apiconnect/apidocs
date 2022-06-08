@@ -25,6 +25,7 @@
         "2018.4.1.16": "2018.4.1.16.html",
         "2018.4.1.17": "2018.4.1.17.html",
         "2018.4.1.19": "2018.4.1.19.html",
+        "2018.4.1.20": "2018.4.1.20.html",
         "2018.4.1.x": "2018.4.1.x.html"
       }
     },
@@ -49630,6 +49631,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/expand"
           }
         ],
         "responses": {
@@ -50177,6 +50181,295 @@
         "tags": [
           "Consumer Management",
           "Resource: Group (Catalog Scope)"
+        ]
+      }
+    },
+    "/spaces/{org}/{catalog}/{space}/consumer-groups": {
+      "description": "The collection of Group operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "post": {
+        "summary": "Create a Group object",
+        "description": "Create a Group object",
+        "operationId": "group_createSpaceInitiated",
+        "security": [
+          {
+            "oauth": [
+              "consumer-org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Group"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/Group"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful create",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Group"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Group"
+                }
+              }
+            },
+            "headers": {
+              "Location": {
+                "$ref": "#/components/headers/Location"
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Consumer Management",
+          "Resource: Group"
+        ]
+      },
+      "get": {
+        "summary": "List the Group objects",
+        "description": "List the Group objects",
+        "operationId": "group_listSpaceInitiated",
+        "security": [
+          {
+            "oauth": [
+              "consumer-org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GroupList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GroupList"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Consumer Management",
+          "Resource: Group"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Group objects",
+        "description": "Clear the Group objects",
+        "operationId": "group_clearSpaceInitiated",
+        "security": [
+          {
+            "oauth": [
+              "consumer-org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/confirm"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Consumer Management",
+          "Resource: Group"
+        ]
+      }
+    },
+    "/spaces/{org}/{catalog}/{space}/consumer-groups/{group}": {
+      "description": "Group object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/group"
+        }
+      ],
+      "get": {
+        "summary": "Get the Group object by name or id",
+        "description": "Get the Group object by name or id",
+        "operationId": "group_getSpaceInitiated",
+        "security": [
+          {
+            "oauth": [
+              "consumer-org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Group"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Group"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Consumer Management",
+          "Resource: Group"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Group object by name or id",
+        "description": "Update the Group object by name or id",
+        "operationId": "group_updateSpaceInitiated",
+        "security": [
+          {
+            "oauth": [
+              "consumer-org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Group"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/Group"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Group"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Group"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Consumer Management",
+          "Resource: Group"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Group object by name or id",
+        "description": "Delete the Group object by name or id",
+        "operationId": "group_delSpaceInitiated",
+        "security": [
+          {
+            "oauth": [
+              "consumer-org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Group"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Group"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Consumer Management",
+          "Resource: Group"
         ]
       }
     },
