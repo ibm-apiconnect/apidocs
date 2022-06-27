@@ -23,7 +23,6 @@
         "10.0.1.4": "10.0.1.4.html",
         "10.0.1.5": "10.0.1.5.html",
         "10.0.1.6": "10.0.1.6.html",
-        "10.0.1.7": "10.0.1.7.html",
         "10.0.1.x": "10.0.1.x.html",
         "10.0.2.0": "10.0.2.0.html",
         "10.0.3.0": "10.0.3.0.html",
@@ -97039,8 +97038,8 @@
   "info": {
     "x-ibm-name": "analytics",
     "version": "2.0.0",
-    "title": "API Connect Analytics V2 API",
-    "description": "API for the API Connect Analytics V2 subsystem",
+    "title": "IBM API Connect Analytics API",
+    "description": "API for the API Connect Analytics subsystem",
     "termsOfService": "https://ww.ibm.com/terms-of-service",
     "contact": {
       "name": "IBM",
@@ -97070,7 +97069,6 @@
         "summary": "List events at cloud scope.",
         "description": "Returns a result set of analytics API events scoped to the cloud. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=data-api-event-record-fields\n",
         "operationId": "events_cloudList",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -97240,7 +97238,6 @@
         "summary": "Get specific event at cloud scope.",
         "description": "Return a single analytics API event by ID scoped to the cloud. The item in the result set is determined by the passed in request query to this API. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=data-api-event-record-fields\n",
         "operationId": "events_cloudGet",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -97276,7 +97273,6 @@
         "summary": "Count events at cloud scope.",
         "description": "Return the count of analytics API events scoped to the cloud that match the passed in request query.\n",
         "operationId": "events_cloudCount",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -97440,7 +97436,6 @@
         "summary": "List events at provider organization scope.",
         "description": "Return a result set of analytics API events scoped to the provider organization. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=data-api-event-record-fields\n",
         "operationId": "events_orgist",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -97607,7 +97602,6 @@
         "summary": "Get specific event at provider organization scope.\n",
         "description": "Return a single analytics API event by ID scoped to the provider organization. The item in the result set is determined by the passed in request query to this API. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=data-api-event-record-fields\n",
         "operationId": "events_orgGet",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -97646,7 +97640,6 @@
         "summary": "Count events at provider organization scope.",
         "description": "Return the count of analytics API events scoped to the provider organization that match the passed in request query.\n",
         "operationId": "events_orgCount",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -97807,7 +97800,6 @@
         "summary": "List events at catalog scope.\n",
         "description": "Return a result set of analytics API events scoped to the catalog. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=data-api-event-record-fields\n",
         "operationId": "events_catalogList",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -97971,7 +97963,6 @@
         "summary": "Get specific event at catalog scope.",
         "description": "Return a single analytics API event by ID scoped to the catalog. The item in the result set is determined by the passed in request query to this API. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=data-api-event-record-fields\n",
         "operationId": "events_catalogGet",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -98013,7 +98004,6 @@
         "summary": "Count events at catalog scope.",
         "description": "Return the count of analytics API events scoped to the catalog that match the passed in request query.\n",
         "operationId": "events_catalogCount",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -98171,7 +98161,6 @@
         "summary": "List events at space scope.",
         "description": "Return a result set of analytics API events scoped to the space. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=data-api-event-record-fields\n",
         "operationId": "events_spaceList",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -98332,7 +98321,6 @@
         "summary": "Get specific event at space scope.",
         "description": "Return a single analytics API event by ID scoped to the space. The item in the result set is determined by the passed in request query to this API. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=data-api-event-record-fields\n",
         "operationId": "events_spaceGet",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -98377,7 +98365,6 @@
         "summary": "Count events at space scope.",
         "description": "Return a count of analytics API events scoped to the space.\n",
         "operationId": "events_spaceCount",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -98520,7 +98507,6 @@
         "summary": "Get the data needed to populate the API dashboard at cloud scope.\n",
         "description": "Return the data needed to populate the API dashboard at cloud scope.\n",
         "operationId": "dashboards_cloudApi",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -98567,7 +98553,6 @@
         "summary": "Get the data needed to populate the Latency dashboard at cloud scope.\n",
         "description": "Return the data needed to populate the Latency dashboard at cloud scope.\n",
         "operationId": "dashboards_cloudLatency",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -98734,7 +98719,6 @@
         "summary": "Get the data needed to populate the Product dashboard at cloud scope.\n",
         "description": "Return the data needed to populate the Product dashboard at cloud scope.\n",
         "operationId": "dashboards_cloudProduct",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -98901,7 +98885,6 @@
         "summary": "Get the data needed to populate the Status dashboard at cloud scope.\n",
         "description": "Return the data needed to populate the Status dashboard at cloud scope.\n",
         "operationId": "dashboards_cloudStatus",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -98954,6 +98937,12 @@
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_offset_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -99068,7 +99057,6 @@
         "summary": "Get the data needed to populate the Usage dashboard at cloud scope.\n",
         "description": "Return the data needed to populate the Usage dashboard at cloud scope.\n",
         "operationId": "dashboards_cloudUsage",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -99238,7 +99226,6 @@
         "summary": "Get the data needed to populate the API dashboard at provider organization scope.\n",
         "description": "Return the data needed to populate the API dashboard at provider organization scope.\n",
         "operationId": "dashboards_orgApi",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -99402,7 +99389,6 @@
         "summary": "Get the data needed to populate the Latency dashboard at provider organization scope.\n",
         "description": "Return the data needed to populate the Latency dashboard at provider organization scope.\n",
         "operationId": "dashboards_orgLatency",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -99566,7 +99552,6 @@
         "summary": "Get the data needed to populate the Product dashboard at provider organization scope.\n",
         "description": "Return the data needed to populate the Product dashboard at provider organization scope.\n",
         "operationId": "dashboards_orgProduct",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -99730,7 +99715,6 @@
         "summary": "Get the data needed to populate the Status dashboard at provider organization scope.\n",
         "description": "Return the data needed to populate the Status dashboard at provider organization scope.\n",
         "operationId": "dashboards_orgStatus",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -99783,6 +99767,12 @@
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_offset_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -99894,7 +99884,6 @@
         "summary": "Get the data needed to populate the Usage dashboard at provider organization scope.\n",
         "description": "Return the data needed to populate the Usage dashboard at provider organization scope.\n",
         "operationId": "dashboards_orgUsage",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -100061,7 +100050,6 @@
         "summary": "Get the data needed to populate the API dashboard at catalog scope.\n",
         "description": "Return the data needed to populate the API dashboard at catalog scope.\n",
         "operationId": "dashboards_catalogApi",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -100222,7 +100210,6 @@
         "summary": "Get the data needed to populate the Latency dashboard at catalog scope.\n",
         "description": "Return the data needed to populate the Latency dashboard at catalog scope.\n",
         "operationId": "dashboards_catalogLatency",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -100383,7 +100370,6 @@
         "summary": "Get the data needed to populate the Product dashboard at catalog scope.\n",
         "description": "Return the data needed to populate the Product dashboard at catalog scope.\n",
         "operationId": "dashboards_catalogProduct",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -100544,7 +100530,6 @@
         "summary": "Get the data needed to populate the Status dashboard at catalog scope.\n",
         "description": "Return the data needed to populate the Status dashboard at catalog scope.\n",
         "operationId": "dashboards_catalogStatus",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -100591,6 +100576,12 @@
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_offset_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -100705,7 +100696,6 @@
         "summary": "Get the data needed to populate the Usage dashboard at catalog scope.\n",
         "description": "Return the data needed to populate the Usage dashboard at catalog scope.\n",
         "operationId": "dashboards_catalogUsage",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -100869,7 +100859,6 @@
         "summary": "Get the data needed to populate the API dashboard at space scope.\n",
         "description": "Return the data needed to populate the API dashboard at space scope.\n",
         "operationId": "dashboards_spaceApi",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -101027,7 +101016,6 @@
         "summary": "Get the data needed to populate the Latency dashboard at space scope.\n",
         "description": "Return the data needed to populate the Latency dashboard at space scope.\n",
         "operationId": "dashboards_spaceLatency",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -101185,7 +101173,6 @@
         "summary": "Get the data needed to populate the Product dashboard at space scope.\n",
         "description": "Return the data needed to populate the Product dashboard at space scope.\n",
         "operationId": "dashboards_spaceProduct",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -101343,7 +101330,6 @@
         "summary": "Get the data needed to populate the Status dashboard at space scope.\n",
         "description": "Return the data needed to populate the Status dashboard at space scope.\n",
         "operationId": "dashboards_spaceStatus",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -101390,6 +101376,12 @@
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_offset_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -101501,7 +101493,6 @@
         "summary": "Get the data needed to populate the Usage dashboard at space scope.\n",
         "description": "Return the data needed to populate the Usage dashboard at space scope.\n",
         "operationId": "dashboards_spaceUsage",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -101650,7 +101641,6 @@
         "summary": "List of filter parameters supported at cloud scope.",
         "description": "Return the list of filter parameters supported at cloud scope.\n",
         "operationId": "filterparams_cloudList",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -101689,7 +101679,6 @@
         "summary": "List of filter parameters supported at provider organization scope.",
         "description": "Return the list of filter parameters supported at provider organization scope.\n",
         "operationId": "filterparams_orgList",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -101731,7 +101720,6 @@
         "summary": "List of filter parameters supported at catalog scope.",
         "description": "Return the list of filter parameters supported at catalog scope.\n",
         "operationId": "filterparams_catalogList",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -101776,7 +101764,6 @@
         "summary": "List of filter parameters supported at space scope.",
         "description": "Return the list of filter parameters supported at space scope.\n",
         "operationId": "filterparams_spaceList",
-        "x-auth-token": "provider",
         "security": [
           {
             "oauth": [
@@ -101839,7 +101826,6 @@
         "summary": "Snapshot of the number of shards allocated to each data node and their disk space.",
         "description": "Provides a snapshot of the number of shards allocated to each data node and their disk space.\n",
         "operationId": "clustermgmt_cat_getAllocation",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -101858,12 +101844,12 @@
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtObjectResponse"
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
                 }
               },
               "application/yaml": {
                 "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtObjectResponse"
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
                 }
               }
             }
@@ -101931,7 +101917,6 @@
         "summary": "Returns high-level information about indices in a cluster.",
         "description": "Returns high-level information about indices in a cluster, including backing indices for data streams.\n",
         "operationId": "clustermgmt_cat_getIndices",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -101950,12 +101935,12 @@
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtObjectResponse"
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
                 }
               },
               "application/yaml": {
                 "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtObjectResponse"
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
                 }
               }
             }
@@ -102017,7 +102002,6 @@
         "summary": "Information about a cluster’s nodes.",
         "description": "Returns information about a cluster’s nodes.\n",
         "operationId": "clustermgmt_cat_getNodes",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -102036,12 +102020,12 @@
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtObjectResponse"
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
                 }
               },
               "application/yaml": {
                 "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtObjectResponse"
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
                 }
               }
             }
@@ -102100,7 +102084,6 @@
         "summary": "Returns information about ongoing and completed shard recoveries.",
         "description": "Returns information about ongoing and completed shard recoveries, similar to the index recovery API. For data streams, the API returns information about the stream’s backing indices.\n",
         "operationId": "clustermgmt_cat_getRecovery",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -102119,12 +102102,12 @@
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtObjectResponse"
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
                 }
               },
               "application/yaml": {
                 "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtObjectResponse"
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
                 }
               }
             }
@@ -102180,7 +102163,6 @@
         "summary": "Detailed view of what nodes contain which shards.",
         "description": "The shards command is the detailed view of what nodes contain which shards. It will tell you if it’s a primary or replica, the number of docs, the bytes it takes on disk, and the node where it’s located. For data streams, the API returns information about the stream’s backing indices.\n",
         "operationId": "clustermgmt_cat_getShards",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -102199,12 +102181,12 @@
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtObjectResponse"
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
                 }
               },
               "application/yaml": {
                 "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtObjectResponse"
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
                 }
               }
             }
@@ -102254,7 +102236,6 @@
         "summary": "Retrieves the cluster’s index aliases, including filter and routing information.",
         "description": "Retrieves the cluster’s index aliases, including filter and routing information. The API does not return data stream aliases.\n",
         "operationId": "clustermgmt_cat_getAliases",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -102273,12 +102254,12 @@
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtObjectResponse"
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
                 }
               },
               "application/yaml": {
                 "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtObjectResponse"
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
                 }
               }
             }
@@ -102319,7 +102300,6 @@
         "summary": "Returns cluster nodes information.",
         "description": "The cluster nodes info API allows to retrieve one or more (or all) of the cluster nodes information. All the nodes selective options are explained here. By default, it returns all attributes and core settings for a node.\n",
         "operationId": "clustermgmt_nodes_getNodes",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -102379,7 +102359,6 @@
         "summary": "Returns the hot threads on each selected node in the cluster.",
         "description": "This API yields a breakdown of the hot threads on each selected node in the cluster. The output is plain text with a breakdown of each node’s top hot threads.\n",
         "operationId": "clustermgmt_nodes_getNodesHotThreads",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -102448,7 +102427,6 @@
         "summary": "Returns cluster nodes statistics.",
         "description": "You can use the cluster nodes stats API to retrieve statistics for nodes in a cluster. All the nodes selective options are explained here. By default, all stats are returned. You can limit the returned information by using metrics.\n",
         "operationId": "clustermgmt_nodes_getNodesStats",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -102493,7 +102471,6 @@
         "summary": "Returns information on the usage of features.",
         "description": "The cluster nodes usage API allows you to retrieve information on the usage of features for each node.\n",
         "operationId": "clustermgmt_nodes_getNodesUsage",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -102562,7 +102539,6 @@
         "summary": "Returns cluster nodes statistics.",
         "description": "You can use the cluster nodes stats API to retrieve statistics for nodes in a cluster. All the nodes selective options are explained here. By default, all stats are returned. You can limit the returned information by using metrics.\n",
         "operationId": "clustermgmt_nodes_getStatsMetric",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -102610,7 +102586,6 @@
         "summary": "Returns information on the usage of features.",
         "description": "The cluster nodes usage API allows you to retrieve information on the usage of features for each node.\n",
         "operationId": "clustermgmt_nodes_getUsageMetric",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -102661,7 +102636,6 @@
         "summary": "Returns information on the usage of features.",
         "description": "The cluster nodes info API allows to retrieve one or more (or all) of the cluster nodes information. By default, it returns all attributes and core settings for a node.\n",
         "operationId": "clustermgmt_nodes_getNodesByIdOrMetric",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -102724,7 +102698,6 @@
         "summary": "Returns the hot threads on each selected node in the cluster.",
         "description": "This API yields a breakdown of the hot threads on each selected node in the cluster.  The output is plain text with a breakdown of each node’s top hot threads.\n",
         "operationId": "clustermgmt_nodes_getNodesHotThreadsById",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -102796,7 +102769,6 @@
         "summary": "Returns cluster nodes statistics.",
         "description": "You can use the cluster nodes stats API to retrieve statistics for nodes in a cluster. All the nodes selective options are explained here. By default, all stats are returned. You can limit the returned information by using metrics.\n",
         "operationId": "clustermgmt_nodes_getNodesStatsById",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -102844,7 +102816,6 @@
         "summary": "Returns information on the usage of features.",
         "description": "The cluster nodes usage API allows you to retrieve information on the usage of features for each node.\n",
         "operationId": "clustermgmt_nodes_getNodesUsageById",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -102898,7 +102869,6 @@
         "summary": "Returns cluster nodes information.",
         "description": "The cluster nodes info API allows to retrieve one or more (or all) of the cluster nodes information. By default, it returns all attributes and core settings for a node.\n",
         "operationId": "clustermgmt_nodes_getNodeMetricById",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -102973,7 +102943,6 @@
         "summary": "Returns cluster nodes statistics.",
         "description": "You can use the cluster nodes stats API to retrieve statistics for nodes in a cluster. All the nodes selective options are explained here. By default, all stats are returned. You can limit the returned information by using metrics.\n",
         "operationId": "clustermgmt_nodes_getNodesStatsByIdMetric",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -103051,7 +103020,6 @@
         "summary": "Result of _nodes/:nodeId",
         "description": "Returns the result of nodes/:nodeId on OpenSearch\n",
         "operationId": "clustermgmt_nodes_getNodeMetricByIdMetricIndex",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -103102,7 +103070,6 @@
         "summary": "Returns information on the usage of features.",
         "description": "The cluster nodes usage API allows you to retrieve information on the usage of features for each node.\n",
         "operationId": "clustermgmt_nodes_getNodesUsageByIdMetric",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -103138,7 +103105,6 @@
         "summary": "Reloads the keystore on nodes in the cluster.",
         "description": "Secure settings are stored in an on-disk keystore. Certain of these settings are reloadable. That is, you can change them on disk and reload them without restarting any nodes in the cluster. When you have updated reloadable secure settings in your keystore, you can use this API to reload those settings on each node.\n",
         "operationId": "clustermgmt_nodes_postReloadSecureSettings",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -103191,7 +103157,6 @@
         "summary": "Reloads the keystore on nodes in the cluster.",
         "description": "Secure settings are stored in an on-disk keystore. Certain of these settings are reloadable. That is, you can change them on disk and reload them without restarting any nodes in the cluster. When you have updated reloadable secure settings in your keystore, you can use this API to reload those settings on each node.\n",
         "operationId": "clustermgmt_nodes_postReloadSecureSettingsById",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -103250,7 +103215,6 @@
         "summary": "Result of _cluster/allocation/explain",
         "description": "The purpose of the cluster allocation explain API is to provide explanations for shard allocations in the cluster. For unassigned shards, the explain API provides an explanation for why the shard is unassigned.  For assigned shards, the explain API provides an explanation for why the shard is remaining on its current node and has not moved or rebalanced to another node.\n",
         "operationId": "clustermgmt_cluster_getAllocationExplain",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -103292,7 +103256,6 @@
         "summary": "Removes master-eligible nodes from the voting configuration exclusion list.",
         "description": "Removes master-eligible nodes from the voting configuration exclusion list.\n",
         "operationId": "clustermgmt_cluster_deleteVotingConfigExclusions",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -103320,7 +103283,6 @@
         "summary": "Adds master-eligible nodes from the voting configuration exclusion list.",
         "description": "Removes master-eligible nodes from the voting configuration exclusion list.\n",
         "operationId": "clustermgmt_cluster_postVotingConfigExclusions",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -103389,7 +103351,6 @@
         "summary": "Returns the health status of a cluster.",
         "description": "The cluster health API returns a simple status on the health of the cluster. You can also use the API to get the health status of only specified data streams and indices. For data streams, the API retrieves the health status of the stream’s backing indices.\n",
         "operationId": "clustermgmt_cluster_getHealth",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -103434,7 +103395,6 @@
         "summary": "Returns cluster-level changes that have not yet been executed.",
         "description": "The pending cluster tasks API returns a list of any cluster-level changes (e.g. create index, update mapping, allocate or fail shard) which have not yet been executed.\n",
         "operationId": "clustermgmt_cluster_getPendingTasks",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -103485,7 +103445,6 @@
         "summary": "Returns cluster-wide settings.",
         "description": "By default, this API call only returns settings that have been explicitly defined, but can also include the default settings by calling the include_defaults parameter.\n",
         "operationId": "clustermgmt_cluster_getSettings",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -103513,7 +103472,6 @@
         "summary": "Configures dynamic cluster settings.",
         "description": "You can configure and update dynamic settings on a running cluster using the cluster update settings API. Updates made using the cluster update settings API can be persistent, which apply across cluster restarts, or transient, which reset after a cluster restart. You can also reset transient or persistent settings by assigning them a null value using the API.\n",
         "operationId": "clustermgmt_cluster_putSettings",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -103590,7 +103548,6 @@
         "summary": "Returns an internal representation of the cluster state for debugging or diagnostic purposes.",
         "description": "The cluster state is an internal data structure which keeps track of a variety of information needed by every node.\n",
         "operationId": "clustermgmt_cluster_getState",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -103656,7 +103613,6 @@
         "summary": "Returns an internal representation of the cluster state for debugging or diagnostic purposes.",
         "description": "The cluster state is an internal data structure which keeps track of a variety of information needed by every node.\n",
         "operationId": "clustermgmt_cluster_getStateByMetrics",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -103725,7 +103681,6 @@
         "summary": "RReturns an internal representation of the cluster state for debugging or diagnostic purposes.",
         "description": "The cluster state is an internal data structure which keeps track of a variety of information needed by every node.\n",
         "operationId": "clustermgmt_cluster_getStateByMetricsTarget",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -103767,7 +103722,6 @@
         "summary": "Returns cluster statistics.",
         "description": "The Cluster Stats API allows to retrieve statistics from a cluster wide perspective. The API returns basic index metrics (shard numbers, store size, memory usage) and information about the current nodes that form the cluster (number, roles, os, jvm versions, memory usage, cpu and installed plugins).\n",
         "operationId": "clustermgmt_cluster_getStats",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -103812,7 +103766,6 @@
         "summary": "Returns cluster statistics.",
         "description": "The Cluster Stats API allows to retrieve statistics from a cluster wide perspective. The API returns basic index metrics (shard numbers, store size, memory usage) and information about the current nodes that form the cluster (number, roles, os, jvm versions, memory usage, cpu and installed plugins).\n",
         "operationId": "clustermgmt_cluster_getStatsByNodeFilter",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -103869,7 +103822,6 @@
         "summary": "Changes the allocation of shards in a cluster.",
         "description": "The reroute command allows for manual changes to the allocation of individual shards in the cluster. For example, a shard can be moved from one node to another explicitly, an allocation can be cancelled, and an unassigned shard can be explicitly allocated to a specific node.\n",
         "operationId": "clustermgmt_cluster_postReroute",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -103919,7 +103871,6 @@
         "summary": "Returns configured remote cluster information.",
         "description": "The cluster remote info API allows you to retrieve all of the configured remote cluster information. It returns connection and endpoint information keyed by the configured remote cluster alias.\n",
         "operationId": "clustermgmt_cluster_getRemoteInfo",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -103955,7 +103906,6 @@
         "summary": "Get opensearch settings.",
         "description": "Get opensearch settings.\n",
         "operationId": "clustermgmt_settings_getStorageSettings",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -103997,7 +103947,6 @@
             }
           }
         },
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -104008,6 +103957,91 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/SettingsBodyResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/recovery": {
+      "description": "Returns information about ongoing and completed shard recoveries for one or more indices. For data streams, the API returns information for the stream’s backing indices.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/active_only_optional"
+        },
+        {
+          "$ref": "#/components/parameters/detailed_optional"
+        }
+      ],
+      "get": {
+        "summary": "Use the index recovery API to get information about ongoing and completed shard recoveries.",
+        "description": "Returns information about ongoing and completed shard recoveries for one or more indices. For data streams, the API returns information for the stream’s backing indices.\n",
+        "operationId": "clustermgmt_index_getRecovery",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/{index}/recovery": {
+      "description": "Returns information about ongoing and completed shard recoveries for one or more indices. For data streams, the API returns information for the stream’s backing indices.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/index"
+        },
+        {
+          "$ref": "#/components/parameters/active_only_optional"
+        },
+        {
+          "$ref": "#/components/parameters/detailed_optional"
+        }
+      ],
+      "get": {
+        "summary": "Use the index recovery API to get information about ongoing and completed shard recoveries.",
+        "description": "Returns information about ongoing and completed shard recoveries for one or more indices. For data streams, the API returns information for the stream’s backing indices.\n",
+        "operationId": "clustermgmt_index_getRecoveryByIndex",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -104036,7 +104070,6 @@
         "summary": "Returns indices information.",
         "description": "Returns information about one or more indices. For data streams, the API returns information about the stream’s backing indices.\n",
         "operationId": "clustermgmt_index_getIndex",
-        "x-auth-token": "cloud",
         "parameters": [
           {
             "$ref": "#/components/parameters/allow_no_indices_optional"
@@ -104090,7 +104123,6 @@
         "summary": "Deletes one or more indices.",
         "description": "Deleting an index deletes its documents, shards, and metadata.\n",
         "operationId": "clustermgmt_index_deleteIndex",
-        "x-auth-token": "cloud",
         "parameters": [
           {
             "$ref": "#/components/parameters/allow_no_indices_optional"
@@ -104129,7 +104161,6 @@
         "summary": "Creates a new index.",
         "description": "You can use the create index API to add a new index to a cluster.\n",
         "operationId": "clustermgmt_index_createIndex",
-        "x-auth-token": "cloud",
         "parameters": [
           {
             "$ref": "#/components/parameters/master_timeout_optional"
@@ -104211,7 +104242,6 @@
         "summary": "Closes an index.",
         "description": "You use the close index API to close open indices.\n",
         "operationId": "clustermgmt_index_closeIndex",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -104268,7 +104298,6 @@
         "summary": "Opens a closed index. For data streams, the API opens any closed backing indices.",
         "description": "You can use the open index API to re-open closed indices. If the request targets a data stream, the request re-opens any of the stream’s closed backing indices.\n",
         "operationId": "clustermgmt_index_openIndex",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -104319,7 +104348,6 @@
         "summary": "Shrinks an existing index into a new index with fewer primary shards.",
         "description": "The shrink index API allows you to shrink an existing index into a new index with fewer primary shards. The requested number of primary shards in the target index must be a factor of the number of shards in the source index.\n",
         "operationId": "clustermgmt_index_shrinkIndex",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -104370,7 +104398,6 @@
         "summary": "Splits an existing index into a new index with more primary shards.",
         "description": "The split index API allows you to split an existing index into a new index, where each original primary shard is split into two or more primary shards in the new index.\n",
         "operationId": "clustermgmt_index_splitIndex",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -104435,7 +104462,6 @@
         "summary": "Clones an existing index.",
         "description": "Use the clone index API to clone an existing index into a new index, where each original primary shard is cloned into a new primary shard in the new index.\n",
         "operationId": "clustermgmt_index_cloneIndex",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -104486,7 +104512,6 @@
         "summary": "Creates a new index for a data stream or index alias.",
         "description": "The rollover API creates a new index for a data stream or index alias.\n",
         "operationId": "clustermgmt_index_rolloverIndex",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -104540,7 +104565,6 @@
         "summary": "Creates a new index for a data stream or index alias.",
         "description": "The rollover API creates a new index for a data stream or index alias.\n",
         "operationId": "clustermgmt_index_rolloverToTarget",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -104582,7 +104606,6 @@
         "summary": "Resolve name and index patterns for indices, aliases and data streams",
         "description": "Resolves the specified name(s) and/or index patterns for indices, aliases and data streams. Multiple patterns and remote clusters are supported.\n",
         "operationId": "clustermgmt_index_resolveIndex",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -104636,7 +104659,6 @@
         "summary": "Flushes one or more data streams or indices.",
         "description": "Flushing a data stream or index is the process of making sure that any data that is currently only stored in the transaction log is also permanently stored in the Lucene index.\n",
         "operationId": "clustermgmt_index_getFlushByIndex",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -104664,7 +104686,6 @@
         "summary": "Flushes one or more data streams or indices.",
         "description": "Flushing a data stream or index is the process of making sure that any data that is currently only stored in the transaction log is also permanently stored in the Lucene index.\n",
         "operationId": "clustermgmt_index_postFlushByIndex",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -104715,7 +104736,6 @@
         "summary": "Flushes one or more data streams or indices.",
         "description": "Flushing a data stream or index is the process of making sure that any data that is currently only stored in the transaction log is also permanently stored in the Lucene index.\n",
         "operationId": "clustermgmt_index_getFlush",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -104743,7 +104763,6 @@
         "summary": "Flushes one or more data streams or indices.",
         "description": "Flushing a data stream or index is the process of making sure that any data that is currently only stored in the transaction log is also permanently stored in the Lucene index.\n",
         "operationId": "clustermgmt_index_postFlush",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -104799,7 +104818,6 @@
             "$ref": "#/components/parameters/local_optional"
           }
         ],
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -104835,7 +104853,6 @@
             "$ref": "#/components/parameters/timeout_optional"
           }
         ],
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -104885,7 +104902,6 @@
             "$ref": "#/components/parameters/timeout_optional"
           }
         ],
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -104935,7 +104951,6 @@
             "$ref": "#/components/parameters/timeout_optional"
           }
         ],
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -104983,7 +104998,6 @@
         "summary": "Retrieves information for one or more aliases.",
         "description": "Retrieves information for one or more aliases.\n",
         "operationId": "clustermgmt_index_getAlias",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -105034,7 +105048,6 @@
         "summary": "Retrieves information for one or more aliases.",
         "description": "Retrieves information for one or more aliases.\n",
         "operationId": "clustermgmt_index_getAliasbyName",
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -105090,7 +105103,6 @@
             }
           }
         },
-        "x-auth-token": "cloud",
         "security": [
           {
             "oauth": [
@@ -105253,6 +105265,15 @@
           "type": "string"
         }
       },
+      "active_only_optional": {
+        "name": "active_only",
+        "in": "query",
+        "description": "If true, the response only includes ongoing shard recoveries. Defaults to false.",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        }
+      },
       "allow_no_indices_optional": {
         "name": "allow_no_indices",
         "in": "query",
@@ -105277,7 +105298,8 @@
         "description": "Filter results by API name.",
         "required": false,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "example": "custom_api"
         }
       },
       "app_id_optional": {
@@ -105304,7 +105326,8 @@
         "description": "Filter results by application name.",
         "required": false,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "format": "custom_app"
         }
       },
       "bytes_optional": {
@@ -105330,7 +105353,8 @@
         "description": "Filter results by the number of bytes received.",
         "required": false,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "example": 500
         }
       },
       "bytes_sent_optional": {
@@ -105339,7 +105363,8 @@
         "description": "Filter results by the number of bytes sent.",
         "required": false,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "example": 500
         }
       },
       "catalog_id_optional": {
@@ -105357,7 +105382,8 @@
         "description": "Filter results by catalog name.",
         "required": false,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "example": "prod"
         }
       },
       "client_id_optional": {
@@ -105366,7 +105392,8 @@
         "description": "Filter results by client ID.",
         "required": false,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "example": "afd9d43cdc0fec584b42b0c9448d1989"
         }
       },
       "completion_fields_optional": {
@@ -105393,7 +105420,8 @@
         "description": "Filter results by consumer organization name.",
         "required": false,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "example": "my_consumer_org"
         }
       },
       "consumer_org_title_optional": {
@@ -105402,7 +105430,8 @@
         "description": "Filter results by consumer organization title.",
         "required": false,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "example": "My Consumer Org"
         }
       },
       "custom_data_optional": {
@@ -105441,6 +105470,25 @@
         "name": "end",
         "in": "query",
         "description": "If set, the API will only return events with a datetime equal or older than this. The value must follow the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z. See https://datatracker.ietf.org/doc/html/rfc3339#section-5.6.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "error_limit_optional": {
+        "name": "error_limit",
+        "in": "query",
+        "description": "If set, the number of items to return when requesting errors data.\n",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "error_offset_optional": {
+        "name": "error_offset",
+        "in": "query",
+        "description": "If set, the offset to be applied when requesting errors data.\n",
         "required": false,
         "schema": {
           "type": "string"
@@ -105522,7 +105570,8 @@
         "description": "Filter results by provider organization name.",
         "required": false,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "example": "custom_prov_org"
         }
       },
       "return_format_optional": {
@@ -105721,7 +105770,8 @@
         "description": "The interval to do the second sampling of threads. Defaults to 500ms.",
         "required": false,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "example": "500ms"
         }
       },
       "level_optional": {
@@ -105741,10 +105791,11 @@
       "limit_optional": {
         "name": "limit",
         "in": "query",
-        "description": "If set, the number of items to return when requesting a list.",
+        "description": "If set, the number of items to return when requesting a list. Maximum: 200",
         "required": false,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "example": "50"
         }
       },
       "local_optional": {
@@ -105753,7 +105804,11 @@
         "description": "If true, the request retrieves information from the local node only.",
         "required": false,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            true,
+            false
+          ]
         }
       },
       "master_timeout_optional": {
@@ -105771,7 +105826,16 @@
         "description": "Filter results by HTTP method e.g. DELETE, GET, POST.",
         "required": false,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "GET",
+            "PUT",
+            "POST",
+            "DELETE",
+            "HEAD",
+            "TRACE",
+            "OPTIONS"
+          ]
         }
       },
       "metric_optional": {
@@ -105804,10 +105868,11 @@
       "offset_optional": {
         "name": "offset",
         "in": "query",
-        "description": "If set, the offset to be applied when requesting a list.",
+        "description": "If set, the offset to be applied when requesting a list. e.g. return events starting from the 100th result",
         "required": false,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "example": "100"
         }
       },
       "opentracing_info_optional": {
@@ -105857,7 +105922,8 @@
         "description": "Filter results by plan name",
         "required": false,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "example": "default_plan"
         }
       },
       "plan_version_optional": {
@@ -105866,7 +105932,8 @@
         "description": "Filter results by plan version",
         "required": false,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "example": "2.0.0"
         }
       },
       "pretty_optional": {
@@ -105903,7 +105970,8 @@
         "description": "Filter results by product name.",
         "required": false,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "example": "custom_product"
         }
       },
       "product_title_optional": {
@@ -105911,7 +105979,8 @@
         "in": "query",
         "description": "Filter results by product title.",
         "schema": {
-          "type": "string"
+          "type": "string",
+          "example": "Custom Product"
         }
       },
       "product_version_optional": {
@@ -105920,7 +105989,8 @@
         "description": "Filter results by product version.",
         "required": false,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "example": "2.0.0"
         }
       },
       "space_id_optional": {
@@ -105938,7 +106008,8 @@
         "description": "Filter results by space name.",
         "required": false,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "example": "space1"
         }
       },
       "request_http_headers_optional": {
@@ -106022,7 +106093,8 @@
         "description": "If set, the API will only return events with a datetime equal or newer than this. The value must follow the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z. See https://datatracker.ietf.org/doc/html/rfc3339#section-5.6.\n",
         "required": false,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "format": "date-time"
         }
       },
       "threads_optional": {
@@ -106045,7 +106117,7 @@
       "time_to_serve_request_optional": {
         "name": "time_to_serve_request",
         "in": "query",
-        "description": "If set, the API will only return events that match this time to serve request value.",
+        "description": "The time in milliseconds to serve the request.",
         "required": false,
         "schema": {
           "type": "string"
@@ -106263,6 +106335,19 @@
         "description": "An optional object containing custom_data information if in use.",
         "additionalProperties": true
       },
+      "ClusterMgmtCatResponse": {
+        "type": "object",
+        "description": "ClusterMgmt array response content",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
       "ClusterMgmtTextResponse": {
         "type": "string",
         "description": "ClusterMgmt text/plain response content",
@@ -106281,7 +106366,7 @@
         "type": "object",
         "properties": {
           "data": {
-            "type": "integer"
+            "type": "number"
           }
         }
       },
@@ -106673,7 +106758,7 @@
             "type": "string"
           },
           "value": {
-            "type": "integer"
+            "type": "number"
           }
         }
       },
@@ -106938,11 +107023,14 @@
             "properties": {
               "min_doc_count": {
                 "description": "The minimum number of documents required to roll over the index.",
-                "type": "integer"
+                "type": "integer",
+                "minimum": 1,
+                "default": 25000000
               },
               "min_index_age": {
-                "description": "The minimum age required to roll over the index. Index age is the time between its creation and the present.",
-                "type": "string"
+                "description": "The minimum age required to roll over the index. Index age is the time between its creation and the present. Use d for day and h for hour, e.g. 30d or 96h.",
+                "type": "string",
+                "default": "1d"
               }
             }
           },
@@ -106950,8 +107038,9 @@
             "type": "object",
             "properties": {
               "min_index_age": {
-                "description": "The minimum age required to delete the index. Index age is the time between its creation and the present.",
-                "type": "string"
+                "description": "The minimum age required to delete the index. Index age is the time between its creation and the present. Use d for day and h for hour, e.g. 30d or 96h.",
+                "type": "string",
+                "default": "90d"
               }
             }
           }
