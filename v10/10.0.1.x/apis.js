@@ -17432,6 +17432,9 @@
           "default_catalog": {
             "type": "boolean"
           },
+          "override_invitation_ttl_for_all_consumer_orgs": {
+            "type": "boolean"
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -21151,6 +21154,7 @@
             "type": "string",
             "enum": [
               "ready",
+              "claimed",
               "running",
               "blocked",
               "failed"
@@ -42064,69 +42068,6 @@
               "application/yaml": {
                 "schema": {
                   "$ref": "#/components/schemas/Catalog"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Management",
-          "Resource: Catalog"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/send-email": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "post": {
-        "summary": "Send email",
-        "description": "Send email",
-        "operationId": "catalog_sendEmail",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SendEmail"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/SendEmail"
-              }
-            }
-          }
-        },
-        "responses": {
-          "204": {
-            "description": "Success"
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SendEmailResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/SendEmailResponse"
                 }
               }
             }
@@ -70451,6 +70392,9 @@
           "default_catalog": {
             "type": "boolean"
           },
+          "override_invitation_ttl_for_all_consumer_orgs": {
+            "type": "boolean"
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -74170,6 +74114,7 @@
             "type": "string",
             "enum": [
               "ready",
+              "claimed",
               "running",
               "blocked",
               "failed"
@@ -98434,8 +98379,8 @@
     },
     "/service/ip-allowlist": {
       "delete": {
-        "summary": "Remove all IPs the allowlist.",
-        "description": "Remove all IPs from the allowlist",
+        "summary": "Remove all IPs from the allowlist.",
+        "description": "Remove all IPs from the allowlist.",
         "operationId": "ip_allowlist_singletonDel",
         "security": [
           {
