@@ -99467,8 +99467,8 @@
     },
     "/service/ip-allowlist": {
       "delete": {
-        "summary": "Remove all IPs the allowlist.",
-        "description": "Remove all IPs from the allowlist",
+        "summary": "Remove all IPs from the allowlist.",
+        "description": "Remove all IPs from the allowlist.",
         "operationId": "ip_allowlist_singletonDel",
         "security": [
           {
