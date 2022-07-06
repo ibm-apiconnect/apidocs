@@ -11,7 +11,7 @@
   attachPoint: '#root',
   options: {
       renderSchemaView: true,
-      headerTitle: "API Connect v10.0.1.x",
+      headerTitle: "API Connect v10.0.1.LATEST",
       headerActive: true,
       groupByTags: true,
       validateSwagger: false,
@@ -24,13 +24,12 @@
         "10.0.1.5": "10.0.1.5.html",
         "10.0.1.6": "10.0.1.6.html",
         "10.0.1.7": "10.0.1.7.html",
-        "10.0.1.x": "10.0.1.x.html",
+        "10.0.1.LATEST": "10.0.1.LATEST.html",
         "10.0.2.0": "10.0.2.0.html",
         "10.0.3.0": "10.0.3.0.html",
         "10.0.4.0": "10.0.4.0.html",
         "10.0.5.0": "10.0.5.0.html",
-        "10.0.5.x": "10.0.5.x.html",
-        "10.0.x": "10.0.x.html",
+        "10.0.5.LATEST": "10.0.5.LATEST.html"
       }
     },
   apis: [
@@ -100023,7 +100022,7 @@
   			"name": "introduction",
   			"title": "Introduction",
             "format": "b64html",
-  			"content": "PGFydGljbGUgaWQ9ImludHJvZHVjdGlvbiIgY2xhc3M9InBhZ2UiPgoKICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBpbnRyby1oZWFkZXIiPgogICAgICAgIE9wZW4gQVBJIEV4cGxvcmVyIERvY3VtZW50YXRpb24KICAgICAgPC9zcGFuPgogICAgPC9oMj4KICA8L2Rpdj4KICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfY29udGVudCBpbnRyby1jb250ZW50Ij4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+SW50cm9kdWN0aW9uPC9oMj4KICAgICAgPHA+CiAgICAgICAgVGhlIHBsYXRmb3JtIFJFU1QgQVBJcyBkb2N1bWVudGVkIGhlcmUgZm9yIElCTSBBUEkgQ29ubmVjdCB2MTAgcHJvdmlkZSBjb21wbGV0ZSBhY2Nlc3MgdG8gdGhlIGNhcGFiaWxpdHkgb2YgdGhlIHBsYXRmb3JtLiBUaGV5IG1heSBiZSB1c2VkIHRvIGF1dG9tYXRlIGFkbWluaXN0cmF0aW9uIG9mIHRoZSBwbGF0Zm9ybTsgZm9yIHNjcmlwdHMgYW5kIHRvb2xzIHRvIHN1cHBvcnQgYSBjb250aW51b3VzIGludGVncmF0aW9uIGVudmlyb25tZW50IGZvciBBUEkgZGV2ZWxvcG1lbnQgYW5kIHB1Ymxpc2hpbmc7IGFuZCBmb3IgbWFuYWdlbWVudCBvZiBjYXRhbG9ncyBvZiBBUElzIGFuZCB0aGVpciBzdWJzY3JpYmVycy4gVGhlIG9wZXJhdGlvbnMgcHJvdmlkZWQgaW4gdGhlIFJFU1QgQVBJIGFsc28gY29ycmVzcG9uZCBkaXJlY3RseSB3aXRoIGNvbW1hbmRzIGluIHRoZSB0b29sa2l0IENMSS4KICAgICAgPC9wPgogICAgPC9zZWN0aW9uPgogICAgPHNlY3Rpb24+CiAgICAgIDxoMj5BUElzPC9oMj4KICAgICAgPHA+CiAgICAgICAgVGhlIGNhcGFiaWxpdHkgb2YgdGhlIHBsYXRmb3JtIGlzIGNvbXByaXNlZCBvZiB0aHJlZSBBUElzIHdoaWNoIGFyZSBvcmllbnRlZCBhdCBkaWZmZXJlbnQgc2V0cyBvZiB1c2UgY2FzZXM6CiAgICAgIDwvcD4KICAgICAgPGRpdiBjbGFzcz0ic2hvdy1leHBsb3Jlci1hcGlzIj48L2Rpdj4KICAgIDwvc2VjdGlvbj4KICA8L2Rpdj4KPC9hcnRpY2xlPgo="
+  			"content": "PGFydGljbGUgaWQ9ImludHJvZHVjdGlvbiIgY2xhc3M9InBhZ2UiPgoKICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBpbnRyby1oZWFkZXIiPgogICAgICAgIE9wZW4gQVBJIEV4cGxvcmVyIERvY3VtZW50YXRpb24gdjEwLjAuMS5MQVRFU1QKICAgICAgPC9zcGFuPgogICAgPC9oMj4KICA8L2Rpdj4KICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfY29udGVudCBpbnRyby1jb250ZW50Ij4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+SW50cm9kdWN0aW9uPC9oMj4KICAgICAgPHA+CiAgICAgICAgVGhlIHBsYXRmb3JtIFJFU1QgQVBJcyBkb2N1bWVudGVkIGhlcmUgZm9yIElCTSBBUEkgQ29ubmVjdCB2MTAgcHJvdmlkZSBjb21wbGV0ZSBhY2Nlc3MgdG8gdGhlIGNhcGFiaWxpdHkgb2YgdGhlIHBsYXRmb3JtLiBUaGV5IG1heSBiZSB1c2VkIHRvIGF1dG9tYXRlIGFkbWluaXN0cmF0aW9uIG9mIHRoZSBwbGF0Zm9ybTsgZm9yIHNjcmlwdHMgYW5kIHRvb2xzIHRvIHN1cHBvcnQgYSBjb250aW51b3VzIGludGVncmF0aW9uIGVudmlyb25tZW50IGZvciBBUEkgZGV2ZWxvcG1lbnQgYW5kIHB1Ymxpc2hpbmc7IGFuZCBmb3IgbWFuYWdlbWVudCBvZiBjYXRhbG9ncyBvZiBBUElzIGFuZCB0aGVpciBzdWJzY3JpYmVycy4gVGhlIG9wZXJhdGlvbnMgcHJvdmlkZWQgaW4gdGhlIFJFU1QgQVBJIGFsc28gY29ycmVzcG9uZCBkaXJlY3RseSB3aXRoIGNvbW1hbmRzIGluIHRoZSB0b29sa2l0IENMSS4KICAgICAgPC9wPgogICAgPC9zZWN0aW9uPgogICAgPHNlY3Rpb24+CiAgICAgIDxoMj5BUElzPC9oMj4KICAgICAgPHA+CiAgICAgICAgVGhlIGNhcGFiaWxpdHkgb2YgdGhlIHBsYXRmb3JtIGlzIGNvbXByaXNlZCBvZiB0aHJlZSBBUElzIHdoaWNoIGFyZSBvcmllbnRlZCBhdCBkaWZmZXJlbnQgc2V0cyBvZiB1c2UgY2FzZXM6CiAgICAgIDwvcD4KICAgICAgPGRpdiBjbGFzcz0ic2hvdy1leHBsb3Jlci1hcGlzIj48L2Rpdj4KICAgIDwvc2VjdGlvbj4KICA8L2Rpdj4KPC9hcnRpY2xlPgo="
   		},
   		{
   			"name": "concepts",

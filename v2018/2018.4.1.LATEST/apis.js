@@ -11,7 +11,7 @@
   attachPoint: '#root',
   options: {
       renderSchemaView: true,
-      headerTitle: "API Connect v2018.4.1.x",
+      headerTitle: "API Connect v2018.4.1.LATEST",
       headerActive: true,
       groupByTags: true,
       validateSwagger: false,
@@ -26,7 +26,7 @@
         "2018.4.1.17": "2018.4.1.17.html",
         "2018.4.1.19": "2018.4.1.19.html",
         "2018.4.1.20": "2018.4.1.20.html",
-        "2018.4.1.x": "2018.4.1.x.html"
+        "2018.4.1.LATEST": "2018.4.1.LATEST.html"
       }
     },
   apis: [
