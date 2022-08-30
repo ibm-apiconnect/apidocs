@@ -24,12 +24,14 @@
         "10.0.1.5": "10.0.1.5.html",
         "10.0.1.6": "10.0.1.6.html",
         "10.0.1.7": "10.0.1.7.html",
+        "10.0.1.8": "10.0.1.8.html",
         "10.0.1.LATEST": "10.0.1.LATEST.html",
         "10.0.2.0": "10.0.2.0.html",
         "10.0.3.0": "10.0.3.0.html",
         "10.0.4.0": "10.0.4.0.html",
         "10.0.5.0": "10.0.5.0.html",
-        "10.0.5.LATEST": "10.0.5.LATEST.html"
+        "10.0.5.LATEST": "10.0.5.LATEST.html",
+        "10.0.LATEST": "10.0.LATEST.html",
       }
     },
   apis: [
@@ -92700,7 +92702,7 @@
             "value": "now-7d"
           },
           "iso": {
-            "value": "2020-01-01T00:00:00+00:00"
+            "value": "2020-01-01T00:00:00Z"
           },
           "epoch_millis": {
             "value": 1577836800000
@@ -92720,7 +92722,7 @@
             "value": "now-6M"
           },
           "iso": {
-            "value": "2018-01-01T00:00:00+00:00"
+            "value": "2018-01-01T00:00:00Z"
           },
           "epoch_millis": {
             "value": 1514764800000
@@ -93114,7 +93116,7 @@
                 "$ref": "#/components/schemas/Before"
               }
             ],
-            "example": "2020-01-01T00:00:00+00:00"
+            "example": "2020-01-01T00:00:00Z"
           },
           "after": {
             "allOf": [
@@ -96168,6 +96170,152 @@
         "tags": [
           "Portal",
           "Resource: Entity"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/forums/disable": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Disable the forum module for a given site",
+        "description": "Removes all forums vocabulary taxonomy terms before disabling the forum module for a given site.",
+        "operationId": "forums_disable",
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=forums-apic-forumsdisable"
+        },
+        "responses": {
+          "200": {
+            "description": "Output from portal cli command request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Forums"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/forums/enable": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Enable the forum module for a given site",
+        "description": "Enables the forum module for a given site.",
+        "operationId": "forums_enable",
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=forums-apic-forumsenable"
+        },
+        "responses": {
+          "200": {
+            "description": "Output from portal cli command request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Forums"
         ]
       }
     },
