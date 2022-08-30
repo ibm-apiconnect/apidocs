@@ -24,12 +24,14 @@
         "10.0.1.5": "10.0.1.5.html",
         "10.0.1.6": "10.0.1.6.html",
         "10.0.1.7": "10.0.1.7.html",
+        "10.0.1.8": "10.0.1.8.html",
         "10.0.1.LATEST": "10.0.1.LATEST.html",
         "10.0.2.0": "10.0.2.0.html",
         "10.0.3.0": "10.0.3.0.html",
         "10.0.4.0": "10.0.4.0.html",
         "10.0.5.0": "10.0.5.0.html",
-        "10.0.5.LATEST": "10.0.5.LATEST.html"
+        "10.0.5.LATEST": "10.0.5.LATEST.html",
+        "10.0.LATEST": "10.0.LATEST.html",
       }
     },
   apis: [
@@ -9297,6 +9299,49 @@
                   "$ref": "#/components/schemas/GatewayService"
                 }
               }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Gateway Service"
+        ]
+      }
+    },
+    "/orgs/{org}/availability-zones/{availability-zone}/gateway-services/{gateway-service}/download-logs": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/availability-zone"
+        },
+        {
+          "$ref": "#/components/parameters/gateway-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the Gateway Service download logs",
+        "description": "Get the Gateway Service download logs",
+        "operationId": "gateway_service_downloadLogs",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/octet-stream": {}
             }
           },
           "4XX": {
@@ -25906,7 +25951,15 @@
               "primitive",
               "composite",
               "mapped",
+              "imported",
               "other"
+            ]
+          },
+          "skill_subtype": {
+            "type": "string",
+            "enum": [
+              "public",
+              "private"
             ]
           },
           "display_name": {
@@ -25914,6 +25967,9 @@
           },
           "icon": {
             "type": "string"
+          },
+          "visible": {
+            "type": "boolean"
           },
           "applications": {
             "type": "array",
@@ -28130,7 +28186,8 @@
                 "product_retire_optimized",
                 "global_policy_error",
                 "product_migrate_subscriptions",
-                "execute_migration_target"
+                "execute_migration_target",
+                "event_config_logs"
               ]
             }
           },
@@ -39973,6 +40030,49 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/configured-gateway-services/{configured-gateway-service}/download-logs": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/configured-gateway-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the Configured Gateway Service download logs",
+        "description": "Get the Configured Gateway Service download logs",
+        "operationId": "configured_gateway_service_downloadLogsCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/octet-stream": {}
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Configured Gateway Service (Catalog Scope)"
+        ]
+      }
+    },
     "/spaces/{org}/{catalog}/{space}/configured-gateway-services": {
       "description": "The collection of Configured Gateway Service operations",
       "parameters": [
@@ -40212,6 +40312,52 @@
                   "$ref": "#/components/schemas/ConfiguredGatewayService"
                 }
               }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Space Settings",
+          "Resource: Configured Gateway Service (Space Scope)"
+        ]
+      }
+    },
+    "/spaces/{org}/{catalog}/{space}/configured-gateway-services/{configured-gateway-service}/download-logs": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/configured-gateway-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the Configured Gateway Service download logs",
+        "description": "Get the Configured Gateway Service download logs",
+        "operationId": "configured_gateway_service_downloadLogsSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/octet-stream": {}
             }
           },
           "4XX": {
@@ -44637,77 +44783,6 @@
         "tags": [
           "Catalog Management",
           "Resource: Catalog"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/search/user": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "post": {
-        "summary": "Search for users in the catalog realm",
-        "description": "Search for users in the catalog realm",
-        "operationId": "user_searchCatalog",
-        "security": [
-          {
-            "oauth": [
-              "consumer-org:manage"
-            ]
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UserSearch"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/UserSearch"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserList"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "User Management",
-          "Resource: User"
         ]
       }
     },
@@ -65423,6 +65498,83 @@
         ]
       }
     },
+    "/orgs/{org}/drafts/draft-products/validate": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Validate the draft product object",
+        "description": "Validate the draft product object",
+        "operationId": "draft_product_validateObject",
+        "security": [
+          {
+            "oauth": [
+              "product-drafts:edit"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DraftProduct"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DraftProduct"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/scope"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name"
+          },
+          {
+            "$ref": "#/components/parameters/space_name"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_names"
+          },
+          {
+            "$ref": "#/components/parameters/validate_apis"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationResults"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationResults"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Drafts",
+          "Resource: Draft Product by Id"
+        ]
+      }
+    },
     "/orgs/{org}/drafts/draft-products/{draft-product-id}/document": {
       "parameters": [
         {
@@ -66202,6 +66354,80 @@
             ]
           }
         ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/scope"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name"
+          },
+          {
+            "$ref": "#/components/parameters/space_name"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_names"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationResults"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationResults"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Drafts",
+          "Resource: Draft API by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/drafts/draft-apis/validate": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Validate the draft api object",
+        "description": "Validate the draft api object",
+        "operationId": "draft_api_validateObject",
+        "security": [
+          {
+            "oauth": [
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DraftAPI"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DraftAPI"
+              }
+            }
+          }
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/scope"
@@ -82131,7 +82357,15 @@
               "primitive",
               "composite",
               "mapped",
+              "imported",
               "other"
+            ]
+          },
+          "skill_subtype": {
+            "type": "string",
+            "enum": [
+              "public",
+              "private"
             ]
           },
           "display_name": {
@@ -82139,6 +82373,9 @@
           },
           "icon": {
             "type": "string"
+          },
+          "visible": {
+            "type": "boolean"
           },
           "applications": {
             "type": "array",
@@ -84355,7 +84592,8 @@
                 "product_retire_optimized",
                 "global_policy_error",
                 "product_migrate_subscriptions",
-                "execute_migration_target"
+                "execute_migration_target",
+                "event_config_logs"
               ]
             }
           },
@@ -89962,54 +90200,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "User Management",
-          "Resource: User"
-        ]
-      }
-    },
-    "/request-password-reset-noemail": {
-      "post": {
-        "summary": "Send reset password link to consumer",
-        "description": "Send reset password link to consumer",
-        "operationId": "user_requestPasswordResetNoEmail",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RequestPasswordReset"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/RequestPasswordReset"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RequestPasswordResetNoEmail"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/RequestPasswordResetNoEmail"
-                }
-              }
-            }
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -96338,18 +96528,6 @@
           }
         }
       },
-      "RequestPasswordResetNoEmail": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "reset_link": {
-            "type": "string"
-          },
-          "language": {
-            "type": "string"
-          }
-        }
-      },
       "Regenerate": {
         "type": "object",
         "additionalProperties": false,
@@ -97040,16 +97218,12 @@
     "x-ibm-name": "analytics",
     "version": "2.0.0",
     "title": "IBM API Connect Analytics API",
-    "description": "API for the API Connect Analytics subsystem",
+    "description": "## API for the API Connect Analytics subsystem\nThis API includes the capability to retrieve information about API events stored in APIC Analytics,  retrieve the data used by the Analytics dashboards in the UI, obtain information on what filter parameters are supported  and also obtain information about internal cluster management, health and operations.\n### API Events\nThere are operations to retrieve a count of events, a list of events or a specific detailed API event at the following  scopes: cloud, provider organization, catalog and space. The API event operations all support a multitude of filter parameters to be able to select the exact events you wish. These filter parameters can be combined together in a single query.\n\nThere are advanced selectors available for these filter parameters too which allow operations such as these:\n- `.../events?consumer_org_id=1234567890` = select all events made by consumer org id 1234567890\n- `.../events?consumer_org_id=not:1234567890` = select all events made by consumer orgs other than id 1234567890\n- `.../events?product_name=contains:loan` = select all events where the product name contained the string 'loan' (equivalent to searching for `*loan*`)\n- `.../events?product_name=notcontains:loan` = select all events where the product name didn't contain the string 'loan'\n- `.../events?product_name=oneof:loans,accounts,address` = select all events where the product name is loans, accounts or address\n\nThese ones only apply to numeric fields:    \n- `.../events?bytes_received=1000` = select all events where the received bytes was exactly 1000\n- `.../events?bytes_received=gt:1000` = select all events where the received bytes was greater than 1000\n- `.../events?bytes_received=gte:1000` = select all events where the received bytes was greater than or equals to 1000\n- `.../events?bytes_received=lt:1000` = select all events where the received bytes was less than 1000\n- `.../events?bytes_received=lte:1000` = select all events where the received bytes was less than or equals to 1000\n\nThe full list of possible advanced operator prefixes are: `not`, `contains`, `notcontains`, `gt`, `gte`, `lt`, `lte`, `oneof`.\n\n### Dashboards\nThese operations allow you to download the data used by the APIC Analytics dashboards in the API Manager UI.  These are also at the same variety of scopes and also support the same filter parameters as usable with the API Event operations above.\n### Filter parameters\nThese operations define what filter parameters and operations are available at each scope.  This could be useful in a dynamically generated UI calling the API Event or dashboard operations above.\n### Cluster Management\nThese operations allow the retrieval of information on cluster health and status as well as the ability to perform  maintenance operations on it.\n",
     "termsOfService": "https://ww.ibm.com/terms-of-service",
     "contact": {
       "name": "IBM",
       "url": "https://www.ibm.com",
       "email": "help@ibm.com"
-    },
-    "license": {
-      "name": "tbd",
-      "url": "https://tbd.com"
     }
   },
   "servers": [
@@ -97068,7 +97242,7 @@
       ],
       "get": {
         "summary": "List events at cloud scope.",
-        "description": "Returns a result set of analytics API events scoped to the cloud. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=data-api-event-record-fields\n",
+        "description": "Returns a result set of analytics API events scoped to the cloud. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields\n",
         "operationId": "events_cloudList",
         "security": [
           {
@@ -97237,7 +97411,7 @@
       ],
       "get": {
         "summary": "Get specific event at cloud scope.",
-        "description": "Return a single analytics API event by ID scoped to the cloud. The item in the result set is determined by the passed in request query to this API. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=data-api-event-record-fields\n",
+        "description": "Return a single analytics API event by ID scoped to the cloud. The item in the result set is determined by the passed in request query to this API. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields\n",
         "operationId": "events_cloudGet",
         "security": [
           {
@@ -97435,7 +97609,7 @@
       ],
       "get": {
         "summary": "List events at provider organization scope.",
-        "description": "Return a result set of analytics API events scoped to the provider organization. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=data-api-event-record-fields\n",
+        "description": "Return a result set of analytics API events scoped to the provider organization. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields\n",
         "operationId": "events_orgist",
         "security": [
           {
@@ -97601,7 +97775,7 @@
       ],
       "get": {
         "summary": "Get specific event at provider organization scope.\n",
-        "description": "Return a single analytics API event by ID scoped to the provider organization. The item in the result set is determined by the passed in request query to this API. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=data-api-event-record-fields\n",
+        "description": "Return a single analytics API event by ID scoped to the provider organization. The item in the result set is determined by the passed in request query to this API. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields\n",
         "operationId": "events_orgGet",
         "security": [
           {
@@ -97799,7 +97973,7 @@
       ],
       "get": {
         "summary": "List events at catalog scope.\n",
-        "description": "Return a result set of analytics API events scoped to the catalog. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=data-api-event-record-fields\n",
+        "description": "Return a result set of analytics API events scoped to the catalog. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields\n",
         "operationId": "events_catalogList",
         "security": [
           {
@@ -97962,7 +98136,7 @@
       ],
       "get": {
         "summary": "Get specific event at catalog scope.",
-        "description": "Return a single analytics API event by ID scoped to the catalog. The item in the result set is determined by the passed in request query to this API. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=data-api-event-record-fields\n",
+        "description": "Return a single analytics API event by ID scoped to the catalog. The item in the result set is determined by the passed in request query to this API. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields\n",
         "operationId": "events_catalogGet",
         "security": [
           {
@@ -98160,7 +98334,7 @@
       ],
       "get": {
         "summary": "List events at space scope.",
-        "description": "Return a result set of analytics API events scoped to the space. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=data-api-event-record-fields\n",
+        "description": "Return a result set of analytics API events scoped to the space. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields\n",
         "operationId": "events_spaceList",
         "security": [
           {
@@ -98320,7 +98494,7 @@
       ],
       "get": {
         "summary": "Get specific event at space scope.",
-        "description": "Return a single analytics API event by ID scoped to the space. The item in the result set is determined by the passed in request query to this API. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=data-api-event-record-fields\n",
+        "description": "Return a single analytics API event by ID scoped to the space. The item in the result set is determined by the passed in request query to this API. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields\n",
         "operationId": "events_spaceGet",
         "security": [
           {
@@ -110203,6 +110377,152 @@
         "tags": [
           "Portal",
           "Resource: Entity"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/forums/disable": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Disable the forum module for a given site",
+        "description": "Removes all forums vocabulary taxonomy terms before disabling the forum module for a given site.",
+        "operationId": "forums_disable",
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=forums-apic-forumsdisable"
+        },
+        "responses": {
+          "200": {
+            "description": "Output from portal cli command request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Forums"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/forums/enable": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Enable the forum module for a given site",
+        "description": "Enables the forum module for a given site.",
+        "operationId": "forums_enable",
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=forums-apic-forumsenable"
+        },
+        "responses": {
+          "200": {
+            "description": "Output from portal cli command request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Forums"
         ]
       }
     },
