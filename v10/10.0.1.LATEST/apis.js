@@ -30,6 +30,7 @@
         "10.0.3.0": "10.0.3.0.html",
         "10.0.4.0": "10.0.4.0.html",
         "10.0.5.0": "10.0.5.0.html",
+        "10.0.5.1": "10.0.5.1.html",
         "10.0.5.LATEST": "10.0.5.LATEST.html",
         "10.0.LATEST": "10.0.LATEST.html",
       }
@@ -85189,51 +85190,6 @@
         ]
       }
     },
-    "/request-password-reset-noemail": {
-      "post": {
-        "summary": "Send reset password link to consumer",
-        "description": "Send reset password link to consumer",
-        "operationId": "user_requestPasswordResetNoEmail",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RequestPasswordReset"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/RequestPasswordReset"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RequestPasswordResetNoEmail"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/RequestPasswordResetNoEmail"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "User Management",
-          "Resource: User"
-        ]
-      }
-    },
     "/consumer/identity-providers": {
       "get": {
         "summary": "List Identity Providers in the consumer realm",
@@ -91328,18 +91284,6 @@
             "type": "string"
           },
           "email": {
-            "type": "string"
-          }
-        }
-      },
-      "RequestPasswordResetNoEmail": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "reset_link": {
-            "type": "string"
-          },
-          "language": {
             "type": "string"
           }
         }
