@@ -30,6 +30,7 @@
         "10.0.3.0": "10.0.3.0.html",
         "10.0.4.0": "10.0.4.0.html",
         "10.0.5.0": "10.0.5.0.html",
+        "10.0.5.1": "10.0.5.1.html",
         "10.0.5.LATEST": "10.0.5.LATEST.html",
         "10.0.LATEST": "10.0.LATEST.html",
       }
@@ -18369,6 +18370,9 @@
           "task_self_approval": {
             "type": "boolean"
           },
+          "allowed_product_visibility": {
+            "$ref": "#/components/schemas/ProductVisibility"
+          },
           "application_lifecycle": {
             "type": "object",
             "additionalProperties": false,
@@ -26358,6 +26362,9 @@
           },
           "custom_notification_templates_enabled": {
             "type": "boolean"
+          },
+          "allowed_product_visibility": {
+            "$ref": "#/components/schemas/ProductVisibility"
           },
           "email_sender": {
             "$ref": "#/components/schemas/EmailSender"
@@ -74775,6 +74782,9 @@
           "task_self_approval": {
             "type": "boolean"
           },
+          "allowed_product_visibility": {
+            "$ref": "#/components/schemas/ProductVisibility"
+          },
           "application_lifecycle": {
             "type": "object",
             "additionalProperties": false,
@@ -82764,6 +82774,9 @@
           },
           "custom_notification_templates_enabled": {
             "type": "boolean"
+          },
+          "allowed_product_visibility": {
+            "$ref": "#/components/schemas/ProductVisibility"
           },
           "email_sender": {
             "$ref": "#/components/schemas/EmailSender"
@@ -97218,7 +97231,7 @@
     "x-ibm-name": "analytics",
     "version": "2.0.0",
     "title": "IBM API Connect Analytics API",
-    "description": "## API for the API Connect Analytics subsystem\nThis API includes the capability to retrieve information about API events stored in APIC Analytics,  retrieve the data used by the Analytics dashboards in the UI, obtain information on what filter parameters are supported  and also obtain information about internal cluster management, health and operations.\n### API Events\nThere are operations to retrieve a count of events, a list of events or a specific detailed API event at the following  scopes: cloud, provider organization, catalog and space. The API event operations all support a multitude of filter parameters to be able to select the exact events you wish. These filter parameters can be combined together in a single query.\n\nThere are advanced selectors available for these filter parameters too which allow operations such as these:\n- `.../events?consumer_org_id=1234567890` = select all events made by consumer org id 1234567890\n- `.../events?consumer_org_id=not:1234567890` = select all events made by consumer orgs other than id 1234567890\n- `.../events?product_name=contains:loan` = select all events where the product name contained the string 'loan' (equivalent to searching for `*loan*`)\n- `.../events?product_name=notcontains:loan` = select all events where the product name didn't contain the string 'loan'\n- `.../events?product_name=oneof:loans,accounts,address` = select all events where the product name is loans, accounts or address\n\nThese ones only apply to numeric fields:    \n- `.../events?bytes_received=1000` = select all events where the received bytes was exactly 1000\n- `.../events?bytes_received=gt:1000` = select all events where the received bytes was greater than 1000\n- `.../events?bytes_received=gte:1000` = select all events where the received bytes was greater than or equals to 1000\n- `.../events?bytes_received=lt:1000` = select all events where the received bytes was less than 1000\n- `.../events?bytes_received=lte:1000` = select all events where the received bytes was less than or equals to 1000\n\nThe full list of possible advanced operator prefixes are: `not`, `contains`, `notcontains`, `gt`, `gte`, `lt`, `lte`, `oneof`.\n\n### Dashboards\nThese operations allow you to download the data used by the APIC Analytics dashboards in the API Manager UI.  These are also at the same variety of scopes and also support the same filter parameters as usable with the API Event operations above.\n### Filter parameters\nThese operations define what filter parameters and operations are available at each scope.  This could be useful in a dynamically generated UI calling the API Event or dashboard operations above.\n### Cluster Management\nThese operations allow the retrieval of information on cluster health and status as well as the ability to perform  maintenance operations on it.\n",
+    "description": "## API for the API Connect Analytics subsystem\nThis API includes the capability to retrieve information about API events stored in APIC Analytics,  retrieve the data used by the Analytics dashboards in the UI, obtain information on what filter parameters are supported  and also obtain information about internal cluster management, health and operations.\n### API Events\nThere are operations to retrieve a count of events, a list of events or a specific detailed API event at the following  scopes: cloud, provider organization, catalog and space. The API event operations all support a multitude of filter parameters to be able to select the exact events you wish. These filter parameters can be combined together in a single query.\n\nThere are advanced selectors available for these filter parameters too which allow operations such as these:\n- `.../events?consumer_org_id=1234567890` = select all events made by consumer org id 1234567890\n- `.../events?consumer_org_id=not:1234567890` = select all events made by consumer orgs other than id 1234567890\n- `.../events?product_name=contains:loan` = select all events where the product name contained the string 'loan' (equivalent to searching for `*loan*`)\n- `.../events?product_name=notcontains:loan` = select all events where the product name didn't contain the string 'loan'\n- `.../events?product_name=startswith:loa` = select all events where the product name starts with the string 'loa' (equivalent to searching for `loa*`)\n- `.../events?product_name=endswith:oan` = select all events where the product name ends with the string 'oan' (equivalent to searching for `*oan`)\n- `.../events?product_name=oneof:loans,accounts,address` = select all events where the product name is loans, accounts or address\n\nThese ones only apply to numeric fields:    \n- `.../events?bytes_received=1000` = select all events where the received bytes was exactly 1000\n- `.../events?bytes_received=gt:1000` = select all events where the received bytes was greater than 1000\n- `.../events?bytes_received=gte:1000` = select all events where the received bytes was greater than or equals to 1000\n- `.../events?bytes_received=lt:1000` = select all events where the received bytes was less than 1000\n- `.../events?bytes_received=lte:1000` = select all events where the received bytes was less than or equals to 1000\n\nThe full list of possible advanced operator prefixes are: `not`, `contains`, `notcontains`, `startswith`, `endswith`, `gt`, `gte`, `lt`, `lte`, `oneof`.\n\n### Dashboards\nThese operations allow you to download the data used by the APIC Analytics dashboards in the API Manager UI.  These are also at the same variety of scopes and also support the same filter parameters as usable with the API Event operations above.\n### Filter parameters\nThese operations define what filter parameters and operations are available at each scope.  This could be useful in a dynamically generated UI calling the API Event or dashboard operations above.\n### Cluster Management\nThese operations allow the retrieval of information on cluster health and status as well as the ability to perform  maintenance operations on it.\n",
     "termsOfService": "https://ww.ibm.com/terms-of-service",
     "contact": {
       "name": "IBM",
@@ -106553,18 +106566,51 @@
           "status": {
             "$ref": "#/components/schemas/Status"
           },
-          "error": {
-            "$ref": "#/components/schemas/ErrorDetails"
-          },
           "message": {
             "$ref": "#/components/schemas/Message"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/ErrorModels"
           }
         }
       },
-      "ErrorDetails": {
-        "type": "string",
-        "description": "Name of the error.",
-        "example": "Bad Request"
+      "ErrorModels": {
+        "type": "array",
+        "description": "Array of more detailed error information.",
+        "items": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string",
+              "description": "A snake case string succinctly identifying the problem."
+            },
+            "message": {
+              "type": "string",
+              "description": "A plainly-written, developer-oriented explanation of the solution to the problem in complete, well-formed sentences."
+            },
+            "more_info": {
+              "type": "string",
+              "description": "A publicly-accessible URL where information about the error can be read."
+            },
+            "target": {
+              "$ref": "#/components/schemas/ErrorTargetModel"
+            }
+          }
+        }
+      },
+      "ErrorTargetModel": {
+        "type": "object",
+        "description": "Contains information about specific error targets.",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Either field, parameter, or header."
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the problematic field (with dot-syntax if necessary), query parameter, or header."
+          }
+        }
       },
       "Event": {
         "type": "object",
