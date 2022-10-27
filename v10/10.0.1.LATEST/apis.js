@@ -31,7 +31,6 @@
         "10.0.4.0": "10.0.4.0.html",
         "10.0.5.0": "10.0.5.0.html",
         "10.0.5.1": "10.0.5.1.html",
-        "10.0.5.1": "10.0.5.1.html",
         "10.0.5.LATEST": "10.0.5.LATEST.html",
         "10.0.LATEST": "10.0.LATEST.html",
       }
@@ -14935,6 +14934,15 @@
           "type": "boolean"
         }
       },
+      "catalog_name": {
+        "name": "catalog_name",
+        "in": "query",
+        "description": "Name of a catalog",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "catalog_url": {
         "name": "catalog_url",
         "in": "query",
@@ -15102,6 +15110,15 @@
         "in": "path",
         "description": "Gateway Service name or id",
         "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "gateway_service_names": {
+        "name": "gateway_service_names",
+        "in": "query",
+        "description": "Names of Gateway Services",
+        "required": false,
         "schema": {
           "type": "string"
         }
@@ -15502,6 +15519,15 @@
           "type": "string"
         }
       },
+      "space_name": {
+        "name": "space_name",
+        "in": "query",
+        "description": "Name of a space",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "state": {
         "name": "state",
         "in": "query",
@@ -15689,6 +15715,15 @@
         "required": true,
         "schema": {
           "type": "string"
+        }
+      },
+      "validate_apis": {
+        "name": "validate_apis",
+        "in": "query",
+        "description": "Whether to validate APIs also",
+        "required": false,
+        "schema": {
+          "type": "boolean"
         }
       },
       "webhook": {
@@ -61629,6 +61664,83 @@
         ]
       }
     },
+    "/orgs/{org}/drafts/draft-products/validate": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Validate the draft product object",
+        "description": "Validate the draft product object",
+        "operationId": "draft_product_validateObject",
+        "security": [
+          {
+            "oauth": [
+              "product-drafts:edit"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DraftProduct"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DraftProduct"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/scope"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name"
+          },
+          {
+            "$ref": "#/components/parameters/space_name"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_names"
+          },
+          {
+            "$ref": "#/components/parameters/validate_apis"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationResults"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationResults"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Drafts",
+          "Resource: Draft Product by Id"
+        ]
+      }
+    },
     "/orgs/{org}/drafts/draft-products/{draft-product-id}/document": {
       "parameters": [
         {
@@ -62367,6 +62479,80 @@
                 }
               }
             }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Drafts",
+          "Resource: Draft API by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/drafts/draft-apis/validate": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Validate the draft api object",
+        "description": "Validate the draft api object",
+        "operationId": "draft_api_validateObject",
+        "security": [
+          {
+            "oauth": [
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DraftAPI"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DraftAPI"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/scope"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name"
+          },
+          {
+            "$ref": "#/components/parameters/space_name"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_names"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationResults"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationResults"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -67607,6 +67793,15 @@
           "type": "string"
         }
       },
+      "catalog_name": {
+        "name": "catalog_name",
+        "in": "query",
+        "description": "Name of a catalog",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "catalog_url": {
         "name": "catalog_url",
         "in": "query",
@@ -67927,6 +68122,15 @@
         "in": "path",
         "description": "Gateway Service name or id",
         "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "gateway_service_names": {
+        "name": "gateway_service_names",
+        "in": "query",
+        "description": "Names of Gateway Services",
+        "required": false,
         "schema": {
           "type": "string"
         }
@@ -68480,6 +68684,15 @@
           "type": "string"
         }
       },
+      "space_name": {
+        "name": "space_name",
+        "in": "query",
+        "description": "Name of a space",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "state": {
         "name": "state",
         "in": "query",
@@ -68649,6 +68862,15 @@
         "required": true,
         "schema": {
           "type": "string"
+        }
+      },
+      "validate_apis": {
+        "name": "validate_apis",
+        "in": "query",
+        "description": "Whether to validate APIs also",
+        "required": false,
+        "schema": {
+          "type": "boolean"
         }
       },
       "webhook": {
