@@ -9172,7 +9172,7 @@
       },
       "patch": {
         "summary": "Update the Gateway Service object by name or id",
-        "description": "Update the Gateway Service object by name or id\nFields not allowed to be null:\\ - endpoint - api_endpoint_base - sni\nFields not allowed:\\ - owned - endpoint - integration_url - gateway_service_type\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - availability_zone_url",
+        "description": "Update the Gateway Service object by name or id\nFields not allowed to be null:\\ - endpoint - api_endpoint_base - sni\nFields not allowed:\\ - owned - endpoint - integration_url - gateway_service_type - api_endpoint_base\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - availability_zone_url",
         "operationId": "gateway_service_update",
         "security": [
           {
@@ -25975,6 +25975,12 @@
           "visible": {
             "type": "boolean"
           },
+          "permissions": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
           "applications": {
             "type": "array",
             "items": {
@@ -29011,6 +29017,9 @@
           "api_key": {
             "type": "string"
           },
+          "scope": {
+            "type": "string"
+          },
           "grant_type": {
             "type": "string",
             "enum": [
@@ -29028,12 +29037,14 @@
         "type": "object",
         "additionalProperties": false,
         "required": [
-          "access_token",
           "token_type",
           "expires_in"
         ],
         "properties": {
           "access_token": {
+            "type": "string"
+          },
+          "id_token": {
             "type": "string"
           },
           "token_type": {
@@ -82387,6 +82398,12 @@
           "visible": {
             "type": "boolean"
           },
+          "permissions": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
           "applications": {
             "type": "array",
             "items": {
@@ -85423,6 +85440,9 @@
           "api_key": {
             "type": "string"
           },
+          "scope": {
+            "type": "string"
+          },
           "grant_type": {
             "type": "string",
             "enum": [
@@ -85440,12 +85460,14 @@
         "type": "object",
         "additionalProperties": false,
         "required": [
-          "access_token",
           "token_type",
           "expires_in"
         ],
         "properties": {
           "access_token": {
+            "type": "string"
+          },
+          "id_token": {
             "type": "string"
           },
           "token_type": {
@@ -92474,97 +92496,6 @@
         ]
       }
     },
-    "/application-types": {
-      "description": "The collection of Application Type operations",
-      "get": {
-        "summary": "List the Application Type objects",
-        "description": "List the Application Type objects",
-        "operationId": "application_type_list",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApplicationTypeList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApplicationTypeList"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Application",
-          "Resource: Application Type"
-        ]
-      }
-    },
-    "/application-types/{application-type}": {
-      "description": "Application Type object operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/application-type"
-        }
-      ],
-      "get": {
-        "summary": "Get the Application Type object by name or id",
-        "description": "Get the Application Type object by name or id",
-        "operationId": "application_type_get",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApplicationType"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApplicationType"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Application",
-          "Resource: Application Type"
-        ]
-      }
-    },
     "/apps/{org}/{app}/credentials": {
       "description": "The collection of Application Credential operations",
       "parameters": [
@@ -93918,15 +93849,6 @@
           "type": "string"
         }
       },
-      "application-type": {
-        "name": "application-type",
-        "in": "path",
-        "description": "Application Type name or id",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
       "associate": {
         "name": "associate",
         "in": "path",
@@ -94612,121 +94534,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/App"
-            }
-          }
-        }
-      },
-      "ApplicationType": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "type": {
-            "type": "string",
-            "readOnly": true,
-            "enum": [
-              "application_type"
-            ]
-          },
-          "api_version": {
-            "type": "string",
-            "readOnly": true,
-            "enum": [
-              "2.0.0"
-            ]
-          },
-          "id": {
-            "type": "string",
-            "readOnly": true
-          },
-          "name": {
-            "type": "string",
-            "maxLength": 255
-          },
-          "title": {
-            "type": "string",
-            "maxLength": 1023
-          },
-          "summary": {
-            "type": "string",
-            "maxLength": 65535
-          },
-          "oauth_types": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "additionalProperties": false,
-              "required": [
-                "client_type",
-                "grant_types"
-              ],
-              "properties": {
-                "client_type": {
-                  "type": "string",
-                  "enum": [
-                    "public",
-                    "confidential"
-                  ]
-                },
-                "grant_types": {
-                  "type": "array",
-                  "items": {
-                    "type": "string",
-                    "enum": [
-                      "password",
-                      "implicit",
-                      "access_code",
-                      "application"
-                    ]
-                  }
-                }
-              }
-            }
-          },
-          "org_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "app_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "metadata": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "url": {
-            "type": "string",
-            "readOnly": true,
-            "format": "uri"
-          }
-        }
-      },
-      "ApplicationTypeList": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "total_results": {
-            "type": "integer"
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ApplicationType"
             }
           }
         }
@@ -97231,8 +97038,8 @@
     "x-ibm-name": "analytics",
     "version": "2.0.0",
     "title": "IBM API Connect Analytics API",
-    "description": "## API for the API Connect Analytics subsystem\nThis API includes the capability to retrieve information about API events stored in APIC Analytics,  retrieve the data used by the Analytics dashboards in the UI, obtain information on what filter parameters are supported  and also obtain information about internal cluster management, health and operations.\n### API Events\nThere are operations to retrieve a count of events, a list of events or a specific detailed API event at the following  scopes: cloud, provider organization, catalog and space. The API event operations all support a multitude of filter parameters to be able to select the exact events you wish. These filter parameters can be combined together in a single query.\n\nThere are advanced selectors available for these filter parameters too which allow operations such as these:\n- `.../events?consumer_org_id=1234567890` = select all events made by consumer org id 1234567890\n- `.../events?consumer_org_id=not:1234567890` = select all events made by consumer orgs other than id 1234567890\n- `.../events?product_name=contains:loan` = select all events where the product name contained the string 'loan' (equivalent to searching for `*loan*`)\n- `.../events?product_name=notcontains:loan` = select all events where the product name didn't contain the string 'loan'\n- `.../events?product_name=startswith:loa` = select all events where the product name starts with the string 'loa' (equivalent to searching for `loa*`)\n- `.../events?product_name=endswith:oan` = select all events where the product name ends with the string 'oan' (equivalent to searching for `*oan`)\n- `.../events?product_name=oneof:loans,accounts,address` = select all events where the product name is loans, accounts or address\n\nThese ones only apply to numeric fields:    \n- `.../events?bytes_received=1000` = select all events where the received bytes was exactly 1000\n- `.../events?bytes_received=gt:1000` = select all events where the received bytes was greater than 1000\n- `.../events?bytes_received=gte:1000` = select all events where the received bytes was greater than or equals to 1000\n- `.../events?bytes_received=lt:1000` = select all events where the received bytes was less than 1000\n- `.../events?bytes_received=lte:1000` = select all events where the received bytes was less than or equals to 1000\n\nThe full list of possible advanced operator prefixes are: `not`, `contains`, `notcontains`, `startswith`, `endswith`, `gt`, `gte`, `lt`, `lte`, `oneof`.\n\n### Dashboards\nThese operations allow you to download the data used by the APIC Analytics dashboards in the API Manager UI.  These are also at the same variety of scopes and also support the same filter parameters as usable with the API Event operations above.\n### Filter parameters\nThese operations define what filter parameters and operations are available at each scope.  This could be useful in a dynamically generated UI calling the API Event or dashboard operations above.\n### Cluster Management\nThese operations allow the retrieval of information on cluster health and status as well as the ability to perform  maintenance operations on it.\n",
-    "termsOfService": "https://ww.ibm.com/terms-of-service",
+    "description": "## API for the API Connect Analytics subsystem\nThis API includes the capability to retrieve information about API events stored in APIC Analytics,  retrieve the data used by the Analytics dashboards in the UI, obtain information on what filter parameters are supported  and also obtain information about internal cluster management, health and operations.\n### API Events\nThere are operations to retrieve a count of events, a list of events or a specific detailed API event at the following  scopes: cloud, provider organization, catalog and space. The API event operations all support a multitude of filter parameters to be able to select the exact events you wish. These filter parameters can be combined together in a single query.\n\nThere are advanced selectors available for these filter parameters too which allow operations such as these:\n- `.../events?consumer_org_id=1234567890` = select all events made by consumer org id 1234567890\n- `.../events?consumer_org_id=not:1234567890` = select all events made by consumer orgs other than id 1234567890\n- `.../events?product_name=contains:loan` = select all events where the product name contained the string 'loan' (equivalent to searching for `*loan*`)\n- `.../events?product_name=notcontains:loan` = select all events where the product name didn't contain the string 'loan'\n- `.../events?product_name=startswith:loa` = select all events where the product name starts with the string 'loa' (equivalent to searching for `loa*`)\n- `.../events?product_name=endswith:oan` = select all events where the product name ends with the string 'oan' (equivalent to searching for `*oan`)\n- `.../events?product_name=regex:[a-z]oan` = select all events where the product name begins with any lowercase alphabetical character and ends with the string 'oan' (WARNING: Regex based queries have a performance impact and should only be used if other queries cannot be used)\n- `.../events?product_name=oneof:loans,accounts,address` = select all events where the product name is loans, accounts or address\n- `.../events?product_name=notoneof:loans,accounts,address` = select all events where the product name is neither loans, accounts or address\n\nThese ones only apply to numeric fields:\n- `.../events?bytes_received=1000` = select all events where the received bytes was exactly 1000\n- `.../events?bytes_received=gt:1000` = select all events where the received bytes was greater than 1000\n- `.../events?bytes_received=gte:1000` = select all events where the received bytes was greater than or equals to 1000\n- `.../events?bytes_received=lt:1000` = select all events where the received bytes was less than 1000\n- `.../events?bytes_received=lte:1000` = select all events where the received bytes was less than or equals to 1000\n\nThe full list of possible advanced operator prefixes are: `not`, `contains`, `notcontains`, `startswith`, `endswith`, `regex`, `gt`, `gte`, `lt`, `lte`, `oneof`.\n\n### Dashboards\nThese operations allow you to download the data used by the APIC Analytics dashboards in the API Manager UI.  These are also at the same variety of scopes and also support the same filter parameters as usable with the API Event operations above.\n### Filter parameters\nThese operations define what filter parameters and operations are available at each scope.  This could be useful in a dynamically generated UI calling the API Event or dashboard operations above.\n### Cluster Management\nThese operations allow the retrieval of information on cluster health and status as well as the ability to perform  maintenance operations on it.\n",
+    "termsOfService": "https://www.ibm.com/terms-of-service",
     "contact": {
       "name": "IBM",
       "url": "https://www.ibm.com",
@@ -97294,6 +97101,15 @@
           },
           {
             "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/consumer_org_id_optional"
@@ -97500,6 +97316,15 @@
             "$ref": "#/components/parameters/client_id_optional"
           },
           {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -97611,7 +97436,7 @@
       }
     },
     "/{analytics-service}/orgs/{org}/events": {
-      "description": "Return a result set of analytics API events scoped to the organization. The items in the result set are determined by the passed in request query  to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'.\n",
+      "description": "Return a result set of analytics API events scoped to the organization. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/analytics-service"
@@ -97661,6 +97486,15 @@
           },
           {
             "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/consumer_org_id_optional"
@@ -97867,6 +97701,15 @@
             "$ref": "#/components/parameters/client_id_optional"
           },
           {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -98019,6 +97862,15 @@
           },
           {
             "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/consumer_org_id_optional"
@@ -98225,6 +98077,15 @@
             "$ref": "#/components/parameters/client_id_optional"
           },
           {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -98380,6 +98241,15 @@
           },
           {
             "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/consumer_org_id_optional"
@@ -98586,6 +98456,15 @@
             "$ref": "#/components/parameters/client_id_optional"
           },
           {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -98780,6 +98659,15 @@
             "$ref": "#/components/parameters/client_id_optional"
           },
           {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -98944,6 +98832,15 @@
           },
           {
             "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/consumer_org_id_optional"
@@ -99112,6 +99009,15 @@
             "$ref": "#/components/parameters/client_id_optional"
           },
           {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -99125,12 +99031,6 @@
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/error_limit_optional"
-          },
-          {
-            "$ref": "#/components/parameters/error_offset_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -99215,6 +99115,12 @@
           },
           {
             "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_offset_optional"
           }
         ],
         "responses": {
@@ -99282,6 +99188,15 @@
           },
           {
             "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/consumer_org_id_optional"
@@ -99400,6 +99315,187 @@
         ]
       }
     },
+    "/{analytics-service}/cloud/dashboards/consumption": {
+      "description": "Return the data needed to populate the Consumption dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Consumption dashboard at cloud scope.\n",
+        "description": "Return the data needed to populate the Consumption dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudConsumption",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumptionDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
     "/{analytics-service}/orgs/{org}/dashboards/api": {
       "description": "Return the data needed to populate the API dashboard at provider organization scope.\n",
       "parameters": [
@@ -99451,6 +99547,15 @@
           },
           {
             "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/consumer_org_id_optional"
@@ -99616,6 +99721,15 @@
             "$ref": "#/components/parameters/client_id_optional"
           },
           {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -99779,6 +99893,15 @@
             "$ref": "#/components/parameters/client_id_optional"
           },
           {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -99940,6 +100063,15 @@
           },
           {
             "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/consumer_org_id_optional"
@@ -100111,6 +100243,15 @@
             "$ref": "#/components/parameters/client_id_optional"
           },
           {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -100221,6 +100362,184 @@
         ]
       }
     },
+    "/{analytics-service}/orgs/{org}/dashboards/consumption": {
+      "description": "Return the data needed to populate the Consumption dashboard at provider organization scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Consumption dashboard at provider organization scope.\n",
+        "description": "Return the data needed to populate the Consumption dashboard at provider organization scope.\n",
+        "operationId": "dashboards_orgConsumption",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumptionDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
     "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/api": {
       "description": "Return the data needed to populate the API dashboard at catalog scope.\n",
       "parameters": [
@@ -100269,6 +100588,15 @@
           },
           {
             "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/consumer_org_id_optional"
@@ -100431,6 +100759,15 @@
             "$ref": "#/components/parameters/client_id_optional"
           },
           {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -100591,6 +100928,15 @@
             "$ref": "#/components/parameters/client_id_optional"
           },
           {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -100749,6 +101095,15 @@
           },
           {
             "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/consumer_org_id_optional"
@@ -100917,6 +101272,15 @@
             "$ref": "#/components/parameters/client_id_optional"
           },
           {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -101027,6 +101391,181 @@
         ]
       }
     },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/consumption": {
+      "description": "Return the data needed to populate the Consumption dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Consumption dashboard at catalog scope.\n",
+        "description": "Return the data needed to populate the Consumption dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogConsumption",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumptionDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
     "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/api": {
       "description": "Return the data needed to populate the API dashboard at space scope.\n",
       "parameters": [
@@ -101078,6 +101617,15 @@
           },
           {
             "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/consumer_org_id_optional"
@@ -101237,6 +101785,15 @@
             "$ref": "#/components/parameters/client_id_optional"
           },
           {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -101394,6 +101951,15 @@
             "$ref": "#/components/parameters/client_id_optional"
           },
           {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -101549,6 +102115,15 @@
           },
           {
             "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/consumer_org_id_optional"
@@ -101714,6 +102289,15 @@
             "$ref": "#/components/parameters/client_id_optional"
           },
           {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -101804,6 +102388,178 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/UsageDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/consumption": {
+      "description": "Return the data needed to populate the Consumption dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Consumption dashboard at space scope.\n",
+        "description": "Return the data needed to populate the Consumption dashboard at space scope.\n",
+        "operationId": "dashboards_spaceConsumption",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumptionDashboardResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -101973,6 +102729,1708 @@
         "tags": [
           "Analytics",
           "Resource: Filterparams"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/queries": {
+      "description": "The root of the 'queries' resource at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "List saved queries at cloud scope.",
+        "description": "List saved queries owned by the user making the request, at cloud scope.\n",
+        "operationId": "queries_cloudList",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/saved_query_search_optional"
+          }
+        ],
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      },
+      "post": {
+        "summary": "Create a query at cloud scope.",
+        "description": "Save a query scoped to the cloud.\n",
+        "operationId": "queries_cloudCreate",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/queries/shared": {
+      "description": "Return a list of saved queries shared by others at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "List shared queries at cloud scope.",
+        "description": "Return a list of saved queries shared by others at cloud scope.\n",
+        "operationId": "queries_cloudListShared",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/saved_query_search_optional"
+          }
+        ],
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/queries/{query-id}": {
+      "description": "Return a single saved query by name or ID scoped to the cloud.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "get": {
+        "summary": "Get a specific query at cloud scope.",
+        "description": "Return a query by name or ID scoped to the cloud.\n",
+        "operationId": "queries_cloudGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      },
+      "put": {
+        "summary": "Update a specific query at cloud scope.",
+        "description": "Replace a query with contents of the request body.\n",
+        "operationId": "queries_cloudUpdate",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryUpdateRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      },
+      "delete": {
+        "summary": "Deletes the specified query at cloud scope.",
+        "description": "Deletes the saved query. If it was shared, it will no longer be available.\n",
+        "operationId": "queries_cloudDelete",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/NoContentResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/queries/{query-id}/transfer-owner": {
+      "description": "Transfer ownership of a specified query to a different user. You must be the owner of this query to do this.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "post": {
+        "summary": "Transfer ownership of a saved query to a different user.",
+        "description": "Provide a body with new_owner_user_url: /api/user-registries/{org}/{user-registry}/users/{user} to transfer this query to a new owner.",
+        "operationId": "queries_cloudTransferOwner",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryTransferOwnerRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryTransferOwnerRequest"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/queries/{query-id}/share": {
+      "description": "Share a query with others users at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "post": {
+        "summary": "Share a saved query.",
+        "description": "Share a saved query.",
+        "operationId": "queries_cloudShare",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/queries/{query-id}/unshare": {
+      "description": "Unshare a query at cloud scope. Other users at this scope will no longer be able to view or clone this query.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "post": {
+        "summary": "Unshare a saved query.",
+        "description": "Unshare a saved query.",
+        "operationId": "queries_cloudUnshare",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/queries/{query-id}/clone": {
+      "description": "Make a copy of a shared query at cloud scope. The user comitting this action will be the owner of the cloned query.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "post": {
+        "summary": "Make a personal copy of a shared query.",
+        "description": "Make a personal copy of a shared query.",
+        "operationId": "queries_cloudClone",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/queries": {
+      "description": "The root of the 'queries' resource at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "List saved queries at org scope.",
+        "description": "List saved queries owned by the user making the request, at org scope.\n",
+        "operationId": "queries_orgList",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/saved_query_search_optional"
+          }
+        ],
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      },
+      "post": {
+        "summary": "Create a query at org scope.",
+        "description": "Return a single query by name or ID scoped to the org.\n",
+        "operationId": "queries_orgCreate",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/queries/shared": {
+      "description": "Return a list of saved queries shared by others at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "List shared queries at org scope.",
+        "description": "Return a list of saved queries shared by others at org scope.\n",
+        "operationId": "queries_orgListShared",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/saved_query_search_optional"
+          }
+        ],
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/queries/{query-id}": {
+      "description": "Return a single saved query by name or ID scoped to the org.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "get": {
+        "summary": "Get a specific query at org scope.",
+        "description": "Return a query by name or ID scoped to the org.\n",
+        "operationId": "queries_orgGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      },
+      "put": {
+        "summary": "Update a specific query at org scope.",
+        "description": "Replace a query with contents of the request body.\n",
+        "operationId": "queries_orgUpdate",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryUpdateRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      },
+      "delete": {
+        "summary": "Deletes the specified query at org scope.",
+        "description": "Deletes the saved query. If it was shared, it will no longer be available.\n",
+        "operationId": "queries_orgDelete",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/NoContentResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/queries/{query-id}/transfer-owner": {
+      "description": "Transfer ownership of a specified query to a different user. You must be the owner of this query to do this.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "post": {
+        "summary": "Transfer ownership of a saved query to a different user.",
+        "description": "Provide a body with new_owner_user_url: /api/user-registries/{org}/{user-registry}/users/{user} to transfer this query to a new owner.",
+        "operationId": "queries_orgTransferOwner",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryTransferOwnerRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryTransferOwnerRequest"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/queries/{query-id}/share": {
+      "description": "Share a query with others users at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "post": {
+        "summary": "Share a saved query.",
+        "description": "Share a saved query.",
+        "operationId": "queries_orgShare",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/queries/{query-id}/unshare": {
+      "description": "Unshare a query at org scope. Other users at this scope will no longer be able to view or clone this query.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "post": {
+        "summary": "Unshare a saved query.",
+        "description": "Unshare a saved query.",
+        "operationId": "queries_orgUnshare",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/queries/{query-id}/clone": {
+      "description": "Make a copy of a shared query at org scope. The user comitting this action will be the owner of the cloned query.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "post": {
+        "summary": "Make a personal copy of a shared query.",
+        "description": "Make a personal copy of a shared query.",
+        "operationId": "queries_orgClone",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/queries": {
+      "description": "The root of the 'queries' resource at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "List saved queries at catalog scope.",
+        "description": "List saved queries owned by the user making the request, at catalog scope.\n",
+        "operationId": "queries_catalogList",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/saved_query_search_optional"
+          }
+        ],
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      },
+      "post": {
+        "summary": "Create a query at catalog scope.",
+        "description": "Return a single query by name or ID scoped to the catalog.\n",
+        "operationId": "queries_catalogCreate",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/queries/shared": {
+      "description": "Return a list of saved queries shared by others at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "List shared queries at catalog scope.",
+        "description": "Return a list of saved queries shared by others at catalog scope.\n",
+        "operationId": "queries_catalogListShared",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/saved_query_search_optional"
+          }
+        ],
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/queries/{query-id}": {
+      "description": "Return a single saved query by name or ID scoped to the catalog.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "get": {
+        "summary": "Get a specific query at catalog scope.",
+        "description": "Return a query by name or ID scoped to the catalog.\n",
+        "operationId": "queries_catalogGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      },
+      "put": {
+        "summary": "Update a specific query at catalog scope.",
+        "description": "Replace a query with contents of the request body.\n",
+        "operationId": "queries_catalogUpdate",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryUpdateRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      },
+      "delete": {
+        "summary": "Deletes the specified query at catalog scope.",
+        "description": "Deletes the saved query. If it was shared, it will no longer be available.\n",
+        "operationId": "queries_catalogDelete",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/NoContentResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/queries/{query-id}/transfer-owner": {
+      "description": "Transfer ownership of a specified query to a different user. You must be the owner of this query to do this.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "post": {
+        "summary": "Transfer ownership of a saved query to a different user.",
+        "description": "Provide a body with new_owner_user_url: /api/user-registries/{org}/{user-registry}/users/{user} to transfer this query to a new owner.",
+        "operationId": "queries_catalogTransferOwner",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryTransferOwnerRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryTransferOwnerRequest"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/queries/{query-id}/share": {
+      "description": "Share a query with others users at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "post": {
+        "summary": "Share a saved query.",
+        "description": "Share a saved query.",
+        "operationId": "queries_catalogShare",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/queries/{query-id}/unshare": {
+      "description": "Unshare a query at catalog scope. Other users at this scope will no longer be able to view or clone this query.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "post": {
+        "summary": "Unshare a saved query.",
+        "description": "Unshare a saved query.",
+        "operationId": "queries_catalogUnshare",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/queries/{query-id}/clone": {
+      "description": "Make a copy of a shared query at catalog scope. The user comitting this action will be the owner of the cloned query.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "post": {
+        "summary": "Make a personal copy of a shared query.",
+        "description": "Make a personal copy of a shared query.",
+        "operationId": "queries_catalogClone",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/queries": {
+      "description": "The root of the 'queries' resource at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "List saved queries at space scope.",
+        "description": "List saved queries owned by the user making the request, at space scope.\n",
+        "operationId": "queries_spaceList",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/saved_query_search_optional"
+          }
+        ],
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      },
+      "post": {
+        "summary": "Create a query at space scope.",
+        "description": "Return a single query by name or ID scoped to the space.\n",
+        "operationId": "queries_spaceCreate",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/queries/shared": {
+      "description": "Return a list of saved queries shared by others at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "List shared queries at space scope.",
+        "description": "Return a list of saved queries shared by others at space scope.\n",
+        "operationId": "queries_spaceListShared",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/saved_query_search_optional"
+          }
+        ],
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/queries/{query-id}": {
+      "description": "Return a single saved query by name or ID scoped to the space.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "get": {
+        "summary": "Get a specific query at space scope.",
+        "description": "Return a query by name or ID scoped to the space.\n",
+        "operationId": "queries_spaceGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      },
+      "put": {
+        "summary": "Update a specific query at space scope.",
+        "description": "Replace a query with contents of the request body.\n",
+        "operationId": "queries_spaceUpdate",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryUpdateRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      },
+      "delete": {
+        "summary": "Deletes the specified query at space scope.",
+        "description": "Deletes the saved query. If it was shared, it will no longer be available.\n",
+        "operationId": "queries_spaceDelete",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/NoContentResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/queries/{query-id}/transfer-owner": {
+      "description": "Transfer ownership of a specified query to a different user. You must be the owner of this query to do this.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "post": {
+        "summary": "Transfer ownership of a saved query to a different user.",
+        "description": "Provide a body with new_owner_user_url: /api/user-registries/{org}/{user-registry}/users/{user} to transfer this query to a new owner.",
+        "operationId": "queries_spaceTransferOwner",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryTransferOwnerRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryTransferOwnerRequest"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/queries/{query-id}/share": {
+      "description": "Share a query with others users at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "post": {
+        "summary": "Share a saved query.",
+        "description": "Share a saved query.",
+        "operationId": "queries_spaceShare",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/queries/{query-id}/unshare": {
+      "description": "Unshare a query at space scope. Other users at this scope will no longer be able to view or clone this query.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "post": {
+        "summary": "Unshare a saved query.",
+        "description": "Unshare a saved query.",
+        "operationId": "queries_spaceUnshare",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/queries/{query-id}/clone": {
+      "description": "Make a copy of a shared query at space scope. The user comitting this action will be the owner of the cloned query.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "post": {
+        "summary": "Make a personal copy of a shared query.",
+        "description": "Make a personal copy of a shared query.",
+        "operationId": "queries_spaceClone",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
         ]
       }
     },
@@ -105444,6 +107902,15 @@
           "type": "string"
         }
       },
+      "query-id": {
+        "name": "query-id",
+        "in": "path",
+        "description": "Query ID",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
       "target": {
         "name": "target",
         "in": "path",
@@ -105584,6 +108051,16 @@
           "example": "afd9d43cdc0fec584b42b0c9448d1989"
         }
       },
+      "client_ip_optional": {
+        "name": "client_ip",
+        "in": "query",
+        "description": "Filter results by client IP address.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "9.12.34.56"
+        }
+      },
       "completion_fields_optional": {
         "name": "completion_fields",
         "in": "query",
@@ -105636,6 +108113,24 @@
         "style": "deepObject",
         "explode": true
       },
+      "daily_limit_optional": {
+        "name": "daily_limit",
+        "in": "query",
+        "description": "If set, the number of items to return when requesting daily consumption data.\n",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "daily_offset_optional": {
+        "name": "daily_offset",
+        "in": "query",
+        "description": "If set, the offset to be applied when requesting daily consumption data.\n",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "detailed_optional": {
         "name": "detailed",
         "in": "query",
@@ -105657,7 +108152,7 @@
       "end_time_optional": {
         "name": "end",
         "in": "query",
-        "description": "If set, the API will only return events with a datetime equal or older than this. The value must follow the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z. See https://datatracker.ietf.org/doc/html/rfc3339#section-5.6.\n",
+        "description": "If set, only return events with a datetime equal or older than this. The value must follow the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z. See https://datatracker.ietf.org/doc/html/rfc3339#section-5.6.\n",
         "required": false,
         "schema": {
           "type": "string",
@@ -105685,7 +108180,7 @@
       "event_id_optional": {
         "name": "event_id",
         "in": "query",
-        "description": "If set, the API will only return events that match this event ID.",
+        "description": "If set, only return this specific event ID.",
         "required": false,
         "schema": {
           "type": "string"
@@ -105803,6 +108298,16 @@
           "type": "boolean"
         }
       },
+      "gateway_ip_optional": {
+        "name": "gateway_ip",
+        "in": "query",
+        "description": "Filter results by gateway IP address.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "9.12.34.56"
+        }
+      },
       "global_transaction_id_optional": {
         "name": "global_transaction_id",
         "in": "query",
@@ -105878,6 +108383,16 @@
         "required": false,
         "schema": {
           "type": "boolean"
+        }
+      },
+      "immediate_client_ip_optional": {
+        "name": "immediate_client_ip",
+        "in": "query",
+        "description": "Filter results by immediate client IP address.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "9.12.34.56"
         }
       },
       "include_defaults_optional": {
@@ -105979,7 +108494,7 @@
       "limit_optional": {
         "name": "limit",
         "in": "query",
-        "description": "If set, the number of items to return when requesting a list. Maximum: 200",
+        "description": "If set, the number of items to return when requesting a list. Maximum: 500",
         "required": false,
         "schema": {
           "type": "string",
@@ -106089,7 +108604,7 @@
       "path_optional": {
         "name": "path",
         "in": "query",
-        "description": "If set, the API will only return events that contain this in the path.",
+        "description": "If set, only return events that contain this path value.",
         "required": false,
         "schema": {
           "type": "string"
@@ -106242,7 +108757,7 @@
       "retry_failed_optional": {
         "name": "retry_failed",
         "in": "query",
-        "description": "If true, then retries allocation of shards that are blocked due to too many subsequent allocation failures.",
+        "description": "If true, then it retries allocation of shards that are blocked due to too many subsequent allocation failures.",
         "required": false,
         "schema": {
           "type": "boolean"
@@ -106252,6 +108767,15 @@
         "name": "s",
         "in": "query",
         "description": "Comma-separated list of column names or column aliases used to sort the response.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "saved_query_search_optional": {
+        "name": "search",
+        "in": "query",
+        "description": "Search for a saved query by either title, description or query_string.",
         "required": false,
         "schema": {
           "type": "string"
@@ -106269,7 +108793,7 @@
       "status_code_optional": {
         "name": "status_code",
         "in": "query",
-        "description": "If set, the API will only return events that match this response code e.g. 200 OK, 404 Not Found.",
+        "description": "If set, only return events that match this response code e.g. 200 OK, 404 Not Found. It is also possible to use wildcard based values 10x, 20x, 30x, 40x, 50x.",
         "required": false,
         "schema": {
           "type": "string"
@@ -106278,7 +108802,7 @@
       "start_time_optional": {
         "name": "start",
         "in": "query",
-        "description": "If set, the API will only return events with a datetime equal or newer than this. The value must follow the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z. See https://datatracker.ietf.org/doc/html/rfc3339#section-5.6.\n",
+        "description": "If set, only return events with a datetime equal to or newer than this. The value must follow the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z. See https://datatracker.ietf.org/doc/html/rfc3339#section-5.6.\n",
         "required": false,
         "schema": {
           "type": "string",
@@ -106323,7 +108847,7 @@
       "timeframe_optional": {
         "name": "timeframe",
         "in": "query",
-        "description": "If set, the API will only return events within the indicated timeframe. This parameter will be ignored if either start or end have been specified.\n",
+        "description": "If set, only return events within the indicated timeframe. This parameter will be ignored if either start or end have been specified.\n",
         "required": false,
         "schema": {
           "type": "string",
@@ -106549,6 +109073,62 @@
       "ClusterName": {
         "type": "string",
         "description": "Number of the cluster"
+      },
+      "ConsumptionDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Consumption Dashboard.",
+        "properties": {
+          "monthly_summary": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
+          "monthly_data": {
+            "$ref": "#/components/schemas/ConsumptionDataList"
+          },
+          "daily_summary": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
+          "daily_data": {
+            "$ref": "#/components/schemas/ConsumptionDataList"
+          }
+        }
+      },
+      "ConsumptionDataList": {
+        "type": "object",
+        "description": "A list of data points on API usage by response code over time",
+        "properties": {
+          "total": {
+            "type": "number"
+          },
+          "filter": {
+            "description": "The query filter string used for this search",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ConsumptionDataItemList"
+          }
+        }
+      },
+      "ConsumptionDataItem": {
+        "type": "object",
+        "description": "An individual data point of API usage by response code",
+        "additionalProperties": true,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "total": {
+            "type": "number"
+          },
+          "other": {
+            "type": "number"
+          }
+        }
+      },
+      "ConsumptionDataItemList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ConsumptionDataItem"
+        }
       },
       "DataItem": {
         "type": "object",
@@ -107022,6 +109602,34 @@
           "$ref": "#/components/schemas/GroupValueItem"
         }
       },
+      "GroupKeyValueItem": {
+        "type": "object",
+        "properties": {
+          "group": {
+            "type": "string"
+          },
+          "value": {
+            "type": "integer"
+          },
+          "key": {
+            "type": "string"
+          }
+        }
+      },
+      "GroupKeyValueDataList": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/GroupKeyValueItemList"
+          }
+        }
+      },
+      "GroupKeyValueItemList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/GroupKeyValueItem"
+        }
+      },
       "HeaderItem": {
         "type": "object",
         "description": "An HTTP header",
@@ -107215,6 +109823,116 @@
           }
         }
       },
+      "Query": {
+        "type": "object",
+        "description": "Query",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "query_string": {
+            "type": "string"
+          },
+          "shared": {
+            "type": "boolean",
+            "default": false
+          },
+          "org_id": {
+            "type": "string"
+          },
+          "org_name": {
+            "type": "string"
+          },
+          "catalog_id": {
+            "type": "string"
+          },
+          "catalog_name": {
+            "type": "string"
+          },
+          "space_id": {
+            "type": "string"
+          },
+          "space_name": {
+            "type": "string"
+          }
+        }
+      },
+      "QueryRequest": {
+        "type": "object",
+        "description": "Request body to create/update a query.",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "query_string": {
+            "type": "string"
+          },
+          "shared": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "QueryUpdateRequest": {
+        "type": "object",
+        "description": "Request body to update a query.",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "query_string": {
+            "type": "string"
+          }
+        }
+      },
+      "QueryList": {
+        "type": "array",
+        "description": "Array of queries.",
+        "items": {
+          "$ref": "#/components/schemas/Query"
+        }
+      },
+      "QueryListResponse": {
+        "type": "object",
+        "description": "Query list response.",
+        "properties": {
+          "queries": {
+            "$ref": "#/components/schemas/QueryList"
+          }
+        }
+      },
+      "QueryTransferOwnerRequest": {
+        "type": "object",
+        "required": [
+          "new_owner_user_url"
+        ],
+        "properties": {
+          "new_owner_user_url": {
+            "type": "string",
+            "example": "/api/user-registries/9fae1d20-3d20-4418-8c09-d3409b303b7e/d4654412-f96f-4989-895e-dca377ac9fa4/users/7982df1f-1a86-4077-8131-7ce583385d7d"
+          }
+        }
+      },
       "RerouteBody": {
         "type": "object",
         "properties": {
@@ -107358,7 +110076,7 @@
       },
       "UsageDashboardResponse": {
         "type": "object",
-        "description": "Data to display on the STATUS Dashboard.",
+        "description": "Data to display on the USAGE Dashboard.",
         "properties": {
           "search_time": {
             "$ref": "#/components/schemas/NonNegativeInteger"
@@ -107402,6 +110120,21 @@
           "application/yaml": {
             "schema": {
               "$ref": "#/components/schemas/ClusterMgmtObjectResponse"
+            }
+          }
+        }
+      },
+      "ConsumptionDashboardResponse": {
+        "description": "Data needed to populate the Consumption Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ConsumptionDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ConsumptionDashboardResponse"
             }
           }
         }
@@ -107496,6 +110229,9 @@
           }
         }
       },
+      "NoContentResponse": {
+        "description": "The resource was deleted successfully."
+      },
       "ProductDashboardResponse": {
         "description": "Data needed to populate the Product Dashboard",
         "content": {
@@ -107507,6 +110243,36 @@
           "application/yaml": {
             "schema": {
               "$ref": "#/components/schemas/ProductDashboardResponse"
+            }
+          }
+        }
+      },
+      "QueryListResponse": {
+        "description": "Queries found at requested scope.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/QueryListResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/QueryListResponse"
+            }
+          }
+        }
+      },
+      "QueryResponse": {
+        "description": "Singular query.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Query"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/Query"
             }
           }
         }
@@ -107542,7 +110308,7 @@
         }
       },
       "UsageDashboardResponse": {
-        "description": "Data needed to populate the Catalog Dashboard",
+        "description": "Data needed to populate the Usage Dashboard",
         "content": {
           "application/json": {
             "schema": {
