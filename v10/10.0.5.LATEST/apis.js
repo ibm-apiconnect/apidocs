@@ -2488,7 +2488,7 @@
         "security": [
           {
             "oauth": [
-              "cloud:view"
+              "cloud:manage"
             ]
           }
         ],
@@ -2794,7 +2794,7 @@
         "security": [
           {
             "oauth": [
-              "cloud:view"
+              "cloud:manage"
             ]
           }
         ],
@@ -3100,7 +3100,7 @@
         "security": [
           {
             "oauth": [
-              "cloud:view"
+              "cloud:manage"
             ]
           }
         ],
@@ -3406,7 +3406,7 @@
         "security": [
           {
             "oauth": [
-              "cloud:view"
+              "cloud:manage"
             ]
           }
         ],
@@ -3712,7 +3712,7 @@
         "security": [
           {
             "oauth": [
-              "cloud:view"
+              "cloud:manage"
             ]
           }
         ],
@@ -4018,7 +4018,7 @@
         "security": [
           {
             "oauth": [
-              "cloud:view"
+              "cloud:manage"
             ]
           }
         ],
@@ -6636,7 +6636,7 @@
         "security": [
           {
             "oauth": [
-              "org:view"
+              "org:manage"
             ]
           }
         ],
@@ -17080,6 +17080,14 @@
             "type": "string",
             "format": "uri"
           },
+          "internal_svc_endpoint": {
+            "type": "string",
+            "format": "uri"
+          },
+          "internal_svc_endpoint_tls_client_profile_url": {
+            "type": "string",
+            "format": "uri"
+          },
           "gateway_service_urls": {
             "type": "array",
             "items": {
@@ -17094,6 +17102,13 @@
           "availability_zone_url": {
             "type": "string",
             "format": "uri"
+          },
+          "communication_from_apim_kind": {
+            "type": "string",
+            "enum": [
+              "external",
+              "internal_svc"
+            ]
           },
           "metadata": {
             "type": "object",
@@ -18757,6 +18772,14 @@
             "type": "string",
             "format": "uri"
           },
+          "platform_api_svc_endpoint": {
+            "type": "string",
+            "format": "uri"
+          },
+          "consumer_api_svc_endpoint": {
+            "type": "string",
+            "format": "uri"
+          },
           "license_accepted": {
             "type": "boolean"
           },
@@ -19481,6 +19504,20 @@
           "service_version": {
             "type": "string",
             "nullable": true
+          },
+          "communication_kind": {
+            "type": "string",
+            "enum": [
+              "external",
+              "internal_svc"
+            ]
+          },
+          "communication_to_analytics_kind": {
+            "type": "string",
+            "enum": [
+              "external",
+              "internal_svc"
+            ]
           },
           "metadata": {
             "type": "object",
@@ -21463,6 +21500,20 @@
           "service_version": {
             "type": "string",
             "nullable": true
+          },
+          "communication_kind": {
+            "type": "string",
+            "enum": [
+              "external",
+              "internal_svc"
+            ]
+          },
+          "communication_to_analytics_kind": {
+            "type": "string",
+            "enum": [
+              "external",
+              "internal_svc"
+            ]
           },
           "metadata": {
             "type": "object",
@@ -24746,6 +24797,13 @@
           "service_version": {
             "type": "string",
             "nullable": true
+          },
+          "communication_kind": {
+            "type": "string",
+            "enum": [
+              "external",
+              "internal_svc"
+            ]
           },
           "metadata": {
             "type": "object",
@@ -34164,7 +34222,7 @@
         "security": [
           {
             "oauth": [
-              "org:view"
+              "org:manage"
             ]
           }
         ],
@@ -34484,7 +34542,7 @@
         "security": [
           {
             "oauth": [
-              "org:view"
+              "org:manage"
             ]
           }
         ],
@@ -34804,7 +34862,7 @@
         "security": [
           {
             "oauth": [
-              "org:view"
+              "org:manage"
             ]
           }
         ],
@@ -35124,7 +35182,7 @@
         "security": [
           {
             "oauth": [
-              "org:view"
+              "org:manage"
             ]
           }
         ],
@@ -43180,7 +43238,7 @@
         "security": [
           {
             "oauth": [
-              "org:view"
+              "org:manage"
             ]
           }
         ],
@@ -43512,7 +43570,7 @@
         "security": [
           {
             "oauth": [
-              "org:view"
+              "org:manage"
             ]
           }
         ],
@@ -43844,7 +43902,7 @@
         "security": [
           {
             "oauth": [
-              "org:view"
+              "org:manage"
             ]
           }
         ],
@@ -54211,7 +54269,7 @@
         "security": [
           {
             "oauth": [
-              "org:view"
+              "org:manage"
             ]
           }
         ],
@@ -54555,7 +54613,7 @@
         "security": [
           {
             "oauth": [
-              "org:view"
+              "org:manage"
             ]
           }
         ],
@@ -73503,6 +73561,14 @@
             "type": "string",
             "format": "uri"
           },
+          "internal_svc_endpoint": {
+            "type": "string",
+            "format": "uri"
+          },
+          "internal_svc_endpoint_tls_client_profile_url": {
+            "type": "string",
+            "format": "uri"
+          },
           "gateway_service_urls": {
             "type": "array",
             "items": {
@@ -73517,6 +73583,13 @@
           "availability_zone_url": {
             "type": "string",
             "format": "uri"
+          },
+          "communication_from_apim_kind": {
+            "type": "string",
+            "enum": [
+              "external",
+              "internal_svc"
+            ]
           },
           "metadata": {
             "type": "object",
@@ -75180,6 +75253,14 @@
             "type": "string",
             "format": "uri"
           },
+          "platform_api_svc_endpoint": {
+            "type": "string",
+            "format": "uri"
+          },
+          "consumer_api_svc_endpoint": {
+            "type": "string",
+            "format": "uri"
+          },
           "license_accepted": {
             "type": "boolean"
           },
@@ -75904,6 +75985,20 @@
           "service_version": {
             "type": "string",
             "nullable": true
+          },
+          "communication_kind": {
+            "type": "string",
+            "enum": [
+              "external",
+              "internal_svc"
+            ]
+          },
+          "communication_to_analytics_kind": {
+            "type": "string",
+            "enum": [
+              "external",
+              "internal_svc"
+            ]
           },
           "metadata": {
             "type": "object",
@@ -77886,6 +77981,20 @@
           "service_version": {
             "type": "string",
             "nullable": true
+          },
+          "communication_kind": {
+            "type": "string",
+            "enum": [
+              "external",
+              "internal_svc"
+            ]
+          },
+          "communication_to_analytics_kind": {
+            "type": "string",
+            "enum": [
+              "external",
+              "internal_svc"
+            ]
           },
           "metadata": {
             "type": "object",
@@ -81169,6 +81278,13 @@
           "service_version": {
             "type": "string",
             "nullable": true
+          },
+          "communication_kind": {
+            "type": "string",
+            "enum": [
+              "external",
+              "internal_svc"
+            ]
           },
           "metadata": {
             "type": "object",
@@ -97039,7 +97155,7 @@
     "x-ibm-name": "analytics",
     "version": "2.0.0",
     "title": "IBM API Connect Analytics API",
-    "description": "## API for the API Connect Analytics subsystem\nThis API includes the capability to retrieve information about API events stored in APIC Analytics,  retrieve the data used by the Analytics dashboards in the UI, obtain information on what filter parameters are supported  and also obtain information about internal cluster management, health and operations.\n### API Events\nThere are operations to retrieve a count of events, a list of events or a specific detailed API event at the following  scopes: cloud, provider organization, catalog and space. The API event operations all support a multitude of filter parameters to be able to select the exact events you wish. These filter parameters can be combined together in a single query.\n\nThere are advanced selectors available for these filter parameters too which allow operations such as these:\n- `.../events?consumer_org_id=1234567890` = select all events made by consumer org id 1234567890\n- `.../events?consumer_org_id=not:1234567890` = select all events made by consumer orgs other than id 1234567890\n- `.../events?product_name=contains:loan` = select all events where the product name contained the string 'loan' (equivalent to searching for `*loan*`)\n- `.../events?product_name=notcontains:loan` = select all events where the product name didn't contain the string 'loan'\n- `.../events?product_name=startswith:loa` = select all events where the product name starts with the string 'loa' (equivalent to searching for `loa*`)\n- `.../events?product_name=endswith:oan` = select all events where the product name ends with the string 'oan' (equivalent to searching for `*oan`)\n- `.../events?product_name=regex:[a-z]oan` = select all events where the product name begins with any lowercase alphabetical character and ends with the string 'oan' (WARNING: Regex based queries have a performance impact and should only be used if other queries cannot be used)\n- `.../events?product_name=oneof:loans,accounts,address` = select all events where the product name is loans, accounts or address\n- `.../events?product_name=notoneof:loans,accounts,address` = select all events where the product name is neither loans, accounts or address\n\nThese ones only apply to numeric fields:\n- `.../events?bytes_received=1000` = select all events where the received bytes was exactly 1000\n- `.../events?bytes_received=gt:1000` = select all events where the received bytes was greater than 1000\n- `.../events?bytes_received=gte:1000` = select all events where the received bytes was greater than or equals to 1000\n- `.../events?bytes_received=lt:1000` = select all events where the received bytes was less than 1000\n- `.../events?bytes_received=lte:1000` = select all events where the received bytes was less than or equals to 1000\n\nThe full list of possible advanced operator prefixes are: `not`, `contains`, `notcontains`, `startswith`, `endswith`, `regex`, `gt`, `gte`, `lt`, `lte`, `oneof`.\n\n### Dashboards\nThese operations allow you to download the data used by the APIC Analytics dashboards in the API Manager UI.  These are also at the same variety of scopes and also support the same filter parameters as usable with the API Event operations above.\n### Filter parameters\nThese operations define what filter parameters and operations are available at each scope.  This could be useful in a dynamically generated UI calling the API Event or dashboard operations above.\n### Cluster Management\nThese operations allow the retrieval of information on cluster health and status as well as the ability to perform  maintenance operations on it.\n",
+    "description": "## API for the API Connect Analytics subsystem\nThis API includes the capability to retrieve information about API events stored in APIC Analytics,  retrieve the data used by the Analytics dashboards in the UI, obtain information on what filter parameters are supported  and also obtain information about internal cluster management, health and operations.\n### API Events\nThere are operations to retrieve a count of events, a list of events or a specific detailed API event at the following  scopes: cloud, provider organization, catalog and space. The API event operations all support a multitude of filter parameters to be able to select the exact events you wish. These filter parameters can be combined together in a single query.\n\nThere are advanced selectors available for these filter parameters too which allow operations such as these:\n- `.../events?consumer_org_id=1234567890` = select all events made by consumer org id 1234567890\n- `.../events?consumer_org_id=not:1234567890` = select all events made by consumer orgs other than id 1234567890\n- `.../events?product_name=contains:loan` = select all events where the product name contained the string 'loan' (equivalent to searching for `*loan*`)\n- `.../events?product_name=notcontains:loan` = select all events where the product name didn't contain the string 'loan'\n- `.../events?product_name=startswith:loa` = select all events where the product name starts with the string 'loa' (equivalent to searching for `loa*`)\n- `.../events?product_name=endswith:oan` = select all events where the product name ends with the string 'oan' (equivalent to searching for `*oan`)\n- `.../events?product_name=regex:[a-z]oan` = select all events where the product name begins with any lowercase alphabetical character and ends with the string 'oan' (WARNING: Regex based queries have a performance impact and should only be used if other queries cannot be used)\n- `.../events?product_name=oneof:loans,accounts,address` = select all events where the product name is loans, accounts or address\n- `.../events?product_name=notoneof:loans,accounts,address` = select all events where the product name is neither loans, accounts or address\n\nThese ones only apply to numeric fields:\n- `.../events?bytes_received=1000` = select all events where the received bytes was exactly 1000\n- `.../events?bytes_received=gt:1000` = select all events where the received bytes was greater than 1000\n- `.../events?bytes_received=gte:1000` = select all events where the received bytes was greater than or equals to 1000\n- `.../events?bytes_received=lt:1000` = select all events where the received bytes was less than 1000\n- `.../events?bytes_received=lte:1000` = select all events where the received bytes was less than or equals to 1000\n\nThe full list of possible advanced operator prefixes are: `not`, `contains`, `notcontains`, `startswith`, `endswith`, `regex`, `gt`, `gte`, `lt`, `lte`, `oneof`.\n\nThe exception to the above are the IP address fields `client_ip`, `gateway_ip` and `immediate_client_ip` which only support equality checks and not any of the other operators. However, they do support CIDR based queries, for example:\n- `.../events?client_ip=9.123.234.0/24` = select all events where the client IP address was in the 9.123.234.0 network (netmask 255.255.255.0)\n\n### Dashboards\nThese operations allow you to download the data used by the APIC Analytics dashboards in the API Manager UI.  These are also at the same variety of scopes and also support the same filter parameters as usable with the API Event operations above.\n### Filter parameters\nThese operations define what filter parameters and operations are available at each scope.  This could be useful in a dynamically generated UI calling the API Event or dashboard operations above.\n### Cluster Management\nThese operations allow the retrieval of information on cluster health and status as well as the ability to perform  maintenance operations on it.\n",
     "termsOfService": "https://www.ibm.com/terms-of-service",
     "contact": {
       "name": "IBM",
@@ -97107,12 +97223,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -97131,6 +97241,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -97141,6 +97254,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -97185,10 +97301,19 @@
             "$ref": "#/components/parameters/provider_org_name_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -97215,6 +97340,247 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/EventListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Events"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/events/scroll": {
+      "description": "You can use the scroll operation to retrieve a large number of results. You can request an unlimited number of results in batches.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "post": {
+        "summary": "Scroll through results in batches.",
+        "description": "Returns an initial batch of results following the requested size or a default of 1000 as well as a 'scroll_id'. Pass this scroll ID to the next scroll operation to get back the next batch of results. Typically, the scroll ID does not change between requests, but it can change, so make sure to always use the latest scroll ID.\n",
+        "operationId": "events_cloudScroll",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScrollRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/ScrollRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ScrollResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Events"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/events/scroll/delete": {
+      "description": "Clears the search context and results for a scrolling search.",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "post": {
+        "summary": "Clears the scroll search context.",
+        "description": "Clears the scroll search context and results for a scrolling search. Should be used when the scroll context is not needed since otherwise it will stay open until it times out.\n",
+        "operationId": "events_cloudScrollDelete",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScrollDeleteRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/ScrollDeleteRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ScrollDeleteResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -97320,12 +97686,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -97344,6 +97704,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -97354,6 +97717,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
@@ -97392,10 +97758,19 @@
             "$ref": "#/components/parameters/provider_org_name_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -97449,7 +97824,7 @@
       "get": {
         "summary": "List events at provider organization scope.",
         "description": "Return a result set of analytics API events scoped to the provider organization. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields\n",
-        "operationId": "events_orgist",
+        "operationId": "events_orgList",
         "security": [
           {
             "oauth": [
@@ -97492,12 +97867,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -97516,6 +97885,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -97526,6 +97898,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -97564,10 +97939,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -97594,6 +97978,247 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/EventListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Events"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/events/scroll": {
+      "description": "You can use the scroll operation to retrieve a large number of results. You can request an unlimited number of results in batches.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Scroll through results in batches.",
+        "description": "Returns an initial batch of results following the requested size or a default of 1000 as well as a 'scroll_id'. Pass this scroll ID to the next scroll operation to get back the next batch of results. Typically, the scroll ID does not change between requests, but it can change, so make sure to always use the latest scroll ID.\n",
+        "operationId": "events_orgScroll",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScrollRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/ScrollRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ScrollResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Events"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/events/scroll/delete": {
+      "description": "Clears the search context and results for a scrolling search.",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Clears the scroll search context.",
+        "description": "Clears the scroll search context and results for a scrolling search. Should be used when the scroll context is not needed since otherwise it will stay open until it times out.\n",
+        "operationId": "events_orgScrollDelete",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScrollDeleteRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/ScrollDeleteRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ScrollDeleteResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -97705,12 +98330,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -97729,6 +98348,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -97739,6 +98361,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
@@ -97771,10 +98396,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -97868,12 +98502,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -97892,6 +98520,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -97902,6 +98533,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -97940,10 +98574,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -98081,12 +98724,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -98105,6 +98742,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -98115,6 +98755,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
@@ -98147,10 +98790,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -98247,12 +98899,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -98271,6 +98917,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -98281,6 +98930,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -98319,10 +98971,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -98460,12 +99121,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -98484,6 +99139,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -98494,6 +99152,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
@@ -98526,10 +99187,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -98584,10 +99254,148 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
             "$ref": "#/components/parameters/end_time_optional"
           },
           {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
             "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/timeframe_optional"
@@ -98663,12 +99471,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -98687,6 +99489,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -98697,6 +99502,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -98741,10 +99549,19 @@
             "$ref": "#/components/parameters/provider_org_name_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -98838,12 +99655,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -98862,6 +99673,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -98872,6 +99686,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -98916,10 +99733,19 @@
             "$ref": "#/components/parameters/provider_org_name_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -99013,12 +99839,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -99034,7 +99854,16 @@
             "$ref": "#/components/parameters/end_time_optional"
           },
           {
+            "$ref": "#/components/parameters/error_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_offset_optional"
+          },
+          {
             "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/global_transaction_id_optional"
@@ -99047,6 +99876,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -99091,10 +99923,19 @@
             "$ref": "#/components/parameters/provider_org_name_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -99116,12 +99957,6 @@
           },
           {
             "$ref": "#/components/parameters/timeframe_optional"
-          },
-          {
-            "$ref": "#/components/parameters/error_limit_optional"
-          },
-          {
-            "$ref": "#/components/parameters/error_offset_optional"
           }
         ],
         "responses": {
@@ -99194,12 +100029,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -99218,6 +100047,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -99228,6 +100060,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -99272,10 +100107,19 @@
             "$ref": "#/components/parameters/provider_org_name_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -99375,12 +100219,6 @@
             "$ref": "#/components/parameters/daily_offset_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -99399,6 +100237,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -99409,6 +100250,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -99453,10 +100297,19 @@
             "$ref": "#/components/parameters/provider_org_name_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -99553,12 +100406,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -99577,6 +100424,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -99587,6 +100437,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -99625,10 +100478,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -99725,12 +100587,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -99749,6 +100605,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -99759,6 +100618,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -99797,10 +100659,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -99897,12 +100768,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -99921,6 +100786,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -99931,6 +100799,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -99969,10 +100840,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -100069,12 +100949,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -100099,6 +100973,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -100109,6 +100986,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -100147,10 +101027,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -100247,12 +101136,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -100271,6 +101154,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -100281,6 +101167,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -100319,10 +101208,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -100419,12 +101317,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -100449,6 +101341,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -100459,6 +101354,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -100497,10 +101395,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -100594,12 +101501,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -100618,6 +101519,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -100628,6 +101532,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -100666,10 +101573,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -100763,12 +101679,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -100787,6 +101697,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -100797,6 +101710,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -100835,10 +101751,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -100932,12 +101857,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -100956,6 +101875,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -100966,6 +101888,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -101004,10 +101929,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -101101,12 +102035,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -101131,6 +102059,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -101141,6 +102072,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -101179,10 +102113,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -101276,12 +102219,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -101300,6 +102237,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -101310,6 +102250,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -101348,10 +102291,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -101445,12 +102397,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -101475,6 +102421,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -101485,6 +102434,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -101523,10 +102475,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -101623,12 +102584,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -101647,6 +102602,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -101657,6 +102615,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -101695,10 +102656,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -101789,12 +102759,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -101813,6 +102777,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -101823,6 +102790,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -101861,10 +102831,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -101955,12 +102934,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -101979,6 +102952,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -101989,6 +102965,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -102027,10 +103006,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -102121,12 +103109,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -102151,6 +103133,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -102161,6 +103146,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -102199,10 +103187,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -102293,12 +103290,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -102317,6 +103308,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -102327,6 +103321,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -102365,10 +103362,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -102459,12 +103465,6 @@
             "$ref": "#/components/parameters/client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/gateway_ip_optional"
-          },
-          {
-            "$ref": "#/components/parameters/immediate_client_ip_optional"
-          },
-          {
             "$ref": "#/components/parameters/consumer_org_id_optional"
           },
           {
@@ -102489,6 +103489,9 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
           },
           {
@@ -102499,6 +103502,9 @@
           },
           {
             "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -102537,10 +103543,19 @@
             "$ref": "#/components/parameters/product_version_optional"
           },
           {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
             "$ref": "#/components/parameters/request_http_headers_optional"
           },
           {
             "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
@@ -105928,7 +106943,7 @@
       },
       "post": {
         "summary": "Adds master-eligible nodes from the voting configuration exclusion list.",
-        "description": "Removes master-eligible nodes from the voting configuration exclusion list.\n",
+        "description": "Adds master-eligible nodes from the voting configuration exclusion list.\n",
         "operationId": "clustermgmt_cluster_postVotingConfigExclusions",
         "security": [
           {
@@ -106325,7 +107340,7 @@
         }
       ],
       "get": {
-        "summary": "RReturns an internal representation of the cluster state for debugging or diagnostic purposes.",
+        "summary": "Returns an internal representation of the cluster state for debugging or diagnostic purposes.",
         "description": "The cluster state is an internal data structure which keeps track of a variety of information needed by every node.\n",
         "operationId": "clustermgmt_cluster_getStateByMetricsTarget",
         "security": [
@@ -108055,7 +109070,7 @@
       "client_ip_optional": {
         "name": "client_ip",
         "in": "query",
-        "description": "Filter results by client IP address.",
+        "description": "Filter results by client IP address. Only supports equality checks and no operator prefixes. Supports CIDR notation based queries, e.g. `client_ip=9.123.234.0/24`",
         "required": false,
         "schema": {
           "type": "string",
@@ -108074,7 +109089,7 @@
       "consumer_org_id_optional": {
         "name": "consumer_org_id",
         "in": "query",
-        "description": "Filter results by consumer organization ID.",
+        "description": "Filter results by consumer organization ID (filters on the `developer_org_id` data field).",
         "required": false,
         "schema": {
           "type": "string"
@@ -108083,7 +109098,7 @@
       "consumer_org_name_optional": {
         "name": "consumer_org_name",
         "in": "query",
-        "description": "Filter results by consumer organization name.",
+        "description": "Filter results by consumer organization name (filters on the `developer_org_name` data field).",
         "required": false,
         "schema": {
           "type": "string",
@@ -108093,7 +109108,7 @@
       "consumer_org_title_optional": {
         "name": "consumer_org_title",
         "in": "query",
-        "description": "Filter results by consumer organization title.",
+        "description": "Filter results by consumer organization title (filters on the `developer_org_title` data field).",
         "required": false,
         "schema": {
           "type": "string",
@@ -108302,7 +109317,7 @@
       "gateway_ip_optional": {
         "name": "gateway_ip",
         "in": "query",
-        "description": "Filter results by gateway IP address.",
+        "description": "Filter results by gateway IP address. Only supports equality checks and no operator prefixes. Supports CIDR notation based queries, e.g. `gateway_ip=9.123.234.0/24`",
         "required": false,
         "schema": {
           "type": "string",
@@ -108389,7 +109404,7 @@
       "immediate_client_ip_optional": {
         "name": "immediate_client_ip",
         "in": "query",
-        "description": "Filter results by immediate client IP address.",
+        "description": "Filter results by immediate client IP address. Only supports equality checks and no operator prefixes. Supports CIDR notation based queries, e.g. `immediate_client_ip=9.123.234.0/24`",
         "required": false,
         "schema": {
           "type": "string",
@@ -108697,6 +109712,15 @@
           "example": "2.0.0"
         }
       },
+      "query_string_optional": {
+        "name": "query_string",
+        "in": "query",
+        "description": "Filter results by query_string.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "space_id_optional": {
         "name": "space_id",
         "in": "query",
@@ -108714,6 +109738,15 @@
         "schema": {
           "type": "string",
           "example": "space1"
+        }
+      },
+      "request_body_optional": {
+        "name": "request_body",
+        "in": "query",
+        "description": "Filter results by request body.",
+        "required": false,
+        "schema": {
+          "type": "string"
         }
       },
       "request_http_headers_optional": {
@@ -108735,6 +109768,15 @@
         "name": "resource_id",
         "in": "query",
         "description": "Filter results by resource ID.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "response_body_optional": {
+        "name": "response_body",
+        "in": "query",
+        "description": "Filter results by response body.",
         "required": false,
         "schema": {
           "type": "string"
@@ -109495,12 +110537,35 @@
       "EventListResponse": {
         "type": "object",
         "description": "API event list response.",
+        "required": [
+          "total",
+          "search_time",
+          "events"
+        ],
         "properties": {
           "total": {
             "$ref": "#/components/schemas/NonNegativeInteger"
           },
           "search_time": {
             "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "offset": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "limit": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "first": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "next": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "previous": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "last": {
+            "$ref": "#/components/schemas/PaginationLink"
           },
           "events": {
             "$ref": "#/components/schemas/EventList"
@@ -109803,6 +110868,15 @@
           "$ref": "#/components/schemas/Operator"
         }
       },
+      "PaginationLink": {
+        "type": "object",
+        "description": "Pagination link used in list responses.",
+        "properties": {
+          "href": {
+            "type": "string"
+          }
+        }
+      },
       "ProductDashboardResponse": {
         "type": "object",
         "description": "Data to display on the PRODUCT Dashboard.",
@@ -109828,6 +110902,9 @@
         "type": "object",
         "description": "Query",
         "properties": {
+          "id": {
+            "type": "string"
+          },
           "title": {
             "type": "string"
           },
@@ -109869,6 +110946,10 @@
           },
           "space_name": {
             "type": "string"
+          },
+          "settings": {
+            "type": "object",
+            "additionalProperties": true
           }
         }
       },
@@ -109888,6 +110969,10 @@
           "shared": {
             "type": "boolean",
             "default": false
+          },
+          "settings": {
+            "type": "object",
+            "additionalProperties": true
           }
         }
       },
@@ -109903,6 +110988,10 @@
           },
           "query_string": {
             "type": "string"
+          },
+          "settings": {
+            "type": "object",
+            "additionalProperties": true
           }
         }
       },
@@ -109942,6 +111031,64 @@
             "items": {
               "type": "object",
               "additionalProperties": true
+            }
+          }
+        }
+      },
+      "ScrollDeleteRequest": {
+        "type": "object",
+        "properties": {
+          "scroll_id": {
+            "type": "string",
+            "description": "Pass this scroll ID to close its search context. To close all open scroll context use '_all'.\n"
+          }
+        }
+      },
+      "ScrollDeleteResponse": {
+        "type": "object",
+        "properties": {
+          "succeeded": {
+            "type": "boolean",
+            "description": "If true, the request succeeded. This does not indicate whether any scrolling search requests were cleared."
+          },
+          "num_freed": {
+            "type": "number",
+            "description": "Number of scrolling search requests cleared."
+          }
+        }
+      },
+      "ScrollRequest": {
+        "type": "object",
+        "properties": {
+          "size": {
+            "type": "number",
+            "description": "The number of results that you want returned for each batch. Defaults to 1000. Requests with a scroll_id will ignore this field.\n"
+          },
+          "scroll": {
+            "type": "string",
+            "description": "Tell OpenSearch how long you need to keep scrolling. Defaults to '10m'. This search context needs to be long enough to process a single batch of results.\n"
+          },
+          "scroll_id": {
+            "type": "string",
+            "description": "Pass this scroll ID to the scroll operation to get back the next batch of results."
+          }
+        }
+      },
+      "ScrollResponse": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "number",
+            "description": "Total number of events stored."
+          },
+          "scroll_id": {
+            "type": "string",
+            "description": "Pass this scroll ID of the current scroll operation."
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Event"
             }
           }
         }
@@ -110274,6 +111421,36 @@
           "application/yaml": {
             "schema": {
               "$ref": "#/components/schemas/Query"
+            }
+          }
+        }
+      },
+      "ScrollDeleteResponse": {
+        "description": "Response from the /events/scroll/delete API.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ScrollDeleteResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ScrollDeleteResponse"
+            }
+          }
+        }
+      },
+      "ScrollResponse": {
+        "description": "Response from the /events/scroll API.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ScrollResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ScrollResponse"
             }
           }
         }
