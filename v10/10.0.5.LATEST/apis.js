@@ -209,10 +209,16 @@
                   "$ref": "#/components/schemas/UserRegistry"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -811,10 +817,16 @@
                   "$ref": "#/components/schemas/User"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -4160,10 +4172,16 @@
                   "$ref": "#/components/schemas/RoleDefault"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -4605,10 +4623,16 @@
                   "$ref": "#/components/schemas/Integration"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -4892,10 +4916,16 @@
                   "$ref": "#/components/schemas/Integration"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -5179,10 +5209,16 @@
                   "$ref": "#/components/schemas/Integration"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -5466,10 +5502,16 @@
                   "$ref": "#/components/schemas/Integration"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -5753,10 +5795,16 @@
                   "$ref": "#/components/schemas/Registration"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -6040,10 +6088,16 @@
                   "$ref": "#/components/schemas/APIKey"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -7123,10 +7177,16 @@
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -7484,10 +7544,16 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -7553,10 +7619,16 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -7619,10 +7691,16 @@
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -8420,10 +8498,16 @@
                   "$ref": "#/components/schemas/Role"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -8715,10 +8799,16 @@
                   "$ref": "#/components/schemas/AvailabilityZone"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -9013,10 +9103,16 @@
                   "$ref": "#/components/schemas/GatewayService"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -10403,10 +10499,16 @@
                   "$ref": "#/components/schemas/PortalService"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -10764,10 +10866,16 @@
                   "$ref": "#/components/schemas/AnalyticsService"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -11062,10 +11170,16 @@
                   "$ref": "#/components/schemas/OauthProvider"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -11357,10 +11471,16 @@
                   "$ref": "#/components/schemas/MailServer"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -11751,10 +11871,16 @@
                   "$ref": "#/components/schemas/TLSServerProfile"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -12300,10 +12426,16 @@
                   "$ref": "#/components/schemas/TLSClientProfile"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -12841,10 +12973,16 @@
                   "$ref": "#/components/schemas/Keystore"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -13136,10 +13274,16 @@
                   "$ref": "#/components/schemas/Truststore"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -13434,10 +13578,16 @@
                   "$ref": "#/components/schemas/Entry"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -13727,10 +13877,16 @@
                   "$ref": "#/components/schemas/Invitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -14079,10 +14235,16 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -14145,10 +14307,16 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -14206,10 +14374,16 @@
                   "$ref": "#/components/schemas/Org"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -14355,10 +14529,16 @@
                   "$ref": "#/components/schemas/Group"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -31911,10 +32091,16 @@
                   "$ref": "#/components/schemas/UserRegistry"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -32513,10 +32699,16 @@
                   "$ref": "#/components/schemas/User"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -33626,10 +33818,16 @@
                   "$ref": "#/components/schemas/APIKey"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -35669,10 +35867,16 @@
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -36030,10 +36234,16 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -36099,10 +36309,16 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -36165,10 +36381,16 @@
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -36966,10 +37188,16 @@
                   "$ref": "#/components/schemas/Role"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -37487,10 +37715,16 @@
                   "$ref": "#/components/schemas/OauthProvider"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -37782,10 +38016,16 @@
                   "$ref": "#/components/schemas/Billing"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -38312,10 +38552,16 @@
                   "$ref": "#/components/schemas/TLSClientProfile"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -38853,10 +39099,16 @@
                   "$ref": "#/components/schemas/Keystore"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -39148,10 +39400,16 @@
                   "$ref": "#/components/schemas/Truststore"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -39446,10 +39704,16 @@
                   "$ref": "#/components/schemas/Entry"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -39909,10 +40173,16 @@
                   "$ref": "#/components/schemas/ConfiguredGatewayService"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -40203,10 +40473,16 @@
                   "$ref": "#/components/schemas/ConfiguredGatewayService"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -40500,10 +40776,16 @@
                   "$ref": "#/components/schemas/ConfiguredCatalogUserRegistry"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -40790,10 +41072,16 @@
                   "$ref": "#/components/schemas/ConfiguredAPIUserRegistry"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -41041,10 +41329,16 @@
                   "$ref": "#/components/schemas/ConfiguredAPIUserRegistry"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -41292,10 +41586,16 @@
                   "$ref": "#/components/schemas/ConfiguredTLSClientProfile"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -41739,10 +42039,16 @@
                   "$ref": "#/components/schemas/ConfiguredTLSClientProfile"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -42192,10 +42498,16 @@
                   "$ref": "#/components/schemas/ConfiguredBilling"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -42440,10 +42752,16 @@
                   "$ref": "#/components/schemas/ConfiguredOauthProvider"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -42691,10 +43009,16 @@
                   "$ref": "#/components/schemas/ConfiguredOauthProvider"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -44179,10 +44503,16 @@
                   "$ref": "#/components/schemas/NameValuePairs"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -44477,10 +44807,16 @@
                   "$ref": "#/components/schemas/Catalog"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -45051,10 +45387,16 @@
                   "$ref": "#/components/schemas/Product"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -45122,10 +45464,16 @@
                   "$ref": "#/components/schemas/Product"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -45242,10 +45590,16 @@
                   "$ref": "#/components/schemas/Invitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -45603,10 +45957,16 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -45672,10 +46032,16 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -45741,10 +46107,16 @@
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -46111,10 +46483,16 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -46183,10 +46561,16 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -46252,10 +46636,16 @@
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -46905,10 +47295,16 @@
                   "$ref": "#/components/schemas/GlobalPolicy"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -47583,10 +47979,16 @@
                   "$ref": "#/components/schemas/GlobalPolicy"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -48268,10 +48670,16 @@
                   "$ref": "#/components/schemas/Policy"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -49066,10 +49474,16 @@
                   "$ref": "#/components/schemas/Policy"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -49887,10 +50301,16 @@
                   "$ref": "#/components/schemas/Extension"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -50565,10 +50985,16 @@
                   "$ref": "#/components/schemas/Extension"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -51532,10 +51958,16 @@
                   "$ref": "#/components/schemas/Service"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -53457,10 +53889,16 @@
                   "$ref": "#/components/schemas/Analytics"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -53665,10 +54103,16 @@
                   "$ref": "#/components/schemas/Analytics"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -54899,10 +55343,16 @@
                   "$ref": "#/components/schemas/Space"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -55491,10 +55941,16 @@
                   "$ref": "#/components/schemas/Product"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -55565,10 +56021,16 @@
                   "$ref": "#/components/schemas/Product"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -55634,10 +56096,16 @@
                   "$ref": "#/components/schemas/Invitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -56004,10 +56472,16 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -56076,10 +56550,16 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -56326,10 +56806,16 @@
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -56705,10 +57191,16 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -56780,10 +57272,16 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -56852,10 +57350,16 @@
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -57963,10 +58467,16 @@
                   "$ref": "#/components/schemas/Invitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -58333,10 +58843,16 @@
                   "$ref": "#/components/schemas/Invitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -58706,10 +59222,16 @@
                   "$ref": "#/components/schemas/ConsumerOrg"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -59092,10 +59614,16 @@
                   "$ref": "#/components/schemas/ConsumerOrg"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -59481,10 +60009,16 @@
                   "$ref": "#/components/schemas/Group"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -59785,10 +60319,16 @@
                   "$ref": "#/components/schemas/Group"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -60092,10 +60632,16 @@
                   "$ref": "#/components/schemas/PaymentMethod"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -60370,10 +60916,16 @@
                   "$ref": "#/components/schemas/PaymentMethod"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -61160,10 +61712,16 @@
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -61539,10 +62097,16 @@
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -61921,10 +62485,16 @@
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -62231,10 +62801,16 @@
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -62541,10 +63117,16 @@
                   "$ref": "#/components/schemas/App"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -62851,10 +63433,16 @@
                   "$ref": "#/components/schemas/App"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -63164,10 +63752,16 @@
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -63636,10 +64230,16 @@
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -64149,10 +64749,16 @@
                   "$ref": "#/components/schemas/Subscription"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -64471,10 +65077,16 @@
                   "$ref": "#/components/schemas/Subscription"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -64939,10 +65551,16 @@
                   "$ref": "#/components/schemas/DraftProduct"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -65822,10 +66440,16 @@
                   "$ref": "#/components/schemas/DraftAPI"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -88693,12 +89317,21 @@
                   "$ref": "#/components/schemas/Org"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
+          },
+          "202": {
+            "description": "Success"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -89508,10 +90141,16 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -89574,10 +90213,16 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -89640,10 +90285,16 @@
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -89948,10 +90599,16 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -90017,10 +90674,16 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -90571,10 +91234,16 @@
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -92365,10 +93034,16 @@
                   "$ref": "#/components/schemas/App"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -92663,10 +93338,16 @@
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -92952,10 +93633,16 @@
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -93009,10 +93696,16 @@
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -93080,10 +93773,16 @@
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -93149,10 +93848,16 @@
                   "$ref": "#/components/schemas/Subscription"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -93552,10 +94257,16 @@
                   "$ref": "#/components/schemas/PaymentMethod"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -106731,7 +107442,7 @@
         }
       ],
       "get": {
-        "summary": "Returns information on the usage of features.",
+        "summary": "Returns cluster nodes information.",
         "description": "The cluster nodes info API allows to retrieve one or more (or all) of the cluster nodes information. By default, it returns all attributes and core settings for a node.\n",
         "operationId": "clustermgmt_nodes_getNodesByIdOrMetric",
         "security": [
@@ -107377,15 +108088,17 @@
           "$ref": "#/components/parameters/analytics-service"
         },
         {
-          "$ref": "#/components/parameters/node_names_optional"
-        },
-        {
-          "$ref": "#/components/parameters/node_ids_optional"
+          "$ref": "#/components/parameters/master_timeout_optional"
         }
       ],
       "delete": {
         "summary": "Removes master-eligible nodes from the voting configuration exclusion list.",
         "description": "Removes master-eligible nodes from the voting configuration exclusion list.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/wait_for_removal_optional"
+          }
+        ],
         "operationId": "clustermgmt_cluster_deleteVotingConfigExclusions",
         "security": [
           {
@@ -107413,6 +108126,17 @@
       "post": {
         "summary": "Adds master-eligible nodes from the voting configuration exclusion list.",
         "description": "Adds master-eligible nodes from the voting configuration exclusion list.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/node_names_optional"
+          },
+          {
+            "$ref": "#/components/parameters/node_ids_optional"
+          },
+          {
+            "$ref": "#/components/parameters/voting_timeout_optional"
+          }
+        ],
         "operationId": "clustermgmt_cluster_postVotingConfigExclusions",
         "security": [
           {
@@ -110510,6 +111234,15 @@
           "type": "boolean"
         }
       },
+      "voting_timeout_optional": {
+        "name": "timeout",
+        "in": "query",
+        "description": "Time to wait for the specified nodes to be excluded from the voting configuration before returning. Defaults to 30s.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "wait_for_active_shards_optional": {
         "name": "wait_for_active_shards",
         "in": "query",
@@ -110558,6 +111291,15 @@
         "name": "wait_for_no_relocating_shards",
         "in": "query",
         "description": "A boolean value which controls whether to wait (until the timeout provided) for the cluster to have no shard relocations. Defaults to false, which means it will not wait for relocating shards.",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "wait_for_removal_optional": {
+        "name": "wait_for_removal",
+        "in": "query",
+        "description": "Specifies whether to wait for all excluded nodes to be removed from the cluster before clearing the voting configuration exclusions list. Defaults to true.",
         "required": false,
         "schema": {
           "type": "boolean"
