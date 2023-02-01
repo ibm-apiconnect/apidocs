@@ -1,13 +1,13 @@
 /********************************************************* {COPYRIGHT-TOP} ***
  * Licensed Materials - Property of IBM
  *
- * (C) Copyright IBM Corporation 2017, 2023
+ * (C) Copyright IBM Corporation 2017, 2022
  *
  * All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or disclosure
  * restricted by GSA ADP Schedule Contract with IBM Corp.
  ********************************************************** {COPYRIGHT-END} **/
-window.apiConnectExplorer = {
+ window.apiConnectExplorer = {
   attachPoint: '#root',
   options: {
       renderSchemaView: true,
@@ -209,10 +209,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/UserRegistry"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -811,10 +817,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/User"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -4160,10 +4172,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/RoleDefault"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -4605,10 +4623,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Integration"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -4892,10 +4916,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Integration"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -5179,10 +5209,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Integration"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -5466,10 +5502,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Integration"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -5753,10 +5795,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Registration"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -6040,10 +6088,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/APIKey"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -7123,10 +7177,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -7484,10 +7544,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -7553,10 +7619,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -7619,10 +7691,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -8420,10 +8498,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Role"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -8715,10 +8799,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/AvailabilityZone"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -9013,10 +9103,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/GatewayService"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -10403,10 +10499,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/PortalService"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -10764,10 +10866,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/AnalyticsService"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -11062,10 +11170,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/OauthProvider"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -11357,10 +11471,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MailServer"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -11751,10 +11871,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/TLSServerProfile"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -12300,10 +12426,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/TLSClientProfile"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -12841,10 +12973,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Keystore"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -13136,10 +13274,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Truststore"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -13434,10 +13578,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Entry"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -13727,10 +13877,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Invitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -14079,10 +14235,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -14145,10 +14307,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -14206,10 +14374,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Org"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -14355,10 +14529,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Group"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -26122,6 +26302,12 @@ window.apiConnectExplorer = {
             "type": "string",
             "format": "uri"
           },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -27016,8 +27202,6 @@ window.apiConnectExplorer = {
               "reconfigure",
               "policy-upgrade",
               "heartbeat",
-              "manage-stale-cloud-webhooks",
-              "manage-stale-catalog-webhooks",
               "cleanup",
               "send",
               "initialize",
@@ -29005,7 +29189,10 @@ window.apiConnectExplorer = {
             "type": "string"
           },
           "x5c": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "kty": {
             "type": "string"
@@ -31911,10 +32098,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/UserRegistry"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -32513,10 +32706,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/User"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -33626,10 +33825,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/APIKey"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -35669,10 +35874,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -36030,10 +36241,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -36099,10 +36316,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -36165,10 +36388,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -36966,10 +37195,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Role"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -37487,10 +37722,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/OauthProvider"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -37782,10 +38023,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Billing"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -38312,10 +38559,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/TLSClientProfile"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -38853,10 +39106,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Keystore"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -39148,10 +39407,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Truststore"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -39446,10 +39711,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Entry"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -39909,10 +40180,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/ConfiguredGatewayService"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -40203,10 +40480,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/ConfiguredGatewayService"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -40500,10 +40783,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/ConfiguredCatalogUserRegistry"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -40790,10 +41079,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/ConfiguredAPIUserRegistry"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -41041,10 +41336,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/ConfiguredAPIUserRegistry"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -41292,10 +41593,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/ConfiguredTLSClientProfile"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -41739,10 +42046,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/ConfiguredTLSClientProfile"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -42192,10 +42505,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/ConfiguredBilling"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -42440,10 +42759,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/ConfiguredOauthProvider"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -42691,10 +43016,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/ConfiguredOauthProvider"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -44179,10 +44510,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/NameValuePairs"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -44477,10 +44814,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Catalog"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -45051,10 +45394,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Product"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -45122,10 +45471,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Product"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -45242,10 +45597,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Invitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -45603,10 +45964,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -45672,10 +46039,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -45741,10 +46114,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -46111,10 +46490,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -46183,10 +46568,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -46252,10 +46643,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -46905,10 +47302,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/GlobalPolicy"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -47583,10 +47986,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/GlobalPolicy"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -48268,10 +48677,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Policy"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -49066,10 +49481,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Policy"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -49887,10 +50308,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Extension"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -50565,10 +50992,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Extension"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -51532,10 +51965,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Service"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -53457,10 +53896,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Analytics"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -53665,10 +54110,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Analytics"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -54899,10 +55350,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Space"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -55491,10 +55948,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Product"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -55565,10 +56028,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Product"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -55634,10 +56103,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Invitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -56004,10 +56479,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -56076,10 +56557,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -56326,10 +56813,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -56705,10 +57198,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -56780,10 +57279,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -56852,10 +57357,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -57963,10 +58474,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Invitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -58333,10 +58850,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Invitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -58706,10 +59229,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/ConsumerOrg"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -59092,10 +59621,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/ConsumerOrg"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -59481,10 +60016,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Group"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -59785,10 +60326,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Group"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -60092,10 +60639,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/PaymentMethod"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -60370,10 +60923,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/PaymentMethod"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -61160,10 +61719,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -61539,10 +62104,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -61921,10 +62492,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -62231,10 +62808,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -62541,10 +63124,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/App"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -62851,10 +63440,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/App"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -63164,10 +63759,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -63636,10 +64237,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -64149,10 +64756,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Subscription"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -64471,10 +65084,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Subscription"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -64939,10 +65558,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/DraftProduct"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -65822,10 +66447,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/DraftAPI"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -82603,6 +83234,12 @@ window.apiConnectExplorer = {
             "type": "string",
             "format": "uri"
           },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -83497,8 +84134,6 @@ window.apiConnectExplorer = {
               "reconfigure",
               "policy-upgrade",
               "heartbeat",
-              "manage-stale-cloud-webhooks",
-              "manage-stale-catalog-webhooks",
               "cleanup",
               "send",
               "initialize",
@@ -85486,7 +86121,10 @@ window.apiConnectExplorer = {
             "type": "string"
           },
           "x5c": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "kty": {
             "type": "string"
@@ -88693,12 +89331,21 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Org"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
+          },
+          "202": {
+            "description": "Success"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -89508,10 +90155,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -89574,10 +90227,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -89640,10 +90299,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -89948,10 +90613,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -90017,10 +90688,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -90571,10 +91248,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -92365,10 +93048,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/App"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -92663,10 +93352,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -92952,10 +93647,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -93009,10 +93710,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -93080,10 +93787,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -93149,10 +93862,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/Subscription"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -93552,10 +94271,16 @@ window.apiConnectExplorer = {
                   "$ref": "#/components/schemas/PaymentMethod"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -97153,10 +97878,689 @@ window.apiConnectExplorer = {
 {
   "openapi": "3.0.0",
   "info": {
+    "x-ibm-name": "consumer-analytics",
+    "version": "2.0.0",
+    "title": "IBM API Connect Consumer Analytics API",
+    "description": "## API for the API Connect Consumer Analytics dashboard\n",
+    "termsOfService": "https://ww.ibm.com/terms-of-service",
+    "contact": {
+      "name": "IBM",
+      "url": "https://www.ibm.com",
+      "email": "help@ibm.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://apimserver.example.com/consumer-analytics",
+      "description": "Consumer analytics V2 base path"
+    }
+  ],
+  "paths": {
+    "/orgs/{org}/dashboard": {
+      "description": "GET data needed to populate the consumer analytics dashboard.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get data to populate the consumer analytics dashboard.",
+        "description": "Get data to populate the consumer analytics dashboard.",
+        "operationId": "dashboard_get",
+        "security": [
+          {
+            "oauth": [
+              "app-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/accept_language_optional"
+          },
+          {
+            "$ref": "#/components/parameters/x_ibm_consumer_context"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Consumer Analytics",
+          "Analytics"
+        ]
+      }
+    },
+    "/orgs/{org}/apps/{app}/dashboard": {
+      "description": "GET data needed to populate the consumer analytics dashboard by app id.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/app"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get data to populate the consumer analytics dashboard by app id.",
+        "description": "Get data to populate the consumer analytics dashboard by app id.",
+        "operationId": "dashboard_getByApp",
+        "security": [
+          {
+            "oauth": [
+              "app-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/accept_language_optional"
+          },
+          {
+            "$ref": "#/components/parameters/x_ibm_consumer_context"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Consumer Analytics",
+          "Analytics"
+        ]
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "accept_language_optional": {
+        "name": "accept-language",
+        "in": "header",
+        "description": "Natural language and locale that the client prefers.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "en"
+        }
+      },
+      "app": {
+        "name": "app",
+        "in": "path",
+        "description": "Consumer organization app.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "end_time_optional": {
+        "name": "end",
+        "in": "query",
+        "description": "If set, the API will only return events with a datetime equal or older than this. The value must follow the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z. See https://datatracker.ietf.org/doc/html/rfc3339#section-5.6.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "limit_optional": {
+        "name": "limit",
+        "in": "query",
+        "description": "If set, the number of items to return when requesting a list. Maximum: 200",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "50"
+        }
+      },
+      "offset_optional": {
+        "name": "offset",
+        "in": "query",
+        "description": "If set, the offset to be applied when requesting a list. e.g. return events starting from the 100th result",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "100"
+        }
+      },
+      "org": {
+        "name": "org",
+        "in": "path",
+        "description": "Consumer organization name or ID.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "start_time_optional": {
+        "name": "start",
+        "in": "query",
+        "description": "If set, the API will only return events with a datetime equal or newer than this. The value must follow the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z. See https://datatracker.ietf.org/doc/html/rfc3339#section-5.6.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "timeframe_optional": {
+        "name": "timeframe",
+        "in": "query",
+        "description": "If set, the API will only return events within the indicated timeframe. This parameter will be ignored if either start or end have been specified.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "last15minutes",
+            "last30minutes",
+            "last1hour",
+            "last4hours",
+            "last12hours",
+            "last24hours",
+            "last7days",
+            "last30days"
+          ]
+        }
+      },
+      "x_ibm_consumer_context": {
+        "name": "X-IBM-Consumer-Context",
+        "in": "header",
+        "description": "Consumer context in the form of {provider-org}.{catalog}, e.g. myorg.mycat\n",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "myorg.mycat"
+        }
+      }
+    },
+    "responses": {
+      "ConsumerDashboardResponse": {
+        "description": "Data needed to populate the consumer analytics Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ConsumerDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ConsumerDashboardResponse"
+            }
+          }
+        }
+      },
+      "Error": {
+        "description": "Unexpected error.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "ApiCallsList": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "data": {
+            "$ref": "#/components/schemas/EventArray"
+          }
+        }
+      },
+      "ConsumerDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the consumer analytics Dashboard.",
+        "properties": {
+          "search_time": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "status_codes": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "min_response_time": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "avg_response_time": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "max_response_time": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_api_calls": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_errors": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "response_times": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "throttled_calls": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "api_calls_per_day": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "last_api_calls": {
+            "$ref": "#/components/schemas/ApiCallsList"
+          }
+        }
+      },
+      "DataItem": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "number"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "description": "Generic error response.",
+        "additionalProperties": true,
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "message": {
+            "$ref": "#/components/schemas/Message"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/ErrorModels"
+          }
+        }
+      },
+      "ErrorModels": {
+        "type": "array",
+        "description": "Array of more detailed error information.",
+        "items": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string",
+              "description": "A snake case string succinctly identifying the problem."
+            },
+            "message": {
+              "type": "string",
+              "description": "A plainly-written, developer-oriented explanation of the solution to the problem in complete, well-formed sentences."
+            },
+            "more_info": {
+              "type": "string",
+              "description": "A publicly-accessible URL where information about the error can be read."
+            },
+            "target": {
+              "$ref": "#/components/schemas/ErrorTargetModel"
+            }
+          }
+        }
+      },
+      "ErrorTargetModel": {
+        "type": "object",
+        "description": "Contains information about specific error targets.",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Either field, parameter, or header."
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the problematic field (with dot-syntax if necessary), query parameter, or header."
+          }
+        }
+      },
+      "EventArray": {
+        "type": "array",
+        "description": "Array of API events",
+        "items": {
+          "$ref": "#/components/schemas/EventBody"
+        }
+      },
+      "EventBody": {
+        "type": "object",
+        "description": "The API Event logged by the gateway",
+        "additionalProperties": true,
+        "properties": {
+          "api_version": {
+            "type": "string",
+            "description": "The version of the API"
+          },
+          "api_name": {
+            "type": "string",
+            "description": "The name of the API"
+          },
+          "api_id": {
+            "type": "string",
+            "description": "The ID of the API"
+          },
+          "app_lifecycle_state": {
+            "type": "string",
+            "description": "The lifecycle state of the calling application"
+          },
+          "bytes_received": {
+            "type": "number",
+            "description": "The number of bytes received by the gateway"
+          },
+          "bytes_sent": {
+            "type": "number",
+            "description": "The number of bytes sent by the gateway"
+          },
+          "client_id": {
+            "type": "string",
+            "description": "The application client ID used"
+          },
+          "datetime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The date time of the API event from the gateway"
+          },
+          "developer_org_id": {
+            "type": "string",
+            "description": "The consumer organization ID"
+          },
+          "developer_org_name": {
+            "type": "string",
+            "description": "The consumer organization name"
+          },
+          "developer_org_title": {
+            "type": "string",
+            "description": "The consumer organization title"
+          },
+          "headers": {
+            "type": "object",
+            "description": "Internal headers array from ingestion"
+          },
+          "host": {
+            "type": "string",
+            "description": "The ingestion host IP address"
+          },
+          "http_user_agent": {
+            "type": "string",
+            "description": "The caller user agent string",
+            "example": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36"
+          },
+          "org_name": {
+            "type": "string",
+            "description": "The provider organization name"
+          },
+          "org_id": {
+            "type": "string",
+            "description": "The provider organization ID"
+          },
+          "plan_id": {
+            "type": "string",
+            "description": "The plan ID"
+          },
+          "plan_name": {
+            "type": "string",
+            "description": "The plan name"
+          },
+          "product_version": {
+            "type": "string",
+            "description": "The product version"
+          },
+          "product_name": {
+            "type": "string",
+            "description": "The product name"
+          },
+          "product_id": {
+            "type": "string",
+            "description": "The product ID"
+          },
+          "product_title": {
+            "type": "string",
+            "description": "The product title"
+          },
+          "query_string": {
+            "type": "string",
+            "description": "Any provided query parameters"
+          },
+          "request_body": {
+            "type": "string",
+            "description": "The request body payload"
+          },
+          "request_http_headers": {
+            "type": "array",
+            "description": "The request headers",
+            "items": {
+              "$ref": "#/components/schemas/HeaderItem"
+            }
+          },
+          "request_method": {
+            "type": "string",
+            "description": "The request HTTP method"
+          },
+          "request_protocol": {
+            "type": "string",
+            "description": "The request protocol"
+          },
+          "resource_id": {
+            "type": "string",
+            "description": "The resource ID"
+          },
+          "resource_path": {
+            "type": "string",
+            "description": "The resource path"
+          },
+          "response_body": {
+            "type": "string",
+            "description": "The response body payload"
+          },
+          "response_http_headers": {
+            "type": "array",
+            "description": "The response headers",
+            "items": {
+              "$ref": "#/components/schemas/HeaderItem"
+            }
+          },
+          "status_code": {
+            "type": "string",
+            "description": "The HTTP response status code",
+            "example": "200 OK"
+          },
+          "time_to_serve_request": {
+            "type": "number",
+            "description": "The time taken to serve the request"
+          },
+          "uri_path": {
+            "type": "string",
+            "description": "The URI path"
+          }
+        },
+        "required": [
+          "org_name",
+          "org_id",
+          "resource_path",
+          "status_code",
+          "product_name",
+          "product_version",
+          "product_id",
+          "api_name",
+          "api_version",
+          "api_id"
+        ]
+      },
+      "GroupDateValueItem": {
+        "type": "object",
+        "properties": {
+          "group": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "GroupDateValueItemData": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/GroupDateValueItemList"
+          }
+        }
+      },
+      "GroupDateValueItemList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/GroupDateValueItem"
+        }
+      },
+      "GroupValueDataList": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/GroupValueItemList"
+          }
+        }
+      },
+      "GroupValueItem": {
+        "type": "object",
+        "properties": {
+          "group": {
+            "type": "string"
+          },
+          "value": {
+            "type": "integer"
+          }
+        }
+      },
+      "GroupValueItemList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/GroupValueItem"
+        }
+      },
+      "HeaderItem": {
+        "type": "object",
+        "description": "An HTTP header",
+        "additionalProperties": true
+      },
+      "Message": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Detailed error message.",
+        "example": "Invalid request payload JSON format."
+      },
+      "NonNegativeInteger": {
+        "type": "integer",
+        "description": "Integer greater than or equal to zero.",
+        "minimum": 0
+      },
+      "Status": {
+        "type": "integer",
+        "description": "Status code of the error.",
+        "minimum": 400,
+        "maximum": 599,
+        "example": 400
+      }
+    },
+    "securitySchemes": {
+      "oauth": {
+        "type": "oauth2",
+        "description": "API Manager Consumer API Token at appropriate catalog scope.",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "/oauth2/authorize",
+            "scopes": {
+              "app-analytics:view": "View consumer analytics"
+            }
+          },
+          "password": {
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
+            "scopes": {
+              "app-analytics:view": "View consumer analytics"
+            }
+          },
+          "clientCredentials": {
+            "tokenUrl": "/token",
+            "scopes": {
+              "app-analytics:view": "View consumer analytics"
+            }
+          },
+          "authorizationCode": {
+            "authorizationUrl": "/oauth2/authorize",
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
+            "scopes": {
+              "app-analytics:view": "View consumer analytics"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-ibm-configuration": {
+    "testable": false
+  }
+},
+{
+  "openapi": "3.0.0",
+  "info": {
     "x-ibm-name": "analytics",
     "version": "2.0.0",
     "title": "IBM API Connect Analytics API",
-    "description": "## API for the API Connect Analytics subsystem\nThis API includes the capability to retrieve information about API events stored in APIC Analytics,  retrieve the data used by the Analytics dashboards in the UI, obtain information on what filter parameters are supported  and also obtain information about internal cluster management, health and operations.\n### API Events\nThere are operations to retrieve a count of events, a list of events or a specific detailed API event at the following  scopes: cloud, provider organization, catalog and space. The API event operations all support a multitude of filter parameters to be able to select the exact events you wish. These filter parameters can be combined together in a single query.\n\nThere are advanced selectors available for these filter parameters too which allow operations such as these:\n- `.../events?consumer_org_id=1234567890` = select all events made by consumer org id 1234567890\n- `.../events?consumer_org_id=not:1234567890` = select all events made by consumer orgs other than id 1234567890\n- `.../events?product_name=contains:loan` = select all events where the product name contained the string 'loan' (equivalent to searching for `*loan*`)\n- `.../events?product_name=notcontains:loan` = select all events where the product name didn't contain the string 'loan'\n- `.../events?product_name=startswith:loa` = select all events where the product name starts with the string 'loa' (equivalent to searching for `loa*`)\n- `.../events?product_name=endswith:oan` = select all events where the product name ends with the string 'oan' (equivalent to searching for `*oan`)\n- `.../events?product_name=regex:[a-z]oan` = select all events where the product name begins with any lowercase alphabetical character and ends with the string 'oan' (WARNING: Regex based queries have a performance impact and should only be used if other queries cannot be used)\n- `.../events?product_name=oneof:loans,accounts,address` = select all events where the product name is loans, accounts or address\n- `.../events?product_name=oneof:loans\\,accounts,address` = select all events where the product name is either 'loans,account' or 'address' ('\\' escapes the first comma)\n- `.../events?product_name=oneof:loans,accounts\\,address` = select all events where the product name is either 'loans' or 'account,address' ('\\' escapes the second comma)\n- `.../events?product_name=notoneof:loans,accounts,address` = select all events where the product name is neither loans, accounts or address\n- `.../events?product_name=notoneof:loans\\,accounts,address` = select all events where the product name is neither 'loans,account' or 'address' ('\\' escapes the first comma)\n- `.../events?product_name=notoneof:loans,accounts\\,address` = select all events where the product name is neither 'loans' or 'account,address' ('\\' escapes the second comma)\n- `.../events?product_name=equals:not:loan` = select all events where the product name is exactly 'not:loan'\n- `.../events?product_name=not:not:loan` = select all events where the product name is not 'not:loan'\nThese ones only apply to numeric fields:\n- `.../events?bytes_received=1000` = select all events where the received bytes was exactly 1000\n- `.../events?bytes_received=gt:1000` = select all events where the received bytes was greater than 1000\n- `.../events?bytes_received=gte:1000` = select all events where the received bytes was greater than or equals to 1000\n- `.../events?bytes_received=lt:1000` = select all events where the received bytes was less than 1000\n- `.../events?bytes_received=lte:1000` = select all events where the received bytes was less than or equals to 1000\n\nThe full list of possible advanced operator prefixes are: `not`, `contains`, `notcontains`, `startswith`, `endswith`, `regex`, `gt`, `gte`, `lt`, `lte`, `oneof`.\n\nThe exception to the above are the IP address fields `client_ip`, `gateway_ip` and `immediate_client_ip` which only support equality checks and not any of the other operators. However, they do support CIDR based queries, for example:\n- `.../events?client_ip=9.123.234.0/24` = select all events where the client IP address was in the 9.123.234.0 network (netmask 255.255.255.0)\n\n### Dashboards\nThese operations allow you to download the data used by the APIC Analytics dashboards in the API Manager UI.  These are also at the same variety of scopes and also support the same filter parameters as usable with the API Event operations above.\n### Filter parameters\nThese operations define what filter parameters and operations are available at each scope.  This could be useful in a dynamically generated UI calling the API Event or dashboard operations above.\n### Cluster Management\nThese operations allow the retrieval of information on cluster health and status as well as the ability to perform  maintenance operations on it.\n",
+    "description": "## API for the API Connect Analytics subsystem\nThis API includes the capability to retrieve information about API events stored in APIC Analytics,  retrieve the data used by the Analytics dashboards in the UI, obtain information on what filter parameters are supported  and also obtain information about internal cluster management, health and operations.\n### API Events\nThere are operations to retrieve a count of events, a list of events or a specific detailed API event at the following  scopes: cloud, provider organization, catalog and space. The API event operations all support a multitude of filter parameters to be able to select the exact events you wish. These filter parameters can be combined together in a single query.\n\nThere are advanced selectors available for these filter parameters too which allow operations such as these:\n- `.../events?consumer_org_id=1234567890` = select all events made by consumer org id 1234567890\n- `.../events?consumer_org_id=not:1234567890` = select all events made by consumer orgs other than id 1234567890\n- `.../events?product_name=contains:loan` = select all events where the product name contained the string 'loan' (equivalent to searching for `*loan*`)\n- `.../events?product_name=notcontains:loan` = select all events where the product name didn't contain the string 'loan'\n- `.../events?product_name=startswith:loa` = select all events where the product name starts with the string 'loa' (equivalent to searching for `loa*`)\n- `.../events?product_name=endswith:oan` = select all events where the product name ends with the string 'oan' (equivalent to searching for `*oan`)\n- `.../events?product_name=regex:[a-z]oan` = select all events where the product name begins with any lowercase alphabetical character and ends with the string 'oan' (WARNING: Regex based queries have a performance impact and should only be used if other queries cannot be used)\n- `.../events?product_name=oneof:loans,accounts,address` = select all events where the product name is loans, accounts or address\n- `.../events?product_name=notoneof:loans,accounts,address` = select all events where the product name is neither loans, accounts or address\n\nThese ones only apply to numeric fields:\n- `.../events?bytes_received=1000` = select all events where the received bytes was exactly 1000\n- `.../events?bytes_received=gt:1000` = select all events where the received bytes was greater than 1000\n- `.../events?bytes_received=gte:1000` = select all events where the received bytes was greater than or equals to 1000\n- `.../events?bytes_received=lt:1000` = select all events where the received bytes was less than 1000\n- `.../events?bytes_received=lte:1000` = select all events where the received bytes was less than or equals to 1000\n\nThe full list of possible advanced operator prefixes are: `not`, `contains`, `notcontains`, `startswith`, `endswith`, `regex`, `gt`, `gte`, `lt`, `lte`, `oneof`.\n\nThe exception to the above are the IP address fields `client_ip`, `gateway_ip` and `immediate_client_ip` which only support equality checks and not any of the other operators. However, they do support CIDR based queries, for example:\n- `.../events?client_ip=9.123.234.0/24` = select all events where the client IP address was in the 9.123.234.0 network (netmask 255.255.255.0)\n\n### Dashboards\nThese operations allow you to download the data used by the APIC Analytics dashboards in the API Manager UI.  These are also at the same variety of scopes and also support the same filter parameters as usable with the API Event operations above.\n### Filter parameters\nThese operations define what filter parameters and operations are available at each scope.  This could be useful in a dynamically generated UI calling the API Event or dashboard operations above.\n### Cluster Management\nThese operations allow the retrieval of information on cluster health and status as well as the ability to perform  maintenance operations on it.\n",
     "termsOfService": "https://www.ibm.com/terms-of-service",
     "contact": {
       "name": "IBM",
@@ -97174,9 +98578,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/events": {
       "description": "Return a result set of analytics API events scoped to the cloud. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         }
@@ -97242,13 +98643,7 @@ window.apiConnectExplorer = {
             "$ref": "#/components/parameters/end_time_optional"
           },
           {
-            "$ref": "#/components/parameters/endpoint_url_optional"
-          },
-          {
             "$ref": "#/components/parameters/event_id_optional"
-          },
-          {
-            "$ref": "#/components/parameters/event_fields_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_ip_optional"
@@ -97368,9 +98763,6 @@ window.apiConnectExplorer = {
       "description": "You can use the scroll operation to retrieve a large number of results. You can request an unlimited number of results in batches.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         }
       ],
@@ -97435,13 +98827,7 @@ window.apiConnectExplorer = {
             "$ref": "#/components/parameters/end_time_optional"
           },
           {
-            "$ref": "#/components/parameters/endpoint_url_optional"
-          },
-          {
             "$ref": "#/components/parameters/event_id_optional"
-          },
-          {
-            "$ref": "#/components/parameters/event_fields_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_ip_optional"
@@ -97569,9 +98955,6 @@ window.apiConnectExplorer = {
       "description": "Clears the search context and results for a scrolling search.",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         }
       ],
@@ -97621,16 +99004,10 @@ window.apiConnectExplorer = {
       "description": "Return a single analytics API event by ID scoped to the cloud. The item in the result set is determined by the passed in request query to this API.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
           "$ref": "#/components/parameters/event-id"
-        },
-        {
-          "$ref": "#/components/parameters/event_fields_optional"
         }
       ],
       "get": {
@@ -97664,9 +99041,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/events/count": {
       "description": "Return a count of analytics API events scoped to the cloud. The count in the result is the number of API events that match the passed in request query.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         }
@@ -97730,9 +99104,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -97849,9 +99220,6 @@ window.apiConnectExplorer = {
       "description": "Return a result set of analytics API events scoped to the organization. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -97919,13 +99287,7 @@ window.apiConnectExplorer = {
             "$ref": "#/components/parameters/end_time_optional"
           },
           {
-            "$ref": "#/components/parameters/endpoint_url_optional"
-          },
-          {
             "$ref": "#/components/parameters/event_id_optional"
-          },
-          {
-            "$ref": "#/components/parameters/event_fields_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_ip_optional"
@@ -98039,9 +99401,6 @@ window.apiConnectExplorer = {
       "description": "You can use the scroll operation to retrieve a large number of results. You can request an unlimited number of results in batches.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -98109,13 +99468,7 @@ window.apiConnectExplorer = {
             "$ref": "#/components/parameters/end_time_optional"
           },
           {
-            "$ref": "#/components/parameters/endpoint_url_optional"
-          },
-          {
             "$ref": "#/components/parameters/event_id_optional"
-          },
-          {
-            "$ref": "#/components/parameters/event_fields_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_ip_optional"
@@ -98237,9 +99590,6 @@ window.apiConnectExplorer = {
       "description": "Clears the search context and results for a scrolling search.",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -98292,9 +99642,6 @@ window.apiConnectExplorer = {
       "description": "Return a single analytics API event by ID scoped to the provider organization. The item in the result set is determined by the passed in request query to this API.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -98302,9 +99649,6 @@ window.apiConnectExplorer = {
         },
         {
           "$ref": "#/components/parameters/event-id"
-        },
-        {
-          "$ref": "#/components/parameters/event_fields_optional"
         }
       ],
       "get": {
@@ -98338,9 +99682,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/orgs/{org}/events/count": {
       "description": "Return a count of analytics API events scoped to the provider organization. The count in the result is the number of API events that match the passed in request query.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -98407,9 +99748,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -98520,9 +99858,6 @@ window.apiConnectExplorer = {
       "description": "Return a result set of analytics API events scoped to the catalog. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -98587,13 +99922,7 @@ window.apiConnectExplorer = {
             "$ref": "#/components/parameters/end_time_optional"
           },
           {
-            "$ref": "#/components/parameters/endpoint_url_optional"
-          },
-          {
             "$ref": "#/components/parameters/event_id_optional"
-          },
-          {
-            "$ref": "#/components/parameters/event_fields_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_ip_optional"
@@ -98707,9 +100036,6 @@ window.apiConnectExplorer = {
       "description": "Return a single analytics API event by ID scoped to the catalog. The item in the result set is determined by the passed in request query to this API.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -98720,9 +100046,6 @@ window.apiConnectExplorer = {
         },
         {
           "$ref": "#/components/parameters/event-id"
-        },
-        {
-          "$ref": "#/components/parameters/event_fields_optional"
         }
       ],
       "get": {
@@ -98756,9 +100079,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/catalogs/{org}/{catalog}/events/count": {
       "description": "Return a count of analytics API events scoped to the catalog. The count in the result is the number of API events that match the passed in request query.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -98822,9 +100142,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -98935,9 +100252,6 @@ window.apiConnectExplorer = {
       "description": "Return a result set of analytics API events scoped to the space. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -99005,13 +100319,7 @@ window.apiConnectExplorer = {
             "$ref": "#/components/parameters/end_time_optional"
           },
           {
-            "$ref": "#/components/parameters/endpoint_url_optional"
-          },
-          {
             "$ref": "#/components/parameters/event_id_optional"
-          },
-          {
-            "$ref": "#/components/parameters/event_fields_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_ip_optional"
@@ -99119,9 +100427,6 @@ window.apiConnectExplorer = {
       "description": "Return a single analytics API event by ID scoped to the space. The item in the result set is determined by the passed in request query to this API.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -99135,9 +100440,6 @@ window.apiConnectExplorer = {
         },
         {
           "$ref": "#/components/parameters/event-id"
-        },
-        {
-          "$ref": "#/components/parameters/event_fields_optional"
         }
       ],
       "get": {
@@ -99171,9 +100473,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/spaces/{org}/{catalog}/{space}/events/count": {
       "description": "Return a count of analytics API events scoped to the space. The count in the result is the number of API events that match the passed in request query.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -99240,9 +100539,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -99347,9 +100643,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the API dashboard at cloud scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         }
       ],
@@ -99412,9 +100705,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -99537,9 +100827,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the Latency dashboard at cloud scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         }
       ],
@@ -99602,9 +100889,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -99727,9 +101011,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the Product dashboard at cloud scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         }
       ],
@@ -99792,9 +101073,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -99917,9 +101195,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the Status dashboard at cloud scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         }
       ],
@@ -99982,9 +101257,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/error_limit_optional"
@@ -100113,9 +101385,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the Usage dashboard at cloud scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         }
       ],
@@ -100178,9 +101447,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -100303,9 +101569,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the Consumption dashboard at cloud scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         }
       ],
@@ -100374,9 +101637,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -100499,9 +101759,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the API dashboard at provider organization scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -100567,9 +101824,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -100686,9 +101940,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the Latency dashboard at provider organization scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -100754,9 +102005,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -100873,9 +102121,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the Product dashboard at provider organization scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -100941,9 +102186,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -101060,9 +102302,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the Status dashboard at provider organization scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -101128,9 +102367,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/error_limit_optional"
@@ -101253,9 +102489,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the Usage dashboard at provider organization scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -101321,9 +102554,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -101440,9 +102670,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the Consumption dashboard at provider organization scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -101514,9 +102741,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -101633,9 +102857,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the API dashboard at catalog scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -101698,9 +102919,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -101817,9 +103035,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the Latency dashboard at catalog scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -101882,9 +103097,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -102001,9 +103213,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the Product dashboard at catalog scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -102066,9 +103275,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -102185,9 +103391,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the Status dashboard at catalog scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -102250,9 +103453,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/error_limit_optional"
@@ -102375,9 +103575,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the Usage dashboard at catalog scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -102440,9 +103637,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -102559,9 +103753,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the Consumption dashboard at catalog scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -102630,9 +103821,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -102749,9 +103937,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the API dashboard at space scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -102817,9 +104002,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -102930,9 +104112,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the Latency dashboard at space scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -102998,9 +104177,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -103111,9 +104287,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the Product dashboard at space scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -103179,9 +104352,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -103292,9 +104462,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the Status dashboard at space scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -103360,9 +104527,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/error_limit_optional"
@@ -103479,9 +104643,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the Usage dashboard at space scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -103547,9 +104708,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -103660,9 +104818,6 @@ window.apiConnectExplorer = {
       "description": "Return the data needed to populate the Consumption dashboard at space scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -103734,9 +104889,6 @@ window.apiConnectExplorer = {
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
             "$ref": "#/components/parameters/event_id_optional"
@@ -103847,9 +104999,6 @@ window.apiConnectExplorer = {
       "description": "Return the list of filter parameters supported at cloud scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         }
       ],
@@ -103884,9 +105033,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/orgs/{org}/filterparameters": {
       "description": "Return the list of filter parameters supported at provider organization scope.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -103925,9 +105071,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/catalogs/{org}/{catalog}/filterparameters": {
       "description": "Return the list of filter parameters supported at catalog scope.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -103969,9 +105112,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/spaces/{org}/{catalog}/{space}/filterparameters": {
       "description": "Return the list of filter parameters supported at space scope.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -104017,9 +105157,6 @@ window.apiConnectExplorer = {
       "description": "The root of the 'queries' resource at cloud scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         }
       ],
@@ -104028,12 +105165,6 @@ window.apiConnectExplorer = {
         "description": "List saved queries owned by the user making the request, at cloud scope.\n",
         "operationId": "queries_cloudList",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/limit_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
-          },
           {
             "$ref": "#/components/parameters/saved_query_search_optional"
           }
@@ -104107,9 +105238,6 @@ window.apiConnectExplorer = {
       "description": "Return a list of saved queries shared by others at cloud scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         }
       ],
@@ -104118,12 +105246,6 @@ window.apiConnectExplorer = {
         "description": "Return a list of saved queries shared by others at cloud scope.\n",
         "operationId": "queries_cloudListShared",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/limit_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
-          },
           {
             "$ref": "#/components/parameters/saved_query_search_optional"
           }
@@ -104155,9 +105277,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/queries/{query-id}": {
       "description": "Return a single saved query by name or ID scoped to the cloud.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -104265,9 +105384,6 @@ window.apiConnectExplorer = {
       "description": "Transfer ownership of a specified query to a different user. You must be the owner of this query to do this.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -104321,9 +105437,6 @@ window.apiConnectExplorer = {
       "description": "Share a query with others users at cloud scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -104361,9 +105474,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/queries/{query-id}/unshare": {
       "description": "Unshare a query at cloud scope. Other users at this scope will no longer be able to view or clone this query.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -104403,9 +105513,6 @@ window.apiConnectExplorer = {
       "description": "Make a copy of a shared query at cloud scope. The user comitting this action will be the owner of the cloned query.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -104444,9 +105551,6 @@ window.apiConnectExplorer = {
       "description": "The root of the 'queries' resource at org scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -104458,12 +105562,6 @@ window.apiConnectExplorer = {
         "description": "List saved queries owned by the user making the request, at org scope.\n",
         "operationId": "queries_orgList",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/limit_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
-          },
           {
             "$ref": "#/components/parameters/saved_query_search_optional"
           }
@@ -104537,9 +105635,6 @@ window.apiConnectExplorer = {
       "description": "Return a list of saved queries shared by others at org scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -104551,12 +105646,6 @@ window.apiConnectExplorer = {
         "description": "Return a list of saved queries shared by others at org scope.\n",
         "operationId": "queries_orgListShared",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/limit_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
-          },
           {
             "$ref": "#/components/parameters/saved_query_search_optional"
           }
@@ -104588,9 +105677,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/orgs/{org}/queries/{query-id}": {
       "description": "Return a single saved query by name or ID scoped to the org.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -104701,9 +105787,6 @@ window.apiConnectExplorer = {
       "description": "Transfer ownership of a specified query to a different user. You must be the owner of this query to do this.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -104760,9 +105843,6 @@ window.apiConnectExplorer = {
       "description": "Share a query with others users at org scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -104803,9 +105883,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/orgs/{org}/queries/{query-id}/unshare": {
       "description": "Unshare a query at org scope. Other users at this scope will no longer be able to view or clone this query.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -104848,9 +105925,6 @@ window.apiConnectExplorer = {
       "description": "Make a copy of a shared query at org scope. The user comitting this action will be the owner of the cloned query.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -104892,9 +105966,6 @@ window.apiConnectExplorer = {
       "description": "The root of the 'queries' resource at catalog scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -104909,12 +105980,6 @@ window.apiConnectExplorer = {
         "description": "List saved queries owned by the user making the request, at catalog scope.\n",
         "operationId": "queries_catalogList",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/limit_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
-          },
           {
             "$ref": "#/components/parameters/saved_query_search_optional"
           }
@@ -104988,9 +106053,6 @@ window.apiConnectExplorer = {
       "description": "Return a list of saved queries shared by others at catalog scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -105005,12 +106067,6 @@ window.apiConnectExplorer = {
         "description": "Return a list of saved queries shared by others at catalog scope.\n",
         "operationId": "queries_catalogListShared",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/limit_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
-          },
           {
             "$ref": "#/components/parameters/saved_query_search_optional"
           }
@@ -105042,9 +106098,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/catalogs/{org}/{catalog}/queries/{query-id}": {
       "description": "Return a single saved query by name or ID scoped to the catalog.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -105158,9 +106211,6 @@ window.apiConnectExplorer = {
       "description": "Transfer ownership of a specified query to a different user. You must be the owner of this query to do this.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -105220,9 +106270,6 @@ window.apiConnectExplorer = {
       "description": "Share a query with others users at catalog scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -105266,9 +106313,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/catalogs/{org}/{catalog}/queries/{query-id}/unshare": {
       "description": "Unshare a query at catalog scope. Other users at this scope will no longer be able to view or clone this query.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -105314,9 +106358,6 @@ window.apiConnectExplorer = {
       "description": "Make a copy of a shared query at catalog scope. The user comitting this action will be the owner of the cloned query.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -105361,9 +106402,6 @@ window.apiConnectExplorer = {
       "description": "The root of the 'queries' resource at space scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -105381,12 +106419,6 @@ window.apiConnectExplorer = {
         "description": "List saved queries owned by the user making the request, at space scope.\n",
         "operationId": "queries_spaceList",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/limit_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
-          },
           {
             "$ref": "#/components/parameters/saved_query_search_optional"
           }
@@ -105460,9 +106492,6 @@ window.apiConnectExplorer = {
       "description": "Return a list of saved queries shared by others at space scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -105480,12 +106509,6 @@ window.apiConnectExplorer = {
         "description": "Return a list of saved queries shared by others at space scope.\n",
         "operationId": "queries_spaceListShared",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/limit_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
-          },
           {
             "$ref": "#/components/parameters/saved_query_search_optional"
           }
@@ -105517,9 +106540,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/spaces/{org}/{catalog}/{space}/queries/{query-id}": {
       "description": "Return a single saved query by name or ID scoped to the space.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -105636,9 +106656,6 @@ window.apiConnectExplorer = {
       "description": "Transfer ownership of a specified query to a different user. You must be the owner of this query to do this.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -105701,9 +106718,6 @@ window.apiConnectExplorer = {
       "description": "Share a query with others users at space scope.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -105750,9 +106764,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/spaces/{org}/{catalog}/{space}/queries/{query-id}/unshare": {
       "description": "Unshare a query at space scope. Other users at this scope will no longer be able to view or clone this query.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -105801,9 +106812,6 @@ window.apiConnectExplorer = {
       "description": "Make a copy of a shared query at space scope. The user comitting this action will be the owner of the cloned query.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -105850,9 +106858,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/cat/allocation": {
       "description": "Provides a snapshot of the number of shards allocated to each data node and their disk space.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -105932,9 +106937,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/cat/indices": {
       "description": "Returns high-level information about indices in a cluster, including backing indices for data streams.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -106027,9 +107029,6 @@ window.apiConnectExplorer = {
       "description": "Returns information about a cluster’s nodes.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -106115,9 +107114,6 @@ window.apiConnectExplorer = {
       "description": "Returns information about ongoing and completed shard recoveries, similar to the index recovery API. For data streams, the API returns information about the stream’s backing indices.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -106200,9 +107196,6 @@ window.apiConnectExplorer = {
       "description": "The shards command is the detailed view of what nodes contain which shards. It will tell you if it’s a primary or replica, the number of docs, the bytes it takes on disk, and the node where it’s located. For data streams, the API returns information about the stream’s backing indices.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -106282,9 +107275,6 @@ window.apiConnectExplorer = {
       "description": "Retrieves the cluster’s index aliases, including filter and routing information. The API does not return data stream aliases.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -106358,9 +107348,6 @@ window.apiConnectExplorer = {
       "description": "The cluster nodes info API allows to retrieve one or more (or all) of the cluster nodes information. All the nodes selective options are explained here. By default, it returns all attributes and core settings for a node.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -106407,9 +107394,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/nodes/hot-threads": {
       "description": "This API yields a breakdown of the hot threads on each selected node in the cluster. The output is plain text with a breakdown of each node’s top hot threads.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -106469,9 +107453,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/nodes/stats": {
       "description": "You can use the cluster nodes stats API to retrieve statistics for nodes in a cluster. All the nodes selective options are explained here. By default, all stats are returned. You can limit the returned information by using metrics.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -106541,9 +107522,6 @@ window.apiConnectExplorer = {
       "description": "The cluster nodes usage API allows you to retrieve information on the usage of features for each node.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -106587,9 +107565,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/nodes/stats/{metric}": {
       "description": "You can use the cluster nodes stats API to retrieve statistics for nodes in a cluster. All the nodes selective options are explained here. By default, all stats are returned. You can limit the returned information by using metrics.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -106659,9 +107634,6 @@ window.apiConnectExplorer = {
       "description": "The cluster nodes usage API allows you to retrieve information on the usage of features for each node.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -106708,9 +107680,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/nodes/{node-id-or-metric}": {
       "description": "The cluster nodes info API allows to retrieve one or more (or all) of the cluster nodes information. By default, it returns all attributes and core settings for a node.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -106761,9 +107730,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/nodes/{node-id}/hot-threads": {
       "description": "This API yields a breakdown of the hot threads on each selected node in the cluster.  The output is plain text with a breakdown of each node’s top hot threads.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -106826,9 +107792,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/nodes/{node-id}/stats": {
       "description": "You can use the cluster nodes stats API to retrieve statistics for nodes in a cluster. All the nodes selective options are explained here. By default, all stats are returned. You can limit the returned information by using metrics.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -106901,9 +107864,6 @@ window.apiConnectExplorer = {
       "description": "The cluster nodes usage API allows you to retrieve information on the usage of features for each node.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -106950,9 +107910,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/nodes/{node-id}/{metric}": {
       "description": "The cluster nodes info API allows to retrieve one or more (or all) of the cluster nodes information. By default, it returns all attributes and core settings for a node.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -107006,9 +107963,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/nodes/{node-id}/stats/{metric}": {
       "description": "You can use the cluster nodes stats API to retrieve statistics for nodes in a cluster. All the nodes selective options are explained here. By default, all stats are returned. You can limit the returned information by using metrics.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -107083,9 +108037,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/nodes/{node-id}/stats/{metric}/{index-metric}": {
       "description": "You can use the cluster nodes stats API to retrieve statistics for nodes in a cluster. All the nodes selective options are explained here. By default, all stats are returned. You can limit the returned information by using metrics.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -107164,9 +108115,6 @@ window.apiConnectExplorer = {
       "description": "The cluster nodes usage API allows you to retrieve information on the usage of features for each node.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -107217,9 +108165,6 @@ window.apiConnectExplorer = {
       "description": "Secure settings are stored in an on-disk keystore. Certain of these settings are reloadable. That is, you can change them on disk and reload them without restarting any nodes in the cluster. When you have updated reloadable secure settings in your keystore, you can use this API to reload those settings on each node.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         }
       ],
@@ -107268,9 +108213,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/nodes/{node-id}/reload-secure-settings": {
       "description": "Secure settings are stored in an on-disk keystore. Certain of these settings are reloadable. That is, you can change them on disk and reload them without restarting any nodes in the cluster. When you have updated reloadable secure settings in your keystore, you can use this API to reload those settings on each node.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -107324,9 +108266,6 @@ window.apiConnectExplorer = {
       "description": "The purpose of the cluster allocation explain API is to provide explanations for shard allocations in the cluster. For unassigned shards, the explain API provides an explanation for why the shard is unassigned.  For assigned shards, the explain API provides an explanation for why the shard is remaining on its current node and has not moved or rebalanced to another node.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -107370,9 +108309,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/cluster/voting-config-exclusions": {
       "description": "By default, if there are more than three master-eligible nodes in the cluster and you remove fewer than half of the master-eligible nodes in the cluster at once, the voting configuration automatically shrinks. If you want to shrink the voting configuration to contain fewer than three nodes or to remove half or more of the master-eligible nodes in the cluster at once, you must use this API to remove departed nodes from the voting configuration manually. It adds an entry for that node in the voting configuration exclusions list. The cluster then tries to reconfigure the voting configuration to remove that node and to prevent it from returning.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -107442,9 +108378,6 @@ window.apiConnectExplorer = {
       "description": "The cluster health API returns a simple status on the health of the cluster. You can also use the API to get the health status of only specified data streams and indices. For data streams, the API retrieves the health status of the stream’s backing indices.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -107513,9 +108446,6 @@ window.apiConnectExplorer = {
       "description": "The pending cluster tasks API returns a list of any cluster-level changes (e.g. create index, update mapping, allocate or fail shard) which have not yet been executed.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -107559,9 +108489,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/cluster/settings": {
       "description": "Manages cluster-wide settings.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -107654,9 +108581,6 @@ window.apiConnectExplorer = {
       "description": "The cluster state is an internal data structure which keeps track of a variety of information needed by every node.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -107718,9 +108642,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/cluster/state/{metrics}": {
       "description": "The cluster state is an internal data structure which keeps track of a variety of information needed by every node.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -107786,9 +108707,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/cluster/state/{metrics}/{target}": {
       "description": "The cluster state is an internal data structure which keeps track of a variety of information needed by every node.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -107858,9 +108776,6 @@ window.apiConnectExplorer = {
       "description": "The Cluster Stats API allows to retrieve statistics from a cluster wide perspective. The API returns basic index metrics (shard numbers, store size, memory usage) and information about the current nodes that form the cluster (number, roles, os, jvm versions, memory usage, cpu and installed plugins).\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -107901,9 +108816,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/cluster/stats/nodes/{node-filter}": {
       "description": "The Cluster Stats API allows to retrieve statistics from a cluster wide perspective. The API returns basic index metrics (shard numbers, store size, memory usage) and information about the current nodes that form the cluster (number, roles, os, jvm versions, memory usage, cpu and installed plugins).\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -107948,9 +108860,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/cluster/reroute": {
       "description": "The reroute command allows for manual changes to the allocation of individual shards in the cluster. For example, a shard can be moved from one node to another explicitly, an allocation can be cancelled, and an unassigned shard can be explicitly allocated to a specific node.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -108022,9 +108931,6 @@ window.apiConnectExplorer = {
       "description": "The cluster remote info API allows you to retrieve all of the configured remote cluster information. It returns connection and endpoint information keyed by the configured remote cluster alias.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         }
       ],
@@ -108059,9 +108965,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/settings": {
       "description": "Manage opensearch settings.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         }
@@ -108139,9 +109042,6 @@ window.apiConnectExplorer = {
       "description": "Returns information about ongoing and completed shard recoveries for one or more indices. For data streams, the API returns information for the stream’s backing indices.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -108182,9 +109082,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/{index}/recovery": {
       "description": "Returns information about ongoing and completed shard recoveries for one or more indices. For data streams, the API returns information for the stream’s backing indices.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -108229,9 +109126,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/{index}": {
       "description": "Index APIs are used to manage individual indices, index settings, aliases, mappings, and index templates.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -108387,9 +109281,6 @@ window.apiConnectExplorer = {
       "description": "You use the close index API to close open indices.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -108445,9 +109336,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/{index}/open": {
       "description": "You can use the open index API to re-open closed indices. If the request targets a data stream, the request re-opens any of the stream’s closed backing indices.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -108505,9 +109393,6 @@ window.apiConnectExplorer = {
       "description": "The shrink index API allows you to shrink an existing index into a new index with fewer primary shards. The requested number of primary shards in the target index must be a factor of the number of shards in the source index.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -108557,9 +109442,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/{index}/split/{target}": {
       "description": "The split index API allows you to split an existing index into a new index, where each original primary shard is split into two or more primary shards in the new index.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -108625,9 +109507,6 @@ window.apiConnectExplorer = {
       "description": "Use the clone index API to clone an existing index into a new index, where each original primary shard is cloned into a new primary shard in the new index.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -108678,9 +109557,6 @@ window.apiConnectExplorer = {
       "description": "The rollover API creates a new index for a data stream or index alias.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -108730,9 +109606,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/{index}/rollover/{target}": {
       "description": "The rollover API creates a new index for a data stream or index alias.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -108787,9 +109660,6 @@ window.apiConnectExplorer = {
       "description": "Resolves the specified name(s) and/or index patterns for indices, aliases and data streams. Multiple patterns and remote clusters are supported.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -108830,9 +109700,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/{index}/flush": {
       "description": "Flushing a data stream or index is the process of making sure that any data that is currently only stored in the transaction log is also permanently stored in the Lucene index.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -108914,9 +109781,6 @@ window.apiConnectExplorer = {
       "description": "Flushing a data stream or index is the process of making sure that any data that is currently only stored in the transaction log is also permanently stored in the Lucene index.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -108993,9 +109857,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/{target}/alias/{alias}": {
       "description": "Performs an action for one or more aliases.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -109185,9 +110046,6 @@ window.apiConnectExplorer = {
       "description": "Retrieves information for one or more aliases.\n",
       "parameters": [
         {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
           "$ref": "#/components/parameters/analytics-service"
         },
         {
@@ -109234,9 +110092,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/alias/{alias}": {
       "description": "Retrieves information for one or more aliases.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -109287,9 +110142,6 @@ window.apiConnectExplorer = {
     "/{analytics-service}/cloud/clustermgmt/storage/aliases": {
       "description": "Performs one or more alias actions in a single atomic operation.\n",
       "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
         {
           "$ref": "#/components/parameters/analytics-service"
         },
@@ -109728,15 +110580,6 @@ window.apiConnectExplorer = {
           "format": "date-time"
         }
       },
-      "endpoint_url_optional": {
-        "name": "endpoint_url",
-        "in": "query",
-        "description": "Filter results by endpoint_url, note this field is only set on failed API events.",
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
       "error_limit_optional": {
         "name": "error_limit",
         "in": "query",
@@ -109762,16 +110605,6 @@ window.apiConnectExplorer = {
         "required": false,
         "schema": {
           "type": "string"
-        }
-      },
-      "event_fields_optional": {
-        "name": "fields",
-        "in": "query",
-        "description": "A list of the event fields that you want included in each event. You can use a comma as a separator when specifying the fields. Use this parameter if you require only a subset of the event fields rather than the full set.\n",
-        "required": false,
-        "schema": {
-          "type": "string",
-          "example": "api_version,api_name,api_id"
         }
       },
       "expand_wildcards_optional": {
@@ -110603,16 +111436,6 @@ window.apiConnectExplorer = {
         "schema": {
           "type": "boolean"
         }
-      },
-      "accept_language_optional": {
-        "name": "accept-language",
-        "in": "header",
-        "description": "Natural language and locale that the client prefers.",
-        "required": false,
-        "schema": {
-          "type": "string",
-          "example": "en"
-        }
       }
     },
     "schemas": {
@@ -111086,8 +111909,18 @@ window.apiConnectExplorer = {
           }
         },
         "required": [
-          "datetime",
-          "event_id"
+          "catalog_name",
+          "catalog_id",
+          "org_name",
+          "org_id",
+          "resource_path",
+          "status_code",
+          "product_name",
+          "product_version",
+          "product_id",
+          "api_name",
+          "api_version",
+          "api_id"
         ]
       },
       "EventCountResponse": {
@@ -111577,36 +112410,7 @@ window.apiConnectExplorer = {
       "QueryListResponse": {
         "type": "object",
         "description": "Query list response.",
-        "required": [
-          "total",
-          "search_time",
-          "queries"
-        ],
         "properties": {
-          "total": {
-            "$ref": "#/components/schemas/NonNegativeInteger"
-          },
-          "search_time": {
-            "$ref": "#/components/schemas/NonNegativeInteger"
-          },
-          "offset": {
-            "$ref": "#/components/schemas/NonNegativeInteger"
-          },
-          "limit": {
-            "$ref": "#/components/schemas/NonNegativeInteger"
-          },
-          "first": {
-            "$ref": "#/components/schemas/PaginationLink"
-          },
-          "next": {
-            "$ref": "#/components/schemas/PaginationLink"
-          },
-          "previous": {
-            "$ref": "#/components/schemas/PaginationLink"
-          },
-          "last": {
-            "$ref": "#/components/schemas/PaginationLink"
-          },
           "queries": {
             "$ref": "#/components/schemas/QueryList"
           }
@@ -111704,18 +112508,10 @@ window.apiConnectExplorer = {
       },
       "SettingsBody": {
         "type": "object",
-        "required": [
-          "rollover",
-          "retention"
-        ],
-        "description": "OpenSearch settings request body",
+        "description": "OpenSearch aliases request body",
         "properties": {
           "rollover": {
             "type": "object",
-            "required": [
-              "min_doc_count",
-              "min_index_age"
-            ],
             "properties": {
               "min_doc_count": {
                 "description": "The minimum number of documents required to roll over the index.",
@@ -111732,9 +112528,6 @@ window.apiConnectExplorer = {
           },
           "retention": {
             "type": "object",
-            "required": [
-              "min_index_age"
-            ],
             "properties": {
               "min_index_age": {
                 "description": "The minimum age required to delete the index. Index age is the time between its creation and the present. Use d for day and h for hour, e.g. 30d or 96h.",
@@ -112143,685 +112936,6 @@ window.apiConnectExplorer = {
             "refreshUrl": "/token",
             "scopes": {
               "api-analytics:view": "Create an Analytics object"
-            }
-          }
-        }
-      }
-    }
-  },
-  "x-ibm-configuration": {
-    "testable": false
-  }
-},
-{
-  "openapi": "3.0.0",
-  "info": {
-    "x-ibm-name": "consumer-analytics",
-    "version": "2.0.0",
-    "title": "IBM API Connect Consumer Analytics API",
-    "description": "## API for the API Connect Consumer Analytics dashboard\n",
-    "termsOfService": "https://ww.ibm.com/terms-of-service",
-    "contact": {
-      "name": "IBM",
-      "url": "https://www.ibm.com",
-      "email": "help@ibm.com"
-    }
-  },
-  "servers": [
-    {
-      "url": "https://apimserver.example.com/consumer-analytics",
-      "description": "Consumer analytics V2 base path"
-    }
-  ],
-  "paths": {
-    "/orgs/{org}/dashboard": {
-      "description": "GET data needed to populate the consumer analytics dashboard.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        }
-      ],
-      "get": {
-        "summary": "Get data to populate the consumer analytics dashboard.",
-        "description": "Get data to populate the consumer analytics dashboard.",
-        "operationId": "dashboard_get",
-        "security": [
-          {
-            "oauth": [
-              "app-analytics:view"
-            ]
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/limit_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
-          },
-          {
-            "$ref": "#/components/parameters/start_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/timeframe_optional"
-          },
-          {
-            "$ref": "#/components/parameters/accept_language_optional"
-          },
-          {
-            "$ref": "#/components/parameters/x_ibm_consumer_context"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ConsumerDashboardResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Analytics",
-          "Analytics"
-        ]
-      }
-    },
-    "/orgs/{org}/apps/{app}/dashboard": {
-      "description": "GET data needed to populate the consumer analytics dashboard by app id.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/app"
-        },
-        {
-          "$ref": "#/components/parameters/org"
-        }
-      ],
-      "get": {
-        "summary": "Get data to populate the consumer analytics dashboard by app id.",
-        "description": "Get data to populate the consumer analytics dashboard by app id.",
-        "operationId": "dashboard_getByApp",
-        "security": [
-          {
-            "oauth": [
-              "app-analytics:view"
-            ]
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/end_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/limit_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
-          },
-          {
-            "$ref": "#/components/parameters/start_time_optional"
-          },
-          {
-            "$ref": "#/components/parameters/timeframe_optional"
-          },
-          {
-            "$ref": "#/components/parameters/accept_language_optional"
-          },
-          {
-            "$ref": "#/components/parameters/x_ibm_consumer_context"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ConsumerDashboardResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Consumer Analytics",
-          "Analytics"
-        ]
-      }
-    }
-  },
-  "components": {
-    "parameters": {
-      "accept_language_optional": {
-        "name": "accept-language",
-        "in": "header",
-        "description": "Natural language and locale that the client prefers.",
-        "required": false,
-        "schema": {
-          "type": "string",
-          "example": "en"
-        }
-      },
-      "app": {
-        "name": "app",
-        "in": "path",
-        "description": "Consumer organization app.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "end_time_optional": {
-        "name": "end",
-        "in": "query",
-        "description": "If set, the API will only return events with a datetime equal or older than this. The value must follow the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z. See https://datatracker.ietf.org/doc/html/rfc3339#section-5.6.\n",
-        "required": false,
-        "schema": {
-          "type": "string",
-          "format": "date-time"
-        }
-      },
-      "limit_optional": {
-        "name": "limit",
-        "in": "query",
-        "description": "If set, the number of items to return when requesting a list. Maximum: 200",
-        "required": false,
-        "schema": {
-          "type": "string",
-          "example": "50"
-        }
-      },
-      "offset_optional": {
-        "name": "offset",
-        "in": "query",
-        "description": "If set, the offset to be applied when requesting a list. e.g. return events starting from the 100th result",
-        "required": false,
-        "schema": {
-          "type": "string",
-          "example": "100"
-        }
-      },
-      "org": {
-        "name": "org",
-        "in": "path",
-        "description": "Consumer organization name or ID.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "start_time_optional": {
-        "name": "start",
-        "in": "query",
-        "description": "If set, the API will only return events with a datetime equal or newer than this. The value must follow the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z. See https://datatracker.ietf.org/doc/html/rfc3339#section-5.6.\n",
-        "required": false,
-        "schema": {
-          "type": "string",
-          "format": "date-time"
-        }
-      },
-      "timeframe_optional": {
-        "name": "timeframe",
-        "in": "query",
-        "description": "If set, the API will only return events within the indicated timeframe. This parameter will be ignored if either start or end have been specified.\n",
-        "required": false,
-        "schema": {
-          "type": "string",
-          "enum": [
-            "last15minutes",
-            "last30minutes",
-            "last1hour",
-            "last4hours",
-            "last12hours",
-            "last24hours",
-            "last7days",
-            "last30days"
-          ]
-        }
-      },
-      "x_ibm_consumer_context": {
-        "name": "X-IBM-Consumer-Context",
-        "in": "header",
-        "description": "Consumer context in the form of {provider-org}.{catalog}, e.g. myorg.mycat\n",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "example": "myorg.mycat"
-        }
-      }
-    },
-    "responses": {
-      "ConsumerDashboardResponse": {
-        "description": "Data needed to populate the consumer analytics Dashboard",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/ConsumerDashboardResponse"
-            }
-          },
-          "application/yaml": {
-            "schema": {
-              "$ref": "#/components/schemas/ConsumerDashboardResponse"
-            }
-          }
-        }
-      },
-      "Error": {
-        "description": "Unexpected error.",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/Error"
-            }
-          },
-          "application/yaml": {
-            "schema": {
-              "$ref": "#/components/schemas/Error"
-            }
-          }
-        }
-      }
-    },
-    "schemas": {
-      "ApiCallsList": {
-        "type": "object",
-        "properties": {
-          "total": {
-            "$ref": "#/components/schemas/NonNegativeInteger"
-          },
-          "data": {
-            "$ref": "#/components/schemas/EventArray"
-          }
-        }
-      },
-      "ConsumerDashboardResponse": {
-        "type": "object",
-        "description": "Data to display on the consumer analytics Dashboard.",
-        "properties": {
-          "search_time": {
-            "$ref": "#/components/schemas/NonNegativeInteger"
-          },
-          "status_codes": {
-            "$ref": "#/components/schemas/GroupValueDataList"
-          },
-          "min_response_time": {
-            "$ref": "#/components/schemas/DataItem"
-          },
-          "avg_response_time": {
-            "$ref": "#/components/schemas/DataItem"
-          },
-          "max_response_time": {
-            "$ref": "#/components/schemas/DataItem"
-          },
-          "total_api_calls": {
-            "$ref": "#/components/schemas/DataItem"
-          },
-          "total_errors": {
-            "$ref": "#/components/schemas/DataItem"
-          },
-          "errors": {
-            "$ref": "#/components/schemas/GroupDateValueItemData"
-          },
-          "response_times": {
-            "$ref": "#/components/schemas/GroupDateValueItemData"
-          },
-          "throttled_calls": {
-            "$ref": "#/components/schemas/GroupDateValueItemData"
-          },
-          "api_calls_per_day": {
-            "$ref": "#/components/schemas/GroupDateValueItemData"
-          },
-          "last_api_calls": {
-            "$ref": "#/components/schemas/ApiCallsList"
-          }
-        }
-      },
-      "DataItem": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "type": "number"
-          }
-        }
-      },
-      "Error": {
-        "type": "object",
-        "description": "Generic error response.",
-        "additionalProperties": true,
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/Status"
-          },
-          "message": {
-            "$ref": "#/components/schemas/Message"
-          },
-          "errors": {
-            "$ref": "#/components/schemas/ErrorModels"
-          }
-        }
-      },
-      "ErrorModels": {
-        "type": "array",
-        "description": "Array of more detailed error information.",
-        "items": {
-          "type": "object",
-          "properties": {
-            "code": {
-              "type": "string",
-              "description": "A snake case string succinctly identifying the problem."
-            },
-            "message": {
-              "type": "string",
-              "description": "A plainly-written, developer-oriented explanation of the solution to the problem in complete, well-formed sentences."
-            },
-            "more_info": {
-              "type": "string",
-              "description": "A publicly-accessible URL where information about the error can be read."
-            },
-            "target": {
-              "$ref": "#/components/schemas/ErrorTargetModel"
-            }
-          }
-        }
-      },
-      "ErrorTargetModel": {
-        "type": "object",
-        "description": "Contains information about specific error targets.",
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Either field, parameter, or header."
-          },
-          "name": {
-            "type": "string",
-            "description": "The name of the problematic field (with dot-syntax if necessary), query parameter, or header."
-          }
-        }
-      },
-      "EventArray": {
-        "type": "array",
-        "description": "Array of API events",
-        "items": {
-          "$ref": "#/components/schemas/EventBody"
-        }
-      },
-      "EventBody": {
-        "type": "object",
-        "description": "The API Event logged by the gateway",
-        "additionalProperties": true,
-        "properties": {
-          "api_version": {
-            "type": "string",
-            "description": "The version of the API"
-          },
-          "api_name": {
-            "type": "string",
-            "description": "The name of the API"
-          },
-          "api_id": {
-            "type": "string",
-            "description": "The ID of the API"
-          },
-          "app_lifecycle_state": {
-            "type": "string",
-            "description": "The lifecycle state of the calling application"
-          },
-          "bytes_received": {
-            "type": "number",
-            "description": "The number of bytes received by the gateway"
-          },
-          "bytes_sent": {
-            "type": "number",
-            "description": "The number of bytes sent by the gateway"
-          },
-          "client_id": {
-            "type": "string",
-            "description": "The application client ID used"
-          },
-          "datetime": {
-            "type": "string",
-            "format": "date-time",
-            "description": "The date time of the API event from the gateway"
-          },
-          "developer_org_id": {
-            "type": "string",
-            "description": "The consumer organization ID"
-          },
-          "developer_org_name": {
-            "type": "string",
-            "description": "The consumer organization name"
-          },
-          "developer_org_title": {
-            "type": "string",
-            "description": "The consumer organization title"
-          },
-          "headers": {
-            "type": "object",
-            "description": "Internal headers array from ingestion"
-          },
-          "host": {
-            "type": "string",
-            "description": "The ingestion host IP address"
-          },
-          "http_user_agent": {
-            "type": "string",
-            "description": "The caller user agent string",
-            "example": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36"
-          },
-          "org_name": {
-            "type": "string",
-            "description": "The provider organization name"
-          },
-          "org_id": {
-            "type": "string",
-            "description": "The provider organization ID"
-          },
-          "plan_id": {
-            "type": "string",
-            "description": "The plan ID"
-          },
-          "plan_name": {
-            "type": "string",
-            "description": "The plan name"
-          },
-          "product_version": {
-            "type": "string",
-            "description": "The product version"
-          },
-          "product_name": {
-            "type": "string",
-            "description": "The product name"
-          },
-          "product_id": {
-            "type": "string",
-            "description": "The product ID"
-          },
-          "product_title": {
-            "type": "string",
-            "description": "The product title"
-          },
-          "query_string": {
-            "type": "string",
-            "description": "Any provided query parameters"
-          },
-          "request_body": {
-            "type": "string",
-            "description": "The request body payload"
-          },
-          "request_http_headers": {
-            "type": "array",
-            "description": "The request headers",
-            "items": {
-              "$ref": "#/components/schemas/HeaderItem"
-            }
-          },
-          "request_method": {
-            "type": "string",
-            "description": "The request HTTP method"
-          },
-          "request_protocol": {
-            "type": "string",
-            "description": "The request protocol"
-          },
-          "resource_id": {
-            "type": "string",
-            "description": "The resource ID"
-          },
-          "resource_path": {
-            "type": "string",
-            "description": "The resource path"
-          },
-          "response_body": {
-            "type": "string",
-            "description": "The response body payload"
-          },
-          "response_http_headers": {
-            "type": "array",
-            "description": "The response headers",
-            "items": {
-              "$ref": "#/components/schemas/HeaderItem"
-            }
-          },
-          "status_code": {
-            "type": "string",
-            "description": "The HTTP response status code",
-            "example": "200 OK"
-          },
-          "time_to_serve_request": {
-            "type": "number",
-            "description": "The time taken to serve the request"
-          },
-          "uri_path": {
-            "type": "string",
-            "description": "The URI path"
-          }
-        },
-        "required": [
-          "org_name",
-          "org_id",
-          "resource_path",
-          "status_code",
-          "product_name",
-          "product_version",
-          "product_id",
-          "api_name",
-          "api_version",
-          "api_id"
-        ]
-      },
-      "GroupDateValueItem": {
-        "type": "object",
-        "properties": {
-          "group": {
-            "type": "string"
-          },
-          "date": {
-            "type": "string"
-          },
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "GroupDateValueItemData": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/GroupDateValueItemList"
-          }
-        }
-      },
-      "GroupDateValueItemList": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/GroupDateValueItem"
-        }
-      },
-      "GroupValueDataList": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/GroupValueItemList"
-          }
-        }
-      },
-      "GroupValueItem": {
-        "type": "object",
-        "properties": {
-          "group": {
-            "type": "string"
-          },
-          "value": {
-            "type": "integer"
-          }
-        }
-      },
-      "GroupValueItemList": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/GroupValueItem"
-        }
-      },
-      "HeaderItem": {
-        "type": "object",
-        "description": "An HTTP header",
-        "additionalProperties": true
-      },
-      "Message": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "Detailed error message.",
-        "example": "Invalid request payload JSON format."
-      },
-      "NonNegativeInteger": {
-        "type": "integer",
-        "description": "Integer greater than or equal to zero.",
-        "minimum": 0
-      },
-      "Status": {
-        "type": "integer",
-        "description": "Status code of the error.",
-        "minimum": 400,
-        "maximum": 599,
-        "example": 400
-      }
-    },
-    "securitySchemes": {
-      "oauth": {
-        "type": "oauth2",
-        "description": "API Manager Consumer API Token at appropriate catalog scope.",
-        "flows": {
-          "implicit": {
-            "authorizationUrl": "/oauth2/authorize",
-            "scopes": {
-              "app-analytics:view": "View consumer analytics"
-            }
-          },
-          "password": {
-            "tokenUrl": "/token",
-            "refreshUrl": "/token",
-            "scopes": {
-              "app-analytics:view": "View consumer analytics"
-            }
-          },
-          "clientCredentials": {
-            "tokenUrl": "/token",
-            "scopes": {
-              "app-analytics:view": "View consumer analytics"
-            }
-          },
-          "authorizationCode": {
-            "authorizationUrl": "/oauth2/authorize",
-            "tokenUrl": "/token",
-            "refreshUrl": "/token",
-            "scopes": {
-              "app-analytics:view": "View consumer analytics"
             }
           }
         }
