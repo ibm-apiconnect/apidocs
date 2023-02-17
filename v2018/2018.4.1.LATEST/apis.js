@@ -1,7 +1,7 @@
 /********************************************************* {COPYRIGHT-TOP} ***
  * Licensed Materials - Property of IBM
  *
- * (C) Copyright IBM Corporation 2017, 2022
+ * (C) Copyright IBM Corporation 2017, 2023
  *
  * All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or disclosure
@@ -26,6 +26,7 @@
         "2018.4.1.17": "2018.4.1.17.html",
         "2018.4.1.19": "2018.4.1.19.html",
         "2018.4.1.20": "2018.4.1.20.html",
+        "2018.4.1.24": "2018.4.1.24.html",
         "2018.4.1.LATEST": "2018.4.1.LATEST.html"
       }
     },
