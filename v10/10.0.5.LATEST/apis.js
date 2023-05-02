@@ -15,7 +15,7 @@
       headerActive: true,
       groupByTags: true,
       validateSwagger: false,
-      explorerDir: "/../",
+      explorerDir: "/../app/",
       routerType: "hash",
       versions: {
         "10.0.1.1": "10.0.1.1.html",
@@ -34,6 +34,7 @@
         "10.0.5.0": "10.0.5.0.html",
         "10.0.5.1": "10.0.5.1.html",
         "10.0.5.2": "10.0.5.2.html",
+        "10.0.5.3": "10.0.5.3.html",
         "10.0.5.LATEST": "10.0.5.LATEST.html",
         "10.0.LATEST": "10.0.LATEST.html",
       }
@@ -10830,7 +10831,7 @@
       ],
       "post": {
         "summary": "Create a Analytics Service object",
-        "description": "Create a Analytics Service object\nRequired fields:\\ - endpoint\nFields not allowed:\\ - gateway_service_urls - ingestion_endpoint - client_endpoint\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - availability_zone_url",
+        "description": "Create a Analytics Service object\nFields not allowed:\\ - gateway_service_urls - ingestion_endpoint - client_endpoint\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - availability_zone_url",
         "operationId": "analytics_service_create",
         "security": [
           {
@@ -18891,6 +18892,29 @@
               "enabled": {
                 "type": "boolean"
               },
+              "audit_reads": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "enabled": {
+                    "type": "boolean"
+                  },
+                  "response_data_to_http_endpoints": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "enabled": {
+                        "type": "boolean"
+                      },
+                      "list_results_limit": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 10000
+                      }
+                    }
+                  }
+                }
+              },
               "mode": {
                 "type": "string",
                 "enum": [
@@ -18982,6 +19006,9 @@
             "type": "string",
             "format": "uri"
           },
+          "token_issuer": {
+            "type": "string"
+          },
           "access_token_keystore_urls": {
             "type": "array",
             "items": {
@@ -18997,6 +19024,13 @@
             }
           },
           "temporary_token_keystore_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "self_signed_token_keystore_urls": {
             "type": "array",
             "items": {
               "type": "string",
@@ -19700,6 +19734,11 @@
               "external",
               "internal_svc"
             ]
+          },
+          "communication_to_analytics_with_jwt": {
+            "type": "boolean",
+            "default": false,
+            "nullable": true
           },
           "metadata": {
             "type": "object",
@@ -21696,6 +21735,11 @@
               "external",
               "internal_svc"
             ]
+          },
+          "communication_to_analytics_with_jwt": {
+            "type": "boolean",
+            "default": false,
+            "nullable": true
           },
           "metadata": {
             "type": "object",
@@ -29202,6 +29246,12 @@
             "type": "string"
           },
           "alg": {
+            "type": "string"
+          },
+          "iss": {
+            "type": "string"
+          },
+          "purpose": {
             "type": "string"
           }
         }
@@ -75823,6 +75873,29 @@
               "enabled": {
                 "type": "boolean"
               },
+              "audit_reads": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "enabled": {
+                    "type": "boolean"
+                  },
+                  "response_data_to_http_endpoints": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "enabled": {
+                        "type": "boolean"
+                      },
+                      "list_results_limit": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 10000
+                      }
+                    }
+                  }
+                }
+              },
               "mode": {
                 "type": "string",
                 "enum": [
@@ -75914,6 +75987,9 @@
             "type": "string",
             "format": "uri"
           },
+          "token_issuer": {
+            "type": "string"
+          },
           "access_token_keystore_urls": {
             "type": "array",
             "items": {
@@ -75929,6 +76005,13 @@
             }
           },
           "temporary_token_keystore_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "self_signed_token_keystore_urls": {
             "type": "array",
             "items": {
               "type": "string",
@@ -76632,6 +76715,11 @@
               "external",
               "internal_svc"
             ]
+          },
+          "communication_to_analytics_with_jwt": {
+            "type": "boolean",
+            "default": false,
+            "nullable": true
           },
           "metadata": {
             "type": "object",
@@ -78628,6 +78716,11 @@
               "external",
               "internal_svc"
             ]
+          },
+          "communication_to_analytics_with_jwt": {
+            "type": "boolean",
+            "default": false,
+            "nullable": true
           },
           "metadata": {
             "type": "object",
@@ -86134,6 +86227,12 @@
             "type": "string"
           },
           "alg": {
+            "type": "string"
+          },
+          "iss": {
+            "type": "string"
+          },
+          "purpose": {
             "type": "string"
           }
         }
@@ -98521,28 +98620,28 @@
         "description": "API Manager Consumer API Token at appropriate catalog scope.",
         "flows": {
           "implicit": {
-            "authorizationUrl": "/oauth2/authorize",
+            "authorizationUrl": "https://apimserver.example.com/consumer-api/oauth2/authorize",
             "scopes": {
               "app-analytics:view": "View consumer analytics"
             }
           },
           "password": {
-            "tokenUrl": "/token",
-            "refreshUrl": "/token",
+            "tokenUrl": "https://apimserver.example.com/consumer-api/token",
+            "refreshUrl": "https://apimserver.example.com/consumer-api/token",
             "scopes": {
               "app-analytics:view": "View consumer analytics"
             }
           },
           "clientCredentials": {
-            "tokenUrl": "/token",
+            "tokenUrl": "https://apimserver.example.com/consumer-api/token",
             "scopes": {
               "app-analytics:view": "View consumer analytics"
             }
           },
           "authorizationCode": {
-            "authorizationUrl": "/oauth2/authorize",
-            "tokenUrl": "/token",
-            "refreshUrl": "/token",
+            "authorizationUrl": "https://apimserver.example.com/consumer-api/oauth2/authorize",
+            "tokenUrl": "https://apimserver.example.com/consumer-api/token",
+            "refreshUrl": "https://apimserver.example.com/consumer-api/token",
             "scopes": {
               "app-analytics:view": "View consumer analytics"
             }
