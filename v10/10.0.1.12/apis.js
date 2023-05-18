@@ -11,7 +11,7 @@
   attachPoint: '#root',
   options: {
       renderSchemaView: true,
-      headerTitle: "API Connect v10.0.1.5",
+      headerTitle: "API Connect v10.0.1.12",
       headerActive: true,
       groupByTags: true,
       validateSwagger: false,
@@ -36,7 +36,8 @@
         "10.0.5.1": "10.0.5.1.html",
         "10.0.5.2": "10.0.5.2.html",
         "10.0.5.3": "10.0.5.3.html",
-        "10.0.5.LATEST": "10.0.5.LATEST.html"
+        "10.0.5.LATEST": "10.0.5.LATEST.html",
+        "10.0.LATEST": "10.0.LATEST.html",
       }
     },
   apis: [
@@ -205,10 +206,16 @@
                   "$ref": "#/components/schemas/UserRegistry"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -789,10 +796,16 @@
                   "$ref": "#/components/schemas/User"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -2310,7 +2323,7 @@
         "security": [
           {
             "oauth": [
-              "cloud:view"
+              "cloud:manage"
             ]
           }
         ],
@@ -2598,7 +2611,7 @@
         "security": [
           {
             "oauth": [
-              "cloud:view"
+              "cloud:manage"
             ]
           }
         ],
@@ -2886,7 +2899,7 @@
         "security": [
           {
             "oauth": [
-              "cloud:view"
+              "cloud:manage"
             ]
           }
         ],
@@ -3174,7 +3187,7 @@
         "security": [
           {
             "oauth": [
-              "cloud:view"
+              "cloud:manage"
             ]
           }
         ],
@@ -3462,7 +3475,7 @@
         "security": [
           {
             "oauth": [
-              "cloud:view"
+              "cloud:manage"
             ]
           }
         ],
@@ -3750,7 +3763,7 @@
         "security": [
           {
             "oauth": [
-              "cloud:view"
+              "cloud:manage"
             ]
           }
         ],
@@ -3885,10 +3898,16 @@
                   "$ref": "#/components/schemas/RoleDefault"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -4303,10 +4322,16 @@
                   "$ref": "#/components/schemas/Integration"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -4572,10 +4597,16 @@
                   "$ref": "#/components/schemas/Integration"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -4841,10 +4872,16 @@
                   "$ref": "#/components/schemas/Integration"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -5110,10 +5147,16 @@
                   "$ref": "#/components/schemas/Integration"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -5379,10 +5422,16 @@
                   "$ref": "#/components/schemas/Registration"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -5648,10 +5697,16 @@
                   "$ref": "#/components/schemas/APIKey"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -6209,7 +6264,7 @@
         "security": [
           {
             "oauth": [
-              "org:view"
+              "org:manage"
             ]
           }
         ],
@@ -6668,10 +6723,16 @@
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -7008,10 +7069,16 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -7074,10 +7141,16 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -7137,10 +7210,16 @@
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -7340,6 +7419,11 @@
             "oauth": [
               "org:manage"
             ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cascade"
           }
         ],
         "responses": {
@@ -7882,10 +7966,16 @@
                   "$ref": "#/components/schemas/Role"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -8159,10 +8249,16 @@
                   "$ref": "#/components/schemas/AvailabilityZone"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -8439,10 +8535,16 @@
                   "$ref": "#/components/schemas/GatewayService"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -9642,6 +9744,16 @@
           "200": {
             "description": "Success",
             "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Implementation"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Implementation"
+                }
+              },
               "application/zip": {}
             }
           },
@@ -9704,10 +9816,16 @@
                   "$ref": "#/components/schemas/PortalService"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -10036,10 +10154,16 @@
                   "$ref": "#/components/schemas/AnalyticsService"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -10316,10 +10440,16 @@
                   "$ref": "#/components/schemas/OauthProvider"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -10593,10 +10723,16 @@
                   "$ref": "#/components/schemas/MailServer"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -10987,10 +11123,16 @@
                   "$ref": "#/components/schemas/TLSServerProfile"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -11503,10 +11645,16 @@
                   "$ref": "#/components/schemas/TLSClientProfile"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -12011,10 +12159,16 @@
                   "$ref": "#/components/schemas/Keystore"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -12288,10 +12442,16 @@
                   "$ref": "#/components/schemas/Truststore"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -12568,10 +12728,16 @@
                   "$ref": "#/components/schemas/Entry"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -12843,10 +13009,16 @@
                   "$ref": "#/components/schemas/Invitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -13174,10 +13346,16 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -13237,10 +13415,16 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -13295,10 +13479,16 @@
                   "$ref": "#/components/schemas/Org"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -13432,10 +13622,16 @@
                   "$ref": "#/components/schemas/Group"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -14923,6 +15119,15 @@
           "type": "boolean"
         }
       },
+      "catalog_name": {
+        "name": "catalog_name",
+        "in": "query",
+        "description": "Name of a catalog",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "catalog_url": {
         "name": "catalog_url",
         "in": "query",
@@ -15090,6 +15295,15 @@
         "in": "path",
         "description": "Gateway Service name or id",
         "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "gateway_service_names": {
+        "name": "gateway_service_names",
+        "in": "query",
+        "description": "Names of Gateway Services",
+        "required": false,
         "schema": {
           "type": "string"
         }
@@ -15490,6 +15704,15 @@
           "type": "string"
         }
       },
+      "space_name": {
+        "name": "space_name",
+        "in": "query",
+        "description": "Name of a space",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "state": {
         "name": "state",
         "in": "query",
@@ -15677,6 +15900,15 @@
         "required": true,
         "schema": {
           "type": "string"
+        }
+      },
+      "validate_apis": {
+        "name": "validate_apis",
+        "in": "query",
+        "description": "Whether to validate APIs also",
+        "required": false,
+        "schema": {
+          "type": "boolean"
         }
       },
       "webhook": {
@@ -17425,6 +17657,9 @@
           "default_catalog": {
             "type": "boolean"
           },
+          "override_invitation_ttl_for_all_consumer_orgs": {
+            "type": "boolean"
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -17696,6 +17931,13 @@
           "atm_base_path": {
             "type": "string",
             "nullable": true
+          },
+          "temporary_token_format": {
+            "type": "string",
+            "enum": [
+              "jwt",
+              "b64"
+            ]
           },
           "metadata": {
             "type": "object",
@@ -18852,11 +19094,10 @@
                       },
                       "redirect_endpoint": {
                         "type": "string",
-                        "format": "uri",
                         "nullable": true
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -18883,7 +19124,7 @@
                         ]
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -18892,11 +19133,11 @@
                     "additionalProperties": false,
                     "properties": {
                       "application_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint",
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform",
                         "nullable": true
                       },
                       "owner_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint",
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform",
                         "nullable": true
                       }
                     }
@@ -18918,12 +19159,10 @@
                 ]
               },
               "authorize_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "token_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "introspection_endpoint": {
                 "type": "object",
@@ -21140,6 +21379,7 @@
             "type": "string",
             "enum": [
               "ready",
+              "claimed",
               "running",
               "blocked",
               "failed"
@@ -22542,11 +22782,10 @@
                       },
                       "redirect_endpoint": {
                         "type": "string",
-                        "format": "uri",
                         "nullable": true
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -22573,7 +22812,7 @@
                         ]
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -22582,10 +22821,10 @@
                     "additionalProperties": false,
                     "properties": {
                       "application_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       },
                       "owner_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   }
@@ -22606,12 +22845,10 @@
                 ]
               },
               "authorize_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "token_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "introspection_endpoint": {
                 "type": "object",
@@ -27490,7 +27727,10 @@
             "type": "string"
           },
           "x5c": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "kty": {
             "type": "string"
@@ -28990,6 +29230,83 @@
           }
         }
       },
+      "Visibility": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "view",
+          "subscribe"
+        ],
+        "properties": {
+          "view": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "public",
+                  "authenticated",
+                  "custom"
+                ]
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "tags": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "orgs": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "subscribe": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "authenticated",
+                  "custom"
+                ]
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "tags": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "orgs": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
       "PrivateKeyEntry": {
         "type": "object",
         "additionalProperties": false,
@@ -29306,6 +29623,24 @@
           }
         }
       },
+      "SecuredEndpointWithoutEndpointTransform": {
+        "type": "object",
+        "additionalProperties": false,
+        "nullable": true,
+        "required": [
+          "endpoint"
+        ],
+        "properties": {
+          "endpoint": {
+            "type": "string"
+          },
+          "tls_client_profile_url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          }
+        }
+      },
       "IntrospectWsdlMultipart": {
         "type": "object",
         "properties": {
@@ -29357,6 +29692,9 @@
             "items": {
               "$ref": "#/components/schemas/ProductDefinition"
             }
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/Visibility"
           },
           "openapi": {
             "type": "array",
@@ -29435,6 +29773,9 @@
           "draft_product_url": {
             "type": "string",
             "format": "uri"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/Visibility"
           }
         }
       },
@@ -30057,7 +30398,7 @@
         "type": "oauth2",
         "flows": {
           "implicit": {
-            "authorizationUrl": "/api/oauth2/authorize",
+            "authorizationUrl": "/oauth2/authorize",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -30087,8 +30428,8 @@
             }
           },
           "password": {
-            "tokenUrl": "/api/token",
-            "refreshUrl": "/api/token",
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -30118,7 +30459,7 @@
             }
           },
           "clientCredentials": {
-            "tokenUrl": "/api/token",
+            "tokenUrl": "/token",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -30148,9 +30489,9 @@
             }
           },
           "authorizationCode": {
-            "authorizationUrl": "/api/oauth2/authorize",
-            "tokenUrl": "/api/token",
-            "refreshUrl": "/api/token",
+            "authorizationUrl": "/oauth2/authorize",
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -30258,10 +30599,16 @@
                   "$ref": "#/components/schemas/UserRegistry"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -30842,10 +31189,16 @@
                   "$ref": "#/components/schemas/User"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -31592,10 +31945,16 @@
                   "$ref": "#/components/schemas/APIKey"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -32153,7 +32512,7 @@
         "security": [
           {
             "oauth": [
-              "org:view"
+              "org:manage"
             ]
           }
         ],
@@ -32455,7 +32814,7 @@
         "security": [
           {
             "oauth": [
-              "org:view"
+              "org:manage"
             ]
           }
         ],
@@ -32757,7 +33116,7 @@
         "security": [
           {
             "oauth": [
-              "org:view"
+              "org:manage"
             ]
           }
         ],
@@ -33059,7 +33418,7 @@
         "security": [
           {
             "oauth": [
-              "org:view"
+              "org:manage"
             ]
           }
         ],
@@ -33518,10 +33877,16 @@
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -33858,10 +34223,16 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -33924,10 +34295,16 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -33987,10 +34364,16 @@
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -34190,6 +34573,11 @@
             "oauth": [
               "org:manage"
             ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cascade"
           }
         ],
         "responses": {
@@ -34732,10 +35120,16 @@
                   "$ref": "#/components/schemas/Role"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -35223,10 +35617,16 @@
                   "$ref": "#/components/schemas/OauthProvider"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -35500,10 +35900,16 @@
                   "$ref": "#/components/schemas/Billing"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -35997,10 +36403,16 @@
                   "$ref": "#/components/schemas/TLSClientProfile"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -36505,10 +36917,16 @@
                   "$ref": "#/components/schemas/Keystore"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -36782,10 +37200,16 @@
                   "$ref": "#/components/schemas/Truststore"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -37062,10 +37486,16 @@
                   "$ref": "#/components/schemas/Entry"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -37447,10 +37877,16 @@
                   "$ref": "#/components/schemas/ConfiguredGatewayService"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -37683,10 +38119,16 @@
                   "$ref": "#/components/schemas/ConfiguredGatewayService"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -37919,10 +38361,16 @@
                   "$ref": "#/components/schemas/ConfiguredCatalogUserRegistry"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -38194,10 +38642,16 @@
                   "$ref": "#/components/schemas/ConfiguredAPIUserRegistry"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -38430,10 +38884,16 @@
                   "$ref": "#/components/schemas/ConfiguredAPIUserRegistry"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -38666,10 +39126,16 @@
                   "$ref": "#/components/schemas/ConfiguredTLSClientProfile"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -39086,10 +39552,16 @@
                   "$ref": "#/components/schemas/ConfiguredTLSClientProfile"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -39512,10 +39984,16 @@
                   "$ref": "#/components/schemas/ConfiguredBilling"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -39745,10 +40223,16 @@
                   "$ref": "#/components/schemas/ConfiguredOauthProvider"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -39981,10 +40465,16 @@
                   "$ref": "#/components/schemas/ConfiguredOauthProvider"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -40496,7 +40986,7 @@
         "security": [
           {
             "oauth": [
-              "org:view"
+              "org:manage"
             ]
           }
         ],
@@ -40810,7 +41300,7 @@
         "security": [
           {
             "oauth": [
-              "org:view"
+              "org:manage"
             ]
           }
         ],
@@ -41124,7 +41614,7 @@
         "security": [
           {
             "oauth": [
-              "org:view"
+              "org:manage"
             ]
           }
         ],
@@ -41388,10 +41878,16 @@
                   "$ref": "#/components/schemas/NameValuePairs"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -41668,10 +42164,16 @@
                   "$ref": "#/components/schemas/Catalog"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -41950,69 +42452,6 @@
               "application/yaml": {
                 "schema": {
                   "$ref": "#/components/schemas/Catalog"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Management",
-          "Resource: Catalog"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/send-email": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "post": {
-        "summary": "Send email",
-        "description": "Send email",
-        "operationId": "catalog_sendEmail",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SendEmail"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/SendEmail"
-              }
-            }
-          }
-        },
-        "responses": {
-          "204": {
-            "description": "Success"
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SendEmailResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/SendEmailResponse"
                 }
               }
             }
@@ -42355,10 +42794,16 @@
                   "$ref": "#/components/schemas/Product"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -42423,10 +42868,16 @@
                   "$ref": "#/components/schemas/Product"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -42486,10 +42937,16 @@
                   "$ref": "#/components/schemas/Invitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -42826,10 +43283,16 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -42892,10 +43355,16 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -42958,10 +43427,16 @@
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -43307,10 +43782,16 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -43376,10 +43857,16 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -43442,10 +43929,16 @@
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -43648,6 +44141,11 @@
             "oauth": [
               "org:manage"
             ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cascade"
           }
         ],
         "responses": {
@@ -44054,10 +44552,16 @@
                   "$ref": "#/components/schemas/GlobalPolicy"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -44693,10 +45197,16 @@
                   "$ref": "#/components/schemas/GlobalPolicy"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -45339,10 +45849,16 @@
                   "$ref": "#/components/schemas/Policy"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -46092,10 +46608,16 @@
                   "$ref": "#/components/schemas/Policy"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -46868,10 +47390,16 @@
                   "$ref": "#/components/schemas/Extension"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -47507,10 +48035,16 @@
                   "$ref": "#/components/schemas/Extension"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -48423,10 +48957,16 @@
                   "$ref": "#/components/schemas/Service"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -50237,10 +50777,16 @@
                   "$ref": "#/components/schemas/Analytics"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -50436,10 +50982,16 @@
                   "$ref": "#/components/schemas/Analytics"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -50901,7 +51453,7 @@
         "security": [
           {
             "oauth": [
-              "org:view"
+              "org:manage"
             ]
           }
         ],
@@ -51227,7 +51779,7 @@
         "security": [
           {
             "oauth": [
-              "org:view"
+              "org:manage"
             ]
           }
         ],
@@ -51500,10 +52052,16 @@
                   "$ref": "#/components/schemas/Space"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -52074,10 +52632,16 @@
                   "$ref": "#/components/schemas/Product"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -52145,10 +52709,16 @@
                   "$ref": "#/components/schemas/Product"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -52211,10 +52781,16 @@
                   "$ref": "#/components/schemas/Invitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -52560,10 +53136,16 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -52629,10 +53211,16 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -52867,10 +53455,16 @@
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -53225,10 +53819,16 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -53297,10 +53897,16 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -53366,10 +53972,16 @@
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -53575,6 +54187,11 @@
             "oauth": [
               "org:manage"
             ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cascade"
           }
         ],
         "responses": {
@@ -54409,10 +55026,16 @@
                   "$ref": "#/components/schemas/Invitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -54758,10 +55381,16 @@
                   "$ref": "#/components/schemas/Invitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -55110,10 +55739,16 @@
                   "$ref": "#/components/schemas/ConsumerOrg"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -55472,10 +56107,16 @@
                   "$ref": "#/components/schemas/ConsumerOrg"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -55837,10 +56478,16 @@
                   "$ref": "#/components/schemas/Group"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -56123,10 +56770,16 @@
                   "$ref": "#/components/schemas/Group"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -56412,10 +57065,16 @@
                   "$ref": "#/components/schemas/PaymentMethod"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -56675,10 +57334,16 @@
                   "$ref": "#/components/schemas/PaymentMethod"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -57426,10 +58091,16 @@
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -57784,10 +58455,16 @@
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -58145,10 +58822,16 @@
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -58437,10 +59120,16 @@
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -58729,10 +59418,16 @@
                   "$ref": "#/components/schemas/App"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -59021,10 +59716,16 @@
                   "$ref": "#/components/schemas/App"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -59316,10 +60017,16 @@
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -59764,10 +60471,16 @@
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -60250,10 +60963,16 @@
                   "$ref": "#/components/schemas/Subscription"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -60554,10 +61273,16 @@
                   "$ref": "#/components/schemas/Subscription"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -60995,10 +61720,16 @@
                   "$ref": "#/components/schemas/DraftProduct"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -61559,6 +62290,83 @@
         ]
       }
     },
+    "/orgs/{org}/drafts/draft-products/validate": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Validate the draft product object",
+        "description": "Validate the draft product object",
+        "operationId": "draft_product_validateObject",
+        "security": [
+          {
+            "oauth": [
+              "product-drafts:edit"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DraftProduct"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DraftProduct"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/scope"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name"
+          },
+          {
+            "$ref": "#/components/parameters/space_name"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_names"
+          },
+          {
+            "$ref": "#/components/parameters/validate_apis"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationResults"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationResults"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Drafts",
+          "Resource: Draft Product by Id"
+        ]
+      }
+    },
     "/orgs/{org}/drafts/draft-products/{draft-product-id}/document": {
       "parameters": [
         {
@@ -61722,10 +62530,16 @@
                   "$ref": "#/components/schemas/DraftAPI"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -62297,6 +63111,80 @@
                 }
               }
             }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Drafts",
+          "Resource: Draft API by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/drafts/draft-apis/validate": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Validate the draft api object",
+        "description": "Validate the draft api object",
+        "operationId": "draft_api_validateObject",
+        "security": [
+          {
+            "oauth": [
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DraftAPI"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DraftAPI"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/scope"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name"
+          },
+          {
+            "$ref": "#/components/parameters/space_name"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_names"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationResults"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationResults"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -67537,6 +68425,15 @@
           "type": "string"
         }
       },
+      "catalog_name": {
+        "name": "catalog_name",
+        "in": "query",
+        "description": "Name of a catalog",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "catalog_url": {
         "name": "catalog_url",
         "in": "query",
@@ -67857,6 +68754,15 @@
         "in": "path",
         "description": "Gateway Service name or id",
         "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "gateway_service_names": {
+        "name": "gateway_service_names",
+        "in": "query",
+        "description": "Names of Gateway Services",
+        "required": false,
         "schema": {
           "type": "string"
         }
@@ -68410,6 +69316,15 @@
           "type": "string"
         }
       },
+      "space_name": {
+        "name": "space_name",
+        "in": "query",
+        "description": "Name of a space",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "state": {
         "name": "state",
         "in": "query",
@@ -68579,6 +69494,15 @@
         "required": true,
         "schema": {
           "type": "string"
+        }
+      },
+      "validate_apis": {
+        "name": "validate_apis",
+        "in": "query",
+        "description": "Whether to validate APIs also",
+        "required": false,
+        "schema": {
+          "type": "boolean"
         }
       },
       "webhook": {
@@ -70327,6 +71251,9 @@
           "default_catalog": {
             "type": "boolean"
           },
+          "override_invitation_ttl_for_all_consumer_orgs": {
+            "type": "boolean"
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -70598,6 +71525,13 @@
           "atm_base_path": {
             "type": "string",
             "nullable": true
+          },
+          "temporary_token_format": {
+            "type": "string",
+            "enum": [
+              "jwt",
+              "b64"
+            ]
           },
           "metadata": {
             "type": "object",
@@ -71754,11 +72688,10 @@
                       },
                       "redirect_endpoint": {
                         "type": "string",
-                        "format": "uri",
                         "nullable": true
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -71785,7 +72718,7 @@
                         ]
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -71794,11 +72727,11 @@
                     "additionalProperties": false,
                     "properties": {
                       "application_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint",
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform",
                         "nullable": true
                       },
                       "owner_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint",
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform",
                         "nullable": true
                       }
                     }
@@ -71820,12 +72753,10 @@
                 ]
               },
               "authorize_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "token_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "introspection_endpoint": {
                 "type": "object",
@@ -74042,6 +74973,7 @@
             "type": "string",
             "enum": [
               "ready",
+              "claimed",
               "running",
               "blocked",
               "failed"
@@ -75444,11 +76376,10 @@
                       },
                       "redirect_endpoint": {
                         "type": "string",
-                        "format": "uri",
                         "nullable": true
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -75475,7 +76406,7 @@
                         ]
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -75484,10 +76415,10 @@
                     "additionalProperties": false,
                     "properties": {
                       "application_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       },
                       "owner_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   }
@@ -75508,12 +76439,10 @@
                 ]
               },
               "authorize_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "token_endpoint": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
               },
               "introspection_endpoint": {
                 "type": "object",
@@ -80392,7 +81321,10 @@
             "type": "string"
           },
           "x5c": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "kty": {
             "type": "string"
@@ -81892,6 +82824,83 @@
           }
         }
       },
+      "Visibility": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "view",
+          "subscribe"
+        ],
+        "properties": {
+          "view": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "public",
+                  "authenticated",
+                  "custom"
+                ]
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "tags": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "orgs": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "subscribe": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "authenticated",
+                  "custom"
+                ]
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "tags": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "orgs": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
       "PrivateKeyEntry": {
         "type": "object",
         "additionalProperties": false,
@@ -82208,6 +83217,24 @@
           }
         }
       },
+      "SecuredEndpointWithoutEndpointTransform": {
+        "type": "object",
+        "additionalProperties": false,
+        "nullable": true,
+        "required": [
+          "endpoint"
+        ],
+        "properties": {
+          "endpoint": {
+            "type": "string"
+          },
+          "tls_client_profile_url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          }
+        }
+      },
       "IntrospectWsdlMultipart": {
         "type": "object",
         "properties": {
@@ -82259,6 +83286,9 @@
             "items": {
               "$ref": "#/components/schemas/ProductDefinition"
             }
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/Visibility"
           },
           "openapi": {
             "type": "array",
@@ -82337,6 +83367,9 @@
           "draft_product_url": {
             "type": "string",
             "format": "uri"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/Visibility"
           }
         }
       },
@@ -82959,7 +83992,7 @@
         "type": "oauth2",
         "flows": {
           "implicit": {
-            "authorizationUrl": "/api/oauth2/authorize",
+            "authorizationUrl": "/oauth2/authorize",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -82989,8 +84022,8 @@
             }
           },
           "password": {
-            "tokenUrl": "/api/token",
-            "refreshUrl": "/api/token",
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -83020,7 +84053,7 @@
             }
           },
           "clientCredentials": {
-            "tokenUrl": "/api/token",
+            "tokenUrl": "/token",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -83050,9 +84083,9 @@
             }
           },
           "authorizationCode": {
-            "authorizationUrl": "/api/oauth2/authorize",
-            "tokenUrl": "/api/token",
-            "refreshUrl": "/api/token",
+            "authorizationUrl": "/oauth2/authorize",
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
             "scopes": {
               "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
@@ -83440,12 +84473,21 @@
                   "$ref": "#/components/schemas/Org"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
+          },
+          "202": {
+            "description": "Success"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -84207,10 +85249,16 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -84270,10 +85318,16 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -84333,10 +85387,16 @@
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -84623,10 +85683,16 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -84689,10 +85755,16 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -85015,51 +86087,6 @@
         ]
       }
     },
-    "/request-password-reset-noemail": {
-      "post": {
-        "summary": "Send reset password link to consumer",
-        "description": "Send reset password link to consumer",
-        "operationId": "user_requestPasswordResetNoEmail",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RequestPasswordReset"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/RequestPasswordReset"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RequestPasswordResetNoEmail"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/RequestPasswordResetNoEmail"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "User Management",
-          "Resource: User"
-        ]
-      }
-    },
     "/consumer/identity-providers": {
       "get": {
         "summary": "List Identity Providers in the consumer realm",
@@ -85255,10 +86282,16 @@
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -86941,10 +87974,16 @@
                   "$ref": "#/components/schemas/App"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -87306,10 +88345,16 @@
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -87577,10 +88622,16 @@
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -87631,10 +88682,16 @@
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -87699,10 +88756,16 @@
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -87765,10 +88828,16 @@
                   "$ref": "#/components/schemas/Subscription"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -88144,10 +89213,16 @@
                   "$ref": "#/components/schemas/PaymentMethod"
                 }
               }
-            },
+            }
+          },
+          "302": {
+            "description": "Redirect response",
             "headers": {
               "Location": {
-                "$ref": "#/components/headers/Location"
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -89028,29 +90103,6 @@
                     "type": "string"
                   }
                 }
-              }
-            }
-          },
-          "wsdl": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": [
-              "content_type",
-              "content"
-            ],
-            "properties": {
-              "content_type": {
-                "type": "string",
-                "enum": [
-                  "application/wsdl",
-                  "application/wsdl+xml",
-                  "text/xml",
-                  "application/zip"
-                ]
-              },
-              "content": {
-                "type": "string",
-                "format": "binary"
               }
             }
           },
@@ -91181,18 +92233,6 @@
           }
         }
       },
-      "RequestPasswordResetNoEmail": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "reset_link": {
-            "type": "string"
-          },
-          "language": {
-            "type": "string"
-          }
-        }
-      },
       "Regenerate": {
         "type": "object",
         "additionalProperties": false,
@@ -91845,8 +92885,8 @@
         "type": "oauth2",
         "flows": {
           "password": {
-            "tokenUrl": "/consumer-api/token",
-            "refreshUrl": "/api/token",
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
             "scopes": {
               "app:manage": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Clear the Application Credential objects, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
@@ -91857,9 +92897,9 @@
             }
           },
           "authorizationCode": {
-            "authorizationUrl": "/consumer-api/oauth2/authorize",
-            "tokenUrl": "/consumer-api/token",
-            "refreshUrl": "/api/token",
+            "authorizationUrl": "/oauth2/authorize",
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
             "scopes": {
               "app:manage": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Clear the Application Credential objects, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
@@ -92551,7 +93591,7 @@
             "value": "now-7d"
           },
           "iso": {
-            "value": "2020-01-01T00:00:00"
+            "value": "2020-01-01T00:00:00Z"
           },
           "epoch_millis": {
             "value": 1577836800000
@@ -92571,7 +93611,7 @@
             "value": "now-6M"
           },
           "iso": {
-            "value": "2018-01-01T00:00:00"
+            "value": "2018-01-01T00:00:00Z"
           },
           "epoch_millis": {
             "value": 1514764800000
@@ -92965,7 +94005,7 @@
                 "$ref": "#/components/schemas/Before"
               }
             ],
-            "example": "2020-01-01T00:00:00"
+            "example": "2020-01-01T00:00:00Z"
           },
           "after": {
             "allOf": [
@@ -94958,6 +95998,830 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/custom-translation/export": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Create a task that exports an archive that contains the custom translation of a site.",
+        "description": "You can create a task to export an archive of the custom translation of a site. You can then use that archive to quickly and simply override the custom translations on another site.",
+        "operationId": "custom_translation_createExport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=translation-apic-custom-translationcreate-export"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/langcodes"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful create of the task",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Task already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomTranslation"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/custom-translation/export/{task_id}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "get": {
+        "summary": "When ready, streams a custom translation export artifact.",
+        "description": "When ready, streams a custom translation export artifact back to the related task id that is provided in the arguments.",
+        "operationId": "custom_translation_getExport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=translation-apic-custom-translationget-export"
+        },
+        "responses": {
+          "200": {
+            "description": "The export artifact stream.",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "This task and its related artifact could not be found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "The task is not an export operation and therefore an artifact cannot be streamed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "425": {
+            "description": "The artifact related to this task is still being processed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomTranslation"
+        ]
+      },
+      "delete": {
+        "summary": "If running, cancels a custom translation export task.",
+        "description": "If running, cancels the custom translation export task and deletes any related artifacts that have been generated.",
+        "operationId": "custom_translation_deleteExport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=translation-apic-custom-translationdelete-export"
+        },
+        "responses": {
+          "204": {
+            "description": "The task has been cancelled and it's artifacts deleted."
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomTranslation"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/custom-translation/export/{task_id}/status": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "get": {
+        "summary": "Returns information about the status of this task.",
+        "description": "Returns information related to the task id that is provided in the arguments.",
+        "operationId": "custom_translation_getExportStatus",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=translation-apic-custom-translationget-export-status"
+        },
+        "responses": {
+          "200": {
+            "description": "Task is ready to be obtained",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Waiting on task to finish.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "The task and its artifacts have expired.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomTranslation"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/custom-translation/import": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Create a task that imports an archive that contains the custom translations of a site.",
+        "description": "You can create a task to import an archive of the custom translations of a site. You can use the imported archive to quickly and simply override the custom translations for the specified site.",
+        "operationId": "custom_translation_createImport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=translation-apic-custom-translationcreate-import"
+        },
+        "requestBody": {
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful create of the task",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Task already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomTranslation"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/custom-translation/import/{task_id}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "delete": {
+        "summary": "If running, cancels a custom translation import task.",
+        "description": "If running, cancels the custom translation import task and deletes any related artifacts that have been generated.",
+        "operationId": "custom_translation_deleteImport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=translation-apic-custom-translationdelete-import"
+        },
+        "responses": {
+          "204": {
+            "description": "The task has been cancelled and it's artifacts deleted."
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomTranslation"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/custom-translation/import/{task_id}/status": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "get": {
+        "summary": "Get the result of the custom translation import task.",
+        "description": "Get the result of the custom translation import task. If the import task has completed on the portal system, this command returns the result of the command. If the import task has not completed on the portal system, it returns the current status of the task.",
+        "operationId": "custom_translation_getImportStatus",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=translation-apic-custom-translationget-import-status"
+        },
+        "responses": {
+          "200": {
+            "description": "Output from portal cli command request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Waiting on task to finish.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "The task and its result have expired.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomTranslation"
+        ]
+      }
+    },
+    "/service/custom-webserver-page": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/portal_service_name"
+        },
+        {
+          "$ref": "#/components/parameters/page_type"
+        }
+      ],
+      "get": {
+        "summary": "Get the HTML for a web server page.",
+        "description": "Get the web server HTML content of a specific web server page (index, 404, 40x, 50x).",
+        "operationId": "custom_webserver_page_get",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=page-apic-custom-webserver-pageget"
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The resource was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomWebserverPage"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the custom HTML for a web server page.",
+        "description": "Delete the custom web server HTML content of a specific web server page (index, 404, 40x, 50x). (Will fallback to a default.)",
+        "operationId": "custom_webserver_page_delete",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=page-apic-custom-webserver-pagedelete"
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The resource was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomWebserverPage"
+        ]
+      },
+      "post": {
+        "summary": "Set a custom HTML page for a web server page type.",
+        "description": "Set the custom web server HTML content of a specific web server page (index, 404, 40x, 50x). Maximum size of 8 MB.",
+        "operationId": "custom_webserver_page_set",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=page-apic-custom-webserver-pageset"
+        },
+        "requestBody": {
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The resource was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomWebserverPage"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/site/check": {
       "parameters": [
         {
@@ -95195,6 +97059,152 @@
         "tags": [
           "Portal",
           "Resource: Entity"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/forums/disable": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Disable the forum module for a given site",
+        "description": "Removes all forums vocabulary taxonomy terms before disabling the forum module for a given site.",
+        "operationId": "forums_disable",
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=forums-apic-forumsdisable"
+        },
+        "responses": {
+          "200": {
+            "description": "Output from portal cli command request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Forums"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/forums/enable": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Enable the forum module for a given site",
+        "description": "Enables the forum module for a given site.",
+        "operationId": "forums_enable",
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=forums-apic-forumsenable"
+        },
+        "responses": {
+          "200": {
+            "description": "Output from portal cli command request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Forums"
         ]
       }
     },
@@ -95607,6 +97617,247 @@
         "tags": [
           "Portal",
           "Resource: DrupalConfig"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/drupal-state": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get the State key",
+        "description": "Get the State key value.",
+        "operationId": "drupal_state_get",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=state-apic-drupal-stateget"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/state_key"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The resource was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: DrupalState"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the State key.",
+        "description": "Delete the specific state key.",
+        "operationId": "drupal_state_delete",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=state-apic-drupal-statedelete"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/state_key"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The resource was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: DrupalState"
+        ]
+      },
+      "post": {
+        "summary": "Set a state key value.",
+        "description": "Can set a new state value or update an already existing key-value.",
+        "operationId": "drupal_state_set",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=state-apic-drupal-stateset"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/state_key"
+          },
+          {
+            "$ref": "#/components/parameters/state_value"
+          },
+          {
+            "$ref": "#/components/parameters/input_format"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The resource was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: DrupalState"
         ]
       }
     },
@@ -96687,6 +98938,86 @@
         ]
       }
     },
+    "/service/factory-reset": {
+      "delete": {
+        "summary": "Factory resets the Developer Portal.",
+        "description": "Performs a factory reset of the Developer Portal, deleting the portal service and all portal sites. This command is irreversible - please ensure you have backups configured.",
+        "operationId": "factory_reset_singletonDel",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=reset-apic-service-factory-resetdelete"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/portal_service_endpoint"
+          },
+          {
+            "$ref": "#/components/parameters/execute_reset"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Output from portal cli command request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: FactoryReset"
+        ]
+      }
+    },
     "/service/ip-security-enabled": {
       "post": {
         "summary": "Enable or disable IP security functionality within the Developer Portal",
@@ -97086,8 +99417,8 @@
     },
     "/service/ip-allowlist": {
       "delete": {
-        "summary": "Remove all IPs the allowlist.",
-        "description": "Remove all IPs from the allowlist",
+        "summary": "Remove all IPs from the allowlist.",
+        "description": "Remove all IPs from the allowlist.",
         "operationId": "ip_allowlist_singletonDel",
         "security": [
           {
@@ -97358,13 +99689,7 @@
         },
         "parameters": [
           {
-            "$ref": "#/components/parameters/extensions"
-          },
-          {
-            "$ref": "#/components/parameters/resolve-dependencies"
-          },
-          {
-            "$ref": "#/components/parameters/skip"
+            "$ref": "#/components/parameters/modules"
           }
         ],
         "responses": {
@@ -97517,9 +99842,9 @@
           "$ref": "#/components/parameters/catalog"
         }
       ],
-      "post": {
+      "delete": {
         "summary": "Deletes one or more modules.",
-        "description": "Deletes one or more modules. The provided list of modules must be comma separated.",
+        "description": "Deletes one or more modules. The provided list of modules must be comma separated. Running this command with the force option will make sure the Drupal table's are purged of any reference to the module.",
         "operationId": "modules_delete",
         "security": [
           {
@@ -97535,6 +99860,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/modules"
+          },
+          {
+            "$ref": "#/components/parameters/force"
           }
         ],
         "responses": {
@@ -97946,7 +100274,7 @@
           "$ref": "#/components/parameters/catalog"
         }
       ],
-      "post": {
+      "delete": {
         "summary": "Deletes one or more themes.",
         "description": "Deletes one or more themes. The provided list of themes must be comma separated.",
         "operationId": "themes_delete",
@@ -98431,13 +100759,40 @@
           "type": "boolean"
         }
       },
-      "extensions": {
-        "name": "extensions",
+      "execute_reset": {
+        "name": "execute_reset",
         "in": "query",
-        "description": "A list of a single extension type (Module or Theme). You can use the * wildcard at the end of extension names to disable multiple matches.",
-        "required": true,
+        "description": "set to true to trigger the Developer Portal reset",
+        "required": false,
         "schema": {
           "type": "string"
+        }
+      },
+      "force": {
+        "name": "force",
+        "in": "query",
+        "description": "Provides the force flag to the subsequent command. The force action is dependent on the command. Please read the command description.",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "langcodes": {
+        "name": "langcodes",
+        "in": "query",
+        "description": "A comma separated list of language codes e.g. \"es,zh-hans\"",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "input_format": {
+        "name": "input_format",
+        "in": "query",
+        "description": "The input format of the value for the state key. Values: string, integer, float, boolean, json, yaml. [default: auto]",
+        "required": false,
+        "schema": {
+          "$ref": "#/components/schemas/InputFormat"
         }
       },
       "ip_security_enabled": {
@@ -98483,6 +100838,15 @@
         "required": true,
         "schema": {
           "type": "string"
+        }
+      },
+      "page_type": {
+        "name": "page_type",
+        "in": "query",
+        "description": "The page type you want to run this command against. Values: index, 404, 40x, 50x",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/PageType"
         }
       },
       "product": {
@@ -98539,13 +100903,32 @@
           "type": "string"
         }
       },
-      "skip": {
-        "name": "skip",
+      "portal_service_endpoint": {
+        "name": "portal_service_endpoint",
         "in": "query",
-        "description": "Skip automatic downloading of libraries (c.f. devel).",
-        "required": false,
+        "description": "The URL endpoint of the portal service",
+        "required": true,
         "schema": {
-          "type": "boolean"
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "state_key": {
+        "name": "state_key",
+        "in": "query",
+        "description": "The state key, for example \"system.cron_last\".",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "state_value": {
+        "name": "state_value",
+        "in": "query",
+        "description": "The value to assign to the state key.",
+        "required": true,
+        "schema": {
+          "type": "string"
         }
       },
       "status": {
@@ -98555,15 +100938,6 @@
         "required": false,
         "schema": {
           "type": "string"
-        }
-      },
-      "resolve-dependencies": {
-        "name": "resolve-dependencies",
-        "in": "query",
-        "description": "Attempt to download any missing dependencies. At the moment, only works when the module name is the same as the project name.",
-        "required": false,
-        "schema": {
-          "type": "boolean"
         }
       },
       "ips": {
@@ -98577,25 +100951,30 @@
       }
     },
     "schemas": {
-      "IpAllowlist": {
-        "type": "object",
-        "additionalProperties": true
+      "InputFormat": {
+        "name": "InputFormat",
+        "type": "string",
+        "default": "auto",
+        "enum": [
+          "auto",
+          "string",
+          "integer",
+          "float",
+          "boolean",
+          "json",
+          "yaml"
+        ]
       },
-      "Security": {
-        "type": "object",
-        "additionalProperties": true
-      },
-      "SiteConfig": {
-        "type": "object",
-        "additionalProperties": true
-      },
-      "CustomModule": {
-        "type": "object",
-        "additionalProperties": true
-      },
-      "CustomTheme": {
-        "type": "object",
-        "additionalProperties": true
+      "PageType": {
+        "name": "PageType",
+        "type": "string",
+        "default": "index",
+        "enum": [
+          "index",
+          "404",
+          "40x",
+          "50x"
+        ]
       },
       "CliResponse": {
         "x-bhendi-schema": "custom",
@@ -98680,7 +101059,7 @@
   			"name": "introduction",
   			"title": "Introduction",
             "format": "b64html",
-  			"content": "PGFydGljbGUgaWQ9ImludHJvZHVjdGlvbiIgY2xhc3M9InBhZ2UiPgoKICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBpbnRyby1oZWFkZXIiPgogICAgICAgIE9wZW4gQVBJIEV4cGxvcmVyIERvY3VtZW50YXRpb24gdjEwLjAuMS41CiAgICAgIDwvc3Bhbj4KICAgIDwvaDI+CiAgPC9kaXY+CiAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgaW50cm8tY29udGVudCI+CiAgICA8c2VjdGlvbj4KICAgICAgPGgyPkludHJvZHVjdGlvbjwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBwbGF0Zm9ybSBSRVNUIEFQSXMgZG9jdW1lbnRlZCBoZXJlIGZvciBJQk0gQVBJIENvbm5lY3QgdjEwIHByb3ZpZGUgY29tcGxldGUgYWNjZXNzIHRvIHRoZSBjYXBhYmlsaXR5IG9mIHRoZSBwbGF0Zm9ybS4gVGhleSBtYXkgYmUgdXNlZCB0byBhdXRvbWF0ZSBhZG1pbmlzdHJhdGlvbiBvZiB0aGUgcGxhdGZvcm07IGZvciBzY3JpcHRzIGFuZCB0b29scyB0byBzdXBwb3J0IGEgY29udGludW91cyBpbnRlZ3JhdGlvbiBlbnZpcm9ubWVudCBmb3IgQVBJIGRldmVsb3BtZW50IGFuZCBwdWJsaXNoaW5nOyBhbmQgZm9yIG1hbmFnZW1lbnQgb2YgY2F0YWxvZ3Mgb2YgQVBJcyBhbmQgdGhlaXIgc3Vic2NyaWJlcnMuIFRoZSBvcGVyYXRpb25zIHByb3ZpZGVkIGluIHRoZSBSRVNUIEFQSSBhbHNvIGNvcnJlc3BvbmQgZGlyZWN0bHkgd2l0aCBjb21tYW5kcyBpbiB0aGUgdG9vbGtpdCBDTEkuCiAgICAgIDwvcD4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+QVBJczwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBjYXBhYmlsaXR5IG9mIHRoZSBwbGF0Zm9ybSBpcyBjb21wcmlzZWQgb2YgdGhyZWUgQVBJcyB3aGljaCBhcmUgb3JpZW50ZWQgYXQgZGlmZmVyZW50IHNldHMgb2YgdXNlIGNhc2VzOgogICAgICA8L3A+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItYXBpcyI+PC9kaXY+CiAgICA8L3NlY3Rpb24+CiAgPC9kaXY+CjwvYXJ0aWNsZT4K"
+  			"content": "PGFydGljbGUgaWQ9ImludHJvZHVjdGlvbiIgY2xhc3M9InBhZ2UiPgoKICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBpbnRyby1oZWFkZXIiPgogICAgICAgIE9wZW4gQVBJIEV4cGxvcmVyIERvY3VtZW50YXRpb24gdjEwLjAuMS4xMgogICAgICA8L3NwYW4+CiAgICA8L2gyPgogIDwvZGl2PgogIDxkaXYgY2xhc3M9ImFwaWMtZXhwbG9yZXItZG9jcGFnZV9jb250ZW50IGludHJvLWNvbnRlbnQiPgogICAgPHNlY3Rpb24+CiAgICAgIDxoMj5JbnRyb2R1Y3Rpb248L2gyPgogICAgICA8cD4KICAgICAgICBUaGUgcGxhdGZvcm0gUkVTVCBBUElzIGRvY3VtZW50ZWQgaGVyZSBmb3IgSUJNIEFQSSBDb25uZWN0IHYxMCBwcm92aWRlIGNvbXBsZXRlIGFjY2VzcyB0byB0aGUgY2FwYWJpbGl0eSBvZiB0aGUgcGxhdGZvcm0uIFRoZXkgbWF5IGJlIHVzZWQgdG8gYXV0b21hdGUgYWRtaW5pc3RyYXRpb24gb2YgdGhlIHBsYXRmb3JtOyBmb3Igc2NyaXB0cyBhbmQgdG9vbHMgdG8gc3VwcG9ydCBhIGNvbnRpbnVvdXMgaW50ZWdyYXRpb24gZW52aXJvbm1lbnQgZm9yIEFQSSBkZXZlbG9wbWVudCBhbmQgcHVibGlzaGluZzsgYW5kIGZvciBtYW5hZ2VtZW50IG9mIGNhdGFsb2dzIG9mIEFQSXMgYW5kIHRoZWlyIHN1YnNjcmliZXJzLiBUaGUgb3BlcmF0aW9ucyBwcm92aWRlZCBpbiB0aGUgUkVTVCBBUEkgYWxzbyBjb3JyZXNwb25kIGRpcmVjdGx5IHdpdGggY29tbWFuZHMgaW4gdGhlIHRvb2xraXQgQ0xJLgogICAgICA8L3A+CiAgICA8L3NlY3Rpb24+CiAgICA8c2VjdGlvbj4KICAgICAgPGgyPkFQSXM8L2gyPgogICAgICA8cD4KICAgICAgICBUaGUgY2FwYWJpbGl0eSBvZiB0aGUgcGxhdGZvcm0gaXMgY29tcHJpc2VkIG9mIHRocmVlIEFQSXMgd2hpY2ggYXJlIG9yaWVudGVkIGF0IGRpZmZlcmVudCBzZXRzIG9mIHVzZSBjYXNlczoKICAgICAgPC9wPgogICAgICA8ZGl2IGNsYXNzPSJzaG93LWV4cGxvcmVyLWFwaXMiPjwvZGl2PgogICAgPC9zZWN0aW9uPgogIDwvZGl2Pgo8L2FydGljbGU+Cg=="
   		},
   		{
   			"name": "concepts",
