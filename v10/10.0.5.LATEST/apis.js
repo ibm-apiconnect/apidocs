@@ -110332,7 +110332,7 @@
           "$ref": "#/components/parameters/analytics-service"
         },
         {
-          "$ref": "#/components/parameters/ignore_unavailable_snapshot_optional"
+          "$ref": "#/components/parameters/ignore_unavailable_optional"
         }
       ],
       "get": {
@@ -110415,7 +110415,7 @@
           "$ref": "#/components/parameters/repository"
         },
         {
-          "$ref": "#/components/parameters/ignore_unavailable_snapshot_optional"
+          "$ref": "#/components/parameters/ignore_unavailable_optional"
         }
       ],
       "get": {
@@ -110467,7 +110467,7 @@
             "$ref": "#/components/parameters/verbose_optional"
           },
           {
-            "$ref": "#/components/parameters/ignore_unavailable_snapshot_optional"
+            "$ref": "#/components/parameters/ignore_unavailable_optional"
           }
         ],
         "security": [
@@ -110533,7 +110533,7 @@
           "$ref": "#/components/parameters/repository"
         },
         {
-          "$ref": "#/components/parameters/ignore_unavailable_snapshot_optional"
+          "$ref": "#/components/parameters/ignore_unavailable_optional"
         }
       ],
       "get": {
@@ -112458,16 +112458,7 @@
       "ignore_unavailable_optional": {
         "name": "ignore_unavailable",
         "in": "query",
-        "description": "If true, unavailable indices (missing or closed) will be ignored.",
-        "required": false,
-        "schema": {
-          "type": "boolean"
-        }
-      },
-      "ignore_unavailable_snapshot_optional": {
-        "name": "ignore_unavailable",
-        "in": "query",
-        "description": "How to handle snapshots that are unavailable (corrupted or otherwise temporarily can’t be returned). If true and the snapshot is unavailable, the request does not return the snapshot. If false and the snapshot is unavailable, the request returns an error. Defaults to false.\n",
+        "description": "For operations about indices, if true, unavailable indices (missing or closed) will be ignored. For operations about snapshots, if true, unavailable snapshots (corrupted or otherwise temporarily can’t be returned) will be ignored. Defaults to false.\n",
         "required": false,
         "schema": {
           "type": "boolean"
@@ -114037,6 +114028,14 @@
           "task": {
             "type": "string",
             "description": "The type of policy"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the policy (optional)"
+          },
+          "title": {
+            "type": "string",
+            "description": "The title of the policy (optional)"
           }
         }
       },
