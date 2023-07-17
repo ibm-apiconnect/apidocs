@@ -15,7 +15,7 @@
       headerActive: true,
       groupByTags: true,
       validateSwagger: false,
-      explorerDir: "/../",
+      explorerDir: "/../app/",
       routerType: "hash",
       versions: {
         "2018.4.1.11": "2018.4.1.11.html",
