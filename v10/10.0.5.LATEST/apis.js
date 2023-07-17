@@ -36,7 +36,9 @@
         "10.0.5.1": "10.0.5.1.html",
         "10.0.5.2": "10.0.5.2.html",
         "10.0.5.3": "10.0.5.3.html",
+        "10.0.5.4": "10.0.5.4.html",
         "10.0.5.LATEST": "10.0.5.LATEST.html",
+        "10.0.6.0": "10.0.6.0.html",
         "10.0.LATEST": "10.0.LATEST.html",
       }
     },
@@ -100,9 +102,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -152,9 +151,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -212,21 +208,12 @@
                   "$ref": "#/components/schemas/UserRegistry"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -275,9 +262,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -306,9 +290,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -362,9 +343,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -415,9 +393,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -453,9 +428,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -507,9 +479,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -574,9 +543,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -639,9 +605,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -687,8 +650,20 @@
           "204": {
             "description": "Success"
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -758,9 +733,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -820,21 +792,12 @@
                   "$ref": "#/components/schemas/User"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -883,9 +846,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -914,9 +874,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -973,9 +930,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -1026,9 +980,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -1065,9 +1016,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -1100,9 +1048,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -1154,9 +1099,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -1218,9 +1160,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -1281,9 +1220,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -1326,9 +1262,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -1370,9 +1303,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -1419,9 +1349,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -1463,9 +1390,6 @@
         "responses": {
           "302": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -1515,9 +1439,6 @@
         "responses": {
           "302": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -1570,9 +1491,6 @@
           "302": {
             "description": "Success"
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -1617,9 +1535,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -1631,7 +1546,7 @@
       },
       "put": {
         "summary": "Update the Cloud Setting object",
-        "description": "Update the Cloud Setting object\nFields not allowed to be null:\\ - email_sender - tls_client_profile_default_url\nFields not allowed:\\ - service_type - cloud_id - ibm_cloud\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Cloud Setting object\nFields not allowed to be null:\\ - email_sender - tls_client_profile_default_url\nFields not allowed:\\ - service_type - cloud_id\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url",
         "operationId": "cloud_setting_singletonUpdate",
         "security": [
           {
@@ -1669,9 +1584,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -1713,8 +1625,20 @@
           "204": {
             "description": "Success"
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TestConnectionFailedResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/TestConnectionFailedResponse"
+                }
+              }
+            }
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -1747,8 +1671,20 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -1788,8 +1724,20 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -1829,9 +1777,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -1862,9 +1807,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -1904,9 +1846,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -1945,9 +1884,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -1978,9 +1914,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -2025,9 +1958,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -2079,9 +2009,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -2125,9 +2052,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -2179,9 +2103,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -2231,9 +2152,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -2285,9 +2203,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -2336,9 +2251,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -2390,9 +2302,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -2435,9 +2344,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -2485,9 +2391,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -2504,7 +2407,7 @@
         "security": [
           {
             "oauth": [
-              "cloud:manage"
+              "cloud:view"
             ]
           }
         ],
@@ -2537,9 +2440,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -2591,9 +2491,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -2642,9 +2539,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -2696,9 +2590,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -2741,9 +2632,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -2791,9 +2679,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -2810,7 +2695,7 @@
         "security": [
           {
             "oauth": [
-              "cloud:manage"
+              "cloud:view"
             ]
           }
         ],
@@ -2843,9 +2728,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -2897,9 +2779,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -2948,9 +2827,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -3002,9 +2878,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -3047,9 +2920,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -3097,9 +2967,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -3116,7 +2983,7 @@
         "security": [
           {
             "oauth": [
-              "cloud:manage"
+              "cloud:view"
             ]
           }
         ],
@@ -3149,9 +3016,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -3203,9 +3067,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -3254,9 +3115,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -3308,9 +3166,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -3353,9 +3208,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -3403,9 +3255,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -3422,7 +3271,7 @@
         "security": [
           {
             "oauth": [
-              "cloud:manage"
+              "cloud:view"
             ]
           }
         ],
@@ -3455,9 +3304,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -3509,9 +3355,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -3560,9 +3403,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -3614,9 +3454,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -3659,9 +3496,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -3709,9 +3543,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -3728,7 +3559,7 @@
         "security": [
           {
             "oauth": [
-              "cloud:manage"
+              "cloud:view"
             ]
           }
         ],
@@ -3761,9 +3592,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -3815,9 +3643,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -3866,9 +3691,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -3920,9 +3742,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -3965,9 +3784,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -4015,9 +3831,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -4034,7 +3847,7 @@
         "security": [
           {
             "oauth": [
-              "cloud:manage"
+              "cloud:view"
             ]
           }
         ],
@@ -4067,9 +3880,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -4120,9 +3930,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -4175,21 +3982,12 @@
                   "$ref": "#/components/schemas/RoleDefault"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -4238,9 +4036,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -4269,9 +4064,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -4321,9 +4113,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -4375,9 +4164,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -4413,9 +4199,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -4467,9 +4250,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -4518,9 +4298,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -4571,9 +4348,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -4626,21 +4400,12 @@
                   "$ref": "#/components/schemas/Integration"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -4689,9 +4454,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -4720,9 +4482,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -4772,9 +4531,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -4826,9 +4582,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -4864,9 +4617,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -4919,21 +4669,12 @@
                   "$ref": "#/components/schemas/Integration"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -4982,9 +4723,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -5013,9 +4751,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -5065,9 +4800,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -5119,9 +4851,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -5157,9 +4886,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -5212,21 +4938,12 @@
                   "$ref": "#/components/schemas/Integration"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -5275,9 +4992,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -5306,9 +5020,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -5358,9 +5069,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -5412,9 +5120,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -5450,9 +5155,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -5505,21 +5207,12 @@
                   "$ref": "#/components/schemas/Integration"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -5568,9 +5261,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -5599,9 +5289,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -5651,9 +5338,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -5705,9 +5389,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -5743,9 +5424,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -5798,21 +5476,12 @@
                   "$ref": "#/components/schemas/Registration"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -5861,9 +5530,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -5892,9 +5558,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -5944,9 +5607,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -5998,9 +5658,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -6036,9 +5693,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -6091,21 +5745,12 @@
                   "$ref": "#/components/schemas/APIKey"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -6153,9 +5798,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -6206,9 +5848,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -6244,9 +5883,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -6297,9 +5933,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -6349,9 +5982,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -6408,9 +6038,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -6466,9 +6093,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -6521,9 +6145,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -6574,9 +6195,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -6622,9 +6240,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -6675,9 +6290,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -6694,7 +6306,7 @@
         "security": [
           {
             "oauth": [
-              "org:manage"
+              "org:view"
             ]
           }
         ],
@@ -6727,9 +6339,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -6779,9 +6388,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -6833,9 +6439,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -6871,9 +6474,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -6940,9 +6540,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -7008,9 +6605,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -7066,9 +6660,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -7120,9 +6711,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -7180,21 +6768,12 @@
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -7243,9 +6822,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -7274,9 +6850,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -7330,9 +6903,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -7383,9 +6953,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -7421,9 +6988,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -7485,9 +7049,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -7547,21 +7108,12 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -7622,21 +7174,12 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -7694,21 +7237,12 @@
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -7757,9 +7291,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -7788,9 +7319,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -7844,9 +7372,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -7897,9 +7422,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -7920,11 +7442,6 @@
             ]
           }
         ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/cascade"
-          }
-        ],
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -7940,9 +7457,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -7987,9 +7501,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -8033,9 +7544,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -8077,9 +7585,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -8124,9 +7629,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -8168,9 +7670,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -8215,9 +7714,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -8259,9 +7755,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -8306,9 +7799,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -8350,9 +7840,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -8397,9 +7884,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -8441,9 +7925,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -8501,21 +7982,12 @@
                   "$ref": "#/components/schemas/Role"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -8564,9 +8036,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -8595,9 +8064,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -8651,9 +8117,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -8704,9 +8167,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -8742,9 +8202,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -8802,21 +8259,12 @@
                   "$ref": "#/components/schemas/AvailabilityZone"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -8865,9 +8313,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -8896,9 +8341,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -8952,9 +8394,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -9005,9 +8444,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -9043,9 +8479,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -9106,21 +8539,12 @@
                   "$ref": "#/components/schemas/GatewayService"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -9169,9 +8593,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -9200,9 +8621,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -9259,9 +8677,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -9273,7 +8688,7 @@
       },
       "patch": {
         "summary": "Update the Gateway Service object by name or id",
-        "description": "Update the Gateway Service object by name or id\nFields not allowed to be null:\\ - endpoint - api_endpoint_base - sni\nFields not allowed:\\ - owned - endpoint - integration_url - gateway_service_type - api_endpoint_base\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - availability_zone_url",
+        "description": "Update the Gateway Service object by name or id\nFields not allowed to be null:\\ - endpoint - api_endpoint_base - sni\nFields not allowed:\\ - owned - endpoint - integration_url - gateway_service_type\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - availability_zone_url",
         "operationId": "gateway_service_update",
         "security": [
           {
@@ -9312,9 +8727,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -9350,9 +8762,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -9402,52 +8811,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Resources",
-          "Resource: Gateway Service"
-        ]
-      }
-    },
-    "/orgs/{org}/availability-zones/{availability-zone}/gateway-services/{gateway-service}/download-logs": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/availability-zone"
-        },
-        {
-          "$ref": "#/components/parameters/gateway-service"
-        }
-      ],
-      "get": {
-        "summary": "Get the Gateway Service download logs",
-        "description": "Get the Gateway Service download logs",
-        "operationId": "gateway_service_downloadLogs",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/octet-stream": {}
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -9509,9 +8872,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -9577,9 +8937,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -9637,9 +8994,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -9702,9 +9056,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -9756,9 +9107,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -9814,9 +9162,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -9878,9 +9223,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -9946,9 +9288,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -10006,9 +9345,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -10071,9 +9407,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -10125,9 +9458,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -10183,9 +9513,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -10246,9 +9573,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -10289,9 +9613,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -10348,9 +9669,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -10386,9 +9704,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -10439,9 +9754,6 @@
               },
               "application/zip": {}
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -10502,21 +9814,12 @@
                   "$ref": "#/components/schemas/PortalService"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -10565,9 +9868,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -10591,17 +9891,11 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
-          },
-          {
-            "$ref": "#/components/parameters/force"
           }
         ],
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -10658,9 +9952,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -10711,9 +10002,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -10734,11 +10022,6 @@
             ]
           }
         ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/force"
-          }
-        ],
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -10754,9 +10037,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -10807,9 +10087,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -10832,7 +10109,7 @@
       ],
       "post": {
         "summary": "Create a Analytics Service object",
-        "description": "Create a Analytics Service object\nFields not allowed:\\ - gateway_service_urls - ingestion_endpoint - client_endpoint\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - availability_zone_url",
+        "description": "Create a Analytics Service object\nRequired fields:\\ - endpoint\nFields not allowed:\\ - gateway_service_urls - ingestion_endpoint - client_endpoint\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - availability_zone_url",
         "operationId": "analytics_service_create",
         "security": [
           {
@@ -10869,21 +10146,12 @@
                   "$ref": "#/components/schemas/AnalyticsService"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -10932,9 +10200,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -10963,9 +10228,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -11022,9 +10284,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -11075,9 +10334,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -11113,9 +10369,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -11173,21 +10426,12 @@
                   "$ref": "#/components/schemas/OauthProvider"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -11236,9 +10480,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -11267,9 +10508,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -11323,9 +10561,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -11376,9 +10611,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -11414,9 +10646,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -11474,21 +10703,12 @@
                   "$ref": "#/components/schemas/MailServer"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -11537,9 +10757,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -11568,9 +10785,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -11624,9 +10838,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -11677,9 +10888,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -11715,9 +10923,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -11764,11 +10969,20 @@
           }
         },
         "responses": {
-          "204": {
-            "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MailServerTestConnectionResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/MailServerTestConnectionResponse"
+                }
+              }
+            }
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -11812,11 +11026,20 @@
           }
         },
         "responses": {
-          "204": {
-            "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MailServerTestConnectionResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/MailServerTestConnectionResponse"
+                }
+              }
+            }
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -11874,21 +11097,12 @@
                   "$ref": "#/components/schemas/TLSServerProfile"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -11937,9 +11151,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -11971,9 +11182,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -12033,9 +11241,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -12067,9 +11272,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -12123,9 +11325,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -12176,9 +11375,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -12219,9 +11415,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -12278,9 +11471,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -12331,9 +11521,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -12369,9 +11556,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -12429,21 +11613,12 @@
                   "$ref": "#/components/schemas/TLSClientProfile"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -12492,9 +11667,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -12526,9 +11698,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -12588,9 +11757,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -12619,9 +11785,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -12675,9 +11838,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -12728,9 +11888,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -12766,9 +11923,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -12825,9 +11979,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -12878,9 +12029,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -12916,9 +12064,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -12976,21 +12121,12 @@
                   "$ref": "#/components/schemas/Keystore"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -13039,9 +12175,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -13070,9 +12203,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -13126,9 +12256,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -13179,9 +12306,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -13217,9 +12341,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -13277,21 +12398,12 @@
                   "$ref": "#/components/schemas/Truststore"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -13340,9 +12452,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -13371,9 +12480,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -13427,9 +12533,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -13480,9 +12583,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -13518,9 +12618,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -13581,21 +12678,12 @@
                   "$ref": "#/components/schemas/Entry"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -13644,9 +12732,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -13675,9 +12760,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -13734,9 +12816,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -13787,9 +12866,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -13825,9 +12901,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -13880,21 +12953,12 @@
                   "$ref": "#/components/schemas/Invitation"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -13943,9 +13007,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -13974,9 +13035,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -14026,9 +13084,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -14080,9 +13135,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -14118,9 +13170,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -14179,9 +13228,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -14238,21 +13284,12 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -14310,21 +13347,12 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -14377,21 +13405,12 @@
                   "$ref": "#/components/schemas/Org"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -14425,9 +13444,6 @@
           },
           {
             "$ref": "#/components/parameters/org_type"
-          },
-          {
-            "$ref": "#/components/parameters/expand"
           }
         ],
         "responses": {
@@ -14445,9 +13461,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -14477,9 +13490,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -14532,21 +13542,12 @@
                   "$ref": "#/components/schemas/Group"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -14595,9 +13596,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -14626,9 +13624,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -14678,9 +13673,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -14732,9 +13724,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -14770,9 +13759,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -14820,9 +13806,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -14874,9 +13857,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -14912,9 +13892,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -14956,9 +13933,6 @@
           "204": {
             "description": "Success"
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -14992,9 +13966,6 @@
           "204": {
             "description": "Success"
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -15023,9 +13994,6 @@
           },
           "302": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -15077,9 +14045,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -15129,9 +14094,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -15184,9 +14146,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -15236,9 +14195,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -15290,9 +14246,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -15347,9 +14300,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -15398,9 +14348,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -15466,9 +14413,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -15526,9 +14470,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -15594,9 +14535,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -15654,9 +14592,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -15716,9 +14651,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -15770,9 +14702,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -15842,9 +14771,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -15906,9 +14832,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -15965,8 +14888,20 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -16080,15 +15015,6 @@
           "type": "string"
         }
       },
-      "base_path": {
-        "name": "base_path",
-        "in": "query",
-        "description": "Base path of the API",
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
       "capture-id": {
         "name": "capture-id",
         "in": "path",
@@ -16197,15 +15123,6 @@
           "type": "string"
         }
       },
-      "enforced": {
-        "name": "enforced",
-        "in": "query",
-        "description": "Whether the API is enforced or not",
-        "required": false,
-        "schema": {
-          "type": "boolean"
-        }
-      },
       "entry": {
         "name": "entry",
         "in": "path",
@@ -16294,15 +15211,6 @@
         "required": false,
         "schema": {
           "type": "string"
-        }
-      },
-      "force": {
-        "name": "force",
-        "in": "query",
-        "description": "Force the operation",
-        "required": false,
-        "schema": {
-          "type": "boolean"
         }
       },
       "gateway-service": {
@@ -17264,14 +16172,6 @@
             "type": "string",
             "format": "uri"
           },
-          "internal_svc_endpoint": {
-            "type": "string",
-            "format": "uri"
-          },
-          "internal_svc_endpoint_tls_client_profile_url": {
-            "type": "string",
-            "format": "uri"
-          },
           "gateway_service_urls": {
             "type": "array",
             "items": {
@@ -17286,13 +16186,6 @@
           "availability_zone_url": {
             "type": "string",
             "format": "uri"
-          },
-          "communication_from_apim_kind": {
-            "type": "string",
-            "enum": [
-              "external",
-              "internal_svc"
-            ]
           },
           "metadata": {
             "type": "object",
@@ -17441,15 +16334,6 @@
               "openapi2",
               "openapi3"
             ]
-          },
-          "base_paths": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "enforced": {
-            "type": "boolean"
           },
           "catalog_api": {
             "type": "object",
@@ -18570,9 +17454,6 @@
           "task_self_approval": {
             "type": "boolean"
           },
-          "allowed_product_visibility": {
-            "$ref": "#/components/schemas/ProductVisibility"
-          },
           "application_lifecycle": {
             "type": "object",
             "additionalProperties": false,
@@ -18720,22 +17601,6 @@
             "type": "array",
             "items": {
               "type": "string"
-            }
-          },
-          "override_invitation_ttl_for_all_consumer_orgs": {
-            "type": "boolean"
-          },
-          "gateway_supported_protocols": {
-            "type": "array",
-            "nullable": true,
-            "items": {
-              "type": "string",
-              "enum": [
-                "wss",
-                "https",
-                "ws",
-                "http"
-              ]
             }
           },
           "metadata": {
@@ -18906,29 +17771,6 @@
               "enabled": {
                 "type": "boolean"
               },
-              "audit_reads": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "enabled": {
-                    "type": "boolean"
-                  },
-                  "response_data_to_http_endpoints": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "enabled": {
-                        "type": "boolean"
-                      },
-                      "list_results_limit": {
-                        "type": "integer",
-                        "minimum": 0,
-                        "maximum": 10000
-                      }
-                    }
-                  }
-                }
-              },
               "mode": {
                 "type": "string",
                 "enum": [
@@ -18992,14 +17834,6 @@
             "type": "string",
             "format": "uri"
           },
-          "platform_api_svc_endpoint": {
-            "type": "string",
-            "format": "uri"
-          },
-          "consumer_api_svc_endpoint": {
-            "type": "string",
-            "format": "uri"
-          },
           "license_accepted": {
             "type": "boolean"
           },
@@ -19019,9 +17853,6 @@
           "tls_client_profile_default_url": {
             "type": "string",
             "format": "uri"
-          },
-          "token_issuer": {
-            "type": "string"
           },
           "access_token_keystore_urls": {
             "type": "array",
@@ -19044,13 +17875,6 @@
               "format": "uri"
             }
           },
-          "self_signed_token_keystore_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
           "atm_base_path": {
             "type": "string",
             "nullable": true
@@ -19061,18 +17885,6 @@
               "jwt",
               "b64"
             ]
-          },
-          "sync_roles_setting": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "enabled": {
-                "type": "boolean"
-              },
-              "endpoint": {
-                "$ref": "#/components/schemas/SecuredEndpoint"
-              }
-            }
           },
           "metadata": {
             "type": "object",
@@ -19735,24 +18547,6 @@
             "type": "string",
             "nullable": true
           },
-          "communication_kind": {
-            "type": "string",
-            "enum": [
-              "external",
-              "internal_svc"
-            ]
-          },
-          "communication_to_analytics_kind": {
-            "type": "string",
-            "enum": [
-              "external",
-              "internal_svc"
-            ]
-          },
-          "communication_to_analytics_with_jwt": {
-            "type": "boolean",
-            "nullable": true
-          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -20264,7 +19058,7 @@
                         "nullable": true
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -20291,7 +19085,7 @@
                         ]
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -20300,11 +19094,11 @@
                     "additionalProperties": false,
                     "properties": {
                       "application_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint",
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform",
                         "nullable": true
                       },
                       "owner_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint",
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform",
                         "nullable": true
                       }
                     }
@@ -21735,24 +20529,6 @@
             "type": "string",
             "nullable": true
           },
-          "communication_kind": {
-            "type": "string",
-            "enum": [
-              "external",
-              "internal_svc"
-            ]
-          },
-          "communication_to_analytics_kind": {
-            "type": "string",
-            "enum": [
-              "external",
-              "internal_svc"
-            ]
-          },
-          "communication_to_analytics_with_jwt": {
-            "type": "boolean",
-            "nullable": true
-          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -22572,7 +21348,6 @@
             "type": "string",
             "enum": [
               "ready",
-              "claimed",
               "running",
               "blocked",
               "failed"
@@ -24075,7 +22850,7 @@
                         "nullable": true
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -24102,7 +22877,7 @@
                         ]
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -24111,10 +22886,10 @@
                     "additionalProperties": false,
                     "properties": {
                       "application_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       },
                       "owner_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   }
@@ -24520,9 +23295,6 @@
               "type": "string",
               "format": "uri"
             }
-          },
-          "owner": {
-            "$ref": "#/components/schemas/User"
           },
           "metadata": {
             "type": "object",
@@ -25035,13 +23807,6 @@
           "service_version": {
             "type": "string",
             "nullable": true
-          },
-          "communication_kind": {
-            "type": "string",
-            "enum": [
-              "external",
-              "internal_svc"
-            ]
           },
           "metadata": {
             "type": "object",
@@ -26202,207 +24967,6 @@
           }
         }
       },
-      "Skill": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "type": {
-            "type": "string",
-            "readOnly": true,
-            "enum": [
-              "skill"
-            ]
-          },
-          "api_version": {
-            "type": "string",
-            "readOnly": true,
-            "enum": [
-              "2.0.0"
-            ]
-          },
-          "id": {
-            "type": "string",
-            "readOnly": true
-          },
-          "name": {
-            "type": "string",
-            "maxLength": 255
-          },
-          "version": {
-            "type": "string",
-            "maxLength": 255
-          },
-          "title": {
-            "type": "string",
-            "maxLength": 1023
-          },
-          "summary": {
-            "type": "string",
-            "maxLength": 65535
-          },
-          "scope": {
-            "type": "string"
-          },
-          "skill_id": {
-            "type": "string"
-          },
-          "skill_type": {
-            "type": "string",
-            "enum": [
-              "primitive",
-              "composite",
-              "mapped",
-              "imported",
-              "other"
-            ]
-          },
-          "skill_subtype": {
-            "type": "string",
-            "enum": [
-              "public",
-              "private"
-            ]
-          },
-          "display_name": {
-            "type": "string"
-          },
-          "icon": {
-            "type": "string"
-          },
-          "visible": {
-            "type": "boolean"
-          },
-          "permissions": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
-          },
-          "applications": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "applications_info": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
-          },
-          "description": {
-            "type": "string"
-          },
-          "nlu": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "parameters": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
-          },
-          "author": {
-            "type": "string"
-          },
-          "rank": {
-            "type": "integer"
-          },
-          "runtime_endpoint": {
-            "type": "string",
-            "format": "uri"
-          },
-          "openapi_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "connection_state": {
-            "type": "string",
-            "enum": [
-              "none",
-              "not-connected",
-              "connected"
-            ]
-          },
-          "org_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "catalog_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "api_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "state": {
-            "type": "string",
-            "enum": [
-              "stage",
-              "publish"
-            ]
-          },
-          "tsv_api_lang": {
-            "type": "string"
-          },
-          "tsv_nlu_lang": {
-            "type": "string"
-          },
-          "tenant_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "metadata": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "url": {
-            "type": "string",
-            "readOnly": true,
-            "format": "uri"
-          }
-        }
-      },
-      "SkillList": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "total_results": {
-            "type": "integer"
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Skill"
-            }
-          }
-        }
-      },
       "Snapshot": {
         "type": "object",
         "additionalProperties": false,
@@ -26671,9 +25235,6 @@
           },
           "custom_notification_templates_enabled": {
             "type": "boolean"
-          },
-          "allowed_product_visibility": {
-            "$ref": "#/components/schemas/ProductVisibility"
           },
           "email_sender": {
             "$ref": "#/components/schemas/EmailSender"
@@ -27259,6 +25820,8 @@
               "reconfigure",
               "policy-upgrade",
               "heartbeat",
+              "manage-stale-cloud-webhooks",
+              "manage-stale-catalog-webhooks",
               "cleanup",
               "send",
               "initialize",
@@ -28500,8 +27063,7 @@
                 "product_retire_optimized",
                 "global_policy_error",
                 "product_migrate_subscriptions",
-                "execute_migration_target",
-                "event_config_logs"
+                "execute_migration_target"
               ]
             }
           },
@@ -29246,10 +27808,7 @@
             "type": "string"
           },
           "x5c": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "type": "string"
           },
           "kty": {
             "type": "string"
@@ -29258,12 +27817,6 @@
             "type": "string"
           },
           "alg": {
-            "type": "string"
-          },
-          "iss": {
-            "type": "string"
-          },
-          "purpose": {
             "type": "string"
           }
         }
@@ -29327,9 +27880,6 @@
           "api_key": {
             "type": "string"
           },
-          "scope": {
-            "type": "string"
-          },
           "grant_type": {
             "type": "string",
             "enum": [
@@ -29347,14 +27897,12 @@
         "type": "object",
         "additionalProperties": false,
         "required": [
+          "access_token",
           "token_type",
           "expires_in"
         ],
         "properties": {
           "access_token": {
-            "type": "string"
-          },
-          "id_token": {
             "type": "string"
           },
           "token_type": {
@@ -30907,6 +29455,10 @@
           }
         }
       },
+      "TestConnectionFailedResponse": {
+        "type": "object",
+        "additionalProperties": true
+      },
       "ExportP12Pem": {
         "type": "object",
         "additionalProperties": false,
@@ -30947,6 +29499,10 @@
             ]
           }
         }
+      },
+      "SendEmailResponse": {
+        "type": "object",
+        "additionalProperties": false
       },
       "EmailToOwners": {
         "type": "object",
@@ -31080,18 +29636,6 @@
           }
         }
       },
-      "SyncRoles": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "access_token": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "access_token"
-        ]
-      },
       "MailServerSavedTestConnection": {
         "type": "object",
         "additionalProperties": false,
@@ -31139,20 +29683,12 @@
             "items": {
               "type": "string"
             }
-          },
-          "errors": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "warnings": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           }
         }
+      },
+      "MailServerTestConnectionResponse": {
+        "type": "object",
+        "additionalProperties": false
       },
       "SecuredEndpoint": {
         "type": "object",
@@ -31165,6 +29701,24 @@
           "endpoint": {
             "type": "string",
             "format": "uri"
+          },
+          "tls_client_profile_url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          }
+        }
+      },
+      "SecuredEndpointWithoutEndpointTransform": {
+        "type": "object",
+        "additionalProperties": false,
+        "nullable": true,
+        "required": [
+          "endpoint"
+        ],
+        "properties": {
+          "endpoint": {
+            "type": "string"
           },
           "tls_client_profile_url": {
             "type": "string",
@@ -32161,21 +30715,12 @@
                   "$ref": "#/components/schemas/UserRegistry"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -32224,9 +30769,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -32255,9 +30797,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -32311,9 +30850,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -32364,9 +30900,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -32402,9 +30935,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -32456,9 +30986,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -32523,9 +31050,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -32588,9 +31112,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -32636,8 +31157,20 @@
           "204": {
             "description": "Success"
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -32707,9 +31240,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -32769,21 +31299,12 @@
                   "$ref": "#/components/schemas/User"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -32832,9 +31353,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -32863,9 +31381,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -32922,9 +31437,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -32975,9 +31487,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -33014,9 +31523,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -33049,9 +31555,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -33103,9 +31606,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -33167,9 +31667,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -33230,9 +31727,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -33275,9 +31769,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -33319,9 +31810,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -33368,9 +31856,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -33412,9 +31897,6 @@
         "responses": {
           "302": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -33464,9 +31946,6 @@
         "responses": {
           "302": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -33519,9 +31998,6 @@
           "302": {
             "description": "Success"
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -33539,6 +32015,56 @@
           "$ref": "#/components/parameters/org"
         }
       ],
+      "post": {
+        "summary": "Create the Notification Style object",
+        "description": "Create the Notification Style object\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url",
+        "operationId": "notification_style_singletonCreateOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationStyle"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationStyle"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Org Settings",
+          "Resource: Notification Style (Org Scope)"
+        ]
+      },
       "get": {
         "summary": "Get the Notification Style object",
         "description": "Get the Notification Style object",
@@ -33570,9 +32096,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -33624,8 +32147,41 @@
               }
             }
           },
-          "4XX": {
+          "5XX": {
             "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Org Settings",
+          "Resource: Notification Style (Org Scope)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Notification Style object",
+        "description": "Delete the Notification Style object",
+        "operationId": "notification_style_singletonDelOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              }
+            }
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -33647,6 +32203,56 @@
           "$ref": "#/components/parameters/catalog"
         }
       ],
+      "post": {
+        "summary": "Create the Notification Style object",
+        "description": "Create the Notification Style object\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url",
+        "operationId": "notification_style_singletonCreateCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationStyle"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationStyle"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStyle"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Settings",
+          "Resource: Notification Style (Catalog Scope)"
+        ]
+      },
       "get": {
         "summary": "Get the Notification Style object",
         "description": "Get the Notification Style object",
@@ -33678,9 +32284,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -33732,58 +32335,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Notification Style (Catalog Scope)"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/settings/notification-style/consumer": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "get": {
-        "summary": "Notification Styles get operations",
-        "description": "Notification Styles get operations",
-        "operationId": "notification_style_singletonGetConsumerOrgCatalogScope",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationStyle"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationStyle"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -33793,10 +32344,10 @@
           "Resource: Notification Style (Catalog Scope)"
         ]
       },
-      "put": {
-        "summary": "Notification Styles update operations",
-        "description": "Notification Styles update operations",
-        "operationId": "notification_style_singletonUpdateConsumerOrgCatalogScope",
+      "delete": {
+        "summary": "Delete the Notification Style object",
+        "description": "Delete the Notification Style object",
+        "operationId": "notification_style_singletonDelCatalogScope",
         "security": [
           {
             "oauth": [
@@ -33804,23 +32355,9 @@
             ]
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationStyle"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationStyle"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "Successful delete",
             "content": {
               "application/json": {
                 "schema": {
@@ -33833,9 +32370,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -33888,21 +32422,12 @@
                   "$ref": "#/components/schemas/APIKey"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -33950,9 +32475,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -34003,9 +32525,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -34041,9 +32560,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -34094,9 +32610,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -34146,9 +32659,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -34205,9 +32715,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -34263,9 +32770,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -34318,9 +32822,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -34371,9 +32872,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -34419,9 +32917,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -34472,9 +32967,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -34491,7 +32983,7 @@
         "security": [
           {
             "oauth": [
-              "org:manage"
+              "org:view"
             ]
           }
         ],
@@ -34524,9 +33016,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -34583,9 +33072,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -34638,9 +33124,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -34691,9 +33174,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -34739,9 +33219,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -34792,9 +33269,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -34811,7 +33285,7 @@
         "security": [
           {
             "oauth": [
-              "org:manage"
+              "org:view"
             ]
           }
         ],
@@ -34844,9 +33318,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -34903,9 +33374,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -34958,9 +33426,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -35011,9 +33476,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -35059,9 +33521,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -35112,9 +33571,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -35131,7 +33587,7 @@
         "security": [
           {
             "oauth": [
-              "org:manage"
+              "org:view"
             ]
           }
         ],
@@ -35164,9 +33620,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -35223,9 +33676,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -35278,9 +33728,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -35331,9 +33778,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -35379,9 +33823,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -35432,9 +33873,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -35451,7 +33889,7 @@
         "security": [
           {
             "oauth": [
-              "org:manage"
+              "org:view"
             ]
           }
         ],
@@ -35484,9 +33922,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -35536,9 +33971,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -35590,9 +34022,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -35628,9 +34057,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -35697,9 +34123,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -35765,9 +34188,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -35823,9 +34243,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -35877,9 +34294,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -35937,21 +34351,12 @@
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -36000,9 +34405,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -36031,9 +34433,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -36087,9 +34486,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -36140,9 +34536,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -36178,9 +34571,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -36242,9 +34632,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -36304,21 +34691,12 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -36379,21 +34757,12 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -36451,21 +34820,12 @@
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -36514,9 +34874,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -36545,9 +34902,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -36601,9 +34955,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -36654,9 +35005,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -36677,11 +35025,6 @@
             ]
           }
         ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/cascade"
-          }
-        ],
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -36697,9 +35040,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -36744,9 +35084,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -36790,9 +35127,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -36834,9 +35168,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -36881,9 +35212,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -36925,9 +35253,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -36972,9 +35297,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -37016,9 +35338,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -37063,9 +35382,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -37107,9 +35423,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -37154,9 +35467,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -37198,9 +35508,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -37258,21 +35565,12 @@
                   "$ref": "#/components/schemas/Role"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -37321,9 +35619,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -37352,9 +35647,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -37408,9 +35700,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -37461,9 +35750,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -37499,9 +35785,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -37558,9 +35841,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -37612,9 +35892,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -37671,9 +35948,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -37725,9 +35999,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -37785,21 +36056,12 @@
                   "$ref": "#/components/schemas/OauthProvider"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -37848,9 +36110,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -37879,9 +36138,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -37935,9 +36191,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -37988,9 +36241,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -38026,9 +36276,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -38086,21 +36333,12 @@
                   "$ref": "#/components/schemas/Billing"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -38149,9 +36387,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -38180,9 +36415,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -38236,9 +36468,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -38289,9 +36518,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -38327,9 +36553,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -38389,9 +36612,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -38420,9 +36640,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -38479,9 +36696,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -38517,9 +36731,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -38562,9 +36773,6 @@
         "responses": {
           "200": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -38622,21 +36830,12 @@
                   "$ref": "#/components/schemas/TLSClientProfile"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -38685,9 +36884,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -38719,9 +36915,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -38781,9 +36974,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -38812,9 +37002,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -38868,9 +37055,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -38921,9 +37105,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -38959,9 +37140,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -39018,9 +37196,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -39071,9 +37246,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -39109,9 +37281,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -39169,21 +37338,12 @@
                   "$ref": "#/components/schemas/Keystore"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -39232,9 +37392,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -39263,9 +37420,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -39319,9 +37473,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -39372,9 +37523,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -39410,9 +37558,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -39470,21 +37615,12 @@
                   "$ref": "#/components/schemas/Truststore"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -39533,9 +37669,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -39564,9 +37697,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -39620,9 +37750,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -39673,9 +37800,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -39711,9 +37835,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -39774,21 +37895,12 @@
                   "$ref": "#/components/schemas/Entry"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -39837,9 +37949,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -39868,9 +37977,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -39927,9 +38033,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -39980,9 +38083,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -40018,9 +38118,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -40074,9 +38171,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -40095,11 +38189,6 @@
             "oauth": [
               "org:manage"
             ]
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/force"
           }
         ],
         "requestBody": {
@@ -40131,9 +38220,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -40180,9 +38266,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -40243,21 +38326,12 @@
                   "$ref": "#/components/schemas/ConfiguredGatewayService"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -40306,9 +38380,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -40337,9 +38408,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -40396,9 +38464,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -40434,52 +38499,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Settings",
-          "Resource: Configured Gateway Service (Catalog Scope)"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/configured-gateway-services/{configured-gateway-service}/download-logs": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/configured-gateway-service"
-        }
-      ],
-      "get": {
-        "summary": "Get the Configured Gateway Service download logs",
-        "description": "Get the Configured Gateway Service download logs",
-        "operationId": "configured_gateway_service_downloadLogsCatalogScope",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/octet-stream": {}
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -40543,21 +38562,12 @@
                   "$ref": "#/components/schemas/ConfiguredGatewayService"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -40606,9 +38616,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -40637,9 +38644,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -40699,9 +38703,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -40737,55 +38738,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Space Settings",
-          "Resource: Configured Gateway Service (Space Scope)"
-        ]
-      }
-    },
-    "/spaces/{org}/{catalog}/{space}/configured-gateway-services/{configured-gateway-service}/download-logs": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/space"
-        },
-        {
-          "$ref": "#/components/parameters/configured-gateway-service"
-        }
-      ],
-      "get": {
-        "summary": "Get the Configured Gateway Service download logs",
-        "description": "Get the Configured Gateway Service download logs",
-        "operationId": "configured_gateway_service_downloadLogsSpaceScope",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/octet-stream": {}
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -40846,21 +38798,12 @@
                   "$ref": "#/components/schemas/ConfiguredCatalogUserRegistry"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -40908,9 +38851,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -40967,9 +38907,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -41005,9 +38942,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -41080,9 +39014,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -41142,21 +39073,12 @@
                   "$ref": "#/components/schemas/ConfiguredAPIUserRegistry"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -41205,9 +39127,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -41236,9 +39155,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -41295,9 +39211,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -41333,9 +39246,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -41399,21 +39309,12 @@
                   "$ref": "#/components/schemas/ConfiguredAPIUserRegistry"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -41462,9 +39363,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -41493,9 +39391,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -41555,9 +39450,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -41593,9 +39485,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -41656,21 +39545,12 @@
                   "$ref": "#/components/schemas/ConfiguredTLSClientProfile"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -41719,9 +39599,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -41750,9 +39627,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -41815,9 +39689,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -41846,9 +39717,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -41905,9 +39773,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -41943,9 +39808,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -42005,9 +39867,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -42043,9 +39902,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -42109,21 +39965,12 @@
                   "$ref": "#/components/schemas/ConfiguredTLSClientProfile"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -42172,9 +40019,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -42203,9 +40047,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -42271,9 +40112,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -42302,9 +40140,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -42364,9 +40199,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -42402,9 +40234,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -42467,9 +40296,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -42505,9 +40331,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -42568,21 +40391,12 @@
                   "$ref": "#/components/schemas/ConfiguredBilling"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -42631,9 +40445,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -42662,9 +40473,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -42721,9 +40529,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -42759,9 +40564,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -42822,21 +40624,12 @@
                   "$ref": "#/components/schemas/ConfiguredOauthProvider"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -42885,9 +40678,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -42916,9 +40706,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -42975,9 +40762,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -43013,9 +40797,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -43079,21 +40860,12 @@
                   "$ref": "#/components/schemas/ConfiguredOauthProvider"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -43142,9 +40914,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -43173,9 +40942,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -43235,9 +41001,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -43273,9 +41036,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -43335,9 +41095,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -43396,9 +41153,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -43454,9 +41208,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -43507,9 +41258,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -43558,9 +41306,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -43614,9 +41359,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -43633,7 +41375,7 @@
         "security": [
           {
             "oauth": [
-              "org:manage"
+              "org:view"
             ]
           }
         ],
@@ -43666,9 +41408,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -43728,9 +41467,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -43786,9 +41522,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -43839,9 +41572,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -43890,9 +41620,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -43946,9 +41673,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -43965,7 +41689,7 @@
         "security": [
           {
             "oauth": [
-              "org:manage"
+              "org:view"
             ]
           }
         ],
@@ -43998,9 +41722,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -44060,9 +41781,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -44118,9 +41836,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -44171,9 +41886,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -44222,9 +41934,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -44278,9 +41987,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -44297,7 +42003,7 @@
         "security": [
           {
             "oauth": [
-              "org:manage"
+              "org:view"
             ]
           }
         ],
@@ -44330,9 +42036,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -44392,9 +42095,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -44453,9 +42153,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -44510,9 +42207,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -44573,21 +42267,12 @@
                   "$ref": "#/components/schemas/NameValuePairs"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -44636,9 +42321,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -44667,9 +42349,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -44726,9 +42405,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -44779,9 +42455,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -44817,9 +42490,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -44877,21 +42547,12 @@
                   "$ref": "#/components/schemas/Catalog"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -44940,9 +42601,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -44971,9 +42629,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -45027,9 +42682,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -45080,9 +42732,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -45118,9 +42767,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -45190,8 +42836,68 @@
               }
             }
           },
-          "4XX": {
+          "5XX": {
             "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Management",
+          "Resource: Catalog"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/send-email": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Send email",
+        "description": "Send email",
+        "operationId": "catalog_sendEmail",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendEmail"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/SendEmail"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SendEmailResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/SendEmailResponse"
+                }
+              }
+            }
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -45257,8 +42963,20 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -45267,6 +42985,74 @@
         "tags": [
           "Catalog Management",
           "Resource: Catalog"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/search/user": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Search for users in the catalog realm",
+        "description": "Search for users in the catalog realm",
+        "operationId": "user_searchCatalog",
+        "security": [
+          {
+            "oauth": [
+              "consumer-org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserSearch"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/UserSearch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserList"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "User Management",
+          "Resource: User"
         ]
       }
     },
@@ -45324,9 +43110,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -45396,9 +43179,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -45457,21 +43237,12 @@
                   "$ref": "#/components/schemas/Product"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -45534,75 +43305,12 @@
                   "$ref": "#/components/schemas/Product"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Management",
-          "Resource: Catalog"
-        ]
-      }
-    },
-    "/catalogs/{org}/{catalog}/lifecycle/duplicate-apis": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "get": {
-        "summary": "List of apis with duplicate base paths",
-        "description": "List of apis with duplicate base paths",
-        "operationId": "api_listDuplicates",
-        "security": [
-          {
-            "oauth": [
-              "product:view"
-            ]
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/scope"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/APIList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/APIList"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -45660,21 +43368,12 @@
                   "$ref": "#/components/schemas/Invitation"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -45723,9 +43422,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -45754,9 +43450,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -45810,9 +43503,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -45863,9 +43553,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -45901,9 +43588,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -45965,9 +43649,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -46027,21 +43708,12 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -46102,21 +43774,12 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -46177,21 +43840,12 @@
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -46240,9 +43894,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -46271,9 +43922,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -46330,9 +43978,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -46383,9 +44028,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -46421,9 +44063,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -46488,9 +44127,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -46553,21 +44189,12 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -46631,21 +44258,12 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -46706,21 +44324,12 @@
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -46769,9 +44378,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -46800,9 +44406,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -46859,9 +44462,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -46912,9 +44512,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -46935,11 +44532,6 @@
             ]
           }
         ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/cascade"
-          }
-        ],
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -46955,9 +44547,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -47017,9 +44606,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -47075,9 +44661,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -47127,9 +44710,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -47189,9 +44769,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -47247,9 +44824,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -47299,9 +44873,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -47365,21 +44936,12 @@
                   "$ref": "#/components/schemas/GlobalPolicy"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -47428,9 +44990,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -47459,9 +45018,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -47527,9 +45083,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -47558,9 +45111,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -47620,9 +45170,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -47673,9 +45220,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -47711,9 +45255,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -47776,9 +45317,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -47829,9 +45367,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -47867,9 +45402,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -47922,9 +45454,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -47980,9 +45509,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -48049,21 +45575,12 @@
                   "$ref": "#/components/schemas/GlobalPolicy"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -48112,9 +45629,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -48143,9 +45657,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -48214,9 +45725,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -48245,9 +45753,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -48310,9 +45815,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -48363,9 +45865,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -48401,9 +45900,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -48469,9 +45965,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -48522,9 +46015,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -48560,9 +46050,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -48618,9 +46105,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -48680,9 +46164,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -48740,21 +46221,12 @@
                   "$ref": "#/components/schemas/Policy"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -48803,9 +46275,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -48834,9 +46303,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -48902,9 +46368,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -48933,9 +46396,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -48995,9 +46455,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -49053,9 +46510,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -49091,9 +46545,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -49156,9 +46607,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -49214,9 +46662,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -49252,9 +46697,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -49307,9 +46749,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -49366,9 +46805,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -49421,9 +46857,6 @@
               },
               "application/zip": {}
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -49480,9 +46913,6 @@
               },
               "application/zip": {}
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -49544,21 +46974,12 @@
                   "$ref": "#/components/schemas/Policy"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -49607,9 +47028,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -49638,9 +47056,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -49709,9 +47124,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -49740,9 +47152,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -49805,9 +47214,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -49863,9 +47269,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -49901,9 +47304,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -49969,9 +47369,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -50027,9 +47424,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -50065,9 +47459,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -50123,9 +47514,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -50185,9 +47573,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -50243,9 +47628,6 @@
               },
               "application/zip": {}
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -50305,9 +47687,6 @@
               },
               "application/zip": {}
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -50371,21 +47750,12 @@
                   "$ref": "#/components/schemas/Extension"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -50434,9 +47804,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -50465,9 +47832,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -50533,9 +47897,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -50564,9 +47925,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -50626,9 +47984,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -50679,9 +48034,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -50717,9 +48069,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -50782,9 +48131,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -50835,9 +48181,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -50873,9 +48216,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -50928,9 +48268,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -50986,9 +48323,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -51055,21 +48389,12 @@
                   "$ref": "#/components/schemas/Extension"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -51118,9 +48443,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -51149,9 +48471,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -51220,9 +48539,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -51251,9 +48567,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -51316,9 +48629,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -51369,9 +48679,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -51407,9 +48714,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -51475,9 +48779,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -51528,9 +48829,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -51566,9 +48864,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -51624,9 +48919,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -51685,9 +48977,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -51758,9 +49047,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -51835,9 +49121,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -51895,9 +49178,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -51959,9 +49239,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -52028,21 +49305,12 @@
                   "$ref": "#/components/schemas/Service"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -52091,9 +49359,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -52122,9 +49387,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -52193,9 +49455,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -52224,9 +49483,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -52289,9 +49545,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -52342,9 +49595,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -52380,9 +49630,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -52448,9 +49695,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -52501,9 +49745,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -52539,9 +49780,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -52607,9 +49845,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -52650,9 +49885,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -52704,9 +49936,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -52742,9 +49971,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -52813,9 +50039,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -52856,9 +50079,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -52910,9 +50130,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -52948,9 +50165,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -53016,9 +50230,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -53059,9 +50270,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -53113,9 +50321,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -53151,9 +50356,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -53222,9 +50424,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -53265,9 +50464,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -53319,9 +50515,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -53357,9 +50550,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -53425,9 +50615,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -53468,9 +50655,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -53522,9 +50706,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -53560,9 +50741,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -53631,9 +50809,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -53674,9 +50849,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -53728,9 +50900,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -53766,9 +50935,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -53828,9 +50994,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -53888,9 +51051,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -53959,21 +51119,12 @@
                   "$ref": "#/components/schemas/Analytics"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -54036,9 +51187,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -54099,9 +51247,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -54173,21 +51318,12 @@
                   "$ref": "#/components/schemas/Analytics"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -54196,119 +51332,6 @@
         "tags": [
           "Space Resources",
           "Resource: Analytics (Space Scope)"
-        ]
-      }
-    },
-    "/orgs/{org}/analytics-services": {
-      "description": "The collection of Analytics Service operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        }
-      ],
-      "get": {
-        "summary": "List the Analytics Service objects",
-        "description": "List the Analytics Service objects",
-        "operationId": "analytics_service_listOrgScope",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AnalyticsServiceList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/AnalyticsServiceList"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Resources",
-          "Resource: Analytics Service (Org Scope)"
-        ]
-      }
-    },
-    "/orgs/{org}/analytics-services/{analytics-service}": {
-      "description": "Analytics Service object operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        }
-      ],
-      "get": {
-        "summary": "Get the Analytics Service object by name or id",
-        "description": "Get the Analytics Service object by name or id",
-        "operationId": "analytics_service_getOrgScope",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AnalyticsService"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/AnalyticsService"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Resources",
-          "Resource: Analytics Service (Org Scope)"
         ]
       }
     },
@@ -54356,9 +51379,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -54409,9 +51429,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -54474,9 +51491,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -54538,9 +51552,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -54599,9 +51610,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -54651,9 +51659,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -54706,9 +51711,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -54765,9 +51767,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -54784,7 +51783,7 @@
         "security": [
           {
             "oauth": [
-              "org:manage"
+              "org:view"
             ]
           }
         ],
@@ -54817,9 +51816,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -54882,9 +51878,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -54943,9 +51936,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -54995,9 +51985,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -55050,9 +52037,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -55109,9 +52093,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -55128,7 +52109,7 @@
         "security": [
           {
             "oauth": [
-              "org:manage"
+              "org:view"
             ]
           }
         ],
@@ -55161,9 +52142,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -55226,9 +52204,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -55290,9 +52265,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -55350,9 +52322,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -55413,21 +52382,12 @@
                   "$ref": "#/components/schemas/Space"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -55476,9 +52436,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -55507,9 +52464,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -55566,9 +52520,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -55619,9 +52570,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -55657,9 +52605,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -55732,9 +52677,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -55802,8 +52744,20 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -55872,9 +52826,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -55947,9 +52898,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -56011,21 +52959,12 @@
                   "$ref": "#/components/schemas/Product"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -56091,21 +53030,12 @@
                   "$ref": "#/components/schemas/Product"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -56166,21 +53096,12 @@
                   "$ref": "#/components/schemas/Invitation"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -56229,9 +53150,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -56260,9 +53178,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -56319,9 +53234,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -56372,9 +53284,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -56410,9 +53319,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -56477,9 +53383,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -56542,21 +53445,12 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -56620,21 +53514,12 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -56697,9 +53582,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -56758,9 +53640,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -56810,9 +53689,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -56876,21 +53752,12 @@
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -56939,9 +53806,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -56970,9 +53834,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -57032,9 +53893,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -57085,9 +53943,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -57123,9 +53978,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -57193,9 +54045,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -57261,21 +54110,12 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -57342,21 +54182,12 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -57420,21 +54251,12 @@
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -57483,9 +54305,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -57514,9 +54333,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -57576,9 +54392,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -57629,9 +54442,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -57652,11 +54462,6 @@
             ]
           }
         ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/cascade"
-          }
-        ],
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -57672,9 +54477,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -57737,9 +54539,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -57798,9 +54597,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -57850,9 +54646,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -57914,9 +54707,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -57982,9 +54772,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -58040,9 +54827,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -58093,9 +54877,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -58131,9 +54912,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -58193,9 +54971,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -58246,9 +55021,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -58284,9 +55056,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -58346,9 +55115,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -58377,9 +55143,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -58436,9 +55199,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -58474,9 +55234,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -58537,21 +55294,12 @@
                   "$ref": "#/components/schemas/Invitation"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -58600,9 +55348,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -58631,9 +55376,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -58690,9 +55432,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -58743,9 +55482,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -58781,9 +55517,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -58848,9 +55581,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -58913,21 +55643,12 @@
                   "$ref": "#/components/schemas/Invitation"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -58976,9 +55697,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -59007,9 +55725,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -59069,9 +55784,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -59122,9 +55834,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -59160,9 +55869,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -59230,9 +55936,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -59292,21 +55995,12 @@
                   "$ref": "#/components/schemas/ConsumerOrg"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -59358,9 +56052,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -59389,9 +56080,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -59448,9 +56136,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -59506,9 +56191,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -59544,9 +56226,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -59619,9 +56298,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -59684,21 +56360,12 @@
                   "$ref": "#/components/schemas/ConsumerOrg"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -59750,9 +56417,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -59781,9 +56445,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -59843,9 +56504,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -59901,9 +56559,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -59939,9 +56594,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -60017,9 +56669,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -60079,21 +56728,12 @@
                   "$ref": "#/components/schemas/Group"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -60142,9 +56782,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -60173,9 +56810,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -60232,9 +56866,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -60285,9 +56916,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -60323,9 +56951,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -60389,21 +57014,12 @@
                   "$ref": "#/components/schemas/Group"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -60452,9 +57068,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -60483,9 +57096,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -60545,9 +57155,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -60598,9 +57205,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -60636,9 +57240,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -60702,21 +57303,12 @@
                   "$ref": "#/components/schemas/PaymentMethod"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -60764,9 +57356,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -60826,9 +57415,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -60879,9 +57465,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -60917,9 +57500,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -60986,21 +57566,12 @@
                   "$ref": "#/components/schemas/PaymentMethod"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -61048,9 +57619,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -61113,9 +57681,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -61166,9 +57731,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -61204,9 +57766,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -61269,9 +57828,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -61329,9 +57885,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -61397,9 +57950,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -61460,9 +58010,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -61525,9 +58072,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -61585,9 +58129,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -61653,9 +58194,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -61716,9 +58254,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -61782,21 +58317,12 @@
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -61845,9 +58371,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -61876,9 +58399,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -61938,9 +58458,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -61991,9 +58508,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -62029,9 +58543,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -62099,9 +58610,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -62167,21 +58675,12 @@
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -62230,9 +58729,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -62261,9 +58757,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -62326,9 +58819,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -62379,9 +58869,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -62417,9 +58904,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -62490,9 +58974,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -62555,21 +59036,12 @@
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -62618,9 +59090,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -62649,9 +59118,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -62711,9 +59177,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -62764,9 +59227,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -62802,9 +59262,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -62871,21 +59328,12 @@
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -62934,9 +59382,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -62965,9 +59410,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -63030,9 +59472,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -63083,9 +59522,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -63121,9 +59557,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -63187,21 +59620,12 @@
                   "$ref": "#/components/schemas/App"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -63250,9 +59674,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -63281,9 +59702,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -63343,9 +59761,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -63396,9 +59811,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -63434,9 +59846,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -63503,21 +59912,12 @@
                   "$ref": "#/components/schemas/App"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -63566,9 +59966,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -63597,9 +59994,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -63662,9 +60056,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -63715,9 +60106,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -63753,9 +60141,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -63822,21 +60207,12 @@
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -63884,9 +60260,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -63949,9 +60322,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -64002,9 +60372,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -64040,9 +60407,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -64099,9 +60463,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -64156,9 +60517,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -64229,9 +60587,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -64300,21 +60655,12 @@
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -64363,9 +60709,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -64394,9 +60737,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -64462,9 +60802,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -64515,9 +60852,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -64553,9 +60887,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -64615,9 +60946,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -64675,9 +61003,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -64751,9 +61076,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -64819,21 +61141,12 @@
                   "$ref": "#/components/schemas/Subscription"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -64888,9 +61201,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -64919,9 +61229,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -64984,9 +61291,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -65037,9 +61341,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -65075,9 +61376,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -65147,21 +61445,12 @@
                   "$ref": "#/components/schemas/Subscription"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -65216,9 +61505,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -65247,9 +61533,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -65315,9 +61598,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -65368,9 +61648,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -65406,9 +61683,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -65465,9 +61739,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -65496,9 +61767,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -65556,9 +61824,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -65621,21 +61886,12 @@
                   "$ref": "#/components/schemas/DraftProduct"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -65684,9 +61940,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -65715,9 +61968,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -65777,9 +62027,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -65808,9 +62055,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -65863,9 +62107,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -65922,9 +62163,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -65960,9 +62198,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -66019,9 +62254,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -66077,9 +62309,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -66115,9 +62344,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -66181,9 +62407,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -66251,86 +62474,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Drafts",
-          "Resource: Draft Product by Id"
-        ]
-      }
-    },
-    "/orgs/{org}/drafts/draft-products/validate": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        }
-      ],
-      "post": {
-        "summary": "Validate the draft product object",
-        "description": "Validate the draft product object",
-        "operationId": "draft_product_validateObject",
-        "security": [
-          {
-            "oauth": [
-              "product-drafts:edit"
-            ]
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DraftProduct"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/DraftProduct"
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/scope"
-          },
-          {
-            "$ref": "#/components/parameters/catalog_name"
-          },
-          {
-            "$ref": "#/components/parameters/space_name"
-          },
-          {
-            "$ref": "#/components/parameters/gateway_service_names"
-          },
-          {
-            "$ref": "#/components/parameters/validate_apis"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ValidationResults"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/ValidationResults"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -66376,9 +62519,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -66428,9 +62568,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -66510,21 +62647,12 @@
                   "$ref": "#/components/schemas/DraftAPI"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -66573,9 +62701,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -66604,9 +62729,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -66666,9 +62788,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -66697,9 +62816,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -66752,9 +62868,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -66822,9 +62935,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -66860,9 +62970,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -66918,9 +63025,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -66988,9 +63092,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -67027,9 +63128,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -67060,20 +63158,6 @@
             ]
           }
         ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/scope"
-          },
-          {
-            "$ref": "#/components/parameters/catalog_name"
-          },
-          {
-            "$ref": "#/components/parameters/space_name"
-          },
-          {
-            "$ref": "#/components/parameters/gateway_service_names"
-          }
-        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -67089,9 +63173,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -67126,20 +63207,6 @@
             ]
           }
         ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/scope"
-          },
-          {
-            "$ref": "#/components/parameters/catalog_name"
-          },
-          {
-            "$ref": "#/components/parameters/space_name"
-          },
-          {
-            "$ref": "#/components/parameters/gateway_service_names"
-          }
-        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -67155,83 +63222,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Drafts",
-          "Resource: Draft API by Id"
-        ]
-      }
-    },
-    "/orgs/{org}/drafts/draft-apis/validate": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        }
-      ],
-      "post": {
-        "summary": "Validate the draft api object",
-        "description": "Validate the draft api object",
-        "operationId": "draft_api_validateObject",
-        "security": [
-          {
-            "oauth": [
-              "api-drafts:edit"
-            ]
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DraftAPI"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/DraftAPI"
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/scope"
-          },
-          {
-            "$ref": "#/components/parameters/catalog_name"
-          },
-          {
-            "$ref": "#/components/parameters/space_name"
-          },
-          {
-            "$ref": "#/components/parameters/gateway_service_names"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ValidationResults"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/ValidationResults"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -67295,9 +63285,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -67365,9 +63352,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -67422,9 +63406,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -67484,9 +63465,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -67532,9 +63510,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -67585,9 +63560,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -67635,9 +63607,6 @@
               "application/wsdl": {},
               "application/zip": {}
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -67689,9 +63658,6 @@
               "application/wsdl": {},
               "application/zip": {}
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -67754,9 +63720,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -67785,9 +63748,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -67853,9 +63813,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -67884,9 +63841,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -67943,9 +63897,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -67996,9 +63947,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -68034,9 +63982,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -68096,9 +64041,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -68149,9 +64091,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -68187,9 +64126,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -68254,9 +64190,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -68319,9 +64252,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -68386,9 +64316,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -68452,9 +64379,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -68503,9 +64427,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -68573,9 +64494,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -68641,9 +64559,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -68711,9 +64626,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -68780,9 +64692,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -68835,9 +64744,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -68886,9 +64792,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -68942,9 +64845,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -68994,12 +64894,6 @@
           },
           {
             "$ref": "#/components/parameters/metadata"
-          },
-          {
-            "$ref": "#/components/parameters/enforced"
-          },
-          {
-            "$ref": "#/components/parameters/base_path"
           }
         ],
         "responses": {
@@ -69017,9 +64911,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -69073,12 +64964,6 @@
           },
           {
             "$ref": "#/components/parameters/metadata"
-          },
-          {
-            "$ref": "#/components/parameters/enforced"
-          },
-          {
-            "$ref": "#/components/parameters/base_path"
           }
         ],
         "responses": {
@@ -69096,9 +64981,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -69155,9 +65037,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -69207,9 +65086,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -69269,9 +65145,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -69322,9 +65195,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -69373,9 +65243,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -69429,9 +65296,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -69482,9 +65346,6 @@
               "application/wsdl": {},
               "application/zip": {}
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -69539,9 +65400,6 @@
               "application/wsdl": {},
               "application/zip": {}
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -69607,9 +65465,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -69638,9 +65493,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -69709,9 +65561,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -69740,9 +65589,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -69802,9 +65648,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -69855,9 +65698,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -69893,9 +65733,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -69958,9 +65795,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -70011,9 +65845,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -70049,9 +65880,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -70119,9 +65947,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -70187,9 +66012,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -70257,9 +66079,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -70326,9 +66145,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -70380,9 +66196,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -70453,9 +66266,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -70524,9 +66334,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -70597,9 +66404,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -70669,9 +66473,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -70727,9 +66528,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -70781,9 +66579,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -70839,9 +66634,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -70912,9 +66704,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -70989,9 +66778,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -71050,9 +66836,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -71102,9 +66885,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -71167,9 +66947,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -71219,9 +66996,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -71274,9 +67048,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -71333,9 +67104,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -71389,9 +67157,6 @@
               "application/wsdl": {},
               "application/zip": {}
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -71450,9 +67215,6 @@
               "application/zip": {}
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -71499,9 +67261,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -71553,9 +67312,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -71591,9 +67347,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -71635,9 +67388,6 @@
           "204": {
             "description": "Success"
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -71671,9 +67421,6 @@
           "204": {
             "description": "Success"
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -71702,9 +67449,6 @@
           },
           "302": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -71756,9 +67500,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -71809,9 +67550,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -71855,9 +67593,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -71909,9 +67644,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -71962,9 +67694,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -72014,9 +67743,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -72078,9 +67804,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -72138,9 +67861,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -72191,9 +67911,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -72256,9 +67973,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -72313,9 +68027,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -72381,9 +68092,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -72441,9 +68149,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -72509,9 +68214,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -72569,9 +68271,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -72735,15 +68434,6 @@
         "in": "path",
         "description": "Associate name or id",
         "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "base_path": {
-        "name": "base_path",
-        "in": "query",
-        "description": "Base path of the API",
-        "required": false,
         "schema": {
           "type": "string"
         }
@@ -73027,15 +68717,6 @@
           "type": "string"
         }
       },
-      "enforced": {
-        "name": "enforced",
-        "in": "query",
-        "description": "Whether the API is enforced or not",
-        "required": false,
-        "schema": {
-          "type": "boolean"
-        }
-      },
       "entry": {
         "name": "entry",
         "in": "path",
@@ -73124,15 +68805,6 @@
         "required": false,
         "schema": {
           "type": "string"
-        }
-      },
-      "force": {
-        "name": "force",
-        "in": "query",
-        "description": "Force the operation",
-        "required": false,
-        "schema": {
-          "type": "boolean"
         }
       },
       "gateway-service": {
@@ -73693,33 +69365,6 @@
           "type": "string"
         }
       },
-      "skill-id": {
-        "name": "skill-id",
-        "in": "path",
-        "description": "Skill name",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "skill-name": {
-        "name": "skill-name",
-        "in": "path",
-        "description": "Skill name",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "skill-version": {
-        "name": "skill-version",
-        "in": "path",
-        "description": "Skill version name",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
       "snapshot": {
         "name": "snapshot",
         "in": "path",
@@ -74256,14 +69901,6 @@
             "type": "string",
             "format": "uri"
           },
-          "internal_svc_endpoint": {
-            "type": "string",
-            "format": "uri"
-          },
-          "internal_svc_endpoint_tls_client_profile_url": {
-            "type": "string",
-            "format": "uri"
-          },
           "gateway_service_urls": {
             "type": "array",
             "items": {
@@ -74278,13 +69915,6 @@
           "availability_zone_url": {
             "type": "string",
             "format": "uri"
-          },
-          "communication_from_apim_kind": {
-            "type": "string",
-            "enum": [
-              "external",
-              "internal_svc"
-            ]
           },
           "metadata": {
             "type": "object",
@@ -74433,15 +70063,6 @@
               "openapi2",
               "openapi3"
             ]
-          },
-          "base_paths": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "enforced": {
-            "type": "boolean"
           },
           "catalog_api": {
             "type": "object",
@@ -75562,9 +71183,6 @@
           "task_self_approval": {
             "type": "boolean"
           },
-          "allowed_product_visibility": {
-            "$ref": "#/components/schemas/ProductVisibility"
-          },
           "application_lifecycle": {
             "type": "object",
             "additionalProperties": false,
@@ -75712,22 +71330,6 @@
             "type": "array",
             "items": {
               "type": "string"
-            }
-          },
-          "override_invitation_ttl_for_all_consumer_orgs": {
-            "type": "boolean"
-          },
-          "gateway_supported_protocols": {
-            "type": "array",
-            "nullable": true,
-            "items": {
-              "type": "string",
-              "enum": [
-                "wss",
-                "https",
-                "ws",
-                "http"
-              ]
             }
           },
           "metadata": {
@@ -75898,29 +71500,6 @@
               "enabled": {
                 "type": "boolean"
               },
-              "audit_reads": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "enabled": {
-                    "type": "boolean"
-                  },
-                  "response_data_to_http_endpoints": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "enabled": {
-                        "type": "boolean"
-                      },
-                      "list_results_limit": {
-                        "type": "integer",
-                        "minimum": 0,
-                        "maximum": 10000
-                      }
-                    }
-                  }
-                }
-              },
               "mode": {
                 "type": "string",
                 "enum": [
@@ -75984,14 +71563,6 @@
             "type": "string",
             "format": "uri"
           },
-          "platform_api_svc_endpoint": {
-            "type": "string",
-            "format": "uri"
-          },
-          "consumer_api_svc_endpoint": {
-            "type": "string",
-            "format": "uri"
-          },
           "license_accepted": {
             "type": "boolean"
           },
@@ -76011,9 +71582,6 @@
           "tls_client_profile_default_url": {
             "type": "string",
             "format": "uri"
-          },
-          "token_issuer": {
-            "type": "string"
           },
           "access_token_keystore_urls": {
             "type": "array",
@@ -76036,13 +71604,6 @@
               "format": "uri"
             }
           },
-          "self_signed_token_keystore_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
           "atm_base_path": {
             "type": "string",
             "nullable": true
@@ -76053,18 +71614,6 @@
               "jwt",
               "b64"
             ]
-          },
-          "sync_roles_setting": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "enabled": {
-                "type": "boolean"
-              },
-              "endpoint": {
-                "$ref": "#/components/schemas/SecuredEndpoint"
-              }
-            }
           },
           "metadata": {
             "type": "object",
@@ -76727,24 +72276,6 @@
             "type": "string",
             "nullable": true
           },
-          "communication_kind": {
-            "type": "string",
-            "enum": [
-              "external",
-              "internal_svc"
-            ]
-          },
-          "communication_to_analytics_kind": {
-            "type": "string",
-            "enum": [
-              "external",
-              "internal_svc"
-            ]
-          },
-          "communication_to_analytics_with_jwt": {
-            "type": "boolean",
-            "nullable": true
-          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -77256,7 +72787,7 @@
                         "nullable": true
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -77283,7 +72814,7 @@
                         ]
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -77292,11 +72823,11 @@
                     "additionalProperties": false,
                     "properties": {
                       "application_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint",
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform",
                         "nullable": true
                       },
                       "owner_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint",
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform",
                         "nullable": true
                       }
                     }
@@ -78727,24 +74258,6 @@
             "type": "string",
             "nullable": true
           },
-          "communication_kind": {
-            "type": "string",
-            "enum": [
-              "external",
-              "internal_svc"
-            ]
-          },
-          "communication_to_analytics_kind": {
-            "type": "string",
-            "enum": [
-              "external",
-              "internal_svc"
-            ]
-          },
-          "communication_to_analytics_with_jwt": {
-            "type": "boolean",
-            "nullable": true
-          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -79564,7 +75077,6 @@
             "type": "string",
             "enum": [
               "ready",
-              "claimed",
               "running",
               "blocked",
               "failed"
@@ -81067,7 +76579,7 @@
                         "nullable": true
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -81094,7 +76606,7 @@
                         ]
                       },
                       "custom_form_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   },
@@ -81103,10 +76615,10 @@
                     "additionalProperties": false,
                     "properties": {
                       "application_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       },
                       "owner_endpoint": {
-                        "$ref": "#/components/schemas/SecuredEndpoint"
+                        "$ref": "#/components/schemas/SecuredEndpointWithoutEndpointTransform"
                       }
                     }
                   }
@@ -81512,9 +77024,6 @@
               "type": "string",
               "format": "uri"
             }
-          },
-          "owner": {
-            "$ref": "#/components/schemas/User"
           },
           "metadata": {
             "type": "object",
@@ -82027,13 +77536,6 @@
           "service_version": {
             "type": "string",
             "nullable": true
-          },
-          "communication_kind": {
-            "type": "string",
-            "enum": [
-              "external",
-              "internal_svc"
-            ]
           },
           "metadata": {
             "type": "object",
@@ -83194,207 +78696,6 @@
           }
         }
       },
-      "Skill": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "type": {
-            "type": "string",
-            "readOnly": true,
-            "enum": [
-              "skill"
-            ]
-          },
-          "api_version": {
-            "type": "string",
-            "readOnly": true,
-            "enum": [
-              "2.0.0"
-            ]
-          },
-          "id": {
-            "type": "string",
-            "readOnly": true
-          },
-          "name": {
-            "type": "string",
-            "maxLength": 255
-          },
-          "version": {
-            "type": "string",
-            "maxLength": 255
-          },
-          "title": {
-            "type": "string",
-            "maxLength": 1023
-          },
-          "summary": {
-            "type": "string",
-            "maxLength": 65535
-          },
-          "scope": {
-            "type": "string"
-          },
-          "skill_id": {
-            "type": "string"
-          },
-          "skill_type": {
-            "type": "string",
-            "enum": [
-              "primitive",
-              "composite",
-              "mapped",
-              "imported",
-              "other"
-            ]
-          },
-          "skill_subtype": {
-            "type": "string",
-            "enum": [
-              "public",
-              "private"
-            ]
-          },
-          "display_name": {
-            "type": "string"
-          },
-          "icon": {
-            "type": "string"
-          },
-          "visible": {
-            "type": "boolean"
-          },
-          "permissions": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
-          },
-          "applications": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "applications_info": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
-          },
-          "description": {
-            "type": "string"
-          },
-          "nlu": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "parameters": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
-          },
-          "author": {
-            "type": "string"
-          },
-          "rank": {
-            "type": "integer"
-          },
-          "runtime_endpoint": {
-            "type": "string",
-            "format": "uri"
-          },
-          "openapi_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "connection_state": {
-            "type": "string",
-            "enum": [
-              "none",
-              "not-connected",
-              "connected"
-            ]
-          },
-          "org_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "catalog_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "api_urls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "state": {
-            "type": "string",
-            "enum": [
-              "stage",
-              "publish"
-            ]
-          },
-          "tsv_api_lang": {
-            "type": "string"
-          },
-          "tsv_nlu_lang": {
-            "type": "string"
-          },
-          "tenant_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "metadata": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "url": {
-            "type": "string",
-            "readOnly": true,
-            "format": "uri"
-          }
-        }
-      },
-      "SkillList": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "total_results": {
-            "type": "integer"
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Skill"
-            }
-          }
-        }
-      },
       "Snapshot": {
         "type": "object",
         "additionalProperties": false,
@@ -83663,9 +78964,6 @@
           },
           "custom_notification_templates_enabled": {
             "type": "boolean"
-          },
-          "allowed_product_visibility": {
-            "$ref": "#/components/schemas/ProductVisibility"
           },
           "email_sender": {
             "$ref": "#/components/schemas/EmailSender"
@@ -84251,6 +79549,8 @@
               "reconfigure",
               "policy-upgrade",
               "heartbeat",
+              "manage-stale-cloud-webhooks",
+              "manage-stale-catalog-webhooks",
               "cleanup",
               "send",
               "initialize",
@@ -85492,8 +80792,7 @@
                 "product_retire_optimized",
                 "global_policy_error",
                 "product_migrate_subscriptions",
-                "execute_migration_target",
-                "event_config_logs"
+                "execute_migration_target"
               ]
             }
           },
@@ -86238,10 +81537,7 @@
             "type": "string"
           },
           "x5c": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "type": "string"
           },
           "kty": {
             "type": "string"
@@ -86250,12 +81546,6 @@
             "type": "string"
           },
           "alg": {
-            "type": "string"
-          },
-          "iss": {
-            "type": "string"
-          },
-          "purpose": {
             "type": "string"
           }
         }
@@ -86319,9 +81609,6 @@
           "api_key": {
             "type": "string"
           },
-          "scope": {
-            "type": "string"
-          },
           "grant_type": {
             "type": "string",
             "enum": [
@@ -86339,14 +81626,12 @@
         "type": "object",
         "additionalProperties": false,
         "required": [
+          "access_token",
           "token_type",
           "expires_in"
         ],
         "properties": {
           "access_token": {
-            "type": "string"
-          },
-          "id_token": {
             "type": "string"
           },
           "token_type": {
@@ -87899,6 +83184,10 @@
           }
         }
       },
+      "TestConnectionFailedResponse": {
+        "type": "object",
+        "additionalProperties": true
+      },
       "ExportP12Pem": {
         "type": "object",
         "additionalProperties": false,
@@ -87939,6 +83228,10 @@
             ]
           }
         }
+      },
+      "SendEmailResponse": {
+        "type": "object",
+        "additionalProperties": false
       },
       "EmailToOwners": {
         "type": "object",
@@ -88072,18 +83365,6 @@
           }
         }
       },
-      "SyncRoles": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "access_token": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "access_token"
-        ]
-      },
       "MailServerSavedTestConnection": {
         "type": "object",
         "additionalProperties": false,
@@ -88131,20 +83412,12 @@
             "items": {
               "type": "string"
             }
-          },
-          "errors": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "warnings": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           }
         }
+      },
+      "MailServerTestConnectionResponse": {
+        "type": "object",
+        "additionalProperties": false
       },
       "SecuredEndpoint": {
         "type": "object",
@@ -88157,6 +83430,24 @@
           "endpoint": {
             "type": "string",
             "format": "uri"
+          },
+          "tls_client_profile_url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          }
+        }
+      },
+      "SecuredEndpointWithoutEndpointTransform": {
+        "type": "object",
+        "additionalProperties": false,
+        "nullable": true,
+        "required": [
+          "endpoint"
+        ],
+        "properties": {
+          "endpoint": {
+            "type": "string"
           },
           "tls_client_profile_url": {
             "type": "string",
@@ -89144,9 +84435,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -89197,9 +84485,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -89235,9 +84520,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -89279,9 +84561,6 @@
           "204": {
             "description": "Success"
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -89315,9 +84594,6 @@
           "204": {
             "description": "Success"
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -89346,9 +84622,6 @@
           },
           "302": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -89399,9 +84672,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -89454,24 +84724,12 @@
                   "$ref": "#/components/schemas/Org"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "202": {
-            "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -89520,9 +84778,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -89565,9 +84820,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -89612,9 +84864,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -89656,9 +84905,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -89703,9 +84949,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -89747,9 +84990,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -89799,9 +85039,6 @@
           "201": {
             "description": "Success"
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -89843,9 +85080,6 @@
         "responses": {
           "302": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -89895,9 +85129,6 @@
         "responses": {
           "302": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -89953,9 +85184,6 @@
           "302": {
             "description": "Success"
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -90004,9 +85232,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -90063,9 +85288,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -90106,9 +85328,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -90167,9 +85386,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -90218,9 +85434,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -90278,21 +85491,12 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -90350,21 +85554,12 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -90422,21 +85617,12 @@
                   "$ref": "#/components/schemas/MemberInvitation"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -90485,9 +85671,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -90516,9 +85699,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -90572,9 +85752,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -90610,9 +85787,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -90674,9 +85848,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -90736,21 +85907,12 @@
                   "$ref": "#/components/schemas/MemberRegisterResponse"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -90811,21 +85973,12 @@
                   "$ref": "#/components/schemas/MemberAcceptResponse"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -90877,9 +86030,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -90928,9 +86078,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -90997,9 +86144,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -91052,9 +86196,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -91091,9 +86232,6 @@
           "201": {
             "description": "Success"
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -91117,9 +86255,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -91154,8 +86289,50 @@
           "204": {
             "description": "Success"
           },
-          "4XX": {
+          "5XX": {
             "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "User Management",
+          "Resource: User"
+        ]
+      }
+    },
+    "/request-password-reset-noemail": {
+      "post": {
+        "summary": "Send reset password link to consumer",
+        "description": "Send reset password link to consumer",
+        "operationId": "user_requestPasswordResetNoEmail",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestPasswordReset"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestPasswordReset"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestPasswordResetNoEmail"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestPasswordResetNoEmail"
+                }
+              }
+            }
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -91198,9 +86375,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -91257,9 +86431,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -91311,9 +86482,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -91371,21 +86539,12 @@
                   "$ref": "#/components/schemas/Member"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -91434,9 +86593,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -91468,9 +86624,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -91524,9 +86677,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -91577,9 +86727,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -91620,9 +86767,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -91679,9 +86823,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -91734,9 +86875,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -91779,9 +86917,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -91831,9 +86966,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -91875,9 +87007,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -91924,9 +87053,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -91962,9 +87088,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -92004,9 +87127,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -92053,9 +87173,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -92105,9 +87222,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -92149,9 +87263,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -92198,9 +87309,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -92236,9 +87344,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -92278,9 +87383,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -92324,9 +87426,6 @@
               "application/wsdl": {},
               "application/zip": {}
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -92373,9 +87472,6 @@
               "application/wsdl": {},
               "application/zip": {}
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -92426,9 +87522,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -92485,9 +87578,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -92536,9 +87626,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -92592,9 +87679,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -92637,9 +87721,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -92686,9 +87767,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -92742,9 +87820,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -92801,9 +87876,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -92852,9 +87924,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -92908,9 +87977,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -92953,9 +88019,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -93002,9 +88065,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -93055,9 +88115,6 @@
               "application/wsdl": {},
               "application/zip": {}
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -93111,9 +88168,6 @@
               "application/wsdl": {},
               "application/zip": {}
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -93171,21 +88225,12 @@
                   "$ref": "#/components/schemas/App"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -93234,9 +88279,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -93265,9 +88307,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -93321,9 +88360,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -93374,9 +88410,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -93413,9 +88446,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -93423,6 +88453,91 @@
         "tags": [
           "Organization Application",
           "Resource: Application"
+        ]
+      }
+    },
+    "/application-types": {
+      "description": "The collection of Application Type operations",
+      "get": {
+        "summary": "List the Application Type objects",
+        "description": "List the Application Type objects",
+        "operationId": "application_type_list",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplicationTypeList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplicationTypeList"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Application",
+          "Resource: Application Type"
+        ]
+      }
+    },
+    "/application-types/{application-type}": {
+      "description": "Application Type object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/application-type"
+        }
+      ],
+      "get": {
+        "summary": "Get the Application Type object by name or id",
+        "description": "Get the Application Type object by name or id",
+        "operationId": "application_type_get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplicationType"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplicationType"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Application",
+          "Resource: Application Type"
         ]
       }
     },
@@ -93475,21 +88590,12 @@
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -93538,9 +88644,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -93569,9 +88672,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -93628,9 +88728,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -93681,9 +88778,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -93719,9 +88813,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -93770,21 +88861,12 @@
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -93833,21 +88915,12 @@
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -93910,21 +88983,12 @@
                   "$ref": "#/components/schemas/Credential"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -93985,21 +89049,12 @@
                   "$ref": "#/components/schemas/Subscription"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -94048,9 +89103,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -94079,9 +89131,6 @@
         "responses": {
           "204": {
             "description": "Success"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -94138,9 +89187,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -94191,9 +89237,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -94229,9 +89272,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -94283,9 +89323,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -94334,9 +89371,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -94394,21 +89428,12 @@
                   "$ref": "#/components/schemas/PaymentMethod"
                 }
               }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
+            },
             "headers": {
               "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
+                "$ref": "#/components/headers/Location"
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -94456,9 +89481,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -94512,9 +89534,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -94565,9 +89584,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -94603,9 +89619,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -94657,9 +89670,6 @@
               }
             }
           },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
           "5XX": {
             "$ref": "#/components/responses/Error"
           }
@@ -94708,9 +89718,6 @@
                 }
               }
             }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
@@ -94810,6 +89817,15 @@
         "name": "app",
         "in": "path",
         "description": "Application name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "application-type": {
+        "name": "application-type",
+        "in": "path",
+        "description": "Application Type name or id",
         "required": true,
         "schema": {
           "type": "string"
@@ -95315,9 +90331,6 @@
               "openapi3"
             ]
           },
-          "enforced": {
-            "type": "boolean"
-          },
           "product_urls": {
             "type": "array",
             "items": {
@@ -95500,6 +90513,121 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/App"
+            }
+          }
+        }
+      },
+      "ApplicationType": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "application_type"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "oauth_types": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "client_type",
+                "grant_types"
+              ],
+              "properties": {
+                "client_type": {
+                  "type": "string",
+                  "enum": [
+                    "public",
+                    "confidential"
+                  ]
+                },
+                "grant_types": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "password",
+                      "implicit",
+                      "access_code",
+                      "application"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "org_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "app_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "ApplicationTypeList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApplicationType"
             }
           }
         }
@@ -97310,6 +92438,18 @@
             "type": "string"
           },
           "email": {
+            "type": "string"
+          }
+        }
+      },
+      "RequestPasswordResetNoEmail": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "reset_link": {
+            "type": "string"
+          },
+          "language": {
             "type": "string"
           }
         }
@@ -122902,90 +118042,6 @@
           "Resource: Twig"
         ]
       }
-    },
-    "/catalogs/{org}/{catalog}/content/export/{content_type}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/content_type"
-        }
-      ],
-      "get": {
-        "summary": "Export a zip containing the site content",
-        "description": "Export a zip containing the site content. You can export specific entity types and specific ids or you can generate a tar containing all content.",
-        "operationId": "content_export",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "externalDocs": {
-          "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=content-apic-contentexport"
-        },
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/content_ids"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "The export artifact stream.",
-            "content": {
-              "application/octet-stream": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Failure",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Failure - unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Content"
-        ]
-      }
     }
   },
   "components": {
@@ -123089,20 +118145,10 @@
           "type": "string"
         }
       },
-      "content_ids": {
-        "name": "content_ids",
-        "in": "query",
-        "description": "A comma separated list of content ids to export.",
-        "required": false,
-        "schema": {
-          "type": "string",
-          "example": "4,76,23"
-        }
-      },
       "content_type": {
         "name": "content_type",
         "in": "path",
-        "description": "Type of content (e.g. node, block, taxonomy). To export all content, use content_type 'all'. Default is node.",
+        "description": "Type of content you want to perform this operation on. To find out content types see the content list-types route.",
         "required": true,
         "schema": {
           "type": "string",
