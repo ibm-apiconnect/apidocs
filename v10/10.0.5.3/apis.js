@@ -37,6 +37,7 @@ window.apiConnectExplorer = {
         "10.0.5.2": "10.0.5.2.html",
         "10.0.5.3": "10.0.5.3.html",
         "10.0.5.4": "10.0.5.4.html",
+        "10.0.5.5": "10.0.5.5.html",
         "10.0.5.LATEST": "10.0.5.LATEST.html",
         "10.0.LATEST": "10.0.LATEST.html",
       }
