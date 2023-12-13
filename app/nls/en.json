@@ -283,5 +283,6 @@
   "channel_subscribe_description": "Instructions for consuming with references for your payload schema.",
   "operation": "Operation",
   "copy_client_id": "Copy client ID",
-  "dependencies": "Dependencies"
+  "dependencies": "Dependencies",
+  "binding_details": "Binding details"
 }
