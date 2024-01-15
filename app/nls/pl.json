@@ -20,7 +20,7 @@
   "summary": "Podsumowanie",
   "api_located_in": "{{type}} znajduje się w {{in}}",
   "bearer_format": "Format posiadacza",
-  "required": "Wymagany",
+  "required": "wymagane",
   "responses": "Odpowiedzi",
   "definition": "Definicja",
   "definitions": "Definicje",
@@ -40,7 +40,7 @@
   "examples": "Przykłady",
   "login": "Zaloguj się, aby wypróbować ten interfejs API",
   "try": "Próba",
-  "optional": "(opcjonalnie)",
+  "optional": "opcjonalny",
   "in_header": "w nagłówku",
   "identification": "Identyfikacja",
   "example_request": "Przykładowe żądanie",
@@ -283,5 +283,6 @@
   "channel_subscribe_description": "Instrukcje dotyczące konsumowania z odwołaniami do schematu ładunku.",
   "operation": "Operacja",
   "copy_client_id": "Kopiuj identyfikator klienta",
-  "dependencies": "Zależności"
+  "dependencies": "Zależności",
+  "binding_details": "Szczegóły powiązania"
 }

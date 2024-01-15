@@ -87,7 +87,7 @@
   "explorer_scope": "Bereich",
   "explorer_show_schema": "Schema",
   "explorer_show_example": "Beispiel",
-  "explorer_redirect_uri": "Umleitungs-URIs",
+  "explorer_redirect_uri": "Umleitungs-URI",
   "name": "Name",
   "type": "Typ",
   "terms_of_service": "Servicebedingungen",
@@ -283,5 +283,6 @@
   "channel_subscribe_description": "Anweisungen zum Konsumieren mit Referenzen für Ihr Nutzdatenschema.",
   "operation": "Operation",
   "copy_client_id": "Client-ID kopieren",
-  "dependencies": "Abhängigkeiten"
+  "dependencies": "Abhängigkeiten",
+  "binding_details": "Bindungsdetails"
 }

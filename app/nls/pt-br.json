@@ -56,7 +56,7 @@
   "explorer_authorize": "Autorizar",
   "explorer_showing_draft_apis": "Parece que o servidor não está em execução, portanto, as APIs de rascunho estão sendo exibidas abaixo. Para ver as APIs em execução, certifique-se de que o servidor está em execução.",
   "response_code": "Código",
-  "response_time": "Tempo",
+  "response_time": "Hora",
   "explorer_invalid_swagger": "Falha ao carregar a API selecionada:",
   "explorer_check_certificate": "Clicar no link abaixo abrirá o servidor em uma nova guia. Se o navegador exibe uma questão certificada, é possível escolher aceitá-la e voltar aqui para testar novamente.",
   "explorer_security_requirements": "As chamadas para a API devem satisfazer um dos seguintes conjuntos de requisitos",
@@ -283,5 +283,6 @@
   "channel_subscribe_description": "Instruções para consumo com referências para seu esquema de carga útil.",
   "operation": "Operação",
   "copy_client_id": "Copiar ID do cliente",
-  "dependencies": "Dependências"
+  "dependencies": "Dependências",
+  "binding_details": "Detalhes da ligação"
 }

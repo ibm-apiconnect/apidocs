@@ -3,7 +3,7 @@
   "api_contact_email": "Correo electrónico",
   "api_contact_info": "Contacto",
   "api_contact_information": "Información de contacto",
-  "api_contact_name": "Nombre",
+  "api_contact_name": "nombre",
   "api_contact_url": "URL",
   "description": "Descripción",
   "security": "Seguridad",
@@ -283,5 +283,6 @@
   "channel_subscribe_description": "Instrucciones para consumir con referencias para el esquema de carga útil.",
   "operation": "Operación",
   "copy_client_id": "Copiar ID de cliente",
-  "dependencies": "Dependencias"
+  "dependencies": "Dependencias",
+  "binding_details": "Detalles de enlace"
 }

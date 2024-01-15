@@ -29,7 +29,7 @@
   "tags": "標籤",
   "search": "搜尋",
   "resize": "拖曳來調整大小",
-  "scheme": "方法",
+  "scheme": "架構",
   "copy_to_clipboard": "複製目標到剪貼簿",
   "copied_to_clipboard": "已複製到剪貼簿",
   "view_operations_by": "檢視作業的依據：",
@@ -283,5 +283,6 @@
   "channel_subscribe_description": "包含有效負載綱目參照的使用指示。",
   "operation": "作業",
   "copy_client_id": "複製用戶端 ID",
-  "dependencies": "相依關係"
+  "dependencies": "相依關係",
+  "binding_details": "連結詳細資料"
 }

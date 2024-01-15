@@ -1,6 +1,6 @@
 {
   "no_apis": "Nessuna API da visualizzare.",
-  "api_contact_email": "Email",
+  "api_contact_email": "E-mail",
   "api_contact_info": "Contatti",
   "api_contact_information": "Informazioni di contatto",
   "api_contact_name": "Nome",
@@ -49,7 +49,7 @@
   "explorer_no_apis_found": "Nessuna API da visualizzare.",
   "accept": "Accetto",
   "content_type": "Content-Type",
-  "request": "Richiesta",
+  "request": "Richiedi",
   "response": "Risposta",
   "headers": "Intestazioni",
   "authorization": "Autorizzazione",
@@ -139,7 +139,7 @@
   "less": "meno",
   "show_more": "Mostra altro",
   "show_less": "Mostra meno",
-  "mixedcontent_error": "Nessuna risposta. Questa è una chiamata con contenuto misto. Non è possibile richiamare un endpoint HTTP da una acceduta con HTTPS.",
+  "mixedcontent_error": "Nessuna risposta. Questa è una chiamata con contenuto misto. Impossibile richiamare un endpoint HTTP da una pagina che utilizza il protocollo HTTPS.",
   "invalid_client": "Non autorizzato. Accertarsi di aver specificato la chiave API e il segreto di un'applicazione sottoscritta in precedenza.",
   "invalid_scope": "Non autorizzato. Ambito non valido.",
   "invalid_grant": "Non autorizzato. Concessione non valida.",
@@ -283,5 +283,6 @@
   "channel_subscribe_description": "Istruzioni per l'utilizzo con riferimenti per lo schema di payload.",
   "operation": "Operazione",
   "copy_client_id": "Copia ID client",
-  "dependencies": "Dipendenze"
+  "dependencies": "Dipendenze",
+  "binding_details": "Dettagli di binding"
 }

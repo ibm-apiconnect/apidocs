@@ -114,7 +114,7 @@
   "devportal_not_logged_in": "Kullanılabilir uygulamalarınızı görmek için hesabınızda oturum açın.",
   "devportal_sign_in": "Oturum aç",
   "devportal_no_apps": "Uygulamanız yok.",
-  "devportal_create_app": "Uygulama oluştur",
+  "devportal_create_app": "Uygulama yarat",
   "menu": "Menü",
   "collapse_toggle": "Panoyu daralt",
   "expand_toggle": "Panoyu genişlet",
@@ -283,5 +283,6 @@
   "channel_subscribe_description": "Bilgi yükü şemanız için referanslarla birlikte kullanıma ilişkin yönergeler.",
   "operation": "İşlem",
   "copy_client_id": "İstemci kimliğini kopyala",
-  "dependencies": "Bağımlılıklar"
+  "dependencies": "Bağımlılıklar",
+  "binding_details": "Bağlama ayrıntıları"
 }

@@ -126,7 +126,7 @@
   "security_option_label": "Beveiligingsoptie {{number}}",
   "security_options": "Beveiligingsopties",
   "overview": "Overzicht",
-  "query": "Query:",
+  "query": "Query",
   "path": "Pad",
   "header": "Header",
   "form_data": "Formuliergegevens",
@@ -283,5 +283,6 @@
   "channel_subscribe_description": "Instructies voor het consumeren met verwijzingen voor uw payloadschema.",
   "operation": "Bewerking",
   "copy_client_id": "Client-ID kopiëren",
-  "dependencies": "Afhankelijkheden"
+  "dependencies": "Afhankelijkheden",
+  "binding_details": "Binding-gegevens"
 }

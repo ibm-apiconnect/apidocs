@@ -65,7 +65,7 @@
   "documentation": "文档",
   "download_swagger": "下载 OpenAPI 文档",
   "download_api_doc": "下载 API 文档",
-  "of": "共",
+  "of": "之一",
   "explorer_cors": "未收到任何响应。原因包括目标服务器上缺少 CORS 支持、服务器不可用或者遇到不可信证书。",
   "explorer_cors_mtls": "未收到任何响应。原因包括目标服务器上缺少 CORS 支持、服务器不可用、遇到不可信证书或者需要相互 SSL 认证。",
   "explorer_type_headers": "类型头",
@@ -96,7 +96,7 @@
   "parameters": "参数",
   "schema": "模式",
   "client_id": "API 密钥",
-  "client_secret": "添加私钥",
+  "client_secret": "API 私钥",
   "public": "公共",
   "confidential": "保密",
   "implicit": "暗示",
@@ -110,7 +110,7 @@
   "assembly_generate_data": "生成",
   "assembly_generate_default_object": "生成对象",
   "deprecated": "已弃用",
-  "operation_deprecated": "已弃用此版本",
+  "operation_deprecated": "不推荐此操作",
   "devportal_not_logged_in": "登录到您的帐户以查看可用应用程序。",
   "devportal_sign_in": "登录",
   "devportal_no_apps": "您没有任何应用程序。",
@@ -283,5 +283,6 @@
   "channel_subscribe_description": "使用有效内容模式引用的指示信息。",
   "operation": "操作",
   "copy_client_id": "复制客户机标识",
-  "dependencies": "依赖关系"
+  "dependencies": "依赖关系",
+  "binding_details": "绑定详细信息"
 }

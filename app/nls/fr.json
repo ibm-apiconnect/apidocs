@@ -1,5 +1,5 @@
 {
-  "no_apis": "Il n'y a pas d'API à afficher.",
+  "no_apis": "Il n'existe pas d'API à afficher.",
   "api_contact_email": "Adresse électronique",
   "api_contact_info": "Contact",
   "api_contact_information": "Informations de contact",
@@ -11,7 +11,7 @@
   "collapse_all": "Réduire tout",
   "code": "Code",
   "endpoint": "Noeud final",
-  "endpoints": "Noeuds finaux",
+  "endpoints": "Points d'extrémité",
   "explorer_target_endpoint": "Noeud final cible",
   "explorer_swagger_host": "Utiliser l'hôte OpenAPI",
   "development": "Développement",
@@ -46,7 +46,7 @@
   "example_request": "Exemple de demande",
   "explorer_no_apis": "Aucune API à afficher. Créez des modèles et des API, cliquez sur Exécuter, puis revenez ici pour les afficher et les manipuler.",
   "explorer_failed_to_load_api": "Une erreur est survenue lors du chargement de l'API depuis l'URL fournie.",
-  "explorer_no_apis_found": "Il n'y a pas d'API à afficher.",
+  "explorer_no_apis_found": "Il n'existe pas d'API à afficher.",
   "accept": "Accept",
   "content_type": "Content-Type",
   "request": "Demande",
@@ -220,7 +220,7 @@
   "example_generator_error": "Une erreur s'est produite lors de la génération de l'exemple : {{ error }}",
   "protocol": "Protocole",
   "SASL_secure": "Le cluster Kafka est sécurisé par SASL ; contactez le propriétaire de l'API pour obtenir des informations sur le protocole SASL à utiliser.",
-  "SSL_secure": "Le chiffrement du cluster Kafka est activé. Contactez le propriétaire de l'API pour connaître les configurations de magasin de clés (TrustStore) et de fichier de clés (KeyStore) appropriées.",
+  "SSL_secure": "Le chiffrement du cluster Kafka est activé. Contactez le propriétaire de l'API pour connaître les configurations de magasin de clés de confiance et de magasin de clés appropriées.",
   "unknown_secure": "Le cluster Kafka est sécurisé ; contactez le propriétaire de l'API pour connaître les données d'identification",
   "contact_api_owner": "Le propriétaire de l'API n'a pas fourni toutes les valeurs requises. Contactez le propriétaire pour connaître les valeurs correctes.",
   "async_parse_errors": "Erreurs de validation AsyncAPI",
@@ -283,5 +283,6 @@
   "channel_subscribe_description": "Instructions d'utilisation avec des références pour votre schéma de contenu.",
   "operation": "Opération",
   "copy_client_id": "Copier l'ID client",
-  "dependencies": "Dépendances"
+  "dependencies": "Dépendances",
+  "binding_details": "Détails de liaison"
 }

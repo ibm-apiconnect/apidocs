@@ -3,7 +3,7 @@
   "api_contact_email": "이메일",
   "api_contact_info": "연락처",
   "api_contact_information": "담당자 정보",
-  "api_contact_name": "이름 은(는)",
+  "api_contact_name": "이름",
   "api_contact_url": "URL",
   "description": "설명",
   "security": "보안",
@@ -88,7 +88,7 @@
   "explorer_show_schema": "스키마",
   "explorer_show_example": "예제",
   "explorer_redirect_uri": "경로 재지정 URI",
-  "name": "이름 은(는)",
+  "name": "이름",
   "type": "유형",
   "terms_of_service": "이용 약관",
   "terms_of_service_link": "이용 약관 보기",
@@ -283,5 +283,6 @@
   "channel_subscribe_description": "페어로드 스키마에 대한 참조와 함께 이용 시 지침입니다.",
   "operation": "오퍼레이션",
   "copy_client_id": "클라이언트 ID 복사",
-  "dependencies": "종속성"
+  "dependencies": "종속성",
+  "binding_details": "바인딩 세부사항"
 }
