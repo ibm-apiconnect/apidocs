@@ -1,6 +1,6 @@
 {
   "main.css": "https://ibm-apiconnect.github.io/apidocs/app/css/explorer.css",
-  "main.js": "https://ibm-apiconnect.github.io/apidocs/app/static/js/main.5cb1e74b.js",
+  "main.js": "https://ibm-apiconnect.github.io/apidocs/app/static/js/main.d421d360.js",
   "static/js/946.dbf6ddfc.chunk.js": "https://ibm-apiconnect.github.io/apidocs/app/static/js/946.dbf6ddfc.chunk.js",
   "static/js/760.6c7b18ce.chunk.js": "https://ibm-apiconnect.github.io/apidocs/app/static/js/760.6c7b18ce.chunk.js",
   "static/js/480.2810158c.chunk.js": "https://ibm-apiconnect.github.io/apidocs/app/static/js/480.2810158c.chunk.js",
@@ -263,7 +263,7 @@
   "static/media/spaces_18.svg": "https://ibm-apiconnect.github.io/apidocs/app/static/media/spaces_18.cabbfba3.svg",
   "static/media/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;": "https://ibm-apiconnect.github.io/apidocs/app/static/media/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;.1feff74f.bin",
   "explorer.css.map": "https://ibm-apiconnect.github.io/apidocs/app/css/explorer.css.map",
-  "main.5cb1e74b.js.map": "https://ibm-apiconnect.github.io/apidocs/app/static/js/main.5cb1e74b.js.map",
+  "main.d421d360.js.map": "https://ibm-apiconnect.github.io/apidocs/app/static/js/main.d421d360.js.map",
   "946.dbf6ddfc.chunk.js.map": "https://ibm-apiconnect.github.io/apidocs/app/static/js/946.dbf6ddfc.chunk.js.map",
   "760.6c7b18ce.chunk.js.map": "https://ibm-apiconnect.github.io/apidocs/app/static/js/760.6c7b18ce.chunk.js.map",
   "480.2810158c.chunk.js.map": "https://ibm-apiconnect.github.io/apidocs/app/static/js/480.2810158c.chunk.js.map",
