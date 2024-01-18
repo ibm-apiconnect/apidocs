@@ -101700,6 +101700,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
             "$ref": "#/components/parameters/bytes_received_optional"
           },
           {
@@ -101923,6 +101926,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
             "$ref": "#/components/parameters/bytes_received_optional"
           },
           {
@@ -102141,6 +102147,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -102363,6 +102372,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
             "$ref": "#/components/parameters/bytes_received_optional"
           },
           {
@@ -102581,6 +102593,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -102803,6 +102818,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
             "$ref": "#/components/parameters/bytes_received_optional"
           },
           {
@@ -103021,6 +103039,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -103255,6 +103276,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
             "$ref": "#/components/parameters/bytes_received_optional"
           },
           {
@@ -103478,6 +103502,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
             "$ref": "#/components/parameters/bytes_received_optional"
           },
           {
@@ -103698,6 +103725,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
             "$ref": "#/components/parameters/bytes_received_optional"
           },
           {
@@ -103913,6 +103943,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -104132,6 +104165,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
             "$ref": "#/components/parameters/bytes_received_optional"
           },
           {
@@ -104347,6 +104383,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -104566,6 +104605,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
             "$ref": "#/components/parameters/bytes_received_optional"
           },
           {
@@ -104781,6 +104823,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -105012,6 +105057,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
             "$ref": "#/components/parameters/bytes_received_optional"
           },
           {
@@ -105232,6 +105280,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
             "$ref": "#/components/parameters/bytes_received_optional"
           },
           {
@@ -105449,6 +105500,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
             "$ref": "#/components/parameters/bytes_received_optional"
           },
           {
@@ -105661,6 +105715,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -105877,6 +105934,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
             "$ref": "#/components/parameters/bytes_received_optional"
           },
           {
@@ -106089,6 +106149,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -106305,6 +106368,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
             "$ref": "#/components/parameters/bytes_received_optional"
           },
           {
@@ -106517,6 +106583,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -106745,6 +106814,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
             "$ref": "#/components/parameters/bytes_received_optional"
           },
           {
@@ -106962,6 +107034,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
             "$ref": "#/components/parameters/bytes_received_optional"
           },
           {
@@ -107176,6 +107251,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
             "$ref": "#/components/parameters/bytes_received_optional"
           },
           {
@@ -107385,6 +107463,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -107598,6 +107679,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
             "$ref": "#/components/parameters/bytes_received_optional"
           },
           {
@@ -107807,6 +107891,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -108020,6 +108107,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
             "$ref": "#/components/parameters/bytes_received_optional"
           },
           {
@@ -108229,6 +108319,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -108452,6 +108545,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -115813,7 +115909,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -115907,7 +116003,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -115995,7 +116091,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -116080,7 +116176,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -116162,7 +116258,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -116238,7 +116334,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -116288,7 +116384,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -116350,7 +116446,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -116421,7 +116517,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -116468,7 +116564,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -116539,7 +116635,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -116589,7 +116685,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -116642,7 +116738,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -116707,7 +116803,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -116781,7 +116877,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -116831,7 +116927,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -116887,7 +116983,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -116964,7 +117060,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -117044,7 +117140,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -117097,7 +117193,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -117149,7 +117245,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -117204,7 +117300,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -117251,7 +117347,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -117297,7 +117393,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "post": {
@@ -117335,7 +117431,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -117406,7 +117502,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -117453,7 +117549,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -117506,7 +117602,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "put": {
@@ -117547,7 +117643,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -117612,7 +117708,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -117680,7 +117776,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -117751,7 +117847,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -117795,7 +117891,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -117842,7 +117938,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -117915,7 +118011,623 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/pipelines": {
+      "description": "Provides pipeline-specific information and settings for each pipeline.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Pipeline-specific information and settings for each pipeline.",
+        "description": "Provides pipeline-specific information and settings for each pipeline.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionPipelines",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/os": {
+      "description": "Provides node-level info about the OS.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Node-level info about the OS.",
+        "description": "Provides node-level info about the OS.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionOs",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/jvm": {
+      "description": "Provides node-level JVM info, including info about threads.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Node-level JVM info, including info about threads.",
+        "description": "Provides node-level JVM info, including info about threads.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionJvm",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/plugins": {
+      "description": "Provides information about all Logstash plugins that are currently installed.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Information about all Logstash plugins that are currently installed.",
+        "description": "Provides information about all Logstash plugins that are currently installed.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionPlugins",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/hot_threads": {
+      "description": "Provides information about the the current hot threads for Logstash. It contains a breakdown of the top hot threads.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Information about the the current hot threads for Logstash.",
+        "description": "Provides information about the the current hot threads for Logstash. It contains a breakdown of the top hot threads.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionHotThreads",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/stats/jvm": {
+      "description": "Provides JVM stats, including stats about threads, memory usage, garbage collectors, and uptime.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "JVM stats, including stats about threads, memory usage, garbage collectors, and uptime.",
+        "description": "Provides JVM stats, including stats about threads, memory usage, garbage collectors, and uptime.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionJvmNodeStats",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/stats/process": {
+      "description": "Provides process stats, including stats about file descriptors, memory consumption, and CPU usage.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Process stats, including stats about file descriptors, memory consumption, and CPU usage.",
+        "description": "Provides process stats, including stats about file descriptors, memory consumption, and CPU usage.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionProcessNodeStats",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/stats/events": {
+      "description": "Provides event-related statistics for the Logstash instance regardless of how many pipelines were created and destroyed.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Event-related statistics for the Logstash instance regardless of how many pipelines were created and destroyed.",
+        "description": "Provides event-related statistics for the Logstash instance regardless of how many pipelines were created and destroyed.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionEventsNodeStats",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/stats/flow": {
+      "description": "Provides flow-related statistics for the Logstash instance regardless of how many pipelines were created and destroyed.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Flow-related statistics for the Logstash instance regardless of how many pipelines were created and destroyed.",
+        "description": "Provides flow-related statistics for the Logstash instance regardless of how many pipelines were created and destroyed.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionFlowNodeStats",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/stats/pipelines": {
+      "description": "Provides runtime stats about each Logstash pipeline.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Runtime stats about each Logstash pipeline.",
+        "description": "Provides runtime stats about each Logstash pipeline.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionPipelinesNodeStats",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/stats/reloads": {
+      "description": "Provides runtime stats about config reload successes and failures.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Runtime stats about config reload successes and failures.",
+        "description": "Provides runtime stats about config reload successes and failures.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionReloadsNodeStats",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/stats/os": {
+      "description": "Provides runtime stats about cgroups when Logstash is running in a container.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Runtime stats about cgroups when Logstash is running in a container.",
+        "description": "Provides runtime stats about cgroups when Logstash is running in a container.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionOsNodeStats",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/stats/geoip_download_manager": {
+      "description": "Provides stats for databases used with the Geoip filter plugin.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Stats for databases used with the Geoip filter plugin.",
+        "description": "Provides stats for databases used with the Geoip filter plugin.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionGeoipDownloadManagerNodeStats",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node": {
+      "description": "Provides cluster nodes information.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Cluster nodes information.",
+        "description": "Provides cluster nodes information.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionNodeInfo",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
         ]
       }
     },
@@ -117953,7 +118665,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -117991,7 +118703,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "put": {
@@ -118032,7 +118744,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -118076,7 +118788,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -118123,7 +118835,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -118163,7 +118875,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -118200,7 +118912,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -118243,7 +118955,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -118283,7 +118995,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -118331,7 +119043,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "delete": {
@@ -118358,7 +119070,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -118401,7 +119113,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -118444,7 +119156,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -118511,7 +119223,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "delete": {
@@ -118552,7 +119264,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "put": {
@@ -118604,7 +119316,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -118663,7 +119375,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -118722,7 +119434,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -118775,7 +119487,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -118842,7 +119554,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -118895,7 +119607,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -118948,7 +119660,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -119004,7 +119716,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -119048,7 +119760,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -119104,7 +119816,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "post": {
@@ -119131,7 +119843,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -119184,7 +119896,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "post": {
@@ -119211,7 +119923,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -119269,7 +119981,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "put": {
@@ -119318,7 +120030,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "post": {
@@ -119367,7 +120079,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "delete": {
@@ -119402,7 +120114,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -119452,7 +120164,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -119505,7 +120217,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -119563,7 +120275,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     }
@@ -119911,6 +120623,16 @@
         "schema": {
           "type": "string",
           "example": "custom_app"
+        }
+      },
+      "bucket_interval_optional": {
+        "name": "bucket_interval",
+        "in": "query",
+        "description": "If set, return events with this specific bucket interval in the dashboard. The value would be in the format of xy, where x is a positive integer and y is the time unit (d, h, m or s). For example '8h', '2d', '5m'.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "1d"
         }
       },
       "bytes_optional": {
@@ -121328,6 +122050,16 @@
               "type": "object",
               "additionalProperties": true
             }
+          }
+        }
+      },
+      "ClusterMgmtIngestionResponse": {
+        "type": "object",
+        "description": "ClusterMgmt ingestion response content",
+        "properties": {
+          "data": {
+            "type": "object",
+            "additionalProperties": true
           }
         }
       },
@@ -122860,6 +123592,9 @@
           },
           "diskspace_ok": {
             "type": "boolean"
+          },
+          "transform_ok": {
+            "type": "boolean"
           }
         }
       },
@@ -123439,6 +124174,21 @@
           "application/yaml": {
             "schema": {
               "$ref": "#/components/schemas/ProviderLeaderboardDetailReportResponse"
+            }
+          }
+        }
+      },
+      "ClusterMgmtIngestionResponse": {
+        "description": "Response from Logstash cluster management API.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ClusterMgmtIngestionResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ClusterMgmtIngestionResponse"
             }
           }
         }
