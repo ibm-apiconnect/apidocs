@@ -40,7 +40,7 @@
         "10.0.5.5": "10.0.5.5.html",
         "10.0.5.LATEST": "10.0.5.LATEST.html",
         "10.0.6.0": "10.0.6.0.html",
-	"10.0.7.0": "10.0.7.0.html",
+        "10.0.7.0": "10.0.7.0.html",
         "10.0.LATEST": "10.0.LATEST.html",
       }
     },
@@ -26306,7 +26306,8 @@
               "other",
               "external",
               "primitive-template",
-              "pre-built"
+              "pre-built",
+              "skill-flow"
             ]
           },
           "skill_subtype": {
@@ -32234,7 +32235,7 @@
       ],
       "post": {
         "summary": "Creates a user registry.",
-        "description": "Creates a user registry.",
+        "description": "Creates a user registry.\n\n          Required fields:\n          - integration_url\n          \n          Fields not allowed:\n          - owned\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "user_registry_create",
         "security": [
           {
@@ -32435,7 +32436,7 @@
       },
       "patch": {
         "summary": "Updates a user registry.",
-        "description": "Updates a user registry.",
+        "description": "Updates a user registry.\n\n          Fields not allowed:\n          - owned\n          - registry_type\n          - user_registry_managed\n          - correlation_data\n          - integration_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "user_registry_update",
         "security": [
           {
@@ -32842,7 +32843,7 @@
       ],
       "post": {
         "summary": "Creates a user.",
-        "description": "Creates a user entry in a user registry. For user registries that are defined as <i>user managed</i>, a user record is also created in the backing (usually remote) user directory.",
+        "description": "Creates a user entry in a user registry. For user registries that are defined as <i>user managed</i>, a user record is also created in the backing (usually remote) user directory.\n\n          Required fields:\n          - username\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - user_registry_url\n",
         "operationId": "user_create",
         "security": [
           {
@@ -33046,7 +33047,7 @@
       },
       "patch": {
         "summary": "Updates a user.",
-        "description": "Updates a user entry. To change a user password, see the </tt>reset-password</tt> operation.",
+        "description": "Updates a user entry. To change a user password, see the </tt>reset-password</tt> operation.\n\n          Fields not allowed:\n          - identity_provider\n          - username\n          - salt\n          - correlation_data\n          - force_password_change\n          - last_login_at\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - user_registry_url\n",
         "operationId": "user_update",
         "security": [
           {
@@ -34218,7 +34219,7 @@
       },
       "put": {
         "summary": "Updates provider organization settings.",
-        "description": "Updates the settings for a provider organization.",
+        "description": "Updates the settings for a provider organization.\n\n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "org_setting_singletonUpdate",
         "security": [
           {
@@ -34442,7 +34443,7 @@
       },
       "patch": {
         "summary": "Updates a provider notification template.",
-        "description": "Updates a provider notification template set at the provider organization level.",
+        "description": "Updates a provider notification template set at the provider organization level.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateProviderSubcollectionOrgScope",
         "security": [
           {
@@ -34762,7 +34763,7 @@
       },
       "patch": {
         "summary": "Updates a catalog notification template.",
-        "description": "Updates a catalog notification template set at the provider organization level.",
+        "description": "Updates a catalog notification template set at the provider organization level.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateCatalogSubcollectionOrgScope",
         "security": [
           {
@@ -35082,7 +35083,7 @@
       },
       "patch": {
         "summary": "Updates a space notification template.",
-        "description": "Updates a space notification template set at the provider organization level.",
+        "description": "Updates a space notification template set at the provider organization level.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateSpaceSubcollectionOrgScope",
         "security": [
           {
@@ -35402,7 +35403,7 @@
       },
       "patch": {
         "summary": "Updates a consumer notification template.",
-        "description": "Updates a consumer notification template set at the provider organization level.",
+        "description": "Updates a consumer notification template set at the provider organization level.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateConsumerSubcollectionOrgScope",
         "security": [
           {
@@ -35664,7 +35665,7 @@
       },
       "patch": {
         "summary": "Updates a provider organization.",
-        "description": "Updates a provider organization.",
+        "description": "Updates a provider organization.\n\n          Fields not allowed:\n          - name\n          - org_type\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "org_update",
         "security": [
           {
@@ -36013,7 +36014,7 @@
       ],
       "post": {
         "summary": "Creates a provider organization member invitation.",
-        "description": "Creates a provider organization member invitation.",
+        "description": "Creates a provider organization member invitation.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_createOrgScope",
         "security": [
           {
@@ -36214,7 +36215,7 @@
       },
       "patch": {
         "summary": "Updates a provider organization member invitation.",
-        "description": "Updates a member invitation to a provider organization.",
+        "description": "Updates a member invitation to a provider organization.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_updateOrgScope",
         "security": [
           {
@@ -36527,7 +36528,7 @@
       ],
       "post": {
         "summary": "Creates a provider organization member.",
-        "description": "Adds a member to a provider organization.",
+        "description": "Adds a member to a provider organization.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_createOrgScope",
         "security": [
           {
@@ -36728,7 +36729,7 @@
       },
       "patch": {
         "summary": "Updates a provider organization member.",
-        "description": "Updates a member of a provider organization.",
+        "description": "Updates a member of a provider organization.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_updateOrgScope",
         "security": [
           {
@@ -37334,7 +37335,7 @@
       ],
       "post": {
         "summary": "Creates a provider organization role.",
-        "description": "Adds a role to a provider organization.",
+        "description": "Adds a role to a provider organization.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "role_createOrgScope",
         "security": [
           {
@@ -37535,7 +37536,7 @@
       },
       "patch": {
         "summary": "Updates a provider organization role.",
-        "description": "Updates a role in a provider organization.",
+        "description": "Updates a role in a provider organization.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "role_updateOrgScope",
         "security": [
           {
@@ -37861,7 +37862,7 @@
       ],
       "post": {
         "summary": "Creates an OAuth provider.",
-        "description": "Creates an OAuth provider resource.",
+        "description": "Creates an OAuth provider resource.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "oauth_provider_create",
         "security": [
           {
@@ -38062,7 +38063,7 @@
       },
       "patch": {
         "summary": "Creates an OAuth provider.",
-        "description": "Updates an OAuth provider resource.",
+        "description": "Updates an OAuth provider resource.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "oauth_provider_update",
         "security": [
           {
@@ -38698,7 +38699,7 @@
       ],
       "post": {
         "summary": "Creates a TLS client profile.",
-        "description": "Creates a TLS client profile.",
+        "description": "Creates a TLS client profile.\n\n          Fields not allowed:\n          - owned\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "tls_client_profile_create",
         "security": [
           {
@@ -38995,7 +38996,7 @@
       },
       "patch": {
         "summary": "Updates a TLS client profile.",
-        "description": "Updates a TLS client profile.",
+        "description": "Updates a TLS client profile.\n\n          Fields not allowed:\n          - owned\n          \n          Fields not allowed to be null:\n          - ciphers\n          - protocols\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "tls_client_profile_update",
         "security": [
           {
@@ -39145,7 +39146,7 @@
       },
       "patch": {
         "summary": "Updates a TLS client profile.",
-        "description": "Updates a TLS client profile.",
+        "description": "Updates a TLS client profile.\n\n          Fields not allowed:\n          - owned\n          \n          Fields not allowed to be null:\n          - ciphers\n          - protocols\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "tls_client_profile_updateByNameVersion",
         "security": [
           {
@@ -39245,7 +39246,7 @@
       ],
       "post": {
         "summary": "Creates a keystore.",
-        "description": "Creates a keystore belonging to a provider organization.",
+        "description": "Creates a keystore belonging to a provider organization.\n\n          Required fields:\n          - keystore\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "keystore_create",
         "security": [
           {
@@ -39446,7 +39447,7 @@
       },
       "patch": {
         "summary": "Updates a keystore.",
-        "description": "Updates a keystore belonging to a provider organization.",
+        "description": "Updates a keystore belonging to a provider organization.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "keystore_update",
         "security": [
           {
@@ -39546,7 +39547,7 @@
       ],
       "post": {
         "summary": "Creates a trust store.",
-        "description": "Creates a trust store.",
+        "description": "Creates a trust store.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "truststore_create",
         "security": [
           {
@@ -39747,7 +39748,7 @@
       },
       "patch": {
         "summary": "Updates a trust store.",
-        "description": "Updates a trust store.",
+        "description": "Updates a trust store.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "truststore_update",
         "security": [
           {
@@ -39850,7 +39851,7 @@
       ],
       "post": {
         "summary": "Creates a trust store entry.",
-        "description": "Adds an entry to a trust store.",
+        "description": "Adds an entry to a trust store.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "entry_createTruststoreScope",
         "security": [
           {
@@ -40054,7 +40055,7 @@
       },
       "patch": {
         "summary": "Updates a trust store entry.",
-        "description": "Updates the given entry in a trust store.",
+        "description": "Updates the given entry in a trust store.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "entry_updateTruststoreScope",
         "security": [
           {
@@ -40201,7 +40202,7 @@
       },
       "put": {
         "summary": "Updates catalog settings.",
-        "description": "Updates the settings for a catalog.",
+        "description": "Updates the settings for a catalog.\n\n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "catalog_setting_singletonUpdate",
         "security": [
           {
@@ -40319,7 +40320,7 @@
       ],
       "post": {
         "summary": "Creates a configured gateway service.",
-        "description": "Adds the gateway service to the list of configured gateway services for a catalog.",
+        "description": "Adds the gateway service to the list of configured gateway services for a catalog.\n\n          Required fields:\n          - gateway_service_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - availability_zone_url\n",
         "operationId": "configured_gateway_service_createCatalogScope",
         "security": [
           {
@@ -40619,7 +40620,7 @@
       ],
       "post": {
         "summary": "Creates a configured gateway service.",
-        "description": "Adds the gateway service to the list of configured gateway services for a space.",
+        "description": "Adds the gateway service to the list of configured gateway services for a space.\n\n          Required fields:\n          - gateway_service_url\n          \n          Fields not allowed:\n          - space_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - availability_zone_url\n",
         "operationId": "configured_gateway_service_createSpaceScope",
         "security": [
           {
@@ -40922,7 +40923,7 @@
       ],
       "post": {
         "summary": "Creates a catalog user registry.",
-        "description": "Adds a user registry to the list of catalog user registries for a catalog.",
+        "description": "Adds a user registry to the list of catalog user registries for a catalog.\n\n          Required fields:\n          - user_registry_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - user_registry_url\n",
         "operationId": "configured_catalog_user_registry_create",
         "security": [
           {
@@ -41218,7 +41219,7 @@
       ],
       "post": {
         "summary": "Creates an API user registry.",
-        "description": "Adds a user registry to the list of configured API user registries for a catalog.",
+        "description": "Adds a user registry to the list of configured API user registries for a catalog.\n\n          Required fields:\n          - user_registry_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - user_registry_url\n",
         "operationId": "configured_api_user_registry_createCatalogScope",
         "security": [
           {
@@ -41475,7 +41476,7 @@
       ],
       "post": {
         "summary": "Creates an API user registry.",
-        "description": "Adds a user registry to the list of configured API user registries for a space.",
+        "description": "Adds a user registry to the list of configured API user registries for a space.\n\n          Required fields:\n          - user_registry_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - user_registry_url\n",
         "operationId": "configured_api_user_registry_createSpaceScope",
         "security": [
           {
@@ -41732,7 +41733,7 @@
       ],
       "post": {
         "summary": "Creates a configured TLS client profile.",
-        "description": "Adds a TLS client profile to the list of configured TLS client profiles for a catalog.",
+        "description": "Adds a TLS client profile to the list of configured TLS client profiles for a catalog.\n\n          Required fields:\n          - tls_client_profile_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "configured_tls_client_profile_createCatalogScope",
         "security": [
           {
@@ -42185,7 +42186,7 @@
       ],
       "post": {
         "summary": "Creates a configured TLS client profile.",
-        "description": "Adds a TLS client profile to the list of configured TLS client profiles for a space.",
+        "description": "Adds a TLS client profile to the list of configured TLS client profiles for a space.\n\n          Required fields:\n          - tls_client_profile_url\n          \n          Fields not allowed:\n          - space_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "configured_tls_client_profile_createSpaceScope",
         "security": [
           {
@@ -42898,7 +42899,7 @@
       ],
       "post": {
         "summary": "Creates a configured OAuth provider.",
-        "description": "Adds an OAuth provider to the list of configured OAuth providers for a catalog.",
+        "description": "Adds an OAuth provider to the list of configured OAuth providers for a catalog.\n\n          Required fields:\n          - oauth_provider_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "configured_oauth_provider_createCatalogScope",
         "security": [
           {
@@ -43155,7 +43156,7 @@
       ],
       "post": {
         "summary": "Creates a configured OAuth provider.",
-        "description": "Adds an OAuth provider to the list of configured OAuth providers for a space.",
+        "description": "Adds an OAuth provider to the list of configured OAuth providers for a space.\n\n          Required fields:\n          - oauth_provider_url\n          \n          Fields not allowed:\n          - space_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "configured_oauth_provider_createSpaceScope",
         "security": [
           {
@@ -43581,7 +43582,7 @@
       },
       "patch": {
         "summary": "Updates a catalog notification template.",
-        "description": "Returns the list of all catalog notification templates set at the catalog level.",
+        "description": "Returns the list of all catalog notification templates set at the catalog level.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateCatalogSubcollectionCatalogScope",
         "security": [
           {
@@ -43913,7 +43914,7 @@
       },
       "patch": {
         "summary": "Updates a space notification template.",
-        "description": "Updates a space notification template set at the catalog level.",
+        "description": "Updates a space notification template set at the catalog level.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateSpaceSubcollectionCatalogScope",
         "security": [
           {
@@ -44245,7 +44246,7 @@
       },
       "patch": {
         "summary": "Updates a consumer notification template.",
-        "description": "Updates a consumer notification template set at the catalog level.",
+        "description": "Updates a consumer notification template set at the catalog level.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateConsumerSubcollectionCatalogScope",
         "security": [
           {
@@ -44953,7 +44954,7 @@
       ],
       "post": {
         "summary": "Creates a catalog.",
-        "description": "Creates a catalog belonging to a provider org.",
+        "description": "Creates a catalog belonging to a provider org.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "catalog_create",
         "security": [
           {
@@ -45154,7 +45155,7 @@
       },
       "patch": {
         "summary": "Modifies a catalog.",
-        "description": "Modifies a catalog object. Catalog settings are subordinate to the catalog itself; see also the operation to update the settings for a catalog.",
+        "description": "Modifies a catalog object. Catalog settings are subordinate to the catalog itself; see also the operation to update the settings for a catalog.\n\n          Fields not allowed:\n          - name\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "catalog_update",
         "security": [
           {
@@ -45736,7 +45737,7 @@
       ],
       "post": {
         "summary": "Creates a catalog invitation.",
-        "description": "Creates a catalog owner invitation.",
+        "description": "Creates a catalog owner invitation.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "invitation_createCatalogScope",
         "security": [
           {
@@ -45937,7 +45938,7 @@
       },
       "patch": {
         "summary": "Updates a catalog invitation.",
-        "description": "Updates a catalog owner invitation.",
+        "description": "Updates a catalog owner invitation.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "invitation_updateCatalogScope",
         "security": [
           {
@@ -46253,7 +46254,7 @@
       ],
       "post": {
         "summary": "Creates a catalog member invitation.",
-        "description": "Creates a catalog member invitation.",
+        "description": "Creates a catalog member invitation.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_createCatalogScope",
         "security": [
           {
@@ -46457,7 +46458,7 @@
       },
       "patch": {
         "summary": "Updates a catalog member invitation.",
-        "description": "Updates a member invitation to a catalog.",
+        "description": "Updates a member invitation to a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_updateCatalogScope",
         "security": [
           {
@@ -46782,7 +46783,7 @@
       ],
       "post": {
         "summary": "Creates a catalog member.",
-        "description": "Adds a member to a catalog.",
+        "description": "Adds a member to a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_createCatalogScope",
         "security": [
           {
@@ -46986,7 +46987,7 @@
       },
       "patch": {
         "summary": "Updates a catalog member.",
-        "description": "Updates a member of a catalog.",
+        "description": "Updates a member of a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_updateCatalogScope",
         "security": [
           {
@@ -47202,7 +47203,7 @@
       },
       "patch": {
         "summary": "Updates a catalog task.",
-        "description": "Updates a catalog task (approval request).",
+        "description": "Updates a catalog task (approval request).\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "task_updateCatalogScope",
         "security": [
           {
@@ -47374,7 +47375,7 @@
       },
       "patch": {
         "summary": "Updates a catalog role.",
-        "description": "Updates a role in a catalog.",
+        "description": "Updates a role in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "role_updateCatalogScope",
         "security": [
           {
@@ -47441,7 +47442,7 @@
       ],
       "post": {
         "summary": "Creates a global policy.",
-        "description": "Adds a global policy to a configured gateway service for a catalog.",
+        "description": "Adds a global policy to a configured gateway service for a catalog.\n\n          Required fields:\n          - global_policy\n          \n          Fields not allowed:\n          - user_registry_urls\n          - tls_client_profile_urls\n          - policy_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_createCatalogScope",
         "security": [
           {
@@ -47747,7 +47748,7 @@
       },
       "patch": {
         "summary": "Updates a global policy.",
-        "description": "Updates the given global policy for a configured gateway service for a catalog.",
+        "description": "Updates the given global policy for a configured gateway service for a catalog.\n\n          Fields not allowed to be null:\n          - global_policy\n          \n          Fields not allowed:\n          - user_registry_urls\n          - tls_client_profile_urls\n          - policy_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_updateCatalogScope",
         "security": [
           {
@@ -47903,7 +47904,7 @@
       },
       "patch": {
         "summary": "Updates a global policy.",
-        "description": "Updates the given global policy for a configured gateway service for a catalog.",
+        "description": "Updates the given global policy for a configured gateway service for a catalog.\n\n          Fields not allowed to be null:\n          - global_policy\n          \n          Fields not allowed:\n          - user_registry_urls\n          - tls_client_profile_urls\n          - policy_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_updateByNameVersionCatalogScope",
         "security": [
           {
@@ -48125,7 +48126,7 @@
       ],
       "post": {
         "summary": "Creates a global policy.",
-        "description": "Adds a global policy to a configured gateway service for a space.",
+        "description": "Adds a global policy to a configured gateway service for a space.\n\n          Required fields:\n          - global_policy\n          \n          Fields not allowed:\n          - user_registry_urls\n          - tls_client_profile_urls\n          - policy_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_createSpaceScope",
         "security": [
           {
@@ -48437,7 +48438,7 @@
       },
       "patch": {
         "summary": "Updates a global policy.",
-        "description": "Updates the given global policy for a configured gateway service for a space.",
+        "description": "Updates the given global policy for a configured gateway service for a space.\n\n          Fields not allowed to be null:\n          - global_policy\n          \n          Fields not allowed:\n          - user_registry_urls\n          - tls_client_profile_urls\n          - policy_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_updateSpaceScope",
         "security": [
           {
@@ -48596,7 +48597,7 @@
       },
       "patch": {
         "summary": "Updates a global policy.",
-        "description": "Updates the given global policy for a configured gateway service for a space.",
+        "description": "Updates the given global policy for a configured gateway service for a space.\n\n          Fields not allowed to be null:\n          - global_policy\n          \n          Fields not allowed:\n          - user_registry_urls\n          - tls_client_profile_urls\n          - policy_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_updateByNameVersionSpaceScope",
         "security": [
           {
@@ -48821,7 +48822,7 @@
       ],
       "post": {
         "summary": "Creates a policy.",
-        "description": "Adds a policy to a configured gateway service for a catalog.",
+        "description": "Adds a policy to a configured gateway service for a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "policy_createCatalogScope",
         "security": [
           {
@@ -49122,7 +49123,7 @@
       },
       "patch": {
         "summary": "Updates a policy.",
-        "description": "Updates a policy in a configured gateway service for a catalog.",
+        "description": "Updates a policy in a configured gateway service for a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "policy_updateCatalogScope",
         "security": [
           {
@@ -49283,7 +49284,7 @@
       },
       "patch": {
         "summary": "Lists policies.",
-        "description": "Updates a policy in a configured gateway service for a catalog.",
+        "description": "Updates a policy in a configured gateway service for a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "policy_updateByNameVersionCatalogScope",
         "security": [
           {
@@ -49625,7 +49626,7 @@
       ],
       "post": {
         "summary": "Creates a policy.",
-        "description": "Adds a policy to a configured gateway service for a space.",
+        "description": "Adds a policy to a configured gateway service for a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "policy_createSpaceScope",
         "security": [
           {
@@ -49932,7 +49933,7 @@
       },
       "patch": {
         "summary": "Updates a policy.",
-        "description": "Updates a policy in a configured gateway service for a space.",
+        "description": "Updates a policy in a configured gateway service for a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "policy_updateSpaceScope",
         "security": [
           {
@@ -50096,7 +50097,7 @@
       },
       "patch": {
         "summary": "Updates a policy.",
-        "description": "Updates a policy in a configured gateway service for a space.",
+        "description": "Updates a policy in a configured gateway service for a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "policy_updateByNameVersionSpaceScope",
         "security": [
           {
@@ -50447,7 +50448,7 @@
       ],
       "post": {
         "summary": "Creates a gateway extension.",
-        "description": "Adds a gateway extension to the set of configured gateway services for a catalog.",
+        "description": "Adds a gateway extension to the set of configured gateway services for a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "extension_createCatalogScope",
         "security": [
           {
@@ -50753,7 +50754,7 @@
       },
       "patch": {
         "summary": "Lists gateway extension versions.",
-        "description": "Updates the given gateway extension in the set of configured gateway services for a catalog.",
+        "description": "Updates the given gateway extension in the set of configured gateway services for a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "extension_updateCatalogScope",
         "security": [
           {
@@ -50909,7 +50910,7 @@
       },
       "patch": {
         "summary": "Lists gateway extension versions.",
-        "description": "Updates the given gateway extension in the set of configured gateway services for a catalog.",
+        "description": "Updates the given gateway extension in the set of configured gateway services for a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "extension_updateByNameVersionCatalogScope",
         "security": [
           {
@@ -51131,7 +51132,7 @@
       ],
       "post": {
         "summary": "Creates a gateway extension.",
-        "description": "Adds a gateway extension to the set of configured gateway services for a catalog, as accessed through a space.",
+        "description": "Adds a gateway extension to the set of configured gateway services for a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "extension_createSpaceScope",
         "security": [
           {
@@ -51443,7 +51444,7 @@
       },
       "patch": {
         "summary": "Lists gateway extension versions.",
-        "description": "Updates the given gateway extension in the set of configured gateway services for a catalog, as accessed through a space.",
+        "description": "Updates the given gateway extension in the set of configured gateway services for a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "extension_updateSpaceScope",
         "security": [
           {
@@ -51602,7 +51603,7 @@
       },
       "patch": {
         "summary": "Lists gateway extension versions.",
-        "description": "Updates the given gateway extension in the set of configured gateway services for a catalog, as accessed through a space.",
+        "description": "Updates the given gateway extension in the set of configured gateway services for a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "extension_updateByNameVersionSpaceScope",
         "security": [
           {
@@ -52104,7 +52105,7 @@
       ],
       "post": {
         "summary": "Creates a service.",
-        "description": "Add a service to a configured gateway service for a space.",
+        "description": "Add a service to a configured gateway service for a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "service_createSpaceInitiated",
         "security": [
           {
@@ -52416,7 +52417,7 @@
       },
       "patch": {
         "summary": "Updates a service.",
-        "description": "Updates a service for a configured gateway service for a space.",
+        "description": "Updates a service for a configured gateway service for a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "service_updateSpaceInitiated",
         "security": [
           {
@@ -52575,7 +52576,7 @@
       },
       "patch": {
         "summary": "Updates a service.",
-        "description": "Updates a service for a configured gateway service for a space.",
+        "description": "Updates a service for a configured gateway service for a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "service_updateByNameVersionSpaceInitiated",
         "security": [
           {
@@ -53090,7 +53091,7 @@
       ],
       "post": {
         "summary": "Creates a prehook global policy.",
-        "description": "Adds the given global policy pre-flow hook on a configured gateway service for a catalog.",
+        "description": "Adds the given global policy pre-flow hook on a configured gateway service for a catalog.\n\n          Required fields:\n          - global_policy_url\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_prehook_singletonCreateCatalogScope",
         "security": [
           {
@@ -53187,7 +53188,7 @@
       },
       "put": {
         "summary": "Updates a prehook global policy.",
-        "description": "Updates the global policy pre-flow hook for a configured gateway service for a catalog.",
+        "description": "Updates the global policy pre-flow hook for a configured gateway service for a catalog.\n\n          Fields not allowed to be null:\n          - global_policy_url\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_prehook_singletonUpdateCatalogScope",
         "security": [
           {
@@ -53296,7 +53297,7 @@
       ],
       "post": {
         "summary": "Creates a prehook global policy.",
-        "description": "Adds the given global policy pre-flow hook on a configured gateway service for a space.",
+        "description": "Adds the given global policy pre-flow hook on a configured gateway service for a space.\n\n          Required fields:\n          - global_policy_url\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_prehook_singletonCreateSpaceScope",
         "security": [
           {
@@ -53393,7 +53394,7 @@
       },
       "put": {
         "summary": "Updates a prehook global policy.",
-        "description": "Updates the global policy pre-flow hook for a configured gateway service for a space.",
+        "description": "Updates the global policy pre-flow hook for a configured gateway service for a space.\n\n          Fields not allowed to be null:\n          - global_policy_url\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_prehook_singletonUpdateSpaceScope",
         "security": [
           {
@@ -53499,7 +53500,7 @@
       ],
       "post": {
         "summary": "Creates a posthook global policy.",
-        "description": "Adds the given global policy post-flow hook on a configured gateway service for a catalog.",
+        "description": "Adds the given global policy post-flow hook on a configured gateway service for a catalog.\n\n          Required fields:\n          - global_policy_url\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_posthook_singletonCreateCatalogScope",
         "security": [
           {
@@ -53596,7 +53597,7 @@
       },
       "put": {
         "summary": "Updates a posthook global policy.",
-        "description": "Updates the global policy post-flow hook for a configured gateway service for a catalog.",
+        "description": "Updates the global policy post-flow hook for a configured gateway service for a catalog.\n\n          Fields not allowed to be null:\n          - global_policy_url\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_posthook_singletonUpdateCatalogScope",
         "security": [
           {
@@ -53705,7 +53706,7 @@
       ],
       "post": {
         "summary": "Creates a posthook global policy.",
-        "description": "Adds the given global policy post-flow hook on a configured gateway service for a space.",
+        "description": "Adds the given global policy post-flow hook on a configured gateway service for a space.\n\n          Required fields:\n          - global_policy_url\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_posthook_singletonCreateSpaceScope",
         "security": [
           {
@@ -53802,7 +53803,7 @@
       },
       "put": {
         "summary": "Updates a posthook global policy.",
-        "description": "Updates the global policy post-flow hook for a configured gateway service for a space.",
+        "description": "Updates the global policy post-flow hook for a configured gateway service for a space.\n\n          Fields not allowed to be null:\n          - global_policy_url\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_posthook_singletonUpdateSpaceScope",
         "security": [
           {
@@ -54484,7 +54485,7 @@
       },
       "put": {
         "summary": "Updates space settings.",
-        "description": "Updates the settings for a space.",
+        "description": "Updates the settings for a space.\n\n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "space_setting_singletonUpdate",
         "security": [
           {
@@ -54726,7 +54727,7 @@
       },
       "patch": {
         "summary": "Updates a space notification template.",
-        "description": "Updates a space notification template set at the space level.",
+        "description": "Updates a space notification template set at the space level.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateSpaceSubcollectionSpaceScope",
         "security": [
           {
@@ -55070,7 +55071,7 @@
       },
       "patch": {
         "summary": "Updates a consumer notification template.",
-        "description": "Updates a consumer notification template set at the space level.",
+        "description": "Updates a consumer notification template set at the space level.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateConsumerSubcollectionSpaceScope",
         "security": [
           {
@@ -55489,7 +55490,7 @@
       ],
       "post": {
         "summary": "Creates a space.",
-        "description": "Creates a space in a catalog.",
+        "description": "Creates a space in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "space_create",
         "security": [
           {
@@ -55693,7 +55694,7 @@
       },
       "patch": {
         "summary": "Updates a space.",
-        "description": "Updates a space.",
+        "description": "Updates a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "space_update",
         "security": [
           {
@@ -56242,7 +56243,7 @@
       ],
       "post": {
         "summary": "Creates a space invitation.",
-        "description": "Creates a space owner invitation in the context of a catalog.",
+        "description": "Creates a space owner invitation in the context of a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "invitation_createSpaceScope",
         "security": [
           {
@@ -56446,7 +56447,7 @@
       },
       "patch": {
         "summary": "Updates a space invitation.",
-        "description": "Updates a space owner invitation.",
+        "description": "Updates a space owner invitation.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "invitation_updateSpaceScope",
         "security": [
           {
@@ -56885,7 +56886,7 @@
       },
       "patch": {
         "summary": "Updates a space role.",
-        "description": "Updates a role in a space.",
+        "description": "Updates a role in a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "role_updateSpaceScope",
         "security": [
           {
@@ -56952,7 +56953,7 @@
       ],
       "post": {
         "summary": "Creates a space member invitation.",
-        "description": "Creates a space member invitation.",
+        "description": "Creates a space member invitation.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_createSpaceScope",
         "security": [
           {
@@ -57159,7 +57160,7 @@
       },
       "patch": {
         "summary": "Updates a space member invitation.",
-        "description": "Updates a member invitation to a space.",
+        "description": "Updates a member invitation to a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_updateSpaceScope",
         "security": [
           {
@@ -57496,7 +57497,7 @@
       ],
       "post": {
         "summary": "Creates a space member.",
-        "description": "Adds a member to a space.",
+        "description": "Adds a member to a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_createSpaceScope",
         "security": [
           {
@@ -57703,7 +57704,7 @@
       },
       "patch": {
         "summary": "Updates a space member.",
-        "description": "Updates a member of a space.",
+        "description": "Updates a member of a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_updateSpaceScope",
         "security": [
           {
@@ -57925,7 +57926,7 @@
       },
       "patch": {
         "summary": "Updates a space task.",
-        "description": "Updates a space task (approval request).",
+        "description": "Updates a space task (approval request).\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "task_updateSpaceScope",
         "security": [
           {
@@ -58167,7 +58168,7 @@
       },
       "put": {
         "summary": "Updates consumer organization settings.",
-        "description": "Updates the settings for the given consumer organization in a catalog.",
+        "description": "Updates the settings for the given consumer organization in a catalog.\n\n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "consumer_org_setting_singletonUpdate",
         "security": [
           {
@@ -58320,7 +58321,7 @@
       },
       "put": {
         "summary": "Updates consumer organization settings.",
-        "description": "Updates the settings for the given consumer organization in a catalog, as accessed through a space.",
+        "description": "Updates the settings for the given consumer organization in a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "consumer_org_setting_singletonUpdateSpaceInitiated",
         "security": [
           {
@@ -58613,7 +58614,7 @@
       ],
       "post": {
         "summary": "Create a Consumer Organization Invitation object",
-        "description": "Creates a consumer organization owner invitation in the context of a catalog.",
+        "description": "Creates a consumer organization owner invitation in the context of a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "invitation_createConsumerOrgScope",
         "security": [
           {
@@ -58817,7 +58818,7 @@
       },
       "patch": {
         "summary": "Updates a consumer organization invitation.",
-        "description": "Updates a consumer organization owner invitation in the context of a catalog.",
+        "description": "Updates a consumer organization owner invitation in the context of a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "invitation_updateConsumerOrgScope",
         "security": [
           {
@@ -58989,7 +58990,7 @@
       ],
       "post": {
         "summary": "Creates a consumer organization invitation.",
-        "description": "Creates a consumer organization owner invitation in the context of a catalog, as accessed through a space.",
+        "description": "Creates a consumer organization owner invitation in the context of a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "invitation_createConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -59196,7 +59197,7 @@
       },
       "patch": {
         "summary": "Updates a consumer organization invitation.",
-        "description": "Updates a consumer organization owner invitation in the context of a catalog, as accessed through a space.",
+        "description": "Updates a consumer organization owner invitation in the context of a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "invitation_updateConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -59368,7 +59369,7 @@
       ],
       "post": {
         "summary": "Creates a consumer organization.",
-        "description": "Creates a consumer organization in a catalog.",
+        "description": "Creates a consumer organization in a catalog.\n\n          Required fields:\n          - owner_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "consumer_org_create",
         "security": [
           {
@@ -59575,7 +59576,7 @@
       },
       "patch": {
         "summary": "Updates a consumer organization.",
-        "description": "Updates a consumer organization in a catalog.",
+        "description": "Updates a consumer organization in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "consumer_org_update",
         "security": [
           {
@@ -59760,7 +59761,7 @@
       ],
       "post": {
         "summary": "Creates a consumer organization.",
-        "description": "Creates a consumer organization in a catalog, as accessed through the given space.",
+        "description": "Creates a consumer organization in a catalog, as accessed through the given space.\n\n          Required fields:\n          - owner_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "consumer_org_createSpaceInitiated",
         "security": [
           {
@@ -59970,7 +59971,7 @@
       },
       "patch": {
         "summary": "Updates a consumer organization.",
-        "description": "Updates a consumer organization in a catalog, as accessed through a space.",
+        "description": "Updates a consumer organization in a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "consumer_org_updateSpaceInitiated",
         "security": [
           {
@@ -60155,7 +60156,7 @@
       ],
       "post": {
         "summary": "Creates a consumer group.",
-        "description": "Adds a consumer group to a catalog.",
+        "description": "Adds a consumer group to a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "group_createCatalogScope",
         "security": [
           {
@@ -60359,7 +60360,7 @@
       },
       "patch": {
         "summary": "Updates a consumer group.",
-        "description": "Updates a consumer group in a catalog.",
+        "description": "Updates a consumer group in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "group_updateCatalogScope",
         "security": [
           {
@@ -61858,7 +61859,7 @@
       ],
       "post": {
         "summary": "Creates a consummer organization member invitation.",
-        "description": "Creates a member invitation to a consumer organization in a catalog.",
+        "description": "Creates a member invitation to a consumer organization in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_createConsumerOrgScope",
         "security": [
           {
@@ -62065,7 +62066,7 @@
       },
       "patch": {
         "summary": "Updates a consumer organization member invitation.",
-        "description": "Updates a member invitation to a consumer organization in a catalog.",
+        "description": "Updates a member invitation to a consumer organization in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_updateConsumerOrgScope",
         "security": [
           {
@@ -62243,7 +62244,7 @@
       ],
       "post": {
         "summary": "Creates a consummer organization member invitation.",
-        "description": "Creates a member invitation to a consumer organization in a catalog, as accessed through a space.",
+        "description": "Creates a member invitation to a consumer organization in a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_createConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -62453,7 +62454,7 @@
       },
       "patch": {
         "summary": "Updates a consumer organization member invitation.",
-        "description": "Updates a member invitation to a consumer organization in a catalog, as accessed through a space.",
+        "description": "Updates a member invitation to a consumer organization in a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_updateConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -62631,7 +62632,7 @@
       ],
       "post": {
         "summary": "Creates a consumer organization member.",
-        "description": "Adds a member to a consumer org in a catalog.",
+        "description": "Adds a member to a consumer org in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_createConsumerOrgScope",
         "security": [
           {
@@ -62838,7 +62839,7 @@
       },
       "patch": {
         "summary": "Updates a consumer organization member.",
-        "description": "Updates a member of a consumer organization in a catalog.",
+        "description": "Updates a member of a consumer organization in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_updateConsumerOrgScope",
         "security": [
           {
@@ -62947,7 +62948,7 @@
       ],
       "post": {
         "summary": "Creates a consumer organization member.",
-        "description": "Adds a member to a consumer organization in a catalog, as accessed through a space.",
+        "description": "Adds a member to a consumer organization in a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_createConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -63157,7 +63158,7 @@
       },
       "patch": {
         "summary": "Updates a consumer organization member.",
-        "description": "Updates a member of a consumer organization in a catalog, as accessed through a space.",
+        "description": "Updates a member of a consumer organization in a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_updateConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -63263,7 +63264,7 @@
       ],
       "post": {
         "summary": "Creates a consumer app.",
-        "description": "Creates a new app belonging to the given consumer org in a catalog.",
+        "description": "Creates a new app belonging to the given consumer org in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n",
         "operationId": "app_create",
         "security": [
           {
@@ -63470,7 +63471,7 @@
       },
       "patch": {
         "summary": "Updates a consumer app.",
-        "description": "Updates the given app belonging to a consumer org in a catalog.",
+        "description": "Updates the given app belonging to a consumer org in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n",
         "operationId": "app_update",
         "security": [
           {
@@ -63579,7 +63580,7 @@
       ],
       "post": {
         "summary": "Creates a consumer app.",
-        "description": "Creates a new app belonging to the given consumer org in a catalog, as accessed through the given space.",
+        "description": "Creates a new app belonging to the given consumer org in a catalog, as accessed through the given space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n",
         "operationId": "app_createSpaceInitiated",
         "security": [
           {
@@ -63789,7 +63790,7 @@
       },
       "patch": {
         "summary": "Updates a consumer app.",
-        "description": "Updates the given app belonging to a consumer org in a catalog, as accessed through the given space.",
+        "description": "Updates the given app belonging to a consumer org in a catalog, as accessed through the given space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n",
         "operationId": "app_updateSpaceInitiated",
         "security": [
           {
@@ -63898,7 +63899,7 @@
       ],
       "post": {
         "summary": "Creates app credentials.",
-        "description": "Adds a new set of credentials to an app in a catalog.",
+        "description": "Adds a new set of credentials to an app in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n          - app_url\n",
         "operationId": "credential_create",
         "security": [
           {
@@ -64076,7 +64077,7 @@
       },
       "patch": {
         "summary": "Updates credentials for an app.",
-        "description": "Updates the given set of credentials for an app in a catalog.",
+        "description": "Updates the given set of credentials for an app in a catalog.\n\n          Fields not allowed to be null:\n          - client_id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n          - app_url\n",
         "operationId": "credential_update",
         "security": [
           {
@@ -64376,7 +64377,7 @@
       ],
       "post": {
         "summary": "Creates app credentials.",
-        "description": "Adds a new set of credentials to an app in a catalog, as accessed through a space.",
+        "description": "Adds a new set of credentials to an app in a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n          - app_url\n",
         "operationId": "credential_createSpaceInitiated",
         "security": [
           {
@@ -64589,7 +64590,7 @@
       },
       "patch": {
         "summary": "Updates credentials for an app.",
-        "description": "Updates the given set of credentials for an app in a catalog, as accessed through a space.",
+        "description": "Updates the given set of credentials for an app in a catalog, as accessed through a space.\n\n          Fields not allowed to be null:\n          - client_id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n          - app_url\n",
         "operationId": "credential_updateSpaceInitiated",
         "security": [
           {
@@ -64895,7 +64896,7 @@
       ],
       "post": {
         "summary": "Creates a subscription.",
-        "description": "Create a subscription for an app belonging to a connsumer organization in a catalog.",
+        "description": "Create a subscription for an app belonging to a connsumer organization in a catalog.\n\n          Required fields:\n          - product_url\n          - plan\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n          - app_url\n",
         "operationId": "subscription_create",
         "security": [
           {
@@ -65111,7 +65112,7 @@
       },
       "patch": {
         "summary": "Updates a subscription.",
-        "description": "Updates a subscription for an app belonging to a connsumer organization in a catalog.",
+        "description": "Updates a subscription for an app belonging to a connsumer organization in a catalog.\n\n          Fields not allowed:\n          - billing_identifiers\n          - plan_title\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n          - app_url\n",
         "operationId": "subscription_update",
         "security": [
           {
@@ -65223,7 +65224,7 @@
       ],
       "post": {
         "summary": "Creates a subscription.",
-        "description": "Create a subscriptions for an app belonging to a connsumer organization in a catalog, as accessed through a space.",
+        "description": "Create a subscriptions for an app belonging to a connsumer organization in a catalog, as accessed through a space.\n\n          Required fields:\n          - product_url\n          - plan\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n          - app_url\n",
         "operationId": "subscription_createSpaceInitiated",
         "security": [
           {
@@ -65442,7 +65443,7 @@
       },
       "patch": {
         "summary": "Updates a subscription.",
-        "description": "Updates a subscription for an app belonging to a connsumer organization in a catalog, as accessed through a space.",
+        "description": "Updates a subscription for an app belonging to a connsumer organization in a catalog, as accessed through a space.\n\n          Fields not allowed:\n          - billing_identifiers\n          - plan_title\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n          - app_url\n",
         "operationId": "subscription_updateSpaceInitiated",
         "security": [
           {
@@ -65692,7 +65693,7 @@
       ],
       "post": {
         "summary": "Creates a draft product.",
-        "description": "Creates a draft product from the given content, which may represent an product document or a product and associated APIs.",
+        "description": "Creates a draft product from the given content, which may represent an product document or a product and associated APIs.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "draft_product_create",
         "security": [
           {
@@ -65991,7 +65992,7 @@
       },
       "patch": {
         "summary": "Updates a draft product.",
-        "description": "Updates a draft product from the given content, which may represent an product document or a product and associated APIs.",
+        "description": "Updates a draft product from the given content, which may represent an product document or a product and associated APIs.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "draft_product_update",
         "security": [
           {
@@ -66146,7 +66147,7 @@
       },
       "patch": {
         "summary": "Updates a draft product.",
-        "description": "Updates a draft product from the given content, which may represent an product document or a product and associated APIs.",
+        "description": "Updates a draft product from the given content, which may represent an product document or a product and associated APIs.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "draft_product_updateByNameVersion",
         "security": [
           {
@@ -66564,7 +66565,7 @@
       ],
       "post": {
         "summary": "Creates a draft API.",
-        "description": "Creates a draft API from the given content, which may represent an OpenAPI or WSDL-defined API.",
+        "description": "Creates a draft API from the given content, which may represent an OpenAPI or WSDL-defined API.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "draft_api_create",
         "security": [
           {
@@ -66880,7 +66881,7 @@
       },
       "patch": {
         "summary": "Updates a draft API.",
-        "description": "Updates the given draft API definition.",
+        "description": "Updates the given draft API definition.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "draft_api_update",
         "security": [
           {
@@ -67046,7 +67047,7 @@
       },
       "patch": {
         "summary": "Updates a draft API.",
-        "description": "Updates the given draft API definition.",
+        "description": "Updates the given draft API definition.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "draft_api_updateByNameVersion",
         "security": [
           {
@@ -68070,7 +68071,7 @@
       },
       "patch": {
         "summary": "Updates a product in a catalog.",
-        "description": "Updates a product in a catalog.",
+        "description": "Updates a product in a catalog.\n\n          Fields not allowed:\n          - product\n          - catalog_product\n          - space_urls\n          - api_urls\n          - approval_history\n          - superseded_by\n          - supersedes\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "product_updateCatalogScope",
         "security": [
           {
@@ -68223,7 +68224,7 @@
       },
       "patch": {
         "summary": "Updates a product in a catalog.",
-        "description": "Updates a product in a catalog.",
+        "description": "Updates a product in a catalog.\n\n          Fields not allowed:\n          - product\n          - catalog_product\n          - space_urls\n          - api_urls\n          - approval_history\n          - superseded_by\n          - supersedes\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "product_updateByNameVersionCatalogScope",
         "security": [
           {
@@ -69282,7 +69283,7 @@
       },
       "patch": {
         "summary": "Updates an API.",
-        "description": "Updates the API with the given id in a catalog.",
+        "description": "Updates the API with the given id in a catalog.\n\n          Fields not allowed:\n          - name\n          - version\n          - api\n          - wsdl\n          - catalog_api\n          - catalog_url\n          - org_url\n          - gateway_api\n          - consumer_api\n          - space_urls\n          - gateway_service_urls\n          - user_registry_urls\n          - oauth_provider_urls\n          - tls_client_profile_urls\n          - extension_urls\n          - policy_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "api_updateCatalogScope",
         "security": [
           {
@@ -69396,7 +69397,7 @@
       },
       "patch": {
         "summary": "Updates an API.",
-        "description": "Updates the API with the given name and version in a catalog.",
+        "description": "Updates the API with the given name and version in a catalog.\n\n          Fields not allowed:\n          - name\n          - version\n          - api\n          - wsdl\n          - catalog_api\n          - catalog_url\n          - org_url\n          - gateway_api\n          - consumer_api\n          - space_urls\n          - gateway_service_urls\n          - user_registry_urls\n          - oauth_provider_urls\n          - tls_client_profile_urls\n          - extension_urls\n          - policy_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "api_updateByNameVersionCatalogScope",
         "security": [
           {
@@ -69929,7 +69930,7 @@
       },
       "patch": {
         "summary": "Updates a product in a space.",
-        "description": "Updates a product in a space.",
+        "description": "Updates a product in a space.\n\n          Fields not allowed:\n          - product\n          - catalog_product\n          - space_urls\n          - api_urls\n          - approval_history\n          - superseded_by\n          - supersedes\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "product_updateSpaceScope",
         "security": [
           {
@@ -70085,7 +70086,7 @@
       },
       "patch": {
         "summary": "Updates a product in a space.",
-        "description": "Updates a product in a space.",
+        "description": "Updates a product in a space.\n\n          Fields not allowed:\n          - product\n          - catalog_product\n          - space_urls\n          - api_urls\n          - approval_history\n          - superseded_by\n          - supersedes\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "product_updateByNameVersionSpaceScope",
         "security": [
           {
@@ -71177,7 +71178,7 @@
       },
       "patch": {
         "summary": "Updates an API.",
-        "description": "Updates the API with the given id in a space within a catalog.",
+        "description": "Updates the API with the given id in a space within a catalog.\n\n          Fields not allowed:\n          - name\n          - version\n          - api\n          - wsdl\n          - catalog_api\n          - catalog_url\n          - org_url\n          - gateway_api\n          - consumer_api\n          - space_urls\n          - gateway_service_urls\n          - user_registry_urls\n          - oauth_provider_urls\n          - tls_client_profile_urls\n          - extension_urls\n          - policy_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "api_updateSpaceScope",
         "security": [
           {
@@ -71294,7 +71295,7 @@
       },
       "patch": {
         "summary": "Updates an API.",
-        "description": "Updates the API with the given name and version in a space within a catalog.",
+        "description": "Updates the API with the given name and version in a space within a catalog.\n\n          Fields not allowed:\n          - name\n          - version\n          - api\n          - wsdl\n          - catalog_api\n          - catalog_url\n          - org_url\n          - gateway_api\n          - consumer_api\n          - space_urls\n          - gateway_service_urls\n          - user_registry_urls\n          - oauth_provider_urls\n          - tls_client_profile_urls\n          - extension_urls\n          - policy_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "api_updateByNameVersionSpaceScope",
         "security": [
           {
@@ -71627,7 +71628,7 @@
       },
       "put": {
         "summary": "Updates the current user.",
-        "description": "Updates the user profile for the currently authenticated user.",
+        "description": "Updates the user profile for the currently authenticated user.\n\n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "me_singletonUpdate",
         "security": [
           {
@@ -72265,7 +72266,7 @@
       },
       "patch": {
         "summary": "Updates a catalog webhook.",
-        "description": "Updates a webhook registration for a catalog.",
+        "description": "Updates a webhook registration for a catalog.\n\n          Fields not allowed:\n          - state_change_history\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "webhook_updateCatalogScope",
         "security": [
           {
@@ -83404,7 +83405,8 @@
               "other",
               "external",
               "primitive-template",
-              "pre-built"
+              "pre-built",
+              "skill-flow"
             ]
           },
           "skill_subtype": {
@@ -137425,44 +137427,44 @@
   ],
   docs: [
       {
-  			"name": "introduction",
-  			"title": "Introduction",
+        "name": "introduction",
+        "title": "Introduction",
+        "format": "b64html",
+        "content": "PGFydGljbGUgaWQ9ImludHJvZHVjdGlvbiIgY2xhc3M9InBhZ2UiPgoKICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBpbnRyby1oZWFkZXIiPgogICAgICAgIE9wZW4gQVBJIEV4cGxvcmVyIERvY3VtZW50YXRpb24gdjEwLjAuTEFURVNUCiAgICAgIDwvc3Bhbj4KICAgIDwvaDI+CiAgPC9kaXY+CiAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgaW50cm8tY29udGVudCI+CiAgICA8c2VjdGlvbj4KICAgICAgPGgyPkludHJvZHVjdGlvbjwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBwbGF0Zm9ybSBSRVNUIEFQSXMgZG9jdW1lbnRlZCBoZXJlIGZvciBJQk0gQVBJIENvbm5lY3QgdjEwIHByb3ZpZGUgY29tcGxldGUgYWNjZXNzIHRvIHRoZSBjYXBhYmlsaXR5IG9mIHRoZSBwbGF0Zm9ybS4gVGhleSBtYXkgYmUgdXNlZCB0byBhdXRvbWF0ZSBhZG1pbmlzdHJhdGlvbiBvZiB0aGUgcGxhdGZvcm07IGZvciBzY3JpcHRzIGFuZCB0b29scyB0byBzdXBwb3J0IGEgY29udGludW91cyBpbnRlZ3JhdGlvbiBlbnZpcm9ubWVudCBmb3IgQVBJIGRldmVsb3BtZW50IGFuZCBwdWJsaXNoaW5nOyBhbmQgZm9yIG1hbmFnZW1lbnQgb2YgY2F0YWxvZ3Mgb2YgQVBJcyBhbmQgdGhlaXIgc3Vic2NyaWJlcnMuIFRoZSBvcGVyYXRpb25zIHByb3ZpZGVkIGluIHRoZSBSRVNUIEFQSSBhbHNvIGNvcnJlc3BvbmQgZGlyZWN0bHkgd2l0aCBjb21tYW5kcyBpbiB0aGUgdG9vbGtpdCBDTEkuCiAgICAgIDwvcD4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+QVBJczwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBjYXBhYmlsaXR5IG9mIHRoZSBwbGF0Zm9ybSBpcyBjb21wcmlzZWQgb2YgdGhyZWUgQVBJcyB3aGljaCBhcmUgb3JpZW50ZWQgYXQgZGlmZmVyZW50IHNldHMgb2YgdXNlIGNhc2VzOgogICAgICA8L3A+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItYXBpcyI+PC9kaXY+CiAgICA8L3NlY3Rpb24+CiAgPC9kaXY+CjwvYXJ0aWNsZT4K"
+      },
+      {
+        "name": "concepts",
+        "title": "Concepts",
+        "format": "b64html",
+        "content": "PGFydGljbGUgaWQ9ImNvbmNlcHRzIiBjbGFzcz0icGFnZSI+CiAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX3RpdGxlIj4KICAgIDxoMiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX3RpdGxlLXRleHQiPgogICAgICA8c3BhbiBjbGFzcz0iZXhwbG9yZXItZG9jLS1oZWFkZXIgY29uY2VwdHMtaGVhZGVyIj4KICAgICAgICBDb25jZXB0cwogICAgICA8L3NwYW4+CiAgICA8L2gyPgogIDwvZGl2PgogIDxkaXYgY2xhc3M9ImFwaWMtZXhwbG9yZXItZG9jcGFnZV9jb250ZW50IGNvbmNlcHRzLWNvbnRlbnQiPgogICAgPHNlY3Rpb24gY2xhc3M9ImNvbmNlcHRzLXRhYmxlIj4KICAgICAgPGgyPkNvbmNlcHRzPC9oMj4KICAgICAgPHA+VGhlIHByaW1hcnkgY29uY2VwdHMgZXhwb3NlZCBieSB0aGUgQVBJIENvbm5lY3QgcGxhdGZvcm0gYXJlIHJlcHJlc2VudGVkIGluIHRoZSB0b3AtbGV2ZWwgcmVzb3VyY2UgcGF0aHMuPC9wPgogICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0IGNvbmNlcHQtYXBwcyI+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1pY29uIj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LXRpdGxlIj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtbmFtZSI+QXBwczwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10YWciPi9hcHBzPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1kZXNjcmlwdGlvbiI+CiAgICAgICAgICBBcHBzIHJlcHJlc2VudCByZWdpc3RlcmVkIGNsaWVudCBhcHBsaWNhdGlvbnMgY3JlYXRlZCBieSBBUEkgY29uc3VtZXJzLiBBbiBhcHAgaGFzIG9uZSBvciBtb3JlIGNsaWVudCBJRHMgdGhhdCBhcmUgYXNzb2NpYXRlZCB3aXRoIHN1YnNjcmlwdGlvbnMgdG8gQVBJcy4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQgY29uY2VwdC1jYXRhbG9ncyI+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1pY29uIj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LXRpdGxlIj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtbmFtZSBieC0tdHlwZS1nYW1tYSI+Q2F0YWxvZ3M8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGFnIj4vY2F0YWxvZ3M8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWRlc2NyaXB0aW9uIj4KICAgICAgICAgIEEgY2F0YWxvZyBpcyBhIGxvZ2ljYWwgY29udGFpbmVyIGZvciB0aGUgZGVwbG95bWVudCBhbmQgY29uc3VtcHRpb24gb2YgQVBJcy4gQSBjYXRhbG9nIHJlcHJlc2VudHMgdGhlIGV4ZWN1dGlvbiBlbnZpcm9ubWVudCBmb3IgQVBJcywgYW5kIGl0cyBjb250ZW50cyBhcmUgdmlzaWJsZSB0byBjb25zdW1lcnMgaW4gaXRzIGFzc29jaWF0ZWQgZGV2ZWxvcGVyIHBvcnRhbC4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQgY29uY2VwdC1jbG91ZCI+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1pY29uIj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LXRpdGxlIj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtbmFtZSI+Q2xvdWQ8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGFnIj4vY2xvdWQ8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWRlc2NyaXB0aW9uIj4KICAgICAgICAgIFRoZSBjbG91ZCByZXByZXNlbnRzIHRoZSBBUEkgQ29ubmVjdCBzeXN0ZW0uIEl0IGhhcyA8Y29kZT5zZXR0aW5nczwvY29kZT4gdGhhdCByZXByZXNlbnQgaXRzIG9wZXJhdGlvbmFsIGNvbmZpZ3VyYXRpb24uCiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0IGNvbmNlcHQtb3JnIj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWljb24iPgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGl0bGUiPgogICAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1uYW1lIj5Db25zdW1lciBvcmdhbml6YXRpb25zPC9kaXY+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LXRhZyI+L2NvbnN1bWVyLW9yZ3M8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWRlc2NyaXB0aW9uIj4KICAgICAgICAgIEEgY29uc3VtZXIgb3JnYW5pemF0aW9uIGlzIHRoZSBzY29wZSBpbiB3aGljaCBhIGNvbnN1bWVyIHVzZXIgKGFwcCBkZXZlbG9wZXJzKSBjcmVhdGVzIGFuZCBvd25zIGFwcHMgYW5kIHN1YnNjcmlwdGlvbnMuIENvbnN1bWVyIG9yZ2FuaXphdGlvbnMgZXhpc3QgaW4gdGhlIGNvbnRleHQgb2YgYSBjYXRhbG9nLgogICAgICAgIDwvZGl2PgogICAgICA8L2Rpdj4KICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdCBjb25jZXB0LW1lIj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWljb24iPgogICAgICAgICAgPHN2ZyBpZD0iX0xheWVyXyIgZGF0YS1uYW1lPSIgTGF5ZXIgIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiIgdmlld0JveD0iLTEwIC0xMCA0MCA0MCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7fS5jbHMtMntmaWxsOiM1YTY4NzI7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT51c2VyXzE4PC90aXRsZT48ZyBpZD0iX0dyb3VwXyIgZGF0YS1uYW1lPSIgR3JvdXAgIj48cmVjdCBpZD0iX1JlY3RhbmdsZV8iIGRhdGEtbmFtZT0iIFJlY3RhbmdsZSAiIGNsYXNzPSJjbHMtMSIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4IiAvPjwvZz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik05LDExQTUsNSwwLDEsMCw0LDYsNSw1LDAsMCwwLDksMTFaTTksMkE0LDQsMCwxLDEsNSw2LDQsNCwwLDAsMSw5LDJaIiAvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTEzLDEySDVhMiwyLDAsMCwwLTIsMnYzSDE1VjE0QTIsMiwwLDAsMCwxMywxMloiIC8+PC9zdmc+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10aXRsZSI+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LW5hbWUiPk1lPC9kaXY+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LXRhZyI+L21lPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1kZXNjcmlwdGlvbiI+CiAgICAgICAgICBUaGUgPGNvZGU+L21lPC9jb2RlPiByZXNvdXJjZSByZXByZXNlbnRzIHRoZSBwcm9maWxlIG9mIHRoZSBjdXJyZW50IGF1dGhlbnRpY2F0ZWQgdXNlci4gCiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0IGNvbmNlcHQtb2F1dGgtZW5kcG9pbnQiPgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtaWNvbiI+CiAgICAgICAgICA8c3ZnIGlkPSJfTGF5ZXJfIiBkYXRhLW5hbWU9IiBMYXllciAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjUyIiBoZWlnaHQ9IjUyIiB2aWV3Qm94PSItMTAgLTEwIDQwIDQwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6bm9uZTt9LmNscy0ye2ZpbGw6IzVhNjg3Mjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPnNlY3VyZV8xODwvdGl0bGU+PGcgaWQ9Il9Hcm91cF8iIGRhdGEtbmFtZT0iIEdyb3VwICI+PHJlY3QgaWQ9Il9SZWN0YW5nbGVfIiBkYXRhLW5hbWU9IiBSZWN0YW5nbGUgIiBjbGFzcz0iY2xzLTEiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIvPjwvZz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0xMy41LDguMzQwODZ2LTIuODQ0YTQuNSw0LjUsMCwwLDAtOSwwdjIuODQ0YTUuNSw1LjUsMCwxLDAsOSwwWm0tNy0yLjg0NGEyLjUsMi41LDAsMCwxLDUsMHYxLjEwNWE1LjQ3NCw1LjQ3NCwwLDAsMC01LDBabTEuNDg3LDguNzUyTDUuNSwxMS43Nzc4NmwxLTEsMS40NjcsMS40NzQsMy41MzMtMy40NzQsMSwxWiIvPjwvc3ZnPgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGl0bGUiPgogICAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1uYW1lIj5PQXV0aCBlbmRwb2ludHM8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGFnIj4vb2F1dGgyPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1kZXNjcmlwdGlvbiI+CiAgICAgICAgICBUaGUgPGNvZGU+L29hdXRoMjwvY29kZT4gcmVzb3VyY2UgcHJvdmlkZXMgdGhlIGF1dGhvcml6YXRpb24gYW5kIHRva2VuIGVuZHBvaW50cyBmb3IgY2xpZW50cyBvZiB0aGUgcGxhdGZvcm0gUkVTVCBBUElzIChzZWUgdGhlIGF1dGhlbnRpY2F0aW9uIHRvcGljKS4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQgY29uY2VwdC1vcmciPgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtaWNvbiI+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10aXRsZSI+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LW5hbWUgYngtLXR5cGUtZ2FtbWEiPlByb3ZpZGVyIG9yZ2FuaXphdGlvbnM8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGFnIj4vb3JnczwvZGl2PgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtZGVzY3JpcHRpb24iPgogICAgICAgICAgQSBwcm92aWRlciBvcmdhbml6YXRpb24gaXMgdGhlIHNjb3BlIGluIHdoaWNoIGFsbCBBUEkgcHJvdmlkZXIgY29udGVudCBpcyBjcmVhdGVkIGFuZCBjb25maWd1cmVkLiBUaGlzIGluY2x1ZGVzIEFQSSBhbmQgQVBJIHByb2R1Y3QgZGVmaW5pdGlvbnMsIGNhdGFsb2dzLCBhbmQgb3RoZXIgY29uZmlndXJhdGlvbiBvYmplY3RzIGFzc29jaWF0ZWQgd2l0aCBjYXRhbG9ncy4gVGhlIDxlbT48c3Ryb25nPmFkbWluIG9yZzwvc3Ryb25nPjwvZW0+IGlzIGEKICAgICAgICAgIHNwZWNpYWwgb3JnYW5pemF0aW9uIHRoYXQgcHJvdmlkZXMgdGhlIG93bmVyc2hpcCBzY29wZSBmb3IgdGhlIGNvbmZpZ3VyYXRpb24gb2JqZWN0cyB1c2VkIGF0IHRoZSBjbG91ZCBsZXZlbCwgYW5kIHRoZSBsb2dpbiBjb250ZXh0IGZvciBhZG1pbiB1c2Vycy4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQgY29uY2VwdC1zcGFjZXMiPgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtaWNvbiI+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10aXRsZSI+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LW5hbWUgYngtLXR5cGUtZ2FtbWEiPlNwYWNlczwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10YWciPi9zcGFjZXM8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWRlc2NyaXB0aW9uIj4KICAgICAgICAgIFNwYWNlcyBhcmUgYWRtaW5pc3RyYXRpdmUgcGFydGl0aW9ucyB3aXRoIGEgPGVtPjxzdHJvbmc+Y2F0YWxvZzwvc3Ryb25nPjwvZW0+LCB1c2VkIGZvciBjb2xsYWJvcmF0aXZlIG1hbmFnZW1lbnQgb2YgQVBJcyBieSBkaWZmZXJlbnQgdGVhbXMuCiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0IGNvbmNlcHQtdXNlci1yZWciPgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtaWNvbiI+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10aXRsZSI+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LW5hbWUgYngtLXR5cGUtZ2FtbWEiPlVzZXIgcmVnaXN0cmllczwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10YWciPi91c2VyLXJlZ2lzdHJpZXM8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWRlc2NyaXB0aW9uIj4KICAgICAgICAgIFVzZXIgcmVnaXN0cmllcyBwcm92aWRlIHRoZSBzY29wZSBpbiB3aGljaCBpbmZvcm1hdGlvbiBhYm91dCB1c2VycyBhbmQgdGhlaXIgY3JlZGVudGlhbHMgYXJlIGhlbGQuCiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgICA8cD4KICAgICAgICBGb3IgY29uc3VtZXIgdXNlcnMsIEFQSXMgYW5kIEFQSSBQcm9kdWN0cyB2aXNpYmxlIG9uIHRoZSBkZXZlbG9wZXIgcG9ydGFsIGFwcGVhciBhcyA8Y29kZT4vYXBpczwvY29kZT4gb3IgPGNvZGU+L3B1YmxpYy1hcGlzPC9jb2RlPiwgYW5kIDxjb2RlPi9wcm9kdWN0czwvY29kZT4gb3IgPGNvZGU+L3B1YmxpYy1wcm9kdWN0czwvY29kZT4KICAgICAgICByZXNwZWN0aXZlbHkuIFB1YmxpYyBBUEkgY29udGVudCBpcyB2aXNpYmxlIHdpdGhvdXQgYXV0aGVudGljYXRpb24sIHdoaWxlIHRoZSBub24tcHVibGljIGNvbnRlbnQgaXMgYWNjZXNzaWJsZSBhY2NvcmRpbmcgdG8gdGhlIHZpc2liaWxpdHkgd2l0aCB3aGljaCBpdCBpcyBwdWJsaXNoZWQuCiAgICAgIDwvcD4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+U2NvcGVzPC9oMj4KICAgICAgPHA+VGhlIEFQSSBDb25uZWN0IHBsYXRmb3JtIFJFU1QgQVBJcyBhcmUgb3JnYW5pemVkIGFyb3VuZCB0aGUgZm9sbG93aW5nIGNvbmNlcHR1YWwgc2NvcGVzLjwvcD4KICAgICAgPGgzPkNsb3VkIHNjb3BlPC9oMz4KICAgICAgPHA+Q2xvdWQgc2NvcGUgaXMgdGhlIHRvcC1sZXZlbCBzY29wZSBmb3IgdGhlIEFQSSBDb25uZWN0IHN5c3RlbSBhcyBhIHdob2xlLiBJdHMgY29uZmlndXJhdGlvbiBjYW4gb25seSBiZSBwZXJmb3JtZWQgdGhyb3VnaCB0aGUgYWRtaW4gQVBJLiBUaGUgQVBJIHBhdGhzIGJlbG93IDxjb2RlPmNsb3VkPC9jb2RlPiBwcm92aWRlIGFjY2VzcyB0byB0aGUgY2xvdWQgc2V0dGluZ3M7IGRlZmF1bHQgcm9sZSBhbmQgcGVybWlzc2lvbnMgc2V0dGluZ3M7CiAgICAgICAgdGhlIHNldCBvZiBjb25maWd1cmVkIGludGVncmF0aW9ucyAoYWRhcHRlcnMgdG8gb3RoZXIgaW5mcmFzdHJ1Y3R1cmUgc2VydmljZXMgc3VjaCBhcyB1c2VyIHJlZ2lzdHJpZXMgYW5kIGJpbGxpbmcpOyB0aGUgc2V0IG9mIEFQSSBwcm92aWRlciBvcmdhbml6YXRpb25zIGFuZCB0aGVpciBhc3NvY2lhdGVkIGludml0YXRpb25zOyBhbmQgdGhlIHNldCBvZiByZWdpc3RlcmVkIGNsaWVudHMgZm9yIHRoZSBzeXN0ZW0uPC9wPgogICAgICA8aDM+T3JnYW5pemF0aW9uIHNjb3BlPC9oMz4KICAgICAgPHA+T3JnYW5pemF0aW9uIHNjb3BlIGlzIHRoZSBvd25lcnNoaXAgc2NvcGUgZm9yIGNvbnRlbnQgYW5kIGNvbmZpZ3VyYXRpb24gZGVmaW5pdGlvbnMgKEFQSXMsIGNhdGFsb2dzLCBhcHBzLCBhbmQgY29uZmlndXJhdGlvbnMgcmVwcmVzZW50aW5nIHVzZXIgcmVnaXN0cmllcywgVExTIHByb2ZpbGVzLCBrZXlzdG9yZSBkZWZpbml0aW9ucyBhbmQgc28gb24pLiBNb3N0IG9mIHRoZXNlIHJlc291cmNlcyBhcmUgY3JlYXRlZCBvciBmb3VuZCB1c2luZyBwYXRocwogICAgICAgIHRoYXQgYmVnaW4gd2l0aCA8Y29kZT4vb3JnL3tvcmdzfTwvY29kZT4gb3IgcGF0aHMgdGhhdCBoYXZlIDxjb2RlPntvcmdzfTwvY29kZT4gb3IgcGF0aHMgdGhhdCBoYXZlIDxjb2RlPntvcmdzfTwvY29kZT4gYXMgdGhlaXIgZmlyc3QgcGF0aCBwYXJhbWV0ZXIuIE1hbnkgb2YgdGhlIGNvbmZpZ3VyYXRpb24gb2JqZWN0cyB0aGF0IGFwcGVhciBpbiB0aGUgY29udGV4dCBvZiBjbG91ZCBzZXR0aW5ncwogICAgICAgICgvY2xvdWQvc2V0dGluZ3MpIGFyZSBvYmplY3RzIHRoYXQgYXJlIGNyZWF0ZWQgYW5kIG93bmVkIGJ5IHRoZSA8Y29kZT5hZG1pbjwvY29kZT4gb3JnYW5pemF0aW9uLCB3aGljaCBpcyBhbiBvcmdhbml6YXRpb24gdG8gd2hpY2ggdGhlIHNldCBvZiBhZG1pbmlzdHJhdG9yIHVzZXJzIGZvciB0aGUgY2xvdWQgYmVsb25nLjwvcD4KICAgICAgPGgzPkNhdGFsb2cgYW5kIHNwYWNlIHNjb3BlczwvaDM+CiAgICAgIDxwPkNhdGFsb2cgYW5kIHNwYWNlIHNjb3BlcyBhcmUgdGhlIGNvbnRleHRzIGluIHdoaWNoIHB1Ymxpc2hlZCBBUEkgY29udGVudCBpcyBtYW5hZ2VkLCBhbmQgY29uc3VtZXIgdXNlcnMgYXJlIGFkbWluaXN0ZXJlZC4gKFNwYWNlcyBhcmUgb3B0aW9uYWwgZmluZXItZ3JhaW5lZCBwYXJ0aXRpb25zIG9mIGEgY2F0YWxvZy4pPC9wPgogICAgPC9zZWN0aW9uPgogIDwvZGl2Pgo8L2FydGljbGU+Cg=="
+      },
+      {
+        "name": "authentication",
+        "title": "Authentication",
+        "docs": [{
+            "name": "auth_clientid_secret",
+            "title": "Obtaining a Client ID and Secret",
             "format": "b64html",
-  			"content": "PGFydGljbGUgaWQ9ImludHJvZHVjdGlvbiIgY2xhc3M9InBhZ2UiPgoKICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBpbnRyby1oZWFkZXIiPgogICAgICAgIE9wZW4gQVBJIEV4cGxvcmVyIERvY3VtZW50YXRpb24gdjEwLjAuTEFURVNUCiAgICAgIDwvc3Bhbj4KICAgIDwvaDI+CiAgPC9kaXY+CiAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgaW50cm8tY29udGVudCI+CiAgICA8c2VjdGlvbj4KICAgICAgPGgyPkludHJvZHVjdGlvbjwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBwbGF0Zm9ybSBSRVNUIEFQSXMgZG9jdW1lbnRlZCBoZXJlIGZvciBJQk0gQVBJIENvbm5lY3QgdjEwIHByb3ZpZGUgY29tcGxldGUgYWNjZXNzIHRvIHRoZSBjYXBhYmlsaXR5IG9mIHRoZSBwbGF0Zm9ybS4gVGhleSBtYXkgYmUgdXNlZCB0byBhdXRvbWF0ZSBhZG1pbmlzdHJhdGlvbiBvZiB0aGUgcGxhdGZvcm07IGZvciBzY3JpcHRzIGFuZCB0b29scyB0byBzdXBwb3J0IGEgY29udGludW91cyBpbnRlZ3JhdGlvbiBlbnZpcm9ubWVudCBmb3IgQVBJIGRldmVsb3BtZW50IGFuZCBwdWJsaXNoaW5nOyBhbmQgZm9yIG1hbmFnZW1lbnQgb2YgY2F0YWxvZ3Mgb2YgQVBJcyBhbmQgdGhlaXIgc3Vic2NyaWJlcnMuIFRoZSBvcGVyYXRpb25zIHByb3ZpZGVkIGluIHRoZSBSRVNUIEFQSSBhbHNvIGNvcnJlc3BvbmQgZGlyZWN0bHkgd2l0aCBjb21tYW5kcyBpbiB0aGUgdG9vbGtpdCBDTEkuCiAgICAgIDwvcD4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+QVBJczwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBjYXBhYmlsaXR5IG9mIHRoZSBwbGF0Zm9ybSBpcyBjb21wcmlzZWQgb2YgdGhyZWUgQVBJcyB3aGljaCBhcmUgb3JpZW50ZWQgYXQgZGlmZmVyZW50IHNldHMgb2YgdXNlIGNhc2VzOgogICAgICA8L3A+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItYXBpcyI+PC9kaXY+CiAgICA8L3NlY3Rpb24+CiAgPC9kaXY+CjwvYXJ0aWNsZT4K"
-  		},
-  		{
-  			"name": "concepts",
-  			"title": "Concepts",
-  			"format": "b64html",
-  			"content": "PGFydGljbGUgaWQ9ImNvbmNlcHRzIiBjbGFzcz0icGFnZSI+CiAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX3RpdGxlIj4KICAgIDxoMiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX3RpdGxlLXRleHQiPgogICAgICA8c3BhbiBjbGFzcz0iZXhwbG9yZXItZG9jLS1oZWFkZXIgY29uY2VwdHMtaGVhZGVyIj4KICAgICAgICBDb25jZXB0cwogICAgICA8L3NwYW4+CiAgICA8L2gyPgogIDwvZGl2PgogIDxkaXYgY2xhc3M9ImFwaWMtZXhwbG9yZXItZG9jcGFnZV9jb250ZW50IGNvbmNlcHRzLWNvbnRlbnQiPgogICAgPHNlY3Rpb24gY2xhc3M9ImNvbmNlcHRzLXRhYmxlIj4KICAgICAgPGgyPkNvbmNlcHRzPC9oMj4KICAgICAgPHA+VGhlIHByaW1hcnkgY29uY2VwdHMgZXhwb3NlZCBieSB0aGUgQVBJIENvbm5lY3QgcGxhdGZvcm0gYXJlIHJlcHJlc2VudGVkIGluIHRoZSB0b3AtbGV2ZWwgcmVzb3VyY2UgcGF0aHMuPC9wPgogICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0IGNvbmNlcHQtYXBwcyI+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1pY29uIj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LXRpdGxlIj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtbmFtZSI+QXBwczwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10YWciPi9hcHBzPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1kZXNjcmlwdGlvbiI+CiAgICAgICAgICBBcHBzIHJlcHJlc2VudCByZWdpc3RlcmVkIGNsaWVudCBhcHBsaWNhdGlvbnMgY3JlYXRlZCBieSBBUEkgY29uc3VtZXJzLiBBbiBhcHAgaGFzIG9uZSBvciBtb3JlIGNsaWVudCBJRHMgdGhhdCBhcmUgYXNzb2NpYXRlZCB3aXRoIHN1YnNjcmlwdGlvbnMgdG8gQVBJcy4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQgY29uY2VwdC1jYXRhbG9ncyI+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1pY29uIj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LXRpdGxlIj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtbmFtZSBieC0tdHlwZS1nYW1tYSI+Q2F0YWxvZ3M8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGFnIj4vY2F0YWxvZ3M8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWRlc2NyaXB0aW9uIj4KICAgICAgICAgIEEgY2F0YWxvZyBpcyBhIGxvZ2ljYWwgY29udGFpbmVyIGZvciB0aGUgZGVwbG95bWVudCBhbmQgY29uc3VtcHRpb24gb2YgQVBJcy4gQSBjYXRhbG9nIHJlcHJlc2VudHMgdGhlIGV4ZWN1dGlvbiBlbnZpcm9ubWVudCBmb3IgQVBJcywgYW5kIGl0cyBjb250ZW50cyBhcmUgdmlzaWJsZSB0byBjb25zdW1lcnMgaW4gaXRzIGFzc29jaWF0ZWQgZGV2ZWxvcGVyIHBvcnRhbC4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQgY29uY2VwdC1jbG91ZCI+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1pY29uIj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LXRpdGxlIj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtbmFtZSI+Q2xvdWQ8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGFnIj4vY2xvdWQ8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWRlc2NyaXB0aW9uIj4KICAgICAgICAgIFRoZSBjbG91ZCByZXByZXNlbnRzIHRoZSBBUEkgQ29ubmVjdCBzeXN0ZW0uIEl0IGhhcyA8Y29kZT5zZXR0aW5nczwvY29kZT4gdGhhdCByZXByZXNlbnQgaXRzIG9wZXJhdGlvbmFsIGNvbmZpZ3VyYXRpb24uCiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0IGNvbmNlcHQtb3JnIj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWljb24iPgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGl0bGUiPgogICAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1uYW1lIj5Db25zdW1lciBvcmdhbml6YXRpb25zPC9kaXY+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LXRhZyI+L2NvbnN1bWVyLW9yZ3M8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWRlc2NyaXB0aW9uIj4KICAgICAgICAgIEEgY29uc3VtZXIgb3JnYW5pemF0aW9uIGlzIHRoZSBzY29wZSBpbiB3aGljaCBhIGNvbnN1bWVyIHVzZXIgKGFwcCBkZXZlbG9wZXJzKSBjcmVhdGVzIGFuZCBvd25zIGFwcHMgYW5kIHN1YnNjcmlwdGlvbnMuIENvbnN1bWVyIG9yZ2FuaXphdGlvbnMgZXhpc3QgaW4gdGhlIGNvbnRleHQgb2YgYSBjYXRhbG9nLgogICAgICAgIDwvZGl2PgogICAgICA8L2Rpdj4KICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdCBjb25jZXB0LW1lIj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWljb24iPgogICAgICAgICAgPHN2ZyBpZD0iX0xheWVyXyIgZGF0YS1uYW1lPSIgTGF5ZXIgIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiIgdmlld0JveD0iLTEwIC0xMCA0MCA0MCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7fS5jbHMtMntmaWxsOiM1YTY4NzI7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT51c2VyXzE4PC90aXRsZT48ZyBpZD0iX0dyb3VwXyIgZGF0YS1uYW1lPSIgR3JvdXAgIj48cmVjdCBpZD0iX1JlY3RhbmdsZV8iIGRhdGEtbmFtZT0iIFJlY3RhbmdsZSAiIGNsYXNzPSJjbHMtMSIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4IiAvPjwvZz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik05LDExQTUsNSwwLDEsMCw0LDYsNSw1LDAsMCwwLDksMTFaTTksMkE0LDQsMCwxLDEsNSw2LDQsNCwwLDAsMSw5LDJaIiAvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTEzLDEySDVhMiwyLDAsMCwwLTIsMnYzSDE1VjE0QTIsMiwwLDAsMCwxMywxMloiIC8+PC9zdmc+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10aXRsZSI+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LW5hbWUiPk1lPC9kaXY+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LXRhZyI+L21lPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1kZXNjcmlwdGlvbiI+CiAgICAgICAgICBUaGUgPGNvZGU+L21lPC9jb2RlPiByZXNvdXJjZSByZXByZXNlbnRzIHRoZSBwcm9maWxlIG9mIHRoZSBjdXJyZW50IGF1dGhlbnRpY2F0ZWQgdXNlci4gCiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0IGNvbmNlcHQtb2F1dGgtZW5kcG9pbnQiPgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtaWNvbiI+CiAgICAgICAgICA8c3ZnIGlkPSJfTGF5ZXJfIiBkYXRhLW5hbWU9IiBMYXllciAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjUyIiBoZWlnaHQ9IjUyIiB2aWV3Qm94PSItMTAgLTEwIDQwIDQwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6bm9uZTt9LmNscy0ye2ZpbGw6IzVhNjg3Mjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPnNlY3VyZV8xODwvdGl0bGU+PGcgaWQ9Il9Hcm91cF8iIGRhdGEtbmFtZT0iIEdyb3VwICI+PHJlY3QgaWQ9Il9SZWN0YW5nbGVfIiBkYXRhLW5hbWU9IiBSZWN0YW5nbGUgIiBjbGFzcz0iY2xzLTEiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIvPjwvZz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0xMy41LDguMzQwODZ2LTIuODQ0YTQuNSw0LjUsMCwwLDAtOSwwdjIuODQ0YTUuNSw1LjUsMCwxLDAsOSwwWm0tNy0yLjg0NGEyLjUsMi41LDAsMCwxLDUsMHYxLjEwNWE1LjQ3NCw1LjQ3NCwwLDAsMC01LDBabTEuNDg3LDguNzUyTDUuNSwxMS43Nzc4NmwxLTEsMS40NjcsMS40NzQsMy41MzMtMy40NzQsMSwxWiIvPjwvc3ZnPgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGl0bGUiPgogICAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1uYW1lIj5PQXV0aCBlbmRwb2ludHM8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGFnIj4vb2F1dGgyPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1kZXNjcmlwdGlvbiI+CiAgICAgICAgICBUaGUgPGNvZGU+L29hdXRoMjwvY29kZT4gcmVzb3VyY2UgcHJvdmlkZXMgdGhlIGF1dGhvcml6YXRpb24gYW5kIHRva2VuIGVuZHBvaW50cyBmb3IgY2xpZW50cyBvZiB0aGUgcGxhdGZvcm0gUkVTVCBBUElzIChzZWUgdGhlIGF1dGhlbnRpY2F0aW9uIHRvcGljKS4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQgY29uY2VwdC1vcmciPgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtaWNvbiI+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10aXRsZSI+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LW5hbWUgYngtLXR5cGUtZ2FtbWEiPlByb3ZpZGVyIG9yZ2FuaXphdGlvbnM8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGFnIj4vb3JnczwvZGl2PgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtZGVzY3JpcHRpb24iPgogICAgICAgICAgQSBwcm92aWRlciBvcmdhbml6YXRpb24gaXMgdGhlIHNjb3BlIGluIHdoaWNoIGFsbCBBUEkgcHJvdmlkZXIgY29udGVudCBpcyBjcmVhdGVkIGFuZCBjb25maWd1cmVkLiBUaGlzIGluY2x1ZGVzIEFQSSBhbmQgQVBJIHByb2R1Y3QgZGVmaW5pdGlvbnMsIGNhdGFsb2dzLCBhbmQgb3RoZXIgY29uZmlndXJhdGlvbiBvYmplY3RzIGFzc29jaWF0ZWQgd2l0aCBjYXRhbG9ncy4gVGhlIDxlbT48c3Ryb25nPmFkbWluIG9yZzwvc3Ryb25nPjwvZW0+IGlzIGEKICAgICAgICAgIHNwZWNpYWwgb3JnYW5pemF0aW9uIHRoYXQgcHJvdmlkZXMgdGhlIG93bmVyc2hpcCBzY29wZSBmb3IgdGhlIGNvbmZpZ3VyYXRpb24gb2JqZWN0cyB1c2VkIGF0IHRoZSBjbG91ZCBsZXZlbCwgYW5kIHRoZSBsb2dpbiBjb250ZXh0IGZvciBhZG1pbiB1c2Vycy4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQgY29uY2VwdC1zcGFjZXMiPgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtaWNvbiI+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10aXRsZSI+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LW5hbWUgYngtLXR5cGUtZ2FtbWEiPlNwYWNlczwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10YWciPi9zcGFjZXM8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWRlc2NyaXB0aW9uIj4KICAgICAgICAgIFNwYWNlcyBhcmUgYWRtaW5pc3RyYXRpdmUgcGFydGl0aW9ucyB3aXRoIGEgPGVtPjxzdHJvbmc+Y2F0YWxvZzwvc3Ryb25nPjwvZW0+LCB1c2VkIGZvciBjb2xsYWJvcmF0aXZlIG1hbmFnZW1lbnQgb2YgQVBJcyBieSBkaWZmZXJlbnQgdGVhbXMuCiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0IGNvbmNlcHQtdXNlci1yZWciPgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtaWNvbiI+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10aXRsZSI+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LW5hbWUgYngtLXR5cGUtZ2FtbWEiPlVzZXIgcmVnaXN0cmllczwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10YWciPi91c2VyLXJlZ2lzdHJpZXM8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWRlc2NyaXB0aW9uIj4KICAgICAgICAgIFVzZXIgcmVnaXN0cmllcyBwcm92aWRlIHRoZSBzY29wZSBpbiB3aGljaCBpbmZvcm1hdGlvbiBhYm91dCB1c2VycyBhbmQgdGhlaXIgY3JlZGVudGlhbHMgYXJlIGhlbGQuCiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgICA8cD4KICAgICAgICBGb3IgY29uc3VtZXIgdXNlcnMsIEFQSXMgYW5kIEFQSSBQcm9kdWN0cyB2aXNpYmxlIG9uIHRoZSBkZXZlbG9wZXIgcG9ydGFsIGFwcGVhciBhcyA8Y29kZT4vYXBpczwvY29kZT4gb3IgPGNvZGU+L3B1YmxpYy1hcGlzPC9jb2RlPiwgYW5kIDxjb2RlPi9wcm9kdWN0czwvY29kZT4gb3IgPGNvZGU+L3B1YmxpYy1wcm9kdWN0czwvY29kZT4KICAgICAgICByZXNwZWN0aXZlbHkuIFB1YmxpYyBBUEkgY29udGVudCBpcyB2aXNpYmxlIHdpdGhvdXQgYXV0aGVudGljYXRpb24sIHdoaWxlIHRoZSBub24tcHVibGljIGNvbnRlbnQgaXMgYWNjZXNzaWJsZSBhY2NvcmRpbmcgdG8gdGhlIHZpc2liaWxpdHkgd2l0aCB3aGljaCBpdCBpcyBwdWJsaXNoZWQuCiAgICAgIDwvcD4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+U2NvcGVzPC9oMj4KICAgICAgPHA+VGhlIEFQSSBDb25uZWN0IHBsYXRmb3JtIFJFU1QgQVBJcyBhcmUgb3JnYW5pemVkIGFyb3VuZCB0aGUgZm9sbG93aW5nIGNvbmNlcHR1YWwgc2NvcGVzLjwvcD4KICAgICAgPGgzPkNsb3VkIHNjb3BlPC9oMz4KICAgICAgPHA+Q2xvdWQgc2NvcGUgaXMgdGhlIHRvcC1sZXZlbCBzY29wZSBmb3IgdGhlIEFQSSBDb25uZWN0IHN5c3RlbSBhcyBhIHdob2xlLiBJdHMgY29uZmlndXJhdGlvbiBjYW4gb25seSBiZSBwZXJmb3JtZWQgdGhyb3VnaCB0aGUgYWRtaW4gQVBJLiBUaGUgQVBJIHBhdGhzIGJlbG93IDxjb2RlPmNsb3VkPC9jb2RlPiBwcm92aWRlIGFjY2VzcyB0byB0aGUgY2xvdWQgc2V0dGluZ3M7IGRlZmF1bHQgcm9sZSBhbmQgcGVybWlzc2lvbnMgc2V0dGluZ3M7CiAgICAgICAgdGhlIHNldCBvZiBjb25maWd1cmVkIGludGVncmF0aW9ucyAoYWRhcHRlcnMgdG8gb3RoZXIgaW5mcmFzdHJ1Y3R1cmUgc2VydmljZXMgc3VjaCBhcyB1c2VyIHJlZ2lzdHJpZXMgYW5kIGJpbGxpbmcpOyB0aGUgc2V0IG9mIEFQSSBwcm92aWRlciBvcmdhbml6YXRpb25zIGFuZCB0aGVpciBhc3NvY2lhdGVkIGludml0YXRpb25zOyBhbmQgdGhlIHNldCBvZiByZWdpc3RlcmVkIGNsaWVudHMgZm9yIHRoZSBzeXN0ZW0uPC9wPgogICAgICA8aDM+T3JnYW5pemF0aW9uIHNjb3BlPC9oMz4KICAgICAgPHA+T3JnYW5pemF0aW9uIHNjb3BlIGlzIHRoZSBvd25lcnNoaXAgc2NvcGUgZm9yIGNvbnRlbnQgYW5kIGNvbmZpZ3VyYXRpb24gZGVmaW5pdGlvbnMgKEFQSXMsIGNhdGFsb2dzLCBhcHBzLCBhbmQgY29uZmlndXJhdGlvbnMgcmVwcmVzZW50aW5nIHVzZXIgcmVnaXN0cmllcywgVExTIHByb2ZpbGVzLCBrZXlzdG9yZSBkZWZpbml0aW9ucyBhbmQgc28gb24pLiBNb3N0IG9mIHRoZXNlIHJlc291cmNlcyBhcmUgY3JlYXRlZCBvciBmb3VuZCB1c2luZyBwYXRocwogICAgICAgIHRoYXQgYmVnaW4gd2l0aCA8Y29kZT4vb3JnL3tvcmdzfTwvY29kZT4gb3IgcGF0aHMgdGhhdCBoYXZlIDxjb2RlPntvcmdzfTwvY29kZT4gb3IgcGF0aHMgdGhhdCBoYXZlIDxjb2RlPntvcmdzfTwvY29kZT4gYXMgdGhlaXIgZmlyc3QgcGF0aCBwYXJhbWV0ZXIuIE1hbnkgb2YgdGhlIGNvbmZpZ3VyYXRpb24gb2JqZWN0cyB0aGF0IGFwcGVhciBpbiB0aGUgY29udGV4dCBvZiBjbG91ZCBzZXR0aW5ncwogICAgICAgICgvY2xvdWQvc2V0dGluZ3MpIGFyZSBvYmplY3RzIHRoYXQgYXJlIGNyZWF0ZWQgYW5kIG93bmVkIGJ5IHRoZSA8Y29kZT5hZG1pbjwvY29kZT4gb3JnYW5pemF0aW9uLCB3aGljaCBpcyBhbiBvcmdhbml6YXRpb24gdG8gd2hpY2ggdGhlIHNldCBvZiBhZG1pbmlzdHJhdG9yIHVzZXJzIGZvciB0aGUgY2xvdWQgYmVsb25nLjwvcD4KICAgICAgPGgzPkNhdGFsb2cgYW5kIHNwYWNlIHNjb3BlczwvaDM+CiAgICAgIDxwPkNhdGFsb2cgYW5kIHNwYWNlIHNjb3BlcyBhcmUgdGhlIGNvbnRleHRzIGluIHdoaWNoIHB1Ymxpc2hlZCBBUEkgY29udGVudCBpcyBtYW5hZ2VkLCBhbmQgY29uc3VtZXIgdXNlcnMgYXJlIGFkbWluaXN0ZXJlZC4gKFNwYWNlcyBhcmUgb3B0aW9uYWwgZmluZXItZ3JhaW5lZCBwYXJ0aXRpb25zIG9mIGEgY2F0YWxvZy4pPC9wPgogICAgPC9zZWN0aW9uPgogIDwvZGl2Pgo8L2FydGljbGU+Cg=="
-  		},
-  		{
-  			"name": "authentication",
-  			"title": "Authentication",
-  			"docs": [{
-  					"name": "auth_clientid_secret",
-  					"title": "Obtaining a Client ID and Secret",
-  					"format": "b64html",
-  					"content": "PGFydGljbGUgaWQ9ImNsaWVudC1pZC1zZWNyZXQiIGNsYXNzPSJwYWdlIj4KICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBjbGllbnQtaWQtc2VjcmV0LWhlYWRlciI+CiAgICAgIE9idGFpbmluZyBhIENsaWVudCBJRCBhbmQgU2VjcmV0CiAgICAgIDwvc3Bhbj4KICAgIDwvaDI+CiAgPC9kaXY+CiAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgY2xpZW50LWlkLXNlY3JldC1jb250ZW50Ij4KICAgIDxzZWN0aW9uPgogICAgICA8cD5FYWNoIGNsaWVudCBhcHAgdGhhdCBhY2Nlc3NlcyB0aGUgQVBJIENvbm5lY3QgUkVTVCBBUEkgbXVzdCBiZSByZWdpc3RlcmVkIHdpdGggdGhlIEFQSSBDb25uZWN0IGNsb3VkLiBUaGUgcHJvY2VzcyBvZiByZWdpc3RlcmluZyBhIGNsaWVudCBhc3NvY2lhdGVzIHRoZSBhcHBzJ3MgY2xpZW50IElEIHdpdGggYSBzZXQgb2Ygc2NvcGVzIHRoYXQgZGV0ZXJtaW5lIHdoaWNoIG9wZXJhdGlvbnMgdGhlIGFwcCBtYXkgYWNjZXNzLjwvcD4KICAgICAgPHA+VG8gcmVnaXN0ZXIgYSBjbGllbnQgYXBwLCB1c2UgdGhlIDx0dD5hcGljIHJlZ2lzdHJhdGlvbnM6Y3JlYXRlPC90dD4gQVBJIENvbm5lY3QgdG9vbGtpdCBDTEkgY29tbWFuZC4gVGhlIGNvbW1hbmQgdGFrZXMgYW4gaW5wdXQgSlNPTiBvYmplY3Qgd2l0aCB0aGUgZm9sbG93aW5nIGZpZWxkczo8L3A+CiAgICAgIDxkbD4KICAgICAgICA8ZHQ+bmFtZTwvZHQ+CiAgICAgICAgPGRkPnNob3J0IG5hbWUgdG8gaWRlbnRpZnkgdGhlIGNsaWVudDwvZGQ+CiAgICAgICAgCiAgICAgICAgPGR0PnRpdGxlPC9kdD4KICAgICAgICA8ZGQ+ZGlzcGxheSBuYW1lIG9mIHRoZSBjbGllbnQ8L2RkPgogICAgICAgIAogICAgICAgIDxkdD5jbGllbnRfaWQ8L2R0PgogICAgICAgIDxkZD5hIGdlbmVyYXRlZCBjbGllbnQgSUQgdmFsdWU8L2RkPgoKICAgICAgICA8ZHQ+Y2xpZW50X3NlY3JldDwvZHQ+CiAgICAgICAgPGRkPmEgZ2VuZXJhdGVkIGNsaWVudCBzZWNyZXQgdmFsdWU8L2RkPgoKICAgICAgICA8ZHQ+Y2xpZW50X3R5cGU8L2R0PgogICAgICAgIDxkZD5vbmUgb2YgPHR0PnBvcnRhbDwvdHQ+LCA8dHQ+Z2F0ZXdheTwvdHQ+LCA8dHQ+dG9vbGtpdDwvdHQ+LCA8dHQ+Y29uc3VtZXJfdG9vbGtpdDwvdHQ+LCA8dHQ+dWk8L3R0PiwgPHR0PmNvbnN1bWVyX3VpPC90dD4sIDx0dD5pYm1fY2xvdWQ8L3R0PiwgPHR0Pm1pZ3JhdGlvbjwvdHQ+LCA8dHQ+anVodTwvdHQ+PC9kZD4KICAgICAgPC9kbD4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8cD5JbiBvcmRlciB0byBydW4gdGhpcyBjb21tYW5kLCB5b3UgbXVzdCBmaXJzdCBsb2cgaW4gdG8gdGhlIEFQSSBDb25uZWN0IHNlcnZlciBhcyBhbiBhZG1pbiB1c2VyIHVzaW5nIHRoZSA8dHQ+YXBpYyBsb2dpbjwvdHQ+IGNvbW1hbmQuIFdpdGggbm8gYXJndW1lbnRzLCB0aGUgbG9naW4gY29tbWFuZCBwcm9tcHRzIGZvciB5b3VyIHVzZXIgY3JlZGVudGlhbHMgYW5kIHRoZSByZWFsbSBpbiB3aGljaCB0aGUgdXNlciBhY2NvdW50IGV4aXN0cy4gVGhlIHJlYWxtIGNvcnJlc3BvbmRzIHRvIHRoZSB1c2VyIHJlZ2lzdHJ5IGluIHdoaWNoIHRoZSB1c2VyIGNyZWRlbnRpYWxzIGFyZSBoZWxkLjwvcD4KICAgICAgPHA+SWYgaXQncyB5b3VyIGZpcnN0IHRpbWUgbG9nZ2luZyBpbiB1c2luZyB0aGUgdG9vbGtpdCBDTEksIHlvdSdsbCBuZWVkIHRvIGZpbmQgdGhlIGlkZW50aXR5IHByb3ZpZGVyIHRvIHdoaWNoIHlvdXIgdXNlcmlkIGJlbG9uZ3MuIFlvdSBjYW4gbGlzdCB0aGUgc2V0IG9mIGFkbWluIGlkZW50aXR5IHByb3ZpZGVycyBpbiB0aGUgc3lzdGVtIHVzaW5nIHRoZSA8dHQ+YXBpYyBpZGVudGl0eS1wcm92aWRlcnM6bGlzdDwvdHQ+IGNvbW1hbmQuPC9wPgogICAgPC9zZWN0aW9uPgogICAgPHNlY3Rpb24+CiAgICAgIDxoMz5saXN0aW5nIGlkZW50aXR5IHByb3ZpZGVyczwvaDM+CiAgICAgIDxkaXYgaWQ9ImdldC1yZWFsbXZhbHVlLXJlcXVlc3QiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij4KJCBhcGljIGlkZW50aXR5LXByb3ZpZGVyczpsaXN0IC0tc2NvcGUgYWRtaW4gLS1zZXJ2ZXIgYXBpYy5pYm0uY29tCmRlZmF1bHQtaWRwLTEKICAgICAgPC9kaXY+CiAgICA8L3NlY3Rpb24+CiAgICA8c2VjdGlvbj4KICAgICAgPGgzPmFwaWMgbG9naW4gZXhhbXBsZTwvaDM+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgokIGFwaWMgbG9naW4KRW50ZXIgeW91ciBBUEkgQ29ubmVjdCBjcmVkZW50aWFscwpTZXJ2ZXI/IGNocmlzbS5hcmdvLXNsLmRldi5jaW9uZGVtYW5kLmNvbQpSZWFsbT8gYWRtaW4vZGVmYXVsdC1pZHAtMQpVc2VybmFtZT8gY2hyaXMKUGFzc3dvcmQ/IApMb2dnZWQgaW50byBhcGljLmlibS5jb20gc3VjY2Vzc2Z1bGx5CiAgICAgIDwvZGl2PgogICAgICA8cD4oTm90ZSB0aGF0IHRoZSByZWFsbSBuYW1lIHVzZWQgZm9yIHRoZSBsb2dpbiBoYXMgdGhlIHZhbHVlICdhZG1pbi8nIHByZWZpeGVkIHRvIHRoZSByZWFsbSBuYW1lLik8L3A+CiAgICA8L3NlY3Rpb24+CiAgICA8c2VjdGlvbj4KICAgICAgPGgzPmFwaWMgcmVnaXN0cmF0aW9uczpjcmVhdGUgZXhhbXBsZTwvaDM+CiAgICAgIDxwPlRoaXMgSlNPTiBjb250ZW50ICg8dHQ+YXBwMS5qc29uPC90dD4pIHByb3ZpZGVzIHRoZSBwYXJhbWV0ZXJzIGZvciByZWdpc3RlcmluZyBhbiBhcHAgbmFtZWQgPHR0PmFwcDE8L3R0PiB1c2luZyB0aGUgPHR0PnRvb2xraXQ8L3R0PiBjbGllbnQgdHlwZSBhbmQgYSBwcmUtZGVmaW5lZCBjbGllbnQgSUQgYW5kIHNlY3JldDo8L3A+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgp7CiAgIm5hbWUiOiAiYXBwMSIsCiAgImNsaWVudF9pZCI6ICJhcHAxaWQiLCAKICAiY2xpZW50X3NlY3JldCI6ICJhcHAxc2VjcmV0IiwKICAiY2xpZW50X3R5cGUiOiAidG9vbGtpdCIKfQogICAgICA8L2Rpdj4KICAgICAgPHA+VGhpcyBleGFtcGxlIHNob3dzIHRoZSByZWdpc3RyYXRpb24gY29tbWFuZCB0byByZWdpc3RlciB0aGlzIGFwcDo8L3A+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgokIGFwaWMgcmVnaXN0cmF0aW9uczpjcmVhdGUgLS1zZXJ2ZXIgYXBpYy5pYm0uY29tIGFwcDEuanNvbgphcHAxICAgaHR0cHM6Ly9hcGljLmlibS5jb20vYXBpL2Nsb3VkL3JlZ2lzdHJhdGlvbnMvNTExOTYyMjItNzg4Yy00NzRmLWI0YzctMGIzNTFjZTUwOWRlCiAgICAgIDwvZGl2PgogICAgPC9zZWN0aW9uPgo8L2FydGljbGU+Cg=="
-  				},
-  			    {
-  					"name": "auth_bearertoken",
-  					"title": "Getting and Using a Bearer Token",
-  					"format": "b64html",
-  					"content": "ICA8YXJ0aWNsZSBpZD0iYmVhcmVyLXRva2VuIiBjbGFzcz0icGFnZSI+CiAgICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgICA8aDIgY2xhc3M9ImFwaWMtZXhwbG9yZXItZG9jcGFnZV90aXRsZS10ZXh0Ij4KICAgICAgICA8c3BhbiBjbGFzcz0iZXhwbG9yZXItZG9jLS1oZWFkZXIgYmVhcmVyLXRva2VuLWhlYWRlciI+CiAgICAgICAgT2J0YWluaW5nIGFuZCBVc2luZyBhIEJlYXJlciBUb2tlbgogICAgICAgIDwvc3Bhbj4KICAgICAgPC9oMj4KICAgIDwvZGl2PgogICAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgYmVhcmVyLXRva2VuLWNvbnRlbnQiPgogICAgICA8cD5DYWxscyB0byB0aGUgQVBJIENvbm5lY3QgcGxhdGZvcm0gUkVTVCBBUElzIGFyZSBhdXRoZW50aWNhdGVkIHVzaW5nIGEgYmVhcmVyIHRva2VuLCB3aGljaCBpcyBvYnRhaW5lZCBmcm9tIHRoZSA8Y29kZT4vYXBpL3Rva2VuPC9jb2RlPiBlbmRwb2ludC48L3A+CiAgICAgIDxzZWN0aW9uPgogICAgICAgIDxoMz5SZXF1ZXN0aW5nIGEgYmVhcmVyIHRva2VuPC9oMz4KICAgICAgICA8cD4KICAgICAgICAgIFRoZSByZXF1ZXN0IHRvIG9idGFpbiBhIGJlYXJlciB0b2tlbiBpcyBlcXVpdmFsZW50IHRvIGFuIE9BdXRoIDIuMCBhY2Nlc3MgdG9rZW4gcmVxdWVzdCB1c2luZwogICAgICAgICAgdGhlIFJlc291cmNlIE93bmVyIFBhc3N3b3JkIENyZWRlbnRpYWxzIGdyYW50IHR5cGUuIEhvd2V2ZXIsIHRoZSByZXF1ZXN0IGNvbnRlbnRzIG11c3QgYmUgc2VudCBhcyBhIEpTT04gcGF5bG9hZCByYXRoZXIgdGhhbiBhcyBmb3JtIGRhdGEuCiAgICAgICAgPC9wPgogICAgICAgIDxwPlRoZSBKU09OIHBheWxvYWQgZm9yIHRoZSBiZWFyZXIgdG9rZW4gcmVxdWVzdCBjb250YWlucyB0aGUgZm9sbG93aW5nIGZpZWxkczo8L3A+CiAgICAgICAgPGRsPgogICAgICAgICAgPGR0PnVzZXJuYW1lOjwvZHQ+CiAgICAgICAgICA8ZGQ+dGhlIHVzZXJuYW1lIGZvciB0aGUgQVBJIENvbm5lY3QgdXNlciBtYWtpbmcgdGhlIHJlcXVlc3Q8L2RkPgogICAgICAgICAgCiAgICAgICAgICA8ZHQ+cGFzc3dvcmQ6PC9kdD4KICAgICAgICAgIDxkZD50aGUgcGFzc3dvcmQgZm9yIHRoZSBBUEkgQ29ubmVjdCB1c2VyIG1ha2luZyB0aGUgcmVxdWVzdDwvZGQ+CiAgICAgICAgICAKICAgICAgICAgIDxkdD5yZWFsbTo8L2R0PgogICAgICAgICAgPGRkPmluZGljYXRlcyB0aGUgdXNlciByZWdpc3RyeSBpbiB3aGljaCB0aGUgQVBJIENvbm5lY3QgdXNlciBjcmVkZW50aWFscyBhcmUgaGVsZDwvZGQ+CiAgICAgICAgICAKICAgICAgICAgIDxkdD5jbGllbnRfaWQ6PC9kdD4KICAgICAgICAgIDxkZD50aGUgY2xpZW50IElEIG9mIHRoZSBhcHAgbWFraW5nIHRoZSByZXF1ZXN0PC9kZD4KICAgICAgICAgIAogICAgICAgICAgPGR0PmNsaWVudF9zZWNyZXQ6PC9kdD4KICAgICAgICAgIDxkZD50aGUgY2xpZW50IHNlY3JldCBvZiB0aGUgYXBwIG1ha2luZyB0aGUgcmVxdWVzdDwvZGQ+CiAgICAgICAgICAKICAgICAgICAgIDxkdD5ncmFudF90eXBlOjwvZHQ+CiAgICAgICAgICA8ZGQ+cGFzc3dvcmQgKGZpeGVkIHZhbHVlKTwvZGQ+CiAgICAgICAgPC9kbD4KICAgICAgICA8cD5IZXJlIGlzIGEgY3VybCBleGFtcGxlIHNob3dpbmcgYSBiZWFyZXIgdG9rZW4gcmVxdWVzdCBhbmQgc3VjY2Vzc2Z1bCByZXNwb25zZTo8L3A+CiAgICAgICAgPGg0PlJlcXVlc3Q8L2g0PgogICAgICAgIDxkaXYgaWQ9ImdldC1iZWFyZXJ0b2tlbi1yZXF1ZXN0IiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+Y3VybCAtdiAtayAtWCBQT1NUIC1kICd7InVzZXJuYW1lIjogImNocmlzIiwgInBhc3N3b3JkIjogIioqKioiLCAicmVhbG0iOiAicHJvdmlkZXIvZGVmYXVsdC1pZHAtMiIsICJjbGllbnRfaWQiOiAicmVnaXN0ZXJlZC1hcHAtY2xpZW50LWlkIiwgImNsaWVudF9zZWNyZXQiOiAicmVnaXN0ZXJlZC1hcHAtY2xpZW50LXNlY3JldCIsICJncmFudF90eXBlIjogInBhc3N3b3JkIn0nIC1IICdDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL2pzb24nIC1IICdBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24nIGh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvdG9rZW48L2Rpdj4KICAgICAgICA8cD5UaGUgPHR0PmNsaWVudF9pZDwvdHQ+IGFuZCA8dHQ+Y2xpZW50X3NlY3JldDwvdHQ+IHZhbHVlcyBhcmUgdGhlIGFwcCdzIGNyZWRlbnRpYWxzLCBhcyByZWdpc3RlcmVkIHdpdGggCiAgICAgICAgdGhlIDx0dD5hcGljIHJlZ2lzdHJhdGlvbnM6Y3JlYXRlPC90dD4gY29tbWFuZC48L3A+CiAgICAgICAgPGg0PlJlc3BvbnNlPC9oND4KICAgICAgICA8ZGl2IGlkPSJnZXQtYmVhcmVydG9rZW4tcmVzcG9uc2UiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij57CiAgImFjY2Vzc190b2tlbiI6ICJleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKcWRHa2lPaUkxTUdWbU9HUXpPQzFsTVRVeExUUTROamN0WW1Jd09TMHdOREEwTjJVeFpqTTNORGNpTENKdVlXMWxjM0JoWTJVaU9pSXpZalExT0RVNE5pMWtaR013TFRRMU5EWXRPVGhrWmkwM01tVXhNek16WWpBNVpXRTZNVFl6WkRZNE1XWXRaV1V3TUMwMFlXUmhMV0ZpTldRdFpEVmtNelJsWWpkbE9EVmpPakJqT0RRME5UZ3lMVFExWVdNdE5EUTJNeTFoT1RjMUxUaGlObVExWmpZNU1URTFaQ0lzSW1GMVpDSTZJaTloY0drdlkyeHZkV1F2Y21WbmFYTjBjbUYwYVc5dWN5OHpPVEJoTmpWaFlTMDBNMkZoTFRRM016VXRZakEwT1MwNE1UazNNakl5WkRJM1pEQWlMQ0p6ZFdJaU9pSXZZWEJwTDNWelpYSXRjbVZuYVhOMGNtbGxjeTh6WWpRMU9EVTROaTFrWkdNd0xUUTFORFl0T1Roa1ppMDNNbVV4TXpNellqQTVaV0V2TVRZelpEWTRNV1l0WldVd01DMDBZV1JoTFdGaU5XUXRaRFZrTXpSbFlqZGxPRFZqTDNWelpYSnpMekJqT0RRME5UZ3lMVFExWVdNdE5EUTJNeTFoT1RjMUxUaGlObVExWmpZNU1URTFaQ0lzSW1semN5STZJa2xDVFNCQlVFa2dRMjl1Ym1WamRDSXNJbVY0Y0NJNk1UVXpNalU0TmpFMU1pd2lhV0YwSWpveE5UTXlOVFUzTXpVeUxDSm5jbUZ1ZEY5MGVYQmxJam9pY0dGemMzZHZjbVFpTENKMWMyVnlYM0psWjJsemRISjVYM1Z5YkNJNklpOWhjR2t2ZFhObGNpMXlaV2RwYzNSeWFXVnpMek5pTkRVNE5UZzJMV1JrWXpBdE5EVTBOaTA1T0dSbUxUY3laVEV6TXpOaU1EbGxZUzh4TmpOa05qZ3haaTFsWlRBd0xUUmhaR0V0WVdJMVpDMWtOV1F6TkdWaU4yVTROV01pTENKeVpXRnNiU0k2SW5CeWIzWnBaR1Z5TDJSbFptRjFiSFF0YVdSd0xUSWlMQ0oxYzJWeWJtRnRaU0k2SW1Ob2NtbHpJaXdpYVdSZmRHOXJaVzRpT2lKbGVVcG9Za2RqYVU5cFNrbFZla2t4VG1sSmMwbHVValZqUTBrMlNXdHdXRlpEU2prdVpYbEtiV0ZZU25wa1JqbDFXVmN4YkVscWIybFJNbWg1WVZoTmFVeERTbk5aV0U0d1dESTFhR0pYVldsUGFVcE9TV2wzYVdSWVRteGpiRGx3V2tOSk5rbHRTbXBPYWtrMFRWZFZNVXhYVW14T01rbDBUa1JLYlU1cE1EUlpha2t3VEZkS2FrNXFZM2xaVkVFeVdtcFJkMDVUU1hOSmJsWjZXbGhLZFZsWE1XeEphbTlwV1RKb2VXRllUV2xNUTBwd1dWaFJhVTlxUlRGTmVra3hUbFJqZWs1VVNqa3VlbHB6VFhJME9VSmtkVTlEVWxjeGIyNHlXamRzWkRJNGJuSktSVlZEWlRBMWJtTTVNbGRSWDNkb05DSXNJbk5qYjNCbGN5STZXeUpqYkc5MVpEcDJhV1YzSWl3aVkyeHZkV1E2YldGdVlXZGxJaXdpY0hKdmRtbGtaWEl0YjNKbk9uWnBaWGNpTENKd2NtOTJhV1JsY2kxdmNtYzZiV0Z1WVdkbElpd2liM0puT25acFpYY2lMQ0p2Y21jNmJXRnVZV2RsSWl3aVpISmhablJ6T25acFpYY2lMQ0prY21GbWRITTZaV1JwZENJc0ltTm9hV3hrT25acFpYY2lMQ0pqYUdsc1pEcGpjbVZoZEdVaUxDSmphR2xzWkRwdFlXNWhaMlVpTENKd2NtOWtkV04wT25acFpYY2lMQ0p3Y205a2RXTjBPbk4wWVdkbElpd2ljSEp2WkhWamREcHRZVzVoWjJVaUxDSmhjSEJ5YjNaaGJEcDJhV1YzSWl3aVlYQndjbTkyWVd3NmJXRnVZV2RsSWl3aVlYQnBMV0Z1WVd4NWRHbGpjenAyYVdWM0lpd2lZWEJwTFdGdVlXeDVkR2xqY3pwdFlXNWhaMlVpTENKamIyNXpkVzFsY2kxdmNtYzZkbWxsZHlJc0ltTnZibk4xYldWeUxXOXlaenB0WVc1aFoyVWlMQ0poY0hBNmRtbGxkenBoYkd3aUxDSmhjSEE2YldGdVlXZGxPbUZzYkNJc0ltMTVPblpwWlhjaUxDSnRlVHB0WVc1aFoyVWlMQ0ozWldKb2IyOXJPblpwWlhjaVhYMC4xeWJlekdKckpXZ1JaOGVjNWNqeUdRVEtjV0EzaXdUYlY1QXViWENveDYwIiwKICAidG9rZW5fdHlwZSI6ICJCZWFyZXIiLAogICJleHBpcmVzX2luIjogMjg4MDAKfQogICAgICAgIDwvZGl2PgogICAgICA8L3NlY3Rpb24+CiAgICAgIDxzZWN0aW9uPgogICAgICAgIDxoMz5GaW5kaW5nIFJlYWxtIFZhbHVlczwvaDM+CiAgICAgICAgPHA+VGhlIHJlYWxtIHZhbHVlIHVzZWQgaW4gYSBiZWFyZXIgdG9rZW4gcmVxdWVzdCBpcyBhIHZhbHVlIHRoYXQgaWRlbnRpZmllcyB0aGUgdXNlciByZWdpc3RyeSBpbiB3aGljaCB0aGUgcmVxdWVzdGluZyB1c2VyJ3MgY3JlZGVudGlhbHMgYXJlIGhlbGQuIFRoaXMgbWF5IG5vdCBiZSB0aGUgc2FtZSByZWFsbSB2YWx1ZSBhcyB3YXMgdXNlZCB0byByZWdpc3RlciB0aGUgYXBwOyBpdCB3aWxsIGJlIHRoZSBzYW1lIG9ubHkgaWYgdGhlIHVzZXIgZXhlY3V0aW5nIHRoZSBhcHAgaXMgdGhlIHNhbWUgdXNlciB0aGF0IHBlcmZvcm1lZCB0aGUgYXBwIHJlZ2lzdHJhdGlvbi48L3A+CiAgICAgICAgPHA+CiAgICAgICAgICBZb3UgY2FuIHF1ZXJ5IHRoZSBzZXQgb2YgdXNlciByZWdpc3RyaWVzIHRvIG9idGFpbiB0aGUgY29uZmlndXJlZCByZWFsbSB2YWx1ZXMgdXNpbmcgYW4gdW5hdXRoZW50aWNhdGVkIGNhbGwgdG8gdGhlIDxjb2RlPi9jbG91ZC9hZG1pbi9pZGVudGl0eS1wcm92aWRlcnM8L2NvZGU+IAogICAgICAgICAgb3IgPGNvZGU+L2Nsb3VkL3Byb3ZpZGVyL2lkZW50aXR5LXByb3ZpZGVyczwvY29kZT4gVVJMIGZvciBhZG1pbiB1c2VycyBvciBBUEkgcHJvdmlkZXIgdXNlcnMgcmVzcGVjdGl2ZWx5LgogICAgICAgIDwvcD4KICAgICAgPC9zZWN0aW9uPgogICAgICA8cD5IZXJlIGlzIGFuIGV4YW1wbGUgcmVxdWVzdCBhbmQgc3VjY2Vzc2Z1bCByZXNwb25zZTo8L3A+CiAgICAgIDxoND5SZXF1ZXN0PC9oND4KICAgICAgPGRpdiBpZD0iZ2V0LXJlYWxtdmFsdWUtcmVxdWVzdCIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgpjdXJsIC12IC1rIC1IICJBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24iIGh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvY2xvdWQvcHJvdmlkZXIvaWRlbnRpdHktcHJvdmlkZXJzCiAgICAgIDwvZGl2PgogICAgICA8aDQ+UmVzcG9uc2U8L2g0PgogICAgICA8ZGl2IGlkPSJnZXQtcmVhbG12YWx1ZS1yZXNwb25zZSIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgp7CiAgInRvdGFsX3Jlc3VsdHMiOiAxLAogICJyZXN1bHRzIjogWwogICB7CiAgICAgIm5hbWUiOiAiZGVmYXVsdC1pZHAtMiIsCiAgICAgInRpdGxlIjogIkFQSSBNYW5hZ2VyIFVzZXIgUmVnaXN0cnkiLAogICAgICJkZWZhdWx0IjogdHJ1ZSwKICAgICAicmVnaXN0cnlfdHlwZSI6ICJsdXIiCiAgIH0KICBdCn0KICA8L2Rpdj4KICA8cD5BIHJlYWxtIHZhbHVlIGNvbnNpc3RzIG9mIGEgdXNlciByZWdpc3RyeSBuYW1lIHF1YWxpZmllZCB3aXRoIHRoZSBjb250ZXh0IGluIHdoaWNoIGl0IHVzZWQsIGluIHRoZSBmb3JtIGNvbnRleHQvdXNlci1yZWdpc3RyeS1uYW1lLCB3aGVyZSB0aGUgY29udGV4dCBpcyA8Y29kZT5hZG1pbjwvY29kZT4gZm9yIGNsb3VkIGFkbWluaXN0cmF0b3IgdXNlcnMgb3IgPGNvZGU+cHJvdmlkZXI8L2NvZGU+IGZvciBBUEkgcHJvdmlkZXIgdXNlcnMuIFRoZSByZWFsbSB2YWx1ZSBjb3JyZXNwb25kaW5nIHRvIHRoZSBBUEkgTWFuYWdlciBVc2VyIFJlZ2lzdHJ5IGZyb20gdGhlIGV4YW1wbGUgYWJvdmUgaXM6CiAgPC9wPgogIDxkaXYgaWQ9InJlYWxtdmFsdWUtZXhhbXBsZSIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPiAgcHJvdmlkZXIvZGVmYXVsdC1pZHAtMjwvZGl2PgogIDxwPkZvciBjb25zdW1lciB1c2VycywgdGhlIHJlYWxtIGNvbnRleHQgaXMgZ2l2ZW4gYnkgdGhlIGNhdGFsb2cgaW4gd2hpY2ggdGhlIHVzZXIgaXMgcmVnaXN0ZXJlZC4gVGhlIGxpc3Qgb2YgdXNlciByZWdpc3RyaWVzIGZvciBhIGNhdGFsb2cgY2FuIGJlIGFjY2Vzc2VkIGF0IHRoZSA8Y29kZT4vY2F0YWxvZ3Mve29yZ30ve2NhdGFsb2d9L2NvbmZpZ3VyZWQtY2F0YWxvZy11c2VyLXJlZ2lzdHJpZXM8L2NvZGU+IFVSTC4KICAgICAgICA8L3A+CiAgIDwvc2VjdGlvbj4KICA8L2Rpdj4KICAgICAgPHNlY3Rpb24+CiAgICAgICAgPGgyPlVzaW5nIGEgQmVhcmVyIFRva2VuPC9oMj4KICAgICAgICA8cD4KICAgICAgICAgIE9uY2Ugb2J0YWluZWQsIHRoZSBiZWFyZXIgdG9rZW4gbWF5IGJlIHVzZWQgdG8gbWFrZSBhdXRoZW50aWNhdGVkIEFQSSBjYWxscy4gVGhlIGJlYXJlciB0b2tlbiBpcyBzZW50IGFzIHRoZSB2YWx1ZSBvZiB0aGUgQXV0aG9yaXphdGlvbiBoZWFkZXIsIHByZWZpeGVkIGJ5IHRoZSB3b3JkIDxjb2RlPmJlYXJlcjo8L2NvZGU+IChpbmNsdWRpbmcgdGhlIGNvbG9uKS4gSGVyZSdzIGFuIGV4YW1wbGUgb2YgYW4KICAgICAgICAgIGF1dGhlbnRpY2F0ZWQgY2FsbCB0byB0aGUgPGNvZGU+L21lPC9jb2RlPiByZXNvdXJjZSB1c2luZyB0aGUgYmVhcmVyIHRva2VuIG9idGFpbmVkIGFib3ZlOgogICAgICAgIDwvcD4KICAgICAgICA8aDM+UmVxdWVzdDwvaDM+CiAgICAgICAgPGRpdiBpZD0idXNlLWJlYXJlcnRva2VuLXJlcXVlc3QiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij5jdXJsIC12IC1rIC1IICdBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24nIC1IICJBdXRob3JpemF0aW9uOiBiZWFyZXIgZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnFkR2tpT2lJMU1HVm1PR1F6T0MxbE1UVXhMVFE0TmpjdFltSXdPUzB3TkRBME4yVXhaak0zTkRjaUxDSnVZVzFsYzNCaFkyVWlPaUl6WWpRMU9EVTROaTFrWkdNd0xUUTFORFl0T1Roa1ppMDNNbVV4TXpNellqQTVaV0U2TVRZelpEWTRNV1l0WldVd01DMDBZV1JoTFdGaU5XUXRaRFZrTXpSbFlqZGxPRFZqT2pCak9EUTBOVGd5TFRRMVlXTXRORFEyTXkxaE9UYzFMVGhpTm1RMVpqWTVNVEUxWkNJc0ltRjFaQ0k2SWk5aGNHa3ZZMnh2ZFdRdmNtVm5hWE4wY21GMGFXOXVjeTh6T1RCaE5qVmhZUzAwTTJGaExUUTNNelV0WWpBME9TMDRNVGszTWpJeVpESTNaREFpTENKemRXSWlPaUl2WVhCcEwzVnpaWEl0Y21WbmFYTjBjbWxsY3k4ellqUTFPRFU0Tmkxa1pHTXdMVFExTkRZdE9UaGtaaTAzTW1VeE16TXpZakE1WldFdk1UWXpaRFk0TVdZdFpXVXdNQzAwWVdSaExXRmlOV1F0WkRWa016UmxZamRsT0RWakwzVnpaWEp6THpCak9EUTBOVGd5TFRRMVlXTXRORFEyTXkxaE9UYzFMVGhpTm1RMVpqWTVNVEUxWkNJc0ltbHpjeUk2SWtsQ1RTQkJVRWtnUTI5dWJtVmpkQ0lzSW1WNGNDSTZNVFV6TWpVNE5qRTFNaXdpYVdGMElqb3hOVE15TlRVM016VXlMQ0puY21GdWRGOTBlWEJsSWpvaWNHRnpjM2R2Y21RaUxDSjFjMlZ5WDNKbFoybHpkSEo1WDNWeWJDSTZJaTloY0drdmRYTmxjaTF5WldkcGMzUnlhV1Z6THpOaU5EVTROVGcyTFdSa1l6QXRORFUwTmkwNU9HUm1MVGN5WlRFek16TmlNRGxsWVM4eE5qTmtOamd4WmkxbFpUQXdMVFJoWkdFdFlXSTFaQzFrTldRek5HVmlOMlU0TldNaUxDSnlaV0ZzYlNJNkluQnliM1pwWkdWeUwyUmxabUYxYkhRdGFXUndMVElpTENKMWMyVnlibUZ0WlNJNkltTm9jbWx6SWl3aWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTa2xWZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNqa3VaWGxLYldGWVNucGtSamwxV1ZjeGJFbHFiMmxSTW1oNVlWaE5hVXhEU25OWldFNHdXREkxYUdKWFZXbFBhVXBPU1dsM2FXUllUbXhqYkRsd1drTkpOa2x0U21wT2FrazBUVmRWTVV4WFVteE9Na2wwVGtSS2JVNXBNRFJaYWtrd1RGZEthazVxWTNsWlZFRXlXbXBSZDA1VFNYTkpibFo2V2xoS2RWbFhNV3hKYW05cFdUSm9lV0ZZVFdsTVEwcHdXVmhSYVU5cVJURk5la2t4VGxSamVrNVVTamt1ZWxwelRYSTBPVUprZFU5RFVsY3hiMjR5V2pkc1pESTRibkpLUlZWRFpUQTFibU01TWxkUlgzZG9OQ0lzSW5OamIzQmxjeUk2V3lKamJHOTFaRHAyYVdWM0lpd2lZMnh2ZFdRNmJXRnVZV2RsSWl3aWNISnZkbWxrWlhJdGIzSm5PblpwWlhjaUxDSndjbTkyYVdSbGNpMXZjbWM2YldGdVlXZGxJaXdpYjNKbk9uWnBaWGNpTENKdmNtYzZiV0Z1WVdkbElpd2laSEpoWm5Sek9uWnBaWGNpTENKa2NtRm1kSE02WldScGRDSXNJbU5vYVd4a09uWnBaWGNpTENKamFHbHNaRHBqY21WaGRHVWlMQ0pqYUdsc1pEcHRZVzVoWjJVaUxDSndjbTlrZFdOME9uWnBaWGNpTENKd2NtOWtkV04wT25OMFlXZGxJaXdpY0hKdlpIVmpkRHB0WVc1aFoyVWlMQ0poY0hCeWIzWmhiRHAyYVdWM0lpd2lZWEJ3Y205MllXdzZiV0Z1WVdkbElpd2lZWEJwTFdGdVlXeDVkR2xqY3pwMmFXVjNJaXdpWVhCcExXRnVZV3g1ZEdsamN6cHRZVzVoWjJVaUxDSmpiMjV6ZFcxbGNpMXZjbWM2ZG1sbGR5SXNJbU52Ym5OMWJXVnlMVzl5WnpwdFlXNWhaMlVpTENKaGNIQTZkbWxsZHpwaGJHd2lMQ0poY0hBNmJXRnVZV2RsT21Gc2JDSXNJbTE1T25acFpYY2lMQ0p0ZVRwdFlXNWhaMlVpTENKM1pXSm9iMjlyT25acFpYY2lYWDAuMXliZXpHSnJKV2dSWjhlYzVjanlHUVRLY1dBM2l3VGJWNUF1YlhDb3g2MCIgaHR0cHM6Ly92Nmd3MDcyNmEuYXJnbzItc2wuZGV2LmNpb25kZW1hbmQuY29tL2FwaS9tZTwvZGl2PgogICAgICAgIDxoMz5SZXNwb25zZTwvaDM+CiAgICAgICAgPGRpdiBpZD0idXNlLWJlYXJlcnRva2VuLXJlc3BvbnNlIiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+ewogICAgICAgICAgInR5cGUiOiAibWUiLAogICAgICAgICAgImFwaV92ZXJzaW9uIjogIjIuMC4wIiwKICAgICAgICAgICJuYW1lIjogIjM0YjEwZWNhLTM4NzQtNGNkYy1hY2I4LTM4ZGU4ZTgyZWI4NSIsCiAgICAgICAgICAic3RhdGUiOiAiZW5hYmxlZCIsCiAgICAgICAgICAidXNlcm5hbWUiOiAiY2hyaXMiLAogICAgICAgICAgImVtYWlsIjogImNocmlzQGlibS5jb20iLAogICAgICAgICAgImZpcnN0X25hbWUiOiAiQ2hyaXMiLAogICAgICAgICAgImxhc3RfbmFtZSI6ICJNIiwKICAgICAgICAgICJ1cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5jb20vYXBpL3VzZXItcmVnaXN0cmllcy8zMmM2OGQ5ZS0zZmQ2LTQ1NzEtYjljOS1mYTc1NTBlMDc1NjkvMjA4MzM1OWUtNTIzNC00MDM5LWFkNGYtNDBkY2Y3Y2U1ODZlL3VzZXJzLzM0YjEwZWNhLTM4NzQtNGNkYy1hY2I4LTM4ZGU4ZTgyZWI4NSIKICAgICAgICAgIH08L2Rpdj4KICAgICAgICA8cD5UaGUgPGNvZGU+L21lPC9jb2RlPiByZXNvdXJjZSByZXR1cm5zIGluZm9ybWF0aW9uIGFib3V0IHRoZSB1c2VyIG1ha2luZyB0aGUgcmVxdWVzdC48L3A+CiAgICAgIDwvc2VjdGlvbj4KICAgIDwvZGl2PgogIDwvYXJ0aWNsZT4K"
-  				}
-  			]
-  		},
-		{
-  			"name": "members",
-  			"title": "members",
-  			"docs": [{
-  					"name": "user_guidelines",
-  					"title": "Registering and Managing Admin Members",
-  					"format": "b64html",
-  					"content": "user_guidelines.html"
-  				}
-  			]
-  		}
-  	]
+            "content": "PGFydGljbGUgaWQ9ImNsaWVudC1pZC1zZWNyZXQiIGNsYXNzPSJwYWdlIj4KICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBjbGllbnQtaWQtc2VjcmV0LWhlYWRlciI+CiAgICAgIE9idGFpbmluZyBhIENsaWVudCBJRCBhbmQgU2VjcmV0CiAgICAgIDwvc3Bhbj4KICAgIDwvaDI+CiAgPC9kaXY+CiAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgY2xpZW50LWlkLXNlY3JldC1jb250ZW50Ij4KICAgIDxzZWN0aW9uPgogICAgICA8cD5FYWNoIGNsaWVudCBhcHAgdGhhdCBhY2Nlc3NlcyB0aGUgQVBJIENvbm5lY3QgUkVTVCBBUEkgbXVzdCBiZSByZWdpc3RlcmVkIHdpdGggdGhlIEFQSSBDb25uZWN0IGNsb3VkLiBUaGUgcHJvY2VzcyBvZiByZWdpc3RlcmluZyBhIGNsaWVudCBhc3NvY2lhdGVzIHRoZSBhcHBzJ3MgY2xpZW50IElEIHdpdGggYSBzZXQgb2Ygc2NvcGVzIHRoYXQgZGV0ZXJtaW5lIHdoaWNoIG9wZXJhdGlvbnMgdGhlIGFwcCBtYXkgYWNjZXNzLjwvcD4KICAgICAgPHA+VG8gcmVnaXN0ZXIgYSBjbGllbnQgYXBwLCB1c2UgdGhlIDx0dD5hcGljIHJlZ2lzdHJhdGlvbnM6Y3JlYXRlPC90dD4gQVBJIENvbm5lY3QgdG9vbGtpdCBDTEkgY29tbWFuZC4gVGhlIGNvbW1hbmQgdGFrZXMgYW4gaW5wdXQgSlNPTiBvYmplY3Qgd2l0aCB0aGUgZm9sbG93aW5nIGZpZWxkczo8L3A+CiAgICAgIDxkbD4KICAgICAgICA8ZHQ+bmFtZTwvZHQ+CiAgICAgICAgPGRkPnNob3J0IG5hbWUgdG8gaWRlbnRpZnkgdGhlIGNsaWVudDwvZGQ+CiAgICAgICAgCiAgICAgICAgPGR0PnRpdGxlPC9kdD4KICAgICAgICA8ZGQ+ZGlzcGxheSBuYW1lIG9mIHRoZSBjbGllbnQ8L2RkPgogICAgICAgIAogICAgICAgIDxkdD5jbGllbnRfaWQ8L2R0PgogICAgICAgIDxkZD5hIGdlbmVyYXRlZCBjbGllbnQgSUQgdmFsdWU8L2RkPgoKICAgICAgICA8ZHQ+Y2xpZW50X3NlY3JldDwvZHQ+CiAgICAgICAgPGRkPmEgZ2VuZXJhdGVkIGNsaWVudCBzZWNyZXQgdmFsdWU8L2RkPgoKICAgICAgICA8ZHQ+Y2xpZW50X3R5cGU8L2R0PgogICAgICAgIDxkZD5vbmUgb2YgPHR0PnBvcnRhbDwvdHQ+LCA8dHQ+Z2F0ZXdheTwvdHQ+LCA8dHQ+dG9vbGtpdDwvdHQ+LCA8dHQ+Y29uc3VtZXJfdG9vbGtpdDwvdHQ+LCA8dHQ+dWk8L3R0PiwgPHR0PmNvbnN1bWVyX3VpPC90dD4sIDx0dD5pYm1fY2xvdWQ8L3R0PiwgPHR0Pm1pZ3JhdGlvbjwvdHQ+LCA8dHQ+anVodTwvdHQ+PC9kZD4KICAgICAgPC9kbD4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8cD5JbiBvcmRlciB0byBydW4gdGhpcyBjb21tYW5kLCB5b3UgbXVzdCBmaXJzdCBsb2cgaW4gdG8gdGhlIEFQSSBDb25uZWN0IHNlcnZlciBhcyBhbiBhZG1pbiB1c2VyIHVzaW5nIHRoZSA8dHQ+YXBpYyBsb2dpbjwvdHQ+IGNvbW1hbmQuIFdpdGggbm8gYXJndW1lbnRzLCB0aGUgbG9naW4gY29tbWFuZCBwcm9tcHRzIGZvciB5b3VyIHVzZXIgY3JlZGVudGlhbHMgYW5kIHRoZSByZWFsbSBpbiB3aGljaCB0aGUgdXNlciBhY2NvdW50IGV4aXN0cy4gVGhlIHJlYWxtIGNvcnJlc3BvbmRzIHRvIHRoZSB1c2VyIHJlZ2lzdHJ5IGluIHdoaWNoIHRoZSB1c2VyIGNyZWRlbnRpYWxzIGFyZSBoZWxkLjwvcD4KICAgICAgPHA+SWYgaXQncyB5b3VyIGZpcnN0IHRpbWUgbG9nZ2luZyBpbiB1c2luZyB0aGUgdG9vbGtpdCBDTEksIHlvdSdsbCBuZWVkIHRvIGZpbmQgdGhlIGlkZW50aXR5IHByb3ZpZGVyIHRvIHdoaWNoIHlvdXIgdXNlcmlkIGJlbG9uZ3MuIFlvdSBjYW4gbGlzdCB0aGUgc2V0IG9mIGFkbWluIGlkZW50aXR5IHByb3ZpZGVycyBpbiB0aGUgc3lzdGVtIHVzaW5nIHRoZSA8dHQ+YXBpYyBpZGVudGl0eS1wcm92aWRlcnM6bGlzdDwvdHQ+IGNvbW1hbmQuPC9wPgogICAgPC9zZWN0aW9uPgogICAgPHNlY3Rpb24+CiAgICAgIDxoMz5saXN0aW5nIGlkZW50aXR5IHByb3ZpZGVyczwvaDM+CiAgICAgIDxkaXYgaWQ9ImdldC1yZWFsbXZhbHVlLXJlcXVlc3QiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij4KJCBhcGljIGlkZW50aXR5LXByb3ZpZGVyczpsaXN0IC0tc2NvcGUgYWRtaW4gLS1zZXJ2ZXIgYXBpYy5pYm0uY29tCmRlZmF1bHQtaWRwLTEKICAgICAgPC9kaXY+CiAgICA8L3NlY3Rpb24+CiAgICA8c2VjdGlvbj4KICAgICAgPGgzPmFwaWMgbG9naW4gZXhhbXBsZTwvaDM+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgokIGFwaWMgbG9naW4KRW50ZXIgeW91ciBBUEkgQ29ubmVjdCBjcmVkZW50aWFscwpTZXJ2ZXI/IGNocmlzbS5hcmdvLXNsLmRldi5jaW9uZGVtYW5kLmNvbQpSZWFsbT8gYWRtaW4vZGVmYXVsdC1pZHAtMQpVc2VybmFtZT8gY2hyaXMKUGFzc3dvcmQ/IApMb2dnZWQgaW50byBhcGljLmlibS5jb20gc3VjY2Vzc2Z1bGx5CiAgICAgIDwvZGl2PgogICAgICA8cD4oTm90ZSB0aGF0IHRoZSByZWFsbSBuYW1lIHVzZWQgZm9yIHRoZSBsb2dpbiBoYXMgdGhlIHZhbHVlICdhZG1pbi8nIHByZWZpeGVkIHRvIHRoZSByZWFsbSBuYW1lLik8L3A+CiAgICA8L3NlY3Rpb24+CiAgICA8c2VjdGlvbj4KICAgICAgPGgzPmFwaWMgcmVnaXN0cmF0aW9uczpjcmVhdGUgZXhhbXBsZTwvaDM+CiAgICAgIDxwPlRoaXMgSlNPTiBjb250ZW50ICg8dHQ+YXBwMS5qc29uPC90dD4pIHByb3ZpZGVzIHRoZSBwYXJhbWV0ZXJzIGZvciByZWdpc3RlcmluZyBhbiBhcHAgbmFtZWQgPHR0PmFwcDE8L3R0PiB1c2luZyB0aGUgPHR0PnRvb2xraXQ8L3R0PiBjbGllbnQgdHlwZSBhbmQgYSBwcmUtZGVmaW5lZCBjbGllbnQgSUQgYW5kIHNlY3JldDo8L3A+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgp7CiAgIm5hbWUiOiAiYXBwMSIsCiAgImNsaWVudF9pZCI6ICJhcHAxaWQiLCAKICAiY2xpZW50X3NlY3JldCI6ICJhcHAxc2VjcmV0IiwKICAiY2xpZW50X3R5cGUiOiAidG9vbGtpdCIKfQogICAgICA8L2Rpdj4KICAgICAgPHA+VGhpcyBleGFtcGxlIHNob3dzIHRoZSByZWdpc3RyYXRpb24gY29tbWFuZCB0byByZWdpc3RlciB0aGlzIGFwcDo8L3A+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgokIGFwaWMgcmVnaXN0cmF0aW9uczpjcmVhdGUgLS1zZXJ2ZXIgYXBpYy5pYm0uY29tIGFwcDEuanNvbgphcHAxICAgaHR0cHM6Ly9hcGljLmlibS5jb20vYXBpL2Nsb3VkL3JlZ2lzdHJhdGlvbnMvNTExOTYyMjItNzg4Yy00NzRmLWI0YzctMGIzNTFjZTUwOWRlCiAgICAgIDwvZGl2PgogICAgPC9zZWN0aW9uPgo8L2FydGljbGU+Cg=="
+          },
+            {
+            "name": "auth_bearertoken",
+            "title": "Getting and Using a Bearer Token",
+            "format": "b64html",
+            "content": "ICA8YXJ0aWNsZSBpZD0iYmVhcmVyLXRva2VuIiBjbGFzcz0icGFnZSI+CiAgICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgICA8aDIgY2xhc3M9ImFwaWMtZXhwbG9yZXItZG9jcGFnZV90aXRsZS10ZXh0Ij4KICAgICAgICA8c3BhbiBjbGFzcz0iZXhwbG9yZXItZG9jLS1oZWFkZXIgYmVhcmVyLXRva2VuLWhlYWRlciI+CiAgICAgICAgT2J0YWluaW5nIGFuZCBVc2luZyBhIEJlYXJlciBUb2tlbgogICAgICAgIDwvc3Bhbj4KICAgICAgPC9oMj4KICAgIDwvZGl2PgogICAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgYmVhcmVyLXRva2VuLWNvbnRlbnQiPgogICAgICA8cD5DYWxscyB0byB0aGUgQVBJIENvbm5lY3QgcGxhdGZvcm0gUkVTVCBBUElzIGFyZSBhdXRoZW50aWNhdGVkIHVzaW5nIGEgYmVhcmVyIHRva2VuLCB3aGljaCBpcyBvYnRhaW5lZCBmcm9tIHRoZSA8Y29kZT4vYXBpL3Rva2VuPC9jb2RlPiBlbmRwb2ludC48L3A+CiAgICAgIDxzZWN0aW9uPgogICAgICAgIDxoMz5SZXF1ZXN0aW5nIGEgYmVhcmVyIHRva2VuPC9oMz4KICAgICAgICA8cD4KICAgICAgICAgIFRoZSByZXF1ZXN0IHRvIG9idGFpbiBhIGJlYXJlciB0b2tlbiBpcyBlcXVpdmFsZW50IHRvIGFuIE9BdXRoIDIuMCBhY2Nlc3MgdG9rZW4gcmVxdWVzdCB1c2luZwogICAgICAgICAgdGhlIFJlc291cmNlIE93bmVyIFBhc3N3b3JkIENyZWRlbnRpYWxzIGdyYW50IHR5cGUuIEhvd2V2ZXIsIHRoZSByZXF1ZXN0IGNvbnRlbnRzIG11c3QgYmUgc2VudCBhcyBhIEpTT04gcGF5bG9hZCByYXRoZXIgdGhhbiBhcyBmb3JtIGRhdGEuCiAgICAgICAgPC9wPgogICAgICAgIDxwPlRoZSBKU09OIHBheWxvYWQgZm9yIHRoZSBiZWFyZXIgdG9rZW4gcmVxdWVzdCBjb250YWlucyB0aGUgZm9sbG93aW5nIGZpZWxkczo8L3A+CiAgICAgICAgPGRsPgogICAgICAgICAgPGR0PnVzZXJuYW1lOjwvZHQ+CiAgICAgICAgICA8ZGQ+dGhlIHVzZXJuYW1lIGZvciB0aGUgQVBJIENvbm5lY3QgdXNlciBtYWtpbmcgdGhlIHJlcXVlc3Q8L2RkPgogICAgICAgICAgCiAgICAgICAgICA8ZHQ+cGFzc3dvcmQ6PC9kdD4KICAgICAgICAgIDxkZD50aGUgcGFzc3dvcmQgZm9yIHRoZSBBUEkgQ29ubmVjdCB1c2VyIG1ha2luZyB0aGUgcmVxdWVzdDwvZGQ+CiAgICAgICAgICAKICAgICAgICAgIDxkdD5yZWFsbTo8L2R0PgogICAgICAgICAgPGRkPmluZGljYXRlcyB0aGUgdXNlciByZWdpc3RyeSBpbiB3aGljaCB0aGUgQVBJIENvbm5lY3QgdXNlciBjcmVkZW50aWFscyBhcmUgaGVsZDwvZGQ+CiAgICAgICAgICAKICAgICAgICAgIDxkdD5jbGllbnRfaWQ6PC9kdD4KICAgICAgICAgIDxkZD50aGUgY2xpZW50IElEIG9mIHRoZSBhcHAgbWFraW5nIHRoZSByZXF1ZXN0PC9kZD4KICAgICAgICAgIAogICAgICAgICAgPGR0PmNsaWVudF9zZWNyZXQ6PC9kdD4KICAgICAgICAgIDxkZD50aGUgY2xpZW50IHNlY3JldCBvZiB0aGUgYXBwIG1ha2luZyB0aGUgcmVxdWVzdDwvZGQ+CiAgICAgICAgICAKICAgICAgICAgIDxkdD5ncmFudF90eXBlOjwvZHQ+CiAgICAgICAgICA8ZGQ+cGFzc3dvcmQgKGZpeGVkIHZhbHVlKTwvZGQ+CiAgICAgICAgPC9kbD4KICAgICAgICA8cD5IZXJlIGlzIGEgY3VybCBleGFtcGxlIHNob3dpbmcgYSBiZWFyZXIgdG9rZW4gcmVxdWVzdCBhbmQgc3VjY2Vzc2Z1bCByZXNwb25zZTo8L3A+CiAgICAgICAgPGg0PlJlcXVlc3Q8L2g0PgogICAgICAgIDxkaXYgaWQ9ImdldC1iZWFyZXJ0b2tlbi1yZXF1ZXN0IiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+Y3VybCAtdiAtayAtWCBQT1NUIC1kICd7InVzZXJuYW1lIjogImNocmlzIiwgInBhc3N3b3JkIjogIioqKioiLCAicmVhbG0iOiAicHJvdmlkZXIvZGVmYXVsdC1pZHAtMiIsICJjbGllbnRfaWQiOiAicmVnaXN0ZXJlZC1hcHAtY2xpZW50LWlkIiwgImNsaWVudF9zZWNyZXQiOiAicmVnaXN0ZXJlZC1hcHAtY2xpZW50LXNlY3JldCIsICJncmFudF90eXBlIjogInBhc3N3b3JkIn0nIC1IICdDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL2pzb24nIC1IICdBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24nIGh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvdG9rZW48L2Rpdj4KICAgICAgICA8cD5UaGUgPHR0PmNsaWVudF9pZDwvdHQ+IGFuZCA8dHQ+Y2xpZW50X3NlY3JldDwvdHQ+IHZhbHVlcyBhcmUgdGhlIGFwcCdzIGNyZWRlbnRpYWxzLCBhcyByZWdpc3RlcmVkIHdpdGggCiAgICAgICAgdGhlIDx0dD5hcGljIHJlZ2lzdHJhdGlvbnM6Y3JlYXRlPC90dD4gY29tbWFuZC48L3A+CiAgICAgICAgPGg0PlJlc3BvbnNlPC9oND4KICAgICAgICA8ZGl2IGlkPSJnZXQtYmVhcmVydG9rZW4tcmVzcG9uc2UiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij57CiAgImFjY2Vzc190b2tlbiI6ICJleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKcWRHa2lPaUkxTUdWbU9HUXpPQzFsTVRVeExUUTROamN0WW1Jd09TMHdOREEwTjJVeFpqTTNORGNpTENKdVlXMWxjM0JoWTJVaU9pSXpZalExT0RVNE5pMWtaR013TFRRMU5EWXRPVGhrWmkwM01tVXhNek16WWpBNVpXRTZNVFl6WkRZNE1XWXRaV1V3TUMwMFlXUmhMV0ZpTldRdFpEVmtNelJsWWpkbE9EVmpPakJqT0RRME5UZ3lMVFExWVdNdE5EUTJNeTFoT1RjMUxUaGlObVExWmpZNU1URTFaQ0lzSW1GMVpDSTZJaTloY0drdlkyeHZkV1F2Y21WbmFYTjBjbUYwYVc5dWN5OHpPVEJoTmpWaFlTMDBNMkZoTFRRM016VXRZakEwT1MwNE1UazNNakl5WkRJM1pEQWlMQ0p6ZFdJaU9pSXZZWEJwTDNWelpYSXRjbVZuYVhOMGNtbGxjeTh6WWpRMU9EVTROaTFrWkdNd0xUUTFORFl0T1Roa1ppMDNNbVV4TXpNellqQTVaV0V2TVRZelpEWTRNV1l0WldVd01DMDBZV1JoTFdGaU5XUXRaRFZrTXpSbFlqZGxPRFZqTDNWelpYSnpMekJqT0RRME5UZ3lMVFExWVdNdE5EUTJNeTFoT1RjMUxUaGlObVExWmpZNU1URTFaQ0lzSW1semN5STZJa2xDVFNCQlVFa2dRMjl1Ym1WamRDSXNJbVY0Y0NJNk1UVXpNalU0TmpFMU1pd2lhV0YwSWpveE5UTXlOVFUzTXpVeUxDSm5jbUZ1ZEY5MGVYQmxJam9pY0dGemMzZHZjbVFpTENKMWMyVnlYM0psWjJsemRISjVYM1Z5YkNJNklpOWhjR2t2ZFhObGNpMXlaV2RwYzNSeWFXVnpMek5pTkRVNE5UZzJMV1JrWXpBdE5EVTBOaTA1T0dSbUxUY3laVEV6TXpOaU1EbGxZUzh4TmpOa05qZ3haaTFsWlRBd0xUUmhaR0V0WVdJMVpDMWtOV1F6TkdWaU4yVTROV01pTENKeVpXRnNiU0k2SW5CeWIzWnBaR1Z5TDJSbFptRjFiSFF0YVdSd0xUSWlMQ0oxYzJWeWJtRnRaU0k2SW1Ob2NtbHpJaXdpYVdSZmRHOXJaVzRpT2lKbGVVcG9Za2RqYVU5cFNrbFZla2t4VG1sSmMwbHVValZqUTBrMlNXdHdXRlpEU2prdVpYbEtiV0ZZU25wa1JqbDFXVmN4YkVscWIybFJNbWg1WVZoTmFVeERTbk5aV0U0d1dESTFhR0pYVldsUGFVcE9TV2wzYVdSWVRteGpiRGx3V2tOSk5rbHRTbXBPYWtrMFRWZFZNVXhYVW14T01rbDBUa1JLYlU1cE1EUlpha2t3VEZkS2FrNXFZM2xaVkVFeVdtcFJkMDVUU1hOSmJsWjZXbGhLZFZsWE1XeEphbTlwV1RKb2VXRllUV2xNUTBwd1dWaFJhVTlxUlRGTmVra3hUbFJqZWs1VVNqa3VlbHB6VFhJME9VSmtkVTlEVWxjeGIyNHlXamRzWkRJNGJuSktSVlZEWlRBMWJtTTVNbGRSWDNkb05DSXNJbk5qYjNCbGN5STZXeUpqYkc5MVpEcDJhV1YzSWl3aVkyeHZkV1E2YldGdVlXZGxJaXdpY0hKdmRtbGtaWEl0YjNKbk9uWnBaWGNpTENKd2NtOTJhV1JsY2kxdmNtYzZiV0Z1WVdkbElpd2liM0puT25acFpYY2lMQ0p2Y21jNmJXRnVZV2RsSWl3aVpISmhablJ6T25acFpYY2lMQ0prY21GbWRITTZaV1JwZENJc0ltTm9hV3hrT25acFpYY2lMQ0pqYUdsc1pEcGpjbVZoZEdVaUxDSmphR2xzWkRwdFlXNWhaMlVpTENKd2NtOWtkV04wT25acFpYY2lMQ0p3Y205a2RXTjBPbk4wWVdkbElpd2ljSEp2WkhWamREcHRZVzVoWjJVaUxDSmhjSEJ5YjNaaGJEcDJhV1YzSWl3aVlYQndjbTkyWVd3NmJXRnVZV2RsSWl3aVlYQnBMV0Z1WVd4NWRHbGpjenAyYVdWM0lpd2lZWEJwTFdGdVlXeDVkR2xqY3pwdFlXNWhaMlVpTENKamIyNXpkVzFsY2kxdmNtYzZkbWxsZHlJc0ltTnZibk4xYldWeUxXOXlaenB0WVc1aFoyVWlMQ0poY0hBNmRtbGxkenBoYkd3aUxDSmhjSEE2YldGdVlXZGxPbUZzYkNJc0ltMTVPblpwWlhjaUxDSnRlVHB0WVc1aFoyVWlMQ0ozWldKb2IyOXJPblpwWlhjaVhYMC4xeWJlekdKckpXZ1JaOGVjNWNqeUdRVEtjV0EzaXdUYlY1QXViWENveDYwIiwKICAidG9rZW5fdHlwZSI6ICJCZWFyZXIiLAogICJleHBpcmVzX2luIjogMjg4MDAKfQogICAgICAgIDwvZGl2PgogICAgICA8L3NlY3Rpb24+CiAgICAgIDxzZWN0aW9uPgogICAgICAgIDxoMz5GaW5kaW5nIFJlYWxtIFZhbHVlczwvaDM+CiAgICAgICAgPHA+VGhlIHJlYWxtIHZhbHVlIHVzZWQgaW4gYSBiZWFyZXIgdG9rZW4gcmVxdWVzdCBpcyBhIHZhbHVlIHRoYXQgaWRlbnRpZmllcyB0aGUgdXNlciByZWdpc3RyeSBpbiB3aGljaCB0aGUgcmVxdWVzdGluZyB1c2VyJ3MgY3JlZGVudGlhbHMgYXJlIGhlbGQuIFRoaXMgbWF5IG5vdCBiZSB0aGUgc2FtZSByZWFsbSB2YWx1ZSBhcyB3YXMgdXNlZCB0byByZWdpc3RlciB0aGUgYXBwOyBpdCB3aWxsIGJlIHRoZSBzYW1lIG9ubHkgaWYgdGhlIHVzZXIgZXhlY3V0aW5nIHRoZSBhcHAgaXMgdGhlIHNhbWUgdXNlciB0aGF0IHBlcmZvcm1lZCB0aGUgYXBwIHJlZ2lzdHJhdGlvbi48L3A+CiAgICAgICAgPHA+CiAgICAgICAgICBZb3UgY2FuIHF1ZXJ5IHRoZSBzZXQgb2YgdXNlciByZWdpc3RyaWVzIHRvIG9idGFpbiB0aGUgY29uZmlndXJlZCByZWFsbSB2YWx1ZXMgdXNpbmcgYW4gdW5hdXRoZW50aWNhdGVkIGNhbGwgdG8gdGhlIDxjb2RlPi9jbG91ZC9hZG1pbi9pZGVudGl0eS1wcm92aWRlcnM8L2NvZGU+IAogICAgICAgICAgb3IgPGNvZGU+L2Nsb3VkL3Byb3ZpZGVyL2lkZW50aXR5LXByb3ZpZGVyczwvY29kZT4gVVJMIGZvciBhZG1pbiB1c2VycyBvciBBUEkgcHJvdmlkZXIgdXNlcnMgcmVzcGVjdGl2ZWx5LgogICAgICAgIDwvcD4KICAgICAgPC9zZWN0aW9uPgogICAgICA8cD5IZXJlIGlzIGFuIGV4YW1wbGUgcmVxdWVzdCBhbmQgc3VjY2Vzc2Z1bCByZXNwb25zZTo8L3A+CiAgICAgIDxoND5SZXF1ZXN0PC9oND4KICAgICAgPGRpdiBpZD0iZ2V0LXJlYWxtdmFsdWUtcmVxdWVzdCIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgpjdXJsIC12IC1rIC1IICJBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24iIGh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvY2xvdWQvcHJvdmlkZXIvaWRlbnRpdHktcHJvdmlkZXJzCiAgICAgIDwvZGl2PgogICAgICA8aDQ+UmVzcG9uc2U8L2g0PgogICAgICA8ZGl2IGlkPSJnZXQtcmVhbG12YWx1ZS1yZXNwb25zZSIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgp7CiAgInRvdGFsX3Jlc3VsdHMiOiAxLAogICJyZXN1bHRzIjogWwogICB7CiAgICAgIm5hbWUiOiAiZGVmYXVsdC1pZHAtMiIsCiAgICAgInRpdGxlIjogIkFQSSBNYW5hZ2VyIFVzZXIgUmVnaXN0cnkiLAogICAgICJkZWZhdWx0IjogdHJ1ZSwKICAgICAicmVnaXN0cnlfdHlwZSI6ICJsdXIiCiAgIH0KICBdCn0KICA8L2Rpdj4KICA8cD5BIHJlYWxtIHZhbHVlIGNvbnNpc3RzIG9mIGEgdXNlciByZWdpc3RyeSBuYW1lIHF1YWxpZmllZCB3aXRoIHRoZSBjb250ZXh0IGluIHdoaWNoIGl0IHVzZWQsIGluIHRoZSBmb3JtIGNvbnRleHQvdXNlci1yZWdpc3RyeS1uYW1lLCB3aGVyZSB0aGUgY29udGV4dCBpcyA8Y29kZT5hZG1pbjwvY29kZT4gZm9yIGNsb3VkIGFkbWluaXN0cmF0b3IgdXNlcnMgb3IgPGNvZGU+cHJvdmlkZXI8L2NvZGU+IGZvciBBUEkgcHJvdmlkZXIgdXNlcnMuIFRoZSByZWFsbSB2YWx1ZSBjb3JyZXNwb25kaW5nIHRvIHRoZSBBUEkgTWFuYWdlciBVc2VyIFJlZ2lzdHJ5IGZyb20gdGhlIGV4YW1wbGUgYWJvdmUgaXM6CiAgPC9wPgogIDxkaXYgaWQ9InJlYWxtdmFsdWUtZXhhbXBsZSIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPiAgcHJvdmlkZXIvZGVmYXVsdC1pZHAtMjwvZGl2PgogIDxwPkZvciBjb25zdW1lciB1c2VycywgdGhlIHJlYWxtIGNvbnRleHQgaXMgZ2l2ZW4gYnkgdGhlIGNhdGFsb2cgaW4gd2hpY2ggdGhlIHVzZXIgaXMgcmVnaXN0ZXJlZC4gVGhlIGxpc3Qgb2YgdXNlciByZWdpc3RyaWVzIGZvciBhIGNhdGFsb2cgY2FuIGJlIGFjY2Vzc2VkIGF0IHRoZSA8Y29kZT4vY2F0YWxvZ3Mve29yZ30ve2NhdGFsb2d9L2NvbmZpZ3VyZWQtY2F0YWxvZy11c2VyLXJlZ2lzdHJpZXM8L2NvZGU+IFVSTC4KICAgICAgICA8L3A+CiAgIDwvc2VjdGlvbj4KICA8L2Rpdj4KICAgICAgPHNlY3Rpb24+CiAgICAgICAgPGgyPlVzaW5nIGEgQmVhcmVyIFRva2VuPC9oMj4KICAgICAgICA8cD4KICAgICAgICAgIE9uY2Ugb2J0YWluZWQsIHRoZSBiZWFyZXIgdG9rZW4gbWF5IGJlIHVzZWQgdG8gbWFrZSBhdXRoZW50aWNhdGVkIEFQSSBjYWxscy4gVGhlIGJlYXJlciB0b2tlbiBpcyBzZW50IGFzIHRoZSB2YWx1ZSBvZiB0aGUgQXV0aG9yaXphdGlvbiBoZWFkZXIsIHByZWZpeGVkIGJ5IHRoZSB3b3JkIDxjb2RlPmJlYXJlcjo8L2NvZGU+IChpbmNsdWRpbmcgdGhlIGNvbG9uKS4gSGVyZSdzIGFuIGV4YW1wbGUgb2YgYW4KICAgICAgICAgIGF1dGhlbnRpY2F0ZWQgY2FsbCB0byB0aGUgPGNvZGU+L21lPC9jb2RlPiByZXNvdXJjZSB1c2luZyB0aGUgYmVhcmVyIHRva2VuIG9idGFpbmVkIGFib3ZlOgogICAgICAgIDwvcD4KICAgICAgICA8aDM+UmVxdWVzdDwvaDM+CiAgICAgICAgPGRpdiBpZD0idXNlLWJlYXJlcnRva2VuLXJlcXVlc3QiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij5jdXJsIC12IC1rIC1IICdBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24nIC1IICJBdXRob3JpemF0aW9uOiBiZWFyZXIgZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnFkR2tpT2lJMU1HVm1PR1F6T0MxbE1UVXhMVFE0TmpjdFltSXdPUzB3TkRBME4yVXhaak0zTkRjaUxDSnVZVzFsYzNCaFkyVWlPaUl6WWpRMU9EVTROaTFrWkdNd0xUUTFORFl0T1Roa1ppMDNNbVV4TXpNellqQTVaV0U2TVRZelpEWTRNV1l0WldVd01DMDBZV1JoTFdGaU5XUXRaRFZrTXpSbFlqZGxPRFZqT2pCak9EUTBOVGd5TFRRMVlXTXRORFEyTXkxaE9UYzFMVGhpTm1RMVpqWTVNVEUxWkNJc0ltRjFaQ0k2SWk5aGNHa3ZZMnh2ZFdRdmNtVm5hWE4wY21GMGFXOXVjeTh6T1RCaE5qVmhZUzAwTTJGaExUUTNNelV0WWpBME9TMDRNVGszTWpJeVpESTNaREFpTENKemRXSWlPaUl2WVhCcEwzVnpaWEl0Y21WbmFYTjBjbWxsY3k4ellqUTFPRFU0Tmkxa1pHTXdMVFExTkRZdE9UaGtaaTAzTW1VeE16TXpZakE1WldFdk1UWXpaRFk0TVdZdFpXVXdNQzAwWVdSaExXRmlOV1F0WkRWa016UmxZamRsT0RWakwzVnpaWEp6THpCak9EUTBOVGd5TFRRMVlXTXRORFEyTXkxaE9UYzFMVGhpTm1RMVpqWTVNVEUxWkNJc0ltbHpjeUk2SWtsQ1RTQkJVRWtnUTI5dWJtVmpkQ0lzSW1WNGNDSTZNVFV6TWpVNE5qRTFNaXdpYVdGMElqb3hOVE15TlRVM016VXlMQ0puY21GdWRGOTBlWEJsSWpvaWNHRnpjM2R2Y21RaUxDSjFjMlZ5WDNKbFoybHpkSEo1WDNWeWJDSTZJaTloY0drdmRYTmxjaTF5WldkcGMzUnlhV1Z6THpOaU5EVTROVGcyTFdSa1l6QXRORFUwTmkwNU9HUm1MVGN5WlRFek16TmlNRGxsWVM4eE5qTmtOamd4WmkxbFpUQXdMVFJoWkdFdFlXSTFaQzFrTldRek5HVmlOMlU0TldNaUxDSnlaV0ZzYlNJNkluQnliM1pwWkdWeUwyUmxabUYxYkhRdGFXUndMVElpTENKMWMyVnlibUZ0WlNJNkltTm9jbWx6SWl3aWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTa2xWZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNqa3VaWGxLYldGWVNucGtSamwxV1ZjeGJFbHFiMmxSTW1oNVlWaE5hVXhEU25OWldFNHdXREkxYUdKWFZXbFBhVXBPU1dsM2FXUllUbXhqYkRsd1drTkpOa2x0U21wT2FrazBUVmRWTVV4WFVteE9Na2wwVGtSS2JVNXBNRFJaYWtrd1RGZEthazVxWTNsWlZFRXlXbXBSZDA1VFNYTkpibFo2V2xoS2RWbFhNV3hKYW05cFdUSm9lV0ZZVFdsTVEwcHdXVmhSYVU5cVJURk5la2t4VGxSamVrNVVTamt1ZWxwelRYSTBPVUprZFU5RFVsY3hiMjR5V2pkc1pESTRibkpLUlZWRFpUQTFibU01TWxkUlgzZG9OQ0lzSW5OamIzQmxjeUk2V3lKamJHOTFaRHAyYVdWM0lpd2lZMnh2ZFdRNmJXRnVZV2RsSWl3aWNISnZkbWxrWlhJdGIzSm5PblpwWlhjaUxDSndjbTkyYVdSbGNpMXZjbWM2YldGdVlXZGxJaXdpYjNKbk9uWnBaWGNpTENKdmNtYzZiV0Z1WVdkbElpd2laSEpoWm5Sek9uWnBaWGNpTENKa2NtRm1kSE02WldScGRDSXNJbU5vYVd4a09uWnBaWGNpTENKamFHbHNaRHBqY21WaGRHVWlMQ0pqYUdsc1pEcHRZVzVoWjJVaUxDSndjbTlrZFdOME9uWnBaWGNpTENKd2NtOWtkV04wT25OMFlXZGxJaXdpY0hKdlpIVmpkRHB0WVc1aFoyVWlMQ0poY0hCeWIzWmhiRHAyYVdWM0lpd2lZWEJ3Y205MllXdzZiV0Z1WVdkbElpd2lZWEJwTFdGdVlXeDVkR2xqY3pwMmFXVjNJaXdpWVhCcExXRnVZV3g1ZEdsamN6cHRZVzVoWjJVaUxDSmpiMjV6ZFcxbGNpMXZjbWM2ZG1sbGR5SXNJbU52Ym5OMWJXVnlMVzl5WnpwdFlXNWhaMlVpTENKaGNIQTZkbWxsZHpwaGJHd2lMQ0poY0hBNmJXRnVZV2RsT21Gc2JDSXNJbTE1T25acFpYY2lMQ0p0ZVRwdFlXNWhaMlVpTENKM1pXSm9iMjlyT25acFpYY2lYWDAuMXliZXpHSnJKV2dSWjhlYzVjanlHUVRLY1dBM2l3VGJWNUF1YlhDb3g2MCIgaHR0cHM6Ly92Nmd3MDcyNmEuYXJnbzItc2wuZGV2LmNpb25kZW1hbmQuY29tL2FwaS9tZTwvZGl2PgogICAgICAgIDxoMz5SZXNwb25zZTwvaDM+CiAgICAgICAgPGRpdiBpZD0idXNlLWJlYXJlcnRva2VuLXJlc3BvbnNlIiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+ewogICAgICAgICAgInR5cGUiOiAibWUiLAogICAgICAgICAgImFwaV92ZXJzaW9uIjogIjIuMC4wIiwKICAgICAgICAgICJuYW1lIjogIjM0YjEwZWNhLTM4NzQtNGNkYy1hY2I4LTM4ZGU4ZTgyZWI4NSIsCiAgICAgICAgICAic3RhdGUiOiAiZW5hYmxlZCIsCiAgICAgICAgICAidXNlcm5hbWUiOiAiY2hyaXMiLAogICAgICAgICAgImVtYWlsIjogImNocmlzQGlibS5jb20iLAogICAgICAgICAgImZpcnN0X25hbWUiOiAiQ2hyaXMiLAogICAgICAgICAgImxhc3RfbmFtZSI6ICJNIiwKICAgICAgICAgICJ1cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5jb20vYXBpL3VzZXItcmVnaXN0cmllcy8zMmM2OGQ5ZS0zZmQ2LTQ1NzEtYjljOS1mYTc1NTBlMDc1NjkvMjA4MzM1OWUtNTIzNC00MDM5LWFkNGYtNDBkY2Y3Y2U1ODZlL3VzZXJzLzM0YjEwZWNhLTM4NzQtNGNkYy1hY2I4LTM4ZGU4ZTgyZWI4NSIKICAgICAgICAgIH08L2Rpdj4KICAgICAgICA8cD5UaGUgPGNvZGU+L21lPC9jb2RlPiByZXNvdXJjZSByZXR1cm5zIGluZm9ybWF0aW9uIGFib3V0IHRoZSB1c2VyIG1ha2luZyB0aGUgcmVxdWVzdC48L3A+CiAgICAgIDwvc2VjdGlvbj4KICAgIDwvZGl2PgogIDwvYXJ0aWNsZT4K"
+          }
+        ]
+      },
+      {
+        "name": "members",
+        "title": "members",
+        "docs": [{
+            "name": "user_guidelines",
+            "title": "Registering and Managing Admin Members",
+            "format": "b64html",
+            "content": "PGFydGljbGUgaWQ9ImFkbWluX21lbWJlcnNoaXAiIGNsYXNzPSJwYWdlIj4KICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBhZG1pbl9tZW1iZXJzaGlwLWhlYWRlciI+CiAgICAgICAgTWFuYWdpbmcgQWRtaW4gVXNlcnMKICAgICAgPC9zcGFuPgogICAgPC9oMj4KICA8L2Rpdj4KICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfY29udGVudCBhZG1pbl9tZW1iZXJzaGlwLWNvbnRlbnQiPgoKICAgIDwhLS0gbm90ZSBvbiB0b2tlbnMgLS0+CiAgICA8c2VjdGlvbj4KICAgIDxwPlRoZSA8Y29kZT5UT0tFTjwvY29kZT4gdmFsdWUgaXMgdXNlZCBhcyBhIHBsYWNlaG9sZGVyIGZvciB0aGUgYmVhcmVyIHRva2VuIHVzZWQgYXMgdGhlIHZhbHVlIG9mIHRoZSBBdXRob3JpemF0aW9uIGhlYWRlciBmb3IgdGhlIGZvbGxvd2luZyBleGFtcGxlcy48L3A+CiAgICA8L3NlY3Rpb24+CgogICAgPCEtLSBzZWN0aW9uIG9uIGxpc3RpbmcgbWVtYmVycyAtLT4KICAgIDxzZWN0aW9uPgogICAgICA8aDM+TGlzdGluZyBhZG1pbiBvcmdhbml6YXRpb24gbWVtYmVyczwvaDM+CiAgICAgIDxwPlRoaXMgcmVxdWVzdCByZXR1cm5zIHRoZSBsaXN0IG9mIG1lbWJlcnMgcmVnaXN0ZXJlZCBpbiB0aGUgYWRtaW4gb3JnYW5pemF0aW9uLjwvcD4KICAgICAgPGg1IHN0eWxlPSJjb2xvcjojM2Q3MGIyIj5HRVQgL2FwaS9vcmdzL3tvcmd9L21lbWJlcnM8L2g1PgogICAgPC9icj4KICAgICAgPGRsPgogICAgICAgIDxkdCBzdHlsZT0iZm9udC13ZWlnaHQ6NDAwOyI+b3JnOjwvZHQ+CiAgICAgICAgPGRkPlRoZSBuYW1lIG9yIElEIG9mIHRoZSBhZG1pbiBvcmdhbml6YXRpb248L2RkPgogICAgICA8L2RsPgogICAgICA8aDQ+UmVxdWVzdDwvaDQ+CiAgICAgIDxkaXYgaWQ9ImdldC1hZG1pbl9tZW1iZXJsaXN0LXJlcXVlc3QiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij5jdXJsIC12IC1rIC1IICdBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24nIC1IICJBdXRob3JpemF0aW9uOiBiZWFyZXIgVE9LRU4iIGh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvb3Jncy8xZDg2ZjQ3MC02MTFiLTQwZmYtOTI1NS1iZDE1NjRiZDcxOGMvbWVtYmVycwogICAgICA8L2Rpdj4KICAgICAgPGg0PlJlc3BvbnNlPC9oND4KICAgICAgPGRpdiBpZD0iZ2V0LWFkbWluX21lbWJlcmxpc3QtcmVzcG9uc2UiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij57CiAgInRvdGFsX3Jlc3VsdHMiOiAxLAogICJyZXN1bHRzIjogWwogICAgewogICAgICAidHlwZSI6ICJtZW1iZXIiLAogICAgICAiYXBpX3ZlcnNpb24iOiAiMi4wLjAiLAogICAgICAiaWQiOiAiY2VmZGIzOTUtMmQ3Mi00NmVhLTg1MzAtOTQ4YmY1MjBlZGU2IiwKICAgICAgIm5hbWUiOiAiYWRtaW4iLAogICAgICAidGl0bGUiOiAiYWRtaW4iLAogICAgICAic3RhdGUiOiAiZW5hYmxlZCIsCiAgICAgICJzY29wZSI6ICJvcmciLAogICAgICAidXNlciI6IHsKICAgICAgICAgICAgICAgICJpZCI6ICJlNGYyMzY3OC00NTg2LTQ4YjYtYWI3Yy05MWNmZmUxOGIwNmMiLAogICAgICAgICAgICAgICAgInVybCI6ICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL3VzZXItcmVnaXN0cmllcy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYvNTNmNmQ3MTAtOGQ2YS00MGUzLWIyNzQtNjU5NzkwMjg5NGRjL3VzZXJzL2U0ZjIzNjc4LTQ1ODYtNDhiNi1hYjdjLTkxY2ZmZTE4YjA2YyIsCiAgICAgICAgICAgICAgICAibmFtZSI6ICJhZG1pbiIsCiAgICAgICAgICAgICAgICAidHlwZSI6ICJ1c2VyIiwKICAgICAgICAgICAgICAgICJlbWFpbCI6ICJ3aWxsQHdpbGwuY29tIiwKICAgICAgICAgICAgICAgICJzdGF0ZSI6ICJlbmFibGVkIiwKICAgICAgICAgICAgICAgICJ0aXRsZSI6ICJhZG1pbiIsCiAgICAgICAgICAgICAgICAib3JnX3VybCI6ICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL29yZ3MvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2IiwKICAgICAgICAgICAgICAgICJ1c2VybmFtZSI6ICJhZG1pbiIsCiAgICAgICAgICAgICAgICAibGFzdF9uYW1lIjogIk93bmVyIiwKICAgICAgICAgICAgICAgICJmaXJzdF9uYW1lIjogIkNsb3VkIiwKICAgICAgICAgICAgICAgICJhcGlfdmVyc2lvbiI6ICIyLjAuMCIsCiAgICAgICAgICAgICAgICAiaWRlbnRpdHlfcHJvdmlkZXIiOiAiZGVmYXVsdC1pZHAtMSIsCiAgICAgICAgICAgICAgICAidXNlcl9yZWdpc3RyeV91cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS91c2VyLXJlZ2lzdHJpZXMvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2LzUzZjZkNzEwLThkNmEtNDBlMy1iMjc0LTY1OTc5MDI4OTRkYyIsCiAgICAgICAgICAgICAgICAiZm9yY2VfcGFzc3dvcmRfY2hhbmdlIjogZmFsc2UKICAgICAgICAgICAgICB9LAogICAgICAicm9sZV91cmxzIjogWwogICAgICAgICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL29yZ3MvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2L3JvbGVzLzdhYjQzYmYwLTkwMDYtNDg4MS05YWJkLTI3MTA1MTcwMzVhNyIKICAgICAgXSwKICAgICAgImNyZWF0ZWRfYXQiOiAiMjAyMS0xMS0wNFQyMDoyODoyNi4wMDBaIiwKICAgICAgInVwZGF0ZWRfYXQiOiAiMjAyMS0xMS0wNFQyMDoyODoyNi4wMDBaIiwKICAgICAgIm9yZ191cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9vcmdzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2NiIsCiAgICAgICJ1cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9vcmdzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2Ni9tZW1iZXJzL2NlZmRiMzk1LTJkNzItNDZlYS04NTMwLTk0OGJmNTIwZWRlNiIKICAgIH0KICBdCn0KICAgIDwvZGl2PgogICAgPC9zZWN0aW9uPgoKPCEtLSBzZWN0aW9uIGZvciBsaXN0aW5nIHJvbGVzIC0tPgogICAgPHNlY3Rpb24+CiAgICAgIDxoMz5MaXN0aW5nIGFkbWluIHJvbGVzPC9oMz4KICAgICAgPHA+VGhpcyByZXF1ZXN0IHJldHVybnMgdGhlIGxpc3Qgb2Ygcm9sZXMgdGhhdCBjYW4gYmUgYXNzaWduZWQgdG8gYWRtaW4gb3JnYW5pemF0aW9uIG1lbWJlcnMuPC9wPgogICAgICA8aDUgc3R5bGU9ImNvbG9yOiMzZDcwYjIiPkdFVCAvYXBpL29yZ3Mve29yZ30vcm9sZXM8L2g1PgogICAgPC9icj4KICAgIDxkbD4KICAgICAgPGR0IHN0eWxlPSJmb250LXdlaWdodDo0MDA7Ij5vcmc6PC9kdD4KICAgICAgPGRkPlRoZSBuYW1lIG9yIElEIG9mIHRoZSBhZG1pbiBvcmdhbml6YXRpb248L2RkPgogICAgPC9kbD4KICAgICAgPGg0PlJlcXVlc3Q8L2g0PgogICAgICA8ZGl2IGlkPSJnZXQtYWRtaW5fbWVtYmVyc2hpcC1yb2xlcy1yZXF1ZXN0IiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+Y3VybCAtdiAtayAtSCAnQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uJyAtSCAiQXV0aG9yaXphdGlvbjogYmVhcmVyIFRPS0VOIiBodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL29yZ3MvMWQ4NmY0NzAtNjExYi00MGZmLTkyNTUtYmQxNTY0YmQ3MThjL3JvbGVzCiAgICAgIDwvZGl2PgogICAgICA8aDQ+UmVzcG9uc2U8L2g0PgogICAgICA8ZGl2IGlkPSJnZXQtYWRtaW5fbWVtYmVyLXJvbGVzLXJlc3BvbnNlIiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+ewogICJ0b3RhbF9yZXN1bHRzIjogNiwKICAicmVzdWx0cyI6IFsKICAgIHsKICAgICAgInR5cGUiOiAicm9sZSIsCiAgICAgICJhcGlfdmVyc2lvbiI6ICIyLjAuMCIsCiAgICAgICJpZCI6ICI1NzdhZDBjOC04M2U5LTRjNWItOGYyYi00YTRlMjc0ZjkyOGMiLAogICAgICAibmFtZSI6ICJhZG1pbmlzdHJhdG9yIiwKICAgICAgInRpdGxlIjogIkFkbWluaXN0cmF0b3IiLAogICAgICAic3VtbWFyeSI6ICJBZG1pbmlzdGVycyB0aGUgYWRtaW4gb3JnYW5pemF0aW9uIiwKICAgICAgInBlcm1pc3Npb25fdXJscyI6IFsKICAgICAgICAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9jbG91ZC9wZXJtaXNzaW9ucy9vcmcvMTllNWViODktODUzMi00NzViLWI1YzYtMDBjN2MyZWJhZWU4IiwKICAgICAgICAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9jbG91ZC9wZXJtaXNzaW9ucy9vcmcvNTgwYjBkZjEtNjJmNC00Njc3LThjYzAtY2ZlYTllMTc2ODRiIiwKICAgICAgICAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9jbG91ZC9wZXJtaXNzaW9ucy9vcmcvN2VjNGU1NmEtODBiYS00OTlhLTk3ZTMtOTIyMzc5ZWNjMWZhIiwKICAgICAgICAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9jbG91ZC9wZXJtaXNzaW9ucy9vcmcvY2UzYzg3NmYtMDhmMS00N2I2LWJjMDEtZGYyMzhkMmFmM2E0IiwKICAgICAgICAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9jbG91ZC9wZXJtaXNzaW9ucy9vcmcvNzk3ODljZjUtODE3MS00MDNmLWEyOWYtZGVmNzkzOTUyOWQ1IiwKICAgICAgICAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9jbG91ZC9wZXJtaXNzaW9ucy9vcmcvN2E0NjZhNGMtNDk1NC00YWEzLTk3Y2YtZTcwYThjYmZiZGVmIiwKICAgICAgICAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9jbG91ZC9wZXJtaXNzaW9ucy9vcmcvYjk3MDMzYzgtYTcxMy00N2RmLWI5N2YtZDgwOWQwNjBjNzRhIiwKICAgICAgICAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9jbG91ZC9wZXJtaXNzaW9ucy9jbG91ZC9kNWM4OTg3Zi1lYjgxLTQyZWUtYmNiYi1lYThlNTZhNTMyZTUiLAogICAgICAgICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL2Nsb3VkL3Blcm1pc3Npb25zL2Nsb3VkLzFlOGRhYTRjLTU1MTQtNDA1Yi04Zjg5LTYwM2E4MzNiMDBiZCIsCiAgICAgICAgImh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvY2xvdWQvcGVybWlzc2lvbnMvY2xvdWQvYjkzYWEyNGMtNmJkMy00ZDc4LTk2MjAtY2Y0ODg1Zjg3OTdkIiwKICAgICAgICAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9jbG91ZC9wZXJtaXNzaW9ucy9jbG91ZC84YTNhZGQ5MC01MjJjLTRlNTAtOTRhMy05NDRmZjU3ODdmZWIiCiAgICAgIF0sCiAgICAgICAgImluaGVyaXRlZF9wZXJtaXNzaW9uX3VybHMiOiBbXSwKICAgICAgICAic2NvcGUiOiAib3JnIiwKICAgICAgICAiY3JlYXRlZF9hdCI6ICIyMDIxLTExLTA0VDIwOjI4OjI1LjAwMFoiLAogICAgICAgICJ1cGRhdGVkX2F0IjogIjIwMjEtMTEtMDRUMjA6Mjg6MjUuMDAwWiIsCiAgICAgICAgIm9yZ191cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9vcmdzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2NiIsCiAgICAgICAgInVybCI6ICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL29yZ3MvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2L3JvbGVzLzU3N2FkMGM4LTgzZTktNGM1Yi04ZjJiLTRhNGUyNzRmOTI4YyIKICAgIH0sIC4uLgogIF0KfQogICAgICA8L2Rpdj4KICAgIDwvc2VjdGlvbj4KCiAgICA8IS0tIGNyZWF0aW5nIHNwZWNpZmljYWxseSBhIFVTRVIgaW4gdGhlIGFkbWluIG9yZyBsZXZlbCAtLT4KICAgIDxzZWN0aW9uPgogICAgICAgIDxoMz5DcmVhdGluZyBhIG5ldyBhZG1pbiB1c2VyPC9oMz4KICAgICAgICA8cD5BbiBhZG1pbiB1c2VyIGNvbXByaXNlcyBhIG1lbWJlciBlbnRyeSBpbiB0aGUgYWRtaW4gb3JnYW5pemF0aW9uLCB3aGljaCByZWZlcnMgdG8gYSB1c2VyIGVudHJ5IGluIGEgdXNlciByZWdpc3RyeSBhc3NvY2lhdGVkIHdpdGggYW4gYWRtaW4gaWRlbnRpdHkgcHJvdmlkZXIuIFRoaXMgcmVxdWVzdCBjcmVhdGVzIGEgbmV3IHVzZXIgZW50cnkuPC9wPgogICAgICAgICAgPGg1IHN0eWxlPSJjb2xvcjojM2Q3MGIyIj5QT1NUIC9hcGkvdXNlci1yZWdpc3RyaWVzL3tvcmd9L3t1c2VyX3JlZ2lzdHJ5fS91c2VyczwvaDU+CiAgICAgICAgPC9icj4KICAgICAgICAgIDxkbD4KICAgICAgICAgICAgPGR0IHN0eWxlPSJmb250LXdlaWdodDo0MDA7Ij5vcmc6PC9kdD4KICAgICAgICAgICAgPGRkPlRoZSBuYW1lIG9yIElEIG9mIHRoZSBhZG1pbiBvcmdhbml6YXRpb248L2RkPgogICAgICAgICAgICA8ZHQgc3R5bGU9ImZvbnQtd2VpZ2h0OjQwMDsiPnVzZXJfcmVnaXN0cnk6PC9kdD4KICAgICAgICAgICAgPGRkPlRoZSBuYW1lIG9yIElEIG9mIGFuIGFkbWluIHVzZXIgcmVnaXN0cnk8L2RkPgogICAgICAgICAgPC9kbD4KICAgICAgICAgICAgPGg1PlBvc3QgYm9keSBwcm9wZXJ0aWVzIChjb250ZW50LXR5cGUgYXBwbGljYXRpb24vanNvbiBvciBhcHBsaWNhdGlvbi95YW1sKTo8L2g1PgogICAgICAgICAgICA8IS0tIDxkaXYgaWQ9ImdldC1uZXctbWVtYmVyLXJlc3BvbnNlIiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+IC0tPgogICAgICAgICAgPGRsPgogICAgICAgICAgICA8ZHQgc3R5bGU9ImZvbnQtd2VpZ2h0OjQwMDsiPnVzZXJuYW1lOjwvZHQ+CiAgICAgICAgICAgIDxkZD5UaGUgdXNlcm5hbWUgZm9yIHRoZSBuZXcgdXNlcjwvZGQ+CiAgICAgICAgICAgIDxkdCBzdHlsZT0iZm9udC13ZWlnaHQ6NDAwOyI+ZW1haWw6PC9kdD4KICAgICAgICAgICAgPGRkPlRoZSBlbWFpbCBhZGRyZXNzIG9mIHRoZSBuZXcgdXNlcjwvZGQ+CiAgICAgICAgICAgIDxkdCBzdHlsZT0iZm9udC13ZWlnaHQ6NDAwOyI+Zmlyc3RfbmFtZTo8L2R0PgogICAgICAgICAgICA8ZGQ+VGhlIGZpcnN0IG5hbWUgb2YgdGhlIG5ldyB1c2VyPC9kZD4KICAgICAgICAgICAgPGR0IHN0eWxlPSJmb250LXdlaWdodDo0MDA7Ij5sYXN0X25hbWU6PC9kdD4KICAgICAgICAgICAgPGRkPlRoZSBsYXN0IG5hbWUgb2YgdGhlIG5ldyB1c2VyPC9kZD4KICAgICAgICAgICAgPGR0IHN0eWxlPSJmb250LXdlaWdodDo0MDA7Ij5wYXNzd29yZDo8L2R0PgogICAgICAgICAgICA8ZGQ+VGhlIGluaXRpYWwgcGFzc3dvcmQgZm9yIHRoZSBuZXcgdXNlcjwvZGQ+CiAgICAgICAgICA8L2RsPgogIDwhLS0gPC9kaXY+IC0tPgogICAgICAgIDwvcD4KICAgICAgICA8aDQ+UmVxdWVzdDwvaDQ+CiAgICAgICAgPGRpdiBpZD0icG9zdC1hZG1pbl9uZXctdXNlci1yZXF1ZXN0IiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+Y3VybCAtdiAtayBQT1NUIC1kICd7InVzZXJuYW1lIjoiY3ludGhpYTEiLCJlbWFpbCI6ImN5bnRoaWFAY3ludGhpYS5jb20iLCJmaXJzdF9uYW1lIjoiY3ludGhpYSIsImxhc3RfbmFtZSI6ImN5bnRoaWEiLCJwYXNzd29yZCI6IioqKioqKioifScgLUggJ0FjY2VwdDogYXBwbGljYXRpb24vanNvbicgLUggJ2NvbnRlbnQtdHlwZTogYXBwbGljYXRpb24vanNvbicgLUggIkF1dGhvcml6YXRpb246IGJlYXJlciBUT0tFTiIgaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS91c2VyLXJlZ2lzdHJpZXMvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2LzUzZjZkNzEwLThkNmEtNDBlMy1iMjc0LTY1OTc5MDI4OTRkYy91c2VycwogICAgICAgIDwvZGl2PgogICAgICAgIDxoND5SZXNwb25zZTwvaDQ+CiAgICAgICAgPGRpdiBpZD0icG9zdC1hZG1pbl9uZXctdXNlci1yZXNwb25zZSIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPnsKICAidHlwZSI6ICJ1c2VyIiwKICAiYXBpX3ZlcnNpb24iOiAiMi4wLjAiLAogICJpZCI6ICJlOWM2NjlmZC05NGNiLTQzN2UtYTE2MS1mNjcxYjhhZTIyN2UiLAogICJuYW1lIjogImN5bnRoaWExIiwKICAidGl0bGUiOiAiY3ludGhpYTEiLAogICJzdGF0ZSI6ICJlbmFibGVkIiwKICAidXNlcm5hbWUiOiAiY3ludGhpYTEiLAogICJlbWFpbCI6ICJjeW50aGlhQGN5bnRoaWEuY29tIiwKICAiZmlyc3RfbmFtZSI6ICJjeW50aGlhIiwKICAibGFzdF9uYW1lIjogImN5bnRoaWEiLAogICJpZGVudGl0eV9wcm92aWRlciI6ICJkZWZhdWx0LWlkcC0xIiwKICAiY3JlYXRlZF9hdCI6ICIyMDIxLTExLTA1VDIwOjQwOjQzLjE3OVoiLAogICJ1cGRhdGVkX2F0IjogIjIwMjEtMTEtMDVUMjA6NDA6NDMuMTc5WiIsCiAgIm9yZ191cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9vcmdzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2NiIsCiAgInVzZXJfcmVnaXN0cnlfdXJsIjogImh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvdXNlci1yZWdpc3RyaWVzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2Ni81M2Y2ZDcxMC04ZDZhLTQwZTMtYjI3NC02NTk3OTAyODk0ZGMiLAogICJ1cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS91c2VyLXJlZ2lzdHJpZXMvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2LzUzZjZkNzEwLThkNmEtNDBlMy1iMjc0LTY1OTc5MDI4OTRkYy91c2Vycy9lOWM2NjlmZC05NGNiLTQzN2UtYTE2MS1mNjcxYjhhZTIyN2UiCn0KICAgICAgICA8L2Rpdj4KICAgIDwvc2VjdGlvbj4KCjwhLS0gc2VjdGlvbiBvbiBjb252ZXJ0aW5nIGEgdXNlciB0byBhIG1lbWJlciBpbiB0aGUgYWRtaW4gbGV2ZWwgLS0+CiAgICA8c2VjdGlvbj4KICAgICAgPGgzPlJlZ2lzdGVyaW5nIHRoZSB1c2VyIGFzIGEgbWVtYmVyIGluIHRoZSBhZG1pbiBvcmdhbml6YXRpb248L2gzPgogICAgICA8cD5UaGlzIHJlcXVlc3QgYWRkcyBhIHVzZXIgYXMgYSBtZW1iZXIgb2YgdGhlIGFkbWluIG9yZ2FuaXphdGlvbi48L3A+CiAgICAgIDxoNSBzdHlsZT0iY29sb3I6IzNkNzBiMiI+UE9TVCAvYXBpL3VzZXItcmVnaXN0cmllcy97b3JnfS9tZW1iZXJzPC9oNT4KICAgIDwvYnI+CiAgICA8ZGw+CiAgICAgIDxkdCBzdHlsZT0iZm9udC13ZWlnaHQ6NDAwOyI+b3JnOjwvZHQ+CiAgICAgIDxkZD5UaGUgbmFtZSBvciBJRCBvZiB0aGUgYWRtaW4gb3JnYW5pemF0aW9uPC9kZD4KICAgIDwvZGw+CiAgICAgIDxoNT5Qb3N0IGJvZHkgcHJvcGVydGllcyAoY29udGVudC10eXBlIGFwcGxpY2F0aW9uL2pzb24gb3IgYXBwbGljYXRpb24veWFtbCk6PC9oNT4KICAgICAgPCEtLSA8ZGl2IGlkPSJnZXQtbmV3LW1lbWJlci1yZXNwb25zZSIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPiAtLT4KICAgIDxkbD4KICAgICAgPGR0IHN0eWxlPSJmb250LXdlaWdodDo0MDA7Ij51c2VyOjwvZHQ+CiAgICAgIDxkZD5vYmplY3QgY29udGFpbmluZyBhIHVybCBwcm9wZXJ0eSwgd2hpY2ggaXMgYSByZWZlcmVuY2UgdG8gYW4gZXhpc3RpbmcgdXNlcjwvZGQ+CiAgICAgIDxkdCBzdHlsZT0iZm9udC13ZWlnaHQ6NDAwOyI+dXJsOjwvZHQ+CiAgICAgIDxkZD5UaGUgdXJsIGZvciB0aGUgc3BlY2lmaWMgQVBJIENvbm5lY3QgdXNlciBzZWxlY3RlZCB0byBiZSByZWdpc3RlcmVkLCB0aGlzIGlzIGZvdW5kIGluIHRoZSBQT1NUIHVzZXIncyByZXNwb25zZTwvZGQ+CiAgICA8L2RsPgogICAgPCEtLSA8L2Rpdj4gLS0+CiAgICAgIDxoND5SZXF1ZXN0PC9oND4KICAgICAgPGRpdiBpZD0iZ2V0LW5ldy1tZW1iZXItcmVxdWVzdCIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPmN1cmwgLXYgLWsgLVggUE9TVCAtZCAneyJ1c2VyIjp7InVybCI6ICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL3VzZXItcmVnaXN0cmllcy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYvNTNmNmQ3MTAtOGQ2YS00MGUzLWIyNzQtNjU5NzkwMjg5NGRjL3VzZXJzL2U5YzY2OWZkLTk0Y2ItNDM3ZS1hMTYxLWY2NzFiOGFlMjI3ZSJ9fScgLUggJ0NvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbicgLUggJ0FjY2VwdDogYXBwbGljYXRpb24vanNvbicgLUggIkF1dGhvcml6YXRpb246IGJlYXJlciBUT0tFTiIgaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9vcmdzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2Ni9tZW1iZXJzCiAgICA8L2Rpdj4KICAgICAgPGg0PlJlc3BvbnNlPC9oND4KICAgICAgPGRpdiBpZD0iZ2V0LW5ldy1tZW1iZXItcmVzcG9uc2UiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij57CiAgInR5cGUiOiAibWVtYmVyIiwKICAiYXBpX3ZlcnNpb24iOiAiMi4wLjAiLAogICJpZCI6ICJlNTRjOTBiMC1iZjYxLTRmZDItYjY4NC1iNTUzMWM4OGE5MTUiLAogICJuYW1lIjogImN5bnRoaWExIiwKICAidGl0bGUiOiAiY3ludGhpYTEiLAogICJzdGF0ZSI6ICJlbmFibGVkIiwKICAidXNlciI6IHsKICAgICAgICAgICJ0eXBlIjogInVzZXIiLAogICAgICAgICAgImFwaV92ZXJzaW9uIjogIjIuMC4wIiwKICAgICAgICAgICJpZCI6ICJlOWM2NjlmZC05NGNiLTQzN2UtYTE2MS1mNjcxYjhhZTIyN2UiLAogICAgICAgICAgIm5hbWUiOiAiY3ludGhpYTEiLAogICAgICAgICAgInRpdGxlIjogImN5bnRoaWExIiwKICAgICAgICAgICJzdGF0ZSI6ICJlbmFibGVkIiwKICAgICAgICAgICJpZGVudGl0eV9wcm92aWRlciI6ICJkZWZhdWx0LWlkcC0xIiwKICAgICAgICAgICJ1c2VybmFtZSI6ICJjeW50aGlhMSIsCiAgICAgICAgICAiZW1haWwiOiAiY3ludGhpYUBjeW50aGlhLmNvbSIsCiAgICAgICAgICAiZmlyc3RfbmFtZSI6ICJjeW50aGlhIiwKICAgICAgICAgICJsYXN0X25hbWUiOiAiY3ludGhpYSIsCiAgICAgICAgICAib3JnX3VybCI6ICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL29yZ3MvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2IiwKICAgICAgICAgICJ1c2VyX3JlZ2lzdHJ5X3VybCI6ICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL3VzZXItcmVnaXN0cmllcy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYvNTNmNmQ3MTAtOGQ2YS00MGUzLWIyNzQtNjU5NzkwMjg5NGRjIiwKICAgICAgICAgICJ1cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS91c2VyLXJlZ2lzdHJpZXMvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2LzUzZjZkNzEwLThkNmEtNDBlMy1iMjc0LTY1OTc5MDI4OTRkYy91c2Vycy9lOWM2NjlmZC05NGNiLTQzN2UtYTE2MS1mNjcxYjhhZTIyN2UiCiAgICAgICAgfSwKICAic2NvcGUiOiAib3JnIiwKICAicm9sZV91cmxzIjogWwogICAgImh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvb3Jncy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYvcm9sZXMvNjg0NWE5YzctNGM3OS00OTM2LWIzMWItZjI1NjY0YmZhNTBmIgogIF0sCiAgImNyZWF0ZWRfYXQiOiAiMjAyMS0xMS0wNVQyMToxOTo1Ny45OThaIiwKICAidXBkYXRlZF9hdCI6ICIyMDIxLTExLTA1VDIxOjE5OjU3Ljk5OFoiLAogICJvcmdfdXJsIjogImh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvb3Jncy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYiLAogICJ1cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9vcmdzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2Ni9tZW1iZXJzL2U1NGM5MGIwLWJmNjEtNGZkMi1iNjg0LWI1NTMxYzg4YTkxNSIKfQogICAgICA8L2Rpdj4KICAgIDxwPgogICAgICBUaGUgbmV3bHkgcmVnaXN0ZXJlZCBtZW1iZXIgY2FuIG5vdyBiZSBzZWVuIGluIHRoZSBhZG1pbiBvcmdhbml6YXRpb24ncyBsaXN0IG9mIG1lbWJlcnMuCiAgICA8L3A+CiAgICA8L3NlY3Rpb24+CgogICAgPCEtLSBNb2RpZnlpbmcgdGhlIE1lbWJlcidzIHJvbGVzIC0tPgogICAgPHNlY3Rpb24+CiAgICA8aDM+Q2hhbmdpbmcgdGhlIHJvbGVzIG9mIGFuIGFkbWluIG9yZ2FuaXphdGlvbiBtZW1iZXI8L2gzPgogICAgPHA+VG8gY2hhbmdlIHRoZSByb2xlcyBvZiBhbiBhZG1pbiBvcmdhbml6YXRpb24gbWVtYmVyLCB1c2UgdGhlIFBBVENIIG9wZXJhdGlvbiB0byB1cGRhdGUgdGhlIG1lbWJlcidzIDxjb2RlPnJvbGVfdXJsczwvY29kZT4gcHJvcGVydHkuCiAgICA8L3A+CiAgICA8aDUgc3R5bGU9ImNvbG9yOiMzZDcwYjIiPlBBVENIIC9hcGkvb3Jncy97b3JnfS9tZW1iZXJzL3ttZW1iZXJ9PC9oNT4KICAgIDwvYnI+CiAgICA8ZGw+CiAgICAgIDxkdCBzdHlsZT0iZm9udC13ZWlnaHQ6NDAwOyI+b3JnOjwvZHQ+CiAgICAgIDxkZD5UaGUgbmFtZSBvciBJRCBvZiB0aGUgYWRtaW4gb3JnYW5pemF0aW9uPC9kZD4KICAgICAgPGR0IHN0eWxlPSJmb250LXdlaWdodDo0MDA7Ij5tZW1iZXI6PC9kdD4KICAgICAgPGRkPlRoZSBuYW1lIG9yIElEIG9mIHRoZSBhZG1pbiBvcmdhbml6YXRpb24gbWVtYmVyPC9kZD4KICAgIDwvZGw+CiAgICA8aDU+UG9zdCBib2R5IHByb3BlcnRpZXMgKGNvbnRlbnQtdHlwZSBhcHBsaWNhdGlvbi9qc29uIG9yIGFwcGxpY2F0aW9uL3lhbWwpOjwvaDU+CiAgICA8IS0tIDxkaXYgaWQ9InBvc3QtbmV3LW1lbWJlci1yb2xlcy1yZXF1ZXN0IiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+IC0tPgogICAgPGRsPgogICAgICA8ZHQgc3R5bGU9ImZvbnQtd2VpZ2h0OjQwMDsiPnJvbGVfdXJsczo8L2R0PgogICAgICA8ZGQ+QSBsaXN0IG9mIHJlZmVyZW5jZXMgdG8gdGhlIGFkbWluIG9yZ2FuaXphdGlvbiByb2xlcyB0byBiZSBhc3NpZ25lZCB0byB0aGUgbWVtYmVyPC9kZD4KICAgIDwvZGw+CiAgICA8IS0tIDwvZGl2PiAtLT4KICAgIDwhLS0gQWRkaW5nIHRoZSByb2xlIC0tPgogICAgPHA+SGVyZSBpcyBhbiBleGFtcGxlIHJlcXVlc3QgYW5kIHN1Y2Nlc3NmdWwgcmVzcG9uc2Ugd2hlbiBhIG5ldyByb2xlIGlzIGdpdmVuIHRvIGEgbWVtYmVyOjwvcD4KICAgIDxoND5SZXF1ZXN0PC9oND4KICAgIDxkaXYgaWQ9InBvc3QtbmV3LW1lbWJlci1yb2xlcy1yZXF1ZXN0IiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+Y3VybCAtdiAtayAtWCBQQVRDSCAtZCAneyJyb2xlX3VybHMiOlsiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9vcmdzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2Ni9yb2xlcy8zMWZhYWYxOS02NWNjLTRjNmItYjc5Ny1hMmJhNDY0YmRhMGUiXX0nIC1IICJBdXRob3JpemF0aW9uOiBiZWFyZXIgVE9LRU4iIC1IICJhY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24iIC1IICJjb250ZW50LXR5cGU6IGFwcGxpY2F0aW9uL2pzb24iIGh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvb3Jncy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYvbWVtYmVycy9lNTRjOTBiMC1iZjYxLTRmZDItYjY4NC1iNTUzMWM4OGE5MTUKICAgIDwvZGl2PgogICAgPGg0PlJlc3BvbnNlPC9oND4KICAgIDxkaXYgaWQ9InBvc3QtbmV3LW1lbWJlci1yb2xlcy1yZXNwb25zZSIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPnsKICAidHlwZSI6ICJtZW1iZXIiLAogICJhcGlfdmVyc2lvbiI6ICIyLjAuMCIsCiAgImlkIjogImU1NGM5MGIwLWJmNjEtNGZkMi1iNjg0LWI1NTMxYzg4YTkxNSIsCiAgIm5hbWUiOiAiY3ludGhpYTEiLAogICJ0aXRsZSI6ICJjeW50aGlhMSIsCiAgInN0YXRlIjogImVuYWJsZWQiLAogICJzY29wZSI6ICJvcmciLAogICJ1c2VyIjogewogICAgICAiaWQiOiAiZTljNjY5ZmQtOTRjYi00MzdlLWExNjEtZjY3MWI4YWUyMjdlIiwKICAgICAgInVybCI6ICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL3VzZXItcmVnaXN0cmllcy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYvNTNmNmQ3MTAtOGQ2YS00MGUzLWIyNzQtNjU5NzkwMjg5NGRjL3VzZXJzL2U5YzY2OWZkLTk0Y2ItNDM3ZS1hMTYxLWY2NzFiOGFlMjI3ZSIsCiAgICAgICJuYW1lIjogImN5bnRoaWExIiwKICAgICAgInR5cGUiOiAidXNlciIsCiAgICAgICJlbWFpbCI6ICJjeW50aGlhQGN5bnRoaWEuY29tIiwKICAgICAgInN0YXRlIjogImVuYWJsZWQiLAogICAgICAidGl0bGUiOiAiY3ludGhpYTEiLAogICAgICAib3JnX3VybCI6ICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL29yZ3MvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2IiwKICAgICAgInVzZXJuYW1lIjogImN5bnRoaWExIiwKICAgICAgImxhc3RfbmFtZSI6ICJjeW50aGlhIiwKICAgICAgImZpcnN0X25hbWUiOiAiY3ludGhpYSIsCiAgICAgICJhcGlfdmVyc2lvbiI6ICIyLjAuMCIsCiAgICAgICJpZGVudGl0eV9wcm92aWRlciI6ICJkZWZhdWx0LWlkcC0xIiwKICAgICAgInVzZXJfcmVnaXN0cnlfdXJsIjogImh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvdXNlci1yZWdpc3RyaWVzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2Ni81M2Y2ZDcxMC04ZDZhLTQwZTMtYjI3NC02NTk3OTAyODk0ZGMiCiAgICB9LAogICJyb2xlX3VybHMiOiBbCiAgICAgICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL29yZ3MvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2L3JvbGVzLzMxZmFhZjE5LTY1Y2MtNGM2Yi1iNzk3LWEyYmE0NjRiZGEwZSIKICBdLAogICJjcmVhdGVkX2F0IjogIjIwMjEtMTEtMDVUMjE6MTk6NTcuMDAwWiIsCiAgInVwZGF0ZWRfYXQiOiAiMjAyMS0xMS0wNVQyMTo0MTozOC43MTRaIiwKICAib3JnX3VybCI6ICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL29yZ3MvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2IiwKICAidXJsIjogImh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvb3Jncy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYvbWVtYmVycy9lNTRjOTBiMC1iZjYxLTRmZDItYjY4NC1iNTUzMWM4OGE5MTUiCn0KPC9kaXY+CjxwPk11bHRpcGxlIHJvbGVzIGNhbiBiZSBhc3NpZ25lZCBpbiBhIHNpbmdsZSByZXF1ZXN0LiBFeGlzdGluZyByb2xlcyBjYW4gYmUgcmVtb3ZlZCBieSBvbWl0dGluZyB0aGVtIGZyb20gdGhlIHJlcXVlc3QuPC9wPgogICAgPC9zZWN0aW9uPgoKICAgIDwhLS0gRGVsZXRpbmcgdGhlIG1lbWJlcnMgZnJvbSBBZG1pbiBvcmcgLS0+CiAgICA8c2VjdGlvbj4KICAgIDxoMz5EZWxldGluZyBhbiBhZG1pbiBvcmdhbml6YXRpb24gbWVtYmVyPC9oMz4KICAgIDxwPlRoaXMgY29tbWFuZCByZW1vdmVzIGEgbWVtYmVyIGZyb20gdGhlIGFkbWluIG9yZ2FuaXphdGlvbi48L3A+CiAgICA8aDUgc3R5bGU9ImNvbG9yOiMzZDcwYjIiPkRFTEVURSAvYXBpL29yZ3Mve29yZ30vbWVtYmVycy97bWVtYmVyfTwvaDU+CiAgPC9icj4KICAgIDxkbD4KICAgICAgPGR0IHN0eWxlPSJmb250LXdlaWdodDo0MDA7Ij5vcmc6PC9kdD4KICAgICAgPGRkPlRoZSBuYW1lIG9yIElEIG9mIHRoZSBhZG1pbiBvcmdhbml6YXRpb248L2RkPgogICAgICA8ZHQgc3R5bGU9ImZvbnQtd2VpZ2h0OjQwMDsiPm1lbWJlcjo8L2R0PgogICAgICA8ZGQ+VGhlIG5hbWUgb3IgSUQgb2YgYW4gYWRtaW4gb3JnYW5pemF0aW9uIG1lbWJlcjwvZGQ+CiAgICA8L2RsPgogICAgPGg0PlJlcXVlc3Q8L2g0PgogICAgPGRpdiBpZD0iZGVsZXRlLW9sZC1tZW1iZXJzLXJlcXVlc3QiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij5jdXJsIC12IC1rIC1IICdDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL2pzb24nIC1IICdBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24nIC1IICJBdXRob3JpemF0aW9uOiBiZWFyZXIgVE9LRU4iIC1YIERFTEVURSBodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL29yZ3MvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2L21lbWJlcnMvZTU0YzkwYjAtYmY2MS00ZmQyLWI2ODQtYjU1MzFjODhhOTE1CiAgICA8L2Rpdj4KICAgIDxoND5SZXNwb25zZTwvaDQ+CiAgICA8ZGl2IGlkPSJkZWxldGUtb2xkLW1lbWJlcnMtcmVzcG9uc2UiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij57CiAgInR5cGUiOiAibWVtYmVyIiwKICAiYXBpX3ZlcnNpb24iOiAiMi4wLjAiLAogICJpZCI6ICJlNTRjOTBiMC1iZjYxLTRmZDItYjY4NC1iNTUzMWM4OGE5MTUiLAogICJuYW1lIjogImN5bnRoaWExIiwKICAidGl0bGUiOiAiY3ludGhpYTEiLAogICJzdGF0ZSI6ICJlbmFibGVkIiwKICAic2NvcGUiOiAib3JnIiwKICAidXNlciI6IHsKICAgICAgImlkIjogImU5YzY2OWZkLTk0Y2ItNDM3ZS1hMTYxLWY2NzFiOGFlMjI3ZSIsCiAgICAgICJ1cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS91c2VyLXJlZ2lzdHJpZXMvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2LzUzZjZkNzEwLThkNmEtNDBlMy1iMjc0LTY1OTc5MDI4OTRkYy91c2Vycy9lOWM2NjlmZC05NGNiLTQzN2UtYTE2MS1mNjcxYjhhZTIyN2UiLAogICAgICAibmFtZSI6ICJjeW50aGlhMSIsCiAgICAgICJ0eXBlIjogInVzZXIiLAogICAgICAiZW1haWwiOiAiY3ludGhpYUBjeW50aGlhLmNvbSIsCiAgICAgICJzdGF0ZSI6ICJlbmFibGVkIiwKICAgICAgInRpdGxlIjogImN5bnRoaWExIiwKICAgICAgIm9yZ191cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9vcmdzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2NiIsCiAgICAgICJ1c2VybmFtZSI6ICJjeW50aGlhMSIsCiAgICAgICJsYXN0X25hbWUiOiAiY3ludGhpYSIsCiAgICAgICJmaXJzdF9uYW1lIjogImN5bnRoaWEiLAogICAgICAiYXBpX3ZlcnNpb24iOiAiMi4wLjAiLAogICAgICAiaWRlbnRpdHlfcHJvdmlkZXIiOiAiZGVmYXVsdC1pZHAtMSIsCiAgICAgICJ1c2VyX3JlZ2lzdHJ5X3VybCI6ICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL3VzZXItcmVnaXN0cmllcy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYvNTNmNmQ3MTAtOGQ2YS00MGUzLWIyNzQtNjU5NzkwMjg5NGRjIgogIH0sCiAgInJvbGVfdXJscyI6IFsKICAgICAgImh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvb3Jncy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYvcm9sZXMvMjRmOWI0NzEtNTNiYy00NTM0LWFmMWItMGUxY2I2NTZjMTJmIgogIF0sCiAgImNyZWF0ZWRfYXQiOiAiMjAyMS0xMS0wNVQyMToxOTo1Ny4wMDBaIiwKICAidXBkYXRlZF9hdCI6ICIyMDIxLTExLTA1VDIxOjU1OjMxLjAwMFoiLAogICJvcmdfdXJsIjogImh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvb3Jncy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYiLAogICJ1cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9vcmdzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2Ni9tZW1iZXJzL2U1NGM5MGIwLWJmNjEtNGZkMi1iNjg0LWI1NTMxYzg4YTkxNSIKfQogICAgPC9kaXY+CiAgICA8cD5UaGUgcmVzcG9uc2UgcmVwcmVzZW50cyB0aGUgbWVtYmVyIHRoYXQgaGFzIGJlZW4gcmVtb3ZlZC48L3A+CiAgICA8L3NlY3Rpb24+CiAgPC9kaXY+CjwvYXJ0aWNsZT4K"
+          }
+        ]
+      }
+    ]
 };
