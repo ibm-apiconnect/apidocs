@@ -124792,7 +124792,7 @@
   		},
 		{
   			"name": "members",
-  			"title": "members",
+  			"title": "Members",
   			"docs": [{
   					"name": "user_guidelines",
   					"title": "Registering and Managing Admin Members",
