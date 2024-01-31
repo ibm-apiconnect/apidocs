@@ -134495,7 +134495,7 @@
       ],
       "post": {
         "summary": "Enable one or more module.",
-        "description": "Enable one or more module by providing a comma separated list.",
+        "description": "Enable one or more module by providing a comma-separated list.",
         "operationId": "modules_enable",
         "security": [
           {
@@ -134580,7 +134580,7 @@
       ],
       "post": {
         "summary": "Disable one or more modules and their dependent modules.",
-        "description": "Disable one or more modules and their dependent modules. The provided list of modules must be comma separated.",
+        "description": "Disable one or more modules and their dependent modules. The provided list of modules must be comma-separated.",
         "operationId": "modules_disable",
         "security": [
           {
@@ -134665,7 +134665,7 @@
       ],
       "delete": {
         "summary": "Deletes one or more modules.",
-        "description": "Deletes one or more modules. The provided list of modules must be comma separated. Running this command with the force option will make sure the Drupal table's are purged of any reference to the module.",
+        "description": "Deletes one or more modules. The provided list of modules must be comma-separated. Running this command with the force option will make sure the Drupal table's are purged of any reference to the module.",
         "operationId": "modules_delete",
         "security": [
           {
@@ -135423,7 +135423,7 @@
       ],
       "post": {
         "summary": "Enable one or more theme.",
-        "description": "Enable one or more theme by providing a comma separated list.",
+        "description": "Enable one or more theme by providing a comma-separated list.",
         "operationId": "themes_enable",
         "security": [
           {
@@ -135508,7 +135508,7 @@
       ],
       "post": {
         "summary": "Disable one or more themes.",
-        "description": "Disable one or more themes and their dependent modules. The provided list of themes must be comma separated.",
+        "description": "Disable one or more themes and their dependent modules. The provided list of themes must be comma-separated.",
         "operationId": "themes_disable",
         "security": [
           {
@@ -135593,7 +135593,7 @@
       ],
       "delete": {
         "summary": "Deletes one or more themes.",
-        "description": "Deletes one or more themes. The provided list of themes must be comma separated.",
+        "description": "Deletes one or more themes. The provided list of themes must be comma-separated.",
         "operationId": "themes_delete",
         "security": [
           {
@@ -136254,8 +136254,8 @@
         }
       ],
       "post": {
-        "summary": "Add a role to the specified user accounts.",
-        "description": "Add a role to the specified user accounts. You need to provide either the mail, username, or the uid of the user account.",
+        "summary": "Add a singular or multiple roles to the specified Drupal User accounts.",
+        "description": "Add a singular or multiple roles to the specified Drupal User accounts. You need to provide either the mail, username, or the UID of the Drupal User account.",
         "operationId": "user_addRole",
         "security": [
           {
@@ -136270,7 +136270,7 @@
         },
         "responses": {
           "200": {
-            "description": "Successful output of the user role add command",
+            "description": "Successful output of the Drupal User role add command",
             "content": {
               "application/json": {
                 "schema": {
@@ -136324,8 +136324,8 @@
         ]
       },
       "delete": {
-        "summary": "Remove a role from the specified user accounts.",
-        "description": "Remove a role from the specified user accounts. You need to provide either the mail, username, or the uid of the user account.",
+        "summary": "Remove a singular or multiple roles from the specified Drupal User accounts.",
+        "description": "Remove a singular or multiple roles from the specified Drupal User accounts. You need to provide either the mail, username, or the UID of the Drupal User account.",
         "operationId": "user_removeRole",
         "security": [
           {
@@ -136340,7 +136340,7 @@
         },
         "responses": {
           "200": {
-            "description": "Successful output of the user role remove command",
+            "description": "Successful output of the Drupal User role remove command",
             "content": {
               "application/json": {
                 "schema": {
@@ -136405,7 +136405,7 @@
       ],
       "post": {
         "summary": "Block a Developer Portal Drupal User",
-        "description": "Block a Developer Portal Drupal User. This will block a user from being able to login into the Developer Portal. You need to provide the username of the user.",
+        "description": "Block a Developer Portal Drupal User. This will block a Drupal User from being able to login into the Developer Portal. You need to provide the username of the Drupal User.",
         "operationId": "user_block",
         "security": [
           {
@@ -136425,7 +136425,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful output of the user block command",
+            "description": "Successful output of the Drupal User block command",
             "content": {
               "application/json": {
                 "schema": {
@@ -136490,7 +136490,7 @@
       ],
       "post": {
         "summary": "Unblock a Developer Portal Drupal User",
-        "description": "Unblock a Developer Portal Drupal User. This will allow a blocked user to be able to login into the Developer Portal again. You need to provide the username of the user.",
+        "description": "Unblock a Developer Portal Drupal User. This will allow a blocked Drupal User to be able to login into the Developer Portal again. You need to provide the username of the Drupal User.",
         "operationId": "user_unblock",
         "security": [
           {
@@ -136510,7 +136510,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful output of the user unblock command",
+            "description": "Successful output of the Drupal User unblock command",
             "content": {
               "application/json": {
                 "schema": {
@@ -136574,8 +136574,8 @@
         }
       ],
       "get": {
-        "summary": "Gets Developer Portal Drupal user information",
-        "description": "Gets Developer Portal Drupal user information. You can filter on different fields to obtain a list of users matching your criteria.",
+        "summary": "Gets Developer Portal Drupal User information",
+        "description": "Gets Developer Portal Drupal User information. You can filter on different fields to obtain a list of users matching your criteria.",
         "operationId": "user_information",
         "security": [
           {
@@ -136625,7 +136625,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful output of the user information command",
+            "description": "Successful output of the Drupal User information command",
             "content": {
               "application/json": {
                 "schema": {
@@ -136685,7 +136685,7 @@
       "apic_state": {
         "name": "apic-state",
         "in": "query",
-        "description": "A comma separated list of apic states to filter users by.",
+        "description": "A comma-separated list of APIC states to filter Drupal Users by.",
         "required": false,
         "schema": {
           "$ref": "#/components/schemas/ApicState"
@@ -136712,7 +136712,7 @@
       "api": {
         "name": "api",
         "in": "query",
-        "description": "The id or name:version of a specific api. e.g. 'id-of-api-called-example-3' or 'example:3.0.0'.",
+        "description": "The ID or name:version of a specific API. e.g. 'id-of-api-called-example-3' or 'example:3.0.0'.",
         "required": true,
         "schema": {
           "type": "string"
@@ -136721,7 +136721,7 @@
       "application": {
         "name": "application",
         "in": "query",
-        "description": "The id of a specific application.",
+        "description": "The ID of a specific Application.",
         "required": true,
         "schema": {
           "type": "string"
@@ -136730,7 +136730,7 @@
       "bundle": {
         "name": "bundle",
         "in": "query",
-        "description": "The bundle type for a given entity type. E.g. \"page\" for the \"node\" entity type.",
+        "description": "The Bundle type for a given Entity type. E.g. \"page\" for the \"node\" Entity type.",
         "required": false,
         "schema": {
           "type": "string"
@@ -136739,7 +136739,7 @@
       "catalog": {
         "name": "catalog",
         "in": "path",
-        "description": "Name or ID of the catalog the site belongs to.",
+        "description": "Name or ID of the Catalog that the site belongs to.",
         "required": true,
         "schema": {
           "type": "string"
@@ -136748,7 +136748,7 @@
       "consumer-org": {
         "name": "consumer-org",
         "in": "query",
-        "description": "The id of a specific consumer organization.",
+        "description": "The ID of a specific Consumer Organization.",
         "required": true,
         "schema": {
           "type": "string"
@@ -136757,7 +136757,7 @@
       "consumer_org_urls": {
         "name": "consumer-org",
         "in": "query",
-        "description": "A comma separated list of consumer org urls",
+        "description": "A comma-separated list of Consumer Org URLs to filter the return by.",
         "required": false,
         "schema": {
           "type": "string"
@@ -136766,7 +136766,7 @@
       "entity_ids": {
         "name": "entity_ids",
         "in": "query",
-        "description": "A comma separated list of content ids.",
+        "description": "A comma-separated list of Content IDs.",
         "required": false,
         "schema": {
           "type": "string",
@@ -136812,7 +136812,7 @@
       "core": {
         "name": "core",
         "in": "query",
-        "description": "Filter out extensions that are not in drupal core.",
+        "description": "Filter out extensions that are not in Drupal Core.",
         "required": false,
         "schema": {
           "type": "boolean"
@@ -136830,7 +136830,7 @@
       "execute_reset": {
         "name": "execute_reset",
         "in": "query",
-        "description": "set to true to trigger the Developer Portal reset",
+        "description": "Set to true to trigger the Developer Portal reset",
         "required": false,
         "schema": {
           "type": "string"
@@ -136890,7 +136890,7 @@
       "langcodes": {
         "name": "langcodes",
         "in": "query",
-        "description": "A comma separated list of language codes e.g. \"es,zh-hans\"",
+        "description": "A comma-separated list of language codes e.g. \"es,zh-hans\"",
         "required": false,
         "schema": {
           "type": "string"
@@ -136908,7 +136908,7 @@
       "login_before": {
         "name": "login-before",
         "in": "query",
-        "description": "A date to filter users who last logged in before the provided date. Date needs to be given in format of MM-DD-YYY or MM-DD-YY HH:MM:SS",
+        "description": "A date to filter Drupal Users who last logged in before the provided date. Date needs to be given in format of MM-DD-YYY or MM-DD-YY HH:MM:SS",
         "required": false,
         "schema": {
           "type": "string"
@@ -136917,7 +136917,7 @@
       "login_after": {
         "name": "login-after",
         "in": "query",
-        "description": "A date to filter users who last logged in after the provided date. Date needs to be given in format of MM-DD-YYY or MM-DD-YY HH:MM:SS",
+        "description": "A date to filter Drupal Users who last logged in after the provided date. Date needs to be given in format of MM-DD-YYY or MM-DD-YY HH:MM:SS",
         "required": false,
         "schema": {
           "type": "string"
@@ -136926,7 +136926,7 @@
       "offset": {
         "name": "offset",
         "in": "query",
-        "description": "Offset the results return to aid in pagination.",
+        "description": "Offset the results return to aid in Pagination.",
         "required": false,
         "schema": {
           "type": "integer"
@@ -136935,7 +136935,7 @@
       "human_readable_name": {
         "name": "human_readable_name",
         "in": "query",
-        "description": "A descriptive name for the role.",
+        "description": "A descriptive name for the Drupal role.",
         "required": true,
         "schema": {
           "type": "string"
@@ -136968,10 +136968,19 @@
           "$ref": "#/components/schemas/InputFormatConfig"
         }
       },
+      "ips": {
+        "name": "ips",
+        "in": "query",
+        "description": "A comma-separated list of IPs.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
       "ip_security_enabled": {
         "name": "enabled",
         "in": "query",
-        "description": "set to true or false to enable or disable IP security",
+        "description": "Set to true or false to enable or disable IP security.",
         "required": true,
         "schema": {
           "type": "string"
@@ -136982,6 +136991,15 @@
         "in": "query",
         "description": "The symbolic machine name for the role.",
         "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "mail": {
+        "name": "mail",
+        "in": "query",
+        "description": "A comma-separated list of Drupal User Email addresses to perform the action on.",
+        "required": false,
         "schema": {
           "type": "string"
         }
@@ -137007,7 +137025,7 @@
       "names": {
         "name": "names",
         "in": "query",
-        "description": "A comma delimited list of names of users to operate on.",
+        "description": "A comma-separated list of names of Drupal Users to perform the action on.",
         "required": false,
         "schema": {
           "type": "string"
@@ -137016,7 +137034,7 @@
       "no-core": {
         "name": "no-core",
         "in": "query",
-        "description": "Filter out extensions that are provided by drupal core.",
+        "description": "Filter out extensions that are provided by Drupal Core.",
         "required": false,
         "schema": {
           "type": "boolean"
@@ -137049,10 +137067,56 @@
           "type": "string"
         }
       },
+      "package": {
+        "name": "package",
+        "in": "query",
+        "description": "Filter by project packages. You can use multiple comma-separated values.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "permissions": {
+        "name": "permissions",
+        "in": "query",
+        "description": "The list of permission to grant, delimited by commas.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "portal_service_name": {
+        "name": "portal_service_name",
+        "in": "query",
+        "description": "The name of the Portal Service",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "portal_service_endpoint": {
+        "name": "portal_service_endpoint",
+        "in": "query",
+        "description": "The URL endpoint of the Portal Service",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "role": {
+        "name": "role",
+        "in": "query",
+        "description": "The name of the Drupal User Role.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "roles": {
         "name": "role",
         "in": "query",
-        "description": "A command separated list of Drupal User Roles.",
+        "description": "A comma-separated list of Drupal User Roles.",
         "required": false,
         "schema": {
           "type": "string"
@@ -137063,6 +137127,33 @@
         "in": "query",
         "description": "The name of the Drupal User Role.",
         "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "state_key": {
+        "name": "state_key",
+        "in": "query",
+        "description": "The state key, for example \"system.cron_last\".",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "state_value": {
+        "name": "state_value",
+        "in": "query",
+        "description": "The value to assign to the state key.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "status": {
+        "name": "status",
+        "in": "query",
+        "description": "Filter by extension status. Choices _ enabled, disabled and/or 'not installed'. You can use multiple comma-separated values.",
+        "required": false,
         "schema": {
           "type": "string"
         }
@@ -137103,74 +137194,10 @@
           "type": "string"
         }
       },
-      "package": {
-        "name": "package",
+      "uid": {
+        "name": "uid",
         "in": "query",
-        "description": "Filter by project packages. You can use multiple comma separated values.",
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "permissions": {
-        "name": "permissions",
-        "in": "query",
-        "description": "The list of permission to grant, delimited by commas.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "portal_service_name": {
-        "name": "portal_service_name",
-        "in": "query",
-        "description": "The name of the portal service",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "portal_service_endpoint": {
-        "name": "portal_service_endpoint",
-        "in": "query",
-        "description": "The URL endpoint of the portal service",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "format": "uri"
-        }
-      },
-      "role": {
-        "name": "role",
-        "in": "query",
-        "description": "The name of the Drupal User Role.",
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "state_key": {
-        "name": "state_key",
-        "in": "query",
-        "description": "The state key, for example \"system.cron_last\".",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "state_value": {
-        "name": "state_value",
-        "in": "query",
-        "description": "The value to assign to the state key.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "status": {
-        "name": "status",
-        "in": "query",
-        "description": "Filter by extension status. Choices _ enabled, disabled and/or 'not installed'. You can use multiple comma separated values.",
+        "description": "A comma-separated list of UIDs of Drupal Users to perform the action on.",
         "required": false,
         "schema": {
           "type": "string"
@@ -137179,19 +137206,10 @@
       "user_status": {
         "name": "status",
         "in": "query",
-        "description": "Filter by Drupal user status. Choices are 'active' or 'blocked'.",
+        "description": "Filter by Drupal User status. Choices are 'active' or 'blocked'.",
         "required": false,
         "schema": {
           "$ref": "#/components/schemas/UserStatus"
-        }
-      },
-      "ips": {
-        "name": "ips",
-        "in": "query",
-        "description": "Comma seperated list of IPs.",
-        "required": true,
-        "schema": {
-          "type": "string"
         }
       },
       "wait_cache": {
