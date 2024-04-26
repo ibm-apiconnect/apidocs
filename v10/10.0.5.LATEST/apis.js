@@ -39,6 +39,7 @@
         "10.0.5.4": "10.0.5.4.html",
         "10.0.5.5": "10.0.5.5.html",
         "10.0.5.6": "10.0.5.6.html",
+        "10.0.5.7": "10.0.5.7.html",
         "10.0.5.LATEST": "10.0.5.LATEST.html",
         "10.0.6.0": "10.0.6.0.html",
         "10.0.7.0": "10.0.7.0.html",
@@ -45593,8 +45594,8 @@
         }
       ],
       "get": {
-        "summary": "List of apis with duplicate base paths",
-        "description": "List of apis with duplicate base paths",
+        "summary": "List of APIs with duplicate base paths",
+        "description": "List of APIs with duplicate base paths",
         "operationId": "api_listDuplicates",
         "security": [
           {
@@ -66294,8 +66295,8 @@
         }
       ],
       "post": {
-        "summary": "Validate the draft product object",
-        "description": "Validate the draft product object",
+        "summary": "Validate the Product object",
+        "description": "Validate the Product object",
         "operationId": "draft_product_validateObject",
         "security": [
           {
@@ -67073,8 +67074,8 @@
         }
       ],
       "post": {
-        "summary": "Validate the draft api",
-        "description": "Validate the draft api",
+        "summary": "Validate the draft API",
+        "description": "Validate the draft API",
         "operationId": "draft_api_validate",
         "security": [
           {
@@ -67139,8 +67140,8 @@
         }
       ],
       "post": {
-        "summary": "Validate the draft api",
-        "description": "Validate the draft api",
+        "summary": "Validate the draft API",
+        "description": "Validate the draft API",
         "operationId": "draft_api_validateByNameVersion",
         "security": [
           {
@@ -67199,8 +67200,8 @@
         }
       ],
       "post": {
-        "summary": "Validate the draft api object",
-        "description": "Validate the draft api object",
+        "summary": "Validate the API object",
+        "description": "Validate the API object",
         "operationId": "draft_api_validateObject",
         "security": [
           {
