@@ -1,7 +1,7 @@
 /********************************************************* {COPYRIGHT-TOP} ***
  * Licensed Materials - Property of IBM
  *
- * (C) Copyright IBM Corporation 2017, 2023
+ * (C) Copyright IBM Corporation 2017, 2024
  *
  * All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or disclosure
@@ -11,7 +11,7 @@
   attachPoint: '#root',
   options: {
       renderSchemaView: true,
-      headerTitle: "API Connect v10.0.6.0",
+      headerTitle: "API Connect v10.0.8.LATEST",
       headerActive: true,
       groupByTags: true,
       validateSwagger: false,
@@ -42,6 +42,7 @@
         "10.0.5.7": "10.0.5.7.html",
         "10.0.5.LATEST": "10.0.5.LATEST.html",
         "10.0.6.0": "10.0.6.0.html",
+        "10.0.7.0": "10.0.7.0.html",
         "10.0.LATEST": "10.0.LATEST.html",
         "10.0.8.LATEST": "10.0.8.LATEST.html"
       }
@@ -120,7 +121,7 @@
       },
       "put": {
         "summary": "Update the Log Spec object",
-        "description": "Update the Log Spec object\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Log Spec object\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "log_spec_singletonUpdate",
         "security": [
           {
@@ -181,7 +182,7 @@
       ],
       "post": {
         "summary": "Creates a user registry.",
-        "description": "Creates a user registry.\nRequired fields:\\ - integration_url\nFields not allowed:\\ - owned\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
+        "description": "Creates a user registry.\n\n          Required fields:\n          - integration_url\n          \n          Fields not allowed:\n          - owned\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "user_registry_create",
         "security": [
           {
@@ -382,7 +383,7 @@
       },
       "patch": {
         "summary": "Updates a user registry.",
-        "description": "Updates a user registry.\nFields not allowed:\\ - owned - registry_type - user_registry_managed - correlation_data - integration_url\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
+        "description": "Updates a user registry.\n\n          Fields not allowed:\n          - owned\n          - registry_type\n          - user_registry_managed\n          - correlation_data\n          - integration_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "user_registry_update",
         "security": [
           {
@@ -789,7 +790,7 @@
       ],
       "post": {
         "summary": "Creates a user.",
-        "description": "Creates a user entry in a user registry. For user registries that are defined as <i>user managed</i>, a user record is also created in the backing (usually remote) user directory.\nRequired fields:\\ - username\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - user_registry_url",
+        "description": "Creates a user entry in a user registry. For user registries that are defined as <i>user managed</i>, a user record is also created in the backing (usually remote) user directory.\n\n          Required fields:\n          - username\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - user_registry_url\n",
         "operationId": "user_create",
         "security": [
           {
@@ -993,7 +994,7 @@
       },
       "patch": {
         "summary": "Updates a user.",
-        "description": "Updates a user entry. To change a user password, see the </tt>reset-password</tt> operation.\nFields not allowed:\\ - identity_provider - username - salt - correlation_data - force_password_change - last_login_at\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - user_registry_url",
+        "description": "Updates a user entry. To change a user password, see the </tt>reset-password</tt> operation.\n\n          Fields not allowed:\n          - identity_provider\n          - username\n          - salt\n          - correlation_data\n          - force_password_change\n          - last_login_at\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - user_registry_url\n",
         "operationId": "user_update",
         "security": [
           {
@@ -1637,7 +1638,7 @@
       },
       "put": {
         "summary": "Update the Cloud Setting object",
-        "description": "Update the Cloud Setting object\nFields not allowed to be null:\\ - email_sender - tls_client_profile_default_url\nFields not allowed:\\ - service_type - cloud_id - ibm_cloud\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Cloud Setting object\n          \n          Fields not allowed to be null:\n          - email_sender\n          - tls_client_profile_default_url\n          \n          Fields not allowed:\n          - service_type\n          - cloud_id\n          - ibm_cloud\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "cloud_setting_singletonUpdate",
         "security": [
           {
@@ -1884,8 +1885,8 @@
     },
     "/cloud/settings/toolkit-credentials": {
       "get": {
-        "summary": "List credential for toolkit and consumer toolkit",
-        "description": "List credential for toolkit and consumer toolkit",
+        "summary": "List credential for toolkit, consumer toolkit, governance, and discovery toolkit",
+        "description": "List credential for toolkit, consumer toolkit, governance, and discovery toolkit",
         "operationId": "cloud_setting_toolkitCredentialsList",
         "security": [
           {
@@ -2046,7 +2047,7 @@
       },
       "put": {
         "summary": "Update the User Registry Setting object",
-        "description": "Update the User Registry Setting object\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the User Registry Setting object\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "user_registry_setting_singletonUpdate",
         "security": [
           {
@@ -2146,7 +2147,7 @@
       },
       "put": {
         "summary": "Update the Notification Style object",
-        "description": "Update the Notification Style object\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url",
+        "description": "Update the Notification Style object\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "notification_style_singletonUpdateCloudScope",
         "security": [
           {
@@ -2357,7 +2358,7 @@
       },
       "patch": {
         "summary": "Update the Notification Template object by name or id",
-        "description": "Update the Notification Template object by name or id\nFields not allowed:\\ - name - notification_template_type\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Notification Template object by name or id\n          \n          Fields not allowed:\n          - name\n          - notification_template_type\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateCloudSubcollectionCloudScope",
         "security": [
           {
@@ -2663,7 +2664,7 @@
       },
       "patch": {
         "summary": "Update the Notification Template object by name or id",
-        "description": "Update the Notification Template object by name or id\nFields not allowed:\\ - name - notification_template_type\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Notification Template object by name or id\n          \n          Fields not allowed:\n          - name\n          - notification_template_type\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateAdminSubcollectionCloudScope",
         "security": [
           {
@@ -2969,7 +2970,7 @@
       },
       "patch": {
         "summary": "Update the Notification Template object by name or id",
-        "description": "Update the Notification Template object by name or id\nFields not allowed:\\ - name - notification_template_type\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Notification Template object by name or id\n          \n          Fields not allowed:\n          - name\n          - notification_template_type\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateProviderSubcollectionCloudScope",
         "security": [
           {
@@ -3275,7 +3276,7 @@
       },
       "patch": {
         "summary": "Update the Notification Template object by name or id",
-        "description": "Update the Notification Template object by name or id\nFields not allowed:\\ - name - notification_template_type\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Notification Template object by name or id\n          \n          Fields not allowed:\n          - name\n          - notification_template_type\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateCatalogSubcollectionCloudScope",
         "security": [
           {
@@ -3581,7 +3582,7 @@
       },
       "patch": {
         "summary": "Update the Notification Template object by name or id",
-        "description": "Update the Notification Template object by name or id\nFields not allowed:\\ - name - notification_template_type\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Notification Template object by name or id\n          \n          Fields not allowed:\n          - name\n          - notification_template_type\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateSpaceSubcollectionCloudScope",
         "security": [
           {
@@ -3887,7 +3888,7 @@
       },
       "patch": {
         "summary": "Update the Notification Template object by name or id",
-        "description": "Update the Notification Template object by name or id\nFields not allowed:\\ - name - notification_template_type\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Notification Template object by name or id\n          \n          Fields not allowed:\n          - name\n          - notification_template_type\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateConsumerSubcollectionCloudScope",
         "security": [
           {
@@ -4144,7 +4145,7 @@
       "description": "The collection of Role Default operations",
       "post": {
         "summary": "Create a Role Default object",
-        "description": "Create a Role Default object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Create a Role Default object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "role_default_createProviderSubcollectionCloudScope",
         "security": [
           {
@@ -4342,7 +4343,7 @@
       },
       "patch": {
         "summary": "Update the Role Default object by name or id",
-        "description": "Update the Role Default object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Role Default object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "role_default_updateProviderSubcollectionCloudScope",
         "security": [
           {
@@ -4595,7 +4596,7 @@
       "description": "The collection of Integration operations",
       "post": {
         "summary": "Create a Integration object",
-        "description": "Create a Integration object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Create a Integration object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "integration_createBillingSubcollection",
         "security": [
           {
@@ -4793,7 +4794,7 @@
       },
       "patch": {
         "summary": "Update the Integration object by name or id",
-        "description": "Update the Integration object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Integration object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "integration_updateBillingSubcollection",
         "security": [
           {
@@ -4888,7 +4889,7 @@
       "description": "The collection of Integration operations",
       "post": {
         "summary": "Create a Integration object",
-        "description": "Create a Integration object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Create a Integration object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "integration_createPaymentMethodSubcollection",
         "security": [
           {
@@ -5086,7 +5087,7 @@
       },
       "patch": {
         "summary": "Update the Integration object by name or id",
-        "description": "Update the Integration object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Integration object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "integration_updatePaymentMethodSubcollection",
         "security": [
           {
@@ -5181,7 +5182,7 @@
       "description": "The collection of Integration operations",
       "post": {
         "summary": "Create a Integration object",
-        "description": "Create a Integration object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Create a Integration object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "integration_createUserRegistrySubcollection",
         "security": [
           {
@@ -5379,7 +5380,7 @@
       },
       "patch": {
         "summary": "Update the Integration object by name or id",
-        "description": "Update the Integration object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Integration object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "integration_updateUserRegistrySubcollection",
         "security": [
           {
@@ -5474,7 +5475,7 @@
       "description": "The collection of Integration operations",
       "post": {
         "summary": "Create a Integration object",
-        "description": "Create a Integration object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Create a Integration object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "integration_createGatewayServiceSubcollection",
         "security": [
           {
@@ -5672,7 +5673,7 @@
       },
       "patch": {
         "summary": "Update the Integration object by name or id",
-        "description": "Update the Integration object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Integration object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "integration_updateGatewayServiceSubcollection",
         "security": [
           {
@@ -5767,7 +5768,7 @@
       "description": "The collection of Registration operations",
       "post": {
         "summary": "Create a Registration object",
-        "description": "Create a Registration object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Create a Registration object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "registration_create",
         "security": [
           {
@@ -5965,7 +5966,7 @@
       },
       "patch": {
         "summary": "Update the Registration object by name or id",
-        "description": "Update the Registration object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Registration object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "registration_update",
         "security": [
           {
@@ -6060,7 +6061,7 @@
       "description": "The collection of API Key operations",
       "post": {
         "summary": "Create a API Key object",
-        "description": "Create a API Key object\nRequired fields:\\ - client_type - description\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Create a API Key object\n          \n          Required fields:\n          - client_type\n          - description\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "api_key_create",
         "security": [
           {
@@ -6317,7 +6318,7 @@
       },
       "put": {
         "summary": "Updates provider organization settings.",
-        "description": "Updates the settings for a provider organization.\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url",
+        "description": "Updates the settings for a provider organization.\n\n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "org_setting_singletonUpdate",
         "security": [
           {
@@ -6541,7 +6542,7 @@
       },
       "patch": {
         "summary": "Update the Notification Template object by name or id",
-        "description": "Update the Notification Template object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Notification Template object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateAdminSubcollectionOrgScope",
         "security": [
           {
@@ -6768,6 +6769,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/expand"
           }
         ],
         "responses": {
@@ -6800,7 +6804,7 @@
       },
       "patch": {
         "summary": "Updates a provider organization.",
-        "description": "Updates a provider organization.\nFields not allowed:\\ - name - org_type\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Updates a provider organization.\n\n          Fields not allowed:\n          - name\n          - org_type\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "org_update",
         "security": [
           {
@@ -7149,7 +7153,7 @@
       ],
       "post": {
         "summary": "Creates a provider organization member invitation.",
-        "description": "Creates a provider organization member invitation.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url",
+        "description": "Creates a provider organization member invitation.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_createOrgScope",
         "security": [
           {
@@ -7350,7 +7354,7 @@
       },
       "patch": {
         "summary": "Updates a provider organization member invitation.",
-        "description": "Updates a member invitation to a provider organization.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url",
+        "description": "Updates a member invitation to a provider organization.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_updateOrgScope",
         "security": [
           {
@@ -7663,7 +7667,7 @@
       ],
       "post": {
         "summary": "Creates a provider organization member.",
-        "description": "Adds a member to a provider organization.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url - user_registry_url",
+        "description": "Adds a member to a provider organization.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_createOrgScope",
         "security": [
           {
@@ -7864,7 +7868,7 @@
       },
       "patch": {
         "summary": "Updates a provider organization member.",
-        "description": "Updates a member of a provider organization.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url - user_registry_url",
+        "description": "Updates a member of a provider organization.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_updateOrgScope",
         "security": [
           {
@@ -8470,7 +8474,7 @@
       ],
       "post": {
         "summary": "Creates a provider organization role.",
-        "description": "Adds a role to a provider organization.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url",
+        "description": "Adds a role to a provider organization.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "role_createOrgScope",
         "security": [
           {
@@ -8671,7 +8675,7 @@
       },
       "patch": {
         "summary": "Updates a provider organization role.",
-        "description": "Updates a role in a provider organization.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url",
+        "description": "Updates a role in a provider organization.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "role_updateOrgScope",
         "security": [
           {
@@ -8771,7 +8775,7 @@
       ],
       "post": {
         "summary": "Create a Availability Zone object",
-        "description": "Create a Availability Zone object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
+        "description": "Create a Availability Zone object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "availability_zone_create",
         "security": [
           {
@@ -8972,7 +8976,7 @@
       },
       "patch": {
         "summary": "Update the Availability Zone object by name or id",
-        "description": "Update the Availability Zone object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
+        "description": "Update the Availability Zone object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "availability_zone_update",
         "security": [
           {
@@ -9075,7 +9079,7 @@
       ],
       "post": {
         "summary": "Create a Gateway Service object",
-        "description": "Create a Gateway Service object\nRequired fields:\\ - endpoint - api_endpoint_base - sni\nFields not allowed:\\ - owned\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - availability_zone_url",
+        "description": "Create a Gateway Service object\n          \n          Required fields:\n          - endpoint\n          - api_endpoint_base\n          - sni\n          \n          Fields not allowed:\n          - owned\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - availability_zone_url\n",
         "operationId": "gateway_service_create",
         "security": [
           {
@@ -9279,7 +9283,7 @@
       },
       "patch": {
         "summary": "Update the Gateway Service object by name or id",
-        "description": "Update the Gateway Service object by name or id\nFields not allowed to be null:\\ - endpoint - api_endpoint_base - sni\nFields not allowed:\\ - owned - endpoint - integration_url - gateway_service_type - api_endpoint_base\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - availability_zone_url",
+        "description": "Update the Gateway Service object by name or id\n          \n          Fields not allowed to be null:\n          - endpoint\n          - api_endpoint_base\n          - sni\n          \n          Fields not allowed:\n          - owned\n          - endpoint\n          - integration_url\n          - gateway_service_type\n          - api_endpoint_base\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - availability_zone_url\n",
         "operationId": "gateway_service_update",
         "security": [
           {
@@ -10218,7 +10222,7 @@
       ],
       "post": {
         "summary": "Create the Gateway Extension object",
-        "description": "Create the Gateway Extension object\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url",
+        "description": "Create the Gateway Extension object\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "gateway_extension_singletonCreateOrgScope",
         "security": [
           {
@@ -10310,7 +10314,7 @@
       },
       "put": {
         "summary": "Update the Gateway Extension object",
-        "description": "Update the Gateway Extension object\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url",
+        "description": "Update the Gateway Extension object\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "gateway_extension_singletonUpdateOrgScope",
         "security": [
           {
@@ -10471,7 +10475,7 @@
       ],
       "post": {
         "summary": "Create a Portal Service object",
-        "description": "Create a Portal Service object\nRequired fields:\\ - endpoint - web_endpoint_base\nFields not allowed:\\ - owned\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - availability_zone_url",
+        "description": "Create a Portal Service object\n          \n          Required fields:\n          - endpoint\n          - web_endpoint_base\n          \n          Fields not allowed:\n          - owned\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - availability_zone_url\n",
         "operationId": "portal_service_create",
         "security": [
           {
@@ -10678,7 +10682,7 @@
       },
       "patch": {
         "summary": "Update the Portal Service object by name or id",
-        "description": "Update the Portal Service object by name or id\nFields not allowed to be null:\\ - endpoint_tls_client_profile_url - web_endpoint_base\nFields not allowed:\\ - owned - endpoint\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - availability_zone_url",
+        "description": "Update the Portal Service object by name or id\n          \n          Fields not allowed to be null:\n          - endpoint_tls_client_profile_url\n          - web_endpoint_base\n          \n          Fields not allowed:\n          - owned\n          - endpoint\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - availability_zone_url\n",
         "operationId": "portal_service_update",
         "security": [
           {
@@ -10838,7 +10842,7 @@
       ],
       "post": {
         "summary": "Create a Analytics Service object",
-        "description": "Create a Analytics Service object\nFields not allowed:\\ - gateway_service_urls - ingestion_endpoint - client_endpoint\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - availability_zone_url",
+        "description": "Create a Analytics Service object\n          \n          Fields not allowed:\n          - gateway_service_urls\n          - ingestion_endpoint\n          - client_endpoint\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - availability_zone_url\n",
         "operationId": "analytics_service_create",
         "security": [
           {
@@ -11042,7 +11046,7 @@
       },
       "patch": {
         "summary": "Update the Analytics Service object by name or id",
-        "description": "Update the Analytics Service object by name or id\nFields not allowed to be null:\\ - ingestion_endpoint_tls_client_profile_url - client_endpoint_tls_client_profile_url\nFields not allowed:\\ - endpoint - ingestion_endpoint - client_endpoint\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - availability_zone_url",
+        "description": "Update the Analytics Service object by name or id\n          \n          Fields not allowed to be null:\n          - ingestion_endpoint_tls_client_profile_url\n          - client_endpoint_tls_client_profile_url\n          \n          Fields not allowed:\n          - endpoint\n          - ingestion_endpoint\n          - client_endpoint\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - availability_zone_url\n",
         "operationId": "analytics_service_update",
         "security": [
           {
@@ -11142,7 +11146,7 @@
       ],
       "post": {
         "summary": "Creates an OAuth provider.",
-        "description": "Creates an OAuth provider resource.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
+        "description": "Creates an OAuth provider resource.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "oauth_provider_create",
         "security": [
           {
@@ -11343,7 +11347,7 @@
       },
       "patch": {
         "summary": "Creates an OAuth provider.",
-        "description": "Updates an OAuth provider resource.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
+        "description": "Updates an OAuth provider resource.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "oauth_provider_update",
         "security": [
           {
@@ -11443,7 +11447,7 @@
       ],
       "post": {
         "summary": "Create a Mail Server object",
-        "description": "Create a Mail Server object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Create a Mail Server object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "mail_server_create",
         "security": [
           {
@@ -11644,7 +11648,7 @@
       },
       "patch": {
         "summary": "Update the Mail Server object by name or id",
-        "description": "Update the Mail Server object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Mail Server object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "mail_server_update",
         "security": [
           {
@@ -11843,7 +11847,7 @@
       ],
       "post": {
         "summary": "Create a TLS Server Profile object",
-        "description": "Create a TLS Server Profile object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Create a TLS Server Profile object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "tls_server_profile_create",
         "security": [
           {
@@ -12143,7 +12147,7 @@
       },
       "patch": {
         "summary": "Update the TLS Server Profile object by id",
-        "description": "Update the TLS Server Profile object by id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the TLS Server Profile object by id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "tls_server_profile_update",
         "security": [
           {
@@ -12298,7 +12302,7 @@
       },
       "patch": {
         "summary": "Update the TLS Server Profile object by name and version",
-        "description": "Update the TLS Server Profile object by name and version\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the TLS Server Profile object by name and version\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "tls_server_profile_updateByNameVersion",
         "security": [
           {
@@ -12398,7 +12402,7 @@
       ],
       "post": {
         "summary": "Creates a TLS client profile.",
-        "description": "Creates a TLS client profile.\nFields not allowed:\\ - owned\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
+        "description": "Creates a TLS client profile.\n\n          Fields not allowed:\n          - owned\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "tls_client_profile_create",
         "security": [
           {
@@ -12695,7 +12699,7 @@
       },
       "patch": {
         "summary": "Updates a TLS client profile.",
-        "description": "Updates a TLS client profile.\nFields not allowed:\\ - owned\nFields not allowed to be null:\\ - ciphers - protocols\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
+        "description": "Updates a TLS client profile.\n\n          Fields not allowed:\n          - owned\n          \n          Fields not allowed to be null:\n          - ciphers\n          - protocols\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "tls_client_profile_update",
         "security": [
           {
@@ -12845,7 +12849,7 @@
       },
       "patch": {
         "summary": "Updates a TLS client profile.",
-        "description": "Updates a TLS client profile.\nFields not allowed:\\ - owned\nFields not allowed to be null:\\ - ciphers - protocols\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
+        "description": "Updates a TLS client profile.\n\n          Fields not allowed:\n          - owned\n          \n          Fields not allowed to be null:\n          - ciphers\n          - protocols\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "tls_client_profile_updateByNameVersion",
         "security": [
           {
@@ -12945,7 +12949,7 @@
       ],
       "post": {
         "summary": "Creates a keystore.",
-        "description": "Creates a keystore belonging to a provider organization.\nRequired fields:\\ - keystore\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Creates a keystore belonging to a provider organization.\n\n          Required fields:\n          - keystore\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "keystore_create",
         "security": [
           {
@@ -13146,7 +13150,7 @@
       },
       "patch": {
         "summary": "Updates a keystore.",
-        "description": "Updates a keystore belonging to a provider organization.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Updates a keystore belonging to a provider organization.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "keystore_update",
         "security": [
           {
@@ -13246,7 +13250,7 @@
       ],
       "post": {
         "summary": "Creates a trust store.",
-        "description": "Creates a trust store.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Creates a trust store.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "truststore_create",
         "security": [
           {
@@ -13447,7 +13451,7 @@
       },
       "patch": {
         "summary": "Updates a trust store.",
-        "description": "Updates a trust store.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Updates a trust store.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "truststore_update",
         "security": [
           {
@@ -13550,7 +13554,7 @@
       ],
       "post": {
         "summary": "Creates a trust store entry.",
-        "description": "Adds an entry to a trust store.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Adds an entry to a trust store.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "entry_createTruststoreScope",
         "security": [
           {
@@ -13754,7 +13758,7 @@
       },
       "patch": {
         "summary": "Updates a trust store entry.",
-        "description": "Updates the given entry in a trust store.\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Updates the given entry in a trust store.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "entry_updateTruststoreScope",
         "security": [
           {
@@ -13849,7 +13853,7 @@
       "description": "The collection of Organization Invitation operations",
       "post": {
         "summary": "Create an Organization Invitation object",
-        "description": "Create an Organization Invitation object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url",
+        "description": "Create an Organization Invitation object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "invitation_createOrgScope",
         "security": [
           {
@@ -14047,7 +14051,7 @@
       },
       "patch": {
         "summary": "Update the Organization Invitation object by name or id",
-        "description": "Update the Organization Invitation object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url",
+        "description": "Update the Organization Invitation object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "invitation_updateOrgScope",
         "security": [
           {
@@ -14346,7 +14350,7 @@
       "description": "The collection of Organization operations",
       "post": {
         "summary": "Create an Organization object",
-        "description": "Create an Organization object\nRequired fields:\\ - owner_url\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Create an Organization object\n          \n          Required fields:\n          - owner_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "org_create",
         "security": [
           {
@@ -14501,7 +14505,7 @@
       "description": "The collection of Group operations",
       "post": {
         "summary": "Create a Group object",
-        "description": "Create a Group object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Create a Group object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "group_createCloudScope",
         "security": [
           {
@@ -14699,7 +14703,7 @@
       },
       "patch": {
         "summary": "Update the Group object by name or id",
-        "description": "Update the Group object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Group object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "group_updateCloudScope",
         "security": [
           {
@@ -14841,7 +14845,7 @@
       },
       "put": {
         "summary": "Updates the current user.",
-        "description": "Updates the user profile for the currently authenticated user.\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url",
+        "description": "Updates the user profile for the currently authenticated user.\n\n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "me_singletonUpdate",
         "security": [
           {
@@ -15257,7 +15261,7 @@
       },
       "patch": {
         "summary": "Update the Webhook object by name or id",
-        "description": "Update the Webhook object by name or id\nFields not allowed:\\ - state_change_history\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Webhook object by name or id\n          \n          Fields not allowed:\n          - state_change_history\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "webhook_updateCloudScope",
         "security": [
           {
@@ -17178,6 +17182,11 @@
               "pending"
             ]
           },
+          "ttl": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2147483647
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -18743,6 +18752,12 @@
                 "http"
               ]
             }
+          },
+          "consumer_self_service_onboarding_ttl": {
+            "type": "integer",
+            "nullable": true,
+            "minimum": 60,
+            "maximum": 31536000
           },
           "metadata": {
             "type": "object",
@@ -21763,6 +21778,26 @@
             "type": "boolean",
             "nullable": true
           },
+          "gateway_processing_status": {
+            "$ref": "#/components/schemas/SubscriberProcessingStatus"
+          },
+          "events": {
+            "type": "object",
+            "properties": {
+              "sent_events": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SubscriberEvent"
+                }
+              },
+              "queued_events": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SubscriberEvent"
+                }
+              }
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -24621,6 +24656,10 @@
             "type": "string",
             "nullable": true
           },
+          "runtime_api_opt_in_datagather_enabled": {
+            "type": "boolean",
+            "nullable": true
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -26267,14 +26306,19 @@
               "composite",
               "mapped",
               "imported",
-              "other"
+              "other",
+              "external",
+              "primitive-template",
+              "pre-built",
+              "skill-flow"
             ]
           },
           "skill_subtype": {
             "type": "string",
             "enum": [
               "public",
-              "private"
+              "private",
+              "wo-identity"
             ]
           },
           "display_name": {
@@ -27153,7 +27197,14 @@
           "properties": {
             "type": "object",
             "additionalProperties": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object"
+                }
+              ]
             }
           },
           "activity": {
@@ -29438,6 +29489,34 @@
                 "type": "string"
               }
             }
+          },
+          "governance": {
+            "type": "object",
+            "properties": {
+              "endpoint": {
+                "type": "string"
+              },
+              "client_id": {
+                "type": "string"
+              },
+              "client_secret": {
+                "type": "string"
+              }
+            }
+          },
+          "discovery": {
+            "type": "object",
+            "properties": {
+              "endpoint": {
+                "type": "string"
+              },
+              "client_id": {
+                "type": "string"
+              },
+              "client_secret": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -29491,6 +29570,12 @@
             "type": "string"
           },
           "consumer_api_endpoint": {
+            "type": "string"
+          },
+          "compliance_endpoint": {
+            "type": "string"
+          },
+          "discovery_endpoint": {
             "type": "string"
           }
         }
@@ -30338,6 +30423,9 @@
           },
           "org_type": {
             "type": "string"
+          },
+          "runtime_api_opt_in_datagather_enabled": {
+            "type": "boolean"
           },
           "owner_url": {
             "type": "string"
@@ -32150,7 +32238,7 @@
       ],
       "post": {
         "summary": "Creates a user registry.",
-        "description": "Creates a user registry.",
+        "description": "Creates a user registry.\n\n          Required fields:\n          - integration_url\n          \n          Fields not allowed:\n          - owned\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "user_registry_create",
         "security": [
           {
@@ -32351,7 +32439,7 @@
       },
       "patch": {
         "summary": "Updates a user registry.",
-        "description": "Updates a user registry.",
+        "description": "Updates a user registry.\n\n          Fields not allowed:\n          - owned\n          - registry_type\n          - user_registry_managed\n          - correlation_data\n          - integration_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "user_registry_update",
         "security": [
           {
@@ -32758,7 +32846,7 @@
       ],
       "post": {
         "summary": "Creates a user.",
-        "description": "Creates a user entry in a user registry. For user registries that are defined as <i>user managed</i>, a user record is also created in the backing (usually remote) user directory.",
+        "description": "Creates a user entry in a user registry. For user registries that are defined as <i>user managed</i>, a user record is also created in the backing (usually remote) user directory.\n\n          Required fields:\n          - username\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - user_registry_url\n",
         "operationId": "user_create",
         "security": [
           {
@@ -32962,7 +33050,7 @@
       },
       "patch": {
         "summary": "Updates a user.",
-        "description": "Updates a user entry. To change a user password, see the </tt>reset-password</tt> operation.",
+        "description": "Updates a user entry. To change a user password, see the </tt>reset-password</tt> operation.\n\n          Fields not allowed:\n          - identity_provider\n          - username\n          - salt\n          - correlation_data\n          - force_password_change\n          - last_login_at\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - user_registry_url\n",
         "operationId": "user_update",
         "security": [
           {
@@ -33611,7 +33699,7 @@
       },
       "put": {
         "summary": "Update the Notification Style object",
-        "description": "Update the Notification Style object\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url",
+        "description": "Update the Notification Style object\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "notification_style_singletonUpdateOrgScope",
         "security": [
           {
@@ -33719,7 +33807,7 @@
       },
       "put": {
         "summary": "Update the Notification Style object",
-        "description": "Update the Notification Style object\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url - consumer_org_url",
+        "description": "Update the Notification Style object\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "notification_style_singletonUpdateCatalogScope",
         "security": [
           {
@@ -33877,7 +33965,7 @@
       "description": "The collection of API Key operations",
       "post": {
         "summary": "Create a API Key object",
-        "description": "Create a API Key object\nRequired fields:\\ - client_type - description\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Create a API Key object\n          \n          Required fields:\n          - client_type\n          - description\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "api_key_create",
         "security": [
           {
@@ -34134,7 +34222,7 @@
       },
       "put": {
         "summary": "Updates provider organization settings.",
-        "description": "Updates the settings for a provider organization.",
+        "description": "Updates the settings for a provider organization.\n\n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "org_setting_singletonUpdate",
         "security": [
           {
@@ -34358,7 +34446,7 @@
       },
       "patch": {
         "summary": "Updates a provider notification template.",
-        "description": "Updates a provider notification template set at the provider organization level.",
+        "description": "Updates a provider notification template set at the provider organization level.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateProviderSubcollectionOrgScope",
         "security": [
           {
@@ -34678,7 +34766,7 @@
       },
       "patch": {
         "summary": "Updates a catalog notification template.",
-        "description": "Updates a catalog notification template set at the provider organization level.",
+        "description": "Updates a catalog notification template set at the provider organization level.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateCatalogSubcollectionOrgScope",
         "security": [
           {
@@ -34998,7 +35086,7 @@
       },
       "patch": {
         "summary": "Updates a space notification template.",
-        "description": "Updates a space notification template set at the provider organization level.",
+        "description": "Updates a space notification template set at the provider organization level.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateSpaceSubcollectionOrgScope",
         "security": [
           {
@@ -35318,7 +35406,7 @@
       },
       "patch": {
         "summary": "Updates a consumer notification template.",
-        "description": "Updates a consumer notification template set at the provider organization level.",
+        "description": "Updates a consumer notification template set at the provider organization level.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateConsumerSubcollectionOrgScope",
         "security": [
           {
@@ -35545,6 +35633,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/expand"
           }
         ],
         "responses": {
@@ -35577,7 +35668,7 @@
       },
       "patch": {
         "summary": "Updates a provider organization.",
-        "description": "Updates a provider organization.",
+        "description": "Updates a provider organization.\n\n          Fields not allowed:\n          - name\n          - org_type\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "org_update",
         "security": [
           {
@@ -35926,7 +36017,7 @@
       ],
       "post": {
         "summary": "Creates a provider organization member invitation.",
-        "description": "Creates a provider organization member invitation.",
+        "description": "Creates a provider organization member invitation.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_createOrgScope",
         "security": [
           {
@@ -36127,7 +36218,7 @@
       },
       "patch": {
         "summary": "Updates a provider organization member invitation.",
-        "description": "Updates a member invitation to a provider organization.",
+        "description": "Updates a member invitation to a provider organization.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_updateOrgScope",
         "security": [
           {
@@ -36440,7 +36531,7 @@
       ],
       "post": {
         "summary": "Creates a provider organization member.",
-        "description": "Adds a member to a provider organization.",
+        "description": "Adds a member to a provider organization.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_createOrgScope",
         "security": [
           {
@@ -36641,7 +36732,7 @@
       },
       "patch": {
         "summary": "Updates a provider organization member.",
-        "description": "Updates a member of a provider organization.",
+        "description": "Updates a member of a provider organization.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_updateOrgScope",
         "security": [
           {
@@ -37247,7 +37338,7 @@
       ],
       "post": {
         "summary": "Creates a provider organization role.",
-        "description": "Adds a role to a provider organization.",
+        "description": "Adds a role to a provider organization.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "role_createOrgScope",
         "security": [
           {
@@ -37448,7 +37539,7 @@
       },
       "patch": {
         "summary": "Updates a provider organization role.",
-        "description": "Updates a role in a provider organization.",
+        "description": "Updates a role in a provider organization.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "role_updateOrgScope",
         "security": [
           {
@@ -37774,7 +37865,7 @@
       ],
       "post": {
         "summary": "Creates an OAuth provider.",
-        "description": "Creates an OAuth provider resource.",
+        "description": "Creates an OAuth provider resource.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "oauth_provider_create",
         "security": [
           {
@@ -37975,7 +38066,7 @@
       },
       "patch": {
         "summary": "Creates an OAuth provider.",
-        "description": "Updates an OAuth provider resource.",
+        "description": "Updates an OAuth provider resource.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "oauth_provider_update",
         "security": [
           {
@@ -38075,7 +38166,7 @@
       ],
       "post": {
         "summary": "Create a Billing object",
-        "description": "Create a Billing object\nRequired fields:\\ - integration_url\nFields not allowed:\\ - job_queue_status\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Create a Billing object\n          \n          Required fields:\n          - integration_url\n          \n          Fields not allowed:\n          - job_queue_status\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "billing_create",
         "security": [
           {
@@ -38276,7 +38367,7 @@
       },
       "patch": {
         "summary": "Update the Billing object by name or id",
-        "description": "Update the Billing object by name or id\nFields not allowed to be null:\\ - integration_url\nFields not allowed:\\ - job_queue_status\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Billing object by name or id\n          \n          Fields not allowed to be null:\n          - integration_url\n          \n          Fields not allowed:\n          - job_queue_status\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "billing_update",
         "security": [
           {
@@ -38611,7 +38702,7 @@
       ],
       "post": {
         "summary": "Creates a TLS client profile.",
-        "description": "Creates a TLS client profile.",
+        "description": "Creates a TLS client profile.\n\n          Fields not allowed:\n          - owned\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "tls_client_profile_create",
         "security": [
           {
@@ -38908,7 +38999,7 @@
       },
       "patch": {
         "summary": "Updates a TLS client profile.",
-        "description": "Updates a TLS client profile.",
+        "description": "Updates a TLS client profile.\n\n          Fields not allowed:\n          - owned\n          \n          Fields not allowed to be null:\n          - ciphers\n          - protocols\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "tls_client_profile_update",
         "security": [
           {
@@ -39058,7 +39149,7 @@
       },
       "patch": {
         "summary": "Updates a TLS client profile.",
-        "description": "Updates a TLS client profile.",
+        "description": "Updates a TLS client profile.\n\n          Fields not allowed:\n          - owned\n          \n          Fields not allowed to be null:\n          - ciphers\n          - protocols\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "tls_client_profile_updateByNameVersion",
         "security": [
           {
@@ -39158,7 +39249,7 @@
       ],
       "post": {
         "summary": "Creates a keystore.",
-        "description": "Creates a keystore belonging to a provider organization.",
+        "description": "Creates a keystore belonging to a provider organization.\n\n          Required fields:\n          - keystore\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "keystore_create",
         "security": [
           {
@@ -39359,7 +39450,7 @@
       },
       "patch": {
         "summary": "Updates a keystore.",
-        "description": "Updates a keystore belonging to a provider organization.",
+        "description": "Updates a keystore belonging to a provider organization.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "keystore_update",
         "security": [
           {
@@ -39459,7 +39550,7 @@
       ],
       "post": {
         "summary": "Creates a trust store.",
-        "description": "Creates a trust store.",
+        "description": "Creates a trust store.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "truststore_create",
         "security": [
           {
@@ -39660,7 +39751,7 @@
       },
       "patch": {
         "summary": "Updates a trust store.",
-        "description": "Updates a trust store.",
+        "description": "Updates a trust store.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "truststore_update",
         "security": [
           {
@@ -39763,7 +39854,7 @@
       ],
       "post": {
         "summary": "Creates a trust store entry.",
-        "description": "Adds an entry to a trust store.",
+        "description": "Adds an entry to a trust store.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "entry_createTruststoreScope",
         "security": [
           {
@@ -39967,7 +40058,7 @@
       },
       "patch": {
         "summary": "Updates a trust store entry.",
-        "description": "Updates the given entry in a trust store.",
+        "description": "Updates the given entry in a trust store.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "entry_updateTruststoreScope",
         "security": [
           {
@@ -40114,7 +40205,7 @@
       },
       "put": {
         "summary": "Updates catalog settings.",
-        "description": "Updates the settings for a catalog.",
+        "description": "Updates the settings for a catalog.\n\n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "catalog_setting_singletonUpdate",
         "security": [
           {
@@ -40232,7 +40323,7 @@
       ],
       "post": {
         "summary": "Creates a configured gateway service.",
-        "description": "Adds the gateway service to the list of configured gateway services for a catalog.",
+        "description": "Adds the gateway service to the list of configured gateway services for a catalog.\n\n          Required fields:\n          - gateway_service_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - availability_zone_url\n",
         "operationId": "configured_gateway_service_createCatalogScope",
         "security": [
           {
@@ -40532,7 +40623,7 @@
       ],
       "post": {
         "summary": "Creates a configured gateway service.",
-        "description": "Adds the gateway service to the list of configured gateway services for a space.",
+        "description": "Adds the gateway service to the list of configured gateway services for a space.\n\n          Required fields:\n          - gateway_service_url\n          \n          Fields not allowed:\n          - space_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - availability_zone_url\n",
         "operationId": "configured_gateway_service_createSpaceScope",
         "security": [
           {
@@ -40835,7 +40926,7 @@
       ],
       "post": {
         "summary": "Creates a catalog user registry.",
-        "description": "Adds a user registry to the list of catalog user registries for a catalog.",
+        "description": "Adds a user registry to the list of catalog user registries for a catalog.\n\n          Required fields:\n          - user_registry_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - user_registry_url\n",
         "operationId": "configured_catalog_user_registry_create",
         "security": [
           {
@@ -41131,7 +41222,7 @@
       ],
       "post": {
         "summary": "Creates an API user registry.",
-        "description": "Adds a user registry to the list of configured API user registries for a catalog.",
+        "description": "Adds a user registry to the list of configured API user registries for a catalog.\n\n          Required fields:\n          - user_registry_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - user_registry_url\n",
         "operationId": "configured_api_user_registry_createCatalogScope",
         "security": [
           {
@@ -41388,7 +41479,7 @@
       ],
       "post": {
         "summary": "Creates an API user registry.",
-        "description": "Adds a user registry to the list of configured API user registries for a space.",
+        "description": "Adds a user registry to the list of configured API user registries for a space.\n\n          Required fields:\n          - user_registry_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - user_registry_url\n",
         "operationId": "configured_api_user_registry_createSpaceScope",
         "security": [
           {
@@ -41645,7 +41736,7 @@
       ],
       "post": {
         "summary": "Creates a configured TLS client profile.",
-        "description": "Adds a TLS client profile to the list of configured TLS client profiles for a catalog.",
+        "description": "Adds a TLS client profile to the list of configured TLS client profiles for a catalog.\n\n          Required fields:\n          - tls_client_profile_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "configured_tls_client_profile_createCatalogScope",
         "security": [
           {
@@ -42098,7 +42189,7 @@
       ],
       "post": {
         "summary": "Creates a configured TLS client profile.",
-        "description": "Adds a TLS client profile to the list of configured TLS client profiles for a space.",
+        "description": "Adds a TLS client profile to the list of configured TLS client profiles for a space.\n\n          Required fields:\n          - tls_client_profile_url\n          \n          Fields not allowed:\n          - space_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "configured_tls_client_profile_createSpaceScope",
         "security": [
           {
@@ -42557,7 +42648,7 @@
       ],
       "post": {
         "summary": "Create a Configured Billing object",
-        "description": "Create a Configured Billing object\nRequired fields:\\ - billing_url\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url",
+        "description": "Create a Configured Billing object\n          \n          Required fields:\n          - billing_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "configured_billing_create",
         "security": [
           {
@@ -42811,7 +42902,7 @@
       ],
       "post": {
         "summary": "Creates a configured OAuth provider.",
-        "description": "Adds an OAuth provider to the list of configured OAuth providers for a catalog.",
+        "description": "Adds an OAuth provider to the list of configured OAuth providers for a catalog.\n\n          Required fields:\n          - oauth_provider_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "configured_oauth_provider_createCatalogScope",
         "security": [
           {
@@ -43068,7 +43159,7 @@
       ],
       "post": {
         "summary": "Creates a configured OAuth provider.",
-        "description": "Adds an OAuth provider to the list of configured OAuth providers for a space.",
+        "description": "Adds an OAuth provider to the list of configured OAuth providers for a space.\n\n          Required fields:\n          - oauth_provider_url\n          \n          Fields not allowed:\n          - space_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "configured_oauth_provider_createSpaceScope",
         "security": [
           {
@@ -43494,7 +43585,7 @@
       },
       "patch": {
         "summary": "Updates a catalog notification template.",
-        "description": "Returns the list of all catalog notification templates set at the catalog level.",
+        "description": "Returns the list of all catalog notification templates set at the catalog level.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateCatalogSubcollectionCatalogScope",
         "security": [
           {
@@ -43826,7 +43917,7 @@
       },
       "patch": {
         "summary": "Updates a space notification template.",
-        "description": "Updates a space notification template set at the catalog level.",
+        "description": "Updates a space notification template set at the catalog level.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateSpaceSubcollectionCatalogScope",
         "security": [
           {
@@ -44158,7 +44249,7 @@
       },
       "patch": {
         "summary": "Updates a consumer notification template.",
-        "description": "Updates a consumer notification template set at the catalog level.",
+        "description": "Updates a consumer notification template set at the catalog level.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateConsumerSubcollectionCatalogScope",
         "security": [
           {
@@ -44866,7 +44957,7 @@
       ],
       "post": {
         "summary": "Creates a catalog.",
-        "description": "Creates a catalog belonging to a provider org.",
+        "description": "Creates a catalog belonging to a provider org.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "catalog_create",
         "security": [
           {
@@ -45067,7 +45158,7 @@
       },
       "patch": {
         "summary": "Modifies a catalog.",
-        "description": "Modifies a catalog object. Catalog settings are subordinate to the catalog itself; see also the operation to update the settings for a catalog.",
+        "description": "Modifies a catalog object. Catalog settings are subordinate to the catalog itself; see also the operation to update the settings for a catalog.\n\n          Fields not allowed:\n          - name\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "catalog_update",
         "security": [
           {
@@ -45374,8 +45465,8 @@
         }
       ],
       "post": {
-        "summary": "Publish a draft product",
-        "description": "Publish a draft product",
+        "summary": "Publish a draft product by url reference",
+        "description": "Publish a draft product by url reference",
         "operationId": "catalog_publishDraftProduct",
         "security": [
           {
@@ -45649,7 +45740,7 @@
       ],
       "post": {
         "summary": "Creates a catalog invitation.",
-        "description": "Creates a catalog owner invitation.",
+        "description": "Creates a catalog owner invitation.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "invitation_createCatalogScope",
         "security": [
           {
@@ -45850,7 +45941,7 @@
       },
       "patch": {
         "summary": "Updates a catalog invitation.",
-        "description": "Updates a catalog owner invitation.",
+        "description": "Updates a catalog owner invitation.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "invitation_updateCatalogScope",
         "security": [
           {
@@ -46166,7 +46257,7 @@
       ],
       "post": {
         "summary": "Creates a catalog member invitation.",
-        "description": "Creates a catalog member invitation.",
+        "description": "Creates a catalog member invitation.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_createCatalogScope",
         "security": [
           {
@@ -46370,7 +46461,7 @@
       },
       "patch": {
         "summary": "Updates a catalog member invitation.",
-        "description": "Updates a member invitation to a catalog.",
+        "description": "Updates a member invitation to a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_updateCatalogScope",
         "security": [
           {
@@ -46695,7 +46786,7 @@
       ],
       "post": {
         "summary": "Creates a catalog member.",
-        "description": "Adds a member to a catalog.",
+        "description": "Adds a member to a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_createCatalogScope",
         "security": [
           {
@@ -46899,7 +46990,7 @@
       },
       "patch": {
         "summary": "Updates a catalog member.",
-        "description": "Updates a member of a catalog.",
+        "description": "Updates a member of a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_updateCatalogScope",
         "security": [
           {
@@ -47115,7 +47206,7 @@
       },
       "patch": {
         "summary": "Updates a catalog task.",
-        "description": "Updates a catalog task (approval request).",
+        "description": "Updates a catalog task (approval request).\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "task_updateCatalogScope",
         "security": [
           {
@@ -47287,7 +47378,7 @@
       },
       "patch": {
         "summary": "Updates a catalog role.",
-        "description": "Updates a role in a catalog.",
+        "description": "Updates a role in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "role_updateCatalogScope",
         "security": [
           {
@@ -47354,7 +47445,7 @@
       ],
       "post": {
         "summary": "Creates a global policy.",
-        "description": "Adds a global policy to a configured gateway service for a catalog.",
+        "description": "Adds a global policy to a configured gateway service for a catalog.\n\n          Required fields:\n          - global_policy\n          \n          Fields not allowed:\n          - user_registry_urls\n          - tls_client_profile_urls\n          - policy_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_createCatalogScope",
         "security": [
           {
@@ -47660,7 +47751,7 @@
       },
       "patch": {
         "summary": "Updates a global policy.",
-        "description": "Updates the given global policy for a configured gateway service for a catalog.",
+        "description": "Updates the given global policy for a configured gateway service for a catalog.\n\n          Fields not allowed to be null:\n          - global_policy\n          \n          Fields not allowed:\n          - user_registry_urls\n          - tls_client_profile_urls\n          - policy_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_updateCatalogScope",
         "security": [
           {
@@ -47816,7 +47907,7 @@
       },
       "patch": {
         "summary": "Updates a global policy.",
-        "description": "Updates the given global policy for a configured gateway service for a catalog.",
+        "description": "Updates the given global policy for a configured gateway service for a catalog.\n\n          Fields not allowed to be null:\n          - global_policy\n          \n          Fields not allowed:\n          - user_registry_urls\n          - tls_client_profile_urls\n          - policy_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_updateByNameVersionCatalogScope",
         "security": [
           {
@@ -48038,7 +48129,7 @@
       ],
       "post": {
         "summary": "Creates a global policy.",
-        "description": "Adds a global policy to a configured gateway service for a space.",
+        "description": "Adds a global policy to a configured gateway service for a space.\n\n          Required fields:\n          - global_policy\n          \n          Fields not allowed:\n          - user_registry_urls\n          - tls_client_profile_urls\n          - policy_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_createSpaceScope",
         "security": [
           {
@@ -48350,7 +48441,7 @@
       },
       "patch": {
         "summary": "Updates a global policy.",
-        "description": "Updates the given global policy for a configured gateway service for a space.",
+        "description": "Updates the given global policy for a configured gateway service for a space.\n\n          Fields not allowed to be null:\n          - global_policy\n          \n          Fields not allowed:\n          - user_registry_urls\n          - tls_client_profile_urls\n          - policy_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_updateSpaceScope",
         "security": [
           {
@@ -48509,7 +48600,7 @@
       },
       "patch": {
         "summary": "Updates a global policy.",
-        "description": "Updates the given global policy for a configured gateway service for a space.",
+        "description": "Updates the given global policy for a configured gateway service for a space.\n\n          Fields not allowed to be null:\n          - global_policy\n          \n          Fields not allowed:\n          - user_registry_urls\n          - tls_client_profile_urls\n          - policy_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_updateByNameVersionSpaceScope",
         "security": [
           {
@@ -48734,7 +48825,7 @@
       ],
       "post": {
         "summary": "Creates a policy.",
-        "description": "Adds a policy to a configured gateway service for a catalog.",
+        "description": "Adds a policy to a configured gateway service for a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "policy_createCatalogScope",
         "security": [
           {
@@ -49035,7 +49126,7 @@
       },
       "patch": {
         "summary": "Updates a policy.",
-        "description": "Updates a policy in a configured gateway service for a catalog.",
+        "description": "Updates a policy in a configured gateway service for a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "policy_updateCatalogScope",
         "security": [
           {
@@ -49196,7 +49287,7 @@
       },
       "patch": {
         "summary": "Lists policies.",
-        "description": "Updates a policy in a configured gateway service for a catalog.",
+        "description": "Updates a policy in a configured gateway service for a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "policy_updateByNameVersionCatalogScope",
         "security": [
           {
@@ -49538,7 +49629,7 @@
       ],
       "post": {
         "summary": "Creates a policy.",
-        "description": "Adds a policy to a configured gateway service for a space.",
+        "description": "Adds a policy to a configured gateway service for a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "policy_createSpaceScope",
         "security": [
           {
@@ -49845,7 +49936,7 @@
       },
       "patch": {
         "summary": "Updates a policy.",
-        "description": "Updates a policy in a configured gateway service for a space.",
+        "description": "Updates a policy in a configured gateway service for a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "policy_updateSpaceScope",
         "security": [
           {
@@ -50009,7 +50100,7 @@
       },
       "patch": {
         "summary": "Updates a policy.",
-        "description": "Updates a policy in a configured gateway service for a space.",
+        "description": "Updates a policy in a configured gateway service for a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "policy_updateByNameVersionSpaceScope",
         "security": [
           {
@@ -50360,7 +50451,7 @@
       ],
       "post": {
         "summary": "Creates a gateway extension.",
-        "description": "Adds a gateway extension to the set of configured gateway services for a catalog.",
+        "description": "Adds a gateway extension to the set of configured gateway services for a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "extension_createCatalogScope",
         "security": [
           {
@@ -50666,7 +50757,7 @@
       },
       "patch": {
         "summary": "Lists gateway extension versions.",
-        "description": "Updates the given gateway extension in the set of configured gateway services for a catalog.",
+        "description": "Updates the given gateway extension in the set of configured gateway services for a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "extension_updateCatalogScope",
         "security": [
           {
@@ -50822,7 +50913,7 @@
       },
       "patch": {
         "summary": "Lists gateway extension versions.",
-        "description": "Updates the given gateway extension in the set of configured gateway services for a catalog.",
+        "description": "Updates the given gateway extension in the set of configured gateway services for a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "extension_updateByNameVersionCatalogScope",
         "security": [
           {
@@ -51044,7 +51135,7 @@
       ],
       "post": {
         "summary": "Creates a gateway extension.",
-        "description": "Adds a gateway extension to the set of configured gateway services for a catalog, as accessed through a space.",
+        "description": "Adds a gateway extension to the set of configured gateway services for a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "extension_createSpaceScope",
         "security": [
           {
@@ -51356,7 +51447,7 @@
       },
       "patch": {
         "summary": "Lists gateway extension versions.",
-        "description": "Updates the given gateway extension in the set of configured gateway services for a catalog, as accessed through a space.",
+        "description": "Updates the given gateway extension in the set of configured gateway services for a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "extension_updateSpaceScope",
         "security": [
           {
@@ -51515,7 +51606,7 @@
       },
       "patch": {
         "summary": "Lists gateway extension versions.",
-        "description": "Updates the given gateway extension in the set of configured gateway services for a catalog, as accessed through a space.",
+        "description": "Updates the given gateway extension in the set of configured gateway services for a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "extension_updateByNameVersionSpaceScope",
         "security": [
           {
@@ -52017,7 +52108,7 @@
       ],
       "post": {
         "summary": "Creates a service.",
-        "description": "Add a service to a configured gateway service for a space.",
+        "description": "Add a service to a configured gateway service for a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "service_createSpaceInitiated",
         "security": [
           {
@@ -52329,7 +52420,7 @@
       },
       "patch": {
         "summary": "Updates a service.",
-        "description": "Updates a service for a configured gateway service for a space.",
+        "description": "Updates a service for a configured gateway service for a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "service_updateSpaceInitiated",
         "security": [
           {
@@ -52488,7 +52579,7 @@
       },
       "patch": {
         "summary": "Updates a service.",
-        "description": "Updates a service for a configured gateway service for a space.",
+        "description": "Updates a service for a configured gateway service for a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "service_updateByNameVersionSpaceInitiated",
         "security": [
           {
@@ -52594,7 +52685,7 @@
       ],
       "post": {
         "summary": "Create the Global Policy Error object",
-        "description": "Create the Global Policy Error object\nRequired fields:\\ - global_policy_url\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url",
+        "description": "Create the Global Policy Error object\n          \n          Required fields:\n          - global_policy_url\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_error_singletonCreateCatalogScope",
         "security": [
           {
@@ -52691,7 +52782,7 @@
       },
       "put": {
         "summary": "Update the Global Policy Error object",
-        "description": "Update the Global Policy Error object\nFields not allowed to be null:\\ - global_policy_url\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url",
+        "description": "Update the Global Policy Error object\n          \n          Fields not allowed to be null:\n          - global_policy_url\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_error_singletonUpdateCatalogScope",
         "security": [
           {
@@ -52800,7 +52891,7 @@
       ],
       "post": {
         "summary": "Create the Global Policy Error object",
-        "description": "Create the Global Policy Error object\nRequired fields:\\ - global_policy_url\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url",
+        "description": "Create the Global Policy Error object\n          \n          Required fields:\n          - global_policy_url\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_error_singletonCreateSpaceScope",
         "security": [
           {
@@ -52897,7 +52988,7 @@
       },
       "put": {
         "summary": "Update the Global Policy Error object",
-        "description": "Update the Global Policy Error object\nFields not allowed to be null:\\ - global_policy_url\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url - org_url - catalog_url - space_url",
+        "description": "Update the Global Policy Error object\n          \n          Fields not allowed to be null:\n          - global_policy_url\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_error_singletonUpdateSpaceScope",
         "security": [
           {
@@ -53003,7 +53094,7 @@
       ],
       "post": {
         "summary": "Creates a prehook global policy.",
-        "description": "Adds the given global policy pre-flow hook on a configured gateway service for a catalog.",
+        "description": "Adds the given global policy pre-flow hook on a configured gateway service for a catalog.\n\n          Required fields:\n          - global_policy_url\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_prehook_singletonCreateCatalogScope",
         "security": [
           {
@@ -53100,7 +53191,7 @@
       },
       "put": {
         "summary": "Updates a prehook global policy.",
-        "description": "Updates the global policy pre-flow hook for a configured gateway service for a catalog.",
+        "description": "Updates the global policy pre-flow hook for a configured gateway service for a catalog.\n\n          Fields not allowed to be null:\n          - global_policy_url\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_prehook_singletonUpdateCatalogScope",
         "security": [
           {
@@ -53209,7 +53300,7 @@
       ],
       "post": {
         "summary": "Creates a prehook global policy.",
-        "description": "Adds the given global policy pre-flow hook on a configured gateway service for a space.",
+        "description": "Adds the given global policy pre-flow hook on a configured gateway service for a space.\n\n          Required fields:\n          - global_policy_url\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_prehook_singletonCreateSpaceScope",
         "security": [
           {
@@ -53306,7 +53397,7 @@
       },
       "put": {
         "summary": "Updates a prehook global policy.",
-        "description": "Updates the global policy pre-flow hook for a configured gateway service for a space.",
+        "description": "Updates the global policy pre-flow hook for a configured gateway service for a space.\n\n          Fields not allowed to be null:\n          - global_policy_url\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_prehook_singletonUpdateSpaceScope",
         "security": [
           {
@@ -53412,7 +53503,7 @@
       ],
       "post": {
         "summary": "Creates a posthook global policy.",
-        "description": "Adds the given global policy post-flow hook on a configured gateway service for a catalog.",
+        "description": "Adds the given global policy post-flow hook on a configured gateway service for a catalog.\n\n          Required fields:\n          - global_policy_url\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_posthook_singletonCreateCatalogScope",
         "security": [
           {
@@ -53509,7 +53600,7 @@
       },
       "put": {
         "summary": "Updates a posthook global policy.",
-        "description": "Updates the global policy post-flow hook for a configured gateway service for a catalog.",
+        "description": "Updates the global policy post-flow hook for a configured gateway service for a catalog.\n\n          Fields not allowed to be null:\n          - global_policy_url\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_posthook_singletonUpdateCatalogScope",
         "security": [
           {
@@ -53618,7 +53709,7 @@
       ],
       "post": {
         "summary": "Creates a posthook global policy.",
-        "description": "Adds the given global policy post-flow hook on a configured gateway service for a space.",
+        "description": "Adds the given global policy post-flow hook on a configured gateway service for a space.\n\n          Required fields:\n          - global_policy_url\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_posthook_singletonCreateSpaceScope",
         "security": [
           {
@@ -53715,7 +53806,7 @@
       },
       "put": {
         "summary": "Updates a posthook global policy.",
-        "description": "Updates the global policy post-flow hook for a configured gateway service for a space.",
+        "description": "Updates the global policy post-flow hook for a configured gateway service for a space.\n\n          Fields not allowed to be null:\n          - global_policy_url\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "global_policy_posthook_singletonUpdateSpaceScope",
         "security": [
           {
@@ -53943,7 +54034,7 @@
       ],
       "post": {
         "summary": "Create an Analytics object",
-        "description": "Create an Analytics object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Create an Analytics object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "analytics_createCatalogScope",
         "security": [
           {
@@ -54157,7 +54248,7 @@
       ],
       "post": {
         "summary": "Create an Analytics object",
-        "description": "Create an Analytics object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Create an Analytics object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "analytics_createSpaceScope",
         "security": [
           {
@@ -54397,7 +54488,7 @@
       },
       "put": {
         "summary": "Updates space settings.",
-        "description": "Updates the settings for a space.",
+        "description": "Updates the settings for a space.\n\n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "space_setting_singletonUpdate",
         "security": [
           {
@@ -54639,7 +54730,7 @@
       },
       "patch": {
         "summary": "Updates a space notification template.",
-        "description": "Updates a space notification template set at the space level.",
+        "description": "Updates a space notification template set at the space level.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateSpaceSubcollectionSpaceScope",
         "security": [
           {
@@ -54983,7 +55074,7 @@
       },
       "patch": {
         "summary": "Updates a consumer notification template.",
-        "description": "Updates a consumer notification template set at the space level.",
+        "description": "Updates a consumer notification template set at the space level.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "notification_template_updateConsumerSubcollectionSpaceScope",
         "security": [
           {
@@ -55402,7 +55493,7 @@
       ],
       "post": {
         "summary": "Creates a space.",
-        "description": "Creates a space in a catalog.",
+        "description": "Creates a space in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "space_create",
         "security": [
           {
@@ -55606,7 +55697,7 @@
       },
       "patch": {
         "summary": "Updates a space.",
-        "description": "Updates a space.",
+        "description": "Updates a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "space_update",
         "security": [
           {
@@ -55925,8 +56016,8 @@
         }
       ],
       "post": {
-        "summary": "Publish a draft product",
-        "description": "Publish a draft product",
+        "summary": "Publish a draft product by url reference",
+        "description": "Publish a draft product by url reference",
         "operationId": "space_publishDraftProductSpaceSubcollection",
         "security": [
           {
@@ -56155,7 +56246,7 @@
       ],
       "post": {
         "summary": "Creates a space invitation.",
-        "description": "Creates a space owner invitation in the context of a catalog.",
+        "description": "Creates a space owner invitation in the context of a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "invitation_createSpaceScope",
         "security": [
           {
@@ -56359,7 +56450,7 @@
       },
       "patch": {
         "summary": "Updates a space invitation.",
-        "description": "Updates a space owner invitation.",
+        "description": "Updates a space owner invitation.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "invitation_updateSpaceScope",
         "security": [
           {
@@ -56798,7 +56889,7 @@
       },
       "patch": {
         "summary": "Updates a space role.",
-        "description": "Updates a role in a space.",
+        "description": "Updates a role in a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "role_updateSpaceScope",
         "security": [
           {
@@ -56865,7 +56956,7 @@
       ],
       "post": {
         "summary": "Creates a space member invitation.",
-        "description": "Creates a space member invitation.",
+        "description": "Creates a space member invitation.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_createSpaceScope",
         "security": [
           {
@@ -57072,7 +57163,7 @@
       },
       "patch": {
         "summary": "Updates a space member invitation.",
-        "description": "Updates a member invitation to a space.",
+        "description": "Updates a member invitation to a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_updateSpaceScope",
         "security": [
           {
@@ -57409,7 +57500,7 @@
       ],
       "post": {
         "summary": "Creates a space member.",
-        "description": "Adds a member to a space.",
+        "description": "Adds a member to a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_createSpaceScope",
         "security": [
           {
@@ -57616,7 +57707,7 @@
       },
       "patch": {
         "summary": "Updates a space member.",
-        "description": "Updates a member of a space.",
+        "description": "Updates a member of a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_updateSpaceScope",
         "security": [
           {
@@ -57838,7 +57929,7 @@
       },
       "patch": {
         "summary": "Updates a space task.",
-        "description": "Updates a space task (approval request).",
+        "description": "Updates a space task (approval request).\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "task_updateSpaceScope",
         "security": [
           {
@@ -58080,7 +58171,7 @@
       },
       "put": {
         "summary": "Updates consumer organization settings.",
-        "description": "Updates the settings for the given consumer organization in a catalog.",
+        "description": "Updates the settings for the given consumer organization in a catalog.\n\n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "consumer_org_setting_singletonUpdate",
         "security": [
           {
@@ -58233,7 +58324,7 @@
       },
       "put": {
         "summary": "Updates consumer organization settings.",
-        "description": "Updates the settings for the given consumer organization in a catalog, as accessed through a space.",
+        "description": "Updates the settings for the given consumer organization in a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "consumer_org_setting_singletonUpdateSpaceInitiated",
         "security": [
           {
@@ -58526,7 +58617,7 @@
       ],
       "post": {
         "summary": "Create a Consumer Organization Invitation object",
-        "description": "Creates a consumer organization owner invitation in the context of a catalog.",
+        "description": "Creates a consumer organization owner invitation in the context of a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "invitation_createConsumerOrgScope",
         "security": [
           {
@@ -58730,7 +58821,7 @@
       },
       "patch": {
         "summary": "Updates a consumer organization invitation.",
-        "description": "Updates a consumer organization owner invitation in the context of a catalog.",
+        "description": "Updates a consumer organization owner invitation in the context of a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "invitation_updateConsumerOrgScope",
         "security": [
           {
@@ -58902,7 +58993,7 @@
       ],
       "post": {
         "summary": "Creates a consumer organization invitation.",
-        "description": "Creates a consumer organization owner invitation in the context of a catalog, as accessed through a space.",
+        "description": "Creates a consumer organization owner invitation in the context of a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "invitation_createConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -59109,7 +59200,7 @@
       },
       "patch": {
         "summary": "Updates a consumer organization invitation.",
-        "description": "Updates a consumer organization owner invitation in the context of a catalog, as accessed through a space.",
+        "description": "Updates a consumer organization owner invitation in the context of a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n",
         "operationId": "invitation_updateConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -59281,7 +59372,7 @@
       ],
       "post": {
         "summary": "Creates a consumer organization.",
-        "description": "Creates a consumer organization in a catalog.",
+        "description": "Creates a consumer organization in a catalog.\n\n          Required fields:\n          - owner_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "consumer_org_create",
         "security": [
           {
@@ -59488,7 +59579,7 @@
       },
       "patch": {
         "summary": "Updates a consumer organization.",
-        "description": "Updates a consumer organization in a catalog.",
+        "description": "Updates a consumer organization in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "consumer_org_update",
         "security": [
           {
@@ -59673,7 +59764,7 @@
       ],
       "post": {
         "summary": "Creates a consumer organization.",
-        "description": "Creates a consumer organization in a catalog, as accessed through the given space.",
+        "description": "Creates a consumer organization in a catalog, as accessed through the given space.\n\n          Required fields:\n          - owner_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "consumer_org_createSpaceInitiated",
         "security": [
           {
@@ -59883,7 +59974,7 @@
       },
       "patch": {
         "summary": "Updates a consumer organization.",
-        "description": "Updates a consumer organization in a catalog, as accessed through a space.",
+        "description": "Updates a consumer organization in a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "consumer_org_updateSpaceInitiated",
         "security": [
           {
@@ -60068,7 +60159,7 @@
       ],
       "post": {
         "summary": "Creates a consumer group.",
-        "description": "Adds a consumer group to a catalog.",
+        "description": "Adds a consumer group to a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "group_createCatalogScope",
         "security": [
           {
@@ -60272,7 +60363,7 @@
       },
       "patch": {
         "summary": "Updates a consumer group.",
-        "description": "Updates a consumer group in a catalog.",
+        "description": "Updates a consumer group in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "group_updateCatalogScope",
         "security": [
           {
@@ -60378,7 +60469,7 @@
       ],
       "post": {
         "summary": "Create a Group object",
-        "description": "Create a Group object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Create a Group object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "group_createSpaceInitiated",
         "security": [
           {
@@ -60585,7 +60676,7 @@
       },
       "patch": {
         "summary": "Update the Group object by name or id",
-        "description": "Update the Group object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Group object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "group_updateSpaceInitiated",
         "security": [
           {
@@ -60691,7 +60782,7 @@
       ],
       "post": {
         "summary": "Create a Payment Method object",
-        "description": "Create a Payment Method object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - consumer_org_url",
+        "description": "Create a Payment Method object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - consumer_org_url\n",
         "operationId": "payment_method_create",
         "security": [
           {
@@ -60866,7 +60957,7 @@
       },
       "patch": {
         "summary": "Update the Payment Method object by name or id",
-        "description": "Update the Payment Method object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - consumer_org_url",
+        "description": "Update the Payment Method object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - consumer_org_url\n",
         "operationId": "payment_method_update",
         "security": [
           {
@@ -60975,7 +61066,7 @@
       ],
       "post": {
         "summary": "Create a Payment Method object",
-        "description": "Create a Payment Method object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - consumer_org_url",
+        "description": "Create a Payment Method object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - consumer_org_url\n",
         "operationId": "payment_method_createSpaceInitiated",
         "security": [
           {
@@ -61153,7 +61244,7 @@
       },
       "patch": {
         "summary": "Update the Payment Method object by name or id",
-        "description": "Update the Payment Method object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - consumer_org_url",
+        "description": "Update the Payment Method object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - consumer_org_url\n",
         "operationId": "payment_method_updateSpaceInitiated",
         "security": [
           {
@@ -61771,7 +61862,7 @@
       ],
       "post": {
         "summary": "Creates a consummer organization member invitation.",
-        "description": "Creates a member invitation to a consumer organization in a catalog.",
+        "description": "Creates a member invitation to a consumer organization in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_createConsumerOrgScope",
         "security": [
           {
@@ -61978,7 +62069,7 @@
       },
       "patch": {
         "summary": "Updates a consumer organization member invitation.",
-        "description": "Updates a member invitation to a consumer organization in a catalog.",
+        "description": "Updates a member invitation to a consumer organization in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_updateConsumerOrgScope",
         "security": [
           {
@@ -62156,7 +62247,7 @@
       ],
       "post": {
         "summary": "Creates a consummer organization member invitation.",
-        "description": "Creates a member invitation to a consumer organization in a catalog, as accessed through a space.",
+        "description": "Creates a member invitation to a consumer organization in a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_createConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -62366,7 +62457,7 @@
       },
       "patch": {
         "summary": "Updates a consumer organization member invitation.",
-        "description": "Updates a member invitation to a consumer organization in a catalog, as accessed through a space.",
+        "description": "Updates a member invitation to a consumer organization in a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n",
         "operationId": "member_invitation_updateConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -62544,7 +62635,7 @@
       ],
       "post": {
         "summary": "Creates a consumer organization member.",
-        "description": "Adds a member to a consumer org in a catalog.",
+        "description": "Adds a member to a consumer org in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_createConsumerOrgScope",
         "security": [
           {
@@ -62751,7 +62842,7 @@
       },
       "patch": {
         "summary": "Updates a consumer organization member.",
-        "description": "Updates a member of a consumer organization in a catalog.",
+        "description": "Updates a member of a consumer organization in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_updateConsumerOrgScope",
         "security": [
           {
@@ -62860,7 +62951,7 @@
       ],
       "post": {
         "summary": "Creates a consumer organization member.",
-        "description": "Adds a member to a consumer organization in a catalog, as accessed through a space.",
+        "description": "Adds a member to a consumer organization in a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_createConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -63070,7 +63161,7 @@
       },
       "patch": {
         "summary": "Updates a consumer organization member.",
-        "description": "Updates a member of a consumer organization in a catalog, as accessed through a space.",
+        "description": "Updates a member of a consumer organization in a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - consumer_org_url\n          - user_registry_url\n",
         "operationId": "member_updateConsumerOrgScopeSpaceInitiated",
         "security": [
           {
@@ -63176,7 +63267,7 @@
       ],
       "post": {
         "summary": "Creates a consumer app.",
-        "description": "Creates a new app belonging to the given consumer org in a catalog.",
+        "description": "Creates a new app belonging to the given consumer org in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n",
         "operationId": "app_create",
         "security": [
           {
@@ -63383,7 +63474,7 @@
       },
       "patch": {
         "summary": "Updates a consumer app.",
-        "description": "Updates the given app belonging to a consumer org in a catalog.",
+        "description": "Updates the given app belonging to a consumer org in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n",
         "operationId": "app_update",
         "security": [
           {
@@ -63492,7 +63583,7 @@
       ],
       "post": {
         "summary": "Creates a consumer app.",
-        "description": "Creates a new app belonging to the given consumer org in a catalog, as accessed through the given space.",
+        "description": "Creates a new app belonging to the given consumer org in a catalog, as accessed through the given space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n",
         "operationId": "app_createSpaceInitiated",
         "security": [
           {
@@ -63702,7 +63793,7 @@
       },
       "patch": {
         "summary": "Updates a consumer app.",
-        "description": "Updates the given app belonging to a consumer org in a catalog, as accessed through the given space.",
+        "description": "Updates the given app belonging to a consumer org in a catalog, as accessed through the given space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n",
         "operationId": "app_updateSpaceInitiated",
         "security": [
           {
@@ -63811,7 +63902,7 @@
       ],
       "post": {
         "summary": "Creates app credentials.",
-        "description": "Adds a new set of credentials to an app in a catalog.",
+        "description": "Adds a new set of credentials to an app in a catalog.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n          - app_url\n",
         "operationId": "credential_create",
         "security": [
           {
@@ -63989,7 +64080,7 @@
       },
       "patch": {
         "summary": "Updates credentials for an app.",
-        "description": "Updates the given set of credentials for an app in a catalog.",
+        "description": "Updates the given set of credentials for an app in a catalog.\n\n          Fields not allowed to be null:\n          - client_id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n          - app_url\n",
         "operationId": "credential_update",
         "security": [
           {
@@ -64289,7 +64380,7 @@
       ],
       "post": {
         "summary": "Creates app credentials.",
-        "description": "Adds a new set of credentials to an app in a catalog, as accessed through a space.",
+        "description": "Adds a new set of credentials to an app in a catalog, as accessed through a space.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n          - app_url\n",
         "operationId": "credential_createSpaceInitiated",
         "security": [
           {
@@ -64502,7 +64593,7 @@
       },
       "patch": {
         "summary": "Updates credentials for an app.",
-        "description": "Updates the given set of credentials for an app in a catalog, as accessed through a space.",
+        "description": "Updates the given set of credentials for an app in a catalog, as accessed through a space.\n\n          Fields not allowed to be null:\n          - client_id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n          - app_url\n",
         "operationId": "credential_updateSpaceInitiated",
         "security": [
           {
@@ -64808,7 +64899,7 @@
       ],
       "post": {
         "summary": "Creates a subscription.",
-        "description": "Create a subscription for an app belonging to a connsumer organization in a catalog.",
+        "description": "Create a subscription for an app belonging to a connsumer organization in a catalog.\n\n          Required fields:\n          - product_url\n          - plan\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n          - app_url\n",
         "operationId": "subscription_create",
         "security": [
           {
@@ -65024,7 +65115,7 @@
       },
       "patch": {
         "summary": "Updates a subscription.",
-        "description": "Updates a subscription for an app belonging to a connsumer organization in a catalog.",
+        "description": "Updates a subscription for an app belonging to a connsumer organization in a catalog.\n\n          Fields not allowed:\n          - billing_identifiers\n          - plan_title\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n          - app_url\n",
         "operationId": "subscription_update",
         "security": [
           {
@@ -65136,7 +65227,7 @@
       ],
       "post": {
         "summary": "Creates a subscription.",
-        "description": "Create a subscriptions for an app belonging to a connsumer organization in a catalog, as accessed through a space.",
+        "description": "Create a subscriptions for an app belonging to a connsumer organization in a catalog, as accessed through a space.\n\n          Required fields:\n          - product_url\n          - plan\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n          - app_url\n",
         "operationId": "subscription_createSpaceInitiated",
         "security": [
           {
@@ -65355,7 +65446,7 @@
       },
       "patch": {
         "summary": "Updates a subscription.",
-        "description": "Updates a subscription for an app belonging to a connsumer organization in a catalog, as accessed through a space.",
+        "description": "Updates a subscription for an app belonging to a connsumer organization in a catalog, as accessed through a space.\n\n          Fields not allowed:\n          - billing_identifiers\n          - plan_title\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - consumer_org_url\n          - app_url\n",
         "operationId": "subscription_updateSpaceInitiated",
         "security": [
           {
@@ -65605,7 +65696,7 @@
       ],
       "post": {
         "summary": "Creates a draft product.",
-        "description": "Creates a draft product from the given content, which may represent an product document or a product and associated APIs.",
+        "description": "Creates a draft product from the given content, which may represent an product document or a product and associated APIs.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "draft_product_create",
         "security": [
           {
@@ -65904,7 +65995,7 @@
       },
       "patch": {
         "summary": "Updates a draft product.",
-        "description": "Updates a draft product from the given content, which may represent an product document or a product and associated APIs.",
+        "description": "Updates a draft product from the given content, which may represent an product document or a product and associated APIs.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "draft_product_update",
         "security": [
           {
@@ -66059,7 +66150,7 @@
       },
       "patch": {
         "summary": "Updates a draft product.",
-        "description": "Updates a draft product from the given content, which may represent an product document or a product and associated APIs.",
+        "description": "Updates a draft product from the given content, which may represent an product document or a product and associated APIs.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "draft_product_updateByNameVersion",
         "security": [
           {
@@ -66477,7 +66568,7 @@
       ],
       "post": {
         "summary": "Creates a draft API.",
-        "description": "Creates a draft API from the given content, which may represent an OpenAPI or WSDL-defined API.",
+        "description": "Creates a draft API from the given content, which may represent an OpenAPI or WSDL-defined API.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "draft_api_create",
         "security": [
           {
@@ -66793,7 +66884,7 @@
       },
       "patch": {
         "summary": "Updates a draft API.",
-        "description": "Updates the given draft API definition.",
+        "description": "Updates the given draft API definition.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "draft_api_update",
         "security": [
           {
@@ -66959,7 +67050,7 @@
       },
       "patch": {
         "summary": "Updates a draft API.",
-        "description": "Updates the given draft API definition.",
+        "description": "Updates the given draft API definition.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "draft_api_updateByNameVersion",
         "security": [
           {
@@ -67983,7 +68074,7 @@
       },
       "patch": {
         "summary": "Updates a product in a catalog.",
-        "description": "Updates a product in a catalog.",
+        "description": "Updates a product in a catalog.\n\n          Fields not allowed:\n          - product\n          - catalog_product\n          - space_urls\n          - api_urls\n          - approval_history\n          - superseded_by\n          - supersedes\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "product_updateCatalogScope",
         "security": [
           {
@@ -68136,7 +68227,7 @@
       },
       "patch": {
         "summary": "Updates a product in a catalog.",
-        "description": "Updates a product in a catalog.",
+        "description": "Updates a product in a catalog.\n\n          Fields not allowed:\n          - product\n          - catalog_product\n          - space_urls\n          - api_urls\n          - approval_history\n          - superseded_by\n          - supersedes\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "product_updateByNameVersionCatalogScope",
         "security": [
           {
@@ -69195,7 +69286,7 @@
       },
       "patch": {
         "summary": "Updates an API.",
-        "description": "Updates the API with the given id in a catalog.",
+        "description": "Updates the API with the given id in a catalog.\n\n          Fields not allowed:\n          - name\n          - version\n          - api\n          - wsdl\n          - catalog_api\n          - catalog_url\n          - org_url\n          - gateway_api\n          - consumer_api\n          - space_urls\n          - gateway_service_urls\n          - user_registry_urls\n          - oauth_provider_urls\n          - tls_client_profile_urls\n          - extension_urls\n          - policy_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "api_updateCatalogScope",
         "security": [
           {
@@ -69309,7 +69400,7 @@
       },
       "patch": {
         "summary": "Updates an API.",
-        "description": "Updates the API with the given name and version in a catalog.",
+        "description": "Updates the API with the given name and version in a catalog.\n\n          Fields not allowed:\n          - name\n          - version\n          - api\n          - wsdl\n          - catalog_api\n          - catalog_url\n          - org_url\n          - gateway_api\n          - consumer_api\n          - space_urls\n          - gateway_service_urls\n          - user_registry_urls\n          - oauth_provider_urls\n          - tls_client_profile_urls\n          - extension_urls\n          - policy_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "api_updateByNameVersionCatalogScope",
         "security": [
           {
@@ -69842,7 +69933,7 @@
       },
       "patch": {
         "summary": "Updates a product in a space.",
-        "description": "Updates a product in a space.",
+        "description": "Updates a product in a space.\n\n          Fields not allowed:\n          - product\n          - catalog_product\n          - space_urls\n          - api_urls\n          - approval_history\n          - superseded_by\n          - supersedes\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "product_updateSpaceScope",
         "security": [
           {
@@ -69998,7 +70089,7 @@
       },
       "patch": {
         "summary": "Updates a product in a space.",
-        "description": "Updates a product in a space.",
+        "description": "Updates a product in a space.\n\n          Fields not allowed:\n          - product\n          - catalog_product\n          - space_urls\n          - api_urls\n          - approval_history\n          - superseded_by\n          - supersedes\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "product_updateByNameVersionSpaceScope",
         "security": [
           {
@@ -71090,7 +71181,7 @@
       },
       "patch": {
         "summary": "Updates an API.",
-        "description": "Updates the API with the given id in a space within a catalog.",
+        "description": "Updates the API with the given id in a space within a catalog.\n\n          Fields not allowed:\n          - name\n          - version\n          - api\n          - wsdl\n          - catalog_api\n          - catalog_url\n          - org_url\n          - gateway_api\n          - consumer_api\n          - space_urls\n          - gateway_service_urls\n          - user_registry_urls\n          - oauth_provider_urls\n          - tls_client_profile_urls\n          - extension_urls\n          - policy_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "api_updateSpaceScope",
         "security": [
           {
@@ -71207,7 +71298,7 @@
       },
       "patch": {
         "summary": "Updates an API.",
-        "description": "Updates the API with the given name and version in a space within a catalog.",
+        "description": "Updates the API with the given name and version in a space within a catalog.\n\n          Fields not allowed:\n          - name\n          - version\n          - api\n          - wsdl\n          - catalog_api\n          - catalog_url\n          - org_url\n          - gateway_api\n          - consumer_api\n          - space_urls\n          - gateway_service_urls\n          - user_registry_urls\n          - oauth_provider_urls\n          - tls_client_profile_urls\n          - extension_urls\n          - policy_urls\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n",
         "operationId": "api_updateByNameVersionSpaceScope",
         "security": [
           {
@@ -71540,7 +71631,7 @@
       },
       "put": {
         "summary": "Updates the current user.",
-        "description": "Updates the user profile for the currently authenticated user.",
+        "description": "Updates the user profile for the currently authenticated user.\n\n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "me_singletonUpdate",
         "security": [
           {
@@ -72178,7 +72269,7 @@
       },
       "patch": {
         "summary": "Updates a catalog webhook.",
-        "description": "Updates a webhook registration for a catalog.",
+        "description": "Updates a webhook registration for a catalog.\n\n          Fields not allowed:\n          - state_change_history\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "webhook_updateCatalogScope",
         "security": [
           {
@@ -74190,6 +74281,11 @@
               "pending"
             ]
           },
+          "ttl": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2147483647
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -75755,6 +75851,12 @@
                 "http"
               ]
             }
+          },
+          "consumer_self_service_onboarding_ttl": {
+            "type": "integer",
+            "nullable": true,
+            "minimum": 60,
+            "maximum": 31536000
           },
           "metadata": {
             "type": "object",
@@ -78775,6 +78877,26 @@
             "type": "boolean",
             "nullable": true
           },
+          "gateway_processing_status": {
+            "$ref": "#/components/schemas/SubscriberProcessingStatus"
+          },
+          "events": {
+            "type": "object",
+            "properties": {
+              "sent_events": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SubscriberEvent"
+                }
+              },
+              "queued_events": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SubscriberEvent"
+                }
+              }
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -81633,6 +81755,10 @@
             "type": "string",
             "nullable": true
           },
+          "runtime_api_opt_in_datagather_enabled": {
+            "type": "boolean",
+            "nullable": true
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -83279,14 +83405,19 @@
               "composite",
               "mapped",
               "imported",
-              "other"
+              "other",
+              "external",
+              "primitive-template",
+              "pre-built",
+              "skill-flow"
             ]
           },
           "skill_subtype": {
             "type": "string",
             "enum": [
               "public",
-              "private"
+              "private",
+              "wo-identity"
             ]
           },
           "display_name": {
@@ -84165,7 +84296,14 @@
           "properties": {
             "type": "object",
             "additionalProperties": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object"
+                }
+              ]
             }
           },
           "activity": {
@@ -86450,6 +86588,34 @@
                 "type": "string"
               }
             }
+          },
+          "governance": {
+            "type": "object",
+            "properties": {
+              "endpoint": {
+                "type": "string"
+              },
+              "client_id": {
+                "type": "string"
+              },
+              "client_secret": {
+                "type": "string"
+              }
+            }
+          },
+          "discovery": {
+            "type": "object",
+            "properties": {
+              "endpoint": {
+                "type": "string"
+              },
+              "client_id": {
+                "type": "string"
+              },
+              "client_secret": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -86503,6 +86669,12 @@
             "type": "string"
           },
           "consumer_api_endpoint": {
+            "type": "string"
+          },
+          "compliance_endpoint": {
+            "type": "string"
+          },
+          "discovery_endpoint": {
             "type": "string"
           }
         }
@@ -87350,6 +87522,9 @@
           },
           "org_type": {
             "type": "string"
+          },
+          "runtime_api_opt_in_datagather_enabled": {
+            "type": "boolean"
           },
           "owner_url": {
             "type": "string"
@@ -89204,7 +89379,7 @@
       },
       "put": {
         "summary": "Update the Me object",
-        "description": "Update the Me object\nFields allowed but ignored:\\ - name - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Me object\n          \n          Fields allowed but ignored:\n          - name\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "me_singletonUpdate",
         "security": [
           {
@@ -89463,7 +89638,7 @@
       "description": "The collection of My Organization operations",
       "post": {
         "summary": "Create a My Organization object",
-        "description": "Create a My Organization object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Create a My Organization object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "my_org_create",
         "security": [
           {
@@ -90065,7 +90240,7 @@
       },
       "patch": {
         "summary": "Update the Organization object by name or id",
-        "description": "Update the Organization object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "description": "Update the Organization object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
         "operationId": "org_update",
         "security": [
           {
@@ -90431,7 +90606,7 @@
       ],
       "post": {
         "summary": "Create a Member Invitation object",
-        "description": "Create a Member Invitation object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
+        "description": "Create a Member Invitation object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "member_invitation_createOrgScope",
         "security": [
           {
@@ -91380,7 +91555,7 @@
       ],
       "post": {
         "summary": "Create a Member object",
-        "description": "Create a Member object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - user_registry_url",
+        "description": "Create a Member object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - user_registry_url\n",
         "operationId": "member_createOrgScope",
         "security": [
           {
@@ -91584,7 +91759,7 @@
       },
       "patch": {
         "summary": "Update the Member object by name or id",
-        "description": "Update the Member object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - user_registry_url",
+        "description": "Update the Member object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - user_registry_url\n",
         "operationId": "member_updateOrgScope",
         "security": [
           {
@@ -93180,7 +93355,7 @@
       ],
       "post": {
         "summary": "Create a Application object",
-        "description": "Create a Application object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
+        "description": "Create a Application object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "app_create",
         "security": [
           {
@@ -93381,7 +93556,7 @@
       },
       "patch": {
         "summary": "Update the Application object by name or id",
-        "description": "Update the Application object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url",
+        "description": "Update the Application object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "app_update",
         "security": [
           {
@@ -93484,7 +93659,7 @@
       ],
       "post": {
         "summary": "Create a Application Credential object",
-        "description": "Create a Application Credential object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - app_url",
+        "description": "Create a Application Credential object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - app_url\n",
         "operationId": "credential_create",
         "security": [
           {
@@ -93688,7 +93863,7 @@
       },
       "patch": {
         "summary": "Update the Application Credential object by name or id",
-        "description": "Update the Application Credential object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - app_url",
+        "description": "Update the Application Credential object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - app_url\n",
         "operationId": "credential_update",
         "security": [
           {
@@ -93994,7 +94169,7 @@
       ],
       "post": {
         "summary": "Create a Subscription object",
-        "description": "Create a Subscription object\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - app_url",
+        "description": "Create a Subscription object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - app_url\n",
         "operationId": "subscription_create",
         "security": [
           {
@@ -94198,7 +94373,7 @@
       },
       "patch": {
         "summary": "Update the Subscription object by name or id",
-        "description": "Update the Subscription object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - org_url - app_url",
+        "description": "Update the Subscription object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - app_url\n",
         "operationId": "subscription_update",
         "security": [
           {
@@ -94403,7 +94578,7 @@
       ],
       "post": {
         "summary": "Create a Payment Method object",
-        "description": "Create a Payment Method object\nRequired fields:\\ - payment_method_type_url - billing_url - configuration\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - consumer_org_url",
+        "description": "Create a Payment Method object\n          \n          Required fields:\n          - payment_method_type_url\n          - billing_url\n          - configuration\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - consumer_org_url\n",
         "operationId": "payment_method_create",
         "security": [
           {
@@ -94572,7 +94747,7 @@
       },
       "patch": {
         "summary": "Update the Payment Method object by name or id",
-        "description": "Update the Payment Method object by name or id\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url - consumer_org_url",
+        "description": "Update the Payment Method object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - consumer_org_url\n",
         "operationId": "payment_method_update",
         "security": [
           {
@@ -97611,6 +97786,20 @@
           },
           "realm": {
             "type": "string"
+          },
+          "oidc_type": {
+            "type": "string",
+            "nullable": true,
+            "enum": [
+              "google",
+              "github",
+              "facebook",
+              "linkedin",
+              "windows_live",
+              "slack",
+              "twitter",
+              "standard"
+            ]
           }
         }
       },
@@ -98051,7 +98240,7 @@
     "version": "2.0.0",
     "title": "IBM API Connect Analytics API",
     "x-ibm-summary": "API for the API Connect Analytics subsystem",
-    "description": "## API for the API Connect Analytics subsystem\nThis API includes the capability to retrieve information about API events stored in APIC Analytics,  retrieve the data used by the Analytics dashboards in the UI, obtain information on what filter parameters are supported  and also obtain information about internal cluster management, health and operations.\n### API Events\nThere are operations to retrieve a count of events, a list of events or a specific detailed API event at the following  scopes: cloud, provider organization, catalog and space. The API event operations all support a multitude of filter parameters to be able to select the exact events you wish. These filter parameters can be combined together in a single query.\n\nThere are advanced selectors available for these filter parameters too which allow operations such as these:\n- `.../events?consumer_org_id=1234567890` = select all events made by consumer org id 1234567890\n- `.../events?consumer_org_id=not:1234567890` = select all events made by consumer orgs other than id 1234567890\n- `.../events?product_name=contains:loan` = select all events where the product name contained the string 'loan' (equivalent to searching for `*loan*`)\n- `.../events?product_name=notcontains:loan` = select all events where the product name didn't contain the string 'loan'\n- `.../events?product_name=startswith:loa` = select all events where the product name starts with the string 'loa' (equivalent to searching for `loa*`)\n- `.../events?product_name=endswith:oan` = select all events where the product name ends with the string 'oan' (equivalent to searching for `*oan`)\n- `.../events?product_name=regex:[a-z]oan` = select all events where the product name begins with any lowercase alphabetical character and ends with the string 'oan' (WARNING: Regex based queries have a performance impact and should only be used if other queries cannot be used)\n- `.../events?product_name=oneof:loans,accounts,address` = select all events where the product name is loans, accounts or address\n- `.../events?product_name=oneof:loans\\,accounts,address` = select all events where the product name is either 'loans,account' or 'address' ('\\' escapes the first comma)\n- `.../events?product_name=oneof:loans,accounts\\,address` = select all events where the product name is either 'loans' or 'account,address' ('\\' escapes the second comma)\n- `.../events?product_name=notoneof:loans,accounts,address` = select all events where the product name is neither loans, accounts or address\n- `.../events?product_name=notoneof:loans\\,accounts,address` = select all events where the product name is neither 'loans,account' or 'address' ('\\' escapes the first comma)\n- `.../events?product_name=notoneof:loans,accounts\\,address` = select all events where the product name is neither 'loans' or 'account,address' ('\\' escapes the second comma)\n- `.../events?product_name=equals:not:loan` = select all events where the product name is exactly 'not:loan'\n- `.../events?product_name=not:not:loan` = select all events where the product name is not 'not:loan'\nThese ones only apply to numeric fields:\n- `.../events?bytes_received=1000` = select all events where the received bytes was exactly 1000\n- `.../events?bytes_received=gt:1000` = select all events where the received bytes was greater than 1000\n- `.../events?bytes_received=gte:1000` = select all events where the received bytes was greater than or equals to 1000\n- `.../events?bytes_received=lt:1000` = select all events where the received bytes was less than 1000\n- `.../events?bytes_received=lte:1000` = select all events where the received bytes was less than or equals to 1000\n\nThe full list of possible advanced operator prefixes are: `not`, `contains`, `notcontains`, `startswith`, `endswith`, `regex`, `gt`, `gte`, `lt`, `lte`, `oneof`.\n\nThe exception to the above are the IP address fields `client_ip`, `gateway_ip` and `immediate_client_ip` which only support equality checks and `not` but none of the other operators. However, they do support CIDR based queries, for example:\n- `.../events?client_ip=9.123.234.0/24` = select all events where the client IP address was in the 9.123.234.0 network (netmask 255.255.255.0)\n\n### Dashboards\nThese operations allow you to download the data used by the APIC Analytics dashboards in the API Manager UI.  These are also at the same variety of scopes and also support the same filter parameters as usable with the API Event operations above.\n### Filter parameters\nThese operations define what filter parameters and operations are available at each scope.  This could be useful in a dynamically generated UI calling the API Event or dashboard operations above.\n### Cluster Management\nThese operations allow the retrieval of information on cluster health and status as well as the ability to perform  maintenance operations on it.\n",
+    "description": "## API for the API Connect Analytics subsystem\nThis API includes the capability to retrieve information about API events stored in APIC Analytics,  retrieve the data used by the Analytics dashboards in the UI, obtain information on what filter parameters are supported  and also obtain information about internal cluster management, health and operations.\n### API Events\nThere are operations to retrieve a count of events, a list of events or a specific detailed API event at the following  scopes: cloud, provider organization, catalog and space. The API event operations all support a multitude of filter parameters to be able to select the exact events you wish. These filter parameters can be combined together in a single query.\n#### Data selection\nThere are advanced selectors available for these filter parameters too which allow operations such as these:\n- `.../events?consumer_org_id=1234567890` = select all events made by consumer org id 1234567890\n- `.../events?consumer_org_id=not:1234567890` = select all events made by consumer orgs other than id 1234567890\n- `.../events?product_name=contains:loan` = select all events where the product name contained the string 'loan' (equivalent to searching for `*loan*`)\n- `.../events?product_name=notcontains:loan` = select all events where the product name didn't contain the string 'loan'\n- `.../events?product_name=startswith:loa` = select all events where the product name starts with the string 'loa' (equivalent to searching for `loa*`)\n- `.../events?product_name=endswith:oan` = select all events where the product name ends with the string 'oan' (equivalent to searching for `*oan`)\n- `.../events?product_name=regex:[a-z]oan` = select all events where the product name begins with any lowercase alphabetical character and ends with the string 'oan' (WARNING: Regex based queries have a performance impact and should only be used if other queries cannot be used)\n- `.../events?product_name=oneof:loans,accounts,address` = select all events where the product name is loans, accounts or address\n- `.../events?product_name=oneof:loans\\,accounts,address` = select all events where the product name is either 'loans,account' or 'address' ('\\' escapes the first comma)\n- `.../events?product_name=oneof:loans,accounts\\,address` = select all events where the product name is either 'loans' or 'account,address' ('\\' escapes the second comma)\n- `.../events?product_name=notoneof:loans,accounts,address` = select all events where the product name is neither loans, accounts or address\n- `.../events?product_name=notoneof:loans\\,accounts,address` = select all events where the product name is neither 'loans,account' or 'address' ('\\' escapes the first comma)\n- `.../events?product_name=notoneof:loans,accounts\\,address` = select all events where the product name is neither 'loans' or 'account,address' ('\\' escapes the second comma)\n- `.../events?product_name=equals:not:loan` = select all events where the product name is exactly 'not:loan'\n- `.../events?product_name=not:not:loan` = select all events where the product name is not 'not:loan'\nThese ones only apply to numeric fields:\n- `.../events?bytes_received=1000` = select all events where the received bytes was exactly 1000\n- `.../events?bytes_received=gt:1000` = select all events where the received bytes was greater than 1000\n- `.../events?bytes_received=gte:1000` = select all events where the received bytes was greater than or equals to 1000\n- `.../events?bytes_received=lt:1000` = select all events where the received bytes was less than 1000\n- `.../events?bytes_received=lte:1000` = select all events where the received bytes was less than or equals to 1000\n\nThe full list of possible advanced operator prefixes are: `not`, `contains`, `notcontains`, `startswith`, `endswith`, `regex`, `gt`, `gte`, `lt`, `lte`, `oneof`.\n\nThe exception to the above are the IP address fields `client_ip`, `gateway_ip` and `immediate_client_ip` which only support equality checks and `not` but none of the other operators. However, they do support CIDR based queries, for example:\n- `.../events?client_ip=9.123.234.0/24` = select all events where the client IP address was in the 9.123.234.0 network (netmask 255.255.255.0)\n#### Pagination\nTo control how many results are returned and navigate through pages of results use the standard `limit` and `offset` query parameters. The event list operations will return a maximum of 10,000 api events, to retrieve larger amounts of data use the scroll operations at cloud or organization scope.\n#### Returning a subset of fields\nThe `fields` parameter can be used to only return a subset of fields in the api event records. Use a comma separated list of desired fields.\n### Dashboards\nThese operations allow you to download the data used by the APIC Analytics dashboards in the API Manager UI.  These are also at the same variety of scopes and also support the same filter parameters as usable with the API Event operations above.\n### Filter parameters\nThese operations define what filter parameters and operations are available at each scope.  This could be useful in a dynamically generated UI calling the API Event or dashboard operations above.\n### Cluster Management\nThese operations allow the retrieval of information on cluster health and status as well as the ability to perform  maintenance operations on it.\n",
     "termsOfService": "https://www.ibm.com/terms-of-service",
     "contact": {
       "name": "IBM",
@@ -98078,7 +98267,7 @@
       ],
       "get": {
         "summary": "List events at cloud scope.",
-        "description": "Returns a result set of analytics API events scoped to the cloud. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields\n",
+        "description": "Returns a result set of analytics API events scoped to the cloud. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields Note this operation is limited to only being able to return 10,000 events, if you need more than that then use the scroll operation.\n",
         "operationId": "events_cloudList",
         "security": [
           {
@@ -98093,6 +98282,9 @@
           },
           {
             "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -98152,7 +98344,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -98171,6 +98381,9 @@
           },
           {
             "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
@@ -98300,6 +98513,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -98357,7 +98573,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -98373,6 +98607,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
@@ -98609,6 +98846,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -98663,7 +98903,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -98679,6 +98937,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
@@ -98791,7 +99052,7 @@
       ],
       "get": {
         "summary": "List events at provider organization scope.",
-        "description": "Return a result set of analytics API events scoped to the provider organization. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields\n",
+        "description": "Return a result set of analytics API events scoped to the provider organization. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields Note this operation is limited to only being able to return 10,000 events, if you need more than that then use the scroll operation.\n",
         "operationId": "events_orgList",
         "security": [
           {
@@ -98806,6 +99067,9 @@
           },
           {
             "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -98865,7 +99129,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -98884,6 +99166,9 @@
           },
           {
             "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
@@ -99010,6 +99295,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -99067,7 +99355,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -99083,6 +99389,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
@@ -99322,6 +99631,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -99376,7 +99688,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -99392,6 +99722,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
@@ -99501,7 +99834,7 @@
       ],
       "get": {
         "summary": "List events at catalog scope.\n",
-        "description": "Return a result set of analytics API events scoped to the catalog. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields\n",
+        "description": "Return a result set of analytics API events scoped to the catalog. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields Note this operation is limited to only being able to return 10,000 events, if you need more than that then use the scroll operation at cloud or organization scope.\n",
         "operationId": "events_catalogList",
         "security": [
           {
@@ -99516,6 +99849,9 @@
           },
           {
             "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -99569,7 +99905,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -99588,6 +99942,9 @@
           },
           {
             "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
@@ -99767,6 +100124,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -99815,7 +100175,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -99831,6 +100209,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
@@ -99943,7 +100324,7 @@
       ],
       "get": {
         "summary": "List events at space scope.",
-        "description": "Return a result set of analytics API events scoped to the space. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields\n",
+        "description": "Return a result set of analytics API events scoped to the space. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields Note this operation is limited to only being able to return 10,000 events, if you need more than that then use the scroll operation at cloud or organization scope.\n",
         "operationId": "events_spaceList",
         "security": [
           {
@@ -99958,6 +100339,9 @@
           },
           {
             "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -100011,7 +100395,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -100030,6 +100432,9 @@
           },
           {
             "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
@@ -100209,6 +100614,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -100257,7 +100665,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -100273,6 +100699,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
@@ -100358,8 +100787,8 @@
         ]
       }
     },
-    "/{analytics-service}/cloud/dashboards/api": {
-      "description": "Return the data needed to populate the API dashboard at cloud scope.\n",
+    "/{analytics-service}/cloud/discover-timeline": {
+      "description": "Return the data needed to populate the Timeline chart in discover view at cloud scope.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -100369,9 +100798,9 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the API dashboard at cloud scope.\n",
-        "description": "Return the data needed to populate the API dashboard at cloud scope.\n",
-        "operationId": "dashboards_cloudApi",
+        "summary": "Get the data needed to populate the Timeline chart in discover view at cloud scope.",
+        "description": "Return the data needed to populate the Timeline chart in discover view at cloud scope.\n",
+        "operationId": "events_cloudTimeline",
         "security": [
           {
             "oauth": [
@@ -100385,6 +100814,9 @@
           },
           {
             "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -100438,10 +100870,31 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/event_fields_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -100459,13 +100912,887 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
           },
           {
-            "$ref": "#/components/parameters/offset_optional"
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DiscoverTimelineResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Events"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/discover-timeline": {
+      "description": "Return the data needed to populate the Timeline chart in discover view at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Timeline chart in discover view at org scope.\n",
+        "description": "Return the data needed to populate the Timeline chart in discover view at org scope.\n",
+        "operationId": "events_orgTimeline",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_fields_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DiscoverTimelineResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Events"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/discover-timeline": {
+      "description": "Return the data needed to populate the Timeline chart in discover view at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Timeline chart in discover view at catalog scope.",
+        "description": "Return the data needed to populate the Timeline chart in discover view at catalog scope.\n",
+        "operationId": "events_catalogTimeline",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_fields_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DiscoverTimelineResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Events"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/discover-timeline": {
+      "description": "Return the data needed to populate the Timeline chart in discover view at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Timeline chart in discover view at space scope.",
+        "description": "Return the data needed to populate the Timeline chart in discover view at space scope.\n",
+        "operationId": "events_spaceTimeline",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_fields_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DiscoverTimelineResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Events"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/api": {
+      "description": "Return the data needed to populate the API dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the API dashboard at cloud scope.\n",
+        "description": "Return the data needed to populate the API dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudApi",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -100589,6 +101916,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -100599,6 +101929,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -100643,7 +101976,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -100661,13 +102012,10 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -100791,6 +102139,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -100801,6 +102152,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -100845,7 +102199,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -100863,13 +102235,10 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -100993,6 +102362,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -101003,6 +102375,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -101047,7 +102422,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -101065,13 +102458,10 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -101195,6 +102585,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -101205,6 +102598,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -101243,19 +102639,31 @@
             "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
-            "$ref": "#/components/parameters/error_limit_optional"
-          },
-          {
-            "$ref": "#/components/parameters/error_offset_optional"
-          },
-          {
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -101273,13 +102681,10 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -101403,6 +102808,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -101413,6 +102821,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -101457,7 +102868,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -101475,13 +102904,10 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -101605,6 +103031,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -101615,6 +103044,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -101665,7 +103097,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -101684,6 +103134,9 @@
           },
           {
             "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
@@ -101784,23 +103237,20 @@
         ]
       }
     },
-    "/{analytics-service}/orgs/{org}/dashboards/api": {
-      "description": "Return the data needed to populate the API dashboard at provider organization scope.\n",
+    "/{analytics-service}/cloud/dashboards/data": {
+      "description": "Return the data needed to populate the Data dashboard at cloud scope.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
         },
         {
           "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/org"
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the API dashboard at provider organization scope.\n",
-        "description": "Return the data needed to populate the API dashboard at provider organization scope.\n",
-        "operationId": "dashboards_orgApi",
+        "summary": "Get the data needed to populate the Data dashboard at cloud scope.\n",
+        "description": "Return the data needed to populate the Data dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudData",
         "security": [
           {
             "oauth": [
@@ -101816,6 +103266,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -101826,6 +103279,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -101870,7 +103326,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -101888,13 +103362,239 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
           },
           {
-            "$ref": "#/components/parameters/offset_optional"
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DataDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/api": {
+      "description": "Return the data needed to populate the API dashboard at provider organization scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the API dashboard at provider organization scope.\n",
+        "description": "Return the data needed to populate the API dashboard at provider organization scope.\n",
+        "operationId": "dashboards_orgApi",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -102015,6 +103715,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -102025,6 +103728,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -102069,7 +103775,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -102087,13 +103811,10 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -102214,6 +103935,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -102224,6 +103948,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -102268,7 +103995,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -102286,13 +104031,10 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -102413,6 +104155,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -102423,6 +104168,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -102467,7 +104215,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -102485,13 +104251,10 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -102612,6 +104375,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -102622,6 +104388,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -102660,19 +104429,31 @@
             "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
-            "$ref": "#/components/parameters/error_limit_optional"
-          },
-          {
-            "$ref": "#/components/parameters/error_offset_optional"
-          },
-          {
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -102690,13 +104471,10 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -102817,6 +104595,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -102827,6 +104608,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -102871,7 +104655,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -102889,13 +104691,10 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -103016,6 +104815,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -103026,6 +104828,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -103076,7 +104881,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -103095,6 +104918,9 @@
           },
           {
             "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
@@ -103189,6 +105015,226 @@
         ]
       }
     },
+    "/{analytics-service}/orgs/{org}/dashboards/data": {
+      "description": "Return the data needed to populate the Data dashboard at provider organization scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Data dashboard at provider organization scope.\n",
+        "description": "Return the data needed to populate the Data dashboard at provider organization scope.\n",
+        "operationId": "dashboards_orgData",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DataDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
     "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/api": {
       "description": "Return the data needed to populate the API dashboard at catalog scope.\n",
       "parameters": [
@@ -103224,6 +105270,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -103234,6 +105283,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -103272,7 +105324,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -103290,13 +105360,13 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -103420,6 +105490,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -103430,6 +105503,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -103468,7 +105544,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -103486,13 +105580,10 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -103616,6 +105707,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -103626,6 +105720,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -103664,7 +105761,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -103682,13 +105797,10 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -103812,6 +105924,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -103822,6 +105937,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -103860,7 +105978,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -103878,13 +106014,10 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -104008,6 +106141,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -104018,6 +106154,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -104050,19 +106189,31 @@
             "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
-            "$ref": "#/components/parameters/error_limit_optional"
-          },
-          {
-            "$ref": "#/components/parameters/error_offset_optional"
-          },
-          {
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -104080,13 +106231,10 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -104210,6 +106358,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -104220,6 +106371,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -104258,7 +106412,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -104276,13 +106448,10 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -104406,6 +106575,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -104416,6 +106588,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -104460,7 +106635,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -104479,6 +106672,9 @@
           },
           {
             "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
@@ -104573,8 +106769,8 @@
         ]
       }
     },
-    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/api": {
-      "description": "Return the data needed to populate the API dashboard at space scope.\n",
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/data": {
+      "description": "Return the data needed to populate the Data dashboard at catalog scope.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -104587,15 +106783,12 @@
         },
         {
           "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/space"
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the API dashboard at space scope.\n",
-        "description": "Return the data needed to populate the API dashboard at space scope.\n",
-        "operationId": "dashboards_spaceApi",
+        "summary": "Get the data needed to populate the Data dashboard at catalog scope.\n",
+        "description": "Return the data needed to populate the Data dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogData",
         "security": [
           {
             "oauth": [
@@ -104611,6 +106804,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -104621,6 +106817,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -104659,7 +106858,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -104677,13 +106894,233 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
           },
           {
-            "$ref": "#/components/parameters/offset_optional"
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DataDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/api": {
+      "description": "Return the data needed to populate the API dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the API dashboard at space scope.\n",
+        "description": "Return the data needed to populate the API dashboard at space scope.\n",
+        "operationId": "dashboards_spaceApi",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -104804,6 +107241,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -104814,6 +107254,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -104852,7 +107295,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -104870,13 +107331,10 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -104997,6 +107455,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -105007,6 +107468,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -105045,7 +107509,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -105063,13 +107545,10 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -105190,6 +107669,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -105200,6 +107682,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -105238,7 +107723,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -105256,13 +107759,10 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -105383,6 +107883,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -105393,6 +107896,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -105425,19 +107931,31 @@
             "$ref": "#/components/parameters/endpoint_url_optional"
           },
           {
-            "$ref": "#/components/parameters/error_limit_optional"
-          },
-          {
-            "$ref": "#/components/parameters/error_offset_optional"
-          },
-          {
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -105455,13 +107973,10 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -105582,6 +108097,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -105592,6 +108110,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -105630,7 +108151,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -105648,13 +108187,10 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
@@ -105775,6 +108311,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -105785,6 +108324,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
           },
           {
             "$ref": "#/components/parameters/bytes_received_optional"
@@ -105829,7 +108371,25 @@
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
           },
           {
             "$ref": "#/components/parameters/graphql_request_field_cost_optional"
@@ -105848,6 +108408,9 @@
           },
           {
             "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
           },
           {
             "$ref": "#/components/parameters/method_optional"
@@ -105922,6 +108485,220 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/ConsumptionDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/data": {
+      "description": "Return the data needed to populate the Data dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Data dashboard at space scope.\n",
+        "description": "Return the data needed to populate the Data dashboard at space scope.\n",
+        "operationId": "dashboards_spaceData",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DataDashboardResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -107940,6 +110717,176 @@
         ]
       }
     },
+    "/{analytics-service}/cloud/service-status": {
+      "description": "Used by the UI to get the analytics service status\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Used by the UI to get the analytics service status.\n",
+        "description": "Used by the UI to get the analytics service status.\n",
+        "operationId": "service_cloudServicestatus",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ServiceStatusResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Service"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/service-status": {
+      "description": "Used by the UI to get the analytics service status\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Used by the UI to get the analytics service status.\n",
+        "description": "Used by the UI to get the analytics service status.\n",
+        "operationId": "service_orgServicestatus",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ServiceStatusResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Service"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/service-status": {
+      "description": "Used by the UI to get the analytics service status\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Used by the UI to get the analytics service status.\n",
+        "description": "Used by the UI to get the analytics service status.\n",
+        "operationId": "service_catalogServicestatus",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ServiceStatusResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Service"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/service-status": {
+      "description": "Used by the UI to get the analytics service status\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Used by the UI to get the analytics service status.\n",
+        "description": "Used by the UI to get the analytics service status.\n",
+        "operationId": "service_spaceServicestatus",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ServiceStatusResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Service"
+        ]
+      }
+    },
     "/{analytics-service}/cloud/reports/apiusage": {
       "description": "Return the data needed to populate the API usage report at cloud scope.\n",
       "parameters": [
@@ -107963,7 +110910,16 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -107983,7 +110939,7 @@
         ]
       }
     },
-    "/{analytics-service}/cloud/reports/apiusage/leaderboard/api": {
+    "/{analytics-service}/cloud/reports/apiusage/mini-leaderboards/apis": {
       "description": "Return the data needed to populate the API leaderboard for the API usage report at cloud scope.\n",
       "parameters": [
         {
@@ -107996,7 +110952,7 @@
       "get": {
         "summary": "Get the data needed to populate the API leaderboard for the API usage report at cloud scope.\n",
         "description": "Return the data needed to populate the API leaderboard for the API usage report at cloud scope.\n",
-        "operationId": "reports_cloudApiusageApiLeaderboard",
+        "operationId": "reports_cloudApiusageApisLeaderboard",
         "security": [
           {
             "oauth": [
@@ -108006,7 +110962,16 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -108026,7 +110991,7 @@
         ]
       }
     },
-    "/{analytics-service}/cloud/reports/apiusage/leaderboard/product": {
+    "/{analytics-service}/cloud/reports/apiusage/mini-leaderboards/products": {
       "description": "Return the data needed to populate the product leaderboard for the API usage report at cloud scope.\n",
       "parameters": [
         {
@@ -108039,7 +111004,7 @@
       "get": {
         "summary": "Get the data needed to populate the product leaderboard for the API usage report at cloud scope.\n",
         "description": "Return the data needed to populate the product leaderboard for the API usage report at cloud scope.\n",
-        "operationId": "reports_cloudApiusageProductLeaderboard",
+        "operationId": "reports_cloudApiusageProductsLeaderboard",
         "security": [
           {
             "oauth": [
@@ -108049,7 +111014,16 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -108069,7 +111043,7 @@
         ]
       }
     },
-    "/{analytics-service}/cloud/reports/apiusage/leaderboard/plan": {
+    "/{analytics-service}/cloud/reports/apiusage/mini-leaderboards/plans": {
       "description": "Return the data needed to populate the plan leaderboard for the API usage report at cloud scope.\n",
       "parameters": [
         {
@@ -108082,7 +111056,7 @@
       "get": {
         "summary": "Get the data needed to populate the plan leaderboard for the API usage report at cloud scope.\n",
         "description": "Return the data needed to populate the plan leaderboard for the API usage report at cloud scope.\n",
-        "operationId": "reports_cloudApiusagePlanLeaderboard",
+        "operationId": "reports_cloudApiusagePlansLeaderboard",
         "security": [
           {
             "oauth": [
@@ -108092,7 +111066,16 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -108112,7 +111095,7 @@
         ]
       }
     },
-    "/{analytics-service}/cloud/reports/apiusage/leaderboard/api/{apiref}": {
+    "/{analytics-service}/cloud/reports/apis/{apiref}": {
       "description": "Return the data needed to populate an API for the leaderboard for the API usage report at cloud scope.\n",
       "parameters": [
         {
@@ -108128,7 +111111,7 @@
       "get": {
         "summary": "Get the data needed to populate an API for the leaderboard for the API usage report at cloud scope.\n",
         "description": "Return the data needed to populate an API for the leaderboard for the API usage report at cloud scope.\n",
-        "operationId": "reports_cloudApiusageApiLeaderboardDetail",
+        "operationId": "reports_cloudApiDetail",
         "security": [
           {
             "oauth": [
@@ -108138,7 +111121,16 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -108158,7 +111150,7 @@
         ]
       }
     },
-    "/{analytics-service}/cloud/reports/apiusage/leaderboard/product/{productref}": {
+    "/{analytics-service}/cloud/reports/products/{productref}": {
       "description": "Return the data needed to populate a product for the leaderboard for the API usage report at cloud scope.\n",
       "parameters": [
         {
@@ -108174,7 +111166,7 @@
       "get": {
         "summary": "Get the data needed to populate a product for the leaderboard for the API usage report at cloud scope.\n",
         "description": "Return the data needed to populate a product for the leaderboard for the API usage report at cloud scope.\n",
-        "operationId": "reports_cloudApiusageProductLeaderboardDetail",
+        "operationId": "reports_cloudProductDetail",
         "security": [
           {
             "oauth": [
@@ -108184,7 +111176,16 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -108204,7 +111205,7 @@
         ]
       }
     },
-    "/{analytics-service}/cloud/reports/apiusage/leaderboard/plan/{planref}": {
+    "/{analytics-service}/cloud/reports/plans/{planref}": {
       "description": "Return the data needed to populate a plan for the leaderboard for the API usage report at cloud scope.\n",
       "parameters": [
         {
@@ -108220,7 +111221,7 @@
       "get": {
         "summary": "Get the data needed to populate a plan for the leaderboard for the API usage report at cloud scope.\n",
         "description": "Return the data needed to populate a plan for the leaderboard for the API usage report at cloud scope.\n",
-        "operationId": "reports_cloudApiusagePlanLeaderboardDetail",
+        "operationId": "reports_cloudPlanDetail",
         "security": [
           {
             "oauth": [
@@ -108230,12 +111231,924 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/ApiUsageLeaderboardDetailReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/reports/leaderboards/apis": {
+      "description": "Return the data needed to populate the API leaderboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/search_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the API leaderboard at cloud scope.\n",
+        "description": "Return the data needed to populate the API leaderboard at cloud scope.\n",
+        "operationId": "reports_cloudApisLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/reports/leaderboards/products": {
+      "description": "Return the data needed to populate the Products leaderboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/search_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Products leaderboard at cloud scope.\n",
+        "description": "Return the data needed to populate the Products leaderboard at cloud scope.\n",
+        "operationId": "reports_cloudProductsLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/reports/leaderboards/plans": {
+      "description": "Return the data needed to populate the Plans leaderboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/search_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Plans leaderboard at cloud scope.\n",
+        "description": "Return the data needed to populate the Plans leaderboard at cloud scope.\n",
+        "operationId": "reports_cloudPlanLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/reports/leaderboards/applications": {
+      "description": "Return the data needed to populate the Applications leaderboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/search_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Applications leaderboard at cloud scope.\n",
+        "description": "Return the data needed to populate the Applications leaderboard at cloud scope.\n",
+        "operationId": "reports_cloudApplicationsLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/reports/leaderboards/consumerorgs": {
+      "description": "Return the data needed to populate the Consumer Organization leaderboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/search_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Consumer Organization leaderboard at cloud scope.\n",
+        "description": "Return the data needed to populate the Consumer Organization leaderboard at cloud scope.\n",
+        "operationId": "reports_cloudConsumerorgsLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/reports/leaderboards/breakdown": {
+      "description": "Return the data needed to populate the Breakdown leaderboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/search_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Breakdown leaderboard at cloud scope.\n",
+        "description": "Return the data needed to populate the Breakdown leaderboard at cloud scope.\n",
+        "operationId": "reports_cloudBreakdownLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/reports/inactive/consumerorgs": {
+      "description": "Return the data needed to populate the Inactive consumer organizations report funnel at cloud scope\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Inactive consumer organizations report funnel at cloud scope\n",
+        "description": "Return the data needed to populate the Inactive consumer organizations report funnel at cloud scope\n",
+        "operationId": "reports_cloudInactiveCorgReportFunnel",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/regenerate_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/InactiveCorgFunnelResponse"
+          },
+          "202": {
+            "$ref": "#/components/responses/InactivePollingResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/reports/inactive/consumerorgs/{inactive-consumer-report-type}": {
+      "description": "Return the data needed to populate the Inactive consumer organizations report table at cloud scope\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/inactive-consumer-report-type"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Inactive consumer organizations report table at cloud scope\n",
+        "description": "Return the data needed to populate the Inactive consumer organizations report table at cloud scope\n",
+        "operationId": "reports_cloudInactiveCorgReportTable",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          },
+          {
+            "$ref": "#/components/parameters/regenerate_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/InactiveCorgTableResponse"
+          },
+          "202": {
+            "$ref": "#/components/responses/InactivePollingResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/reports/inactive/products/{inactive-product-report-type}": {
+      "description": "Return the data needed to populate the Inactive product report at cloud scope\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/inactive-product-report-type"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Inactive product report table at cloud scope\n",
+        "description": "Return the data needed to populate the Inactive product report table at cloud scope\n",
+        "operationId": "reports_cloudInactiveProductReport",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          },
+          {
+            "$ref": "#/components/parameters/regenerate_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/InactiveProductResponse"
+          },
+          "202": {
+            "$ref": "#/components/responses/InactivePollingResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/reports/deprecated/products": {
+      "description": "Return the data needed to populate the Deprecated product report at cloud scope\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Deprecated product report table at cloud scope\n",
+        "description": "Return the data needed to populate the Deprecated product report table at cloud scope\n",
+        "operationId": "reports_cloudDeprecatedProduct",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          },
+          {
+            "$ref": "#/components/parameters/regenerate_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DeprecatedProductResponse"
+          },
+          "202": {
+            "$ref": "#/components/responses/DeprecatedPollingResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/reports/consumertrend": {
+      "description": "Return the data needed to populate the consumer trend report, including trends and data of consumers, applications, and subscriptions, at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the consumer trend report at cloud scope.\n",
+        "description": "Return the data needed to populate the consumer trend report, including trends and data of consumers, applications, and subscriptions, at cloud scope.\n",
+        "operationId": "reports_cloudConsumerTrend",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerTrendReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/reports/consumertrend/mini-leaderboards/applications": {
+      "description": "Return the data for the application leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Application leaderboard for the consumer trend report at cloud scope.\n",
+        "description": "Return the data for the application leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at cloud scope.\n",
+        "operationId": "reports_cloudConsumerTrendApplicationsLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerTrendLeaderboardReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/reports/consumertrend/mini-leaderboards/consumerorgs": {
+      "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the consumerorg leaderboard for the  consumer trend report at cloud scope.\n",
+        "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at cloud scope.\n",
+        "operationId": "reports_cloudConsumerTrendConsumerorgsLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerTrendLeaderboardReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/reports/applications/{app-name}": {
+      "description": "Return the data for the application leaderboard in the consumer trend report, including API call counts and other metrics over time at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/app-name"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate a application for the leaderboard for the consumer trend report at cloud scope.\n",
+        "description": "Return the data for the application leaderboard in the consumer trend report, including API call counts and other metrics over time at cloud scope.\n",
+        "operationId": "reports_cloudApplicationDetail",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerTrendLeaderboardDetailReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/reports/consumerorgs/{consumer-org-name}": {
+      "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including API call counts and other metrics over time at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/consumer-org-name"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate a consumerorg for the leaderboard for the consumer trend report at cloud scope.\n",
+        "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including API call counts and other metrics over time at cloud scope.\n",
+        "operationId": "reports_cloudConsumerorgDetail",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerTrendLeaderboardDetailReportResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -108277,6 +112190,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -108296,7 +112215,7 @@
         ]
       }
     },
-    "/{analytics-service}/orgs/{org}/reports/apiusage/leaderboard/api": {
+    "/{analytics-service}/orgs/{org}/reports/apiusage/mini-leaderboards/apis": {
       "description": "Return the data needed to populate the API leaderboard for the API usage report at org scope.\n",
       "parameters": [
         {
@@ -108312,7 +112231,7 @@
       "get": {
         "summary": "Get the data needed to populate the API leaderboard for the API usage report at org scope.\n",
         "description": "Return the data needed to populate the API leaderboard for the API usage report at org scope.\n",
-        "operationId": "reports_orgApiusageApiLeaderboard",
+        "operationId": "reports_orgApiusageApisLeaderboard",
         "security": [
           {
             "oauth": [
@@ -108323,6 +112242,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -108342,7 +112267,7 @@
         ]
       }
     },
-    "/{analytics-service}/orgs/{org}/reports/apiusage/leaderboard/product": {
+    "/{analytics-service}/orgs/{org}/reports/apiusage/mini-leaderboards/products": {
       "description": "Return the data needed to populate the product leaderboard for the API usage report at org scope.\n",
       "parameters": [
         {
@@ -108358,7 +112283,7 @@
       "get": {
         "summary": "Get the data needed to populate the product leaderboard for the API usage report at org scope.\n",
         "description": "Return the data needed to populate the product leaderboard for the API usage report at org scope.\n",
-        "operationId": "reports_orgApiusageProductLeaderboard",
+        "operationId": "reports_orgApiusageProductsLeaderboard",
         "security": [
           {
             "oauth": [
@@ -108369,6 +112294,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -108388,7 +112319,7 @@
         ]
       }
     },
-    "/{analytics-service}/orgs/{org}/reports/apiusage/leaderboard/plan": {
+    "/{analytics-service}/orgs/{org}/reports/apiusage/mini-leaderboards/plans": {
       "description": "Return the data needed to populate the plan leaderboard for the API usage report at org scope.\n",
       "parameters": [
         {
@@ -108404,7 +112335,7 @@
       "get": {
         "summary": "Get the data needed to populate the plan leaderboard for the API usage report at org scope.\n",
         "description": "Return the data needed to populate the plan leaderboard for the API usage report at org scope.\n",
-        "operationId": "reports_orgApiusagePlanLeaderboard",
+        "operationId": "reports_orgApiusagePlansLeaderboard",
         "security": [
           {
             "oauth": [
@@ -108415,6 +112346,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -108434,7 +112371,7 @@
         ]
       }
     },
-    "/{analytics-service}/orgs/{org}/reports/apiusage/leaderboard/api/{apiref}": {
+    "/{analytics-service}/orgs/{org}/reports/apis/{apiref}": {
       "description": "Return the data needed to populate an API for the leaderboard for the API usage report at org scope.\n",
       "parameters": [
         {
@@ -108453,7 +112390,7 @@
       "get": {
         "summary": "Get the data needed to populate an API for the leaderboard for the API usage report at org scope.\n",
         "description": "Return the data needed to populate an API for the leaderboard for the API usage report at org scope.\n",
-        "operationId": "reports_orgApiusageApiLeaderboardDetail",
+        "operationId": "reports_orgApiDetail",
         "security": [
           {
             "oauth": [
@@ -108464,6 +112401,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -108483,7 +112426,7 @@
         ]
       }
     },
-    "/{analytics-service}/orgs/{org}/reports/apiusage/leaderboard/product/{productref}": {
+    "/{analytics-service}/orgs/{org}/reports/products/{productref}": {
       "description": "Return the data needed to populate a product for the leaderboard for the API usage report at org scope.\n",
       "parameters": [
         {
@@ -108502,7 +112445,7 @@
       "get": {
         "summary": "Get the data needed to populate a product for the leaderboard for the API usage report at org scope.\n",
         "description": "Return the data needed to populate a product for the leaderboard for the API usage report at org scope.\n",
-        "operationId": "reports_orgApiusageProductLeaderboardDetail",
+        "operationId": "reports_orgProductDetail",
         "security": [
           {
             "oauth": [
@@ -108513,6 +112456,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -108532,7 +112481,7 @@
         ]
       }
     },
-    "/{analytics-service}/orgs/{org}/reports/apiusage/leaderboard/plan/{planref}": {
+    "/{analytics-service}/orgs/{org}/reports/plans/{planref}": {
       "description": "Return the data needed to populate a plan for the leaderboard for the API usage report at org scope.\n",
       "parameters": [
         {
@@ -108551,7 +112500,7 @@
       "get": {
         "summary": "Get the data needed to populate a plan for the leaderboard for the API usage report at org scope.\n",
         "description": "Return the data needed to populate a plan for the leaderboard for the API usage report at org scope.\n",
-        "operationId": "reports_orgApiusagePlanLeaderboardDetail",
+        "operationId": "reports_orgPlanDetail",
         "security": [
           {
             "oauth": [
@@ -108562,11 +112511,932 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/ApiUsageLeaderboardDetailReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/reports/leaderboards/apis": {
+      "description": "Return the data needed to populate the API leaderboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/search_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the API leaderboard at org scope.\n",
+        "description": "Return the data needed to populate the API leaderboard at org scope.\n",
+        "operationId": "reports_orgApisLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/reports/leaderboards/products": {
+      "description": "Return the data needed to populate the Product leaderboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/search_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Product leaderboard at org scope.\n",
+        "description": "Return the data needed to populate the Product leaderboard a at org scope.\n",
+        "operationId": "reports_orgProductsLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/reports/leaderboards/plans": {
+      "description": "Return the data needed to populate the Plans leaderboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/search_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Plans leaderboard at org scope.\n",
+        "description": "Return the data needed to populate the Plans leaderboard at org scope.\n",
+        "operationId": "reports_orgPlanLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/reports/leaderboards/applications": {
+      "description": "Return the data needed to populate the Applications leaderboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/search_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Applications leaderboard at org scope.\n",
+        "description": "Return the data needed to populate the Applications leaderboard at org scope.\n",
+        "operationId": "reports_orgApplicationsLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/reports/leaderboards/consumerorgs": {
+      "description": "Return the data needed to populate the Consumer Organization leaderboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/search_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Consumer Organization leaderboard at org scope.\n",
+        "description": "Return the data needed to populate the Consumer Organization leaderboard at org scope.\n",
+        "operationId": "reports_orgConsumerorgsLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/reports/leaderboards/breakdown": {
+      "description": "Return the data needed to populate the Breakdown leaderboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/search_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Breakdown leaderboard at org scope.\n",
+        "description": "Return the data needed to populate the Breakdown leaderboard at org scope.\n",
+        "operationId": "reports_orgBreakdownLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/reports/inactive/consumerorgs": {
+      "description": "Return the data needed to populate the Inactive consumer organizations report funnel at org scope\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Inactive consumer organizations report funnel at org scope\n",
+        "description": "Return the data needed to populate the Inactive consumer organizations report funnel at org scope\n",
+        "operationId": "reports_orgInactiveCorgReportFunnel",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/regenerate_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/InactiveCorgFunnelResponse"
+          },
+          "202": {
+            "$ref": "#/components/responses/InactivePollingResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/reports/inactive/consumerorgs/{inactive-consumer-report-type}": {
+      "description": "Return the data needed to populate the Inactive consumer organizations report table at org scope\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/inactive-consumer-report-type"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Inactive consumer organizations report table at org scope\n",
+        "description": "Return the data needed to populate the Inactive consumer organizations report table at org scope\n",
+        "operationId": "reports_orgInactiveCorgReportTable",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          },
+          {
+            "$ref": "#/components/parameters/regenerate_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/InactiveCorgTableResponse"
+          },
+          "202": {
+            "$ref": "#/components/responses/InactivePollingResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/reports/inactive/products/{inactive-product-report-type}": {
+      "description": "Return the data needed to populate the Inactive product report at org scope\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/inactive-product-report-type"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Inactive product report table at org scope\n",
+        "description": "Return the data needed to populate the Inactive product report table at org scope\n",
+        "operationId": "reports_orgInactiveProductReport",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          },
+          {
+            "$ref": "#/components/parameters/regenerate_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/InactiveProductResponse"
+          },
+          "202": {
+            "$ref": "#/components/responses/InactivePollingResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/reports/deprecated/products": {
+      "description": "Return the data needed to populate the Deprecated product report at org scope\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Deprecated product report table at org scope\n",
+        "description": "Return the data needed to populate the Deprecated product report table at org scope\n",
+        "operationId": "reports_orgDeprecatedProduct",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          },
+          {
+            "$ref": "#/components/parameters/regenerate_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DeprecatedProductResponse"
+          },
+          "202": {
+            "$ref": "#/components/responses/DeprecatedPollingResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/reports/consumertrend": {
+      "description": "Return the data needed to populate the consumer trend report, including trends and data of consumers, applications, and subscriptions, at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the consumer trend report at org scope.\n",
+        "description": "Return the data needed to populate the consumer trend report, including trends and data of consumers, applications, and subscriptions, at org scope.\n",
+        "operationId": "reports_orgConsumerTrend",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerTrendReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/reports/consumertrend/mini-leaderboards/applications": {
+      "description": "Return the data for the application leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Application leaderboard for the consumer trend report at org scope.\n",
+        "description": "Return the data for the application leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at org scope.\n",
+        "operationId": "reports_orgConsumerTrendApplicationsLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerTrendLeaderboardReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/reports/consumertrend/mini-leaderboards/consumerorgs": {
+      "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the consumerorg leaderboard for the  consumer trend report at org scope.\n",
+        "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at org scope.\n",
+        "operationId": "reports_orgConsumerTrendConsumerorgsLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerTrendLeaderboardReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/reports/applications/{app-name}": {
+      "description": "Return the data for the application leaderboard in the consumer trend report, including API call counts and other metrics over time at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/app-name"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate a application for the leaderboard for the consumer trend report at org scope.\n",
+        "description": "Return the data for the application leaderboard in the consumer trend report, including API call counts and other metrics over time at org scope.\n",
+        "operationId": "reports_orgApplicationDetail",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerTrendLeaderboardDetailReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/reports/consumerorgs/{consumer-org-name}": {
+      "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including API call counts and other metrics over time at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/consumer-org-name"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate a consumerorg for the leaderboard for the consumer trend report at org scope.\n",
+        "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including API call counts and other metrics over time at org scope.\n",
+        "operationId": "reports_orgConsumerorgDetail",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerTrendLeaderboardDetailReportResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -108611,6 +113481,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -108630,7 +113506,7 @@
         ]
       }
     },
-    "/{analytics-service}/catalogs/{org}/{catalog}/reports/apiusage/leaderboard/api": {
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/apiusage/mini-leaderboards/apis": {
       "description": "Return the data needed to populate the API leaderboard for the API usage report at catalog scope.\n",
       "parameters": [
         {
@@ -108649,7 +113525,7 @@
       "get": {
         "summary": "Get the data needed to populate the API leaderboard for the API usage report at catalog scope.\n",
         "description": "Return the data needed to populate the API leaderboard for the API usage report at catalog scope.\n",
-        "operationId": "reports_catalogApiusageApiLeaderboard",
+        "operationId": "reports_catalogApiusageApisLeaderboard",
         "security": [
           {
             "oauth": [
@@ -108660,6 +113536,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -108679,7 +113561,7 @@
         ]
       }
     },
-    "/{analytics-service}/catalogs/{org}/{catalog}/reports/apiusage/leaderboard/product": {
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/apiusage/mini-leaderboards/products": {
       "description": "Return the data needed to populate the product leaderboard for the API usage report at catalog scope.\n",
       "parameters": [
         {
@@ -108698,7 +113580,7 @@
       "get": {
         "summary": "Get the data needed to populate the product leaderboard for the API usage report at catalog scope.\n",
         "description": "Return the data needed to populate the product leaderboard for the API usage report at catalog scope.\n",
-        "operationId": "reports_catalogApiusageProductLeaderboard",
+        "operationId": "reports_catalogApiusageProductsLeaderboard",
         "security": [
           {
             "oauth": [
@@ -108709,6 +113591,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -108728,7 +113616,7 @@
         ]
       }
     },
-    "/{analytics-service}/catalogs/{org}/{catalog}/reports/apiusage/leaderboard/plan": {
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/apiusage/mini-leaderboards/plans": {
       "description": "Return the data needed to populate the plan leaderboard for the API usage report at catalog scope.\n",
       "parameters": [
         {
@@ -108747,7 +113635,7 @@
       "get": {
         "summary": "Get the data needed to populate the plan leaderboard for the API usage report at catalog scope.\n",
         "description": "Return the data needed to populate the plan leaderboard for the API usage report at catalog scope.\n",
-        "operationId": "reports_catalogApiusagePlanLeaderboard",
+        "operationId": "reports_catalogApiusagePlansLeaderboard",
         "security": [
           {
             "oauth": [
@@ -108758,6 +113646,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -108777,7 +113671,7 @@
         ]
       }
     },
-    "/{analytics-service}/catalogs/{org}/{catalog}/reports/apiusage/leaderboard/api/{apiref}": {
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/apis/{apiref}": {
       "description": "Return the data needed to populate an API for the leaderboard for the API usage report at catalog scope.\n",
       "parameters": [
         {
@@ -108799,7 +113693,7 @@
       "get": {
         "summary": "Get the data needed to populate an API for the leaderboard for the API usage report at catalog scope.\n",
         "description": "Return the data needed to populate an API for the leaderboard for the API usage report at catalog scope.\n",
-        "operationId": "reports_catalogApiusageApiLeaderboardDetail",
+        "operationId": "reports_catalogApiDetail",
         "security": [
           {
             "oauth": [
@@ -108810,6 +113704,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -108829,7 +113729,7 @@
         ]
       }
     },
-    "/{analytics-service}/catalogs/{org}/{catalog}/reports/apiusage/leaderboard/product/{productref}": {
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/products/{productref}": {
       "description": "Return the data needed to populate a product for the leaderboard for the API usage report at catalog scope.\n",
       "parameters": [
         {
@@ -108851,7 +113751,7 @@
       "get": {
         "summary": "Get the data needed to populate a product for the leaderboard for the API usage report at catalog scope.\n",
         "description": "Return the data needed to populate a product for the leaderboard for the API usage report at catalog scope.\n",
-        "operationId": "reports_catalogApiusageProductLeaderboardDetail",
+        "operationId": "reports_catalogProductDetail",
         "security": [
           {
             "oauth": [
@@ -108862,6 +113762,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -108881,7 +113787,7 @@
         ]
       }
     },
-    "/{analytics-service}/catalogs/{org}/{catalog}/reports/apiusage/leaderboard/plan/{planref}": {
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/plans/{planref}": {
       "description": "Return the data needed to populate a plan for the leaderboard for the API usage report at catalog scope.\n",
       "parameters": [
         {
@@ -108903,7 +113809,7 @@
       "get": {
         "summary": "Get the data needed to populate a plan for the leaderboard for the API usage report at catalog scope.\n",
         "description": "Return the data needed to populate a plan for the leaderboard for the API usage report at catalog scope.\n",
-        "operationId": "reports_catalogApiusagePlanLeaderboardDetail",
+        "operationId": "reports_catalogPlanDetail",
         "security": [
           {
             "oauth": [
@@ -108914,11 +113820,977 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/ApiUsageLeaderboardDetailReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/leaderboards/apis": {
+      "description": "Return the data needed to populate the API leaderboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/search_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the API leaderboard at catalog scope.\n",
+        "description": "Return the data needed to populate the API leaderboard at catalog scope.\n",
+        "operationId": "reports_catalogApisLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/leaderboards/products": {
+      "description": "Return the data needed to populate the Product leaderboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/search_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Product leaderboard at catalog scope.\n",
+        "description": "Return the data needed to populate the Product leaderboard at catalog scope.\n",
+        "operationId": "reports_catalogProductsLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/leaderboards/plans": {
+      "description": "Return the data needed to populate the Plan leaderboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/search_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Plan leaderboard at catalog scope.\n",
+        "description": "Return the data needed to populate the Plan leaderboard at catalog scope.\n",
+        "operationId": "reports_catalogPlanLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/leaderboards/applications": {
+      "description": "Return the data needed to populate the Applications leaderboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/search_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Applications leaderboard at catalog scope.\n",
+        "description": "Return the data needed to populate the Applications leaderboard at catalog scope.\n",
+        "operationId": "reports_catalogApplicationsLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/leaderboards/consumerorgs": {
+      "description": "Return the data needed to populate the Consumer Organization leaderboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/search_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Consumer Organization leaderboard at catalog scope.\n",
+        "description": "Return the data needed to populate the Consumer Organization leaderboard at catalog scope.\n",
+        "operationId": "reports_catalogConsumerorgsLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/leaderboards/breakdown": {
+      "description": "Return the data needed to populate the Breakdown leaderboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/search_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Breakdown leaderboard at catalog scope.\n",
+        "description": "Return the data needed to populate the Breakdown leaderboard at catalog scope.\n",
+        "operationId": "reports_catalogBreakdownLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/inactive/consumerorgs": {
+      "description": "Return the data needed to populate the Inactive consumer organizations report funnel at catalog scope\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Inactive consumer organizations report funnel at catalog scope\n",
+        "description": "Return the data needed to populate the Inactive consumer organizations report funnel at catalog scope\n",
+        "operationId": "reports_catalogInactiveCorgReportFunnel",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/regenerate_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/InactiveCorgFunnelResponse"
+          },
+          "202": {
+            "$ref": "#/components/responses/InactivePollingResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/inactive/consumerorgs/{inactive-consumer-report-type}": {
+      "description": "Return the data needed to populate the Inactive consumer organizations report table at catalog scope\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/inactive-consumer-report-type"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Inactive consumer organizations report table at catalog scope\n",
+        "description": "Return the data needed to populate the Inactive consumer organizations report table at catalog scope\n",
+        "operationId": "reports_catalogInactiveCorgReportTable",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          },
+          {
+            "$ref": "#/components/parameters/regenerate_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/InactiveCorgTableResponse"
+          },
+          "202": {
+            "$ref": "#/components/responses/InactivePollingResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/inactive/products/{inactive-product-report-type}": {
+      "description": "Return the data needed to populate the Inactive product report at catalog scope\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/inactive-product-report-type"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Inactive product report table at catalog scope\n",
+        "description": "Return the data needed to populate the Inactive product report table at catalog scope\n",
+        "operationId": "reports_catalogInactiveProductReport",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          },
+          {
+            "$ref": "#/components/parameters/regenerate_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/InactiveProductResponse"
+          },
+          "202": {
+            "$ref": "#/components/responses/InactivePollingResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/deprecated/products": {
+      "description": "Return the data needed to populate the deprecated product report at catalog scope\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Deprecated product report table at catalog scope\n",
+        "description": "Return the data needed to populate the Deprecated product report table at catalog scope\n",
+        "operationId": "reports_catalogDeprecatedProduct",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          },
+          {
+            "$ref": "#/components/parameters/regenerate_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DeprecatedProductResponse"
+          },
+          "202": {
+            "$ref": "#/components/responses/DeprecatedPollingResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/consumertrend": {
+      "description": "Return the data needed to populate the consumer trend report, including trends and data of consumers, applications, and subscriptions, at the catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the consumer trend report at catalog scope.\n",
+        "description": "Return the data needed to populate the consumer trend report, including trends and data of consumers, applications, and subscriptions, at the catalog scope.\n",
+        "operationId": "reports_catalogConsumerTrend",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerTrendReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/consumertrend/mini-leaderboards/applications": {
+      "description": "Return the data for the application leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at the catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Application leaderboard for the consumer trend report at catalog scope.\n",
+        "description": "Return the data for the application leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at the catalog scope.\n",
+        "operationId": "reports_catalogConsumerTrendApplicationsLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerTrendLeaderboardReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/consumertrend/mini-leaderboards/consumerorgs": {
+      "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at the catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the consumerorg leaderboard for the  consumer trend report at catalog scope.\n",
+        "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at the catalog scope.\n",
+        "operationId": "reports_catalogConsumerTrendConsumerorgsLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerTrendLeaderboardReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/applications/{app-name}": {
+      "description": "Return the data for the application leaderboard in the consumer trend report, including API call counts and other metrics over time at the catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/app-name"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate a application for the leaderboard for the consumer trend report at catalog scope.\n",
+        "description": "Return the data for the application leaderboard in the consumer trend report, including API call counts and other metrics over time at the catalog scope.\n",
+        "operationId": "reports_catalogApplicationDetail",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerTrendLeaderboardDetailReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/consumerorgs/{consumer-org-name}": {
+      "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including API call counts and other metrics over time at the catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/consumer-org-name"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate a consumerorg for the leaderboard for the consumer trend report at catalog scope.\n",
+        "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including API call counts and other metrics over time at the catalog scope.\n",
+        "operationId": "reports_catalogConsumerorgDetail",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerTrendLeaderboardDetailReportResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -108966,6 +114838,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -108985,7 +114863,7 @@
         ]
       }
     },
-    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/apiusage/leaderboard/api": {
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/apiusage/mini-leaderboards/apis": {
       "description": "Return the data needed to populate the API leaderboard for the API usage report at space scope.\n",
       "parameters": [
         {
@@ -109007,7 +114885,7 @@
       "get": {
         "summary": "Get the data needed to populate the API leaderboard for the API usage report at space scope.\n",
         "description": "Return the data needed to populate the API leaderboard for the API usage report at space scope.\n",
-        "operationId": "reports_spaceApiusageApiLeaderboard",
+        "operationId": "reports_spaceApiusageApisLeaderboard",
         "security": [
           {
             "oauth": [
@@ -109018,6 +114896,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -109037,7 +114921,7 @@
         ]
       }
     },
-    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/apiusage/leaderboard/product": {
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/apiusage/mini-leaderboards/products": {
       "description": "Return the data needed to populate the product leaderboard for the API usage report at space scope.\n",
       "parameters": [
         {
@@ -109059,7 +114943,7 @@
       "get": {
         "summary": "Get the data needed to populate the product leaderboard for the API usage report at space scope.\n",
         "description": "Return the data needed to populate the product leaderboard for the API usage report at space scope.\n",
-        "operationId": "reports_spaceApiusageProductLeaderboard",
+        "operationId": "reports_spaceApiusageProductsLeaderboard",
         "security": [
           {
             "oauth": [
@@ -109070,6 +114954,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -109089,7 +114979,7 @@
         ]
       }
     },
-    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/apiusage/leaderboard/plan": {
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/apiusage/mini-leaderboards/plans": {
       "description": "Return the data needed to populate the plan leaderboard for the API usage report at space scope.\n",
       "parameters": [
         {
@@ -109111,7 +115001,7 @@
       "get": {
         "summary": "Get the data needed to populate the plan leaderboard for the API usage report at space scope.\n",
         "description": "Return the data needed to populate the plan leaderboard for the API usage report at space scope.\n",
-        "operationId": "reports_spaceApiusagePlanLeaderboard",
+        "operationId": "reports_spaceApiusagePlansLeaderboard",
         "security": [
           {
             "oauth": [
@@ -109122,6 +115012,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -109141,7 +115037,7 @@
         ]
       }
     },
-    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/apiusage/leaderboard/api/{apiref}": {
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/apis/{apiref}": {
       "description": "Return the data needed to populate an API for the leaderboard for the API usage report at space scope.\n",
       "parameters": [
         {
@@ -109166,7 +115062,7 @@
       "get": {
         "summary": "Get the data needed to populate an API for the leaderboard for the API usage report at space scope.\n",
         "description": "Return the data needed to populate an API for the leaderboard for the API usage report at space scope.\n",
-        "operationId": "reports_spaceApiusageApiLeaderboardDetail",
+        "operationId": "reports_spaceApiDetail",
         "security": [
           {
             "oauth": [
@@ -109177,6 +115073,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -109196,7 +115098,7 @@
         ]
       }
     },
-    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/apiusage/leaderboard/product/{productref}": {
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/products/{productref}": {
       "description": "Return the data needed to populate a product for the leaderboard for the API usage report at space scope.\n",
       "parameters": [
         {
@@ -109221,7 +115123,7 @@
       "get": {
         "summary": "Get the data needed to populate a product for the leaderboard for the API usage report at space scope.\n",
         "description": "Return the data needed to populate a product for the leaderboard for the API usage report at space scope.\n",
-        "operationId": "reports_spaceApiusageProductLeaderboardDetail",
+        "operationId": "reports_spaceProductDetail",
         "security": [
           {
             "oauth": [
@@ -109232,6 +115134,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
@@ -109251,7 +115159,7 @@
         ]
       }
     },
-    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/apiusage/leaderboard/plan/{planref}": {
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/plans/{planref}": {
       "description": "Return the data needed to populate a plan for the leaderboard for the API usage report at space scope.\n",
       "parameters": [
         {
@@ -109276,7 +115184,7 @@
       "get": {
         "summary": "Get the data needed to populate a plan for the leaderboard for the API usage report at space scope.\n",
         "description": "Return the data needed to populate a plan for the leaderboard for the API usage report at space scope.\n",
-        "operationId": "reports_spaceApiusagePlanLeaderboardDetail",
+        "operationId": "reports_spacePlanDetail",
         "security": [
           {
             "oauth": [
@@ -109287,11 +115195,633 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
           }
         ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/ApiUsageLeaderboardDetailReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/leaderboards/apis": {
+      "description": "Return the data needed to populate the API leaderboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the API leaderboard at space scope.\n",
+        "description": "Return the data needed to populate the API leaderboard at space scope.\n",
+        "operationId": "reports_spaceApisLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/leaderboards/products": {
+      "description": "Return the data needed to populate the Product leaderboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Product leaderboard at space scope.\n",
+        "description": "Return the data needed to populate the Product leaderboard at space scope.\n",
+        "operationId": "reports_spaceProductsLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/leaderboards/plans": {
+      "description": "Return the data needed to populate the Plans leaderboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Plans leaderboard at space scope.\n",
+        "description": "Return the data needed to populate the Plans leaderboard at space scope.\n",
+        "operationId": "reports_spacePlanLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/leaderboards/applications": {
+      "description": "Return the data needed to populate the Applications leaderboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Applications leaderboard at space scope.\n",
+        "description": "Return the data needed to populate the Applications leaderboard at space scope.\n",
+        "operationId": "reports_spaceApplicationsLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/leaderboards/consumerorgs": {
+      "description": "Return the data needed to populate the Consumer Organization leaderboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Consumer Organization leaderboard at space scope.\n",
+        "description": "Return the data needed to populate the Consumer Organization leaderboard at space scope.\n",
+        "operationId": "reports_spaceConsumerorgsLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/consumertrend": {
+      "description": "Return the data needed to populate the consumer trend report, including trends and data of consumers, applications, and subscriptions, at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the consumer trend report at space scope.\n",
+        "description": "Return the data needed to populate the consumer trend report, including trends and data of consumers, applications, and subscriptions, at space scope.\n",
+        "operationId": "reports_spaceConsumerTrend",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerTrendReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/consumertrend/mini-leaderboards/applications": {
+      "description": "Return the data for the application leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at the space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Application leaderboard for the consumer trend report at space scope.\n",
+        "description": "Return the data for the application leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at the space scope.\n",
+        "operationId": "reports_spaceConsumerTrendApplicationsLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerTrendLeaderboardReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/consumertrend/mini-leaderboards/consumerorgs": {
+      "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at the space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the consumerorg leaderboard for the  consumer trend report at space scope.\n",
+        "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at the space scope.\n",
+        "operationId": "reports_spacespaceConsumerTrendConsumerorgsLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerTrendLeaderboardReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/applications/{app-name}": {
+      "description": "Return the data for the application leaderboard in the consumer trend report, including API call counts and other metrics over time at the space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/app-name"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate a application for the leaderboard for the consumer trend report at space scope.\n",
+        "description": "Return the data for the application leaderboard in the consumer trend report, including API call counts and other metrics over time at the space scope.\n",
+        "operationId": "reports_spaceApplicationDetail",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerTrendLeaderboardDetailReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/consumerorgs/{consumer-org-name}": {
+      "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including API call counts and other metrics over time at the space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/consumer-org-name"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate a consumerorg for the leaderboard for the consumer trend report at space scope.\n",
+        "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including API call counts and other metrics over time at the space scope.\n",
+        "operationId": "reports_spaceConsumerorgDetail",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerTrendLeaderboardDetailReportResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -109384,7 +115914,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -109478,7 +116008,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -109566,7 +116096,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -109651,7 +116181,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -109733,7 +116263,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -109809,7 +116339,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -109859,7 +116389,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -109921,7 +116451,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -109992,7 +116522,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -110039,7 +116569,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -110110,7 +116640,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -110160,7 +116690,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -110213,7 +116743,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -110278,7 +116808,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -110352,7 +116882,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -110402,7 +116932,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -110458,7 +116988,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -110535,7 +117065,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -110615,7 +117145,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -110668,7 +117198,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -110720,7 +117250,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -110775,7 +117305,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -110822,7 +117352,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -110868,7 +117398,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "post": {
@@ -110906,7 +117436,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -110977,7 +117507,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -111024,7 +117554,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -111077,7 +117607,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "put": {
@@ -111118,7 +117648,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -111183,7 +117713,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -111251,7 +117781,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -111322,7 +117852,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -111366,7 +117896,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -111413,7 +117943,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -111486,7 +118016,623 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/pipelines": {
+      "description": "Provides pipeline-specific information and settings for each pipeline.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Pipeline-specific information and settings for each pipeline.",
+        "description": "Provides pipeline-specific information and settings for each pipeline.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionPipelines",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/os": {
+      "description": "Provides node-level info about the OS.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Node-level info about the OS.",
+        "description": "Provides node-level info about the OS.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionOs",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/jvm": {
+      "description": "Provides node-level JVM info, including info about threads.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Node-level JVM info, including info about threads.",
+        "description": "Provides node-level JVM info, including info about threads.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionJvm",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/plugins": {
+      "description": "Provides information about all Logstash plugins that are currently installed.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Information about all Logstash plugins that are currently installed.",
+        "description": "Provides information about all Logstash plugins that are currently installed.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionPlugins",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/hot_threads": {
+      "description": "Provides information about the the current hot threads for Logstash. It contains a breakdown of the top hot threads.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Information about the the current hot threads for Logstash.",
+        "description": "Provides information about the the current hot threads for Logstash. It contains a breakdown of the top hot threads.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionHotThreads",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/stats/jvm": {
+      "description": "Provides JVM stats, including stats about threads, memory usage, garbage collectors, and uptime.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "JVM stats, including stats about threads, memory usage, garbage collectors, and uptime.",
+        "description": "Provides JVM stats, including stats about threads, memory usage, garbage collectors, and uptime.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionJvmNodeStats",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/stats/process": {
+      "description": "Provides process stats, including stats about file descriptors, memory consumption, and CPU usage.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Process stats, including stats about file descriptors, memory consumption, and CPU usage.",
+        "description": "Provides process stats, including stats about file descriptors, memory consumption, and CPU usage.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionProcessNodeStats",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/stats/events": {
+      "description": "Provides event-related statistics for the Logstash instance regardless of how many pipelines were created and destroyed.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Event-related statistics for the Logstash instance regardless of how many pipelines were created and destroyed.",
+        "description": "Provides event-related statistics for the Logstash instance regardless of how many pipelines were created and destroyed.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionEventsNodeStats",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/stats/flow": {
+      "description": "Provides flow-related statistics for the Logstash instance regardless of how many pipelines were created and destroyed.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Flow-related statistics for the Logstash instance regardless of how many pipelines were created and destroyed.",
+        "description": "Provides flow-related statistics for the Logstash instance regardless of how many pipelines were created and destroyed.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionFlowNodeStats",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/stats/pipelines": {
+      "description": "Provides runtime stats about each Logstash pipeline.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Runtime stats about each Logstash pipeline.",
+        "description": "Provides runtime stats about each Logstash pipeline.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionPipelinesNodeStats",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/stats/reloads": {
+      "description": "Provides runtime stats about config reload successes and failures.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Runtime stats about config reload successes and failures.",
+        "description": "Provides runtime stats about config reload successes and failures.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionReloadsNodeStats",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/stats/os": {
+      "description": "Provides runtime stats about cgroups when Logstash is running in a container.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Runtime stats about cgroups when Logstash is running in a container.",
+        "description": "Provides runtime stats about cgroups when Logstash is running in a container.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionOsNodeStats",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node/stats/geoip_download_manager": {
+      "description": "Provides stats for databases used with the Geoip filter plugin.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Stats for databases used with the Geoip filter plugin.",
+        "description": "Provides stats for databases used with the Geoip filter plugin.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionGeoipDownloadManagerNodeStats",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/ingestion/node": {
+      "description": "Provides cluster nodes information.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Cluster nodes information.",
+        "description": "Provides cluster nodes information.\n",
+        "operationId": "clustermgmt_ingestionNode_getIngestionNodeInfo",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtIngestionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (ingestion)"
         ]
       }
     },
@@ -111524,7 +118670,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -111562,7 +118708,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "put": {
@@ -111603,7 +118749,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -111647,7 +118793,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -111694,7 +118840,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -111734,7 +118880,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -111771,7 +118917,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -111814,7 +118960,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -111854,7 +119000,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -111902,7 +119048,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "delete": {
@@ -111929,7 +119075,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -111972,7 +119118,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -112015,7 +119161,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -112082,7 +119228,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "delete": {
@@ -112095,6 +119241,9 @@
           },
           {
             "$ref": "#/components/parameters/expand_wildcards_optional"
+          },
+          {
+            "$ref": "#/components/parameters/force_delete_optional"
           },
           {
             "$ref": "#/components/parameters/ignore_unavailable_optional"
@@ -112120,7 +119269,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "put": {
@@ -112172,7 +119321,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -112231,7 +119380,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -112290,7 +119439,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -112343,7 +119492,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -112410,7 +119559,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -112463,7 +119612,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -112516,7 +119665,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -112572,7 +119721,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -112616,7 +119765,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -112672,7 +119821,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "post": {
@@ -112699,7 +119848,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -112752,7 +119901,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "post": {
@@ -112779,7 +119928,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -112837,7 +119986,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "put": {
@@ -112886,7 +120035,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "post": {
@@ -112935,7 +120084,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       },
       "delete": {
@@ -112970,7 +120119,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -113020,7 +120169,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -113073,7 +120222,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     },
@@ -113131,7 +120280,7 @@
         },
         "tags": [
           "Analytics",
-          "Resource: Clustermgmt"
+          "Resource: Clustermgmt (storage)"
         ]
       }
     }
@@ -113182,6 +120331,49 @@
         "required": true,
         "schema": {
           "$ref": "#/components/schemas/Id"
+        }
+      },
+      "inactive-consumer-report-type": {
+        "name": "inactive-consumer-report-type",
+        "in": "path",
+        "description": "Type of inactive consumer report to query",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "no_applications",
+            "no_subscriptions",
+            "no_traffic",
+            "no_recent_traffic"
+          ]
+        }
+      },
+      "inactive-product-report-type": {
+        "name": "inactive-product-report-type",
+        "in": "path",
+        "description": "Type of inactive product report to query",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "no_subscriptions",
+            "no_traffic",
+            "no_recent_traffic"
+          ]
+        }
+      },
+      "inactivetype": {
+        "name": "inactivetype",
+        "in": "path",
+        "description": "Type of inactive report to query\n",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "consumerorg",
+            "product_nosubs",
+            "product_nocalls"
+          ]
         }
       },
       "index-metric": {
@@ -113238,6 +120430,26 @@
         "schema": {
           "type": "string",
           "example": "custom_product:1.0.0"
+        }
+      },
+      "app-name": {
+        "name": "app-name",
+        "in": "path",
+        "description": "Filter results by application name.",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "custom_app"
+        }
+      },
+      "consumer-org-name": {
+        "name": "consumer-org-name",
+        "in": "path",
+        "description": "Filter results by consumer organization name (filters on the `developer_org_name` data field).",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "my_consumer_org"
         }
       },
       "space": {
@@ -113398,6 +120610,16 @@
           "example": "production"
         }
       },
+      "api_resource_id_optional": {
+        "name": "api_resource_id",
+        "in": "query",
+        "description": "Filter results by API resource ID.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "70848db2-5d5f-4df3-87e1-dd63f61f290c"
+        }
+      },
       "app_name_optional": {
         "name": "app_name",
         "in": "query",
@@ -113406,6 +120628,16 @@
         "schema": {
           "type": "string",
           "example": "custom_app"
+        }
+      },
+      "bucket_interval_optional": {
+        "name": "bucket_interval",
+        "in": "query",
+        "description": "If set, return events with this specific bucket interval in the dashboard. The value would be in the format of xy, where x is a positive integer and y is the time unit (d, h, m or s). For example '8h', '2d', '5m'.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "1d"
         }
       },
       "bytes_optional": {
@@ -113692,6 +120924,24 @@
           "type": "boolean"
         }
       },
+      "force_delete_optional": {
+        "name": "force",
+        "in": "query",
+        "description": "If true, this request forces a delete even if it is the current write alias target and will prevent the ingestion of new analytics data. Defaults to false.",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "include_others_optional": {
+        "name": "include_others",
+        "in": "query",
+        "description": "If true the dashboard top x charts will include a representation of what share of the whole the top x represents.",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        }
+      },
       "provider_org_id_optional": {
         "name": "provider_org_id",
         "in": "query",
@@ -113763,6 +121013,26 @@
           "example": "9.12.34.56"
         }
       },
+      "gateway_service_name_optional": {
+        "name": "gateway_service_name",
+        "in": "query",
+        "description": "Filter results by gateway service name (only included for apigw services).",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "gateway-service1"
+        }
+      },
+      "gateway_type_optional": {
+        "name": "gateway_type",
+        "in": "query",
+        "description": "Filter results by gateway type (not included for v5c services).",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "apigw/10.5.3.0"
+        }
+      },
       "global_transaction_id_optional": {
         "name": "global_transaction_id",
         "in": "query",
@@ -113771,6 +121041,42 @@
         "schema": {
           "type": "string",
           "example": "65587a5963da90530007ad30"
+        }
+      },
+      "graphql_document_hash_optional": {
+        "name": "graphql_document_hash",
+        "in": "query",
+        "description": "Filter results by graphql document hash value.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "graphql_error_count_optional": {
+        "name": "graphql_error_count",
+        "in": "query",
+        "description": "Filter results by graphql error count value.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "graphql_operation_name_optional": {
+        "name": "graphql_operation_name",
+        "in": "query",
+        "description": "Filter results by graphql operation name value.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "graphql_operation_type_optional": {
+        "name": "graphql_operation_type",
+        "in": "query",
+        "description": "Filter results by graphql operation type value.",
+        "required": false,
+        "schema": {
+          "type": "string"
         }
       },
       "graphql_request_field_cost_optional": {
@@ -113980,6 +121286,15 @@
           ]
         }
       },
+      "log_policy_optional": {
+        "name": "log_policy",
+        "in": "query",
+        "description": "Filter results by log_policy type. Values include: activity, header, payload",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "master_timeout_optional": {
         "name": "master_timeout",
         "in": "query",
@@ -114177,6 +121492,16 @@
           "example": "name=john&client_id=cd16fbb0001f11c73cf6c00bd0b3b70d"
         }
       },
+      "search_optional": {
+        "name": "search",
+        "in": "query",
+        "description": "Filter results by search string",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "dev-product-1"
+        }
+      },
       "space_id_optional": {
         "name": "space_id",
         "in": "query",
@@ -114197,6 +121522,25 @@
           "example": "space1"
         }
       },
+      "regenerate_optional": {
+        "name": "regenerate",
+        "in": "query",
+        "description": "If true, then forces the regeneration of an analytics report.",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "report_end_date_optional": {
+        "name": "end",
+        "in": "query",
+        "description": "If set, only return events with a datetime equal or older than this. The date-time value must be such that the time component represents midnight. for example, 2021-07-21T00:00:000Z.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
       "report_timeframe_optional": {
         "name": "timeframe",
         "in": "query",
@@ -114205,6 +121549,16 @@
         "schema": {
           "type": "string",
           "example": "last2year"
+        }
+      },
+      "report_start_date_optional": {
+        "name": "start",
+        "in": "query",
+        "description": "If set, only return events with a date equal to or newer than this. The date-time value must be such that the time component represents midnight. for example, 2021-07-21T00:00:000Z.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "format": "date-time"
         }
       },
       "request_body_optional": {
@@ -114367,6 +121721,8 @@
         "schema": {
           "type": "string",
           "enum": [
+            "last1minute",
+            "last5minutes",
             "last15minutes",
             "last30minutes",
             "last1hour",
@@ -114601,6 +121957,18 @@
           },
           "api_calls_per_day": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "top_apis_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "top_apps_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "top_corgs_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "api_calls_per_day_per_hour": {
+            "$ref": "#/components/schemas/DateHourValueData"
           }
         }
       },
@@ -114626,7 +121994,7 @@
             "format": "date-time"
           },
           "trends": {
-            "$ref": "#/components/schemas/ReportTrends"
+            "$ref": "#/components/schemas/ProviderReportTrends"
           },
           "api_call_volume": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
@@ -114637,25 +122005,38 @@
           "bytes_sent": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
           },
+          "total_apis": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "total_products": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
           "breakdown": {
-            "type": "object",
-            "properties": {
-              "total_api_calls": {
-                "$ref": "#/components/schemas/GroupValueDataList"
-              },
-              "errors": {
-                "$ref": "#/components/schemas/GroupValueDataList"
-              },
-              "successes": {
-                "$ref": "#/components/schemas/GroupValueDataList"
-              },
-              "bytes_received": {
-                "$ref": "#/components/schemas/GroupValueDataList"
-              },
-              "bytes_sent": {
-                "$ref": "#/components/schemas/GroupValueDataList"
-              }
-            }
+            "$ref": "#/components/schemas/BreakDownData"
+          },
+          "response_times": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          }
+        }
+      },
+      "BreakDownData": {
+        "type": "object",
+        "description": "Data to display the breakdown of API calls per catalog/org",
+        "properties": {
+          "total_api_calls": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "successes": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "bytes_received": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "bytes_sent": {
+            "$ref": "#/components/schemas/GroupValueDataList"
           }
         }
       },
@@ -114674,6 +122055,16 @@
               "type": "object",
               "additionalProperties": true
             }
+          }
+        }
+      },
+      "ClusterMgmtIngestionResponse": {
+        "type": "object",
+        "description": "ClusterMgmt ingestion response content",
+        "properties": {
+          "data": {
+            "type": "object",
+            "additionalProperties": true
           }
         }
       },
@@ -114752,6 +122143,31 @@
         "properties": {
           "data": {
             "type": "number"
+          }
+        }
+      },
+      "DateHourValueData": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string"
+                },
+                "hour": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "number"
+                }
+              }
+            }
           }
         }
       },
@@ -114837,6 +122253,10 @@
           "api_id": {
             "type": "string",
             "description": "The ID of the API"
+          },
+          "api_resource_id": {
+            "type": "string",
+            "description": "The API resource ID"
           },
           "app_lifecycle_state": {
             "type": "string",
@@ -115044,6 +122464,10 @@
                 "description": "The gateway IP address"
               }
             }
+          },
+          "gateway_service_name": {
+            "type": "string",
+            "description": "The service name of the gateway (apigw only)"
           },
           "global_transaction_id": {
             "type": "string",
@@ -115259,6 +122683,21 @@
           }
         ]
       },
+      "DiscoverTimelineResponse": {
+        "type": "object",
+        "description": "Discover timeline response.",
+        "properties": {
+          "total": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "search_time": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "api_calls_in_timeframe": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          }
+        }
+      },
       "FilterParam": {
         "type": "object",
         "description": "Filter parameter.",
@@ -115293,6 +122732,20 @@
           }
         }
       },
+      "FunnelReport": {
+        "type": "object",
+        "description": "Part of the funnel report response",
+        "properties": {
+          "count": {
+            "type": "number",
+            "example": 10
+          },
+          "percent": {
+            "type": "number",
+            "example": 1
+          }
+        }
+      },
       "GatewayDashboardResponse": {
         "type": "object",
         "description": "Data to display on the GATEWAY Dashboard.",
@@ -115317,6 +122770,10 @@
           "key": {
             "type": "string",
             "description": "Gateway IP"
+          },
+          "gateway_service_name": {
+            "type": "string",
+            "description": "Gateway service name"
           },
           "usage": {
             "type": "array",
@@ -115447,47 +122904,6 @@
           }
         }
       },
-      "LatencyData": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/LatencyDataList"
-          }
-        }
-      },
-      "LatencyDataItem": {
-        "type": "object",
-        "description": "xxx",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "datetime": {
-            "type": "string"
-          },
-          "time_to_serve": {
-            "type": "string"
-          },
-          "uri_path": {
-            "type": "string"
-          },
-          "api_name": {
-            "type": "string"
-          },
-          "product_name": {
-            "type": "string"
-          },
-          "app_name": {
-            "type": "string"
-          }
-        }
-      },
-      "LatencyDataList": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/LatencyDataItem"
-        }
-      },
       "LatencyDashboardResponse": {
         "type": "object",
         "description": "Data to display on the LATENCY Dashboard.",
@@ -115518,9 +122934,6 @@
           },
           "data_usage_sent": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
-          },
-          "response_data": {
-            "$ref": "#/components/schemas/LatencyData"
           }
         }
       },
@@ -115578,6 +122991,11 @@
           "space_name": {
             "type": "string"
           },
+          "catalogs": {
+            "description": "Semicolon separated list of org/catalog names",
+            "example": "custom-org/custom-cat;other-org/other-cat",
+            "type": "string"
+          },
           "start": {
             "type": "string",
             "format": "date-time"
@@ -115591,7 +123009,7 @@
           }
         }
       },
-      "LeaderboardDetailReportResponse": {
+      "ProviderLeaderboardDetailReportResponse": {
         "type": "object",
         "description": "Leaderboard for the API Usage dashboard",
         "properties": {
@@ -115602,6 +123020,11 @@
             "type": "string"
           },
           "space_name": {
+            "type": "string"
+          },
+          "catalogs": {
+            "description": "Semicolon separated list of org/catalog names",
+            "example": "custom-org/custom-cat;other-org/other-cat",
             "type": "string"
           },
           "start": {
@@ -115625,10 +123048,22 @@
             "example": "customapi:1.0.0"
           },
           "trends": {
-            "$ref": "#/components/schemas/ReportTrends"
+            "$ref": "#/components/schemas/ProviderReportTrends"
           },
           "api_call_volume": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "breakdown": {
+            "$ref": "#/components/schemas/BreakDownData"
+          },
+          "response_times": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "corg_leaderboard": {
+            "$ref": "#/components/schemas/LeaderboardRanked"
+          },
+          "application_leaderboard": {
+            "$ref": "#/components/schemas/LeaderboardRanked"
           }
         }
       },
@@ -115930,7 +123365,7 @@
           }
         }
       },
-      "ReportTrends": {
+      "ProviderReportTrends": {
         "type": "object",
         "description": "Component representing the change in various characteristics from the start of a report to the end.",
         "properties": {
@@ -115947,6 +123382,18 @@
             "$ref": "#/components/schemas/ReportTrendComponent"
           },
           "bytes_sent": {
+            "$ref": "#/components/schemas/ReportTrendComponent"
+          },
+          "total_apis": {
+            "$ref": "#/components/schemas/ReportTrendComponent"
+          },
+          "total_products": {
+            "$ref": "#/components/schemas/ReportTrendComponent"
+          },
+          "subscription_count": {
+            "$ref": "#/components/schemas/ReportTrendComponent"
+          },
+          "consumer_count": {
             "$ref": "#/components/schemas/ReportTrendComponent"
           }
         }
@@ -116123,51 +123570,37 @@
           },
           "success_rate": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
-          },
-          "success_data": {
-            "$ref": "#/components/schemas/StatusData"
-          },
-          "error_data": {
-            "$ref": "#/components/schemas/StatusData"
           }
         }
       },
-      "StatusData": {
+      "ServiceStatusResponse": {
         "type": "object",
+        "description": "Response showing analytics service information.",
         "properties": {
-          "data": {
-            "$ref": "#/components/schemas/StatusDataList"
+          "initial_transform": {
+            "type": "boolean"
+          },
+          "long_term_data_enabled": {
+            "type": "boolean"
+          },
+          "storage_enabled": {
+            "type": "boolean"
+          },
+          "rollover_ok": {
+            "type": "boolean"
+          },
+          "aws_storage": {
+            "type": "boolean"
+          },
+          "geoip_enabled": {
+            "type": "boolean"
+          },
+          "diskspace_ok": {
+            "type": "boolean"
+          },
+          "transform_ok": {
+            "type": "boolean"
           }
-        }
-      },
-      "StatusDataItem": {
-        "type": "object",
-        "description": "xxx",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "datetime": {
-            "type": "string"
-          },
-          "uri_path": {
-            "type": "string"
-          },
-          "api_name": {
-            "type": "string"
-          },
-          "product_name": {
-            "type": "string"
-          },
-          "app_name": {
-            "type": "string"
-          }
-        }
-      },
-      "StatusDataList": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/StatusDataItem"
         }
       },
       "UsageDashboardResponse": {
@@ -116194,6 +123627,497 @@
           },
           "top_apis_by_bytes_received": {
             "$ref": "#/components/schemas/GroupKeyValueDataList"
+          }
+        }
+      },
+      "DataDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the DATA Dashboard.",
+        "properties": {
+          "search_time": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "top_apis_by_request_size": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
+          "top_apis_by_response_size": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
+          "top_apps_by_request_size": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
+          "top_apps_by_response_size": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
+          "top_corgs_by_request_size": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
+          "top_corgs_by_response_size": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
+          "top_plans_by_request_size": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
+          "top_plans_by_response_size": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
+          "total_request_size": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_response_size": {
+            "$ref": "#/components/schemas/DataItem"
+          }
+        }
+      },
+      "LeaderboardReport": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "number"
+          },
+          "data": {
+            "$ref": "#/components/schemas/LeaderboardRanked"
+          }
+        }
+      },
+      "InactiveCorgFunnelResponse": {
+        "type": "object",
+        "description": "Inactive consumer organizations funnel response",
+        "properties": {
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "total": {
+            "type": "number"
+          },
+          "no_applications": {
+            "$ref": "#/components/schemas/FunnelReport"
+          },
+          "no_subscriptions": {
+            "$ref": "#/components/schemas/FunnelReport"
+          },
+          "no_traffic": {
+            "$ref": "#/components/schemas/FunnelReport"
+          },
+          "no_recent_traffic": {
+            "$ref": "#/components/schemas/FunnelReport"
+          }
+        }
+      },
+      "InactiveCorgs": {
+        "type": "array",
+        "description": "Array of inactive items",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Name of the inactive item"
+            },
+            "catalogs": {
+              "type": "string",
+              "description": "Comma-separated list of org/catalog"
+            }
+          }
+        }
+      },
+      "InactiveCorgTableResponse": {
+        "type": "object",
+        "description": "Inactive consumer organizations funnel response",
+        "properties": {
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "total": {
+            "type": "number"
+          },
+          "inactive_items": {
+            "$ref": "#/components/schemas/InactiveCorgs"
+          }
+        }
+      },
+      "InactivePollingResponse": {
+        "type": "object",
+        "description": "Inactive report polling response",
+        "properties": {
+          "report_url": {
+            "type": "string",
+            "description": "Partial URL to query for the report generation",
+            "example": "/cloud/reports/inactive/consumerorg"
+          },
+          "message": {
+            "type": "string",
+            "description": "Information message about the response",
+            "example": "Report processing"
+          }
+        }
+      },
+      "InactiveProducts": {
+        "type": "array",
+        "description": "Array of inactive items",
+        "items": {
+          "type": "object",
+          "properties": {
+            "ref": {
+              "type": "string",
+              "description": "Name of the inactive item"
+            },
+            "catalogs": {
+              "type": "string",
+              "description": "Comma-separated list of org/catalog"
+            }
+          }
+        }
+      },
+      "InactiveProductResponse": {
+        "type": "object",
+        "description": "Inactive product response",
+        "properties": {
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "total": {
+            "type": "number"
+          },
+          "inactive_items": {
+            "$ref": "#/components/schemas/InactiveProducts"
+          }
+        }
+      },
+      "DeprecatedPollingResponse": {
+        "type": "object",
+        "description": "Deprecated report polling response",
+        "properties": {
+          "report_url": {
+            "type": "string",
+            "description": "Partial URL to query for the report generation",
+            "example": "/cloud/reports/deprecated/consumerorg"
+          },
+          "message": {
+            "type": "string",
+            "description": "Information message about the response",
+            "example": "Report processing"
+          }
+        }
+      },
+      "DeprecatedProducts": {
+        "type": "array",
+        "description": "Array of deprecated items",
+        "items": {
+          "type": "object",
+          "properties": {
+            "ref": {
+              "type": "string",
+              "description": "Name of the deprecated item"
+            },
+            "catalogs": {
+              "type": "string",
+              "description": "Comma-separated list of org/catalog"
+            },
+            "total": {
+              "type": "number",
+              "description": "Total number of API calls made using the deprecated products"
+            },
+            "errors": {
+              "type": "number"
+            },
+            "success": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "DeprecatedProductResponse": {
+        "type": "object",
+        "description": "Deprecated product response",
+        "properties": {
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "total": {
+            "type": "number"
+          },
+          "deprecated_items": {
+            "$ref": "#/components/schemas/DeprecatedProducts"
+          }
+        }
+      },
+      "LeaderboardsReportResponse": {
+        "type": "object",
+        "description": "Leaderboard Response",
+        "properties": {
+          "org_name": {
+            "type": "string"
+          },
+          "catalog_name": {
+            "type": "string"
+          },
+          "space_name": {
+            "type": "string"
+          },
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "api",
+              "product",
+              "plan",
+              "applications",
+              "consumerOrg"
+            ]
+          },
+          "leaderboard": {
+            "$ref": "#/components/schemas/LeaderboardReport"
+          }
+        }
+      },
+      "LeaderboardRanked": {
+        "type": "array",
+        "description": "An array of ranked data",
+        "items": {
+          "type": "object",
+          "properties": {
+            "rank": {
+              "description": "This items rank position, e.g. 1 equals first",
+              "type": "number"
+            },
+            "ref": {
+              "description": "The reference field for this artifact, e.g. apiname:version or productname:version or productname:version:plan",
+              "type": "string",
+              "example": "apiname:1.0.0"
+            },
+            "total": {
+              "type": "number"
+            },
+            "errors": {
+              "type": "number"
+            },
+            "success": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "ConsumerTrendRankedData": {
+        "type": "array",
+        "description": "An array of ranked data as used in consumer trend report leaderboards",
+        "items": {
+          "type": "object",
+          "properties": {
+            "rank": {
+              "description": "This items rank position, e.g. 1 equals first",
+              "type": "number"
+            },
+            "ref": {
+              "description": "The reference field for this artifact, e.g. appname or consumerorgname",
+              "type": "string",
+              "example": "appname"
+            },
+            "value": {
+              "type": "number"
+            },
+            "trend": {
+              "description": "optional attribute representing whether this item is trending up or down",
+              "type": "string",
+              "enum": [
+                "up",
+                "down"
+              ],
+              "nullable": true
+            }
+          }
+        }
+      },
+      "ConsumerReportTrends": {
+        "type": "object",
+        "description": "Component representing the change in various characteristics from the start of a report to the end.",
+        "properties": {
+          "consumers": {
+            "$ref": "#/components/schemas/ReportTrendComponent"
+          },
+          "applications": {
+            "$ref": "#/components/schemas/ReportTrendComponent"
+          },
+          "subscriptions": {
+            "$ref": "#/components/schemas/ReportTrendComponent"
+          },
+          "trends": {
+            "$ref": "#/components/schemas/ConsumerLeaderboardDetailReportTrends"
+          }
+        }
+      },
+      "ConsumerTrendLeaderboard": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "application",
+              "consumerorg"
+            ]
+          },
+          "top_data": {
+            "$ref": "#/components/schemas/ConsumerTrendRankedData"
+          },
+          "bottom_data": {
+            "$ref": "#/components/schemas/ConsumerTrendRankedData"
+          }
+        }
+      },
+      "ConsumerTrendReportResponse": {
+        "type": "object",
+        "description": "Data to display on the consumer trends report.",
+        "properties": {
+          "org_name": {
+            "type": "string"
+          },
+          "catalog_name": {
+            "type": "string"
+          },
+          "space_name": {
+            "type": "string"
+          },
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "trends": {
+            "$ref": "#/components/schemas/ConsumerReportTrends"
+          },
+          "applications": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "subscriptions": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "consumers": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          }
+        }
+      },
+      "ConsumerTrendLeaderboardReportResponse": {
+        "type": "object",
+        "description": "Leaderboard for the consumer trends report",
+        "properties": {
+          "org_name": {
+            "type": "string"
+          },
+          "catalog_name": {
+            "type": "string"
+          },
+          "space_name": {
+            "type": "string"
+          },
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "leaderboard": {
+            "$ref": "#/components/schemas/ConsumerTrendLeaderboard"
+          }
+        }
+      },
+      "ConsumerLeaderboardDetailReportTrends": {
+        "type": "object",
+        "description": "Component representing the change in various characteristics from the start of a report to the end.",
+        "properties": {
+          "subscription_count": {
+            "$ref": "#/components/schemas/ReportTrendComponent"
+          },
+          "app_count": {
+            "$ref": "#/components/schemas/ReportTrendComponent"
+          }
+        }
+      },
+      "ConsumerTrendLeaderboardDetailReportResponse": {
+        "type": "object",
+        "description": "Leaderboard detail for the consumer trends report",
+        "properties": {
+          "org_name": {
+            "type": "string"
+          },
+          "catalog_name": {
+            "type": "string"
+          },
+          "space_name": {
+            "type": "string"
+          },
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "application",
+              "consumerorg"
+            ]
+          },
+          "ref": {
+            "type": "string",
+            "example": "custom-app"
+          },
+          "catalogs": {
+            "description": "Semicolon separated list of org/catalog names",
+            "example": "custom-org/custom-cat;other-org/other-cat",
+            "type": "string"
+          },
+          "trends": {
+            "$ref": "#/components/schemas/ConsumerLeaderboardDetailReportTrends"
+          },
+          "api_calls": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "breakdown": {
+            "$ref": "#/components/schemas/BreakDownData"
+          },
+          "response_times": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "api_leaderboard": {
+            "$ref": "#/components/schemas/LeaderboardRanked"
+          },
+          "product_leaderboard": {
+            "$ref": "#/components/schemas/LeaderboardRanked"
           }
         }
       }
@@ -116249,12 +124173,27 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/LeaderboardDetailReportResponse"
+              "$ref": "#/components/schemas/ProviderLeaderboardDetailReportResponse"
             }
           },
           "application/yaml": {
             "schema": {
-              "$ref": "#/components/schemas/LeaderboardDetailReportResponse"
+              "$ref": "#/components/schemas/ProviderLeaderboardDetailReportResponse"
+            }
+          }
+        }
+      },
+      "ClusterMgmtIngestionResponse": {
+        "description": "Response from Logstash cluster management API.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ClusterMgmtIngestionResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ClusterMgmtIngestionResponse"
             }
           }
         }
@@ -116345,6 +124284,21 @@
           "application/yaml": {
             "schema": {
               "$ref": "#/components/schemas/EventResponse"
+            }
+          }
+        }
+      },
+      "DiscoverTimelineResponse": {
+        "description": "Data needed to populate the Gateway Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DiscoverTimelineResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/DiscoverTimelineResponse"
             }
           }
         }
@@ -116513,6 +124467,186 @@
           "application/yaml": {
             "schema": {
               "$ref": "#/components/schemas/UsageDashboardResponse"
+            }
+          }
+        }
+      },
+      "DataDashboardResponse": {
+        "description": "Data needed to populate the Data Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DataDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/DataDashboardResponse"
+            }
+          }
+        }
+      },
+      "InactiveCorgFunnelResponse": {
+        "description": "Data needed to populate the Inactive consumer organizations funnel report",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/InactiveCorgFunnelResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/InactiveCorgFunnelResponse"
+            }
+          }
+        }
+      },
+      "InactiveCorgTableResponse": {
+        "description": "Data needed to populate the Inactive consumer organizations table report",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/InactiveCorgTableResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/InactiveCorgTableResponse"
+            }
+          }
+        }
+      },
+      "InactivePollingResponse": {
+        "description": "Report is being generated.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/InactivePollingResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/InactivePollingResponse"
+            }
+          }
+        }
+      },
+      "InactiveProductResponse": {
+        "description": "Data needed to populate the Inactive product report",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/InactiveProductResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/InactiveProductResponse"
+            }
+          }
+        }
+      },
+      "DeprecatedPollingResponse": {
+        "description": "Report is being generated.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DeprecatedPollingResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/DeprecatedPollingResponse"
+            }
+          }
+        }
+      },
+      "DeprecatedProductResponse": {
+        "description": "Data needed to populate the Deprecateds product report",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DeprecatedProductResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/DeprecatedProductResponse"
+            }
+          }
+        }
+      },
+      "LeaderboardResponse": {
+        "description": "Data needed to populate all leaderboards",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/LeaderboardsReportResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/LeaderboardsReportResponse"
+            }
+          }
+        }
+      },
+      "ConsumerTrendReportResponse": {
+        "description": "Data needed to populate the consumer trend report",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ConsumerTrendReportResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ConsumerTrendReportResponse"
+            }
+          }
+        }
+      },
+      "ConsumerTrendLeaderboardReportResponse": {
+        "description": "Data needed to populate the leaderboard for the consumer trend report",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ConsumerTrendLeaderboardReportResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ConsumerTrendLeaderboardReportResponse"
+            }
+          }
+        }
+      },
+      "ConsumerTrendLeaderboardDetailReportResponse": {
+        "description": "Data needed to populate the detailed view of the leaderboard for the consumer trend report",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ConsumerTrendLeaderboardDetailReportResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ConsumerTrendLeaderboardDetailReportResponse"
+            }
+          }
+        }
+      },
+      "ServiceStatusResponse": {
+        "description": "Analytics service status information",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ServiceStatusResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ServiceStatusResponse"
             }
           }
         }
@@ -116777,6 +124911,8 @@
         "schema": {
           "type": "string",
           "enum": [
+            "last1minute",
+            "last5minutes",
             "last15minutes",
             "last30minutes",
             "last1hour",
@@ -116970,6 +125106,10 @@
           "api_id": {
             "type": "string",
             "description": "The ID of the API"
+          },
+          "api_resource_id": {
+            "type": "string",
+            "description": "The API resource ID"
           },
           "app_lifecycle_state": {
             "type": "string",
@@ -117284,7 +125424,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=api-apic-apilist"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=api-apic-apilist"
         },
         "responses": {
           "200": {
@@ -117364,7 +125504,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=api-apic-apiget"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=api-apic-apiget"
         },
         "parameters": [
           {
@@ -117449,7 +125589,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=api-apic-apiget-document"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=api-apic-apiget-document"
         },
         "parameters": [
           {
@@ -117534,7 +125674,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=api-apic-apiaddattachment"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=api-apic-apiaddattachment"
         },
         "parameters": [
           {
@@ -117635,7 +125775,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=api-apic-apiaddtag"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=api-apic-apiaddtag"
         },
         "parameters": [
           {
@@ -117723,7 +125863,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=api-apic-apiseticon"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=api-apic-apiseticon"
         },
         "parameters": [
           {
@@ -117821,7 +125961,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=config-apic-apic-configget"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-apic-configget"
         },
         "responses": {
           "200": {
@@ -117901,7 +126041,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=application-apic-applicationlist"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=application-apic-applicationlist"
         },
         "responses": {
           "200": {
@@ -117981,7 +126121,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=application-apic-applicationget"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=application-apic-applicationget"
         },
         "parameters": [
           {
@@ -118066,7 +126206,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=org-apic-consumer-orglist"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=org-apic-consumer-orglist"
         },
         "responses": {
           "200": {
@@ -118146,7 +126286,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=org-apic-consumer-orgget"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=org-apic-consumer-orgget"
         },
         "parameters": [
           {
@@ -118209,6 +126349,807 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/content/export/{entity_type}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/entity_type"
+        }
+      ],
+      "post": {
+        "summary": "Export a tgz containing the site content",
+        "description": "Export a tgz containing the site content. You can export specific entity types and specific ids or you can generate a tar containing all content. Depending on your site's content please be advised that an export all can take a long time to complete. If called via the toolkit CLI, it will automatically poll the response every 30 seconds up to 25 minutes.",
+        "operationId": "content_createExport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=content-apic-contentexport"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entity_ids"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful create of the task",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Task already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Content"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/content/export/{task_id}/download": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "get": {
+        "summary": "When ready, streams a content export artifact.",
+        "description": "When ready, streams a content export artifact back to the related task id that is provided in the arguments.",
+        "operationId": "content_getExport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=content-apic-contentget-export"
+        },
+        "responses": {
+          "200": {
+            "description": "The export artifact stream.",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "This task and its related artifact could not be found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "The task is not an export operation and therefore an artifact cannot be streamed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "425": {
+            "description": "The artifact related to this task is still being processed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Content"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/content/export/{task_id}/delete": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "delete": {
+        "summary": "If running, cancels a content export task.",
+        "description": "If running, cancels the content export task and deletes any related artifacts that have been generated.",
+        "operationId": "content_deleteExport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=content-apic-contentdelete-export"
+        },
+        "responses": {
+          "204": {
+            "description": "The task has been cancelled and it's artifacts deleted."
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Content"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/content/export/{task_id}/status": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "get": {
+        "summary": "Returns information about the status of this task.",
+        "description": "Returns information related to the task id that is provided in the arguments.",
+        "operationId": "content_getExportStatus",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=content-apic-contentget-export-status"
+        },
+        "responses": {
+          "200": {
+            "description": "Task is ready to be obtained",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Waiting on task to finish.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "The task and its artifacts have expired.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Content"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/content/import": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Create a task that imports an archive of site content.",
+        "description": "Creates a task that imports an archive of site content. The status of this task can be tracked with the /content/TASK_ID/status route. Depending on your site's content please be advised that an import can take a long time to complete. If called via the toolkit CLI, it will automatically poll the response every 30 seconds up to 25 minutes.",
+        "operationId": "custom_module_createImport",
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=content-apic-contentimport"
+        },
+        "requestBody": {
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful create of the import task",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Task already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Content"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/content/import/{task_id}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "delete": {
+        "summary": "If running, cancels a content import task.",
+        "description": "If running, cancels the content import task and deletes any related artifacts that have been generated.",
+        "operationId": "content_deleteImport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=content-apic-contentdelete-import"
+        },
+        "responses": {
+          "204": {
+            "description": "The task has been cancelled and it's artifacts deleted."
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Content"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/content/import/{task_id}/status": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "get": {
+        "summary": "Returns information about the status of this task.",
+        "description": "Returns information related to the task id that is provided in the arguments.",
+        "operationId": "content_getImportStatus",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=content-apic-contentget-import-status"
+        },
+        "responses": {
+          "200": {
+            "description": "Task is ready to be obtained",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Waiting on task to finish.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "The task and its artifacts have expired.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Content"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/content/list/{entity_type}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/entity_type"
+        }
+      ],
+      "get": {
+        "summary": "Lists all of the entities in your site for the given entity type and bundle.",
+        "description": "Lists all of the entities in your site for the given entity type and bundle.",
+        "operationId": "content_list",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=entity-apic-contentlist"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/bundle"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Task has completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Content"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/content/list-types": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Lists allowed content types on your site.",
+        "description": "Lists allowed content types on your site.",
+        "operationId": "content_listTypes",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=entity-apic-contentlist-types"
+        },
+        "responses": {
+          "200": {
+            "description": "Task has completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Content"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/custom-module/export": {
       "parameters": [
         {
@@ -118224,7 +127165,7 @@
         "operationId": "custom_module_createExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=module-apic-custom-modulecreate-export"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=module-apic-custom-modulecreate-export"
         },
         "responses": {
           "201": {
@@ -118300,7 +127241,7 @@
         "operationId": "custom_module_getExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=module-apic-custom-moduleget-export"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=module-apic-custom-moduleget-export"
         },
         "responses": {
           "200": {
@@ -118374,7 +127315,7 @@
         "operationId": "custom_module_deleteExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=module-apic-custom-moduledelete-export"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=module-apic-custom-moduledelete-export"
         },
         "responses": {
           "204": {
@@ -118423,7 +127364,7 @@
         "operationId": "custom_module_getExportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=module-apic-custom-moduleget-export-status"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=module-apic-custom-moduleget-export-status"
         },
         "responses": {
           "200": {
@@ -118518,6 +127459,9 @@
         },
         {
           "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/wait_cache"
         }
       ],
       "post": {
@@ -118526,7 +127470,7 @@
         "operationId": "custom_module_createImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=module-apic-custom-modulecreate-import"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=module-apic-custom-modulecreate-import"
         },
         "requestBody": {
           "content": {
@@ -118612,7 +127556,7 @@
         "operationId": "custom_module_deleteImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=module-apic-custom-moduledelete-import"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=module-apic-custom-moduledelete-import"
         },
         "responses": {
           "204": {
@@ -118661,7 +127605,7 @@
         "operationId": "custom_module_getImportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=module-apic-custom-moduleget-import-status"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=module-apic-custom-moduleget-import-status"
         },
         "responses": {
           "200": {
@@ -118764,7 +127708,7 @@
         "operationId": "custom_theme_createExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=theme-apic-custom-themecreate-export"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=theme-apic-custom-themecreate-export"
         },
         "responses": {
           "201": {
@@ -118840,7 +127784,7 @@
         "operationId": "custom_theme_getExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=theme-apic-custom-themeget-export"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=theme-apic-custom-themeget-export"
         },
         "responses": {
           "200": {
@@ -118914,7 +127858,7 @@
         "operationId": "custom_theme_deleteExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=theme-apic-custom-themedelete-export"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=theme-apic-custom-themedelete-export"
         },
         "responses": {
           "204": {
@@ -118963,7 +127907,7 @@
         "operationId": "custom_theme_getExportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=theme-apic-custom-themeget-export-status"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=theme-apic-custom-themeget-export-status"
         },
         "responses": {
           "200": {
@@ -119058,6 +128002,9 @@
         },
         {
           "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/wait_cache"
         }
       ],
       "post": {
@@ -119066,7 +128013,7 @@
         "operationId": "custom_theme_createImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=theme-apic-custom-themecreate-import"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=theme-apic-custom-themecreate-import"
         },
         "requestBody": {
           "content": {
@@ -119152,7 +128099,7 @@
         "operationId": "custom_theme_deleteImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=theme-apic-custom-themedelete-import"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=theme-apic-custom-themedelete-import"
         },
         "responses": {
           "204": {
@@ -119201,7 +128148,7 @@
         "operationId": "custom_theme_getImportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=theme-apic-custom-themeget-import-status"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=theme-apic-custom-themeget-import-status"
         },
         "responses": {
           "200": {
@@ -119311,7 +128258,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=translation-apic-custom-translationcreate-export"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=translation-apic-custom-translationcreate-export"
         },
         "parameters": [
           {
@@ -119399,7 +128346,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=translation-apic-custom-translationget-export"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=translation-apic-custom-translationget-export"
         },
         "responses": {
           "200": {
@@ -119480,7 +128427,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=translation-apic-custom-translationdelete-export"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=translation-apic-custom-translationdelete-export"
         },
         "responses": {
           "204": {
@@ -119536,7 +128483,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=translation-apic-custom-translationget-export-status"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=translation-apic-custom-translationget-export-status"
         },
         "responses": {
           "200": {
@@ -119646,7 +128593,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=translation-apic-custom-translationcreate-import"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=translation-apic-custom-translationcreate-import"
         },
         "requestBody": {
           "content": {
@@ -119739,7 +128686,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=translation-apic-custom-translationdelete-import"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=translation-apic-custom-translationdelete-import"
         },
         "responses": {
           "204": {
@@ -119795,7 +128742,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=translation-apic-custom-translationget-import-status"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=translation-apic-custom-translationget-import-status"
         },
         "responses": {
           "200": {
@@ -119883,6 +128830,842 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/export-entity": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "List export entities",
+        "description": "List export entities within your Developer Portal. Export Entities contain a defined list of content to be exported when launched.",
+        "operationId": "export_entity_list",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=export-entity-apic-export-entitylist"
+        },
+        "responses": {
+          "200": {
+            "description": "The creation of an export entities",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: ExportEntity"
+        ]
+      },
+      "put": {
+        "summary": "Create an export entity",
+        "description": "Create a new export entity. This export entity can be populated with content which can subsequently be exported.",
+        "operationId": "export_entity_create",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=export-entity-apic-export-entitycreate"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/export_entity_name"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful create of an export entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: ExportEntity"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/export-entity/{export_entity_id}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/export_entity_id"
+        }
+      ],
+      "get": {
+        "summary": "Get an export entity",
+        "description": "Get an export entity by its ID, which will list the content that will be exported as part of this export entity.",
+        "operationId": "export_entity_get",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=export-entity-apic-export-entityget"
+        },
+        "responses": {
+          "200": {
+            "description": "A list of content within the export entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: ExportEntity"
+        ]
+      },
+      "delete": {
+        "summary": "Delete an export entity",
+        "description": "Delete an export entity by its ID.",
+        "operationId": "export_entity_delete",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=export-entity-apic-export-entitydelete"
+        },
+        "responses": {
+          "200": {
+            "description": "The export entity has been successfully deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: ExportEntity"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/export-entity/{export_entity_id}/add-content": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/export_entity_id"
+        }
+      ],
+      "post": {
+        "summary": "Add content to an export entity",
+        "description": "Add content to an existing export entity. Provide the content type and IDs that you wish to add to this export entity.",
+        "operationId": "export_entity_addContent",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=export-entity-apic-export-entityadd-content"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entity_ids"
+          },
+          {
+            "$ref": "#/components/parameters/entity_type_query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Content succesfully added to export entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: ExportEntity"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/export-entity/{export_entity_id}/remove-content": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/export_entity_id"
+        }
+      ],
+      "post": {
+        "summary": "Remove content from an export entity",
+        "description": "Remove content from an export entity. Provide the content type and IDs that you wish to remove from this export entity.",
+        "operationId": "export_entity_removeContent",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=export-entity-apic-export-entityremove-content"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entity_ids"
+          },
+          {
+            "$ref": "#/components/parameters/entity_type_query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Content successfully removed from export entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: ExportEntity"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/export-entity/{export_entity_id}/launch": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/export_entity_id"
+        }
+      ],
+      "post": {
+        "summary": "Launch a export entity",
+        "description": "Launch an export entity which will create an export tgz of all the entities contained in the export. If called via the toolkit CLI, it will automatically poll the response every 30 seconds up to 25 minutes.",
+        "operationId": "export_entity_launchExport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=export-entity-apic-export-entitylaunch"
+        },
+        "responses": {
+          "201": {
+            "description": "Successful create of the task",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Task already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: ExportEntity"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/export-entity/{task_id}/download": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "get": {
+        "summary": "When ready, streams a content export artifact generated from an export entity.",
+        "description": "When ready, streams a content export artifact generated from an export entity back to the related task id that is provided in the arguments.",
+        "operationId": "export_entity_getLaunchExport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=export-entity-apic-export-entityget-launch-export"
+        },
+        "responses": {
+          "200": {
+            "description": "The export artifact stream.",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "This task and its related artifact could not be found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "The task is not an export operation and therefore an artifact cannot be streamed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "425": {
+            "description": "The artifact related to this task is still being processed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: ExportEntity"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/export-entity/{task_id}/delete": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "delete": {
+        "summary": "If running, cancels a export entity launch export task.",
+        "description": "If running, cancels a export entity launch export task and deletes any related artifacts that have been generated.",
+        "operationId": "export_entity_deleteLaunchExport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=export-entity-apic-export-entitydelete-launch-export"
+        },
+        "responses": {
+          "204": {
+            "description": "The task has been cancelled and it's artifacts deleted."
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: ExportEntity"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/export-entity/{task_id}/status": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "get": {
+        "summary": "Returns information about the status of this task.",
+        "description": "Returns information related to the task id that is provided in the arguments.",
+        "operationId": "export_entity_getLaunchExportStatus",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=export-entity-apic-export-entityget-launch-export-status"
+        },
+        "responses": {
+          "200": {
+            "description": "Task is ready to be obtained",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Waiting on task to finish.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "The task and its artifacts have expired.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: ExportEntity"
+        ]
+      }
+    },
     "/service/custom-webserver-page": {
       "parameters": [
         {
@@ -119905,7 +129688,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=page-apic-custom-webserver-pageget"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=page-apic-custom-webserver-pageget"
         },
         "responses": {
           "200": {
@@ -119975,7 +129758,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=page-apic-custom-webserver-pagedelete"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=page-apic-custom-webserver-pagedelete"
         },
         "responses": {
           "200": {
@@ -120045,7 +129828,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=page-apic-custom-webserver-pageset"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=page-apic-custom-webserver-pageset"
         },
         "requestBody": {
           "content": {
@@ -120135,7 +129918,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=site-apic-sitecheck"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-sitecheck"
         },
         "responses": {
           "200": {
@@ -120193,6 +129976,595 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/site/export": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Create a task that exports an archive that contains the entire make-up of a site.",
+        "description": "You can create a task to export an archive of the entire make-up of a site. You can then use that archive to quickly and simply override another site's content and configuration to make them identical.",
+        "operationId": "site_createExport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-sitecreate-export"
+        },
+        "responses": {
+          "201": {
+            "description": "Successful create of the task",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Task already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Site"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/site/export/{task_id}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "get": {
+        "summary": "When ready, streams a site export artifact.",
+        "description": "When ready, streams a site export artifact back to the related task id that is provided in the arguments.",
+        "operationId": "site_getExport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-siteget-export"
+        },
+        "responses": {
+          "200": {
+            "description": "The export artifact stream.",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "This task and its related artifact could not be found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "The task is not an export operation and therefore an artifact cannot be streamed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "425": {
+            "description": "The artifact related to this task is still being processed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomModule"
+        ]
+      },
+      "delete": {
+        "summary": "If running, cancels a site export task.",
+        "description": "If running, cancels the site export task and deletes any related artifacts that have been generated.",
+        "operationId": "site_deleteExport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-sitedelete-export"
+        },
+        "responses": {
+          "204": {
+            "description": "The task has been cancelled and it's artifacts deleted."
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Site"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/site/export/{task_id}/status": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "get": {
+        "summary": "Returns information about the status of this task.",
+        "description": "Returns information related to the task id that is provided in the arguments.",
+        "operationId": "site_getExportStatus",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-siteget-export-status"
+        },
+        "responses": {
+          "200": {
+            "description": "Task is ready to be obtained",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Waiting on task to finish.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "The task and its artifacts have expired.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Site"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/site/import": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Create a task that imports an archive that contains the make-up of a site.",
+        "description": "You can create a task to import an archive of the make-up of a site. You can use the imported archive to quickly and simply override the site config, content and custom modules and themes for the specified site.",
+        "operationId": "site_createImport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-sitecreate-import"
+        },
+        "requestBody": {
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful create of the task",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Task already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: CustomModule"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/site/import/{task_id}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "delete": {
+        "summary": "If running, cancels a site import task.",
+        "description": "If running, cancels the site import task and deletes any related artifacts that have been generated.",
+        "operationId": "site_deleteImport",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-sitedelete-import"
+        },
+        "responses": {
+          "204": {
+            "description": "The task has been cancelled and it's artifacts deleted."
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Site"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/site/import/{task_id}/status": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task_id"
+        }
+      ],
+      "get": {
+        "summary": "Get the result of the site import task.",
+        "description": "Get the result of the site import task. If the import task has completed on the portal system, this command returns the result of the command. If the import task has not completed on the portal system, it returns the current status of the task.",
+        "operationId": "site_getImportStatus",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=siteapic-siteget-import-status"
+        },
+        "responses": {
+          "200": {
+            "description": "Output from portal cli command request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Waiting on task to finish.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "The task and its result have expired.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Site"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/site/login-link": {
       "parameters": [
         {
@@ -120215,7 +130587,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=site-apic-sitelogin-link"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-sitelogin-link"
         },
         "responses": {
           "200": {
@@ -120295,7 +130667,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=site-apic-sitestate"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-sitestate"
         },
         "responses": {
           "200": {
@@ -120375,7 +130747,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=entity-apic-entitycount"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=entity-apic-entitycount"
         },
         "responses": {
           "200": {
@@ -120448,7 +130820,7 @@
         "operationId": "forums_disable",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=forums-apic-forumsdisable"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=forums-apic-forumsdisable"
         },
         "responses": {
           "200": {
@@ -120521,7 +130893,7 @@
         "operationId": "forums_enable",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.1.x?topic=forums-apic-forumsenable"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=forums-apic-forumsenable"
         },
         "responses": {
           "200": {
@@ -120601,7 +130973,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=security-apic-securityclear-bans"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=security-apic-securityclear-bans"
         },
         "responses": {
           "200": {
@@ -120681,7 +131053,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=config-apic-drupal-configget"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-drupal-configget"
         },
         "parameters": [
           {
@@ -120759,7 +131131,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=config-apic-drupal-configdelete"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-drupal-configdelete"
         },
         "parameters": [
           {
@@ -120837,7 +131209,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=config-apic-drupal-configset"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-drupal-configset"
         },
         "parameters": [
           {
@@ -120928,7 +131300,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=config-apic-drupal-configlist"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-drupal-configlist"
         },
         "parameters": [
           {
@@ -121013,7 +131385,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=state-apic-drupal-stateget"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=state-apic-drupal-stateget"
         },
         "parameters": [
           {
@@ -121088,7 +131460,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=state-apic-drupal-statedelete"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=state-apic-drupal-statedelete"
         },
         "parameters": [
           {
@@ -121163,7 +131535,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=state-apic-drupal-stateset"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=state-apic-drupal-stateset"
         },
         "parameters": [
           {
@@ -121232,6 +131604,486 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/maintenance/status": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Gets the maintenance mode for the given Developer Portal.",
+        "description": "Gets maintenance mode on the Developer Portal installed within this org and catalog.",
+        "operationId": "maintenance_status",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=maintenance-apic-maintenancestatus"
+        },
+        "responses": {
+          "200": {
+            "description": "The maintenance status of this Developer Portal.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Maintenance"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/maintenance/enable": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "put": {
+        "summary": "Enables maintenance mode for the given Developer Portal.",
+        "description": "Enables maintenance mode on the Developer Portal installed within this org and catalog.",
+        "operationId": "maintenance_enable",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=maintenance-apic-maintenanceenable"
+        },
+        "responses": {
+          "200": {
+            "description": "Site maintenance has been enabled.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Maintenance"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/maintenance/disable": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "put": {
+        "summary": "Disables maintenance mode for the given Developer Portal.",
+        "description": "Disables maintenance mode on the Developer Portal installed within this org and catalog.",
+        "operationId": "maintenance_disable",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=maintenance-apic-maintenancedisable"
+        },
+        "responses": {
+          "200": {
+            "description": "Site maintenance has been disabled.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Maintenance"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/maintenance/search-api-index-status": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Prints the search API index status for a Developer Portal.",
+        "description": "Prints the search API index status for a Developer Portal.",
+        "operationId": "maintenance_searchApiIndexStatus",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=maintenance-apic-maintenancesearch-api-index-status"
+        },
+        "responses": {
+          "200": {
+            "description": "The status of the Search API Index.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Maintenance"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/maintenance/rebuild-node-access": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "put": {
+        "summary": "Rebuilds the node access table for a Developer Portal.",
+        "description": "Rebuilds the node access table for a Developer Portal, which ensures the correct users can access particular content.",
+        "operationId": "maintenance_rebuildNodeAccess",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=maintenance-apic-maintenancerebuild-node-access"
+        },
+        "responses": {
+          "200": {
+            "description": "The node access table will be rebuilt.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Maintenance"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/maintenance/search-api-index-rebuild": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "put": {
+        "summary": "Rebuilds and reindexes the search API index for a Developer Portal.",
+        "description": "Rebuilds and reindexes the search API index for a Developer Portal. NOTE: this command triggers the reindex in the background, and reindexing can take a long time. You can track the index status with maintenance:search-api-index-status",
+        "operationId": "maintenance_searchApiIndexRebuild",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=maintenance-apic-maintenancesearch-api-index-rebuild"
+        },
+        "responses": {
+          "200": {
+            "description": "The Search API Index will be rebuilt.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Maintenance"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/site-config/export": {
       "parameters": [
         {
@@ -121247,7 +132099,7 @@
         "operationId": "site_config_createExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=config-apic-site-configcreate-export"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-site-configcreate-export"
         },
         "responses": {
           "201": {
@@ -121323,7 +132175,7 @@
         "operationId": "site_config_getExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=config-apic-site-configget-export"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-site-configget-export"
         },
         "responses": {
           "200": {
@@ -121397,7 +132249,7 @@
         "operationId": "site_config_deleteExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=config-apic-site-configdelete-export"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-site-configdelete-export"
         },
         "responses": {
           "204": {
@@ -121446,7 +132298,7 @@
         "operationId": "site_config_getExportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=config-apic-site-configget-export-status"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-site-configget-export-status"
         },
         "responses": {
           "200": {
@@ -121549,7 +132401,7 @@
         "operationId": "site_config_createImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=config-apic-site-configcreate-import"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-site-configcreate-import"
         },
         "requestBody": {
           "content": {
@@ -121635,7 +132487,7 @@
         "operationId": "site_config_deleteImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=config-apic-site-configdelete-import"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-site-configdelete-import"
         },
         "responses": {
           "204": {
@@ -121684,7 +132536,7 @@
         "operationId": "site_config_getImportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=config-apic-site-configget-import-status"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-site-configget-import-status"
         },
         "responses": {
           "200": {
@@ -121772,6 +132624,86 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/queue": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Shows queued and locked platform related tasks for a Developer Portal.",
+        "description": "Shows queued and locked platform related tasks for a Developer Portal, including Developer Portal creates, restores, upgrades, snapshots, crons etc.",
+        "operationId": "queue_get",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=queue-apic-queueget"
+        },
+        "responses": {
+          "200": {
+            "description": "A list of queued tasks for the given Developer Portal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Queue"
+        ]
+      }
+    },
     "/service/backups/list": {
       "get": {
         "summary": "List the backups present on the remote backup server.",
@@ -121779,7 +132711,7 @@
         "operationId": "backups_list",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=backups-apic-backupslist"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=backups-apic-backupslist"
         },
         "parameters": [
           {
@@ -121849,7 +132781,7 @@
         "operationId": "platforms_list",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=platforms-apic-platformslist"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=platforms-apic-platformslist"
         },
         "parameters": [
           {
@@ -121934,7 +132866,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=product-apic-productlist"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=product-apic-productlist"
         },
         "responses": {
           "200": {
@@ -122014,7 +132946,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=product-apic-productget"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=product-apic-productget"
         },
         "parameters": [
           {
@@ -122099,7 +133031,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=product-apic-productgetdocument"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=product-apic-productgetdocument"
         },
         "parameters": [
           {
@@ -122184,7 +133116,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=product-apic-productaddattachment"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=product-apic-productaddattachment"
         },
         "parameters": [
           {
@@ -122285,7 +133217,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=product-apic-productaddtag"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=product-apic-productaddtag"
         },
         "parameters": [
           {
@@ -122373,7 +133305,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=product-apic-productseticon"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=product-apic-productseticon"
         },
         "parameters": [
           {
@@ -122449,6 +133381,83 @@
         ]
       }
     },
+    "/service/list": {
+      "get": {
+        "summary": "List the Portal service.",
+        "description": "Lists the Portal service currently installed.",
+        "operationId": "service_list",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=service-apic-servicelist"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/portal_service_name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the list service command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Service"
+        ]
+      }
+    },
     "/service/sites/check": {
       "get": {
         "summary": "Run a platform check against all portal sites present on a portal service.",
@@ -122463,7 +133472,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=sites-apic-sitescheck"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=sites-apic-sitescheck"
         },
         "parameters": [
           {
@@ -122533,7 +133542,7 @@
         "operationId": "sites_list",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=sites-apic-siteslist"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=sites-apic-siteslist"
         },
         "parameters": [
           {
@@ -122543,6 +133552,83 @@
         "responses": {
           "200": {
             "description": "Successful output of the list sites command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Sites"
+        ]
+      }
+    },
+    "/service/sites/reset-upgrade-attempts": {
+      "put": {
+        "summary": "Resets the Developer Portal site upgrade attempts.",
+        "description": "Resets the Developer Portal site upgrade attempts. Useful when upgrade has been attempted multiple times and has failed.",
+        "operationId": "sites_resetUpgradeAttempts",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=sites-apic-sitesresetupgradeattempts"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/portal_service_name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A notification of upgrade attempts being reset.",
             "content": {
               "application/json": {
                 "schema": {
@@ -122610,7 +133696,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=reset-apic-service-factory-resetdelete"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=reset-apic-service-factory-resetdelete"
         },
         "parameters": [
           {
@@ -122690,7 +133776,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=enabled-apic-ip-security-enabledupdate"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=enabled-apic-ip-security-enabledupdate"
         },
         "parameters": [
           {
@@ -122756,6 +133842,83 @@
         ]
       }
     },
+    "/service/queue/list": {
+      "get": {
+        "summary": "Shows queued and locked platform related tasks across all Developer Portals.",
+        "description": "Shows queued and locked platform related tasks across all Developer Portal, including Developer Portal creates, restores, upgrades, snapshots, crons etc.",
+        "operationId": "queue_list",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=queue-apic-queuelist"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/portal_service_name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of queued tasks across all Developer Portals",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Queue"
+        ]
+      }
+    },
     "/service/php-memory/list": {
       "get": {
         "summary": "List the PHP memory limit on the platform.",
@@ -122770,7 +133933,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=memory-apic-php-memorylist"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=memory-apic-php-memorylist"
         },
         "parameters": [
           {
@@ -122847,7 +134010,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=memory-apic-php-memoryupdate"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=memory-apic-php-memoryupdate"
         },
         "parameters": [
           {
@@ -122927,7 +134090,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=allowlist-apic-service-ip-allowlistadd"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=allowlist-apic-service-ip-allowlistadd"
         },
         "parameters": [
           {
@@ -123007,7 +134170,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=allowlist-apic-service-ip-allowlistremove"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=allowlist-apic-service-ip-allowlistremove"
         },
         "parameters": [
           {
@@ -123087,7 +134250,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=allowlist-apic-service-ip-allowlistdelete"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=allowlist-apic-service-ip-allowlistdelete"
         },
         "parameters": [
           {
@@ -123164,7 +134327,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=allowlist-apic-service-ip-allowlistlist"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=allowlist-apic-service-ip-allowlistlist"
         },
         "parameters": [
           {
@@ -123249,7 +134412,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=modules-apic-moduleslist"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=modules-apic-moduleslist"
         },
         "parameters": [
           {
@@ -123335,7 +134498,7 @@
       ],
       "post": {
         "summary": "Enable one or more module.",
-        "description": "Enable one or more module by providing a comma separated list.",
+        "description": "Enable one or more module by providing a comma-separated list.",
         "operationId": "modules_enable",
         "security": [
           {
@@ -123346,7 +134509,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=modules-apic-modulesenable"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=modules-apic-modulesenable"
         },
         "parameters": [
           {
@@ -123420,7 +134583,7 @@
       ],
       "post": {
         "summary": "Disable one or more modules and their dependent modules.",
-        "description": "Disable one or more modules and their dependent modules. The provided list of modules must be comma separated.",
+        "description": "Disable one or more modules and their dependent modules. The provided list of modules must be comma-separated.",
         "operationId": "modules_disable",
         "security": [
           {
@@ -123431,7 +134594,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=modules-apic-modulesdisable"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=modules-apic-modulesdisable"
         },
         "parameters": [
           {
@@ -123505,7 +134668,7 @@
       ],
       "delete": {
         "summary": "Deletes one or more modules.",
-        "description": "Deletes one or more modules. The provided list of modules must be comma separated. Running this command with the force option will make sure the Drupal table's are purged of any reference to the module.",
+        "description": "Deletes one or more modules. The provided list of modules must be comma-separated. Running this command with the force option will make sure the Drupal table's are purged of any reference to the module.",
         "operationId": "modules_delete",
         "security": [
           {
@@ -123516,7 +134679,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=modules-apic-modulesdelete"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=modules-apic-modulesdelete"
         },
         "parameters": [
           {
@@ -123582,6 +134745,499 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/role": {
+      "description": "Role object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get a role defined on the site.",
+        "description": "Gets a Drupal User Role defined on the site and all the permissions it has been granted",
+        "operationId": "role_get",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=role-apic-roleget"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/role"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the role get command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Role"
+        ]
+      },
+      "post": {
+        "summary": "Create a new role",
+        "description": "Create a new role",
+        "operationId": "role_create",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=role-apic-rolecreate"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/machine_name"
+          },
+          {
+            "$ref": "#/components/parameters/human_readable_name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the role create command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Role"
+        ]
+      },
+      "delete": {
+        "summary": "Delete a role",
+        "description": "Delete a role",
+        "operationId": "role_delete",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=role-apic-roledelete"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/role"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the role delete command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Role"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/role/permission": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Grant specified permission(s) to a role.",
+        "description": "Grant specified permission(s) to a role.",
+        "operationId": "role_addPermission",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=role-apic-roleaddpermission"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/role"
+          },
+          {
+            "$ref": "#/components/parameters/permissions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the role add permission command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Role"
+        ]
+      },
+      "delete": {
+        "summary": "Remove specified permission(s) from a role.",
+        "description": "Remove specified permission(s) from a role.",
+        "operationId": "role_removePermission",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=role-apic-roleremovepermission"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/role"
+          },
+          {
+            "$ref": "#/components/parameters/permissions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the role remove permission command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Role"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/role/list": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Display a list of all roles defined on the system. If a role name is provided as an argument, then all of the permissions of that role will be listed. If a permission name is provided as an option, then all of the roles that have been granted that permission will be listed.",
+        "description": "Display a list of all roles defined on the system. If a role name is provided as an argument, then all of the permissions of that role will be listed. If a permission name is provided as an option, then all of the roles that have been granted that permission will be listed.",
+        "operationId": "role_list",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=role-apic-rolelist"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/role"
+          },
+          {
+            "$ref": "#/components/parameters/filter_by_permission"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the role list command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Role"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/site/cache-rebuild": {
       "parameters": [
         {
@@ -123604,7 +135260,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=site-apic-sitecache-rebuild"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-sitecache-rebuild"
         },
         "responses": {
           "200": {
@@ -123684,7 +135340,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=themes-apic-themeslist"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=themes-apic-themeslist"
         },
         "parameters": [
           {
@@ -123770,7 +135426,7 @@
       ],
       "post": {
         "summary": "Enable one or more theme.",
-        "description": "Enable one or more theme by providing a comma separated list.",
+        "description": "Enable one or more theme by providing a comma-separated list.",
         "operationId": "themes_enable",
         "security": [
           {
@@ -123781,7 +135437,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=themes-apic-themesenable"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=themes-apic-themesenable"
         },
         "parameters": [
           {
@@ -123855,7 +135511,7 @@
       ],
       "post": {
         "summary": "Disable one or more themes.",
-        "description": "Disable one or more themes and their dependent modules. The provided list of themes must be comma separated.",
+        "description": "Disable one or more themes and their dependent modules. The provided list of themes must be comma-separated.",
         "operationId": "themes_disable",
         "security": [
           {
@@ -123866,7 +135522,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=themes-apic-themesdisable"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=themes-apic-themesdisable"
         },
         "parameters": [
           {
@@ -123940,7 +135596,7 @@
       ],
       "delete": {
         "summary": "Deletes one or more themes.",
-        "description": "Deletes one or more themes. The provided list of themes must be comma separated.",
+        "description": "Deletes one or more themes. The provided list of themes must be comma-separated.",
         "operationId": "themes_delete",
         "security": [
           {
@@ -123951,7 +135607,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=themes-apic-themesdelete"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=themes-apic-themesdelete"
         },
         "parameters": [
           {
@@ -124036,7 +135692,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=themes-apic-themesset-default"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=themes-apic-themesset-default"
         },
         "parameters": [
           {
@@ -124099,6 +135755,246 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/memcache": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Gets the memcache enabled status on a specific Developer Portal site.",
+        "description": "Gets the memcache enabled status on a specific Developer Portal site.",
+        "operationId": "memcache_get",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=memcache-apic-memcacheget"
+        },
+        "responses": {
+          "200": {
+            "description": "The enabled status of memcache for this Developer Portal.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Memcache"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/memcache/enable": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "put": {
+        "summary": "Enables memcache on a specific Developer Portal site.",
+        "description": "Enables memcache on a specific Developer Portal site. This sets Drupal to use RAM for it's cache.",
+        "operationId": "memcache_enable",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=memcache-apic-memcacheenable"
+        },
+        "responses": {
+          "200": {
+            "description": "Memcache has been successfully enabled.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Memcache"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/memcache/disable": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "put": {
+        "summary": "Disables memcache on a specific Developer Portal site.",
+        "description": "Disables memcache on a specific Developer Portal site. This sets Drupal to use the database as it's cache.",
+        "operationId": "memcache_disable",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=memcache-apic-memcachedisable"
+        },
+        "responses": {
+          "200": {
+            "description": "Memcache has been successfully disabled.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The task was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Memcache"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/twig/debug-enable": {
       "parameters": [
         {
@@ -124121,7 +136017,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=twig-apic-twigdebug-enable"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=twig-apic-twigdebug-enable"
         },
         "responses": {
           "200": {
@@ -124201,7 +136097,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=twig-apic-twigdebug-disable"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=twig-apic-twigdebug-disable"
         },
         "responses": {
           "200": {
@@ -124281,7 +136177,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/SSMNED_v10cd?topic=twig-apic-twigdebug-status"
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=twig-apic-twigdebug-status"
         },
         "responses": {
           "200": {
@@ -124338,14 +136234,488 @@
           "Resource: Twig"
         ]
       }
+    },
+    "/catalogs/{org}/{catalog}/user/role": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/role_required"
+        },
+        {
+          "$ref": "#/components/parameters/mail"
+        },
+        {
+          "$ref": "#/components/parameters/names"
+        },
+        {
+          "$ref": "#/components/parameters/uid"
+        }
+      ],
+      "post": {
+        "summary": "Add a singular or multiple roles to the specified Drupal User accounts.",
+        "description": "Add a singular or multiple roles to the specified Drupal User accounts. You need to provide either the mail, username, or the UID of the Drupal User account.",
+        "operationId": "user_addRole",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=user-apic-useraddrole"
+        },
+        "responses": {
+          "200": {
+            "description": "Successful output of the Drupal User role add command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: User"
+        ]
+      },
+      "delete": {
+        "summary": "Remove a singular or multiple roles from the specified Drupal User accounts.",
+        "description": "Remove a singular or multiple roles from the specified Drupal User accounts. You need to provide either the mail, username, or the UID of the Drupal User account.",
+        "operationId": "user_removeRole",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=user-apic-userremoverole"
+        },
+        "responses": {
+          "200": {
+            "description": "Successful output of the Drupal User role remove command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: User"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/user/block": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Block a Developer Portal Drupal User",
+        "description": "Block a Developer Portal Drupal User. This will block a Drupal User from being able to login into the Developer Portal. You need to provide the username of the Drupal User.",
+        "operationId": "user_block",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=user-apic-userblock"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/names"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the Drupal User block command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: User"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/user/unblock": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Unblock a Developer Portal Drupal User",
+        "description": "Unblock a Developer Portal Drupal User. This will allow a blocked Drupal User to be able to login into the Developer Portal again. You need to provide the username of the Drupal User.",
+        "operationId": "user_unblock",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=user-apic-userunblock"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/names"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the Drupal User unblock command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CliResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: User"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/user/information": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Gets Developer Portal Drupal User information",
+        "description": "Gets Developer Portal Drupal User information. You can filter on different fields to obtain a list of users matching your criteria.",
+        "operationId": "user_information",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "externalDocs": {
+          "description": "Additional documentation",
+          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=user-apic-userinformation"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/roles"
+          },
+          {
+            "$ref": "#/components/parameters/mail"
+          },
+          {
+            "$ref": "#/components/parameters/names"
+          },
+          {
+            "$ref": "#/components/parameters/uid"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_urls"
+          },
+          {
+            "$ref": "#/components/parameters/login_before"
+          },
+          {
+            "$ref": "#/components/parameters/login_after"
+          },
+          {
+            "$ref": "#/components/parameters/apic_state"
+          },
+          {
+            "$ref": "#/components/parameters/user_status"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the Drupal User information command",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserInformation"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserInformation"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failure - unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: User"
+        ]
+      }
     }
   },
   "components": {
     "parameters": {
+      "apic_state": {
+        "name": "apic-state",
+        "in": "query",
+        "description": "A comma-separated list of APIC states to filter Drupal Users by.",
+        "required": false,
+        "schema": {
+          "$ref": "#/components/schemas/ApicState"
+        }
+      },
+      "attachment_name": {
+        "name": "attachment_name",
+        "in": "query",
+        "description": "The name given to the attachment once it has been uploaded e.g. my-file.txt",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "attachment_description": {
+        "name": "attachment_description",
+        "in": "query",
+        "description": "A description of the attachment to be displayed to users.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "api": {
         "name": "api",
         "in": "query",
-        "description": "The id or name:version of a specific api. e.g. 'id-of-api-called-example-3' or 'example:3.0.0'.",
+        "description": "The ID or name:version of a specific API. e.g. 'id-of-api-called-example-3' or 'example:3.0.0'.",
         "required": true,
         "schema": {
           "type": "string"
@@ -124354,8 +136724,17 @@
       "application": {
         "name": "application",
         "in": "query",
-        "description": "The id of a specific application.",
+        "description": "The ID of a specific Application.",
         "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "bundle": {
+        "name": "bundle",
+        "in": "query",
+        "description": "The Bundle type for a given Entity type. E.g. \"page\" for the \"node\" Entity type.",
+        "required": false,
         "schema": {
           "type": "string"
         }
@@ -124363,7 +136742,7 @@
       "catalog": {
         "name": "catalog",
         "in": "path",
-        "description": "Name or ID of the catalog the site belongs to.",
+        "description": "Name or ID of the Catalog that the site belongs to.",
         "required": true,
         "schema": {
           "type": "string"
@@ -124372,10 +136751,29 @@
       "consumer-org": {
         "name": "consumer-org",
         "in": "query",
-        "description": "The id of a specific consumer organization.",
+        "description": "The ID of a specific Consumer Organization.",
         "required": true,
         "schema": {
           "type": "string"
+        }
+      },
+      "consumer_org_urls": {
+        "name": "consumer-org",
+        "in": "query",
+        "description": "A comma-separated list of Consumer Org URLs to filter the return by.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "entity_ids": {
+        "name": "entity_ids",
+        "in": "query",
+        "description": "A comma-separated list of Content IDs.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "4,76,23"
         }
       },
       "config_key": {
@@ -124417,7 +136815,7 @@
       "core": {
         "name": "core",
         "in": "query",
-        "description": "Filter out extensions that are not in drupal core.",
+        "description": "Filter out extensions that are not in Drupal Core.",
         "required": false,
         "schema": {
           "type": "boolean"
@@ -124435,28 +136833,52 @@
       "execute_reset": {
         "name": "execute_reset",
         "in": "query",
-        "description": "set to true to trigger the Developer Portal reset",
+        "description": "Set to true to trigger the Developer Portal reset",
         "required": false,
         "schema": {
           "type": "string"
         }
       },
-      "attachment_name": {
-        "name": "attachment_name",
-        "in": "query",
-        "description": "The name given to the attachment once it has been uploaded e.g. my-file.txt",
+      "export_entity_id": {
+        "name": "export_entity_id",
+        "in": "path",
+        "description": "ID of the export entity",
         "required": true,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "example": "4"
         }
       },
-      "attachment_description": {
-        "name": "attachment_description",
+      "export_entity_name": {
+        "name": "export_entity_name",
         "in": "query",
-        "description": "A description of the attachment to be displayed to users.",
+        "description": "name of the export entity",
         "required": false,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "example": "My Export Entity"
+        }
+      },
+      "entity_type": {
+        "name": "entity_type",
+        "in": "path",
+        "description": "Type of content you want to perform this operation on. To find out content types see the content list-types route.",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "default": "node",
+          "example": "node"
+        }
+      },
+      "entity_type_query": {
+        "name": "entity_type",
+        "in": "query",
+        "description": "Type of content you want to perform this operation on. To find out content types see the content list-types route.",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "default": "node",
+          "example": "node"
         }
       },
       "force": {
@@ -124471,8 +136893,53 @@
       "langcodes": {
         "name": "langcodes",
         "in": "query",
-        "description": "A comma separated list of language codes e.g. \"es,zh-hans\"",
+        "description": "A comma-separated list of language codes e.g. \"es,zh-hans\"",
         "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "limit": {
+        "name": "limit",
+        "in": "query",
+        "description": "Limit the amount of results returned.",
+        "required": false,
+        "schema": {
+          "type": "integer"
+        }
+      },
+      "login_before": {
+        "name": "login-before",
+        "in": "query",
+        "description": "A date to filter Drupal Users who last logged in before the provided date. Date needs to be given in format of MM-DD-YYY or MM-DD-YY HH:MM:SS",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "login_after": {
+        "name": "login-after",
+        "in": "query",
+        "description": "A date to filter Drupal Users who last logged in after the provided date. Date needs to be given in format of MM-DD-YYY or MM-DD-YY HH:MM:SS",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "offset": {
+        "name": "offset",
+        "in": "query",
+        "description": "Offset the results return to aid in Pagination.",
+        "required": false,
+        "schema": {
+          "type": "integer"
+        }
+      },
+      "human_readable_name": {
+        "name": "human_readable_name",
+        "in": "query",
+        "description": "A descriptive name for the Drupal role.",
+        "required": true,
         "schema": {
           "type": "string"
         }
@@ -124495,11 +136962,47 @@
           "$ref": "#/components/schemas/InputFormat"
         }
       },
+      "input_format_config": {
+        "name": "input_format",
+        "in": "query",
+        "description": "The input format of the value for the config key. Values: string, yaml. Since JSON is a subset of YAML, config_value may be in JSON format [default: string]",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/InputFormatConfig"
+        }
+      },
+      "ips": {
+        "name": "ips",
+        "in": "query",
+        "description": "A comma-separated list of IPs.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
       "ip_security_enabled": {
         "name": "enabled",
         "in": "query",
-        "description": "set to true or false to enable or disable IP security",
+        "description": "Set to true or false to enable or disable IP security.",
         "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "machine_name": {
+        "name": "machine_name",
+        "in": "query",
+        "description": "The symbolic machine name for the role.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "mail": {
+        "name": "mail",
+        "in": "query",
+        "description": "A comma-separated list of Drupal User Email addresses to perform the action on.",
+        "required": false,
         "schema": {
           "type": "string"
         }
@@ -124522,10 +137025,19 @@
           "type": "string"
         }
       },
+      "names": {
+        "name": "names",
+        "in": "query",
+        "description": "A comma-separated list of names of Drupal Users to perform the action on.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "no-core": {
         "name": "no-core",
         "in": "query",
-        "description": "Filter out extensions that are provided by drupal core.",
+        "description": "Filter out extensions that are provided by Drupal Core.",
         "required": false,
         "schema": {
           "type": "boolean"
@@ -124554,6 +137066,97 @@
         "in": "query",
         "description": "The id or name:version of a specific application. e.g. 'id-of-product-called-example-3' or 'example:3.0.0'.",
         "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "package": {
+        "name": "package",
+        "in": "query",
+        "description": "Filter by project packages. You can use multiple comma-separated values.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "permissions": {
+        "name": "permissions",
+        "in": "query",
+        "description": "The list of permission to grant, delimited by commas.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "portal_service_name": {
+        "name": "portal_service_name",
+        "in": "query",
+        "description": "The name of the Portal Service",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "portal_service_endpoint": {
+        "name": "portal_service_endpoint",
+        "in": "query",
+        "description": "The URL endpoint of the Portal Service",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "role": {
+        "name": "role",
+        "in": "query",
+        "description": "The name of the Drupal User Role.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "roles": {
+        "name": "role",
+        "in": "query",
+        "description": "A comma-separated list of Drupal User Roles.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "role_required": {
+        "name": "role",
+        "in": "query",
+        "description": "The name of the Drupal User Role.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "state_key": {
+        "name": "state_key",
+        "in": "query",
+        "description": "The state key, for example \"system.cron_last\".",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "state_value": {
+        "name": "state_value",
+        "in": "query",
+        "description": "The value to assign to the state key.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "status": {
+        "name": "status",
+        "in": "query",
+        "description": "Filter by extension status. Choices _ enabled, disabled and/or 'not installed'. You can use multiple comma-separated values.",
+        "required": false,
         "schema": {
           "type": "string"
         }
@@ -124594,72 +137197,45 @@
           "type": "string"
         }
       },
-      "package": {
-        "name": "package",
+      "uid": {
+        "name": "uid",
         "in": "query",
-        "description": "Filter by project packages. You can use multiple comma separated values.",
+        "description": "A comma-separated list of UIDs of Drupal Users to perform the action on.",
         "required": false,
         "schema": {
           "type": "string"
         }
       },
-      "portal_service_name": {
-        "name": "portal_service_name",
-        "in": "query",
-        "description": "The name of the portal service",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "portal_service_endpoint": {
-        "name": "portal_service_endpoint",
-        "in": "query",
-        "description": "The URL endpoint of the portal service",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "format": "uri"
-        }
-      },
-      "state_key": {
-        "name": "state_key",
-        "in": "query",
-        "description": "The state key, for example \"system.cron_last\".",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "state_value": {
-        "name": "state_value",
-        "in": "query",
-        "description": "The value to assign to the state key.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "status": {
+      "user_status": {
         "name": "status",
         "in": "query",
-        "description": "Filter by extension status. Choices _ enabled, disabled and/or 'not installed'. You can use multiple comma separated values.",
+        "description": "Filter by Drupal User status. Choices are 'active' or 'blocked'.",
         "required": false,
         "schema": {
-          "type": "string"
+          "$ref": "#/components/schemas/UserStatus"
         }
       },
-      "ips": {
-        "name": "ips",
+      "wait_cache": {
+        "name": "wait",
         "in": "query",
-        "description": "Comma seperated list of IPs.",
-        "required": true,
+        "description": "Wait on the cache to be rebuilt as part of the task, otherwise it will be rebuilt in the background after the task has finished.",
+        "required": false,
         "schema": {
-          "type": "string"
+          "type": "boolean"
         }
       }
     },
     "schemas": {
+      "ApicState": {
+        "name": "ApicState",
+        "type": "string",
+        "default": "enabled",
+        "enum": [
+          "enabled",
+          "pending",
+          "pending_approval"
+        ]
+      },
       "InputFormat": {
         "name": "InputFormat",
         "type": "string",
@@ -124671,6 +137247,15 @@
           "float",
           "boolean",
           "json",
+          "yaml"
+        ]
+      },
+      "InputFormatConfig": {
+        "name": "InputFormat",
+        "type": "string",
+        "default": "string",
+        "enum": [
+          "string",
           "yaml"
         ]
       },
@@ -124714,6 +137299,104 @@
             }
           }
         }
+      },
+      "UserList": {
+        "type": "array",
+        "description": "Array of Developer Portal Drupal Users.",
+        "items": {
+          "$ref": "#/components/schemas/User"
+        }
+      },
+      "User": {
+        "type": "object",
+        "description": "Developer Portal Drupal User",
+        "additionalProperties": true,
+        "properties": {
+          "uid": {
+            "type": "string",
+            "description": "The uid of the Developer Portal Drupal User.",
+            "example": "1"
+          },
+          "name": {
+            "type": "string",
+            "description": "The username of the Developer Portal Drupal User.",
+            "example": "portaluser1"
+          },
+          "mail": {
+            "type": "string",
+            "description": "The email address of the Developer Portal Drupal User.",
+            "example": "portaluser1@ibm.com"
+          },
+          "roles": {
+            "type": "array",
+            "description": "The roles of the Developer Portal Drupal User.",
+            "items": {
+              "type": "string",
+              "example": "authenticated"
+            },
+            "example": [
+              "authenticated",
+              "content_author"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "description": "The status of the Developer Portal Drupal User.",
+            "example": "active"
+          },
+          "apic_state": {
+            "type": "string",
+            "description": "The APIC state of the Developer Portal Drupal User.",
+            "example": "enabled"
+          },
+          "last_login": {
+            "type": "string",
+            "description": "The last login time of the Developer Portal Drupal User.",
+            "example": "11/27/2023 11:45:07"
+          },
+          "user_registry": {
+            "type": "string",
+            "description": "The user registry of the Developer Portal Drupal User.",
+            "example": "/consumer-api/user-registries/642d900f-3efb-4778-923b-80da799b27b7 (API Connect Catalog 1 Catalog User Registry)"
+          },
+          "consumer_orgs": {
+            "type": "array",
+            "description": "The consumer organizations the Developer Portal Drupal User is apart of.",
+            "items": {
+              "type": "string",
+              "example": "authenticated"
+            }
+          }
+        }
+      },
+      "UserInformation": {
+        "x-bhendi-schema": "custom",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total": {
+            "type": "integer"
+          },
+          "offset": {
+            "type": "integer"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "users": {
+            "description": "Array of Developer Portal Drupal Users.",
+            "$ref": "#/components/schemas/UserList"
+          }
+        }
+      },
+      "UserStatus": {
+        "name": "UserStatus",
+        "type": "string",
+        "default": "enabled",
+        "enum": [
+          "active",
+          "blocked"
+        ]
       },
       "Error": {
         "x-bhendi-schema": "custom",
@@ -124765,44 +137448,44 @@
   ],
   docs: [
       {
-  			"name": "introduction",
-  			"title": "Introduction",
+        "name": "introduction",
+        "title": "Introduction",
+        "format": "b64html",
+        "content": "PGFydGljbGUgaWQ9ImludHJvZHVjdGlvbiIgY2xhc3M9InBhZ2UiPgoKICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBpbnRyby1oZWFkZXIiPgogICAgICAgIE9wZW4gQVBJIEV4cGxvcmVyIERvY3VtZW50YXRpb24gdjEwLjAuTEFURVNUCiAgICAgIDwvc3Bhbj4KICAgIDwvaDI+CiAgPC9kaXY+CiAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgaW50cm8tY29udGVudCI+CiAgICA8c2VjdGlvbj4KICAgICAgPGgyPkludHJvZHVjdGlvbjwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBwbGF0Zm9ybSBSRVNUIEFQSXMgZG9jdW1lbnRlZCBoZXJlIGZvciBJQk0gQVBJIENvbm5lY3QgdjEwIHByb3ZpZGUgY29tcGxldGUgYWNjZXNzIHRvIHRoZSBjYXBhYmlsaXR5IG9mIHRoZSBwbGF0Zm9ybS4gVGhleSBtYXkgYmUgdXNlZCB0byBhdXRvbWF0ZSBhZG1pbmlzdHJhdGlvbiBvZiB0aGUgcGxhdGZvcm07IGZvciBzY3JpcHRzIGFuZCB0b29scyB0byBzdXBwb3J0IGEgY29udGludW91cyBpbnRlZ3JhdGlvbiBlbnZpcm9ubWVudCBmb3IgQVBJIGRldmVsb3BtZW50IGFuZCBwdWJsaXNoaW5nOyBhbmQgZm9yIG1hbmFnZW1lbnQgb2YgY2F0YWxvZ3Mgb2YgQVBJcyBhbmQgdGhlaXIgc3Vic2NyaWJlcnMuIFRoZSBvcGVyYXRpb25zIHByb3ZpZGVkIGluIHRoZSBSRVNUIEFQSSBhbHNvIGNvcnJlc3BvbmQgZGlyZWN0bHkgd2l0aCBjb21tYW5kcyBpbiB0aGUgdG9vbGtpdCBDTEkuCiAgICAgIDwvcD4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+QVBJczwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBjYXBhYmlsaXR5IG9mIHRoZSBwbGF0Zm9ybSBpcyBjb21wcmlzZWQgb2YgdGhyZWUgQVBJcyB3aGljaCBhcmUgb3JpZW50ZWQgYXQgZGlmZmVyZW50IHNldHMgb2YgdXNlIGNhc2VzOgogICAgICA8L3A+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItYXBpcyI+PC9kaXY+CiAgICA8L3NlY3Rpb24+CiAgPC9kaXY+CjwvYXJ0aWNsZT4K"
+      },
+      {
+        "name": "concepts",
+        "title": "Concepts",
+        "format": "b64html",
+        "content": "PGFydGljbGUgaWQ9ImNvbmNlcHRzIiBjbGFzcz0icGFnZSI+CiAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX3RpdGxlIj4KICAgIDxoMiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX3RpdGxlLXRleHQiPgogICAgICA8c3BhbiBjbGFzcz0iZXhwbG9yZXItZG9jLS1oZWFkZXIgY29uY2VwdHMtaGVhZGVyIj4KICAgICAgICBDb25jZXB0cwogICAgICA8L3NwYW4+CiAgICA8L2gyPgogIDwvZGl2PgogIDxkaXYgY2xhc3M9ImFwaWMtZXhwbG9yZXItZG9jcGFnZV9jb250ZW50IGNvbmNlcHRzLWNvbnRlbnQiPgogICAgPHNlY3Rpb24gY2xhc3M9ImNvbmNlcHRzLXRhYmxlIj4KICAgICAgPGgyPkNvbmNlcHRzPC9oMj4KICAgICAgPHA+VGhlIHByaW1hcnkgY29uY2VwdHMgZXhwb3NlZCBieSB0aGUgQVBJIENvbm5lY3QgcGxhdGZvcm0gYXJlIHJlcHJlc2VudGVkIGluIHRoZSB0b3AtbGV2ZWwgcmVzb3VyY2UgcGF0aHMuPC9wPgogICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0IGNvbmNlcHQtYXBwcyI+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1pY29uIj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LXRpdGxlIj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtbmFtZSI+QXBwczwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10YWciPi9hcHBzPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1kZXNjcmlwdGlvbiI+CiAgICAgICAgICBBcHBzIHJlcHJlc2VudCByZWdpc3RlcmVkIGNsaWVudCBhcHBsaWNhdGlvbnMgY3JlYXRlZCBieSBBUEkgY29uc3VtZXJzLiBBbiBhcHAgaGFzIG9uZSBvciBtb3JlIGNsaWVudCBJRHMgdGhhdCBhcmUgYXNzb2NpYXRlZCB3aXRoIHN1YnNjcmlwdGlvbnMgdG8gQVBJcy4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQgY29uY2VwdC1jYXRhbG9ncyI+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1pY29uIj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LXRpdGxlIj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtbmFtZSBieC0tdHlwZS1nYW1tYSI+Q2F0YWxvZ3M8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGFnIj4vY2F0YWxvZ3M8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWRlc2NyaXB0aW9uIj4KICAgICAgICAgIEEgY2F0YWxvZyBpcyBhIGxvZ2ljYWwgY29udGFpbmVyIGZvciB0aGUgZGVwbG95bWVudCBhbmQgY29uc3VtcHRpb24gb2YgQVBJcy4gQSBjYXRhbG9nIHJlcHJlc2VudHMgdGhlIGV4ZWN1dGlvbiBlbnZpcm9ubWVudCBmb3IgQVBJcywgYW5kIGl0cyBjb250ZW50cyBhcmUgdmlzaWJsZSB0byBjb25zdW1lcnMgaW4gaXRzIGFzc29jaWF0ZWQgZGV2ZWxvcGVyIHBvcnRhbC4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQgY29uY2VwdC1jbG91ZCI+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1pY29uIj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LXRpdGxlIj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtbmFtZSI+Q2xvdWQ8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGFnIj4vY2xvdWQ8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWRlc2NyaXB0aW9uIj4KICAgICAgICAgIFRoZSBjbG91ZCByZXByZXNlbnRzIHRoZSBBUEkgQ29ubmVjdCBzeXN0ZW0uIEl0IGhhcyA8Y29kZT5zZXR0aW5nczwvY29kZT4gdGhhdCByZXByZXNlbnQgaXRzIG9wZXJhdGlvbmFsIGNvbmZpZ3VyYXRpb24uCiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0IGNvbmNlcHQtb3JnIj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWljb24iPgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGl0bGUiPgogICAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1uYW1lIj5Db25zdW1lciBvcmdhbml6YXRpb25zPC9kaXY+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LXRhZyI+L2NvbnN1bWVyLW9yZ3M8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWRlc2NyaXB0aW9uIj4KICAgICAgICAgIEEgY29uc3VtZXIgb3JnYW5pemF0aW9uIGlzIHRoZSBzY29wZSBpbiB3aGljaCBhIGNvbnN1bWVyIHVzZXIgKGFwcCBkZXZlbG9wZXJzKSBjcmVhdGVzIGFuZCBvd25zIGFwcHMgYW5kIHN1YnNjcmlwdGlvbnMuIENvbnN1bWVyIG9yZ2FuaXphdGlvbnMgZXhpc3QgaW4gdGhlIGNvbnRleHQgb2YgYSBjYXRhbG9nLgogICAgICAgIDwvZGl2PgogICAgICA8L2Rpdj4KICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdCBjb25jZXB0LW1lIj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWljb24iPgogICAgICAgICAgPHN2ZyBpZD0iX0xheWVyXyIgZGF0YS1uYW1lPSIgTGF5ZXIgIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiIgdmlld0JveD0iLTEwIC0xMCA0MCA0MCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7fS5jbHMtMntmaWxsOiM1YTY4NzI7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT51c2VyXzE4PC90aXRsZT48ZyBpZD0iX0dyb3VwXyIgZGF0YS1uYW1lPSIgR3JvdXAgIj48cmVjdCBpZD0iX1JlY3RhbmdsZV8iIGRhdGEtbmFtZT0iIFJlY3RhbmdsZSAiIGNsYXNzPSJjbHMtMSIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4IiAvPjwvZz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik05LDExQTUsNSwwLDEsMCw0LDYsNSw1LDAsMCwwLDksMTFaTTksMkE0LDQsMCwxLDEsNSw2LDQsNCwwLDAsMSw5LDJaIiAvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTEzLDEySDVhMiwyLDAsMCwwLTIsMnYzSDE1VjE0QTIsMiwwLDAsMCwxMywxMloiIC8+PC9zdmc+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10aXRsZSI+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LW5hbWUiPk1lPC9kaXY+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LXRhZyI+L21lPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1kZXNjcmlwdGlvbiI+CiAgICAgICAgICBUaGUgPGNvZGU+L21lPC9jb2RlPiByZXNvdXJjZSByZXByZXNlbnRzIHRoZSBwcm9maWxlIG9mIHRoZSBjdXJyZW50IGF1dGhlbnRpY2F0ZWQgdXNlci4gCiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0IGNvbmNlcHQtb2F1dGgtZW5kcG9pbnQiPgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtaWNvbiI+CiAgICAgICAgICA8c3ZnIGlkPSJfTGF5ZXJfIiBkYXRhLW5hbWU9IiBMYXllciAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjUyIiBoZWlnaHQ9IjUyIiB2aWV3Qm94PSItMTAgLTEwIDQwIDQwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6bm9uZTt9LmNscy0ye2ZpbGw6IzVhNjg3Mjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPnNlY3VyZV8xODwvdGl0bGU+PGcgaWQ9Il9Hcm91cF8iIGRhdGEtbmFtZT0iIEdyb3VwICI+PHJlY3QgaWQ9Il9SZWN0YW5nbGVfIiBkYXRhLW5hbWU9IiBSZWN0YW5nbGUgIiBjbGFzcz0iY2xzLTEiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIvPjwvZz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0xMy41LDguMzQwODZ2LTIuODQ0YTQuNSw0LjUsMCwwLDAtOSwwdjIuODQ0YTUuNSw1LjUsMCwxLDAsOSwwWm0tNy0yLjg0NGEyLjUsMi41LDAsMCwxLDUsMHYxLjEwNWE1LjQ3NCw1LjQ3NCwwLDAsMC01LDBabTEuNDg3LDguNzUyTDUuNSwxMS43Nzc4NmwxLTEsMS40NjcsMS40NzQsMy41MzMtMy40NzQsMSwxWiIvPjwvc3ZnPgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGl0bGUiPgogICAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1uYW1lIj5PQXV0aCBlbmRwb2ludHM8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGFnIj4vb2F1dGgyPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1kZXNjcmlwdGlvbiI+CiAgICAgICAgICBUaGUgPGNvZGU+L29hdXRoMjwvY29kZT4gcmVzb3VyY2UgcHJvdmlkZXMgdGhlIGF1dGhvcml6YXRpb24gYW5kIHRva2VuIGVuZHBvaW50cyBmb3IgY2xpZW50cyBvZiB0aGUgcGxhdGZvcm0gUkVTVCBBUElzIChzZWUgdGhlIGF1dGhlbnRpY2F0aW9uIHRvcGljKS4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQgY29uY2VwdC1vcmciPgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtaWNvbiI+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10aXRsZSI+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LW5hbWUgYngtLXR5cGUtZ2FtbWEiPlByb3ZpZGVyIG9yZ2FuaXphdGlvbnM8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGFnIj4vb3JnczwvZGl2PgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtZGVzY3JpcHRpb24iPgogICAgICAgICAgQSBwcm92aWRlciBvcmdhbml6YXRpb24gaXMgdGhlIHNjb3BlIGluIHdoaWNoIGFsbCBBUEkgcHJvdmlkZXIgY29udGVudCBpcyBjcmVhdGVkIGFuZCBjb25maWd1cmVkLiBUaGlzIGluY2x1ZGVzIEFQSSBhbmQgQVBJIHByb2R1Y3QgZGVmaW5pdGlvbnMsIGNhdGFsb2dzLCBhbmQgb3RoZXIgY29uZmlndXJhdGlvbiBvYmplY3RzIGFzc29jaWF0ZWQgd2l0aCBjYXRhbG9ncy4gVGhlIDxlbT48c3Ryb25nPmFkbWluIG9yZzwvc3Ryb25nPjwvZW0+IGlzIGEKICAgICAgICAgIHNwZWNpYWwgb3JnYW5pemF0aW9uIHRoYXQgcHJvdmlkZXMgdGhlIG93bmVyc2hpcCBzY29wZSBmb3IgdGhlIGNvbmZpZ3VyYXRpb24gb2JqZWN0cyB1c2VkIGF0IHRoZSBjbG91ZCBsZXZlbCwgYW5kIHRoZSBsb2dpbiBjb250ZXh0IGZvciBhZG1pbiB1c2Vycy4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQgY29uY2VwdC1zcGFjZXMiPgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtaWNvbiI+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10aXRsZSI+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LW5hbWUgYngtLXR5cGUtZ2FtbWEiPlNwYWNlczwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10YWciPi9zcGFjZXM8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWRlc2NyaXB0aW9uIj4KICAgICAgICAgIFNwYWNlcyBhcmUgYWRtaW5pc3RyYXRpdmUgcGFydGl0aW9ucyB3aXRoIGEgPGVtPjxzdHJvbmc+Y2F0YWxvZzwvc3Ryb25nPjwvZW0+LCB1c2VkIGZvciBjb2xsYWJvcmF0aXZlIG1hbmFnZW1lbnQgb2YgQVBJcyBieSBkaWZmZXJlbnQgdGVhbXMuCiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0IGNvbmNlcHQtdXNlci1yZWciPgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtaWNvbiI+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10aXRsZSI+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LW5hbWUgYngtLXR5cGUtZ2FtbWEiPlVzZXIgcmVnaXN0cmllczwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10YWciPi91c2VyLXJlZ2lzdHJpZXM8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWRlc2NyaXB0aW9uIj4KICAgICAgICAgIFVzZXIgcmVnaXN0cmllcyBwcm92aWRlIHRoZSBzY29wZSBpbiB3aGljaCBpbmZvcm1hdGlvbiBhYm91dCB1c2VycyBhbmQgdGhlaXIgY3JlZGVudGlhbHMgYXJlIGhlbGQuCiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgICA8cD4KICAgICAgICBGb3IgY29uc3VtZXIgdXNlcnMsIEFQSXMgYW5kIEFQSSBQcm9kdWN0cyB2aXNpYmxlIG9uIHRoZSBkZXZlbG9wZXIgcG9ydGFsIGFwcGVhciBhcyA8Y29kZT4vYXBpczwvY29kZT4gb3IgPGNvZGU+L3B1YmxpYy1hcGlzPC9jb2RlPiwgYW5kIDxjb2RlPi9wcm9kdWN0czwvY29kZT4gb3IgPGNvZGU+L3B1YmxpYy1wcm9kdWN0czwvY29kZT4KICAgICAgICByZXNwZWN0aXZlbHkuIFB1YmxpYyBBUEkgY29udGVudCBpcyB2aXNpYmxlIHdpdGhvdXQgYXV0aGVudGljYXRpb24sIHdoaWxlIHRoZSBub24tcHVibGljIGNvbnRlbnQgaXMgYWNjZXNzaWJsZSBhY2NvcmRpbmcgdG8gdGhlIHZpc2liaWxpdHkgd2l0aCB3aGljaCBpdCBpcyBwdWJsaXNoZWQuCiAgICAgIDwvcD4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+U2NvcGVzPC9oMj4KICAgICAgPHA+VGhlIEFQSSBDb25uZWN0IHBsYXRmb3JtIFJFU1QgQVBJcyBhcmUgb3JnYW5pemVkIGFyb3VuZCB0aGUgZm9sbG93aW5nIGNvbmNlcHR1YWwgc2NvcGVzLjwvcD4KICAgICAgPGgzPkNsb3VkIHNjb3BlPC9oMz4KICAgICAgPHA+Q2xvdWQgc2NvcGUgaXMgdGhlIHRvcC1sZXZlbCBzY29wZSBmb3IgdGhlIEFQSSBDb25uZWN0IHN5c3RlbSBhcyBhIHdob2xlLiBJdHMgY29uZmlndXJhdGlvbiBjYW4gb25seSBiZSBwZXJmb3JtZWQgdGhyb3VnaCB0aGUgYWRtaW4gQVBJLiBUaGUgQVBJIHBhdGhzIGJlbG93IDxjb2RlPmNsb3VkPC9jb2RlPiBwcm92aWRlIGFjY2VzcyB0byB0aGUgY2xvdWQgc2V0dGluZ3M7IGRlZmF1bHQgcm9sZSBhbmQgcGVybWlzc2lvbnMgc2V0dGluZ3M7CiAgICAgICAgdGhlIHNldCBvZiBjb25maWd1cmVkIGludGVncmF0aW9ucyAoYWRhcHRlcnMgdG8gb3RoZXIgaW5mcmFzdHJ1Y3R1cmUgc2VydmljZXMgc3VjaCBhcyB1c2VyIHJlZ2lzdHJpZXMgYW5kIGJpbGxpbmcpOyB0aGUgc2V0IG9mIEFQSSBwcm92aWRlciBvcmdhbml6YXRpb25zIGFuZCB0aGVpciBhc3NvY2lhdGVkIGludml0YXRpb25zOyBhbmQgdGhlIHNldCBvZiByZWdpc3RlcmVkIGNsaWVudHMgZm9yIHRoZSBzeXN0ZW0uPC9wPgogICAgICA8aDM+T3JnYW5pemF0aW9uIHNjb3BlPC9oMz4KICAgICAgPHA+T3JnYW5pemF0aW9uIHNjb3BlIGlzIHRoZSBvd25lcnNoaXAgc2NvcGUgZm9yIGNvbnRlbnQgYW5kIGNvbmZpZ3VyYXRpb24gZGVmaW5pdGlvbnMgKEFQSXMsIGNhdGFsb2dzLCBhcHBzLCBhbmQgY29uZmlndXJhdGlvbnMgcmVwcmVzZW50aW5nIHVzZXIgcmVnaXN0cmllcywgVExTIHByb2ZpbGVzLCBrZXlzdG9yZSBkZWZpbml0aW9ucyBhbmQgc28gb24pLiBNb3N0IG9mIHRoZXNlIHJlc291cmNlcyBhcmUgY3JlYXRlZCBvciBmb3VuZCB1c2luZyBwYXRocwogICAgICAgIHRoYXQgYmVnaW4gd2l0aCA8Y29kZT4vb3JnL3tvcmdzfTwvY29kZT4gb3IgcGF0aHMgdGhhdCBoYXZlIDxjb2RlPntvcmdzfTwvY29kZT4gb3IgcGF0aHMgdGhhdCBoYXZlIDxjb2RlPntvcmdzfTwvY29kZT4gYXMgdGhlaXIgZmlyc3QgcGF0aCBwYXJhbWV0ZXIuIE1hbnkgb2YgdGhlIGNvbmZpZ3VyYXRpb24gb2JqZWN0cyB0aGF0IGFwcGVhciBpbiB0aGUgY29udGV4dCBvZiBjbG91ZCBzZXR0aW5ncwogICAgICAgICgvY2xvdWQvc2V0dGluZ3MpIGFyZSBvYmplY3RzIHRoYXQgYXJlIGNyZWF0ZWQgYW5kIG93bmVkIGJ5IHRoZSA8Y29kZT5hZG1pbjwvY29kZT4gb3JnYW5pemF0aW9uLCB3aGljaCBpcyBhbiBvcmdhbml6YXRpb24gdG8gd2hpY2ggdGhlIHNldCBvZiBhZG1pbmlzdHJhdG9yIHVzZXJzIGZvciB0aGUgY2xvdWQgYmVsb25nLjwvcD4KICAgICAgPGgzPkNhdGFsb2cgYW5kIHNwYWNlIHNjb3BlczwvaDM+CiAgICAgIDxwPkNhdGFsb2cgYW5kIHNwYWNlIHNjb3BlcyBhcmUgdGhlIGNvbnRleHRzIGluIHdoaWNoIHB1Ymxpc2hlZCBBUEkgY29udGVudCBpcyBtYW5hZ2VkLCBhbmQgY29uc3VtZXIgdXNlcnMgYXJlIGFkbWluaXN0ZXJlZC4gKFNwYWNlcyBhcmUgb3B0aW9uYWwgZmluZXItZ3JhaW5lZCBwYXJ0aXRpb25zIG9mIGEgY2F0YWxvZy4pPC9wPgogICAgPC9zZWN0aW9uPgogIDwvZGl2Pgo8L2FydGljbGU+Cg=="
+      },
+      {
+        "name": "authentication",
+        "title": "Authentication",
+        "docs": [{
+            "name": "auth_clientid_secret",
+            "title": "Obtaining a Client ID and Secret",
             "format": "b64html",
-  			"content": "PGFydGljbGUgaWQ9ImludHJvZHVjdGlvbiIgY2xhc3M9InBhZ2UiPgoKICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBpbnRyby1oZWFkZXIiPgogICAgICAgIE9wZW4gQVBJIEV4cGxvcmVyIERvY3VtZW50YXRpb24gdjEwLjAuNi4wCiAgICAgIDwvc3Bhbj4KICAgIDwvaDI+CiAgPC9kaXY+CiAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgaW50cm8tY29udGVudCI+CiAgICA8c2VjdGlvbj4KICAgICAgPGgyPkludHJvZHVjdGlvbjwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBwbGF0Zm9ybSBSRVNUIEFQSXMgZG9jdW1lbnRlZCBoZXJlIGZvciBJQk0gQVBJIENvbm5lY3QgdjEwIHByb3ZpZGUgY29tcGxldGUgYWNjZXNzIHRvIHRoZSBjYXBhYmlsaXR5IG9mIHRoZSBwbGF0Zm9ybS4gVGhleSBtYXkgYmUgdXNlZCB0byBhdXRvbWF0ZSBhZG1pbmlzdHJhdGlvbiBvZiB0aGUgcGxhdGZvcm07IGZvciBzY3JpcHRzIGFuZCB0b29scyB0byBzdXBwb3J0IGEgY29udGludW91cyBpbnRlZ3JhdGlvbiBlbnZpcm9ubWVudCBmb3IgQVBJIGRldmVsb3BtZW50IGFuZCBwdWJsaXNoaW5nOyBhbmQgZm9yIG1hbmFnZW1lbnQgb2YgY2F0YWxvZ3Mgb2YgQVBJcyBhbmQgdGhlaXIgc3Vic2NyaWJlcnMuIFRoZSBvcGVyYXRpb25zIHByb3ZpZGVkIGluIHRoZSBSRVNUIEFQSSBhbHNvIGNvcnJlc3BvbmQgZGlyZWN0bHkgd2l0aCBjb21tYW5kcyBpbiB0aGUgdG9vbGtpdCBDTEkuCiAgICAgIDwvcD4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+QVBJczwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBjYXBhYmlsaXR5IG9mIHRoZSBwbGF0Zm9ybSBpcyBjb21wcmlzZWQgb2YgdGhyZWUgQVBJcyB3aGljaCBhcmUgb3JpZW50ZWQgYXQgZGlmZmVyZW50IHNldHMgb2YgdXNlIGNhc2VzOgogICAgICA8L3A+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItYXBpcyI+PC9kaXY+CiAgICA8L3NlY3Rpb24+CiAgPC9kaXY+CjwvYXJ0aWNsZT4K"
-  		},
-  		{
-  			"name": "concepts",
-  			"title": "Concepts",
-  			"format": "b64html",
-  			"content": "PGFydGljbGUgaWQ9ImNvbmNlcHRzIiBjbGFzcz0icGFnZSI+CiAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX3RpdGxlIj4KICAgIDxoMiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX3RpdGxlLXRleHQiPgogICAgICA8c3BhbiBjbGFzcz0iZXhwbG9yZXItZG9jLS1oZWFkZXIgY29uY2VwdHMtaGVhZGVyIj4KICAgICAgICBDb25jZXB0cwogICAgICA8L3NwYW4+CiAgICA8L2gyPgogIDwvZGl2PgogIDxkaXYgY2xhc3M9ImFwaWMtZXhwbG9yZXItZG9jcGFnZV9jb250ZW50IGNvbmNlcHRzLWNvbnRlbnQiPgogICAgPHNlY3Rpb24gY2xhc3M9ImNvbmNlcHRzLXRhYmxlIj4KICAgICAgPGgyPkNvbmNlcHRzPC9oMj4KICAgICAgPHA+VGhlIHByaW1hcnkgY29uY2VwdHMgZXhwb3NlZCBieSB0aGUgQVBJIENvbm5lY3QgcGxhdGZvcm0gYXJlIHJlcHJlc2VudGVkIGluIHRoZSB0b3AtbGV2ZWwgcmVzb3VyY2UgcGF0aHMuPC9wPgogICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0IGNvbmNlcHQtYXBwcyI+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1pY29uIj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LXRpdGxlIj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtbmFtZSI+QXBwczwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10YWciPi9hcHBzPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1kZXNjcmlwdGlvbiI+CiAgICAgICAgICBBcHBzIHJlcHJlc2VudCByZWdpc3RlcmVkIGNsaWVudCBhcHBsaWNhdGlvbnMgY3JlYXRlZCBieSBBUEkgY29uc3VtZXJzLiBBbiBhcHAgaGFzIG9uZSBvciBtb3JlIGNsaWVudCBJRHMgdGhhdCBhcmUgYXNzb2NpYXRlZCB3aXRoIHN1YnNjcmlwdGlvbnMgdG8gQVBJcy4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQgY29uY2VwdC1jYXRhbG9ncyI+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1pY29uIj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LXRpdGxlIj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtbmFtZSBieC0tdHlwZS1nYW1tYSI+Q2F0YWxvZ3M8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGFnIj4vY2F0YWxvZ3M8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWRlc2NyaXB0aW9uIj4KICAgICAgICAgIEEgY2F0YWxvZyBpcyBhIGxvZ2ljYWwgY29udGFpbmVyIGZvciB0aGUgZGVwbG95bWVudCBhbmQgY29uc3VtcHRpb24gb2YgQVBJcy4gQSBjYXRhbG9nIHJlcHJlc2VudHMgdGhlIGV4ZWN1dGlvbiBlbnZpcm9ubWVudCBmb3IgQVBJcywgYW5kIGl0cyBjb250ZW50cyBhcmUgdmlzaWJsZSB0byBjb25zdW1lcnMgaW4gaXRzIGFzc29jaWF0ZWQgZGV2ZWxvcGVyIHBvcnRhbC4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQgY29uY2VwdC1jbG91ZCI+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1pY29uIj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LXRpdGxlIj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtbmFtZSI+Q2xvdWQ8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGFnIj4vY2xvdWQ8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWRlc2NyaXB0aW9uIj4KICAgICAgICAgIFRoZSBjbG91ZCByZXByZXNlbnRzIHRoZSBBUEkgQ29ubmVjdCBzeXN0ZW0uIEl0IGhhcyA8Y29kZT5zZXR0aW5nczwvY29kZT4gdGhhdCByZXByZXNlbnQgaXRzIG9wZXJhdGlvbmFsIGNvbmZpZ3VyYXRpb24uCiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0IGNvbmNlcHQtb3JnIj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWljb24iPgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGl0bGUiPgogICAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1uYW1lIj5Db25zdW1lciBvcmdhbml6YXRpb25zPC9kaXY+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LXRhZyI+L2NvbnN1bWVyLW9yZ3M8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWRlc2NyaXB0aW9uIj4KICAgICAgICAgIEEgY29uc3VtZXIgb3JnYW5pemF0aW9uIGlzIHRoZSBzY29wZSBpbiB3aGljaCBhIGNvbnN1bWVyIHVzZXIgKGFwcCBkZXZlbG9wZXJzKSBjcmVhdGVzIGFuZCBvd25zIGFwcHMgYW5kIHN1YnNjcmlwdGlvbnMuIENvbnN1bWVyIG9yZ2FuaXphdGlvbnMgZXhpc3QgaW4gdGhlIGNvbnRleHQgb2YgYSBjYXRhbG9nLgogICAgICAgIDwvZGl2PgogICAgICA8L2Rpdj4KICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdCBjb25jZXB0LW1lIj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWljb24iPgogICAgICAgICAgPHN2ZyBpZD0iX0xheWVyXyIgZGF0YS1uYW1lPSIgTGF5ZXIgIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiIgdmlld0JveD0iLTEwIC0xMCA0MCA0MCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7fS5jbHMtMntmaWxsOiM1YTY4NzI7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT51c2VyXzE4PC90aXRsZT48ZyBpZD0iX0dyb3VwXyIgZGF0YS1uYW1lPSIgR3JvdXAgIj48cmVjdCBpZD0iX1JlY3RhbmdsZV8iIGRhdGEtbmFtZT0iIFJlY3RhbmdsZSAiIGNsYXNzPSJjbHMtMSIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4IiAvPjwvZz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik05LDExQTUsNSwwLDEsMCw0LDYsNSw1LDAsMCwwLDksMTFaTTksMkE0LDQsMCwxLDEsNSw2LDQsNCwwLDAsMSw5LDJaIiAvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTEzLDEySDVhMiwyLDAsMCwwLTIsMnYzSDE1VjE0QTIsMiwwLDAsMCwxMywxMloiIC8+PC9zdmc+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10aXRsZSI+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LW5hbWUiPk1lPC9kaXY+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LXRhZyI+L21lPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1kZXNjcmlwdGlvbiI+CiAgICAgICAgICBUaGUgPGNvZGU+L21lPC9jb2RlPiByZXNvdXJjZSByZXByZXNlbnRzIHRoZSBwcm9maWxlIG9mIHRoZSBjdXJyZW50IGF1dGhlbnRpY2F0ZWQgdXNlci4gCiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0IGNvbmNlcHQtb2F1dGgtZW5kcG9pbnQiPgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtaWNvbiI+CiAgICAgICAgICA8c3ZnIGlkPSJfTGF5ZXJfIiBkYXRhLW5hbWU9IiBMYXllciAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjUyIiBoZWlnaHQ9IjUyIiB2aWV3Qm94PSItMTAgLTEwIDQwIDQwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6bm9uZTt9LmNscy0ye2ZpbGw6IzVhNjg3Mjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPnNlY3VyZV8xODwvdGl0bGU+PGcgaWQ9Il9Hcm91cF8iIGRhdGEtbmFtZT0iIEdyb3VwICI+PHJlY3QgaWQ9Il9SZWN0YW5nbGVfIiBkYXRhLW5hbWU9IiBSZWN0YW5nbGUgIiBjbGFzcz0iY2xzLTEiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIvPjwvZz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0xMy41LDguMzQwODZ2LTIuODQ0YTQuNSw0LjUsMCwwLDAtOSwwdjIuODQ0YTUuNSw1LjUsMCwxLDAsOSwwWm0tNy0yLjg0NGEyLjUsMi41LDAsMCwxLDUsMHYxLjEwNWE1LjQ3NCw1LjQ3NCwwLDAsMC01LDBabTEuNDg3LDguNzUyTDUuNSwxMS43Nzc4NmwxLTEsMS40NjcsMS40NzQsMy41MzMtMy40NzQsMSwxWiIvPjwvc3ZnPgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGl0bGUiPgogICAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1uYW1lIj5PQXV0aCBlbmRwb2ludHM8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGFnIj4vb2F1dGgyPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC1kZXNjcmlwdGlvbiI+CiAgICAgICAgICBUaGUgPGNvZGU+L29hdXRoMjwvY29kZT4gcmVzb3VyY2UgcHJvdmlkZXMgdGhlIGF1dGhvcml6YXRpb24gYW5kIHRva2VuIGVuZHBvaW50cyBmb3IgY2xpZW50cyBvZiB0aGUgcGxhdGZvcm0gUkVTVCBBUElzIChzZWUgdGhlIGF1dGhlbnRpY2F0aW9uIHRvcGljKS4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQgY29uY2VwdC1vcmciPgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtaWNvbiI+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10aXRsZSI+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LW5hbWUgYngtLXR5cGUtZ2FtbWEiPlByb3ZpZGVyIG9yZ2FuaXphdGlvbnM8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtdGFnIj4vb3JnczwvZGl2PgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtZGVzY3JpcHRpb24iPgogICAgICAgICAgQSBwcm92aWRlciBvcmdhbml6YXRpb24gaXMgdGhlIHNjb3BlIGluIHdoaWNoIGFsbCBBUEkgcHJvdmlkZXIgY29udGVudCBpcyBjcmVhdGVkIGFuZCBjb25maWd1cmVkLiBUaGlzIGluY2x1ZGVzIEFQSSBhbmQgQVBJIHByb2R1Y3QgZGVmaW5pdGlvbnMsIGNhdGFsb2dzLCBhbmQgb3RoZXIgY29uZmlndXJhdGlvbiBvYmplY3RzIGFzc29jaWF0ZWQgd2l0aCBjYXRhbG9ncy4gVGhlIDxlbT48c3Ryb25nPmFkbWluIG9yZzwvc3Ryb25nPjwvZW0+IGlzIGEKICAgICAgICAgIHNwZWNpYWwgb3JnYW5pemF0aW9uIHRoYXQgcHJvdmlkZXMgdGhlIG93bmVyc2hpcCBzY29wZSBmb3IgdGhlIGNvbmZpZ3VyYXRpb24gb2JqZWN0cyB1c2VkIGF0IHRoZSBjbG91ZCBsZXZlbCwgYW5kIHRoZSBsb2dpbiBjb250ZXh0IGZvciBhZG1pbiB1c2Vycy4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQgY29uY2VwdC1zcGFjZXMiPgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtaWNvbiI+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10aXRsZSI+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LW5hbWUgYngtLXR5cGUtZ2FtbWEiPlNwYWNlczwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10YWciPi9zcGFjZXM8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWRlc2NyaXB0aW9uIj4KICAgICAgICAgIFNwYWNlcyBhcmUgYWRtaW5pc3RyYXRpdmUgcGFydGl0aW9ucyB3aXRoIGEgPGVtPjxzdHJvbmc+Y2F0YWxvZzwvc3Ryb25nPjwvZW0+LCB1c2VkIGZvciBjb2xsYWJvcmF0aXZlIG1hbmFnZW1lbnQgb2YgQVBJcyBieSBkaWZmZXJlbnQgdGVhbXMuCiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0IGNvbmNlcHQtdXNlci1yZWciPgogICAgICAgIDxkaXYgY2xhc3M9ImNvbmNlcHQtaWNvbiI+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10aXRsZSI+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LW5hbWUgYngtLXR5cGUtZ2FtbWEiPlVzZXIgcmVnaXN0cmllczwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzcz0iY29uY2VwdC10YWciPi91c2VyLXJlZ2lzdHJpZXM8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb25jZXB0LWRlc2NyaXB0aW9uIj4KICAgICAgICAgIFVzZXIgcmVnaXN0cmllcyBwcm92aWRlIHRoZSBzY29wZSBpbiB3aGljaCBpbmZvcm1hdGlvbiBhYm91dCB1c2VycyBhbmQgdGhlaXIgY3JlZGVudGlhbHMgYXJlIGhlbGQuCiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgICA8cD4KICAgICAgICBGb3IgY29uc3VtZXIgdXNlcnMsIEFQSXMgYW5kIEFQSSBQcm9kdWN0cyB2aXNpYmxlIG9uIHRoZSBkZXZlbG9wZXIgcG9ydGFsIGFwcGVhciBhcyA8Y29kZT4vYXBpczwvY29kZT4gb3IgPGNvZGU+L3B1YmxpYy1hcGlzPC9jb2RlPiwgYW5kIDxjb2RlPi9wcm9kdWN0czwvY29kZT4gb3IgPGNvZGU+L3B1YmxpYy1wcm9kdWN0czwvY29kZT4KICAgICAgICByZXNwZWN0aXZlbHkuIFB1YmxpYyBBUEkgY29udGVudCBpcyB2aXNpYmxlIHdpdGhvdXQgYXV0aGVudGljYXRpb24sIHdoaWxlIHRoZSBub24tcHVibGljIGNvbnRlbnQgaXMgYWNjZXNzaWJsZSBhY2NvcmRpbmcgdG8gdGhlIHZpc2liaWxpdHkgd2l0aCB3aGljaCBpdCBpcyBwdWJsaXNoZWQuCiAgICAgIDwvcD4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+U2NvcGVzPC9oMj4KICAgICAgPHA+VGhlIEFQSSBDb25uZWN0IHBsYXRmb3JtIFJFU1QgQVBJcyBhcmUgb3JnYW5pemVkIGFyb3VuZCB0aGUgZm9sbG93aW5nIGNvbmNlcHR1YWwgc2NvcGVzLjwvcD4KICAgICAgPGgzPkNsb3VkIHNjb3BlPC9oMz4KICAgICAgPHA+Q2xvdWQgc2NvcGUgaXMgdGhlIHRvcC1sZXZlbCBzY29wZSBmb3IgdGhlIEFQSSBDb25uZWN0IHN5c3RlbSBhcyBhIHdob2xlLiBJdHMgY29uZmlndXJhdGlvbiBjYW4gb25seSBiZSBwZXJmb3JtZWQgdGhyb3VnaCB0aGUgYWRtaW4gQVBJLiBUaGUgQVBJIHBhdGhzIGJlbG93IDxjb2RlPmNsb3VkPC9jb2RlPiBwcm92aWRlIGFjY2VzcyB0byB0aGUgY2xvdWQgc2V0dGluZ3M7IGRlZmF1bHQgcm9sZSBhbmQgcGVybWlzc2lvbnMgc2V0dGluZ3M7CiAgICAgICAgdGhlIHNldCBvZiBjb25maWd1cmVkIGludGVncmF0aW9ucyAoYWRhcHRlcnMgdG8gb3RoZXIgaW5mcmFzdHJ1Y3R1cmUgc2VydmljZXMgc3VjaCBhcyB1c2VyIHJlZ2lzdHJpZXMgYW5kIGJpbGxpbmcpOyB0aGUgc2V0IG9mIEFQSSBwcm92aWRlciBvcmdhbml6YXRpb25zIGFuZCB0aGVpciBhc3NvY2lhdGVkIGludml0YXRpb25zOyBhbmQgdGhlIHNldCBvZiByZWdpc3RlcmVkIGNsaWVudHMgZm9yIHRoZSBzeXN0ZW0uPC9wPgogICAgICA8aDM+T3JnYW5pemF0aW9uIHNjb3BlPC9oMz4KICAgICAgPHA+T3JnYW5pemF0aW9uIHNjb3BlIGlzIHRoZSBvd25lcnNoaXAgc2NvcGUgZm9yIGNvbnRlbnQgYW5kIGNvbmZpZ3VyYXRpb24gZGVmaW5pdGlvbnMgKEFQSXMsIGNhdGFsb2dzLCBhcHBzLCBhbmQgY29uZmlndXJhdGlvbnMgcmVwcmVzZW50aW5nIHVzZXIgcmVnaXN0cmllcywgVExTIHByb2ZpbGVzLCBrZXlzdG9yZSBkZWZpbml0aW9ucyBhbmQgc28gb24pLiBNb3N0IG9mIHRoZXNlIHJlc291cmNlcyBhcmUgY3JlYXRlZCBvciBmb3VuZCB1c2luZyBwYXRocwogICAgICAgIHRoYXQgYmVnaW4gd2l0aCA8Y29kZT4vb3JnL3tvcmdzfTwvY29kZT4gb3IgcGF0aHMgdGhhdCBoYXZlIDxjb2RlPntvcmdzfTwvY29kZT4gb3IgcGF0aHMgdGhhdCBoYXZlIDxjb2RlPntvcmdzfTwvY29kZT4gYXMgdGhlaXIgZmlyc3QgcGF0aCBwYXJhbWV0ZXIuIE1hbnkgb2YgdGhlIGNvbmZpZ3VyYXRpb24gb2JqZWN0cyB0aGF0IGFwcGVhciBpbiB0aGUgY29udGV4dCBvZiBjbG91ZCBzZXR0aW5ncwogICAgICAgICgvY2xvdWQvc2V0dGluZ3MpIGFyZSBvYmplY3RzIHRoYXQgYXJlIGNyZWF0ZWQgYW5kIG93bmVkIGJ5IHRoZSA8Y29kZT5hZG1pbjwvY29kZT4gb3JnYW5pemF0aW9uLCB3aGljaCBpcyBhbiBvcmdhbml6YXRpb24gdG8gd2hpY2ggdGhlIHNldCBvZiBhZG1pbmlzdHJhdG9yIHVzZXJzIGZvciB0aGUgY2xvdWQgYmVsb25nLjwvcD4KICAgICAgPGgzPkNhdGFsb2cgYW5kIHNwYWNlIHNjb3BlczwvaDM+CiAgICAgIDxwPkNhdGFsb2cgYW5kIHNwYWNlIHNjb3BlcyBhcmUgdGhlIGNvbnRleHRzIGluIHdoaWNoIHB1Ymxpc2hlZCBBUEkgY29udGVudCBpcyBtYW5hZ2VkLCBhbmQgY29uc3VtZXIgdXNlcnMgYXJlIGFkbWluaXN0ZXJlZC4gKFNwYWNlcyBhcmUgb3B0aW9uYWwgZmluZXItZ3JhaW5lZCBwYXJ0aXRpb25zIG9mIGEgY2F0YWxvZy4pPC9wPgogICAgPC9zZWN0aW9uPgogIDwvZGl2Pgo8L2FydGljbGU+Cg=="
-  		},
-  		{
-  			"name": "authentication",
-  			"title": "Authentication",
-  			"docs": [{
-  					"name": "auth_clientid_secret",
-  					"title": "Obtaining a Client ID and Secret",
-  					"format": "b64html",
-  					"content": "PGFydGljbGUgaWQ9ImNsaWVudC1pZC1zZWNyZXQiIGNsYXNzPSJwYWdlIj4KICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBjbGllbnQtaWQtc2VjcmV0LWhlYWRlciI+CiAgICAgIE9idGFpbmluZyBhIENsaWVudCBJRCBhbmQgU2VjcmV0CiAgICAgIDwvc3Bhbj4KICAgIDwvaDI+CiAgPC9kaXY+CiAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgY2xpZW50LWlkLXNlY3JldC1jb250ZW50Ij4KICAgIDxzZWN0aW9uPgogICAgICA8cD5FYWNoIGNsaWVudCBhcHAgdGhhdCBhY2Nlc3NlcyB0aGUgQVBJIENvbm5lY3QgUkVTVCBBUEkgbXVzdCBiZSByZWdpc3RlcmVkIHdpdGggdGhlIEFQSSBDb25uZWN0IGNsb3VkLiBUaGUgcHJvY2VzcyBvZiByZWdpc3RlcmluZyBhIGNsaWVudCBhc3NvY2lhdGVzIHRoZSBhcHBzJ3MgY2xpZW50IElEIHdpdGggYSBzZXQgb2Ygc2NvcGVzIHRoYXQgZGV0ZXJtaW5lIHdoaWNoIG9wZXJhdGlvbnMgdGhlIGFwcCBtYXkgYWNjZXNzLjwvcD4KICAgICAgPHA+VG8gcmVnaXN0ZXIgYSBjbGllbnQgYXBwLCB1c2UgdGhlIDx0dD5hcGljIHJlZ2lzdHJhdGlvbnM6Y3JlYXRlPC90dD4gQVBJIENvbm5lY3QgdG9vbGtpdCBDTEkgY29tbWFuZC4gVGhlIGNvbW1hbmQgdGFrZXMgYW4gaW5wdXQgSlNPTiBvYmplY3Qgd2l0aCB0aGUgZm9sbG93aW5nIGZpZWxkczo8L3A+CiAgICAgIDxkbD4KICAgICAgICA8ZHQ+bmFtZTwvZHQ+CiAgICAgICAgPGRkPnNob3J0IG5hbWUgdG8gaWRlbnRpZnkgdGhlIGNsaWVudDwvZGQ+CiAgICAgICAgCiAgICAgICAgPGR0PnRpdGxlPC9kdD4KICAgICAgICA8ZGQ+ZGlzcGxheSBuYW1lIG9mIHRoZSBjbGllbnQ8L2RkPgogICAgICAgIAogICAgICAgIDxkdD5jbGllbnRfaWQ8L2R0PgogICAgICAgIDxkZD5hIGdlbmVyYXRlZCBjbGllbnQgSUQgdmFsdWU8L2RkPgoKICAgICAgICA8ZHQ+Y2xpZW50X3NlY3JldDwvZHQ+CiAgICAgICAgPGRkPmEgZ2VuZXJhdGVkIGNsaWVudCBzZWNyZXQgdmFsdWU8L2RkPgoKICAgICAgICA8ZHQ+Y2xpZW50X3R5cGU8L2R0PgogICAgICAgIDxkZD5vbmUgb2YgPHR0PnBvcnRhbDwvdHQ+LCA8dHQ+Z2F0ZXdheTwvdHQ+LCA8dHQ+dG9vbGtpdDwvdHQ+LCA8dHQ+Y29uc3VtZXJfdG9vbGtpdDwvdHQ+LCA8dHQ+dWk8L3R0PiwgPHR0PmNvbnN1bWVyX3VpPC90dD4sIDx0dD5pYm1fY2xvdWQ8L3R0PiwgPHR0Pm1pZ3JhdGlvbjwvdHQ+LCA8dHQ+anVodTwvdHQ+PC9kZD4KICAgICAgPC9kbD4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8cD5JbiBvcmRlciB0byBydW4gdGhpcyBjb21tYW5kLCB5b3UgbXVzdCBmaXJzdCBsb2cgaW4gdG8gdGhlIEFQSSBDb25uZWN0IHNlcnZlciBhcyBhbiBhZG1pbiB1c2VyIHVzaW5nIHRoZSA8dHQ+YXBpYyBsb2dpbjwvdHQ+IGNvbW1hbmQuIFdpdGggbm8gYXJndW1lbnRzLCB0aGUgbG9naW4gY29tbWFuZCBwcm9tcHRzIGZvciB5b3VyIHVzZXIgY3JlZGVudGlhbHMgYW5kIHRoZSByZWFsbSBpbiB3aGljaCB0aGUgdXNlciBhY2NvdW50IGV4aXN0cy4gVGhlIHJlYWxtIGNvcnJlc3BvbmRzIHRvIHRoZSB1c2VyIHJlZ2lzdHJ5IGluIHdoaWNoIHRoZSB1c2VyIGNyZWRlbnRpYWxzIGFyZSBoZWxkLjwvcD4KICAgICAgPHA+SWYgaXQncyB5b3VyIGZpcnN0IHRpbWUgbG9nZ2luZyBpbiB1c2luZyB0aGUgdG9vbGtpdCBDTEksIHlvdSdsbCBuZWVkIHRvIGZpbmQgdGhlIGlkZW50aXR5IHByb3ZpZGVyIHRvIHdoaWNoIHlvdXIgdXNlcmlkIGJlbG9uZ3MuIFlvdSBjYW4gbGlzdCB0aGUgc2V0IG9mIGFkbWluIGlkZW50aXR5IHByb3ZpZGVycyBpbiB0aGUgc3lzdGVtIHVzaW5nIHRoZSA8dHQ+YXBpYyBpZGVudGl0eS1wcm92aWRlcnM6bGlzdDwvdHQ+IGNvbW1hbmQuPC9wPgogICAgPC9zZWN0aW9uPgogICAgPHNlY3Rpb24+CiAgICAgIDxoMz5saXN0aW5nIGlkZW50aXR5IHByb3ZpZGVyczwvaDM+CiAgICAgIDxkaXYgaWQ9ImdldC1yZWFsbXZhbHVlLXJlcXVlc3QiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij4KJCBhcGljIGlkZW50aXR5LXByb3ZpZGVyczpsaXN0IC0tc2NvcGUgYWRtaW4gLS1zZXJ2ZXIgYXBpYy5pYm0uY29tCmRlZmF1bHQtaWRwLTEKICAgICAgPC9kaXY+CiAgICA8L3NlY3Rpb24+CiAgICA8c2VjdGlvbj4KICAgICAgPGgzPmFwaWMgbG9naW4gZXhhbXBsZTwvaDM+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgokIGFwaWMgbG9naW4KRW50ZXIgeW91ciBBUEkgQ29ubmVjdCBjcmVkZW50aWFscwpTZXJ2ZXI/IGNocmlzbS5hcmdvLXNsLmRldi5jaW9uZGVtYW5kLmNvbQpSZWFsbT8gYWRtaW4vZGVmYXVsdC1pZHAtMQpVc2VybmFtZT8gY2hyaXMKUGFzc3dvcmQ/IApMb2dnZWQgaW50byBhcGljLmlibS5jb20gc3VjY2Vzc2Z1bGx5CiAgICAgIDwvZGl2PgogICAgICA8cD4oTm90ZSB0aGF0IHRoZSByZWFsbSBuYW1lIHVzZWQgZm9yIHRoZSBsb2dpbiBoYXMgdGhlIHZhbHVlICdhZG1pbi8nIHByZWZpeGVkIHRvIHRoZSByZWFsbSBuYW1lLik8L3A+CiAgICA8L3NlY3Rpb24+CiAgICA8c2VjdGlvbj4KICAgICAgPGgzPmFwaWMgcmVnaXN0cmF0aW9uczpjcmVhdGUgZXhhbXBsZTwvaDM+CiAgICAgIDxwPlRoaXMgSlNPTiBjb250ZW50ICg8dHQ+YXBwMS5qc29uPC90dD4pIHByb3ZpZGVzIHRoZSBwYXJhbWV0ZXJzIGZvciByZWdpc3RlcmluZyBhbiBhcHAgbmFtZWQgPHR0PmFwcDE8L3R0PiB1c2luZyB0aGUgPHR0PnRvb2xraXQ8L3R0PiBjbGllbnQgdHlwZSBhbmQgYSBwcmUtZGVmaW5lZCBjbGllbnQgSUQgYW5kIHNlY3JldDo8L3A+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgp7CiAgIm5hbWUiOiAiYXBwMSIsCiAgImNsaWVudF9pZCI6ICJhcHAxaWQiLCAKICAiY2xpZW50X3NlY3JldCI6ICJhcHAxc2VjcmV0IiwKICAiY2xpZW50X3R5cGUiOiAidG9vbGtpdCIKfQogICAgICA8L2Rpdj4KICAgICAgPHA+VGhpcyBleGFtcGxlIHNob3dzIHRoZSByZWdpc3RyYXRpb24gY29tbWFuZCB0byByZWdpc3RlciB0aGlzIGFwcDo8L3A+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgokIGFwaWMgcmVnaXN0cmF0aW9uczpjcmVhdGUgLS1zZXJ2ZXIgYXBpYy5pYm0uY29tIGFwcDEuanNvbgphcHAxICAgaHR0cHM6Ly9hcGljLmlibS5jb20vYXBpL2Nsb3VkL3JlZ2lzdHJhdGlvbnMvNTExOTYyMjItNzg4Yy00NzRmLWI0YzctMGIzNTFjZTUwOWRlCiAgICAgIDwvZGl2PgogICAgPC9zZWN0aW9uPgo8L2FydGljbGU+Cg=="
-  				},
-  			    {
-  					"name": "auth_bearertoken",
-  					"title": "Getting and Using a Bearer Token",
-  					"format": "b64html",
-  					"content": "ICA8YXJ0aWNsZSBpZD0iYmVhcmVyLXRva2VuIiBjbGFzcz0icGFnZSI+CiAgICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgICA8aDIgY2xhc3M9ImFwaWMtZXhwbG9yZXItZG9jcGFnZV90aXRsZS10ZXh0Ij4KICAgICAgICA8c3BhbiBjbGFzcz0iZXhwbG9yZXItZG9jLS1oZWFkZXIgYmVhcmVyLXRva2VuLWhlYWRlciI+CiAgICAgICAgT2J0YWluaW5nIGFuZCBVc2luZyBhIEJlYXJlciBUb2tlbgogICAgICAgIDwvc3Bhbj4KICAgICAgPC9oMj4KICAgIDwvZGl2PgogICAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgYmVhcmVyLXRva2VuLWNvbnRlbnQiPgogICAgICA8cD5DYWxscyB0byB0aGUgQVBJIENvbm5lY3QgcGxhdGZvcm0gUkVTVCBBUElzIGFyZSBhdXRoZW50aWNhdGVkIHVzaW5nIGEgYmVhcmVyIHRva2VuLCB3aGljaCBpcyBvYnRhaW5lZCBmcm9tIHRoZSA8Y29kZT4vYXBpL3Rva2VuPC9jb2RlPiBlbmRwb2ludC48L3A+CiAgICAgIDxzZWN0aW9uPgogICAgICAgIDxoMz5SZXF1ZXN0aW5nIGEgYmVhcmVyIHRva2VuPC9oMz4KICAgICAgICA8cD4KICAgICAgICAgIFRoZSByZXF1ZXN0IHRvIG9idGFpbiBhIGJlYXJlciB0b2tlbiBpcyBlcXVpdmFsZW50IHRvIGFuIE9BdXRoIDIuMCBhY2Nlc3MgdG9rZW4gcmVxdWVzdCB1c2luZwogICAgICAgICAgdGhlIFJlc291cmNlIE93bmVyIFBhc3N3b3JkIENyZWRlbnRpYWxzIGdyYW50IHR5cGUuIEhvd2V2ZXIsIHRoZSByZXF1ZXN0IGNvbnRlbnRzIG11c3QgYmUgc2VudCBhcyBhIEpTT04gcGF5bG9hZCByYXRoZXIgdGhhbiBhcyBmb3JtIGRhdGEuCiAgICAgICAgPC9wPgogICAgICAgIDxwPlRoZSBKU09OIHBheWxvYWQgZm9yIHRoZSBiZWFyZXIgdG9rZW4gcmVxdWVzdCBjb250YWlucyB0aGUgZm9sbG93aW5nIGZpZWxkczo8L3A+CiAgICAgICAgPGRsPgogICAgICAgICAgPGR0PnVzZXJuYW1lOjwvZHQ+CiAgICAgICAgICA8ZGQ+dGhlIHVzZXJuYW1lIGZvciB0aGUgQVBJIENvbm5lY3QgdXNlciBtYWtpbmcgdGhlIHJlcXVlc3Q8L2RkPgogICAgICAgICAgCiAgICAgICAgICA8ZHQ+cGFzc3dvcmQ6PC9kdD4KICAgICAgICAgIDxkZD50aGUgcGFzc3dvcmQgZm9yIHRoZSBBUEkgQ29ubmVjdCB1c2VyIG1ha2luZyB0aGUgcmVxdWVzdDwvZGQ+CiAgICAgICAgICAKICAgICAgICAgIDxkdD5yZWFsbTo8L2R0PgogICAgICAgICAgPGRkPmluZGljYXRlcyB0aGUgdXNlciByZWdpc3RyeSBpbiB3aGljaCB0aGUgQVBJIENvbm5lY3QgdXNlciBjcmVkZW50aWFscyBhcmUgaGVsZDwvZGQ+CiAgICAgICAgICAKICAgICAgICAgIDxkdD5jbGllbnRfaWQ6PC9kdD4KICAgICAgICAgIDxkZD50aGUgY2xpZW50IElEIG9mIHRoZSBhcHAgbWFraW5nIHRoZSByZXF1ZXN0PC9kZD4KICAgICAgICAgIAogICAgICAgICAgPGR0PmNsaWVudF9zZWNyZXQ6PC9kdD4KICAgICAgICAgIDxkZD50aGUgY2xpZW50IHNlY3JldCBvZiB0aGUgYXBwIG1ha2luZyB0aGUgcmVxdWVzdDwvZGQ+CiAgICAgICAgICAKICAgICAgICAgIDxkdD5ncmFudF90eXBlOjwvZHQ+CiAgICAgICAgICA8ZGQ+cGFzc3dvcmQgKGZpeGVkIHZhbHVlKTwvZGQ+CiAgICAgICAgPC9kbD4KICAgICAgICA8cD5IZXJlIGlzIGEgY3VybCBleGFtcGxlIHNob3dpbmcgYSBiZWFyZXIgdG9rZW4gcmVxdWVzdCBhbmQgc3VjY2Vzc2Z1bCByZXNwb25zZTo8L3A+CiAgICAgICAgPGg0PlJlcXVlc3Q8L2g0PgogICAgICAgIDxkaXYgaWQ9ImdldC1iZWFyZXJ0b2tlbi1yZXF1ZXN0IiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+Y3VybCAtdiAtayAtWCBQT1NUIC1kICd7InVzZXJuYW1lIjogImNocmlzIiwgInBhc3N3b3JkIjogIioqKioiLCAicmVhbG0iOiAicHJvdmlkZXIvZGVmYXVsdC1pZHAtMiIsICJjbGllbnRfaWQiOiAicmVnaXN0ZXJlZC1hcHAtY2xpZW50LWlkIiwgImNsaWVudF9zZWNyZXQiOiAicmVnaXN0ZXJlZC1hcHAtY2xpZW50LXNlY3JldCIsICJncmFudF90eXBlIjogInBhc3N3b3JkIn0nIC1IICdDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL2pzb24nIC1IICdBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24nIGh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvdG9rZW48L2Rpdj4KICAgICAgICA8cD5UaGUgPHR0PmNsaWVudF9pZDwvdHQ+IGFuZCA8dHQ+Y2xpZW50X3NlY3JldDwvdHQ+IHZhbHVlcyBhcmUgdGhlIGFwcCdzIGNyZWRlbnRpYWxzLCBhcyByZWdpc3RlcmVkIHdpdGggCiAgICAgICAgdGhlIDx0dD5hcGljIHJlZ2lzdHJhdGlvbnM6Y3JlYXRlPC90dD4gY29tbWFuZC48L3A+CiAgICAgICAgPGg0PlJlc3BvbnNlPC9oND4KICAgICAgICA8ZGl2IGlkPSJnZXQtYmVhcmVydG9rZW4tcmVzcG9uc2UiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij57CiAgImFjY2Vzc190b2tlbiI6ICJleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKcWRHa2lPaUkxTUdWbU9HUXpPQzFsTVRVeExUUTROamN0WW1Jd09TMHdOREEwTjJVeFpqTTNORGNpTENKdVlXMWxjM0JoWTJVaU9pSXpZalExT0RVNE5pMWtaR013TFRRMU5EWXRPVGhrWmkwM01tVXhNek16WWpBNVpXRTZNVFl6WkRZNE1XWXRaV1V3TUMwMFlXUmhMV0ZpTldRdFpEVmtNelJsWWpkbE9EVmpPakJqT0RRME5UZ3lMVFExWVdNdE5EUTJNeTFoT1RjMUxUaGlObVExWmpZNU1URTFaQ0lzSW1GMVpDSTZJaTloY0drdlkyeHZkV1F2Y21WbmFYTjBjbUYwYVc5dWN5OHpPVEJoTmpWaFlTMDBNMkZoTFRRM016VXRZakEwT1MwNE1UazNNakl5WkRJM1pEQWlMQ0p6ZFdJaU9pSXZZWEJwTDNWelpYSXRjbVZuYVhOMGNtbGxjeTh6WWpRMU9EVTROaTFrWkdNd0xUUTFORFl0T1Roa1ppMDNNbVV4TXpNellqQTVaV0V2TVRZelpEWTRNV1l0WldVd01DMDBZV1JoTFdGaU5XUXRaRFZrTXpSbFlqZGxPRFZqTDNWelpYSnpMekJqT0RRME5UZ3lMVFExWVdNdE5EUTJNeTFoT1RjMUxUaGlObVExWmpZNU1URTFaQ0lzSW1semN5STZJa2xDVFNCQlVFa2dRMjl1Ym1WamRDSXNJbVY0Y0NJNk1UVXpNalU0TmpFMU1pd2lhV0YwSWpveE5UTXlOVFUzTXpVeUxDSm5jbUZ1ZEY5MGVYQmxJam9pY0dGemMzZHZjbVFpTENKMWMyVnlYM0psWjJsemRISjVYM1Z5YkNJNklpOWhjR2t2ZFhObGNpMXlaV2RwYzNSeWFXVnpMek5pTkRVNE5UZzJMV1JrWXpBdE5EVTBOaTA1T0dSbUxUY3laVEV6TXpOaU1EbGxZUzh4TmpOa05qZ3haaTFsWlRBd0xUUmhaR0V0WVdJMVpDMWtOV1F6TkdWaU4yVTROV01pTENKeVpXRnNiU0k2SW5CeWIzWnBaR1Z5TDJSbFptRjFiSFF0YVdSd0xUSWlMQ0oxYzJWeWJtRnRaU0k2SW1Ob2NtbHpJaXdpYVdSZmRHOXJaVzRpT2lKbGVVcG9Za2RqYVU5cFNrbFZla2t4VG1sSmMwbHVValZqUTBrMlNXdHdXRlpEU2prdVpYbEtiV0ZZU25wa1JqbDFXVmN4YkVscWIybFJNbWg1WVZoTmFVeERTbk5aV0U0d1dESTFhR0pYVldsUGFVcE9TV2wzYVdSWVRteGpiRGx3V2tOSk5rbHRTbXBPYWtrMFRWZFZNVXhYVW14T01rbDBUa1JLYlU1cE1EUlpha2t3VEZkS2FrNXFZM2xaVkVFeVdtcFJkMDVUU1hOSmJsWjZXbGhLZFZsWE1XeEphbTlwV1RKb2VXRllUV2xNUTBwd1dWaFJhVTlxUlRGTmVra3hUbFJqZWs1VVNqa3VlbHB6VFhJME9VSmtkVTlEVWxjeGIyNHlXamRzWkRJNGJuSktSVlZEWlRBMWJtTTVNbGRSWDNkb05DSXNJbk5qYjNCbGN5STZXeUpqYkc5MVpEcDJhV1YzSWl3aVkyeHZkV1E2YldGdVlXZGxJaXdpY0hKdmRtbGtaWEl0YjNKbk9uWnBaWGNpTENKd2NtOTJhV1JsY2kxdmNtYzZiV0Z1WVdkbElpd2liM0puT25acFpYY2lMQ0p2Y21jNmJXRnVZV2RsSWl3aVpISmhablJ6T25acFpYY2lMQ0prY21GbWRITTZaV1JwZENJc0ltTm9hV3hrT25acFpYY2lMQ0pqYUdsc1pEcGpjbVZoZEdVaUxDSmphR2xzWkRwdFlXNWhaMlVpTENKd2NtOWtkV04wT25acFpYY2lMQ0p3Y205a2RXTjBPbk4wWVdkbElpd2ljSEp2WkhWamREcHRZVzVoWjJVaUxDSmhjSEJ5YjNaaGJEcDJhV1YzSWl3aVlYQndjbTkyWVd3NmJXRnVZV2RsSWl3aVlYQnBMV0Z1WVd4NWRHbGpjenAyYVdWM0lpd2lZWEJwTFdGdVlXeDVkR2xqY3pwdFlXNWhaMlVpTENKamIyNXpkVzFsY2kxdmNtYzZkbWxsZHlJc0ltTnZibk4xYldWeUxXOXlaenB0WVc1aFoyVWlMQ0poY0hBNmRtbGxkenBoYkd3aUxDSmhjSEE2YldGdVlXZGxPbUZzYkNJc0ltMTVPblpwWlhjaUxDSnRlVHB0WVc1aFoyVWlMQ0ozWldKb2IyOXJPblpwWlhjaVhYMC4xeWJlekdKckpXZ1JaOGVjNWNqeUdRVEtjV0EzaXdUYlY1QXViWENveDYwIiwKICAidG9rZW5fdHlwZSI6ICJCZWFyZXIiLAogICJleHBpcmVzX2luIjogMjg4MDAKfQogICAgICAgIDwvZGl2PgogICAgICA8L3NlY3Rpb24+CiAgICAgIDxzZWN0aW9uPgogICAgICAgIDxoMz5GaW5kaW5nIFJlYWxtIFZhbHVlczwvaDM+CiAgICAgICAgPHA+VGhlIHJlYWxtIHZhbHVlIHVzZWQgaW4gYSBiZWFyZXIgdG9rZW4gcmVxdWVzdCBpcyBhIHZhbHVlIHRoYXQgaWRlbnRpZmllcyB0aGUgdXNlciByZWdpc3RyeSBpbiB3aGljaCB0aGUgcmVxdWVzdGluZyB1c2VyJ3MgY3JlZGVudGlhbHMgYXJlIGhlbGQuIFRoaXMgbWF5IG5vdCBiZSB0aGUgc2FtZSByZWFsbSB2YWx1ZSBhcyB3YXMgdXNlZCB0byByZWdpc3RlciB0aGUgYXBwOyBpdCB3aWxsIGJlIHRoZSBzYW1lIG9ubHkgaWYgdGhlIHVzZXIgZXhlY3V0aW5nIHRoZSBhcHAgaXMgdGhlIHNhbWUgdXNlciB0aGF0IHBlcmZvcm1lZCB0aGUgYXBwIHJlZ2lzdHJhdGlvbi48L3A+CiAgICAgICAgPHA+CiAgICAgICAgICBZb3UgY2FuIHF1ZXJ5IHRoZSBzZXQgb2YgdXNlciByZWdpc3RyaWVzIHRvIG9idGFpbiB0aGUgY29uZmlndXJlZCByZWFsbSB2YWx1ZXMgdXNpbmcgYW4gdW5hdXRoZW50aWNhdGVkIGNhbGwgdG8gdGhlIDxjb2RlPi9jbG91ZC9hZG1pbi9pZGVudGl0eS1wcm92aWRlcnM8L2NvZGU+IAogICAgICAgICAgb3IgPGNvZGU+L2Nsb3VkL3Byb3ZpZGVyL2lkZW50aXR5LXByb3ZpZGVyczwvY29kZT4gVVJMIGZvciBhZG1pbiB1c2VycyBvciBBUEkgcHJvdmlkZXIgdXNlcnMgcmVzcGVjdGl2ZWx5LgogICAgICAgIDwvcD4KICAgICAgPC9zZWN0aW9uPgogICAgICA8cD5IZXJlIGlzIGFuIGV4YW1wbGUgcmVxdWVzdCBhbmQgc3VjY2Vzc2Z1bCByZXNwb25zZTo8L3A+CiAgICAgIDxoND5SZXF1ZXN0PC9oND4KICAgICAgPGRpdiBpZD0iZ2V0LXJlYWxtdmFsdWUtcmVxdWVzdCIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgpjdXJsIC12IC1rIC1IICJBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24iIGh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvY2xvdWQvcHJvdmlkZXIvaWRlbnRpdHktcHJvdmlkZXJzCiAgICAgIDwvZGl2PgogICAgICA8aDQ+UmVzcG9uc2U8L2g0PgogICAgICA8ZGl2IGlkPSJnZXQtcmVhbG12YWx1ZS1yZXNwb25zZSIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgp7CiAgInRvdGFsX3Jlc3VsdHMiOiAxLAogICJyZXN1bHRzIjogWwogICB7CiAgICAgIm5hbWUiOiAiZGVmYXVsdC1pZHAtMiIsCiAgICAgInRpdGxlIjogIkFQSSBNYW5hZ2VyIFVzZXIgUmVnaXN0cnkiLAogICAgICJkZWZhdWx0IjogdHJ1ZSwKICAgICAicmVnaXN0cnlfdHlwZSI6ICJsdXIiCiAgIH0KICBdCn0KICA8L2Rpdj4KICA8cD5BIHJlYWxtIHZhbHVlIGNvbnNpc3RzIG9mIGEgdXNlciByZWdpc3RyeSBuYW1lIHF1YWxpZmllZCB3aXRoIHRoZSBjb250ZXh0IGluIHdoaWNoIGl0IHVzZWQsIGluIHRoZSBmb3JtIGNvbnRleHQvdXNlci1yZWdpc3RyeS1uYW1lLCB3aGVyZSB0aGUgY29udGV4dCBpcyA8Y29kZT5hZG1pbjwvY29kZT4gZm9yIGNsb3VkIGFkbWluaXN0cmF0b3IgdXNlcnMgb3IgPGNvZGU+cHJvdmlkZXI8L2NvZGU+IGZvciBBUEkgcHJvdmlkZXIgdXNlcnMuIFRoZSByZWFsbSB2YWx1ZSBjb3JyZXNwb25kaW5nIHRvIHRoZSBBUEkgTWFuYWdlciBVc2VyIFJlZ2lzdHJ5IGZyb20gdGhlIGV4YW1wbGUgYWJvdmUgaXM6CiAgPC9wPgogIDxkaXYgaWQ9InJlYWxtdmFsdWUtZXhhbXBsZSIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPiAgcHJvdmlkZXIvZGVmYXVsdC1pZHAtMjwvZGl2PgogIDxwPkZvciBjb25zdW1lciB1c2VycywgdGhlIHJlYWxtIGNvbnRleHQgaXMgZ2l2ZW4gYnkgdGhlIGNhdGFsb2cgaW4gd2hpY2ggdGhlIHVzZXIgaXMgcmVnaXN0ZXJlZC4gVGhlIGxpc3Qgb2YgdXNlciByZWdpc3RyaWVzIGZvciBhIGNhdGFsb2cgY2FuIGJlIGFjY2Vzc2VkIGF0IHRoZSA8Y29kZT4vY2F0YWxvZ3Mve29yZ30ve2NhdGFsb2d9L2NvbmZpZ3VyZWQtY2F0YWxvZy11c2VyLXJlZ2lzdHJpZXM8L2NvZGU+IFVSTC4KICAgICAgICA8L3A+CiAgIDwvc2VjdGlvbj4KICA8L2Rpdj4KICAgICAgPHNlY3Rpb24+CiAgICAgICAgPGgyPlVzaW5nIGEgQmVhcmVyIFRva2VuPC9oMj4KICAgICAgICA8cD4KICAgICAgICAgIE9uY2Ugb2J0YWluZWQsIHRoZSBiZWFyZXIgdG9rZW4gbWF5IGJlIHVzZWQgdG8gbWFrZSBhdXRoZW50aWNhdGVkIEFQSSBjYWxscy4gVGhlIGJlYXJlciB0b2tlbiBpcyBzZW50IGFzIHRoZSB2YWx1ZSBvZiB0aGUgQXV0aG9yaXphdGlvbiBoZWFkZXIsIHByZWZpeGVkIGJ5IHRoZSB3b3JkIDxjb2RlPmJlYXJlcjo8L2NvZGU+IChpbmNsdWRpbmcgdGhlIGNvbG9uKS4gSGVyZSdzIGFuIGV4YW1wbGUgb2YgYW4KICAgICAgICAgIGF1dGhlbnRpY2F0ZWQgY2FsbCB0byB0aGUgPGNvZGU+L21lPC9jb2RlPiByZXNvdXJjZSB1c2luZyB0aGUgYmVhcmVyIHRva2VuIG9idGFpbmVkIGFib3ZlOgogICAgICAgIDwvcD4KICAgICAgICA8aDM+UmVxdWVzdDwvaDM+CiAgICAgICAgPGRpdiBpZD0idXNlLWJlYXJlcnRva2VuLXJlcXVlc3QiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij5jdXJsIC12IC1rIC1IICdBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24nIC1IICJBdXRob3JpemF0aW9uOiBiZWFyZXIgZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnFkR2tpT2lJMU1HVm1PR1F6T0MxbE1UVXhMVFE0TmpjdFltSXdPUzB3TkRBME4yVXhaak0zTkRjaUxDSnVZVzFsYzNCaFkyVWlPaUl6WWpRMU9EVTROaTFrWkdNd0xUUTFORFl0T1Roa1ppMDNNbVV4TXpNellqQTVaV0U2TVRZelpEWTRNV1l0WldVd01DMDBZV1JoTFdGaU5XUXRaRFZrTXpSbFlqZGxPRFZqT2pCak9EUTBOVGd5TFRRMVlXTXRORFEyTXkxaE9UYzFMVGhpTm1RMVpqWTVNVEUxWkNJc0ltRjFaQ0k2SWk5aGNHa3ZZMnh2ZFdRdmNtVm5hWE4wY21GMGFXOXVjeTh6T1RCaE5qVmhZUzAwTTJGaExUUTNNelV0WWpBME9TMDRNVGszTWpJeVpESTNaREFpTENKemRXSWlPaUl2WVhCcEwzVnpaWEl0Y21WbmFYTjBjbWxsY3k4ellqUTFPRFU0Tmkxa1pHTXdMVFExTkRZdE9UaGtaaTAzTW1VeE16TXpZakE1WldFdk1UWXpaRFk0TVdZdFpXVXdNQzAwWVdSaExXRmlOV1F0WkRWa016UmxZamRsT0RWakwzVnpaWEp6THpCak9EUTBOVGd5TFRRMVlXTXRORFEyTXkxaE9UYzFMVGhpTm1RMVpqWTVNVEUxWkNJc0ltbHpjeUk2SWtsQ1RTQkJVRWtnUTI5dWJtVmpkQ0lzSW1WNGNDSTZNVFV6TWpVNE5qRTFNaXdpYVdGMElqb3hOVE15TlRVM016VXlMQ0puY21GdWRGOTBlWEJsSWpvaWNHRnpjM2R2Y21RaUxDSjFjMlZ5WDNKbFoybHpkSEo1WDNWeWJDSTZJaTloY0drdmRYTmxjaTF5WldkcGMzUnlhV1Z6THpOaU5EVTROVGcyTFdSa1l6QXRORFUwTmkwNU9HUm1MVGN5WlRFek16TmlNRGxsWVM4eE5qTmtOamd4WmkxbFpUQXdMVFJoWkdFdFlXSTFaQzFrTldRek5HVmlOMlU0TldNaUxDSnlaV0ZzYlNJNkluQnliM1pwWkdWeUwyUmxabUYxYkhRdGFXUndMVElpTENKMWMyVnlibUZ0WlNJNkltTm9jbWx6SWl3aWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTa2xWZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNqa3VaWGxLYldGWVNucGtSamwxV1ZjeGJFbHFiMmxSTW1oNVlWaE5hVXhEU25OWldFNHdXREkxYUdKWFZXbFBhVXBPU1dsM2FXUllUbXhqYkRsd1drTkpOa2x0U21wT2FrazBUVmRWTVV4WFVteE9Na2wwVGtSS2JVNXBNRFJaYWtrd1RGZEthazVxWTNsWlZFRXlXbXBSZDA1VFNYTkpibFo2V2xoS2RWbFhNV3hKYW05cFdUSm9lV0ZZVFdsTVEwcHdXVmhSYVU5cVJURk5la2t4VGxSamVrNVVTamt1ZWxwelRYSTBPVUprZFU5RFVsY3hiMjR5V2pkc1pESTRibkpLUlZWRFpUQTFibU01TWxkUlgzZG9OQ0lzSW5OamIzQmxjeUk2V3lKamJHOTFaRHAyYVdWM0lpd2lZMnh2ZFdRNmJXRnVZV2RsSWl3aWNISnZkbWxrWlhJdGIzSm5PblpwWlhjaUxDSndjbTkyYVdSbGNpMXZjbWM2YldGdVlXZGxJaXdpYjNKbk9uWnBaWGNpTENKdmNtYzZiV0Z1WVdkbElpd2laSEpoWm5Sek9uWnBaWGNpTENKa2NtRm1kSE02WldScGRDSXNJbU5vYVd4a09uWnBaWGNpTENKamFHbHNaRHBqY21WaGRHVWlMQ0pqYUdsc1pEcHRZVzVoWjJVaUxDSndjbTlrZFdOME9uWnBaWGNpTENKd2NtOWtkV04wT25OMFlXZGxJaXdpY0hKdlpIVmpkRHB0WVc1aFoyVWlMQ0poY0hCeWIzWmhiRHAyYVdWM0lpd2lZWEJ3Y205MllXdzZiV0Z1WVdkbElpd2lZWEJwTFdGdVlXeDVkR2xqY3pwMmFXVjNJaXdpWVhCcExXRnVZV3g1ZEdsamN6cHRZVzVoWjJVaUxDSmpiMjV6ZFcxbGNpMXZjbWM2ZG1sbGR5SXNJbU52Ym5OMWJXVnlMVzl5WnpwdFlXNWhaMlVpTENKaGNIQTZkbWxsZHpwaGJHd2lMQ0poY0hBNmJXRnVZV2RsT21Gc2JDSXNJbTE1T25acFpYY2lMQ0p0ZVRwdFlXNWhaMlVpTENKM1pXSm9iMjlyT25acFpYY2lYWDAuMXliZXpHSnJKV2dSWjhlYzVjanlHUVRLY1dBM2l3VGJWNUF1YlhDb3g2MCIgaHR0cHM6Ly92Nmd3MDcyNmEuYXJnbzItc2wuZGV2LmNpb25kZW1hbmQuY29tL2FwaS9tZTwvZGl2PgogICAgICAgIDxoMz5SZXNwb25zZTwvaDM+CiAgICAgICAgPGRpdiBpZD0idXNlLWJlYXJlcnRva2VuLXJlc3BvbnNlIiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+ewogICAgICAgICAgInR5cGUiOiAibWUiLAogICAgICAgICAgImFwaV92ZXJzaW9uIjogIjIuMC4wIiwKICAgICAgICAgICJuYW1lIjogIjM0YjEwZWNhLTM4NzQtNGNkYy1hY2I4LTM4ZGU4ZTgyZWI4NSIsCiAgICAgICAgICAic3RhdGUiOiAiZW5hYmxlZCIsCiAgICAgICAgICAidXNlcm5hbWUiOiAiY2hyaXMiLAogICAgICAgICAgImVtYWlsIjogImNocmlzQGlibS5jb20iLAogICAgICAgICAgImZpcnN0X25hbWUiOiAiQ2hyaXMiLAogICAgICAgICAgImxhc3RfbmFtZSI6ICJNIiwKICAgICAgICAgICJ1cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5jb20vYXBpL3VzZXItcmVnaXN0cmllcy8zMmM2OGQ5ZS0zZmQ2LTQ1NzEtYjljOS1mYTc1NTBlMDc1NjkvMjA4MzM1OWUtNTIzNC00MDM5LWFkNGYtNDBkY2Y3Y2U1ODZlL3VzZXJzLzM0YjEwZWNhLTM4NzQtNGNkYy1hY2I4LTM4ZGU4ZTgyZWI4NSIKICAgICAgICAgIH08L2Rpdj4KICAgICAgICA8cD5UaGUgPGNvZGU+L21lPC9jb2RlPiByZXNvdXJjZSByZXR1cm5zIGluZm9ybWF0aW9uIGFib3V0IHRoZSB1c2VyIG1ha2luZyB0aGUgcmVxdWVzdC48L3A+CiAgICAgIDwvc2VjdGlvbj4KICAgIDwvZGl2PgogIDwvYXJ0aWNsZT4K"
-  				}
-  			]
-  		},
-		{
-  			"name": "members",
-  			"title": "Members",
-  			"docs": [{
-  					"name": "user_guidelines",
-  					"title": "Registering and Managing Admin Members",
-  					"format": "b64html",
+            "content": "PGFydGljbGUgaWQ9ImNsaWVudC1pZC1zZWNyZXQiIGNsYXNzPSJwYWdlIj4KICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBjbGllbnQtaWQtc2VjcmV0LWhlYWRlciI+CiAgICAgIE9idGFpbmluZyBhIENsaWVudCBJRCBhbmQgU2VjcmV0CiAgICAgIDwvc3Bhbj4KICAgIDwvaDI+CiAgPC9kaXY+CiAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgY2xpZW50LWlkLXNlY3JldC1jb250ZW50Ij4KICAgIDxzZWN0aW9uPgogICAgICA8cD5FYWNoIGNsaWVudCBhcHAgdGhhdCBhY2Nlc3NlcyB0aGUgQVBJIENvbm5lY3QgUkVTVCBBUEkgbXVzdCBiZSByZWdpc3RlcmVkIHdpdGggdGhlIEFQSSBDb25uZWN0IGNsb3VkLiBUaGUgcHJvY2VzcyBvZiByZWdpc3RlcmluZyBhIGNsaWVudCBhc3NvY2lhdGVzIHRoZSBhcHBzJ3MgY2xpZW50IElEIHdpdGggYSBzZXQgb2Ygc2NvcGVzIHRoYXQgZGV0ZXJtaW5lIHdoaWNoIG9wZXJhdGlvbnMgdGhlIGFwcCBtYXkgYWNjZXNzLjwvcD4KICAgICAgPHA+VG8gcmVnaXN0ZXIgYSBjbGllbnQgYXBwLCB1c2UgdGhlIDx0dD5hcGljIHJlZ2lzdHJhdGlvbnM6Y3JlYXRlPC90dD4gQVBJIENvbm5lY3QgdG9vbGtpdCBDTEkgY29tbWFuZC4gVGhlIGNvbW1hbmQgdGFrZXMgYW4gaW5wdXQgSlNPTiBvYmplY3Qgd2l0aCB0aGUgZm9sbG93aW5nIGZpZWxkczo8L3A+CiAgICAgIDxkbD4KICAgICAgICA8ZHQ+bmFtZTwvZHQ+CiAgICAgICAgPGRkPnNob3J0IG5hbWUgdG8gaWRlbnRpZnkgdGhlIGNsaWVudDwvZGQ+CiAgICAgICAgCiAgICAgICAgPGR0PnRpdGxlPC9kdD4KICAgICAgICA8ZGQ+ZGlzcGxheSBuYW1lIG9mIHRoZSBjbGllbnQ8L2RkPgogICAgICAgIAogICAgICAgIDxkdD5jbGllbnRfaWQ8L2R0PgogICAgICAgIDxkZD5hIGdlbmVyYXRlZCBjbGllbnQgSUQgdmFsdWU8L2RkPgoKICAgICAgICA8ZHQ+Y2xpZW50X3NlY3JldDwvZHQ+CiAgICAgICAgPGRkPmEgZ2VuZXJhdGVkIGNsaWVudCBzZWNyZXQgdmFsdWU8L2RkPgoKICAgICAgICA8ZHQ+Y2xpZW50X3R5cGU8L2R0PgogICAgICAgIDxkZD5vbmUgb2YgPHR0PnBvcnRhbDwvdHQ+LCA8dHQ+Z2F0ZXdheTwvdHQ+LCA8dHQ+dG9vbGtpdDwvdHQ+LCA8dHQ+Y29uc3VtZXJfdG9vbGtpdDwvdHQ+LCA8dHQ+dWk8L3R0PiwgPHR0PmNvbnN1bWVyX3VpPC90dD4sIDx0dD5pYm1fY2xvdWQ8L3R0PiwgPHR0Pm1pZ3JhdGlvbjwvdHQ+LCA8dHQ+anVodTwvdHQ+PC9kZD4KICAgICAgPC9kbD4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8cD5JbiBvcmRlciB0byBydW4gdGhpcyBjb21tYW5kLCB5b3UgbXVzdCBmaXJzdCBsb2cgaW4gdG8gdGhlIEFQSSBDb25uZWN0IHNlcnZlciBhcyBhbiBhZG1pbiB1c2VyIHVzaW5nIHRoZSA8dHQ+YXBpYyBsb2dpbjwvdHQ+IGNvbW1hbmQuIFdpdGggbm8gYXJndW1lbnRzLCB0aGUgbG9naW4gY29tbWFuZCBwcm9tcHRzIGZvciB5b3VyIHVzZXIgY3JlZGVudGlhbHMgYW5kIHRoZSByZWFsbSBpbiB3aGljaCB0aGUgdXNlciBhY2NvdW50IGV4aXN0cy4gVGhlIHJlYWxtIGNvcnJlc3BvbmRzIHRvIHRoZSB1c2VyIHJlZ2lzdHJ5IGluIHdoaWNoIHRoZSB1c2VyIGNyZWRlbnRpYWxzIGFyZSBoZWxkLjwvcD4KICAgICAgPHA+SWYgaXQncyB5b3VyIGZpcnN0IHRpbWUgbG9nZ2luZyBpbiB1c2luZyB0aGUgdG9vbGtpdCBDTEksIHlvdSdsbCBuZWVkIHRvIGZpbmQgdGhlIGlkZW50aXR5IHByb3ZpZGVyIHRvIHdoaWNoIHlvdXIgdXNlcmlkIGJlbG9uZ3MuIFlvdSBjYW4gbGlzdCB0aGUgc2V0IG9mIGFkbWluIGlkZW50aXR5IHByb3ZpZGVycyBpbiB0aGUgc3lzdGVtIHVzaW5nIHRoZSA8dHQ+YXBpYyBpZGVudGl0eS1wcm92aWRlcnM6bGlzdDwvdHQ+IGNvbW1hbmQuPC9wPgogICAgPC9zZWN0aW9uPgogICAgPHNlY3Rpb24+CiAgICAgIDxoMz5saXN0aW5nIGlkZW50aXR5IHByb3ZpZGVyczwvaDM+CiAgICAgIDxkaXYgaWQ9ImdldC1yZWFsbXZhbHVlLXJlcXVlc3QiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij4KJCBhcGljIGlkZW50aXR5LXByb3ZpZGVyczpsaXN0IC0tc2NvcGUgYWRtaW4gLS1zZXJ2ZXIgYXBpYy5pYm0uY29tCmRlZmF1bHQtaWRwLTEKICAgICAgPC9kaXY+CiAgICA8L3NlY3Rpb24+CiAgICA8c2VjdGlvbj4KICAgICAgPGgzPmFwaWMgbG9naW4gZXhhbXBsZTwvaDM+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgokIGFwaWMgbG9naW4KRW50ZXIgeW91ciBBUEkgQ29ubmVjdCBjcmVkZW50aWFscwpTZXJ2ZXI/IGNocmlzbS5hcmdvLXNsLmRldi5jaW9uZGVtYW5kLmNvbQpSZWFsbT8gYWRtaW4vZGVmYXVsdC1pZHAtMQpVc2VybmFtZT8gY2hyaXMKUGFzc3dvcmQ/IApMb2dnZWQgaW50byBhcGljLmlibS5jb20gc3VjY2Vzc2Z1bGx5CiAgICAgIDwvZGl2PgogICAgICA8cD4oTm90ZSB0aGF0IHRoZSByZWFsbSBuYW1lIHVzZWQgZm9yIHRoZSBsb2dpbiBoYXMgdGhlIHZhbHVlICdhZG1pbi8nIHByZWZpeGVkIHRvIHRoZSByZWFsbSBuYW1lLik8L3A+CiAgICA8L3NlY3Rpb24+CiAgICA8c2VjdGlvbj4KICAgICAgPGgzPmFwaWMgcmVnaXN0cmF0aW9uczpjcmVhdGUgZXhhbXBsZTwvaDM+CiAgICAgIDxwPlRoaXMgSlNPTiBjb250ZW50ICg8dHQ+YXBwMS5qc29uPC90dD4pIHByb3ZpZGVzIHRoZSBwYXJhbWV0ZXJzIGZvciByZWdpc3RlcmluZyBhbiBhcHAgbmFtZWQgPHR0PmFwcDE8L3R0PiB1c2luZyB0aGUgPHR0PnRvb2xraXQ8L3R0PiBjbGllbnQgdHlwZSBhbmQgYSBwcmUtZGVmaW5lZCBjbGllbnQgSUQgYW5kIHNlY3JldDo8L3A+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgp7CiAgIm5hbWUiOiAiYXBwMSIsCiAgImNsaWVudF9pZCI6ICJhcHAxaWQiLCAKICAiY2xpZW50X3NlY3JldCI6ICJhcHAxc2VjcmV0IiwKICAiY2xpZW50X3R5cGUiOiAidG9vbGtpdCIKfQogICAgICA8L2Rpdj4KICAgICAgPHA+VGhpcyBleGFtcGxlIHNob3dzIHRoZSByZWdpc3RyYXRpb24gY29tbWFuZCB0byByZWdpc3RlciB0aGlzIGFwcDo8L3A+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgokIGFwaWMgcmVnaXN0cmF0aW9uczpjcmVhdGUgLS1zZXJ2ZXIgYXBpYy5pYm0uY29tIGFwcDEuanNvbgphcHAxICAgaHR0cHM6Ly9hcGljLmlibS5jb20vYXBpL2Nsb3VkL3JlZ2lzdHJhdGlvbnMvNTExOTYyMjItNzg4Yy00NzRmLWI0YzctMGIzNTFjZTUwOWRlCiAgICAgIDwvZGl2PgogICAgPC9zZWN0aW9uPgo8L2FydGljbGU+Cg=="
+          },
+            {
+            "name": "auth_bearertoken",
+            "title": "Getting and Using a Bearer Token",
+            "format": "b64html",
+            "content": "ICA8YXJ0aWNsZSBpZD0iYmVhcmVyLXRva2VuIiBjbGFzcz0icGFnZSI+CiAgICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgICA8aDIgY2xhc3M9ImFwaWMtZXhwbG9yZXItZG9jcGFnZV90aXRsZS10ZXh0Ij4KICAgICAgICA8c3BhbiBjbGFzcz0iZXhwbG9yZXItZG9jLS1oZWFkZXIgYmVhcmVyLXRva2VuLWhlYWRlciI+CiAgICAgICAgT2J0YWluaW5nIGFuZCBVc2luZyBhIEJlYXJlciBUb2tlbgogICAgICAgIDwvc3Bhbj4KICAgICAgPC9oMj4KICAgIDwvZGl2PgogICAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgYmVhcmVyLXRva2VuLWNvbnRlbnQiPgogICAgICA8cD5DYWxscyB0byB0aGUgQVBJIENvbm5lY3QgcGxhdGZvcm0gUkVTVCBBUElzIGFyZSBhdXRoZW50aWNhdGVkIHVzaW5nIGEgYmVhcmVyIHRva2VuLCB3aGljaCBpcyBvYnRhaW5lZCBmcm9tIHRoZSA8Y29kZT4vYXBpL3Rva2VuPC9jb2RlPiBlbmRwb2ludC48L3A+CiAgICAgIDxzZWN0aW9uPgogICAgICAgIDxoMz5SZXF1ZXN0aW5nIGEgYmVhcmVyIHRva2VuPC9oMz4KICAgICAgICA8cD4KICAgICAgICAgIFRoZSByZXF1ZXN0IHRvIG9idGFpbiBhIGJlYXJlciB0b2tlbiBpcyBlcXVpdmFsZW50IHRvIGFuIE9BdXRoIDIuMCBhY2Nlc3MgdG9rZW4gcmVxdWVzdCB1c2luZwogICAgICAgICAgdGhlIFJlc291cmNlIE93bmVyIFBhc3N3b3JkIENyZWRlbnRpYWxzIGdyYW50IHR5cGUuIEhvd2V2ZXIsIHRoZSByZXF1ZXN0IGNvbnRlbnRzIG11c3QgYmUgc2VudCBhcyBhIEpTT04gcGF5bG9hZCByYXRoZXIgdGhhbiBhcyBmb3JtIGRhdGEuCiAgICAgICAgPC9wPgogICAgICAgIDxwPlRoZSBKU09OIHBheWxvYWQgZm9yIHRoZSBiZWFyZXIgdG9rZW4gcmVxdWVzdCBjb250YWlucyB0aGUgZm9sbG93aW5nIGZpZWxkczo8L3A+CiAgICAgICAgPGRsPgogICAgICAgICAgPGR0PnVzZXJuYW1lOjwvZHQ+CiAgICAgICAgICA8ZGQ+dGhlIHVzZXJuYW1lIGZvciB0aGUgQVBJIENvbm5lY3QgdXNlciBtYWtpbmcgdGhlIHJlcXVlc3Q8L2RkPgogICAgICAgICAgCiAgICAgICAgICA8ZHQ+cGFzc3dvcmQ6PC9kdD4KICAgICAgICAgIDxkZD50aGUgcGFzc3dvcmQgZm9yIHRoZSBBUEkgQ29ubmVjdCB1c2VyIG1ha2luZyB0aGUgcmVxdWVzdDwvZGQ+CiAgICAgICAgICAKICAgICAgICAgIDxkdD5yZWFsbTo8L2R0PgogICAgICAgICAgPGRkPmluZGljYXRlcyB0aGUgdXNlciByZWdpc3RyeSBpbiB3aGljaCB0aGUgQVBJIENvbm5lY3QgdXNlciBjcmVkZW50aWFscyBhcmUgaGVsZDwvZGQ+CiAgICAgICAgICAKICAgICAgICAgIDxkdD5jbGllbnRfaWQ6PC9kdD4KICAgICAgICAgIDxkZD50aGUgY2xpZW50IElEIG9mIHRoZSBhcHAgbWFraW5nIHRoZSByZXF1ZXN0PC9kZD4KICAgICAgICAgIAogICAgICAgICAgPGR0PmNsaWVudF9zZWNyZXQ6PC9kdD4KICAgICAgICAgIDxkZD50aGUgY2xpZW50IHNlY3JldCBvZiB0aGUgYXBwIG1ha2luZyB0aGUgcmVxdWVzdDwvZGQ+CiAgICAgICAgICAKICAgICAgICAgIDxkdD5ncmFudF90eXBlOjwvZHQ+CiAgICAgICAgICA8ZGQ+cGFzc3dvcmQgKGZpeGVkIHZhbHVlKTwvZGQ+CiAgICAgICAgPC9kbD4KICAgICAgICA8cD5IZXJlIGlzIGEgY3VybCBleGFtcGxlIHNob3dpbmcgYSBiZWFyZXIgdG9rZW4gcmVxdWVzdCBhbmQgc3VjY2Vzc2Z1bCByZXNwb25zZTo8L3A+CiAgICAgICAgPGg0PlJlcXVlc3Q8L2g0PgogICAgICAgIDxkaXYgaWQ9ImdldC1iZWFyZXJ0b2tlbi1yZXF1ZXN0IiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+Y3VybCAtdiAtayAtWCBQT1NUIC1kICd7InVzZXJuYW1lIjogImNocmlzIiwgInBhc3N3b3JkIjogIioqKioiLCAicmVhbG0iOiAicHJvdmlkZXIvZGVmYXVsdC1pZHAtMiIsICJjbGllbnRfaWQiOiAicmVnaXN0ZXJlZC1hcHAtY2xpZW50LWlkIiwgImNsaWVudF9zZWNyZXQiOiAicmVnaXN0ZXJlZC1hcHAtY2xpZW50LXNlY3JldCIsICJncmFudF90eXBlIjogInBhc3N3b3JkIn0nIC1IICdDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL2pzb24nIC1IICdBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24nIGh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvdG9rZW48L2Rpdj4KICAgICAgICA8cD5UaGUgPHR0PmNsaWVudF9pZDwvdHQ+IGFuZCA8dHQ+Y2xpZW50X3NlY3JldDwvdHQ+IHZhbHVlcyBhcmUgdGhlIGFwcCdzIGNyZWRlbnRpYWxzLCBhcyByZWdpc3RlcmVkIHdpdGggCiAgICAgICAgdGhlIDx0dD5hcGljIHJlZ2lzdHJhdGlvbnM6Y3JlYXRlPC90dD4gY29tbWFuZC48L3A+CiAgICAgICAgPGg0PlJlc3BvbnNlPC9oND4KICAgICAgICA8ZGl2IGlkPSJnZXQtYmVhcmVydG9rZW4tcmVzcG9uc2UiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij57CiAgImFjY2Vzc190b2tlbiI6ICJleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKcWRHa2lPaUkxTUdWbU9HUXpPQzFsTVRVeExUUTROamN0WW1Jd09TMHdOREEwTjJVeFpqTTNORGNpTENKdVlXMWxjM0JoWTJVaU9pSXpZalExT0RVNE5pMWtaR013TFRRMU5EWXRPVGhrWmkwM01tVXhNek16WWpBNVpXRTZNVFl6WkRZNE1XWXRaV1V3TUMwMFlXUmhMV0ZpTldRdFpEVmtNelJsWWpkbE9EVmpPakJqT0RRME5UZ3lMVFExWVdNdE5EUTJNeTFoT1RjMUxUaGlObVExWmpZNU1URTFaQ0lzSW1GMVpDSTZJaTloY0drdlkyeHZkV1F2Y21WbmFYTjBjbUYwYVc5dWN5OHpPVEJoTmpWaFlTMDBNMkZoTFRRM016VXRZakEwT1MwNE1UazNNakl5WkRJM1pEQWlMQ0p6ZFdJaU9pSXZZWEJwTDNWelpYSXRjbVZuYVhOMGNtbGxjeTh6WWpRMU9EVTROaTFrWkdNd0xUUTFORFl0T1Roa1ppMDNNbVV4TXpNellqQTVaV0V2TVRZelpEWTRNV1l0WldVd01DMDBZV1JoTFdGaU5XUXRaRFZrTXpSbFlqZGxPRFZqTDNWelpYSnpMekJqT0RRME5UZ3lMVFExWVdNdE5EUTJNeTFoT1RjMUxUaGlObVExWmpZNU1URTFaQ0lzSW1semN5STZJa2xDVFNCQlVFa2dRMjl1Ym1WamRDSXNJbVY0Y0NJNk1UVXpNalU0TmpFMU1pd2lhV0YwSWpveE5UTXlOVFUzTXpVeUxDSm5jbUZ1ZEY5MGVYQmxJam9pY0dGemMzZHZjbVFpTENKMWMyVnlYM0psWjJsemRISjVYM1Z5YkNJNklpOWhjR2t2ZFhObGNpMXlaV2RwYzNSeWFXVnpMek5pTkRVNE5UZzJMV1JrWXpBdE5EVTBOaTA1T0dSbUxUY3laVEV6TXpOaU1EbGxZUzh4TmpOa05qZ3haaTFsWlRBd0xUUmhaR0V0WVdJMVpDMWtOV1F6TkdWaU4yVTROV01pTENKeVpXRnNiU0k2SW5CeWIzWnBaR1Z5TDJSbFptRjFiSFF0YVdSd0xUSWlMQ0oxYzJWeWJtRnRaU0k2SW1Ob2NtbHpJaXdpYVdSZmRHOXJaVzRpT2lKbGVVcG9Za2RqYVU5cFNrbFZla2t4VG1sSmMwbHVValZqUTBrMlNXdHdXRlpEU2prdVpYbEtiV0ZZU25wa1JqbDFXVmN4YkVscWIybFJNbWg1WVZoTmFVeERTbk5aV0U0d1dESTFhR0pYVldsUGFVcE9TV2wzYVdSWVRteGpiRGx3V2tOSk5rbHRTbXBPYWtrMFRWZFZNVXhYVW14T01rbDBUa1JLYlU1cE1EUlpha2t3VEZkS2FrNXFZM2xaVkVFeVdtcFJkMDVUU1hOSmJsWjZXbGhLZFZsWE1XeEphbTlwV1RKb2VXRllUV2xNUTBwd1dWaFJhVTlxUlRGTmVra3hUbFJqZWs1VVNqa3VlbHB6VFhJME9VSmtkVTlEVWxjeGIyNHlXamRzWkRJNGJuSktSVlZEWlRBMWJtTTVNbGRSWDNkb05DSXNJbk5qYjNCbGN5STZXeUpqYkc5MVpEcDJhV1YzSWl3aVkyeHZkV1E2YldGdVlXZGxJaXdpY0hKdmRtbGtaWEl0YjNKbk9uWnBaWGNpTENKd2NtOTJhV1JsY2kxdmNtYzZiV0Z1WVdkbElpd2liM0puT25acFpYY2lMQ0p2Y21jNmJXRnVZV2RsSWl3aVpISmhablJ6T25acFpYY2lMQ0prY21GbWRITTZaV1JwZENJc0ltTm9hV3hrT25acFpYY2lMQ0pqYUdsc1pEcGpjbVZoZEdVaUxDSmphR2xzWkRwdFlXNWhaMlVpTENKd2NtOWtkV04wT25acFpYY2lMQ0p3Y205a2RXTjBPbk4wWVdkbElpd2ljSEp2WkhWamREcHRZVzVoWjJVaUxDSmhjSEJ5YjNaaGJEcDJhV1YzSWl3aVlYQndjbTkyWVd3NmJXRnVZV2RsSWl3aVlYQnBMV0Z1WVd4NWRHbGpjenAyYVdWM0lpd2lZWEJwTFdGdVlXeDVkR2xqY3pwdFlXNWhaMlVpTENKamIyNXpkVzFsY2kxdmNtYzZkbWxsZHlJc0ltTnZibk4xYldWeUxXOXlaenB0WVc1aFoyVWlMQ0poY0hBNmRtbGxkenBoYkd3aUxDSmhjSEE2YldGdVlXZGxPbUZzYkNJc0ltMTVPblpwWlhjaUxDSnRlVHB0WVc1aFoyVWlMQ0ozWldKb2IyOXJPblpwWlhjaVhYMC4xeWJlekdKckpXZ1JaOGVjNWNqeUdRVEtjV0EzaXdUYlY1QXViWENveDYwIiwKICAidG9rZW5fdHlwZSI6ICJCZWFyZXIiLAogICJleHBpcmVzX2luIjogMjg4MDAKfQogICAgICAgIDwvZGl2PgogICAgICA8L3NlY3Rpb24+CiAgICAgIDxzZWN0aW9uPgogICAgICAgIDxoMz5GaW5kaW5nIFJlYWxtIFZhbHVlczwvaDM+CiAgICAgICAgPHA+VGhlIHJlYWxtIHZhbHVlIHVzZWQgaW4gYSBiZWFyZXIgdG9rZW4gcmVxdWVzdCBpcyBhIHZhbHVlIHRoYXQgaWRlbnRpZmllcyB0aGUgdXNlciByZWdpc3RyeSBpbiB3aGljaCB0aGUgcmVxdWVzdGluZyB1c2VyJ3MgY3JlZGVudGlhbHMgYXJlIGhlbGQuIFRoaXMgbWF5IG5vdCBiZSB0aGUgc2FtZSByZWFsbSB2YWx1ZSBhcyB3YXMgdXNlZCB0byByZWdpc3RlciB0aGUgYXBwOyBpdCB3aWxsIGJlIHRoZSBzYW1lIG9ubHkgaWYgdGhlIHVzZXIgZXhlY3V0aW5nIHRoZSBhcHAgaXMgdGhlIHNhbWUgdXNlciB0aGF0IHBlcmZvcm1lZCB0aGUgYXBwIHJlZ2lzdHJhdGlvbi48L3A+CiAgICAgICAgPHA+CiAgICAgICAgICBZb3UgY2FuIHF1ZXJ5IHRoZSBzZXQgb2YgdXNlciByZWdpc3RyaWVzIHRvIG9idGFpbiB0aGUgY29uZmlndXJlZCByZWFsbSB2YWx1ZXMgdXNpbmcgYW4gdW5hdXRoZW50aWNhdGVkIGNhbGwgdG8gdGhlIDxjb2RlPi9jbG91ZC9hZG1pbi9pZGVudGl0eS1wcm92aWRlcnM8L2NvZGU+IAogICAgICAgICAgb3IgPGNvZGU+L2Nsb3VkL3Byb3ZpZGVyL2lkZW50aXR5LXByb3ZpZGVyczwvY29kZT4gVVJMIGZvciBhZG1pbiB1c2VycyBvciBBUEkgcHJvdmlkZXIgdXNlcnMgcmVzcGVjdGl2ZWx5LgogICAgICAgIDwvcD4KICAgICAgPC9zZWN0aW9uPgogICAgICA8cD5IZXJlIGlzIGFuIGV4YW1wbGUgcmVxdWVzdCBhbmQgc3VjY2Vzc2Z1bCByZXNwb25zZTo8L3A+CiAgICAgIDxoND5SZXF1ZXN0PC9oND4KICAgICAgPGRpdiBpZD0iZ2V0LXJlYWxtdmFsdWUtcmVxdWVzdCIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgpjdXJsIC12IC1rIC1IICJBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24iIGh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvY2xvdWQvcHJvdmlkZXIvaWRlbnRpdHktcHJvdmlkZXJzCiAgICAgIDwvZGl2PgogICAgICA8aDQ+UmVzcG9uc2U8L2g0PgogICAgICA8ZGl2IGlkPSJnZXQtcmVhbG12YWx1ZS1yZXNwb25zZSIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgp7CiAgInRvdGFsX3Jlc3VsdHMiOiAxLAogICJyZXN1bHRzIjogWwogICB7CiAgICAgIm5hbWUiOiAiZGVmYXVsdC1pZHAtMiIsCiAgICAgInRpdGxlIjogIkFQSSBNYW5hZ2VyIFVzZXIgUmVnaXN0cnkiLAogICAgICJkZWZhdWx0IjogdHJ1ZSwKICAgICAicmVnaXN0cnlfdHlwZSI6ICJsdXIiCiAgIH0KICBdCn0KICA8L2Rpdj4KICA8cD5BIHJlYWxtIHZhbHVlIGNvbnNpc3RzIG9mIGEgdXNlciByZWdpc3RyeSBuYW1lIHF1YWxpZmllZCB3aXRoIHRoZSBjb250ZXh0IGluIHdoaWNoIGl0IHVzZWQsIGluIHRoZSBmb3JtIGNvbnRleHQvdXNlci1yZWdpc3RyeS1uYW1lLCB3aGVyZSB0aGUgY29udGV4dCBpcyA8Y29kZT5hZG1pbjwvY29kZT4gZm9yIGNsb3VkIGFkbWluaXN0cmF0b3IgdXNlcnMgb3IgPGNvZGU+cHJvdmlkZXI8L2NvZGU+IGZvciBBUEkgcHJvdmlkZXIgdXNlcnMuIFRoZSByZWFsbSB2YWx1ZSBjb3JyZXNwb25kaW5nIHRvIHRoZSBBUEkgTWFuYWdlciBVc2VyIFJlZ2lzdHJ5IGZyb20gdGhlIGV4YW1wbGUgYWJvdmUgaXM6CiAgPC9wPgogIDxkaXYgaWQ9InJlYWxtdmFsdWUtZXhhbXBsZSIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPiAgcHJvdmlkZXIvZGVmYXVsdC1pZHAtMjwvZGl2PgogIDxwPkZvciBjb25zdW1lciB1c2VycywgdGhlIHJlYWxtIGNvbnRleHQgaXMgZ2l2ZW4gYnkgdGhlIGNhdGFsb2cgaW4gd2hpY2ggdGhlIHVzZXIgaXMgcmVnaXN0ZXJlZC4gVGhlIGxpc3Qgb2YgdXNlciByZWdpc3RyaWVzIGZvciBhIGNhdGFsb2cgY2FuIGJlIGFjY2Vzc2VkIGF0IHRoZSA8Y29kZT4vY2F0YWxvZ3Mve29yZ30ve2NhdGFsb2d9L2NvbmZpZ3VyZWQtY2F0YWxvZy11c2VyLXJlZ2lzdHJpZXM8L2NvZGU+IFVSTC4KICAgICAgICA8L3A+CiAgIDwvc2VjdGlvbj4KICA8L2Rpdj4KICAgICAgPHNlY3Rpb24+CiAgICAgICAgPGgyPlVzaW5nIGEgQmVhcmVyIFRva2VuPC9oMj4KICAgICAgICA8cD4KICAgICAgICAgIE9uY2Ugb2J0YWluZWQsIHRoZSBiZWFyZXIgdG9rZW4gbWF5IGJlIHVzZWQgdG8gbWFrZSBhdXRoZW50aWNhdGVkIEFQSSBjYWxscy4gVGhlIGJlYXJlciB0b2tlbiBpcyBzZW50IGFzIHRoZSB2YWx1ZSBvZiB0aGUgQXV0aG9yaXphdGlvbiBoZWFkZXIsIHByZWZpeGVkIGJ5IHRoZSB3b3JkIDxjb2RlPmJlYXJlcjo8L2NvZGU+IChpbmNsdWRpbmcgdGhlIGNvbG9uKS4gSGVyZSdzIGFuIGV4YW1wbGUgb2YgYW4KICAgICAgICAgIGF1dGhlbnRpY2F0ZWQgY2FsbCB0byB0aGUgPGNvZGU+L21lPC9jb2RlPiByZXNvdXJjZSB1c2luZyB0aGUgYmVhcmVyIHRva2VuIG9idGFpbmVkIGFib3ZlOgogICAgICAgIDwvcD4KICAgICAgICA8aDM+UmVxdWVzdDwvaDM+CiAgICAgICAgPGRpdiBpZD0idXNlLWJlYXJlcnRva2VuLXJlcXVlc3QiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij5jdXJsIC12IC1rIC1IICdBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24nIC1IICJBdXRob3JpemF0aW9uOiBiZWFyZXIgZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnFkR2tpT2lJMU1HVm1PR1F6T0MxbE1UVXhMVFE0TmpjdFltSXdPUzB3TkRBME4yVXhaak0zTkRjaUxDSnVZVzFsYzNCaFkyVWlPaUl6WWpRMU9EVTROaTFrWkdNd0xUUTFORFl0T1Roa1ppMDNNbVV4TXpNellqQTVaV0U2TVRZelpEWTRNV1l0WldVd01DMDBZV1JoTFdGaU5XUXRaRFZrTXpSbFlqZGxPRFZqT2pCak9EUTBOVGd5TFRRMVlXTXRORFEyTXkxaE9UYzFMVGhpTm1RMVpqWTVNVEUxWkNJc0ltRjFaQ0k2SWk5aGNHa3ZZMnh2ZFdRdmNtVm5hWE4wY21GMGFXOXVjeTh6T1RCaE5qVmhZUzAwTTJGaExUUTNNelV0WWpBME9TMDRNVGszTWpJeVpESTNaREFpTENKemRXSWlPaUl2WVhCcEwzVnpaWEl0Y21WbmFYTjBjbWxsY3k4ellqUTFPRFU0Tmkxa1pHTXdMVFExTkRZdE9UaGtaaTAzTW1VeE16TXpZakE1WldFdk1UWXpaRFk0TVdZdFpXVXdNQzAwWVdSaExXRmlOV1F0WkRWa016UmxZamRsT0RWakwzVnpaWEp6THpCak9EUTBOVGd5TFRRMVlXTXRORFEyTXkxaE9UYzFMVGhpTm1RMVpqWTVNVEUxWkNJc0ltbHpjeUk2SWtsQ1RTQkJVRWtnUTI5dWJtVmpkQ0lzSW1WNGNDSTZNVFV6TWpVNE5qRTFNaXdpYVdGMElqb3hOVE15TlRVM016VXlMQ0puY21GdWRGOTBlWEJsSWpvaWNHRnpjM2R2Y21RaUxDSjFjMlZ5WDNKbFoybHpkSEo1WDNWeWJDSTZJaTloY0drdmRYTmxjaTF5WldkcGMzUnlhV1Z6THpOaU5EVTROVGcyTFdSa1l6QXRORFUwTmkwNU9HUm1MVGN5WlRFek16TmlNRGxsWVM4eE5qTmtOamd4WmkxbFpUQXdMVFJoWkdFdFlXSTFaQzFrTldRek5HVmlOMlU0TldNaUxDSnlaV0ZzYlNJNkluQnliM1pwWkdWeUwyUmxabUYxYkhRdGFXUndMVElpTENKMWMyVnlibUZ0WlNJNkltTm9jbWx6SWl3aWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTa2xWZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNqa3VaWGxLYldGWVNucGtSamwxV1ZjeGJFbHFiMmxSTW1oNVlWaE5hVXhEU25OWldFNHdXREkxYUdKWFZXbFBhVXBPU1dsM2FXUllUbXhqYkRsd1drTkpOa2x0U21wT2FrazBUVmRWTVV4WFVteE9Na2wwVGtSS2JVNXBNRFJaYWtrd1RGZEthazVxWTNsWlZFRXlXbXBSZDA1VFNYTkpibFo2V2xoS2RWbFhNV3hKYW05cFdUSm9lV0ZZVFdsTVEwcHdXVmhSYVU5cVJURk5la2t4VGxSamVrNVVTamt1ZWxwelRYSTBPVUprZFU5RFVsY3hiMjR5V2pkc1pESTRibkpLUlZWRFpUQTFibU01TWxkUlgzZG9OQ0lzSW5OamIzQmxjeUk2V3lKamJHOTFaRHAyYVdWM0lpd2lZMnh2ZFdRNmJXRnVZV2RsSWl3aWNISnZkbWxrWlhJdGIzSm5PblpwWlhjaUxDSndjbTkyYVdSbGNpMXZjbWM2YldGdVlXZGxJaXdpYjNKbk9uWnBaWGNpTENKdmNtYzZiV0Z1WVdkbElpd2laSEpoWm5Sek9uWnBaWGNpTENKa2NtRm1kSE02WldScGRDSXNJbU5vYVd4a09uWnBaWGNpTENKamFHbHNaRHBqY21WaGRHVWlMQ0pqYUdsc1pEcHRZVzVoWjJVaUxDSndjbTlrZFdOME9uWnBaWGNpTENKd2NtOWtkV04wT25OMFlXZGxJaXdpY0hKdlpIVmpkRHB0WVc1aFoyVWlMQ0poY0hCeWIzWmhiRHAyYVdWM0lpd2lZWEJ3Y205MllXdzZiV0Z1WVdkbElpd2lZWEJwTFdGdVlXeDVkR2xqY3pwMmFXVjNJaXdpWVhCcExXRnVZV3g1ZEdsamN6cHRZVzVoWjJVaUxDSmpiMjV6ZFcxbGNpMXZjbWM2ZG1sbGR5SXNJbU52Ym5OMWJXVnlMVzl5WnpwdFlXNWhaMlVpTENKaGNIQTZkbWxsZHpwaGJHd2lMQ0poY0hBNmJXRnVZV2RsT21Gc2JDSXNJbTE1T25acFpYY2lMQ0p0ZVRwdFlXNWhaMlVpTENKM1pXSm9iMjlyT25acFpYY2lYWDAuMXliZXpHSnJKV2dSWjhlYzVjanlHUVRLY1dBM2l3VGJWNUF1YlhDb3g2MCIgaHR0cHM6Ly92Nmd3MDcyNmEuYXJnbzItc2wuZGV2LmNpb25kZW1hbmQuY29tL2FwaS9tZTwvZGl2PgogICAgICAgIDxoMz5SZXNwb25zZTwvaDM+CiAgICAgICAgPGRpdiBpZD0idXNlLWJlYXJlcnRva2VuLXJlc3BvbnNlIiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+ewogICAgICAgICAgInR5cGUiOiAibWUiLAogICAgICAgICAgImFwaV92ZXJzaW9uIjogIjIuMC4wIiwKICAgICAgICAgICJuYW1lIjogIjM0YjEwZWNhLTM4NzQtNGNkYy1hY2I4LTM4ZGU4ZTgyZWI4NSIsCiAgICAgICAgICAic3RhdGUiOiAiZW5hYmxlZCIsCiAgICAgICAgICAidXNlcm5hbWUiOiAiY2hyaXMiLAogICAgICAgICAgImVtYWlsIjogImNocmlzQGlibS5jb20iLAogICAgICAgICAgImZpcnN0X25hbWUiOiAiQ2hyaXMiLAogICAgICAgICAgImxhc3RfbmFtZSI6ICJNIiwKICAgICAgICAgICJ1cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5jb20vYXBpL3VzZXItcmVnaXN0cmllcy8zMmM2OGQ5ZS0zZmQ2LTQ1NzEtYjljOS1mYTc1NTBlMDc1NjkvMjA4MzM1OWUtNTIzNC00MDM5LWFkNGYtNDBkY2Y3Y2U1ODZlL3VzZXJzLzM0YjEwZWNhLTM4NzQtNGNkYy1hY2I4LTM4ZGU4ZTgyZWI4NSIKICAgICAgICAgIH08L2Rpdj4KICAgICAgICA8cD5UaGUgPGNvZGU+L21lPC9jb2RlPiByZXNvdXJjZSByZXR1cm5zIGluZm9ybWF0aW9uIGFib3V0IHRoZSB1c2VyIG1ha2luZyB0aGUgcmVxdWVzdC48L3A+CiAgICAgIDwvc2VjdGlvbj4KICAgIDwvZGl2PgogIDwvYXJ0aWNsZT4K"
+          }
+        ]
+      },
+      {
+        "name": "members",
+        "title": "Members",
+        "docs": [{
+            "name": "user_guidelines",
+            "title": "Registering and Managing Admin Members",
+            "format": "b64html",
             "content": "PGFydGljbGUgaWQ9ImFkbWluX21lbWJlcnNoaXAiIGNsYXNzPSJwYWdlIj4KICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBhZG1pbl9tZW1iZXJzaGlwLWhlYWRlciI+CiAgICAgICAgTWFuYWdpbmcgQWRtaW4gVXNlcnMKICAgICAgPC9zcGFuPgogICAgPC9oMj4KICA8L2Rpdj4KICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfY29udGVudCBhZG1pbl9tZW1iZXJzaGlwLWNvbnRlbnQiPgoKICAgIDwhLS0gbm90ZSBvbiB0b2tlbnMgLS0+CiAgICA8c2VjdGlvbj4KICAgIDxwPlRoZSA8Y29kZT5UT0tFTjwvY29kZT4gdmFsdWUgaXMgdXNlZCBhcyBhIHBsYWNlaG9sZGVyIGZvciB0aGUgYmVhcmVyIHRva2VuIHVzZWQgYXMgdGhlIHZhbHVlIG9mIHRoZSBBdXRob3JpemF0aW9uIGhlYWRlciBmb3IgdGhlIGZvbGxvd2luZyBleGFtcGxlcy48L3A+CiAgICA8L3NlY3Rpb24+CgogICAgPCEtLSBzZWN0aW9uIG9uIGxpc3RpbmcgbWVtYmVycyAtLT4KICAgIDxzZWN0aW9uPgogICAgICA8aDM+TGlzdGluZyBhZG1pbiBvcmdhbml6YXRpb24gbWVtYmVyczwvaDM+CiAgICAgIDxwPlRoaXMgcmVxdWVzdCByZXR1cm5zIHRoZSBsaXN0IG9mIG1lbWJlcnMgcmVnaXN0ZXJlZCBpbiB0aGUgYWRtaW4gb3JnYW5pemF0aW9uLjwvcD4KICAgICAgPGg1IHN0eWxlPSJjb2xvcjojM2Q3MGIyIj5HRVQgL2FwaS9vcmdzL3tvcmd9L21lbWJlcnM8L2g1PgogICAgPC9icj4KICAgICAgPGRsPgogICAgICAgIDxkdCBzdHlsZT0iZm9udC13ZWlnaHQ6NDAwOyI+b3JnOjwvZHQ+CiAgICAgICAgPGRkPlRoZSBuYW1lIG9yIElEIG9mIHRoZSBhZG1pbiBvcmdhbml6YXRpb248L2RkPgogICAgICA8L2RsPgogICAgICA8aDQ+UmVxdWVzdDwvaDQ+CiAgICAgIDxkaXYgaWQ9ImdldC1hZG1pbl9tZW1iZXJsaXN0LXJlcXVlc3QiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij5jdXJsIC12IC1rIC1IICdBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24nIC1IICJBdXRob3JpemF0aW9uOiBiZWFyZXIgVE9LRU4iIGh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvb3Jncy8xZDg2ZjQ3MC02MTFiLTQwZmYtOTI1NS1iZDE1NjRiZDcxOGMvbWVtYmVycwogICAgICA8L2Rpdj4KICAgICAgPGg0PlJlc3BvbnNlPC9oND4KICAgICAgPGRpdiBpZD0iZ2V0LWFkbWluX21lbWJlcmxpc3QtcmVzcG9uc2UiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij57CiAgInRvdGFsX3Jlc3VsdHMiOiAxLAogICJyZXN1bHRzIjogWwogICAgewogICAgICAidHlwZSI6ICJtZW1iZXIiLAogICAgICAiYXBpX3ZlcnNpb24iOiAiMi4wLjAiLAogICAgICAiaWQiOiAiY2VmZGIzOTUtMmQ3Mi00NmVhLTg1MzAtOTQ4YmY1MjBlZGU2IiwKICAgICAgIm5hbWUiOiAiYWRtaW4iLAogICAgICAidGl0bGUiOiAiYWRtaW4iLAogICAgICAic3RhdGUiOiAiZW5hYmxlZCIsCiAgICAgICJzY29wZSI6ICJvcmciLAogICAgICAidXNlciI6IHsKICAgICAgICAgICAgICAgICJpZCI6ICJlNGYyMzY3OC00NTg2LTQ4YjYtYWI3Yy05MWNmZmUxOGIwNmMiLAogICAgICAgICAgICAgICAgInVybCI6ICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL3VzZXItcmVnaXN0cmllcy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYvNTNmNmQ3MTAtOGQ2YS00MGUzLWIyNzQtNjU5NzkwMjg5NGRjL3VzZXJzL2U0ZjIzNjc4LTQ1ODYtNDhiNi1hYjdjLTkxY2ZmZTE4YjA2YyIsCiAgICAgICAgICAgICAgICAibmFtZSI6ICJhZG1pbiIsCiAgICAgICAgICAgICAgICAidHlwZSI6ICJ1c2VyIiwKICAgICAgICAgICAgICAgICJlbWFpbCI6ICJ3aWxsQHdpbGwuY29tIiwKICAgICAgICAgICAgICAgICJzdGF0ZSI6ICJlbmFibGVkIiwKICAgICAgICAgICAgICAgICJ0aXRsZSI6ICJhZG1pbiIsCiAgICAgICAgICAgICAgICAib3JnX3VybCI6ICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL29yZ3MvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2IiwKICAgICAgICAgICAgICAgICJ1c2VybmFtZSI6ICJhZG1pbiIsCiAgICAgICAgICAgICAgICAibGFzdF9uYW1lIjogIk93bmVyIiwKICAgICAgICAgICAgICAgICJmaXJzdF9uYW1lIjogIkNsb3VkIiwKICAgICAgICAgICAgICAgICJhcGlfdmVyc2lvbiI6ICIyLjAuMCIsCiAgICAgICAgICAgICAgICAiaWRlbnRpdHlfcHJvdmlkZXIiOiAiZGVmYXVsdC1pZHAtMSIsCiAgICAgICAgICAgICAgICAidXNlcl9yZWdpc3RyeV91cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS91c2VyLXJlZ2lzdHJpZXMvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2LzUzZjZkNzEwLThkNmEtNDBlMy1iMjc0LTY1OTc5MDI4OTRkYyIsCiAgICAgICAgICAgICAgICAiZm9yY2VfcGFzc3dvcmRfY2hhbmdlIjogZmFsc2UKICAgICAgICAgICAgICB9LAogICAgICAicm9sZV91cmxzIjogWwogICAgICAgICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL29yZ3MvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2L3JvbGVzLzdhYjQzYmYwLTkwMDYtNDg4MS05YWJkLTI3MTA1MTcwMzVhNyIKICAgICAgXSwKICAgICAgImNyZWF0ZWRfYXQiOiAiMjAyMS0xMS0wNFQyMDoyODoyNi4wMDBaIiwKICAgICAgInVwZGF0ZWRfYXQiOiAiMjAyMS0xMS0wNFQyMDoyODoyNi4wMDBaIiwKICAgICAgIm9yZ191cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9vcmdzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2NiIsCiAgICAgICJ1cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9vcmdzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2Ni9tZW1iZXJzL2NlZmRiMzk1LTJkNzItNDZlYS04NTMwLTk0OGJmNTIwZWRlNiIKICAgIH0KICBdCn0KICAgIDwvZGl2PgogICAgPC9zZWN0aW9uPgoKPCEtLSBzZWN0aW9uIGZvciBsaXN0aW5nIHJvbGVzIC0tPgogICAgPHNlY3Rpb24+CiAgICAgIDxoMz5MaXN0aW5nIGFkbWluIHJvbGVzPC9oMz4KICAgICAgPHA+VGhpcyByZXF1ZXN0IHJldHVybnMgdGhlIGxpc3Qgb2Ygcm9sZXMgdGhhdCBjYW4gYmUgYXNzaWduZWQgdG8gYWRtaW4gb3JnYW5pemF0aW9uIG1lbWJlcnMuPC9wPgogICAgICA8aDUgc3R5bGU9ImNvbG9yOiMzZDcwYjIiPkdFVCAvYXBpL29yZ3Mve29yZ30vcm9sZXM8L2g1PgogICAgPC9icj4KICAgIDxkbD4KICAgICAgPGR0IHN0eWxlPSJmb250LXdlaWdodDo0MDA7Ij5vcmc6PC9kdD4KICAgICAgPGRkPlRoZSBuYW1lIG9yIElEIG9mIHRoZSBhZG1pbiBvcmdhbml6YXRpb248L2RkPgogICAgPC9kbD4KICAgICAgPGg0PlJlcXVlc3Q8L2g0PgogICAgICA8ZGl2IGlkPSJnZXQtYWRtaW5fbWVtYmVyc2hpcC1yb2xlcy1yZXF1ZXN0IiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+Y3VybCAtdiAtayAtSCAnQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uJyAtSCAiQXV0aG9yaXphdGlvbjogYmVhcmVyIFRPS0VOIiBodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL29yZ3MvMWQ4NmY0NzAtNjExYi00MGZmLTkyNTUtYmQxNTY0YmQ3MThjL3JvbGVzCiAgICAgIDwvZGl2PgogICAgICA8aDQ+UmVzcG9uc2U8L2g0PgogICAgICA8ZGl2IGlkPSJnZXQtYWRtaW5fbWVtYmVyLXJvbGVzLXJlc3BvbnNlIiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+ewogICJ0b3RhbF9yZXN1bHRzIjogNiwKICAicmVzdWx0cyI6IFsKICAgIHsKICAgICAgInR5cGUiOiAicm9sZSIsCiAgICAgICJhcGlfdmVyc2lvbiI6ICIyLjAuMCIsCiAgICAgICJpZCI6ICI1NzdhZDBjOC04M2U5LTRjNWItOGYyYi00YTRlMjc0ZjkyOGMiLAogICAgICAibmFtZSI6ICJhZG1pbmlzdHJhdG9yIiwKICAgICAgInRpdGxlIjogIkFkbWluaXN0cmF0b3IiLAogICAgICAic3VtbWFyeSI6ICJBZG1pbmlzdGVycyB0aGUgYWRtaW4gb3JnYW5pemF0aW9uIiwKICAgICAgInBlcm1pc3Npb25fdXJscyI6IFsKICAgICAgICAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9jbG91ZC9wZXJtaXNzaW9ucy9vcmcvMTllNWViODktODUzMi00NzViLWI1YzYtMDBjN2MyZWJhZWU4IiwKICAgICAgICAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9jbG91ZC9wZXJtaXNzaW9ucy9vcmcvNTgwYjBkZjEtNjJmNC00Njc3LThjYzAtY2ZlYTllMTc2ODRiIiwKICAgICAgICAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9jbG91ZC9wZXJtaXNzaW9ucy9vcmcvN2VjNGU1NmEtODBiYS00OTlhLTk3ZTMtOTIyMzc5ZWNjMWZhIiwKICAgICAgICAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9jbG91ZC9wZXJtaXNzaW9ucy9vcmcvY2UzYzg3NmYtMDhmMS00N2I2LWJjMDEtZGYyMzhkMmFmM2E0IiwKICAgICAgICAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9jbG91ZC9wZXJtaXNzaW9ucy9vcmcvNzk3ODljZjUtODE3MS00MDNmLWEyOWYtZGVmNzkzOTUyOWQ1IiwKICAgICAgICAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9jbG91ZC9wZXJtaXNzaW9ucy9vcmcvN2E0NjZhNGMtNDk1NC00YWEzLTk3Y2YtZTcwYThjYmZiZGVmIiwKICAgICAgICAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9jbG91ZC9wZXJtaXNzaW9ucy9vcmcvYjk3MDMzYzgtYTcxMy00N2RmLWI5N2YtZDgwOWQwNjBjNzRhIiwKICAgICAgICAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9jbG91ZC9wZXJtaXNzaW9ucy9jbG91ZC9kNWM4OTg3Zi1lYjgxLTQyZWUtYmNiYi1lYThlNTZhNTMyZTUiLAogICAgICAgICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL2Nsb3VkL3Blcm1pc3Npb25zL2Nsb3VkLzFlOGRhYTRjLTU1MTQtNDA1Yi04Zjg5LTYwM2E4MzNiMDBiZCIsCiAgICAgICAgImh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvY2xvdWQvcGVybWlzc2lvbnMvY2xvdWQvYjkzYWEyNGMtNmJkMy00ZDc4LTk2MjAtY2Y0ODg1Zjg3OTdkIiwKICAgICAgICAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9jbG91ZC9wZXJtaXNzaW9ucy9jbG91ZC84YTNhZGQ5MC01MjJjLTRlNTAtOTRhMy05NDRmZjU3ODdmZWIiCiAgICAgIF0sCiAgICAgICAgImluaGVyaXRlZF9wZXJtaXNzaW9uX3VybHMiOiBbXSwKICAgICAgICAic2NvcGUiOiAib3JnIiwKICAgICAgICAiY3JlYXRlZF9hdCI6ICIyMDIxLTExLTA0VDIwOjI4OjI1LjAwMFoiLAogICAgICAgICJ1cGRhdGVkX2F0IjogIjIwMjEtMTEtMDRUMjA6Mjg6MjUuMDAwWiIsCiAgICAgICAgIm9yZ191cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9vcmdzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2NiIsCiAgICAgICAgInVybCI6ICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL29yZ3MvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2L3JvbGVzLzU3N2FkMGM4LTgzZTktNGM1Yi04ZjJiLTRhNGUyNzRmOTI4YyIKICAgIH0sIC4uLgogIF0KfQogICAgICA8L2Rpdj4KICAgIDwvc2VjdGlvbj4KCiAgICA8IS0tIGNyZWF0aW5nIHNwZWNpZmljYWxseSBhIFVTRVIgaW4gdGhlIGFkbWluIG9yZyBsZXZlbCAtLT4KICAgIDxzZWN0aW9uPgogICAgICAgIDxoMz5DcmVhdGluZyBhIG5ldyBhZG1pbiB1c2VyPC9oMz4KICAgICAgICA8cD5BbiBhZG1pbiB1c2VyIGNvbXByaXNlcyBhIG1lbWJlciBlbnRyeSBpbiB0aGUgYWRtaW4gb3JnYW5pemF0aW9uLCB3aGljaCByZWZlcnMgdG8gYSB1c2VyIGVudHJ5IGluIGEgdXNlciByZWdpc3RyeSBhc3NvY2lhdGVkIHdpdGggYW4gYWRtaW4gaWRlbnRpdHkgcHJvdmlkZXIuIFRoaXMgcmVxdWVzdCBjcmVhdGVzIGEgbmV3IHVzZXIgZW50cnkuPC9wPgogICAgICAgICAgPGg1IHN0eWxlPSJjb2xvcjojM2Q3MGIyIj5QT1NUIC9hcGkvdXNlci1yZWdpc3RyaWVzL3tvcmd9L3t1c2VyX3JlZ2lzdHJ5fS91c2VyczwvaDU+CiAgICAgICAgPC9icj4KICAgICAgICAgIDxkbD4KICAgICAgICAgICAgPGR0IHN0eWxlPSJmb250LXdlaWdodDo0MDA7Ij5vcmc6PC9kdD4KICAgICAgICAgICAgPGRkPlRoZSBuYW1lIG9yIElEIG9mIHRoZSBhZG1pbiBvcmdhbml6YXRpb248L2RkPgogICAgICAgICAgICA8ZHQgc3R5bGU9ImZvbnQtd2VpZ2h0OjQwMDsiPnVzZXJfcmVnaXN0cnk6PC9kdD4KICAgICAgICAgICAgPGRkPlRoZSBuYW1lIG9yIElEIG9mIGFuIGFkbWluIHVzZXIgcmVnaXN0cnk8L2RkPgogICAgICAgICAgPC9kbD4KICAgICAgICAgICAgPGg1PlBvc3QgYm9keSBwcm9wZXJ0aWVzIChjb250ZW50LXR5cGUgYXBwbGljYXRpb24vanNvbiBvciBhcHBsaWNhdGlvbi95YW1sKTo8L2g1PgogICAgICAgICAgICA8IS0tIDxkaXYgaWQ9ImdldC1uZXctbWVtYmVyLXJlc3BvbnNlIiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+IC0tPgogICAgICAgICAgPGRsPgogICAgICAgICAgICA8ZHQgc3R5bGU9ImZvbnQtd2VpZ2h0OjQwMDsiPnVzZXJuYW1lOjwvZHQ+CiAgICAgICAgICAgIDxkZD5UaGUgdXNlcm5hbWUgZm9yIHRoZSBuZXcgdXNlcjwvZGQ+CiAgICAgICAgICAgIDxkdCBzdHlsZT0iZm9udC13ZWlnaHQ6NDAwOyI+ZW1haWw6PC9kdD4KICAgICAgICAgICAgPGRkPlRoZSBlbWFpbCBhZGRyZXNzIG9mIHRoZSBuZXcgdXNlcjwvZGQ+CiAgICAgICAgICAgIDxkdCBzdHlsZT0iZm9udC13ZWlnaHQ6NDAwOyI+Zmlyc3RfbmFtZTo8L2R0PgogICAgICAgICAgICA8ZGQ+VGhlIGZpcnN0IG5hbWUgb2YgdGhlIG5ldyB1c2VyPC9kZD4KICAgICAgICAgICAgPGR0IHN0eWxlPSJmb250LXdlaWdodDo0MDA7Ij5sYXN0X25hbWU6PC9kdD4KICAgICAgICAgICAgPGRkPlRoZSBsYXN0IG5hbWUgb2YgdGhlIG5ldyB1c2VyPC9kZD4KICAgICAgICAgICAgPGR0IHN0eWxlPSJmb250LXdlaWdodDo0MDA7Ij5wYXNzd29yZDo8L2R0PgogICAgICAgICAgICA8ZGQ+VGhlIGluaXRpYWwgcGFzc3dvcmQgZm9yIHRoZSBuZXcgdXNlcjwvZGQ+CiAgICAgICAgICA8L2RsPgogIDwhLS0gPC9kaXY+IC0tPgogICAgICAgIDwvcD4KICAgICAgICA8aDQ+UmVxdWVzdDwvaDQ+CiAgICAgICAgPGRpdiBpZD0icG9zdC1hZG1pbl9uZXctdXNlci1yZXF1ZXN0IiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+Y3VybCAtdiAtayBQT1NUIC1kICd7InVzZXJuYW1lIjoiY3ludGhpYTEiLCJlbWFpbCI6ImN5bnRoaWFAY3ludGhpYS5jb20iLCJmaXJzdF9uYW1lIjoiY3ludGhpYSIsImxhc3RfbmFtZSI6ImN5bnRoaWEiLCJwYXNzd29yZCI6IioqKioqKioifScgLUggJ0FjY2VwdDogYXBwbGljYXRpb24vanNvbicgLUggJ2NvbnRlbnQtdHlwZTogYXBwbGljYXRpb24vanNvbicgLUggIkF1dGhvcml6YXRpb246IGJlYXJlciBUT0tFTiIgaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS91c2VyLXJlZ2lzdHJpZXMvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2LzUzZjZkNzEwLThkNmEtNDBlMy1iMjc0LTY1OTc5MDI4OTRkYy91c2VycwogICAgICAgIDwvZGl2PgogICAgICAgIDxoND5SZXNwb25zZTwvaDQ+CiAgICAgICAgPGRpdiBpZD0icG9zdC1hZG1pbl9uZXctdXNlci1yZXNwb25zZSIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPnsKICAidHlwZSI6ICJ1c2VyIiwKICAiYXBpX3ZlcnNpb24iOiAiMi4wLjAiLAogICJpZCI6ICJlOWM2NjlmZC05NGNiLTQzN2UtYTE2MS1mNjcxYjhhZTIyN2UiLAogICJuYW1lIjogImN5bnRoaWExIiwKICAidGl0bGUiOiAiY3ludGhpYTEiLAogICJzdGF0ZSI6ICJlbmFibGVkIiwKICAidXNlcm5hbWUiOiAiY3ludGhpYTEiLAogICJlbWFpbCI6ICJjeW50aGlhQGN5bnRoaWEuY29tIiwKICAiZmlyc3RfbmFtZSI6ICJjeW50aGlhIiwKICAibGFzdF9uYW1lIjogImN5bnRoaWEiLAogICJpZGVudGl0eV9wcm92aWRlciI6ICJkZWZhdWx0LWlkcC0xIiwKICAiY3JlYXRlZF9hdCI6ICIyMDIxLTExLTA1VDIwOjQwOjQzLjE3OVoiLAogICJ1cGRhdGVkX2F0IjogIjIwMjEtMTEtMDVUMjA6NDA6NDMuMTc5WiIsCiAgIm9yZ191cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9vcmdzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2NiIsCiAgInVzZXJfcmVnaXN0cnlfdXJsIjogImh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvdXNlci1yZWdpc3RyaWVzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2Ni81M2Y2ZDcxMC04ZDZhLTQwZTMtYjI3NC02NTk3OTAyODk0ZGMiLAogICJ1cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS91c2VyLXJlZ2lzdHJpZXMvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2LzUzZjZkNzEwLThkNmEtNDBlMy1iMjc0LTY1OTc5MDI4OTRkYy91c2Vycy9lOWM2NjlmZC05NGNiLTQzN2UtYTE2MS1mNjcxYjhhZTIyN2UiCn0KICAgICAgICA8L2Rpdj4KICAgIDwvc2VjdGlvbj4KCjwhLS0gc2VjdGlvbiBvbiBjb252ZXJ0aW5nIGEgdXNlciB0byBhIG1lbWJlciBpbiB0aGUgYWRtaW4gbGV2ZWwgLS0+CiAgICA8c2VjdGlvbj4KICAgICAgPGgzPlJlZ2lzdGVyaW5nIHRoZSB1c2VyIGFzIGEgbWVtYmVyIGluIHRoZSBhZG1pbiBvcmdhbml6YXRpb248L2gzPgogICAgICA8cD5UaGlzIHJlcXVlc3QgYWRkcyBhIHVzZXIgYXMgYSBtZW1iZXIgb2YgdGhlIGFkbWluIG9yZ2FuaXphdGlvbi48L3A+CiAgICAgIDxoNSBzdHlsZT0iY29sb3I6IzNkNzBiMiI+UE9TVCAvYXBpL3VzZXItcmVnaXN0cmllcy97b3JnfS9tZW1iZXJzPC9oNT4KICAgIDwvYnI+CiAgICA8ZGw+CiAgICAgIDxkdCBzdHlsZT0iZm9udC13ZWlnaHQ6NDAwOyI+b3JnOjwvZHQ+CiAgICAgIDxkZD5UaGUgbmFtZSBvciBJRCBvZiB0aGUgYWRtaW4gb3JnYW5pemF0aW9uPC9kZD4KICAgIDwvZGw+CiAgICAgIDxoNT5Qb3N0IGJvZHkgcHJvcGVydGllcyAoY29udGVudC10eXBlIGFwcGxpY2F0aW9uL2pzb24gb3IgYXBwbGljYXRpb24veWFtbCk6PC9oNT4KICAgICAgPCEtLSA8ZGl2IGlkPSJnZXQtbmV3LW1lbWJlci1yZXNwb25zZSIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPiAtLT4KICAgIDxkbD4KICAgICAgPGR0IHN0eWxlPSJmb250LXdlaWdodDo0MDA7Ij51c2VyOjwvZHQ+CiAgICAgIDxkZD5vYmplY3QgY29udGFpbmluZyBhIHVybCBwcm9wZXJ0eSwgd2hpY2ggaXMgYSByZWZlcmVuY2UgdG8gYW4gZXhpc3RpbmcgdXNlcjwvZGQ+CiAgICAgIDxkdCBzdHlsZT0iZm9udC13ZWlnaHQ6NDAwOyI+dXJsOjwvZHQ+CiAgICAgIDxkZD5UaGUgdXJsIGZvciB0aGUgc3BlY2lmaWMgQVBJIENvbm5lY3QgdXNlciBzZWxlY3RlZCB0byBiZSByZWdpc3RlcmVkLCB0aGlzIGlzIGZvdW5kIGluIHRoZSBQT1NUIHVzZXIncyByZXNwb25zZTwvZGQ+CiAgICA8L2RsPgogICAgPCEtLSA8L2Rpdj4gLS0+CiAgICAgIDxoND5SZXF1ZXN0PC9oND4KICAgICAgPGRpdiBpZD0iZ2V0LW5ldy1tZW1iZXItcmVxdWVzdCIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPmN1cmwgLXYgLWsgLVggUE9TVCAtZCAneyJ1c2VyIjp7InVybCI6ICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL3VzZXItcmVnaXN0cmllcy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYvNTNmNmQ3MTAtOGQ2YS00MGUzLWIyNzQtNjU5NzkwMjg5NGRjL3VzZXJzL2U5YzY2OWZkLTk0Y2ItNDM3ZS1hMTYxLWY2NzFiOGFlMjI3ZSJ9fScgLUggJ0NvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbicgLUggJ0FjY2VwdDogYXBwbGljYXRpb24vanNvbicgLUggIkF1dGhvcml6YXRpb246IGJlYXJlciBUT0tFTiIgaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9vcmdzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2Ni9tZW1iZXJzCiAgICA8L2Rpdj4KICAgICAgPGg0PlJlc3BvbnNlPC9oND4KICAgICAgPGRpdiBpZD0iZ2V0LW5ldy1tZW1iZXItcmVzcG9uc2UiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij57CiAgInR5cGUiOiAibWVtYmVyIiwKICAiYXBpX3ZlcnNpb24iOiAiMi4wLjAiLAogICJpZCI6ICJlNTRjOTBiMC1iZjYxLTRmZDItYjY4NC1iNTUzMWM4OGE5MTUiLAogICJuYW1lIjogImN5bnRoaWExIiwKICAidGl0bGUiOiAiY3ludGhpYTEiLAogICJzdGF0ZSI6ICJlbmFibGVkIiwKICAidXNlciI6IHsKICAgICAgICAgICJ0eXBlIjogInVzZXIiLAogICAgICAgICAgImFwaV92ZXJzaW9uIjogIjIuMC4wIiwKICAgICAgICAgICJpZCI6ICJlOWM2NjlmZC05NGNiLTQzN2UtYTE2MS1mNjcxYjhhZTIyN2UiLAogICAgICAgICAgIm5hbWUiOiAiY3ludGhpYTEiLAogICAgICAgICAgInRpdGxlIjogImN5bnRoaWExIiwKICAgICAgICAgICJzdGF0ZSI6ICJlbmFibGVkIiwKICAgICAgICAgICJpZGVudGl0eV9wcm92aWRlciI6ICJkZWZhdWx0LWlkcC0xIiwKICAgICAgICAgICJ1c2VybmFtZSI6ICJjeW50aGlhMSIsCiAgICAgICAgICAiZW1haWwiOiAiY3ludGhpYUBjeW50aGlhLmNvbSIsCiAgICAgICAgICAiZmlyc3RfbmFtZSI6ICJjeW50aGlhIiwKICAgICAgICAgICJsYXN0X25hbWUiOiAiY3ludGhpYSIsCiAgICAgICAgICAib3JnX3VybCI6ICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL29yZ3MvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2IiwKICAgICAgICAgICJ1c2VyX3JlZ2lzdHJ5X3VybCI6ICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL3VzZXItcmVnaXN0cmllcy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYvNTNmNmQ3MTAtOGQ2YS00MGUzLWIyNzQtNjU5NzkwMjg5NGRjIiwKICAgICAgICAgICJ1cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS91c2VyLXJlZ2lzdHJpZXMvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2LzUzZjZkNzEwLThkNmEtNDBlMy1iMjc0LTY1OTc5MDI4OTRkYy91c2Vycy9lOWM2NjlmZC05NGNiLTQzN2UtYTE2MS1mNjcxYjhhZTIyN2UiCiAgICAgICAgfSwKICAic2NvcGUiOiAib3JnIiwKICAicm9sZV91cmxzIjogWwogICAgImh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvb3Jncy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYvcm9sZXMvNjg0NWE5YzctNGM3OS00OTM2LWIzMWItZjI1NjY0YmZhNTBmIgogIF0sCiAgImNyZWF0ZWRfYXQiOiAiMjAyMS0xMS0wNVQyMToxOTo1Ny45OThaIiwKICAidXBkYXRlZF9hdCI6ICIyMDIxLTExLTA1VDIxOjE5OjU3Ljk5OFoiLAogICJvcmdfdXJsIjogImh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvb3Jncy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYiLAogICJ1cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9vcmdzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2Ni9tZW1iZXJzL2U1NGM5MGIwLWJmNjEtNGZkMi1iNjg0LWI1NTMxYzg4YTkxNSIKfQogICAgICA8L2Rpdj4KICAgIDxwPgogICAgICBUaGUgbmV3bHkgcmVnaXN0ZXJlZCBtZW1iZXIgY2FuIG5vdyBiZSBzZWVuIGluIHRoZSBhZG1pbiBvcmdhbml6YXRpb24ncyBsaXN0IG9mIG1lbWJlcnMuCiAgICA8L3A+CiAgICA8L3NlY3Rpb24+CgogICAgPCEtLSBNb2RpZnlpbmcgdGhlIE1lbWJlcidzIHJvbGVzIC0tPgogICAgPHNlY3Rpb24+CiAgICA8aDM+Q2hhbmdpbmcgdGhlIHJvbGVzIG9mIGFuIGFkbWluIG9yZ2FuaXphdGlvbiBtZW1iZXI8L2gzPgogICAgPHA+VG8gY2hhbmdlIHRoZSByb2xlcyBvZiBhbiBhZG1pbiBvcmdhbml6YXRpb24gbWVtYmVyLCB1c2UgdGhlIFBBVENIIG9wZXJhdGlvbiB0byB1cGRhdGUgdGhlIG1lbWJlcidzIDxjb2RlPnJvbGVfdXJsczwvY29kZT4gcHJvcGVydHkuCiAgICA8L3A+CiAgICA8aDUgc3R5bGU9ImNvbG9yOiMzZDcwYjIiPlBBVENIIC9hcGkvb3Jncy97b3JnfS9tZW1iZXJzL3ttZW1iZXJ9PC9oNT4KICAgIDwvYnI+CiAgICA8ZGw+CiAgICAgIDxkdCBzdHlsZT0iZm9udC13ZWlnaHQ6NDAwOyI+b3JnOjwvZHQ+CiAgICAgIDxkZD5UaGUgbmFtZSBvciBJRCBvZiB0aGUgYWRtaW4gb3JnYW5pemF0aW9uPC9kZD4KICAgICAgPGR0IHN0eWxlPSJmb250LXdlaWdodDo0MDA7Ij5tZW1iZXI6PC9kdD4KICAgICAgPGRkPlRoZSBuYW1lIG9yIElEIG9mIHRoZSBhZG1pbiBvcmdhbml6YXRpb24gbWVtYmVyPC9kZD4KICAgIDwvZGw+CiAgICA8aDU+UG9zdCBib2R5IHByb3BlcnRpZXMgKGNvbnRlbnQtdHlwZSBhcHBsaWNhdGlvbi9qc29uIG9yIGFwcGxpY2F0aW9uL3lhbWwpOjwvaDU+CiAgICA8IS0tIDxkaXYgaWQ9InBvc3QtbmV3LW1lbWJlci1yb2xlcy1yZXF1ZXN0IiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+IC0tPgogICAgPGRsPgogICAgICA8ZHQgc3R5bGU9ImZvbnQtd2VpZ2h0OjQwMDsiPnJvbGVfdXJsczo8L2R0PgogICAgICA8ZGQ+QSBsaXN0IG9mIHJlZmVyZW5jZXMgdG8gdGhlIGFkbWluIG9yZ2FuaXphdGlvbiByb2xlcyB0byBiZSBhc3NpZ25lZCB0byB0aGUgbWVtYmVyPC9kZD4KICAgIDwvZGw+CiAgICA8IS0tIDwvZGl2PiAtLT4KICAgIDwhLS0gQWRkaW5nIHRoZSByb2xlIC0tPgogICAgPHA+SGVyZSBpcyBhbiBleGFtcGxlIHJlcXVlc3QgYW5kIHN1Y2Nlc3NmdWwgcmVzcG9uc2Ugd2hlbiBhIG5ldyByb2xlIGlzIGdpdmVuIHRvIGEgbWVtYmVyOjwvcD4KICAgIDxoND5SZXF1ZXN0PC9oND4KICAgIDxkaXYgaWQ9InBvc3QtbmV3LW1lbWJlci1yb2xlcy1yZXF1ZXN0IiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+Y3VybCAtdiAtayAtWCBQQVRDSCAtZCAneyJyb2xlX3VybHMiOlsiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9vcmdzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2Ni9yb2xlcy8zMWZhYWYxOS02NWNjLTRjNmItYjc5Ny1hMmJhNDY0YmRhMGUiXX0nIC1IICJBdXRob3JpemF0aW9uOiBiZWFyZXIgVE9LRU4iIC1IICJhY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24iIC1IICJjb250ZW50LXR5cGU6IGFwcGxpY2F0aW9uL2pzb24iIGh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvb3Jncy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYvbWVtYmVycy9lNTRjOTBiMC1iZjYxLTRmZDItYjY4NC1iNTUzMWM4OGE5MTUKICAgIDwvZGl2PgogICAgPGg0PlJlc3BvbnNlPC9oND4KICAgIDxkaXYgaWQ9InBvc3QtbmV3LW1lbWJlci1yb2xlcy1yZXNwb25zZSIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPnsKICAidHlwZSI6ICJtZW1iZXIiLAogICJhcGlfdmVyc2lvbiI6ICIyLjAuMCIsCiAgImlkIjogImU1NGM5MGIwLWJmNjEtNGZkMi1iNjg0LWI1NTMxYzg4YTkxNSIsCiAgIm5hbWUiOiAiY3ludGhpYTEiLAogICJ0aXRsZSI6ICJjeW50aGlhMSIsCiAgInN0YXRlIjogImVuYWJsZWQiLAogICJzY29wZSI6ICJvcmciLAogICJ1c2VyIjogewogICAgICAiaWQiOiAiZTljNjY5ZmQtOTRjYi00MzdlLWExNjEtZjY3MWI4YWUyMjdlIiwKICAgICAgInVybCI6ICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL3VzZXItcmVnaXN0cmllcy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYvNTNmNmQ3MTAtOGQ2YS00MGUzLWIyNzQtNjU5NzkwMjg5NGRjL3VzZXJzL2U5YzY2OWZkLTk0Y2ItNDM3ZS1hMTYxLWY2NzFiOGFlMjI3ZSIsCiAgICAgICJuYW1lIjogImN5bnRoaWExIiwKICAgICAgInR5cGUiOiAidXNlciIsCiAgICAgICJlbWFpbCI6ICJjeW50aGlhQGN5bnRoaWEuY29tIiwKICAgICAgInN0YXRlIjogImVuYWJsZWQiLAogICAgICAidGl0bGUiOiAiY3ludGhpYTEiLAogICAgICAib3JnX3VybCI6ICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL29yZ3MvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2IiwKICAgICAgInVzZXJuYW1lIjogImN5bnRoaWExIiwKICAgICAgImxhc3RfbmFtZSI6ICJjeW50aGlhIiwKICAgICAgImZpcnN0X25hbWUiOiAiY3ludGhpYSIsCiAgICAgICJhcGlfdmVyc2lvbiI6ICIyLjAuMCIsCiAgICAgICJpZGVudGl0eV9wcm92aWRlciI6ICJkZWZhdWx0LWlkcC0xIiwKICAgICAgInVzZXJfcmVnaXN0cnlfdXJsIjogImh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvdXNlci1yZWdpc3RyaWVzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2Ni81M2Y2ZDcxMC04ZDZhLTQwZTMtYjI3NC02NTk3OTAyODk0ZGMiCiAgICB9LAogICJyb2xlX3VybHMiOiBbCiAgICAgICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL29yZ3MvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2L3JvbGVzLzMxZmFhZjE5LTY1Y2MtNGM2Yi1iNzk3LWEyYmE0NjRiZGEwZSIKICBdLAogICJjcmVhdGVkX2F0IjogIjIwMjEtMTEtMDVUMjE6MTk6NTcuMDAwWiIsCiAgInVwZGF0ZWRfYXQiOiAiMjAyMS0xMS0wNVQyMTo0MTozOC43MTRaIiwKICAib3JnX3VybCI6ICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL29yZ3MvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2IiwKICAidXJsIjogImh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvb3Jncy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYvbWVtYmVycy9lNTRjOTBiMC1iZjYxLTRmZDItYjY4NC1iNTUzMWM4OGE5MTUiCn0KPC9kaXY+CjxwPk11bHRpcGxlIHJvbGVzIGNhbiBiZSBhc3NpZ25lZCBpbiBhIHNpbmdsZSByZXF1ZXN0LiBFeGlzdGluZyByb2xlcyBjYW4gYmUgcmVtb3ZlZCBieSBvbWl0dGluZyB0aGVtIGZyb20gdGhlIHJlcXVlc3QuPC9wPgogICAgPC9zZWN0aW9uPgoKICAgIDwhLS0gRGVsZXRpbmcgdGhlIG1lbWJlcnMgZnJvbSBBZG1pbiBvcmcgLS0+CiAgICA8c2VjdGlvbj4KICAgIDxoMz5EZWxldGluZyBhbiBhZG1pbiBvcmdhbml6YXRpb24gbWVtYmVyPC9oMz4KICAgIDxwPlRoaXMgY29tbWFuZCByZW1vdmVzIGEgbWVtYmVyIGZyb20gdGhlIGFkbWluIG9yZ2FuaXphdGlvbi48L3A+CiAgICA8aDUgc3R5bGU9ImNvbG9yOiMzZDcwYjIiPkRFTEVURSAvYXBpL29yZ3Mve29yZ30vbWVtYmVycy97bWVtYmVyfTwvaDU+CiAgPC9icj4KICAgIDxkbD4KICAgICAgPGR0IHN0eWxlPSJmb250LXdlaWdodDo0MDA7Ij5vcmc6PC9kdD4KICAgICAgPGRkPlRoZSBuYW1lIG9yIElEIG9mIHRoZSBhZG1pbiBvcmdhbml6YXRpb248L2RkPgogICAgICA8ZHQgc3R5bGU9ImZvbnQtd2VpZ2h0OjQwMDsiPm1lbWJlcjo8L2R0PgogICAgICA8ZGQ+VGhlIG5hbWUgb3IgSUQgb2YgYW4gYWRtaW4gb3JnYW5pemF0aW9uIG1lbWJlcjwvZGQ+CiAgICA8L2RsPgogICAgPGg0PlJlcXVlc3Q8L2g0PgogICAgPGRpdiBpZD0iZGVsZXRlLW9sZC1tZW1iZXJzLXJlcXVlc3QiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij5jdXJsIC12IC1rIC1IICdDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL2pzb24nIC1IICdBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24nIC1IICJBdXRob3JpemF0aW9uOiBiZWFyZXIgVE9LRU4iIC1YIERFTEVURSBodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL29yZ3MvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2L21lbWJlcnMvZTU0YzkwYjAtYmY2MS00ZmQyLWI2ODQtYjU1MzFjODhhOTE1CiAgICA8L2Rpdj4KICAgIDxoND5SZXNwb25zZTwvaDQ+CiAgICA8ZGl2IGlkPSJkZWxldGUtb2xkLW1lbWJlcnMtcmVzcG9uc2UiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij57CiAgInR5cGUiOiAibWVtYmVyIiwKICAiYXBpX3ZlcnNpb24iOiAiMi4wLjAiLAogICJpZCI6ICJlNTRjOTBiMC1iZjYxLTRmZDItYjY4NC1iNTUzMWM4OGE5MTUiLAogICJuYW1lIjogImN5bnRoaWExIiwKICAidGl0bGUiOiAiY3ludGhpYTEiLAogICJzdGF0ZSI6ICJlbmFibGVkIiwKICAic2NvcGUiOiAib3JnIiwKICAidXNlciI6IHsKICAgICAgImlkIjogImU5YzY2OWZkLTk0Y2ItNDM3ZS1hMTYxLWY2NzFiOGFlMjI3ZSIsCiAgICAgICJ1cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS91c2VyLXJlZ2lzdHJpZXMvZTczYWY3MGQtZWVmYy00MTBiLTg5NzEtZGU2YTEwN2ZjMjY2LzUzZjZkNzEwLThkNmEtNDBlMy1iMjc0LTY1OTc5MDI4OTRkYy91c2Vycy9lOWM2NjlmZC05NGNiLTQzN2UtYTE2MS1mNjcxYjhhZTIyN2UiLAogICAgICAibmFtZSI6ICJjeW50aGlhMSIsCiAgICAgICJ0eXBlIjogInVzZXIiLAogICAgICAiZW1haWwiOiAiY3ludGhpYUBjeW50aGlhLmNvbSIsCiAgICAgICJzdGF0ZSI6ICJlbmFibGVkIiwKICAgICAgInRpdGxlIjogImN5bnRoaWExIiwKICAgICAgIm9yZ191cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9vcmdzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2NiIsCiAgICAgICJ1c2VybmFtZSI6ICJjeW50aGlhMSIsCiAgICAgICJsYXN0X25hbWUiOiAiY3ludGhpYSIsCiAgICAgICJmaXJzdF9uYW1lIjogImN5bnRoaWEiLAogICAgICAiYXBpX3ZlcnNpb24iOiAiMi4wLjAiLAogICAgICAiaWRlbnRpdHlfcHJvdmlkZXIiOiAiZGVmYXVsdC1pZHAtMSIsCiAgICAgICJ1c2VyX3JlZ2lzdHJ5X3VybCI6ICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL3VzZXItcmVnaXN0cmllcy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYvNTNmNmQ3MTAtOGQ2YS00MGUzLWIyNzQtNjU5NzkwMjg5NGRjIgogIH0sCiAgInJvbGVfdXJscyI6IFsKICAgICAgImh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvb3Jncy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYvcm9sZXMvMjRmOWI0NzEtNTNiYy00NTM0LWFmMWItMGUxY2I2NTZjMTJmIgogIF0sCiAgImNyZWF0ZWRfYXQiOiAiMjAyMS0xMS0wNVQyMToxOTo1Ny4wMDBaIiwKICAidXBkYXRlZF9hdCI6ICIyMDIxLTExLTA1VDIxOjU1OjMxLjAwMFoiLAogICJvcmdfdXJsIjogImh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvb3Jncy9lNzNhZjcwZC1lZWZjLTQxMGItODk3MS1kZTZhMTA3ZmMyNjYiLAogICJ1cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5pYm0uY29tL2FwaS9vcmdzL2U3M2FmNzBkLWVlZmMtNDEwYi04OTcxLWRlNmExMDdmYzI2Ni9tZW1iZXJzL2U1NGM5MGIwLWJmNjEtNGZkMi1iNjg0LWI1NTMxYzg4YTkxNSIKfQogICAgPC9kaXY+CiAgICA8cD5UaGUgcmVzcG9uc2UgcmVwcmVzZW50cyB0aGUgbWVtYmVyIHRoYXQgaGFzIGJlZW4gcmVtb3ZlZC48L3A+CiAgICA8L3NlY3Rpb24+CiAgPC9kaXY+CjwvYXJ0aWNsZT4K"
-  				}
-  			]
-  		}
-  	]
+          }
+        ]
+      }
+    ]
 };
