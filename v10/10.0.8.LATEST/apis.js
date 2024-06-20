@@ -9079,7 +9079,7 @@
       ],
       "post": {
         "summary": "Create a Gateway Service object",
-        "description": "Create a Gateway Service object\n          \n          Required fields:\n          - endpoint\n          - api_endpoint_base\n          - sni\n          \n          Fields not allowed:\n          - owned\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - availability_zone_url\n",
+        "description": "Create a Gateway Service object\n          \n          Required fields:\n          - endpoint\n          - api_endpoint_base\n          - sni\n          \n          Fields not allowed:\n          - owned\n          - service_supported_features\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - availability_zone_url\n",
         "operationId": "gateway_service_create",
         "security": [
           {
@@ -9283,7 +9283,7 @@
       },
       "patch": {
         "summary": "Update the Gateway Service object by name or id",
-        "description": "Update the Gateway Service object by name or id\n          \n          Fields not allowed to be null:\n          - endpoint\n          - api_endpoint_base\n          - sni\n          \n          Fields not allowed:\n          - owned\n          - endpoint\n          - integration_url\n          - gateway_service_type\n          - api_endpoint_base\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - availability_zone_url\n",
+        "description": "Update the Gateway Service object by name or id\n          \n          Fields not allowed to be null:\n          - endpoint\n          - api_endpoint_base\n          - sni\n          \n          Fields not allowed:\n          - owned\n          - endpoint\n          - integration_url\n          - gateway_service_type\n          - api_endpoint_base\n          - service_supported_features\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - availability_zone_url\n",
         "operationId": "gateway_service_update",
         "security": [
           {
@@ -10475,7 +10475,7 @@
       ],
       "post": {
         "summary": "Create a Portal Service object",
-        "description": "Create a Portal Service object\n          \n          Required fields:\n          - endpoint\n          - web_endpoint_base\n          \n          Fields not allowed:\n          - owned\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - availability_zone_url\n",
+        "description": "Create a Portal Service object\n          \n          Required fields:\n          - endpoint\n          - web_endpoint_base\n          \n          Fields not allowed:\n          - owned\n          - service_supported_features\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - availability_zone_url\n",
         "operationId": "portal_service_create",
         "security": [
           {
@@ -10682,7 +10682,7 @@
       },
       "patch": {
         "summary": "Update the Portal Service object by name or id",
-        "description": "Update the Portal Service object by name or id\n          \n          Fields not allowed to be null:\n          - endpoint_tls_client_profile_url\n          - web_endpoint_base\n          \n          Fields not allowed:\n          - owned\n          - endpoint\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - availability_zone_url\n",
+        "description": "Update the Portal Service object by name or id\n          \n          Fields not allowed to be null:\n          - endpoint_tls_client_profile_url\n          - web_endpoint_base\n          \n          Fields not allowed:\n          - owned\n          - endpoint\n          - service_supported_features\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - availability_zone_url\n",
         "operationId": "portal_service_update",
         "security": [
           {
@@ -13849,6 +13849,300 @@
         ]
       }
     },
+    "/orgs/{org}/jwk-sets": {
+      "description": "The collection of Jwk Set operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Create a Jwk Set object",
+        "description": "Create a Jwk Set object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "jwk_set_create",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JwkSet"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/JwkSet"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful create",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwkSet"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwkSet"
+                }
+              }
+            }
+          },
+          "302": {
+            "description": "Redirect response",
+            "headers": {
+              "Location": {
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Jwk Set"
+        ]
+      },
+      "get": {
+        "summary": "List the Jwk Set objects",
+        "description": "List the Jwk Set objects",
+        "operationId": "jwk_set_list",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwkSetList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwkSetList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Jwk Set"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Jwk Set objects",
+        "description": "Clear the Jwk Set objects",
+        "operationId": "jwk_set_clear",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/confirm"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Jwk Set"
+        ]
+      }
+    },
+    "/orgs/{org}/jwk-sets/{jwk-set}": {
+      "description": "Jwk Set object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/jwk-set"
+        }
+      ],
+      "get": {
+        "summary": "Get the Jwk Set object by name or id",
+        "description": "Get the Jwk Set object by name or id",
+        "operationId": "jwk_set_get",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwkSet"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwkSet"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Jwk Set"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Jwk Set object by name or id",
+        "description": "Delete the Jwk Set object by name or id",
+        "operationId": "jwk_set_del",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwkSet"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwkSet"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Jwk Set"
+        ]
+      }
+    },
+    "/orgs/{org}/jwk-sets/generate": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Generate a Jwk Set",
+        "description": "Generate a Jwk Set",
+        "operationId": "jwk_set_generate",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwkSet"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwkSet"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Jwk Set"
+        ]
+      }
+    },
     "/cloud/org-invitations": {
       "description": "The collection of Organization Invitation operations",
       "post": {
@@ -15122,6 +15416,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/expand"
           }
         ],
         "responses": {
@@ -15987,6 +16284,62 @@
           "Resource: Organization"
         ]
       }
+    },
+    "/cloud/devops/resource-service-statuses": {
+      "description": "The collection of Resource Service Status operations",
+      "get": {
+        "summary": "List the Resource Service Status objects",
+        "description": "List the Resource Service Status objects",
+        "operationId": "resource_service_status_list",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/resource_url"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceServiceStatusList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceServiceStatusList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Resource Service Status",
+          "Resource: Resource Service Status"
+        ]
+      }
     }
   },
   "components": {
@@ -16396,6 +16749,15 @@
           "type": "string"
         }
       },
+      "jwk-set": {
+        "name": "jwk-set",
+        "in": "path",
+        "description": "Jwk Set name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
       "keystore": {
         "name": "keystore",
         "in": "path",
@@ -16693,6 +17055,24 @@
           "type": "string"
         }
       },
+      "resource-service-status": {
+        "name": "resource-service-status",
+        "in": "path",
+        "description": "Resource Service Status name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "resource_url": {
+        "name": "resource_url",
+        "in": "query",
+        "description": "URL of the resource",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "response_type": {
         "name": "response_type",
         "in": "query",
@@ -16756,6 +17136,15 @@
           "type": "string"
         }
       },
+      "states": {
+        "name": "states",
+        "in": "query",
+        "description": "The list states of the queried resources",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "subscriber-event": {
         "name": "subscriber-event",
         "in": "path",
@@ -16814,6 +17203,15 @@
         "name": "task-queue",
         "in": "path",
         "description": "Task Queue name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tier": {
+        "name": "tier",
+        "in": "path",
+        "description": "Tier name or id",
         "required": true,
         "schema": {
           "type": "string"
@@ -17068,6 +17466,9 @@
             "type": "string"
           },
           "third_party_refresh_token": {
+            "type": "string"
+          },
+          "third_party_id_token": {
             "type": "string"
           },
           "metadata": {
@@ -17647,6 +18048,34 @@
                 "url": {
                   "type": "string",
                   "format": "uri"
+                }
+              }
+            }
+          },
+          "service_status": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "service_url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "sent_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "processed_at": {
+                  "type": "string",
+                  "format": "date-time"
                 }
               }
             }
@@ -18556,7 +18985,8 @@
                 "type": "string"
               },
               "service_version": {
-                "type": "string"
+                "type": "string",
+                "nullable": true
               },
               "state": {
                 "type": "string",
@@ -18564,6 +18994,12 @@
                   "pending",
                   "ready"
                 ]
+              },
+              "service_supported_features": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -18720,6 +19156,9 @@
           "hash_client_secret": {
             "type": "boolean"
           },
+          "subscription_task_approval_retention": {
+            "type": "integer"
+          },
           "org_url": {
             "type": "string",
             "format": "uri"
@@ -18758,6 +19197,9 @@
             "nullable": true,
             "minimum": 60,
             "maximum": 31536000
+          },
+          "consumer_catalog_enabled": {
+            "type": "boolean"
           },
           "metadata": {
             "type": "object",
@@ -19179,6 +19621,13 @@
             "type": "boolean",
             "default": false
           },
+          "data_import_keyset_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "data_export_key": {
+            "$ref": "#/components/schemas/PublicKeyJwk"
+          },
           "onboarding": {
             "type": "string",
             "nullable": true,
@@ -19459,6 +19908,13 @@
           "external_group_mapping_enabled": {
             "type": "boolean",
             "default": false
+          },
+          "data_import_keyset_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "data_export_key": {
+            "$ref": "#/components/schemas/PublicKeyJwk"
           },
           "onboarding": {
             "type": "string",
@@ -19749,6 +20205,12 @@
                 "items": {
                   "$ref": "#/components/schemas/SubscriberEvent"
                 }
+              },
+              "failed_events": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SubscriberEventStatus"
+                }
               }
             }
           },
@@ -19773,6 +20235,36 @@
           "communication_to_analytics_with_jwt": {
             "type": "boolean",
             "nullable": true
+          },
+          "ldap_cxn_pool": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              },
+              "idle_timeout": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 86400
+              },
+              "max_pool_size": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2000
+              },
+              "document_cache_size": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2147483647
+              }
+            }
+          },
+          "service_supported_features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "metadata": {
             "type": "object",
@@ -20857,6 +21349,18 @@
           "owner": {
             "$ref": "#/components/schemas/User"
           },
+          "members": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Member"
+            }
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Role"
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -21760,6 +22264,30 @@
             "type": "string",
             "nullable": true
           },
+          "ldap_cxn_pool": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              },
+              "idle_timeout": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 86400
+              },
+              "max_pool_size": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2000
+              },
+              "document_cache_size": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2147483647
+              }
+            }
+          },
           "communication_kind": {
             "type": "string",
             "enum": [
@@ -21796,6 +22324,12 @@
                   "$ref": "#/components/schemas/SubscriberEvent"
                 }
               }
+            }
+          },
+          "service_supported_features": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
           },
           "metadata": {
@@ -22698,6 +23232,91 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Job"
+            }
+          }
+        }
+      },
+      "JwkSet": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "jwk_set"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "keys": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JWKDefinition"
+            }
+          },
+          "user_registry_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "JwkSetList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JwkSet"
             }
           }
         }
@@ -24570,8 +25189,15 @@
               "format": "uri"
             }
           },
+          "tier_url": {
+            "type": "string",
+            "format": "uri"
+          },
           "owner": {
             "$ref": "#/components/schemas/User"
+          },
+          "tier": {
+            "$ref": "#/components/schemas/Tier"
           },
           "metadata": {
             "type": "object",
@@ -25096,6 +25722,12 @@
               "internal_svc"
             ]
           },
+          "service_supported_features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -25207,14 +25839,36 @@
           },
           "ids_in_gateway_payload": {
             "type": "array",
+            "readOnly": true,
             "items": {
-              "type": "string"
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "resourceUrl": {
+                  "type": "string",
+                  "format": "uri-reference"
+                },
+                "resourceType": {
+                  "type": "string"
+                }
+              }
             }
           },
           "ids_in_consumer_payload": {
             "type": "array",
+            "readOnly": true,
             "items": {
-              "type": "string"
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "resourceUrl": {
+                  "type": "string",
+                  "format": "uri-reference"
+                },
+                "resourceType": {
+                  "type": "string"
+                }
+              }
             }
           },
           "metadata": {
@@ -25547,6 +26201,34 @@
               "type": "string"
             }
           },
+          "service_status": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "service_url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "sent_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "processed_at": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -25757,6 +26439,10 @@
             "maximum": 2147483647,
             "nullable": true
           },
+          "third_party_id_token": {
+            "type": "string",
+            "nullable": true
+          },
           "ttl": {
             "type": "integer",
             "minimum": 0,
@@ -25900,6 +26586,21 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Registration"
+            }
+          }
+        }
+      },
+      "ResourceServiceStatusList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResourceServiceStatus"
             }
           }
         }
@@ -26533,6 +27234,23 @@
           "consumer_payload": {
             "type": "object"
           },
+          "ids_in_payload": {
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "resourceUrl": {
+                  "type": "string",
+                  "format": "uri-reference"
+                },
+                "resourceType": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -26748,6 +27466,9 @@
           "email_sender": {
             "$ref": "#/components/schemas/EmailSender"
           },
+          "subscription_task_approval_retention": {
+            "type": "integer"
+          },
           "org_url": {
             "type": "string",
             "format": "uri"
@@ -26861,8 +27582,19 @@
           },
           "ids_in_payload": {
             "type": "array",
+            "readOnly": true,
             "items": {
-              "type": "string"
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "resourceUrl": {
+                  "type": "string",
+                  "format": "uri-reference"
+                },
+                "resourceType": {
+                  "type": "string"
+                }
+              }
             }
           },
           "metadata": {
@@ -27287,6 +28019,177 @@
           }
         }
       },
+      "TaskHistory": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "task_history"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "scope": {
+            "type": "string"
+          },
+          "task_type": {
+            "type": "string",
+            "enum": [
+              "subscription"
+            ]
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "approved",
+              "rejected",
+              "cancelled"
+            ]
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "original_name": {
+            "type": "string"
+          },
+          "originator": {
+            "type": "string"
+          },
+          "originator_username": {
+            "type": "string"
+          },
+          "originator_name": {
+            "type": "string"
+          },
+          "resolver_username": {
+            "type": "string"
+          },
+          "comments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "properties": {
+            "type": "object",
+            "additionalProperties": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "activity": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "product_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "app_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "subscription_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "org_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "catalog_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "space_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "TaskHistoryList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TaskHistory"
+            }
+          }
+        }
+      },
       "TaskQueue": {
         "type": "object",
         "additionalProperties": false,
@@ -27408,6 +28311,145 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/TaskQueue"
+            }
+          }
+        }
+      },
+      "Tier": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "tier"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "feature_flags": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "product_lifecycle_approvals": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "onboarding_approvals": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "catalog_spaces": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "email_customization": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "app_lifecycle": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "invitation_timeouts": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "api_type_soap": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "api_type_asyncapi": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "monetization": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "ai_assistant": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "api_governance": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "api_discovery": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "portal": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              }
+            }
+          },
+          "feature_limits": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "max_catalogs": {
+                "$ref": "#/components/schemas/FeatureLimit"
+              },
+              "max_user_registries": {
+                "$ref": "#/components/schemas/FeatureLimit"
+              },
+              "max_api_discovery_data_sources": {
+                "$ref": "#/components/schemas/FeatureLimit"
+              }
+            }
+          },
+          "org_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "TierList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Tier"
             }
           }
         }
@@ -28087,6 +29129,12 @@
           "salt": {
             "type": "string"
           },
+          "encrypted_data": {
+            "type": "string"
+          },
+          "encrypted_data_hash": {
+            "type": "string"
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -28222,6 +29270,14 @@
           },
           "owned": {
             "type": "boolean"
+          },
+          "data_import_keyset_url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          },
+          "data_export_key": {
+            "$ref": "#/components/schemas/PublicKeyJwk"
           },
           "configured_catalog_user_registry_urls": {
             "type": "array",
@@ -28578,7 +29634,9 @@
                 "global_policy_error",
                 "product_migrate_subscriptions",
                 "execute_migration_target",
-                "event_config_logs"
+                "event_config_logs",
+                "feedback_2",
+                "ldap_cxn_pool"
               ]
             }
           },
@@ -29316,12 +30374,6 @@
           "kid": {
             "type": "string"
           },
-          "e": {
-            "type": "string"
-          },
-          "n": {
-            "type": "string"
-          },
           "x5c": {
             "type": "array",
             "items": {
@@ -29341,6 +30393,30 @@
             "type": "string"
           },
           "purpose": {
+            "type": "string"
+          },
+          "e": {
+            "type": "string"
+          },
+          "n": {
+            "type": "string"
+          },
+          "d": {
+            "type": "string"
+          },
+          "p": {
+            "type": "string"
+          },
+          "q": {
+            "type": "string"
+          },
+          "dp": {
+            "type": "string"
+          },
+          "dq": {
+            "type": "string"
+          },
+          "qi": {
             "type": "string"
           }
         }
@@ -29449,6 +30525,12 @@
             "type": "integer",
             "minimum": 0,
             "maximum": 2147483647
+          },
+          "proxied_id_token": {
+            "type": "string"
+          },
+          "proxied_access_token": {
+            "type": "string"
           }
         }
       },
@@ -31742,6 +32824,16 @@
         "properties": {
           "event_id": {
             "type": "string"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "fail",
+              "success"
+            ]
+          },
+          "message": {
+            "type": "string"
           }
         }
       },
@@ -31814,6 +32906,9 @@
               }
             }
           },
+          "first_failed_event": {
+            "$ref": "#/components/schemas/SubscriberEventStatus"
+          },
           "number_of_outstanding_sent_events": {
             "type": "integer",
             "minimum": 0,
@@ -31840,6 +32935,30 @@
             "type": "integer",
             "minimum": 0,
             "maximum": 2147483647
+          }
+        }
+      },
+      "SubscriberEventStatus": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "event_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "filter": {
+            "type": "string"
+          },
+          "generated_at": {
+            "type": "string"
+          },
+          "processed_at": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
           }
         }
       },
@@ -31886,6 +33005,7 @@
       },
       "PublicKeyJwk": {
         "type": "object",
+        "nullable": true,
         "additionalProperties": false,
         "properties": {
           "kty": {
@@ -32050,6 +33170,66 @@
             }
           }
         }
+      },
+      "FeatureFlag": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          }
+        }
+      },
+      "FeatureLimit": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "limit": {
+            "type": "integer"
+          }
+        }
+      },
+      "ResourceServiceStatus": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "webhook_url": {
+            "type": "string"
+          },
+          "service_url": {
+            "type": "string"
+          },
+          "subscriber_event_url": {
+            "type": "string"
+          },
+          "filter": {
+            "type": "string"
+          },
+          "request_id": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "sent_at": {
+            "type": "string"
+          },
+          "processed_at": {
+            "type": "string"
+          }
+        }
       }
     },
     "responses": {
@@ -32081,7 +33261,7 @@
               "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
               "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
-              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id",
+              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id, List the Task History objects, Get the Task History object by name or id",
               "child:create": "Create a Catalog object, Create a Space object",
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
@@ -32091,8 +33271,8 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
@@ -32112,7 +33292,7 @@
               "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
               "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
-              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id",
+              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id, List the Task History objects, Get the Task History object by name or id",
               "child:create": "Create a Catalog object, Create a Space object",
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
@@ -32122,8 +33302,8 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
@@ -32142,7 +33322,7 @@
               "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
               "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
-              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id",
+              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id, List the Task History objects, Get the Task History object by name or id",
               "child:create": "Create a Catalog object, Create a Space object",
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
@@ -32152,8 +33332,8 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
@@ -32174,7 +33354,7 @@
               "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
               "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
-              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id",
+              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id, List the Task History objects, Get the Task History object by name or id",
               "child:create": "Create a Catalog object, Create a Space object",
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
@@ -32184,8 +33364,8 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
@@ -40149,6 +41329,300 @@
         ]
       }
     },
+    "/orgs/{org}/jwk-sets": {
+      "description": "The collection of Jwk Set operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Create a Jwk Set object",
+        "description": "Create a Jwk Set object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "jwk_set_create",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JwkSet"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/JwkSet"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful create",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwkSet"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwkSet"
+                }
+              }
+            }
+          },
+          "302": {
+            "description": "Redirect response",
+            "headers": {
+              "Location": {
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Jwk Set"
+        ]
+      },
+      "get": {
+        "summary": "List the Jwk Set objects",
+        "description": "List the Jwk Set objects",
+        "operationId": "jwk_set_list",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwkSetList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwkSetList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Jwk Set"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Jwk Set objects",
+        "description": "Clear the Jwk Set objects",
+        "operationId": "jwk_set_clear",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/confirm"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Jwk Set"
+        ]
+      }
+    },
+    "/orgs/{org}/jwk-sets/{jwk-set}": {
+      "description": "Jwk Set object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/jwk-set"
+        }
+      ],
+      "get": {
+        "summary": "Get the Jwk Set object by name or id",
+        "description": "Get the Jwk Set object by name or id",
+        "operationId": "jwk_set_get",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwkSet"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwkSet"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Jwk Set"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Jwk Set object by name or id",
+        "description": "Delete the Jwk Set object by name or id",
+        "operationId": "jwk_set_del",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwkSet"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwkSet"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Jwk Set"
+        ]
+      }
+    },
+    "/orgs/{org}/jwk-sets/generate": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Generate a Jwk Set",
+        "description": "Generate a Jwk Set",
+        "operationId": "jwk_set_generate",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwkSet"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwkSet"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Jwk Set"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/settings": {
       "description": "Catalog Setting object operations",
       "parameters": [
@@ -40323,7 +41797,7 @@
       ],
       "post": {
         "summary": "Creates a configured gateway service.",
-        "description": "Adds the gateway service to the list of configured gateway services for a catalog.\n\n          Required fields:\n          - gateway_service_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - availability_zone_url\n",
+        "description": "Adds the gateway service to the list of configured gateway services for a catalog.\n\n          Required fields:\n          - gateway_service_url\n          \n          Fields not allowed:\n          - service_supported_features\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - catalog_url\n          - space_url\n          - availability_zone_url\n",
         "operationId": "configured_gateway_service_createCatalogScope",
         "security": [
           {
@@ -45687,8 +47161,8 @@
         }
       ],
       "get": {
-        "summary": "List of apis with duplicate base paths",
-        "description": "List of apis with duplicate base paths",
+        "summary": "List of APIs with duplicate base paths",
+        "description": "List of APIs with duplicate base paths",
         "operationId": "api_listDuplicates",
         "security": [
           {
@@ -47255,6 +48729,253 @@
         "tags": [
           "Catalog Management",
           "Resource: Task (Catalog Scope)"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/task-histories": {
+      "description": "The collection of Task History operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "List the Task History objects",
+        "description": "List the Task History objects",
+        "operationId": "task_history_listCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "approval:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskHistoryList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskHistoryList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Management",
+          "Resource: Task History (Catalog Scope)"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/task-histories/{task-history}": {
+      "description": "Task History object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task-history"
+        }
+      ],
+      "get": {
+        "summary": "Get the Task History object by name or id",
+        "description": "Get the Task History object by name or id",
+        "operationId": "task_history_getCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "approval:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskHistory"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskHistory"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Management",
+          "Resource: Task History (Catalog Scope)"
+        ]
+      }
+    },
+    "/spaces/{org}/{catalog}/{space}/task-histories": {
+      "description": "The collection of Task History operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "List the Task History objects",
+        "description": "List the Task History objects",
+        "operationId": "task_history_listSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "approval:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskHistoryList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskHistoryList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Space Management",
+          "Resource: Task History (Space Scope)"
+        ]
+      }
+    },
+    "/spaces/{org}/{catalog}/{space}/task-histories/{task-history}": {
+      "description": "Task History object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/task-history"
+        }
+      ],
+      "get": {
+        "summary": "Get the Task History object by name or id",
+        "description": "Get the Task History object by name or id",
+        "operationId": "task_history_getSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "approval:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskHistory"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskHistory"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Space Management",
+          "Resource: Task History (Space Scope)"
         ]
       }
     },
@@ -66388,8 +68109,8 @@
         }
       ],
       "post": {
-        "summary": "Validate the draft product object",
-        "description": "Validate the draft product object",
+        "summary": "Validate the Product object",
+        "description": "Validate the Product object",
         "operationId": "draft_product_validateObject",
         "security": [
           {
@@ -67167,8 +68888,8 @@
         }
       ],
       "post": {
-        "summary": "Validate the draft api",
-        "description": "Validate the draft api",
+        "summary": "Validate the draft API",
+        "description": "Validate the draft API",
         "operationId": "draft_api_validate",
         "security": [
           {
@@ -67233,8 +68954,8 @@
         }
       ],
       "post": {
-        "summary": "Validate the draft api",
-        "description": "Validate the draft api",
+        "summary": "Validate the draft API",
+        "description": "Validate the draft API",
         "operationId": "draft_api_validateByNameVersion",
         "security": [
           {
@@ -67293,8 +69014,8 @@
         }
       ],
       "post": {
-        "summary": "Validate the draft api object",
-        "description": "Validate the draft api object",
+        "summary": "Validate the API object",
+        "description": "Validate the API object",
         "operationId": "draft_api_validateObject",
         "security": [
           {
@@ -67853,6 +69574,12 @@
           },
           {
             "$ref": "#/components/parameters/expand"
+          },
+          {
+            "$ref": "#/components/parameters/states"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_url"
           }
         ],
         "responses": {
@@ -67952,6 +69679,12 @@
           },
           {
             "$ref": "#/components/parameters/expand"
+          },
+          {
+            "$ref": "#/components/parameters/states"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_url"
           }
         ],
         "responses": {
@@ -69117,6 +70850,12 @@
           },
           {
             "$ref": "#/components/parameters/base_path"
+          },
+          {
+            "$ref": "#/components/parameters/states"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_url"
           }
         ],
         "responses": {
@@ -69196,6 +70935,12 @@
           },
           {
             "$ref": "#/components/parameters/base_path"
+          },
+          {
+            "$ref": "#/components/parameters/states"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_url"
           }
         ],
         "responses": {
@@ -69706,6 +71451,9 @@
           },
           {
             "$ref": "#/components/parameters/expand"
+          },
+          {
+            "$ref": "#/components/parameters/states"
           }
         ],
         "responses": {
@@ -69808,6 +71556,9 @@
           },
           {
             "$ref": "#/components/parameters/expand"
+          },
+          {
+            "$ref": "#/components/parameters/states"
           }
         ],
         "responses": {
@@ -71012,6 +72763,12 @@
           },
           {
             "$ref": "#/components/parameters/metadata"
+          },
+          {
+            "$ref": "#/components/parameters/states"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_url"
           }
         ],
         "responses": {
@@ -71088,6 +72845,12 @@
           },
           {
             "$ref": "#/components/parameters/metadata"
+          },
+          {
+            "$ref": "#/components/parameters/states"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_url"
           }
         ],
         "responses": {
@@ -72008,6 +73771,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/expand"
           }
         ],
         "responses": {
@@ -72699,6 +74465,62 @@
           "Resource: Subscriber Event (Catalog Scope)"
         ]
       }
+    },
+    "/cloud/devops/resource-service-statuses": {
+      "description": "The collection of Resource Service Status operations",
+      "get": {
+        "summary": "List the Resource Service Status objects",
+        "description": "List the Resource Service Status objects",
+        "operationId": "resource_service_status_list",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/resource_url"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceServiceStatusList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceServiceStatusList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Resource Service Status",
+          "Resource: Resource Service Status"
+        ]
+      }
     }
   },
   "components": {
@@ -73360,6 +75182,15 @@
           "type": "string"
         }
       },
+      "jwk-set": {
+        "name": "jwk-set",
+        "in": "path",
+        "description": "Jwk Set name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
       "keystore": {
         "name": "keystore",
         "in": "path",
@@ -73738,6 +75569,24 @@
           "type": "string"
         }
       },
+      "resource-service-status": {
+        "name": "resource-service-status",
+        "in": "path",
+        "description": "Resource Service Status name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "resource_url": {
+        "name": "resource_url",
+        "in": "query",
+        "description": "URL of the resource",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "response_type": {
         "name": "response_type",
         "in": "query",
@@ -73873,6 +75722,15 @@
           "type": "string"
         }
       },
+      "states": {
+        "name": "states",
+        "in": "query",
+        "description": "The list states of the queried resources",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "subscriber-event": {
         "name": "subscriber-event",
         "in": "path",
@@ -73940,6 +75798,15 @@
         "name": "task",
         "in": "path",
         "description": "Task name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "task-history": {
+        "name": "task-history",
+        "in": "path",
+        "description": "Task History name or id",
         "required": true,
         "schema": {
           "type": "string"
@@ -74167,6 +76034,9 @@
             "type": "string"
           },
           "third_party_refresh_token": {
+            "type": "string"
+          },
+          "third_party_id_token": {
             "type": "string"
           },
           "metadata": {
@@ -74746,6 +76616,34 @@
                 "url": {
                   "type": "string",
                   "format": "uri"
+                }
+              }
+            }
+          },
+          "service_status": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "service_url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "sent_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "processed_at": {
+                  "type": "string",
+                  "format": "date-time"
                 }
               }
             }
@@ -75655,7 +77553,8 @@
                 "type": "string"
               },
               "service_version": {
-                "type": "string"
+                "type": "string",
+                "nullable": true
               },
               "state": {
                 "type": "string",
@@ -75663,6 +77562,12 @@
                   "pending",
                   "ready"
                 ]
+              },
+              "service_supported_features": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -75819,6 +77724,9 @@
           "hash_client_secret": {
             "type": "boolean"
           },
+          "subscription_task_approval_retention": {
+            "type": "integer"
+          },
           "org_url": {
             "type": "string",
             "format": "uri"
@@ -75857,6 +77765,9 @@
             "nullable": true,
             "minimum": 60,
             "maximum": 31536000
+          },
+          "consumer_catalog_enabled": {
+            "type": "boolean"
           },
           "metadata": {
             "type": "object",
@@ -76278,6 +78189,13 @@
             "type": "boolean",
             "default": false
           },
+          "data_import_keyset_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "data_export_key": {
+            "$ref": "#/components/schemas/PublicKeyJwk"
+          },
           "onboarding": {
             "type": "string",
             "nullable": true,
@@ -76558,6 +78476,13 @@
           "external_group_mapping_enabled": {
             "type": "boolean",
             "default": false
+          },
+          "data_import_keyset_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "data_export_key": {
+            "$ref": "#/components/schemas/PublicKeyJwk"
           },
           "onboarding": {
             "type": "string",
@@ -76848,6 +78773,12 @@
                 "items": {
                   "$ref": "#/components/schemas/SubscriberEvent"
                 }
+              },
+              "failed_events": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SubscriberEventStatus"
+                }
               }
             }
           },
@@ -76872,6 +78803,36 @@
           "communication_to_analytics_with_jwt": {
             "type": "boolean",
             "nullable": true
+          },
+          "ldap_cxn_pool": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              },
+              "idle_timeout": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 86400
+              },
+              "max_pool_size": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2000
+              },
+              "document_cache_size": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2147483647
+              }
+            }
+          },
+          "service_supported_features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "metadata": {
             "type": "object",
@@ -77956,6 +79917,18 @@
           "owner": {
             "$ref": "#/components/schemas/User"
           },
+          "members": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Member"
+            }
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Role"
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -78859,6 +80832,30 @@
             "type": "string",
             "nullable": true
           },
+          "ldap_cxn_pool": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              },
+              "idle_timeout": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 86400
+              },
+              "max_pool_size": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2000
+              },
+              "document_cache_size": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2147483647
+              }
+            }
+          },
           "communication_kind": {
             "type": "string",
             "enum": [
@@ -78895,6 +80892,12 @@
                   "$ref": "#/components/schemas/SubscriberEvent"
                 }
               }
+            }
+          },
+          "service_supported_features": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
           },
           "metadata": {
@@ -79797,6 +81800,91 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Job"
+            }
+          }
+        }
+      },
+      "JwkSet": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "jwk_set"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "keys": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JWKDefinition"
+            }
+          },
+          "user_registry_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "JwkSetList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JwkSet"
             }
           }
         }
@@ -81669,8 +83757,15 @@
               "format": "uri"
             }
           },
+          "tier_url": {
+            "type": "string",
+            "format": "uri"
+          },
           "owner": {
             "$ref": "#/components/schemas/User"
+          },
+          "tier": {
+            "$ref": "#/components/schemas/Tier"
           },
           "metadata": {
             "type": "object",
@@ -82195,6 +84290,12 @@
               "internal_svc"
             ]
           },
+          "service_supported_features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -82306,14 +84407,36 @@
           },
           "ids_in_gateway_payload": {
             "type": "array",
+            "readOnly": true,
             "items": {
-              "type": "string"
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "resourceUrl": {
+                  "type": "string",
+                  "format": "uri-reference"
+                },
+                "resourceType": {
+                  "type": "string"
+                }
+              }
             }
           },
           "ids_in_consumer_payload": {
             "type": "array",
+            "readOnly": true,
             "items": {
-              "type": "string"
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "resourceUrl": {
+                  "type": "string",
+                  "format": "uri-reference"
+                },
+                "resourceType": {
+                  "type": "string"
+                }
+              }
             }
           },
           "metadata": {
@@ -82646,6 +84769,34 @@
               "type": "string"
             }
           },
+          "service_status": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "service_url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "sent_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "processed_at": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -82856,6 +85007,10 @@
             "maximum": 2147483647,
             "nullable": true
           },
+          "third_party_id_token": {
+            "type": "string",
+            "nullable": true
+          },
           "ttl": {
             "type": "integer",
             "minimum": 0,
@@ -82999,6 +85154,21 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Registration"
+            }
+          }
+        }
+      },
+      "ResourceServiceStatusList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResourceServiceStatus"
             }
           }
         }
@@ -83632,6 +85802,23 @@
           "consumer_payload": {
             "type": "object"
           },
+          "ids_in_payload": {
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "resourceUrl": {
+                  "type": "string",
+                  "format": "uri-reference"
+                },
+                "resourceType": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -83847,6 +86034,9 @@
           "email_sender": {
             "$ref": "#/components/schemas/EmailSender"
           },
+          "subscription_task_approval_retention": {
+            "type": "integer"
+          },
           "org_url": {
             "type": "string",
             "format": "uri"
@@ -83960,8 +86150,19 @@
           },
           "ids_in_payload": {
             "type": "array",
+            "readOnly": true,
             "items": {
-              "type": "string"
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "resourceUrl": {
+                  "type": "string",
+                  "format": "uri-reference"
+                },
+                "resourceType": {
+                  "type": "string"
+                }
+              }
             }
           },
           "metadata": {
@@ -84386,6 +86587,177 @@
           }
         }
       },
+      "TaskHistory": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "task_history"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "scope": {
+            "type": "string"
+          },
+          "task_type": {
+            "type": "string",
+            "enum": [
+              "subscription"
+            ]
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "approved",
+              "rejected",
+              "cancelled"
+            ]
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "original_name": {
+            "type": "string"
+          },
+          "originator": {
+            "type": "string"
+          },
+          "originator_username": {
+            "type": "string"
+          },
+          "originator_name": {
+            "type": "string"
+          },
+          "resolver_username": {
+            "type": "string"
+          },
+          "comments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "properties": {
+            "type": "object",
+            "additionalProperties": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "activity": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "product_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "app_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "subscription_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "org_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "catalog_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "space_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "TaskHistoryList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TaskHistory"
+            }
+          }
+        }
+      },
       "TaskQueue": {
         "type": "object",
         "additionalProperties": false,
@@ -84507,6 +86879,145 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/TaskQueue"
+            }
+          }
+        }
+      },
+      "Tier": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "tier"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "feature_flags": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "product_lifecycle_approvals": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "onboarding_approvals": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "catalog_spaces": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "email_customization": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "app_lifecycle": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "invitation_timeouts": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "api_type_soap": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "api_type_asyncapi": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "monetization": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "ai_assistant": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "api_governance": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "api_discovery": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              },
+              "portal": {
+                "$ref": "#/components/schemas/FeatureFlag"
+              }
+            }
+          },
+          "feature_limits": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "max_catalogs": {
+                "$ref": "#/components/schemas/FeatureLimit"
+              },
+              "max_user_registries": {
+                "$ref": "#/components/schemas/FeatureLimit"
+              },
+              "max_api_discovery_data_sources": {
+                "$ref": "#/components/schemas/FeatureLimit"
+              }
+            }
+          },
+          "org_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "TierList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Tier"
             }
           }
         }
@@ -85186,6 +87697,12 @@
           "salt": {
             "type": "string"
           },
+          "encrypted_data": {
+            "type": "string"
+          },
+          "encrypted_data_hash": {
+            "type": "string"
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -85321,6 +87838,14 @@
           },
           "owned": {
             "type": "boolean"
+          },
+          "data_import_keyset_url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          },
+          "data_export_key": {
+            "$ref": "#/components/schemas/PublicKeyJwk"
           },
           "configured_catalog_user_registry_urls": {
             "type": "array",
@@ -85677,7 +88202,9 @@
                 "global_policy_error",
                 "product_migrate_subscriptions",
                 "execute_migration_target",
-                "event_config_logs"
+                "event_config_logs",
+                "feedback_2",
+                "ldap_cxn_pool"
               ]
             }
           },
@@ -86415,12 +88942,6 @@
           "kid": {
             "type": "string"
           },
-          "e": {
-            "type": "string"
-          },
-          "n": {
-            "type": "string"
-          },
           "x5c": {
             "type": "array",
             "items": {
@@ -86440,6 +88961,30 @@
             "type": "string"
           },
           "purpose": {
+            "type": "string"
+          },
+          "e": {
+            "type": "string"
+          },
+          "n": {
+            "type": "string"
+          },
+          "d": {
+            "type": "string"
+          },
+          "p": {
+            "type": "string"
+          },
+          "q": {
+            "type": "string"
+          },
+          "dp": {
+            "type": "string"
+          },
+          "dq": {
+            "type": "string"
+          },
+          "qi": {
             "type": "string"
           }
         }
@@ -86548,6 +89093,12 @@
             "type": "integer",
             "minimum": 0,
             "maximum": 2147483647
+          },
+          "proxied_id_token": {
+            "type": "string"
+          },
+          "proxied_access_token": {
+            "type": "string"
           }
         }
       },
@@ -88841,6 +91392,16 @@
         "properties": {
           "event_id": {
             "type": "string"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "fail",
+              "success"
+            ]
+          },
+          "message": {
+            "type": "string"
           }
         }
       },
@@ -88913,6 +91474,9 @@
               }
             }
           },
+          "first_failed_event": {
+            "$ref": "#/components/schemas/SubscriberEventStatus"
+          },
           "number_of_outstanding_sent_events": {
             "type": "integer",
             "minimum": 0,
@@ -88939,6 +91503,30 @@
             "type": "integer",
             "minimum": 0,
             "maximum": 2147483647
+          }
+        }
+      },
+      "SubscriberEventStatus": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "event_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "filter": {
+            "type": "string"
+          },
+          "generated_at": {
+            "type": "string"
+          },
+          "processed_at": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
           }
         }
       },
@@ -88985,6 +91573,7 @@
       },
       "PublicKeyJwk": {
         "type": "object",
+        "nullable": true,
         "additionalProperties": false,
         "properties": {
           "kty": {
@@ -89149,6 +91738,66 @@
             }
           }
         }
+      },
+      "FeatureFlag": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          }
+        }
+      },
+      "FeatureLimit": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "limit": {
+            "type": "integer"
+          }
+        }
+      },
+      "ResourceServiceStatus": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "webhook_url": {
+            "type": "string"
+          },
+          "service_url": {
+            "type": "string"
+          },
+          "subscriber_event_url": {
+            "type": "string"
+          },
+          "filter": {
+            "type": "string"
+          },
+          "request_id": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "sent_at": {
+            "type": "string"
+          },
+          "processed_at": {
+            "type": "string"
+          }
+        }
       }
     },
     "responses": {
@@ -89180,7 +91829,7 @@
               "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
               "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
-              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id",
+              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id, List the Task History objects, Get the Task History object by name or id",
               "child:create": "Create a Catalog object, Create a Space object",
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
@@ -89190,8 +91839,8 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
@@ -89211,7 +91860,7 @@
               "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
               "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
-              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id",
+              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id, List the Task History objects, Get the Task History object by name or id",
               "child:create": "Create a Catalog object, Create a Space object",
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
@@ -89221,8 +91870,8 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
@@ -89241,7 +91890,7 @@
               "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
               "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
-              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id",
+              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id, List the Task History objects, Get the Task History object by name or id",
               "child:create": "Create a Catalog object, Create a Space object",
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
@@ -89251,8 +91900,8 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
@@ -89273,7 +91922,7 @@
               "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
               "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
-              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id",
+              "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id, List the Task History objects, Get the Task History object by name or id",
               "child:create": "Create a Catalog object, Create a Space object",
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
@@ -89283,8 +91932,8 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
@@ -91968,6 +94617,40 @@
         ]
       }
     },
+    "/settings/consumer-catalog-enabled": {
+      "get": {
+        "summary": "Return true or false based on if consumer catalog is enabled or not",
+        "description": "Return true or false based on if consumer catalog is enabled or not.",
+        "operationId": "setting_consumerCatalogEnabled",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsumerCatalogEnabled"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsumerCatalogEnabled"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Settings",
+          "Resource: Setting"
+        ]
+      }
+    },
     "/public-products": {
       "description": "Product operations across all collections",
       "get": {
@@ -92630,6 +95313,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_url"
           }
         ],
         "responses": {
@@ -92688,6 +95374,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_url"
           }
         ],
         "responses": {
@@ -92740,6 +95429,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_url"
           }
         ],
         "responses": {
@@ -92795,6 +95487,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_url"
           }
         ],
         "responses": {
@@ -92841,6 +95536,11 @@
             "oauth": [
               "published-product:view"
             ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/consumer_org_url"
           }
         ],
         "responses": {
@@ -92890,6 +95590,11 @@
             "oauth": [
               "published-product:view"
             ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/consumer_org_url"
           }
         ],
         "responses": {
@@ -92946,6 +95651,9 @@
           },
           {
             "$ref": "#/components/parameters/api_type"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_url"
           }
         ],
         "responses": {
@@ -93004,6 +95712,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_url"
           }
         ],
         "responses": {
@@ -93056,6 +95767,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_url"
           }
         ],
         "responses": {
@@ -93111,6 +95825,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_url"
           }
         ],
         "responses": {
@@ -93157,6 +95874,11 @@
             "oauth": [
               "published-product:view"
             ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/consumer_org_url"
           }
         ],
         "responses": {
@@ -93206,6 +95928,11 @@
             "oauth": [
               "published-product:view"
             ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/consumer_org_url"
           }
         ],
         "responses": {
@@ -95085,6 +97812,15 @@
         "name": "confirm",
         "in": "query",
         "description": "confirm clear",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "consumer_org_url": {
+        "name": "consumer_org_url",
+        "in": "query",
+        "description": "Consumer Org Url",
         "required": false,
         "schema": {
           "type": "string"
@@ -98119,6 +100855,12 @@
             "type": "integer",
             "minimum": 0,
             "maximum": 2147483647
+          },
+          "proxied_id_token": {
+            "type": "string"
+          },
+          "proxied_access_token": {
+            "type": "string"
           }
         }
       },
@@ -98177,6 +100919,15 @@
       "Wsdl": {
         "type": "object",
         "additionalProperties": true
+      },
+      "ConsumerCatalogEnabled": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "consumer_catalog_enabled": {
+            "type": "boolean"
+          }
+        }
       }
     },
     "responses": {
@@ -98266,8 +101017,8 @@
         }
       ],
       "get": {
-        "summary": "List events at cloud scope.",
-        "description": "Returns a result set of analytics API events scoped to the cloud. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields Note this operation is limited to only being able to return 10,000 events, if you need more than that then use the scroll operation.\n",
+        "summary": "List events at cloud scope",
+        "description": "Returns a result set of analytics API events scoped to the cloud. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=SSMNED_10.0.8/com.ibm.apic.apionprem.doc/rapim_analytics_apieventrecordfields.htm Note this operation is limited to only being able to return 10,000 events, if you need more than that then use the scroll operation.\n",
         "operationId": "events_cloudList",
         "security": [
           {
@@ -98277,6 +101028,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -98378,6 +101144,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -98495,7 +101264,7 @@
         }
       ],
       "post": {
-        "summary": "Scroll through results in batches.",
+        "summary": "Scroll through results in batches",
         "description": "Returns an initial batch of results following the requested size or a default of 1000 as well as a 'scroll_id'. Pass this scroll ID to the next scroll operation to get back the next batch of results. Typically, the scroll ID does not change between requests, but it can change, so make sure to always use the latest scroll ID.\n",
         "operationId": "events_cloudScroll",
         "security": [
@@ -98506,6 +101275,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -98732,7 +101516,7 @@
         }
       ],
       "post": {
-        "summary": "Clears the scroll search context.",
+        "summary": "Clears the scroll search context",
         "description": "Clears the scroll search context and results for a scrolling search. Should be used when the scroll context is not needed since otherwise it will stay open until it times out.\n",
         "operationId": "events_cloudScrollDelete",
         "security": [
@@ -98790,8 +101574,8 @@
         }
       ],
       "get": {
-        "summary": "Get specific event at cloud scope.",
-        "description": "Return a single analytics API event by ID scoped to the cloud. The item in the result set is determined by the passed in request query to this API. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields\n",
+        "summary": "Get specific event at cloud scope",
+        "description": "Return a single analytics API event by ID scoped to the cloud. The item in the result set is determined by the passed in request query to this API. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=SSMNED_10.0.8/com.ibm.apic.apionprem.doc/rapim_analytics_apieventrecordfields.htm\n",
         "operationId": "events_cloudGet",
         "security": [
           {
@@ -98828,7 +101612,7 @@
         }
       ],
       "get": {
-        "summary": "Count events at cloud scope.",
+        "summary": "Count events at cloud scope",
         "description": "Return the count of analytics API events scoped to the cloud that match the passed in request query.\n",
         "operationId": "events_cloudCount",
         "security": [
@@ -98839,6 +101623,18 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -99051,8 +101847,8 @@
         }
       ],
       "get": {
-        "summary": "List events at provider organization scope.",
-        "description": "Return a result set of analytics API events scoped to the provider organization. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields Note this operation is limited to only being able to return 10,000 events, if you need more than that then use the scroll operation.\n",
+        "summary": "List events at provider organization scope",
+        "description": "Return a result set of analytics API events scoped to the provider organization. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=SSMNED_10.0.8/com.ibm.apic.apionprem.doc/rapim_analytics_apieventrecordfields.htm Note this operation is limited to only being able to return 10,000 events, if you need more than that then use the scroll operation.\n",
         "operationId": "events_orgList",
         "security": [
           {
@@ -99062,6 +101858,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -99163,6 +101974,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -99277,7 +102091,7 @@
         }
       ],
       "post": {
-        "summary": "Scroll through results in batches.",
+        "summary": "Scroll through results in batches",
         "description": "Returns an initial batch of results following the requested size or a default of 1000 as well as a 'scroll_id'. Pass this scroll ID to the next scroll operation to get back the next batch of results. Typically, the scroll ID does not change between requests, but it can change, so make sure to always use the latest scroll ID.\n",
         "operationId": "events_orgScroll",
         "security": [
@@ -99288,6 +102102,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -99511,7 +102340,7 @@
         }
       ],
       "post": {
-        "summary": "Clears the scroll search context.",
+        "summary": "Clears the scroll search context",
         "description": "Clears the scroll search context and results for a scrolling search. Should be used when the scroll context is not needed since otherwise it will stay open until it times out.\n",
         "operationId": "events_orgScrollDelete",
         "security": [
@@ -99572,8 +102401,8 @@
         }
       ],
       "get": {
-        "summary": "Get specific event at provider organization scope.\n",
-        "description": "Return a single analytics API event by ID scoped to the provider organization. The item in the result set is determined by the passed in request query to this API. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields\n",
+        "summary": "Get specific event at provider organization scope\n",
+        "description": "Return a single analytics API event by ID scoped to the provider organization. The item in the result set is determined by the passed in request query to this API. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=SSMNED_10.0.8/com.ibm.apic.apionprem.doc/rapim_analytics_apieventrecordfields.htm\n",
         "operationId": "events_orgGet",
         "security": [
           {
@@ -99613,7 +102442,7 @@
         }
       ],
       "get": {
-        "summary": "Count events at provider organization scope.",
+        "summary": "Count events at provider organization scope",
         "description": "Return the count of analytics API events scoped to the provider organization that match the passed in request query.\n",
         "operationId": "events_orgCount",
         "security": [
@@ -99624,6 +102453,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -99833,8 +102677,8 @@
         }
       ],
       "get": {
-        "summary": "List events at catalog scope.\n",
-        "description": "Return a result set of analytics API events scoped to the catalog. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields Note this operation is limited to only being able to return 10,000 events, if you need more than that then use the scroll operation at cloud or organization scope.\n",
+        "summary": "List events at catalog scope\n",
+        "description": "Return a result set of analytics API events scoped to the catalog. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=SSMNED_10.0.8/com.ibm.apic.apionprem.doc/rapim_analytics_apieventrecordfields.htm Note this operation is limited to only being able to return 10,000 events, if you need more than that then use the scroll operation at cloud or organization scope.\n",
         "operationId": "events_catalogList",
         "security": [
           {
@@ -99844,6 +102688,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -99939,6 +102798,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -100062,8 +102924,8 @@
         }
       ],
       "get": {
-        "summary": "Get specific event at catalog scope.",
-        "description": "Return a single analytics API event by ID scoped to the catalog. The item in the result set is determined by the passed in request query to this API. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields\n",
+        "summary": "Get specific event at catalog scope",
+        "description": "Return a single analytics API event by ID scoped to the catalog. The item in the result set is determined by the passed in request query to this API. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=SSMNED_10.0.8/com.ibm.apic.apionprem.doc/rapim_analytics_apieventrecordfields.htm\n",
         "operationId": "events_catalogGet",
         "security": [
           {
@@ -100106,7 +102968,7 @@
         }
       ],
       "get": {
-        "summary": "Count events at catalog scope.",
+        "summary": "Count events at catalog scope",
         "description": "Return the count of analytics API events scoped to the catalog that match the passed in request query.\n",
         "operationId": "events_catalogCount",
         "security": [
@@ -100117,6 +102979,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -100323,8 +103200,8 @@
         }
       ],
       "get": {
-        "summary": "List events at space scope.",
-        "description": "Return a result set of analytics API events scoped to the space. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields Note this operation is limited to only being able to return 10,000 events, if you need more than that then use the scroll operation at cloud or organization scope.\n",
+        "summary": "List events at space scope",
+        "description": "Return a result set of analytics API events scoped to the space. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=SSMNED_10.0.8/com.ibm.apic.apionprem.doc/rapim_analytics_apieventrecordfields.htm Note this operation is limited to only being able to return 10,000 events, if you need more than that then use the scroll operation at cloud or organization scope.\n",
         "operationId": "events_spaceList",
         "security": [
           {
@@ -100334,6 +103211,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -100429,6 +103321,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -100549,8 +103444,8 @@
         }
       ],
       "get": {
-        "summary": "Get specific event at space scope.",
-        "description": "Return a single analytics API event by ID scoped to the space. The item in the result set is determined by the passed in request query to this API. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=data-api-event-record-fields\n",
+        "summary": "Get specific event at space scope",
+        "description": "Return a single analytics API event by ID scoped to the space. The item in the result set is determined by the passed in request query to this API. In this API, references to 'field' refer to the analytics API event fields documented here: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=SSMNED_10.0.8/com.ibm.apic.apionprem.doc/rapim_analytics_apieventrecordfields.htm\n",
         "operationId": "events_spaceGet",
         "security": [
           {
@@ -100596,7 +103491,7 @@
         }
       ],
       "get": {
-        "summary": "Count events at space scope.",
+        "summary": "Count events at space scope",
         "description": "Return a count of analytics API events scoped to the space.\n",
         "operationId": "events_spaceCount",
         "security": [
@@ -100607,6 +103502,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -100798,7 +103708,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Timeline chart in discover view at cloud scope.",
+        "summary": "Get the data needed to populate the Timeline chart in discover view at cloud scope",
         "description": "Return the data needed to populate the Timeline chart in discover view at cloud scope.\n",
         "operationId": "events_cloudTimeline",
         "security": [
@@ -100809,6 +103719,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -100910,6 +103835,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/log_policy_optional"
@@ -101024,7 +103952,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Timeline chart in discover view at org scope.\n",
+        "summary": "Get the data needed to populate the Timeline chart in discover view at org scope\n",
         "description": "Return the data needed to populate the Timeline chart in discover view at org scope.\n",
         "operationId": "events_orgTimeline",
         "security": [
@@ -101035,6 +103963,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -101136,6 +104079,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/log_policy_optional"
@@ -101247,7 +104193,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Timeline chart in discover view at catalog scope.",
+        "summary": "Get the data needed to populate the Timeline chart in discover view at catalog scope",
         "description": "Return the data needed to populate the Timeline chart in discover view at catalog scope.\n",
         "operationId": "events_catalogTimeline",
         "security": [
@@ -101258,6 +104204,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -101353,6 +104314,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/log_policy_optional"
@@ -101467,7 +104431,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Timeline chart in discover view at space scope.",
+        "summary": "Get the data needed to populate the Timeline chart in discover view at space scope",
         "description": "Return the data needed to populate the Timeline chart in discover view at space scope.\n",
         "operationId": "events_spaceTimeline",
         "security": [
@@ -101478,6 +104442,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -101573,6 +104552,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/log_policy_optional"
@@ -101672,7 +104654,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the API dashboard at cloud scope.\n",
+        "summary": "Get the data needed to populate the API dashboard at cloud scope\n",
         "description": "Return the data needed to populate the API dashboard at cloud scope.\n",
         "operationId": "dashboards_cloudApi",
         "security": [
@@ -101683,6 +104665,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -101887,8 +104884,8 @@
         ]
       }
     },
-    "/{analytics-service}/cloud/dashboards/gateway": {
-      "description": "Return the data needed to populate the Gateway Operations dashboard at cloud scope.\n",
+    "/{analytics-service}/cloud/dashboards/application": {
+      "description": "Return the data needed to populate the Application dashboard at cloud scope.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -101898,9 +104895,9 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Gateway Operations dashboard at cloud scope.\n",
-        "description": "Return the data needed to populate the Gateway Operations dashboard at cloud scope.\n",
-        "operationId": "dashboards_cloudGateway",
+        "summary": "Get the data needed to populate the Application dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Application dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudApplication",
         "security": [
           {
             "oauth": [
@@ -101909,6 +104906,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -102010,6 +105022,491 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApplicationDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/consumer": {
+      "description": "Return the data needed to populate the Consumer dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Consumer dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Consumer dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudConsumer",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/gateway": {
+      "description": "Return the data needed to populate the Gateway Operations dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Gateway Operations dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Gateway Operations dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudGateway",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/log_policy_optional"
@@ -102121,7 +105618,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Latency dashboard at cloud scope.\n",
+        "summary": "Get the data needed to populate the Latency dashboard at cloud scope\n",
         "description": "Return the data needed to populate the Latency dashboard at cloud scope.\n",
         "operationId": "dashboards_cloudLatency",
         "security": [
@@ -102132,6 +105629,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -102233,6 +105745,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/log_policy_optional"
@@ -102333,8 +105848,8 @@
         ]
       }
     },
-    "/{analytics-service}/cloud/dashboards/product": {
-      "description": "Return the data needed to populate the Product dashboard at cloud scope.\n",
+    "/{analytics-service}/cloud/dashboards/client": {
+      "description": "Return the data needed to populate the Client dashboard at cloud scope.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -102344,9 +105859,9 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Product dashboard at cloud scope.\n",
-        "description": "Return the data needed to populate the Product dashboard at cloud scope.\n",
-        "operationId": "dashboards_cloudProduct",
+        "summary": "Get the data needed to populate the Client dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Client dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudClient",
         "security": [
           {
             "oauth": [
@@ -102355,6 +105870,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -102456,6 +105986,250 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClientDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/product": {
+      "description": "Return the data needed to populate the Product dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Product dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Product dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudProduct",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/log_policy_optional"
@@ -102567,7 +106341,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Status dashboard at cloud scope.\n",
+        "summary": "Get the data needed to populate the Status dashboard at cloud scope\n",
         "description": "Return the data needed to populate the Status dashboard at cloud scope.\n",
         "operationId": "dashboards_cloudStatus",
         "security": [
@@ -102578,6 +106352,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -102679,6 +106468,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/log_policy_optional"
@@ -102779,8 +106571,8 @@
         ]
       }
     },
-    "/{analytics-service}/cloud/dashboards/usage": {
-      "description": "Return the data needed to populate the Usage dashboard at cloud scope.\n",
+    "/{analytics-service}/cloud/dashboards/summary": {
+      "description": "Return the data needed to populate the SUMMARY dashboard at cloud scope.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -102790,9 +106582,9 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Usage dashboard at cloud scope.\n",
-        "description": "Return the data needed to populate the Usage dashboard at cloud scope.\n",
-        "operationId": "dashboards_cloudUsage",
+        "summary": "Get the data needed to populate the SUMMARY dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the SUMMARY dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudSummary",
         "security": [
           {
             "oauth": [
@@ -102801,6 +106593,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -102904,6 +106711,9 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
             "$ref": "#/components/parameters/log_policy_optional"
           },
           {
@@ -102987,7 +106797,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/UsageDashboardResponse"
+            "$ref": "#/components/responses/SummaryDashboardResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -103013,7 +106823,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Consumption dashboard at cloud scope.\n",
+        "summary": "Get the data needed to populate the Consumption dashboard at cloud scope\n",
         "description": "Return the data needed to populate the Consumption dashboard at cloud scope.\n",
         "operationId": "dashboards_cloudConsumption",
         "security": [
@@ -103024,6 +106834,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -103131,6 +106956,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -103248,7 +107076,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Data dashboard at cloud scope.\n",
+        "summary": "Get the data needed to populate the Data dashboard at cloud scope\n",
         "description": "Return the data needed to populate the Data dashboard at cloud scope.\n",
         "operationId": "dashboards_cloudData",
         "security": [
@@ -103259,6 +107087,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -103362,6 +107205,9 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
             "$ref": "#/components/parameters/log_policy_optional"
           },
           {
@@ -103460,6 +107306,259 @@
         ]
       }
     },
+    "/{analytics-service}/cloud/dashboards/ai": {
+      "description": "Return the data needed to populate the AI dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the AI dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the AI dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudAi",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AiDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
     "/{analytics-service}/orgs/{org}/dashboards/api": {
       "description": "Return the data needed to populate the API dashboard at provider organization scope.\n",
       "parameters": [
@@ -103474,7 +107573,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the API dashboard at provider organization scope.\n",
+        "summary": "Get the data needed to populate the API dashboard at provider organization scope\n",
         "description": "Return the data needed to populate the API dashboard at provider organization scope.\n",
         "operationId": "dashboards_orgApi",
         "security": [
@@ -103485,6 +107584,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -103683,8 +107797,8 @@
         ]
       }
     },
-    "/{analytics-service}/orgs/{org}/dashboards/gateway": {
-      "description": "Return the data needed to populate the Gateway Operations dashboard at provider organization scope.\n",
+    "/{analytics-service}/orgs/{org}/dashboards/application": {
+      "description": "Return the data needed to populate the Application dashboard at provider organization scope.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -103697,9 +107811,9 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Gateway Operations dashboard at provider organization scope.\n",
-        "description": "Return the data needed to populate the Gateway Operations dashboard at provider organization scope.\n",
-        "operationId": "dashboards_orgGateway",
+        "summary": "Get the data needed to populate the Application dashboard at provider organization scope\n",
+        "description": "Return the data needed to populate the Application dashboard at provider organization scope.\n",
+        "operationId": "dashboards_orgApplication",
         "security": [
           {
             "oauth": [
@@ -103708,6 +107822,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -103809,6 +107938,485 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApplicationDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/consumer": {
+      "description": "Return the data needed to populate the Consumer dashboard at provider organization scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Consumer dashboard at provider organization scope\n",
+        "description": "Return the data needed to populate the Consumer dashboard at provider organization scope.\n",
+        "operationId": "dashboards_orgConsumer",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/gateway": {
+      "description": "Return the data needed to populate the Gateway Operations dashboard at provider organization scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Gateway Operations dashboard at provider organization scope\n",
+        "description": "Return the data needed to populate the Gateway Operations dashboard at provider organization scope.\n",
+        "operationId": "dashboards_orgGateway",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/log_policy_optional"
@@ -103917,7 +108525,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Latency dashboard at provider organization scope.\n",
+        "summary": "Get the data needed to populate the Latency dashboard at provider organization scope\n",
         "description": "Return the data needed to populate the Latency dashboard at provider organization scope.\n",
         "operationId": "dashboards_orgLatency",
         "security": [
@@ -103928,6 +108536,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -104029,6 +108652,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/log_policy_optional"
@@ -104123,8 +108749,8 @@
         ]
       }
     },
-    "/{analytics-service}/orgs/{org}/dashboards/product": {
-      "description": "Return the data needed to populate the Product dashboard at provider organization scope.\n",
+    "/{analytics-service}/orgs/{org}/dashboards/client": {
+      "description": "Return the data needed to populate the Client dashboard at provider organization scope.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -104137,9 +108763,9 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Product dashboard at provider organization scope.\n",
-        "description": "Return the data needed to populate the Product dashboard at provider organization scope.\n",
-        "operationId": "dashboards_orgProduct",
+        "summary": "Get the data needed to populate the Client dashboard at provider organization scope\n",
+        "description": "Return the data needed to populate the Client dashboard at provider organization scope.\n",
+        "operationId": "dashboards_orgClient",
         "security": [
           {
             "oauth": [
@@ -104148,6 +108774,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -104249,6 +108890,247 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClientDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/product": {
+      "description": "Return the data needed to populate the Product dashboard at provider organization scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Product dashboard at provider organization scope\n",
+        "description": "Return the data needed to populate the Product dashboard at provider organization scope.\n",
+        "operationId": "dashboards_orgProduct",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/log_policy_optional"
@@ -104357,7 +109239,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Status dashboard at provider organization scope.\n",
+        "summary": "Get the data needed to populate the Status dashboard at provider organization scope\n",
         "description": "Return the data needed to populate the Status dashboard at provider organization scope.\n",
         "operationId": "dashboards_orgStatus",
         "security": [
@@ -104368,6 +109250,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -104469,6 +109366,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/log_policy_optional"
@@ -104563,8 +109463,8 @@
         ]
       }
     },
-    "/{analytics-service}/orgs/{org}/dashboards/usage": {
-      "description": "Return the data needed to populate the Usage dashboard at provider organization scope.\n",
+    "/{analytics-service}/orgs/{org}/dashboards/summary": {
+      "description": "Return the data needed to populate the SUMMARY dashboard at provider organization scope.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -104577,9 +109477,9 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Usage dashboard at provider organization scope.\n",
-        "description": "Return the data needed to populate the Usage dashboard at provider organization scope.\n",
-        "operationId": "dashboards_orgUsage",
+        "summary": "Get the data needed to populate the SUMMARY dashboard at provider organization scope\n",
+        "description": "Return the data needed to populate the SUMMARY dashboard at provider organization scope.\n",
+        "operationId": "dashboards_orgSummary",
         "security": [
           {
             "oauth": [
@@ -104588,6 +109488,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -104691,6 +109606,9 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
             "$ref": "#/components/parameters/log_policy_optional"
           },
           {
@@ -104768,7 +109686,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/UsageDashboardResponse"
+            "$ref": "#/components/responses/SummaryDashboardResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -104797,7 +109715,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Consumption dashboard at provider organization scope.\n",
+        "summary": "Get the data needed to populate the Consumption dashboard at provider organization scope\n",
         "description": "Return the data needed to populate the Consumption dashboard at provider organization scope.\n",
         "operationId": "dashboards_orgConsumption",
         "security": [
@@ -104808,6 +109726,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -104915,6 +109848,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -105029,7 +109965,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Data dashboard at provider organization scope.\n",
+        "summary": "Get the data needed to populate the Data dashboard at provider organization scope\n",
         "description": "Return the data needed to populate the Data dashboard at provider organization scope.\n",
         "operationId": "dashboards_orgData",
         "security": [
@@ -105040,6 +109976,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -105143,6 +110094,9 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
             "$ref": "#/components/parameters/log_policy_optional"
           },
           {
@@ -105235,6 +110189,256 @@
         ]
       }
     },
+    "/{analytics-service}/orgs/{org}/dashboards/ai": {
+      "description": "Return the data needed to populate the AI dashboard at provider organization scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the AI dashboard at provider organization scope\n",
+        "description": "Return the data needed to populate the AI dashboard at provider organization scope.\n",
+        "operationId": "dashboards_orgAi",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AiDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
     "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/api": {
       "description": "Return the data needed to populate the API dashboard at catalog scope.\n",
       "parameters": [
@@ -105252,7 +110456,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the API dashboard at catalog scope.\n",
+        "summary": "Get the data needed to populate the API dashboard at catalog scope\n",
         "description": "Return the data needed to populate the API dashboard at catalog scope.\n",
         "operationId": "dashboards_catalogApi",
         "security": [
@@ -105263,6 +110467,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -105455,8 +110674,8 @@
         ]
       }
     },
-    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/gateway": {
-      "description": "Return the data needed to populate the Gateway Operations dashboard at catalog scope.\n",
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/application": {
+      "description": "Return the data needed to populate the Application dashboard at catalog scope.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -105472,9 +110691,9 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Gateway Operations dashboard at catalog scope.\n",
-        "description": "Return the data needed to populate the Gateway Operations dashboard at catalog scope.\n",
-        "operationId": "dashboards_catalogGateway",
+        "summary": "Get the data needed to populate the Application dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Application dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogApplication",
         "security": [
           {
             "oauth": [
@@ -105483,6 +110702,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -105578,6 +110812,479 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApplicationDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/consumer": {
+      "description": "Return the data needed to populate the Consumer dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Consumer dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Consumer dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogConsumer",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/gateway": {
+      "description": "Return the data needed to populate the Gateway Operations dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Gateway Operations dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Gateway Operations dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogGateway",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/log_policy_optional"
@@ -105689,7 +111396,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Latency dashboard at catalog scope.\n",
+        "summary": "Get the data needed to populate the Latency dashboard at catalog scope\n",
         "description": "Return the data needed to populate the Latency dashboard at catalog scope.\n",
         "operationId": "dashboards_catalogLatency",
         "security": [
@@ -105700,6 +111407,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -105795,6 +111517,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/log_policy_optional"
@@ -105889,8 +111614,8 @@
         ]
       }
     },
-    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/product": {
-      "description": "Return the data needed to populate the Product dashboard at catalog scope.\n",
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/client": {
+      "description": "Return the data needed to populate the Client dashboard at catalog scope.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -105906,9 +111631,9 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Product dashboard at catalog scope.\n",
-        "description": "Return the data needed to populate the Product dashboard at catalog scope.\n",
-        "operationId": "dashboards_catalogProduct",
+        "summary": "Get the data needed to populate the Client dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Client dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogClient",
         "security": [
           {
             "oauth": [
@@ -105917,6 +111642,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -106012,6 +111752,244 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClientDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/product": {
+      "description": "Return the data needed to populate the Product dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Product dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Product dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogProduct",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/log_policy_optional"
@@ -106123,7 +112101,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Status dashboard at catalog scope.\n",
+        "summary": "Get the data needed to populate the Status dashboard at catalog scope\n",
         "description": "Return the data needed to populate the Status dashboard at catalog scope.\n",
         "operationId": "dashboards_catalogStatus",
         "security": [
@@ -106134,6 +112112,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -106229,6 +112222,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/log_policy_optional"
@@ -106323,8 +112319,8 @@
         ]
       }
     },
-    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/usage": {
-      "description": "Return the data needed to populate the Usage dashboard at catalog scope.\n",
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/summary": {
+      "description": "Return the data needed to populate the SUMMARY dashboard at catalog scope\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -106340,9 +112336,9 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Usage dashboard at catalog scope.\n",
-        "description": "Return the data needed to populate the Usage dashboard at catalog scope.\n",
-        "operationId": "dashboards_catalogUsage",
+        "summary": "Get the data needed to populate the SUMMARY dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the SUMMARY dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogSummary",
         "security": [
           {
             "oauth": [
@@ -106351,6 +112347,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -106448,6 +112459,9 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
             "$ref": "#/components/parameters/log_policy_optional"
           },
           {
@@ -106525,7 +112539,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/UsageDashboardResponse"
+            "$ref": "#/components/responses/SummaryDashboardResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -106557,7 +112571,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Consumption dashboard at catalog scope.\n",
+        "summary": "Get the data needed to populate the Consumption dashboard at catalog scope\n",
         "description": "Return the data needed to populate the Consumption dashboard at catalog scope.\n",
         "operationId": "dashboards_catalogConsumption",
         "security": [
@@ -106568,6 +112582,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -106669,6 +112698,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -106786,7 +112818,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Data dashboard at catalog scope.\n",
+        "summary": "Get the data needed to populate the Data dashboard at catalog scope\n",
         "description": "Return the data needed to populate the Data dashboard at catalog scope.\n",
         "operationId": "dashboards_catalogData",
         "security": [
@@ -106797,6 +112829,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -106894,6 +112941,9 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
             "$ref": "#/components/parameters/log_policy_optional"
           },
           {
@@ -106986,6 +113036,253 @@
         ]
       }
     },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/ai": {
+      "description": "Return the data needed to populate the AI dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the AI dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the AI dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogAi",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AiDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
     "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/api": {
       "description": "Return the data needed to populate the API dashboard at space scope.\n",
       "parameters": [
@@ -107006,7 +113303,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the API dashboard at space scope.\n",
+        "summary": "Get the data needed to populate the API dashboard at space scope\n",
         "description": "Return the data needed to populate the API dashboard at space scope.\n",
         "operationId": "dashboards_spaceApi",
         "security": [
@@ -107017,6 +113314,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -107203,8 +113515,8 @@
         ]
       }
     },
-    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/gateway": {
-      "description": "Return the data needed to populate the Gateway Operations dashboard at space scope.\n",
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/application": {
+      "description": "Return the data needed to populate the Application dashboard at space scope.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -107223,9 +113535,9 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Gateway Operations dashboard at space scope.\n",
-        "description": "Return the data needed to populate the Gateway Operations dashboard at space scope.\n",
-        "operationId": "dashboards_spaceGateway",
+        "summary": "Get the data needed to populate the Application dashboard at space scope\n",
+        "description": "Return the data needed to populate the Application dashboard at space scope.\n",
+        "operationId": "dashboards_spaceApplication",
         "security": [
           {
             "oauth": [
@@ -107234,6 +113546,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -107329,6 +113656,473 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApplicationDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/consumer": {
+      "description": "Return the data needed to populate the Consumer dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Consumer dashboard at space scope\n",
+        "description": "Return the data needed to populate the Consumer dashboard at space scope.\n",
+        "operationId": "dashboards_spaceConsumer",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/gateway": {
+      "description": "Return the data needed to populate the Gateway Operations dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Gateway Operations dashboard at space scope\n",
+        "description": "Return the data needed to populate the Gateway Operations dashboard at space scope.\n",
+        "operationId": "dashboards_spaceGateway",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/log_policy_optional"
@@ -107437,7 +114231,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Latency dashboard at space scope.\n",
+        "summary": "Get the data needed to populate the Latency dashboard at space scope\n",
         "description": "Return the data needed to populate the Latency dashboard at space scope.\n",
         "operationId": "dashboards_spaceLatency",
         "security": [
@@ -107448,6 +114242,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -107543,6 +114352,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/log_policy_optional"
@@ -107631,8 +114443,8 @@
         ]
       }
     },
-    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/product": {
-      "description": "Return the data needed to populate the Product dashboard at space scope.\n",
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/client": {
+      "description": "Return the data needed to populate the Client dashboard at space scope.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -107651,9 +114463,9 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Product dashboard at space scope.\n",
-        "description": "Return the data needed to populate the Product dashboard at space scope.\n",
-        "operationId": "dashboards_spaceProduct",
+        "summary": "Get the data needed to populate the Client dashboard at space scope\n",
+        "description": "Return the data needed to populate the Client dashboard at space scope.\n",
+        "operationId": "dashboards_spaceClient",
         "security": [
           {
             "oauth": [
@@ -107662,6 +114474,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -107757,6 +114584,241 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClientDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/product": {
+      "description": "Return the data needed to populate the Product dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Product dashboard at space scope\n",
+        "description": "Return the data needed to populate the Product dashboard at space scope.\n",
+        "operationId": "dashboards_spaceProduct",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/log_policy_optional"
@@ -107865,7 +114927,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Status dashboard at space scope.\n",
+        "summary": "Get the data needed to populate the Status dashboard at space scope\n",
         "description": "Return the data needed to populate the Status dashboard at space scope.\n",
         "operationId": "dashboards_spaceStatus",
         "security": [
@@ -107876,6 +114938,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -107971,6 +115048,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/log_policy_optional"
@@ -108059,8 +115139,8 @@
         ]
       }
     },
-    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/usage": {
-      "description": "Return the data needed to populate the Usage dashboard at space scope.\n",
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/summary": {
+      "description": "Return the data needed to populate the SUMMARY dashboard at space scope.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -108079,9 +115159,9 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Usage dashboard at space scope.\n",
-        "description": "Return the data needed to populate the Usage dashboard at space scope.\n",
-        "operationId": "dashboards_spaceUsage",
+        "summary": "Get the data needed to populate the SUMMARY dashboard at space scope\n",
+        "description": "Return the data needed to populate the SUMMARY dashboard at space scope.\n",
+        "operationId": "dashboards_spaceSummary",
         "security": [
           {
             "oauth": [
@@ -108090,6 +115170,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -108187,6 +115282,9 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
             "$ref": "#/components/parameters/log_policy_optional"
           },
           {
@@ -108258,7 +115356,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/UsageDashboardResponse"
+            "$ref": "#/components/responses/SummaryDashboardResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -108293,7 +115391,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Consumption dashboard at space scope.\n",
+        "summary": "Get the data needed to populate the Consumption dashboard at space scope\n",
         "description": "Return the data needed to populate the Consumption dashboard at space scope.\n",
         "operationId": "dashboards_spaceConsumption",
         "security": [
@@ -108304,6 +115402,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -108405,6 +115518,9 @@
           },
           {
             "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -108519,7 +115635,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Data dashboard at space scope.\n",
+        "summary": "Get the data needed to populate the Data dashboard at space scope\n",
         "description": "Return the data needed to populate the Data dashboard at space scope.\n",
         "operationId": "dashboards_spaceData",
         "security": [
@@ -108530,6 +115646,21 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
           {
             "$ref": "#/components/parameters/api_id_optional"
           },
@@ -108627,6 +115758,9 @@
             "$ref": "#/components/parameters/immediate_client_ip_optional"
           },
           {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
             "$ref": "#/components/parameters/log_policy_optional"
           },
           {
@@ -108713,6 +115847,250 @@
         ]
       }
     },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/ai": {
+      "description": "Return the data needed to populate the AI dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the AI dashboard at space scope\n",
+        "description": "Return the data needed to populate the AI dashboard at space scope.\n",
+        "operationId": "dashboards_spaceAi",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ai_cache_hit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_model_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_request_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_response_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_total_tokens_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_lifecycle_state_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/custom_data_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/endpoint_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/global_transaction_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_document_hash_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_error_count_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_operation_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_field_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_request_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/graphql_response_type_cost_optional"
+          },
+          {
+            "$ref": "#/components/parameters/http_user_agent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/immediate_client_ip_optional"
+          },
+          {
+            "$ref": "#/components/parameters/include_others_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/log_policy_optional"
+          },
+          {
+            "$ref": "#/components/parameters/method_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_optional"
+          },
+          {
+            "$ref": "#/components/parameters/path_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/query_string_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/request_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_body_optional"
+          },
+          {
+            "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/transaction_id_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AiDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
     "/{analytics-service}/cloud/filterparameters": {
       "description": "Return the list of filter parameters supported at cloud scope.\n",
       "parameters": [
@@ -108724,7 +116102,7 @@
         }
       ],
       "get": {
-        "summary": "List of filter parameters supported at cloud scope.",
+        "summary": "List of filter parameters supported at cloud scope",
         "description": "Return the list of filter parameters supported at cloud scope.\n",
         "operationId": "filterparams_cloudList",
         "security": [
@@ -108765,7 +116143,7 @@
         }
       ],
       "get": {
-        "summary": "List of filter parameters supported at provider organization scope.",
+        "summary": "List of filter parameters supported at provider organization scope",
         "description": "Return the list of filter parameters supported at provider organization scope.\n",
         "operationId": "filterparams_orgList",
         "security": [
@@ -108809,7 +116187,7 @@
         }
       ],
       "get": {
-        "summary": "List of filter parameters supported at catalog scope.",
+        "summary": "List of filter parameters supported at catalog scope",
         "description": "Return the list of filter parameters supported at catalog scope.\n",
         "operationId": "filterparams_catalogList",
         "security": [
@@ -108856,7 +116234,7 @@
         }
       ],
       "get": {
-        "summary": "List of filter parameters supported at space scope.",
+        "summary": "List of filter parameters supported at space scope",
         "description": "Return the list of filter parameters supported at space scope.\n",
         "operationId": "filterparams_spaceList",
         "security": [
@@ -108894,7 +116272,7 @@
         }
       ],
       "get": {
-        "summary": "List saved queries at cloud scope.",
+        "summary": "List saved queries at cloud scope",
         "description": "List saved queries owned by the user making the request, at cloud scope.\n",
         "operationId": "queries_cloudList",
         "parameters": [
@@ -108932,7 +116310,7 @@
         ]
       },
       "post": {
-        "summary": "Create a query at cloud scope.",
+        "summary": "Create a query at cloud scope",
         "description": "Save a query scoped to the cloud.\n",
         "operationId": "queries_cloudCreate",
         "security": [
@@ -108984,7 +116362,7 @@
         }
       ],
       "get": {
-        "summary": "List shared queries at cloud scope.",
+        "summary": "List shared queries at cloud scope",
         "description": "Return a list of saved queries shared by others at cloud scope.\n",
         "operationId": "queries_cloudListShared",
         "parameters": [
@@ -109036,7 +116414,7 @@
         }
       ],
       "get": {
-        "summary": "Get a specific query at cloud scope.",
+        "summary": "Get a specific query at cloud scope",
         "description": "Return a query by name or ID scoped to the cloud.\n",
         "operationId": "queries_cloudGet",
         "security": [
@@ -109063,7 +116441,7 @@
         ]
       },
       "put": {
-        "summary": "Update a specific query at cloud scope.",
+        "summary": "Update a specific query at cloud scope",
         "description": "Replace a query with contents of the request body.\n",
         "operationId": "queries_cloudUpdate",
         "security": [
@@ -109104,7 +116482,7 @@
         ]
       },
       "delete": {
-        "summary": "Deletes the specified query at cloud scope.",
+        "summary": "Deletes the specified query at cloud scope",
         "description": "Deletes the saved query. If it was shared, it will no longer be available.\n",
         "operationId": "queries_cloudDelete",
         "security": [
@@ -109145,8 +116523,8 @@
         }
       ],
       "post": {
-        "summary": "Transfer ownership of a saved query to a different user.",
-        "description": "Provide a body with new_owner_user_url: /api/user-registries/{org}/{user-registry}/users/{user} to transfer this query to a new owner.",
+        "summary": "Transfer ownership of a saved query to a different user",
+        "description": "Provide a body with new_owner_user_url: `/api/user-registries/{org}/{user-registry}/users/{user}` to transfer this query to a new owner.",
         "operationId": "queries_cloudTransferOwner",
         "requestBody": {
           "required": true,
@@ -109201,7 +116579,7 @@
         }
       ],
       "post": {
-        "summary": "Share a saved query.",
+        "summary": "Share a saved query",
         "description": "Share a saved query.",
         "operationId": "queries_cloudShare",
         "security": [
@@ -109242,7 +116620,7 @@
         }
       ],
       "post": {
-        "summary": "Unshare a saved query.",
+        "summary": "Unshare a saved query",
         "description": "Unshare a saved query.",
         "operationId": "queries_cloudUnshare",
         "security": [
@@ -109283,7 +116661,7 @@
         }
       ],
       "post": {
-        "summary": "Make a personal copy of a shared query.",
+        "summary": "Make a personal copy of a shared query",
         "description": "Make a personal copy of a shared query.",
         "operationId": "queries_cloudClone",
         "security": [
@@ -109324,7 +116702,7 @@
         }
       ],
       "get": {
-        "summary": "List saved queries at org scope.",
+        "summary": "List saved queries at org scope",
         "description": "List saved queries owned by the user making the request, at org scope.\n",
         "operationId": "queries_orgList",
         "parameters": [
@@ -109362,7 +116740,7 @@
         ]
       },
       "post": {
-        "summary": "Create a query at org scope.",
+        "summary": "Create a query at org scope",
         "description": "Return a single query by name or ID scoped to the org.\n",
         "operationId": "queries_orgCreate",
         "security": [
@@ -109417,7 +116795,7 @@
         }
       ],
       "get": {
-        "summary": "List shared queries at org scope.",
+        "summary": "List shared queries at org scope",
         "description": "Return a list of saved queries shared by others at org scope.\n",
         "operationId": "queries_orgListShared",
         "parameters": [
@@ -109472,7 +116850,7 @@
         }
       ],
       "get": {
-        "summary": "Get a specific query at org scope.",
+        "summary": "Get a specific query at org scope",
         "description": "Return a query by name or ID scoped to the org.\n",
         "operationId": "queries_orgGet",
         "security": [
@@ -109499,7 +116877,7 @@
         ]
       },
       "put": {
-        "summary": "Update a specific query at org scope.",
+        "summary": "Update a specific query at org scope",
         "description": "Replace a query with contents of the request body.\n",
         "operationId": "queries_orgUpdate",
         "security": [
@@ -109540,7 +116918,7 @@
         ]
       },
       "delete": {
-        "summary": "Deletes the specified query at org scope.",
+        "summary": "Deletes the specified query at org scope",
         "description": "Deletes the saved query. If it was shared, it will no longer be available.\n",
         "operationId": "queries_orgDelete",
         "security": [
@@ -109584,8 +116962,8 @@
         }
       ],
       "post": {
-        "summary": "Transfer ownership of a saved query to a different user.",
-        "description": "Provide a body with new_owner_user_url: /api/user-registries/{org}/{user-registry}/users/{user} to transfer this query to a new owner.",
+        "summary": "Transfer ownership of a saved query to a different user",
+        "description": "Provide a body with new_owner_user_url: `/api/user-registries/{org}/{user-registry}/users/{user}` to transfer this query to a new owner.",
         "operationId": "queries_orgTransferOwner",
         "requestBody": {
           "required": true,
@@ -109643,7 +117021,7 @@
         }
       ],
       "post": {
-        "summary": "Share a saved query.",
+        "summary": "Share a saved query",
         "description": "Share a saved query.",
         "operationId": "queries_orgShare",
         "security": [
@@ -109687,7 +117065,7 @@
         }
       ],
       "post": {
-        "summary": "Unshare a saved query.",
+        "summary": "Unshare a saved query",
         "description": "Unshare a saved query.",
         "operationId": "queries_orgUnshare",
         "security": [
@@ -109731,7 +117109,7 @@
         }
       ],
       "post": {
-        "summary": "Make a personal copy of a shared query.",
+        "summary": "Make a personal copy of a shared query",
         "description": "Make a personal copy of a shared query.",
         "operationId": "queries_orgClone",
         "security": [
@@ -109775,7 +117153,7 @@
         }
       ],
       "get": {
-        "summary": "List saved queries at catalog scope.",
+        "summary": "List saved queries at catalog scope",
         "description": "List saved queries owned by the user making the request, at catalog scope.\n",
         "operationId": "queries_catalogList",
         "parameters": [
@@ -109813,7 +117191,7 @@
         ]
       },
       "post": {
-        "summary": "Create a query at catalog scope.",
+        "summary": "Create a query at catalog scope",
         "description": "Return a single query by name or ID scoped to the catalog.\n",
         "operationId": "queries_catalogCreate",
         "security": [
@@ -109871,7 +117249,7 @@
         }
       ],
       "get": {
-        "summary": "List shared queries at catalog scope.",
+        "summary": "List shared queries at catalog scope",
         "description": "Return a list of saved queries shared by others at catalog scope.\n",
         "operationId": "queries_catalogListShared",
         "parameters": [
@@ -109929,7 +117307,7 @@
         }
       ],
       "get": {
-        "summary": "Get a specific query at catalog scope.",
+        "summary": "Get a specific query at catalog scope",
         "description": "Return a query by name or ID scoped to the catalog.\n",
         "operationId": "queries_catalogGet",
         "security": [
@@ -109956,7 +117334,7 @@
         ]
       },
       "put": {
-        "summary": "Update a specific query at catalog scope.",
+        "summary": "Update a specific query at catalog scope",
         "description": "Replace a query with contents of the request body.\n",
         "operationId": "queries_catalogUpdate",
         "security": [
@@ -109997,7 +117375,7 @@
         ]
       },
       "delete": {
-        "summary": "Deletes the specified query at catalog scope.",
+        "summary": "Deletes the specified query at catalog scope",
         "description": "Deletes the saved query. If it was shared, it will no longer be available.\n",
         "operationId": "queries_catalogDelete",
         "security": [
@@ -110044,8 +117422,8 @@
         }
       ],
       "post": {
-        "summary": "Transfer ownership of a saved query to a different user.",
-        "description": "Provide a body with new_owner_user_url: /api/user-registries/{org}/{user-registry}/users/{user} to transfer this query to a new owner.",
+        "summary": "Transfer ownership of a saved query to a different user",
+        "description": "Provide a body with new_owner_user_url: `/api/user-registries/{org}/{user-registry}/users/{user}` to transfer this query to a new owner.",
         "operationId": "queries_catalogTransferOwner",
         "requestBody": {
           "required": true,
@@ -110106,7 +117484,7 @@
         }
       ],
       "post": {
-        "summary": "Share a saved query.",
+        "summary": "Share a saved query",
         "description": "Share a saved query.",
         "operationId": "queries_catalogShare",
         "security": [
@@ -110153,7 +117531,7 @@
         }
       ],
       "post": {
-        "summary": "Unshare a saved query.",
+        "summary": "Unshare a saved query",
         "description": "Unshare a saved query.",
         "operationId": "queries_catalogUnshare",
         "security": [
@@ -110200,7 +117578,7 @@
         }
       ],
       "post": {
-        "summary": "Make a personal copy of a shared query.",
+        "summary": "Make a personal copy of a shared query",
         "description": "Make a personal copy of a shared query.",
         "operationId": "queries_catalogClone",
         "security": [
@@ -110247,7 +117625,7 @@
         }
       ],
       "get": {
-        "summary": "List saved queries at space scope.",
+        "summary": "List saved queries at space scope",
         "description": "List saved queries owned by the user making the request, at space scope.\n",
         "operationId": "queries_spaceList",
         "parameters": [
@@ -110285,7 +117663,7 @@
         ]
       },
       "post": {
-        "summary": "Create a query at space scope.",
+        "summary": "Create a query at space scope",
         "description": "Return a single query by name or ID scoped to the space.\n",
         "operationId": "queries_spaceCreate",
         "security": [
@@ -110346,7 +117724,7 @@
         }
       ],
       "get": {
-        "summary": "List shared queries at space scope.",
+        "summary": "List shared queries at space scope",
         "description": "Return a list of saved queries shared by others at space scope.\n",
         "operationId": "queries_spaceListShared",
         "parameters": [
@@ -110407,7 +117785,7 @@
         }
       ],
       "get": {
-        "summary": "Get a specific query at space scope.",
+        "summary": "Get a specific query at space scope",
         "description": "Return a query by name or ID scoped to the space.\n",
         "operationId": "queries_spaceGet",
         "security": [
@@ -110434,7 +117812,7 @@
         ]
       },
       "put": {
-        "summary": "Update a specific query at space scope.",
+        "summary": "Update a specific query at space scope",
         "description": "Replace a query with contents of the request body.\n",
         "operationId": "queries_spaceUpdate",
         "security": [
@@ -110475,7 +117853,7 @@
         ]
       },
       "delete": {
-        "summary": "Deletes the specified query at space scope.",
+        "summary": "Deletes the specified query at space scope",
         "description": "Deletes the saved query. If it was shared, it will no longer be available.\n",
         "operationId": "queries_spaceDelete",
         "security": [
@@ -110525,8 +117903,8 @@
         }
       ],
       "post": {
-        "summary": "Transfer ownership of a saved query to a different user.",
-        "description": "Provide a body with new_owner_user_url: /api/user-registries/{org}/{user-registry}/users/{user} to transfer this query to a new owner.",
+        "summary": "Transfer ownership of a saved query to a different user",
+        "description": "Provide a body with new_owner_user_url: `/api/user-registries/{org}/{user-registry}/users/{user}` to transfer this query to a new owner.",
         "operationId": "queries_spaceTransferOwner",
         "requestBody": {
           "required": true,
@@ -110590,7 +117968,7 @@
         }
       ],
       "post": {
-        "summary": "Share a saved query.",
+        "summary": "Share a saved query",
         "description": "Share a saved query.",
         "operationId": "queries_spaceShare",
         "security": [
@@ -110640,7 +118018,7 @@
         }
       ],
       "post": {
-        "summary": "Unshare a saved query.",
+        "summary": "Unshare a saved query",
         "description": "Unshare a saved query.",
         "operationId": "queries_spaceUnshare",
         "security": [
@@ -110690,7 +118068,7 @@
         }
       ],
       "post": {
-        "summary": "Make a personal copy of a shared query.",
+        "summary": "Make a personal copy of a shared query",
         "description": "Make a personal copy of a shared query.",
         "operationId": "queries_spaceClone",
         "security": [
@@ -110728,7 +118106,7 @@
         }
       ],
       "get": {
-        "summary": "Used by the UI to get the analytics service status.\n",
+        "summary": "Used by the UI to get the analytics service status\n",
         "description": "Used by the UI to get the analytics service status.\n",
         "operationId": "service_cloudServicestatus",
         "security": [
@@ -110769,7 +118147,7 @@
         }
       ],
       "get": {
-        "summary": "Used by the UI to get the analytics service status.\n",
+        "summary": "Used by the UI to get the analytics service status\n",
         "description": "Used by the UI to get the analytics service status.\n",
         "operationId": "service_orgServicestatus",
         "security": [
@@ -110813,7 +118191,7 @@
         }
       ],
       "get": {
-        "summary": "Used by the UI to get the analytics service status.\n",
+        "summary": "Used by the UI to get the analytics service status\n",
         "description": "Used by the UI to get the analytics service status.\n",
         "operationId": "service_catalogServicestatus",
         "security": [
@@ -110860,7 +118238,7 @@
         }
       ],
       "get": {
-        "summary": "Used by the UI to get the analytics service status.\n",
+        "summary": "Used by the UI to get the analytics service status\n",
         "description": "Used by the UI to get the analytics service status.\n",
         "operationId": "service_spaceServicestatus",
         "security": [
@@ -110898,7 +118276,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the API usage report at cloud scope.\n",
+        "summary": "API usage report\n",
         "description": "Return the data needed to populate the API usage report at cloud scope.\n",
         "operationId": "reports_cloudApiusage",
         "security": [
@@ -110950,7 +118328,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the API leaderboard for the API usage report at cloud scope.\n",
+        "summary": "API usage report API leaderboard\n",
         "description": "Return the data needed to populate the API leaderboard for the API usage report at cloud scope.\n",
         "operationId": "reports_cloudApiusageApisLeaderboard",
         "security": [
@@ -111002,7 +118380,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the product leaderboard for the API usage report at cloud scope.\n",
+        "summary": "API usage report product leaderboard\n",
         "description": "Return the data needed to populate the product leaderboard for the API usage report at cloud scope.\n",
         "operationId": "reports_cloudApiusageProductsLeaderboard",
         "security": [
@@ -111054,7 +118432,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the plan leaderboard for the API usage report at cloud scope.\n",
+        "summary": "API usage report plan leaderboard\n",
         "description": "Return the data needed to populate the plan leaderboard for the API usage report at cloud scope.\n",
         "operationId": "reports_cloudApiusagePlansLeaderboard",
         "security": [
@@ -111109,7 +118487,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate an API for the leaderboard for the API usage report at cloud scope.\n",
+        "summary": "API detail report\n",
         "description": "Return the data needed to populate an API for the leaderboard for the API usage report at cloud scope.\n",
         "operationId": "reports_cloudApiDetail",
         "security": [
@@ -111164,7 +118542,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate a product for the leaderboard for the API usage report at cloud scope.\n",
+        "summary": "Product detail report\n",
         "description": "Return the data needed to populate a product for the leaderboard for the API usage report at cloud scope.\n",
         "operationId": "reports_cloudProductDetail",
         "security": [
@@ -111219,7 +118597,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate a plan for the leaderboard for the API usage report at cloud scope.\n",
+        "summary": "Plan detail report\n",
         "description": "Return the data needed to populate a plan for the leaderboard for the API usage report at cloud scope.\n",
         "operationId": "reports_cloudPlanDetail",
         "security": [
@@ -111280,7 +118658,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the API leaderboard at cloud scope.\n",
+        "summary": "API leaderboard\n",
         "description": "Return the data needed to populate the API leaderboard at cloud scope.\n",
         "operationId": "reports_cloudApisLeaderboard",
         "security": [
@@ -111341,7 +118719,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Products leaderboard at cloud scope.\n",
+        "summary": "Get the data needed to populate the Products leaderboard\n",
         "description": "Return the data needed to populate the Products leaderboard at cloud scope.\n",
         "operationId": "reports_cloudProductsLeaderboard",
         "security": [
@@ -111402,7 +118780,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Plans leaderboard at cloud scope.\n",
+        "summary": "Get the data needed to populate the Plans leaderboard\n",
         "description": "Return the data needed to populate the Plans leaderboard at cloud scope.\n",
         "operationId": "reports_cloudPlanLeaderboard",
         "security": [
@@ -111463,7 +118841,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Applications leaderboard at cloud scope.\n",
+        "summary": "Application leaderboard\n",
         "description": "Return the data needed to populate the Applications leaderboard at cloud scope.\n",
         "operationId": "reports_cloudApplicationsLeaderboard",
         "security": [
@@ -111524,7 +118902,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Consumer Organization leaderboard at cloud scope.\n",
+        "summary": "Consumer organization leaderboard\n",
         "description": "Return the data needed to populate the Consumer Organization leaderboard at cloud scope.\n",
         "operationId": "reports_cloudConsumerorgsLeaderboard",
         "security": [
@@ -111585,7 +118963,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Breakdown leaderboard at cloud scope.\n",
+        "summary": "Breakdown leaderboard\n",
         "description": "Return the data needed to populate the Breakdown leaderboard at cloud scope.\n",
         "operationId": "reports_cloudBreakdownLeaderboard",
         "security": [
@@ -111637,7 +119015,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Inactive consumer organizations report funnel at cloud scope\n",
+        "summary": "Inactive consumer orgs report funnel\n",
         "description": "Return the data needed to populate the Inactive consumer organizations report funnel at cloud scope\n",
         "operationId": "reports_cloudInactiveCorgReportFunnel",
         "security": [
@@ -111704,7 +119082,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Inactive consumer organizations report table at cloud scope\n",
+        "summary": "Inactive consumer orgs report table\n",
         "description": "Return the data needed to populate the Inactive consumer organizations report table at cloud scope\n",
         "operationId": "reports_cloudInactiveCorgReportTable",
         "security": [
@@ -111774,7 +119152,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Inactive product report table at cloud scope\n",
+        "summary": "Inactive product report table\n",
         "description": "Return the data needed to populate the Inactive product report table at cloud scope\n",
         "operationId": "reports_cloudInactiveProductReport",
         "security": [
@@ -111841,7 +119219,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Deprecated product report table at cloud scope\n",
+        "summary": "Deprecated product report table\n",
         "description": "Return the data needed to populate the Deprecated product report table at cloud scope\n",
         "operationId": "reports_cloudDeprecatedProduct",
         "security": [
@@ -111908,7 +119286,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the consumer trend report at cloud scope.\n",
+        "summary": "Consumer trend report\n",
         "description": "Return the data needed to populate the consumer trend report, including trends and data of consumers, applications, and subscriptions, at cloud scope.\n",
         "operationId": "reports_cloudConsumerTrend",
         "security": [
@@ -111960,7 +119338,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Application leaderboard for the consumer trend report at cloud scope.\n",
+        "summary": "Consumer trend report application leaderboard\n",
         "description": "Return the data for the application leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at cloud scope.\n",
         "operationId": "reports_cloudConsumerTrendApplicationsLeaderboard",
         "security": [
@@ -112012,7 +119390,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the consumerorg leaderboard for the  consumer trend report at cloud scope.\n",
+        "summary": "Consumer trend report consumer org leaderboard\n",
         "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at cloud scope.\n",
         "operationId": "reports_cloudConsumerTrendConsumerorgsLeaderboard",
         "security": [
@@ -112067,7 +119445,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate a application for the leaderboard for the consumer trend report at cloud scope.\n",
+        "summary": "Application detail report\n",
         "description": "Return the data for the application leaderboard in the consumer trend report, including API call counts and other metrics over time at cloud scope.\n",
         "operationId": "reports_cloudApplicationDetail",
         "security": [
@@ -112122,7 +119500,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate a consumerorg for the leaderboard for the consumer trend report at cloud scope.\n",
+        "summary": "Consumer org detail report\n",
         "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including API call counts and other metrics over time at cloud scope.\n",
         "operationId": "reports_cloudConsumerorgDetail",
         "security": [
@@ -112144,6 +119522,12 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
           }
         ],
         "responses": {
@@ -112177,7 +119561,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the API usage report at org scope.\n",
+        "summary": "API usage report\n",
         "description": "Return the data needed to populate the API usage report at org scope.\n",
         "operationId": "reports_orgApiusage",
         "security": [
@@ -112229,7 +119613,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the API leaderboard for the API usage report at org scope.\n",
+        "summary": "API usage report API leaderboard\n",
         "description": "Return the data needed to populate the API leaderboard for the API usage report at org scope.\n",
         "operationId": "reports_orgApiusageApisLeaderboard",
         "security": [
@@ -112281,7 +119665,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the product leaderboard for the API usage report at org scope.\n",
+        "summary": "API usage report product leaderboard\n",
         "description": "Return the data needed to populate the product leaderboard for the API usage report at org scope.\n",
         "operationId": "reports_orgApiusageProductsLeaderboard",
         "security": [
@@ -112333,7 +119717,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the plan leaderboard for the API usage report at org scope.\n",
+        "summary": "API usage report plan leaderboard\n",
         "description": "Return the data needed to populate the plan leaderboard for the API usage report at org scope.\n",
         "operationId": "reports_orgApiusagePlansLeaderboard",
         "security": [
@@ -112388,7 +119772,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate an API for the leaderboard for the API usage report at org scope.\n",
+        "summary": "API detail report\n",
         "description": "Return the data needed to populate an API for the leaderboard for the API usage report at org scope.\n",
         "operationId": "reports_orgApiDetail",
         "security": [
@@ -112443,7 +119827,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate a product for the leaderboard for the API usage report at org scope.\n",
+        "summary": "Product detail report\n",
         "description": "Return the data needed to populate a product for the leaderboard for the API usage report at org scope.\n",
         "operationId": "reports_orgProductDetail",
         "security": [
@@ -112498,7 +119882,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate a plan for the leaderboard for the API usage report at org scope.\n",
+        "summary": "Plan detail report\n",
         "description": "Return the data needed to populate a plan for the leaderboard for the API usage report at org scope.\n",
         "operationId": "reports_orgPlanDetail",
         "security": [
@@ -112559,7 +119943,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the API leaderboard at org scope.\n",
+        "summary": "API leaderboard\n",
         "description": "Return the data needed to populate the API leaderboard at org scope.\n",
         "operationId": "reports_orgApisLeaderboard",
         "security": [
@@ -112620,7 +120004,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Product leaderboard at org scope.\n",
+        "summary": "Product leaderboard\n",
         "description": "Return the data needed to populate the Product leaderboard a at org scope.\n",
         "operationId": "reports_orgProductsLeaderboard",
         "security": [
@@ -112681,7 +120065,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Plans leaderboard at org scope.\n",
+        "summary": "Get the data needed to populate the Plans leaderboard\n",
         "description": "Return the data needed to populate the Plans leaderboard at org scope.\n",
         "operationId": "reports_orgPlanLeaderboard",
         "security": [
@@ -112742,7 +120126,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Applications leaderboard at org scope.\n",
+        "summary": "Application leaderboard\n",
         "description": "Return the data needed to populate the Applications leaderboard at org scope.\n",
         "operationId": "reports_orgApplicationsLeaderboard",
         "security": [
@@ -112803,7 +120187,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Consumer Organization leaderboard at org scope.\n",
+        "summary": "Consumer organization leaderboard\n",
         "description": "Return the data needed to populate the Consumer Organization leaderboard at org scope.\n",
         "operationId": "reports_orgConsumerorgsLeaderboard",
         "security": [
@@ -112864,7 +120248,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Breakdown leaderboard at org scope.\n",
+        "summary": "Breakdown leaderboard\n",
         "description": "Return the data needed to populate the Breakdown leaderboard at org scope.\n",
         "operationId": "reports_orgBreakdownLeaderboard",
         "security": [
@@ -112916,7 +120300,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Inactive consumer organizations report funnel at org scope\n",
+        "summary": "Inactive consumer orgs report funnel\n",
         "description": "Return the data needed to populate the Inactive consumer organizations report funnel at org scope\n",
         "operationId": "reports_orgInactiveCorgReportFunnel",
         "security": [
@@ -112986,7 +120370,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Inactive consumer organizations report table at org scope\n",
+        "summary": "Inactive consumer orgs report table\n",
         "description": "Return the data needed to populate the Inactive consumer organizations report table at org scope\n",
         "operationId": "reports_orgInactiveCorgReportTable",
         "security": [
@@ -113059,7 +120443,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Inactive product report table at org scope\n",
+        "summary": "Inactive product report table\n",
         "description": "Return the data needed to populate the Inactive product report table at org scope\n",
         "operationId": "reports_orgInactiveProductReport",
         "security": [
@@ -113129,7 +120513,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Deprecated product report table at org scope\n",
+        "summary": "Deprecated product report table\n",
         "description": "Return the data needed to populate the Deprecated product report table at org scope\n",
         "operationId": "reports_orgDeprecatedProduct",
         "security": [
@@ -113199,7 +120583,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the consumer trend report at org scope.\n",
+        "summary": "Consumer trend report\n",
         "description": "Return the data needed to populate the consumer trend report, including trends and data of consumers, applications, and subscriptions, at org scope.\n",
         "operationId": "reports_orgConsumerTrend",
         "security": [
@@ -113251,7 +120635,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Application leaderboard for the consumer trend report at org scope.\n",
+        "summary": "Consumer trend report application leaderboard\n",
         "description": "Return the data for the application leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at org scope.\n",
         "operationId": "reports_orgConsumerTrendApplicationsLeaderboard",
         "security": [
@@ -113303,7 +120687,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the consumerorg leaderboard for the  consumer trend report at org scope.\n",
+        "summary": "Consumer trend report consumer org leaderboard\n",
         "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at org scope.\n",
         "operationId": "reports_orgConsumerTrendConsumerorgsLeaderboard",
         "security": [
@@ -113358,7 +120742,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate a application for the leaderboard for the consumer trend report at org scope.\n",
+        "summary": "Application detail report\n",
         "description": "Return the data for the application leaderboard in the consumer trend report, including API call counts and other metrics over time at org scope.\n",
         "operationId": "reports_orgApplicationDetail",
         "security": [
@@ -113413,7 +120797,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate a consumerorg for the leaderboard for the consumer trend report at org scope.\n",
+        "summary": "Consumer org detail report\n",
         "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including API call counts and other metrics over time at org scope.\n",
         "operationId": "reports_orgConsumerorgDetail",
         "security": [
@@ -113432,6 +120816,12 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
           }
         ],
         "responses": {
@@ -113468,7 +120858,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the API usage report at catalog scope.\n",
+        "summary": "API usage report\n",
         "description": "Return the data needed to populate the API usage report at catalog scope.\n",
         "operationId": "reports_catalogApiusage",
         "security": [
@@ -113523,7 +120913,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the API leaderboard for the API usage report at catalog scope.\n",
+        "summary": "API usage report API mini-leaderboard\n",
         "description": "Return the data needed to populate the API leaderboard for the API usage report at catalog scope.\n",
         "operationId": "reports_catalogApiusageApisLeaderboard",
         "security": [
@@ -113578,7 +120968,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the product leaderboard for the API usage report at catalog scope.\n",
+        "summary": "API usage report product mini-leaderboard\n",
         "description": "Return the data needed to populate the product leaderboard for the API usage report at catalog scope.\n",
         "operationId": "reports_catalogApiusageProductsLeaderboard",
         "security": [
@@ -113633,7 +121023,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the plan leaderboard for the API usage report at catalog scope.\n",
+        "summary": "API usage report plan mini-leaderboard\n",
         "description": "Return the data needed to populate the plan leaderboard for the API usage report at catalog scope.\n",
         "operationId": "reports_catalogApiusagePlansLeaderboard",
         "security": [
@@ -113691,7 +121081,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate an API for the leaderboard for the API usage report at catalog scope.\n",
+        "summary": "API detail report\n",
         "description": "Return the data needed to populate an API for the leaderboard for the API usage report at catalog scope.\n",
         "operationId": "reports_catalogApiDetail",
         "security": [
@@ -113749,7 +121139,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate a product for the leaderboard for the API usage report at catalog scope.\n",
+        "summary": "Product detail report\n",
         "description": "Return the data needed to populate a product for the leaderboard for the API usage report at catalog scope.\n",
         "operationId": "reports_catalogProductDetail",
         "security": [
@@ -113807,7 +121197,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate a plan for the leaderboard for the API usage report at catalog scope.\n",
+        "summary": "Plan detail report\n",
         "description": "Return the data needed to populate a plan for the leaderboard for the API usage report at catalog scope.\n",
         "operationId": "reports_catalogPlanDetail",
         "security": [
@@ -113871,7 +121261,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the API leaderboard at catalog scope.\n",
+        "summary": "API leaderboard\n",
         "description": "Return the data needed to populate the API leaderboard at catalog scope.\n",
         "operationId": "reports_catalogApisLeaderboard",
         "security": [
@@ -113935,7 +121325,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Product leaderboard at catalog scope.\n",
+        "summary": "Product leaderboard\n",
         "description": "Return the data needed to populate the Product leaderboard at catalog scope.\n",
         "operationId": "reports_catalogProductsLeaderboard",
         "security": [
@@ -113999,7 +121389,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Plan leaderboard at catalog scope.\n",
+        "summary": "Plan leaderboard\n",
         "description": "Return the data needed to populate the Plan leaderboard at catalog scope.\n",
         "operationId": "reports_catalogPlanLeaderboard",
         "security": [
@@ -114063,7 +121453,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Applications leaderboard at catalog scope.\n",
+        "summary": "Application leaderboard\n",
         "description": "Return the data needed to populate the Applications leaderboard at catalog scope.\n",
         "operationId": "reports_catalogApplicationsLeaderboard",
         "security": [
@@ -114127,7 +121517,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Consumer Organization leaderboard at catalog scope.\n",
+        "summary": "Consumer organization leaderboard\n",
         "description": "Return the data needed to populate the Consumer Organization leaderboard at catalog scope.\n",
         "operationId": "reports_catalogConsumerorgsLeaderboard",
         "security": [
@@ -114191,7 +121581,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Breakdown leaderboard at catalog scope.\n",
+        "summary": "Breakdown leaderboard\n",
         "description": "Return the data needed to populate the Breakdown leaderboard at catalog scope.\n",
         "operationId": "reports_catalogBreakdownLeaderboard",
         "security": [
@@ -114246,7 +121636,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Inactive consumer organizations report funnel at catalog scope\n",
+        "summary": "Inactive consumer orgs report funnel\n",
         "description": "Return the data needed to populate the Inactive consumer organizations report funnel at catalog scope\n",
         "operationId": "reports_catalogInactiveCorgReportFunnel",
         "security": [
@@ -114319,7 +121709,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Inactive consumer organizations report table at catalog scope\n",
+        "summary": "Inactive consumer orgs report table\n",
         "description": "Return the data needed to populate the Inactive consumer organizations report table at catalog scope\n",
         "operationId": "reports_catalogInactiveCorgReportTable",
         "security": [
@@ -114395,7 +121785,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Inactive product report table at catalog scope\n",
+        "summary": "Inactive product report table\n",
         "description": "Return the data needed to populate the Inactive product report table at catalog scope\n",
         "operationId": "reports_catalogInactiveProductReport",
         "security": [
@@ -114468,7 +121858,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Deprecated product report table at catalog scope\n",
+        "summary": "Deprecated product report table\n",
         "description": "Return the data needed to populate the Deprecated product report table at catalog scope\n",
         "operationId": "reports_catalogDeprecatedProduct",
         "security": [
@@ -114541,7 +121931,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the consumer trend report at catalog scope.\n",
+        "summary": "Consumer trend report\n",
         "description": "Return the data needed to populate the consumer trend report, including trends and data of consumers, applications, and subscriptions, at the catalog scope.\n",
         "operationId": "reports_catalogConsumerTrend",
         "security": [
@@ -114596,7 +121986,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Application leaderboard for the consumer trend report at catalog scope.\n",
+        "summary": "Consumer trend report application mini-leaderboard\n",
         "description": "Return the data for the application leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at the catalog scope.\n",
         "operationId": "reports_catalogConsumerTrendApplicationsLeaderboard",
         "security": [
@@ -114651,7 +122041,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the consumerorg leaderboard for the  consumer trend report at catalog scope.\n",
+        "summary": "Consumer trend report consumerorg mini-leaderboard\n",
         "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at the catalog scope.\n",
         "operationId": "reports_catalogConsumerTrendConsumerorgsLeaderboard",
         "security": [
@@ -114709,7 +122099,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate a application for the leaderboard for the consumer trend report at catalog scope.\n",
+        "summary": "Application detail report\n",
         "description": "Return the data for the application leaderboard in the consumer trend report, including API call counts and other metrics over time at the catalog scope.\n",
         "operationId": "reports_catalogApplicationDetail",
         "security": [
@@ -114767,7 +122157,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate a consumerorg for the leaderboard for the consumer trend report at catalog scope.\n",
+        "summary": "Consumer org detail report\n",
         "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including API call counts and other metrics over time at the catalog scope.\n",
         "operationId": "reports_catalogConsumerorgDetail",
         "security": [
@@ -114786,6 +122176,12 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
           }
         ],
         "responses": {
@@ -114825,7 +122221,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the API usage report at space scope.\n",
+        "summary": "API usage report\n",
         "description": "Return the data needed to populate the API usage report at space scope.\n",
         "operationId": "reports_spaceApiusage",
         "security": [
@@ -114883,7 +122279,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the API leaderboard for the API usage report at space scope.\n",
+        "summary": "API usage report API leaderboard\n",
         "description": "Return the data needed to populate the API leaderboard for the API usage report at space scope.\n",
         "operationId": "reports_spaceApiusageApisLeaderboard",
         "security": [
@@ -114941,7 +122337,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the product leaderboard for the API usage report at space scope.\n",
+        "summary": "API usage report product leaderboard\n",
         "description": "Return the data needed to populate the product leaderboard for the API usage report at space scope.\n",
         "operationId": "reports_spaceApiusageProductsLeaderboard",
         "security": [
@@ -114999,7 +122395,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the plan leaderboard for the API usage report at space scope.\n",
+        "summary": "API usage report plan leaderboard\n",
         "description": "Return the data needed to populate the plan leaderboard for the API usage report at space scope.\n",
         "operationId": "reports_spaceApiusagePlansLeaderboard",
         "security": [
@@ -115060,7 +122456,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate an API for the leaderboard for the API usage report at space scope.\n",
+        "summary": "API detail report\n",
         "description": "Return the data needed to populate an API for the leaderboard for the API usage report at space scope.\n",
         "operationId": "reports_spaceApiDetail",
         "security": [
@@ -115121,7 +122517,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate a product for the leaderboard for the API usage report at space scope.\n",
+        "summary": "Product detail report\n",
         "description": "Return the data needed to populate a product for the leaderboard for the API usage report at space scope.\n",
         "operationId": "reports_spaceProductDetail",
         "security": [
@@ -115182,7 +122578,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate a plan for the leaderboard for the API usage report at space scope.\n",
+        "summary": "Plan detail report\n",
         "description": "Return the data needed to populate a plan for the leaderboard for the API usage report at space scope.\n",
         "operationId": "reports_spacePlanDetail",
         "security": [
@@ -115246,7 +122642,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the API leaderboard at space scope.\n",
+        "summary": "API leaderboard\n",
         "description": "Return the data needed to populate the API leaderboard at space scope.\n",
         "operationId": "reports_spaceApisLeaderboard",
         "security": [
@@ -115310,7 +122706,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Product leaderboard at space scope.\n",
+        "summary": "Product leaderboard\n",
         "description": "Return the data needed to populate the Product leaderboard at space scope.\n",
         "operationId": "reports_spaceProductsLeaderboard",
         "security": [
@@ -115374,7 +122770,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Plans leaderboard at space scope.\n",
+        "summary": "Get the data needed to populate the Plans leaderboard\n",
         "description": "Return the data needed to populate the Plans leaderboard at space scope.\n",
         "operationId": "reports_spacePlanLeaderboard",
         "security": [
@@ -115438,7 +122834,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Applications leaderboard at space scope.\n",
+        "summary": "Application leaderboard\n",
         "description": "Return the data needed to populate the Applications leaderboard at space scope.\n",
         "operationId": "reports_spaceApplicationsLeaderboard",
         "security": [
@@ -115502,7 +122898,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Consumer Organization leaderboard at space scope.\n",
+        "summary": "Consumer organization leaderboard\n",
         "description": "Return the data needed to populate the Consumer Organization leaderboard at space scope.\n",
         "operationId": "reports_spaceConsumerorgsLeaderboard",
         "security": [
@@ -115540,6 +122936,313 @@
         ]
       }
     },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/inactive/consumerorgs": {
+      "description": "Return the data needed to populate the Inactive consumer organizations report funnel at space scope\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Inactive consumer orgs report funnel\n",
+        "description": "Return the data needed to populate the Inactive consumer organizations report funnel at space scope\n",
+        "operationId": "reports_spaceInactiveCorgReportFunnel",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/regenerate_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/InactiveCorgFunnelResponse"
+          },
+          "202": {
+            "$ref": "#/components/responses/InactivePollingResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/inactive/consumerorgs/{inactive-consumer-report-type}": {
+      "description": "Return the data needed to populate the Inactive consumer organizations report table at space scope\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/inactive-consumer-report-type"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Inactive consumer orgs report table\n",
+        "description": "Return the data needed to populate the Inactive consumer organizations report table at space scope\n",
+        "operationId": "reports_spaceInactiveCorgReportTable",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          },
+          {
+            "$ref": "#/components/parameters/regenerate_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/InactiveCorgTableResponse"
+          },
+          "202": {
+            "$ref": "#/components/responses/InactivePollingResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/inactive/products/{inactive-product-report-type}": {
+      "description": "Return the data needed to populate the Inactive product report at space scope\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/inactive-product-report-type"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Inactive product report table\n",
+        "description": "Return the data needed to populate the Inactive product report table at space scope\n",
+        "operationId": "reports_spaceInactiveProductReport",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          },
+          {
+            "$ref": "#/components/parameters/regenerate_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/InactiveProductResponse"
+          },
+          "202": {
+            "$ref": "#/components/responses/InactivePollingResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/deprecated/products": {
+      "description": "Return the data needed to populate the deprecated product report at space scope\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Deprecated product report table\n",
+        "description": "Return the data needed to populate the Deprecated product report table at space scope\n",
+        "operationId": "reports_spaceDeprecatedProduct",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          },
+          {
+            "$ref": "#/components/parameters/regenerate_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DeprecatedProductResponse"
+          },
+          "202": {
+            "$ref": "#/components/responses/DeprecatedPollingResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
     "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/consumertrend": {
       "description": "Return the data needed to populate the consumer trend report, including trends and data of consumers, applications, and subscriptions, at space scope.\n",
       "parameters": [
@@ -115560,7 +123263,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the consumer trend report at space scope.\n",
+        "summary": "Consumer trend report\n",
         "description": "Return the data needed to populate the consumer trend report, including trends and data of consumers, applications, and subscriptions, at space scope.\n",
         "operationId": "reports_spaceConsumerTrend",
         "security": [
@@ -115618,7 +123321,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the Application leaderboard for the consumer trend report at space scope.\n",
+        "summary": "Consumer trend report application leaderboard\n",
         "description": "Return the data for the application leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at the space scope.\n",
         "operationId": "reports_spaceConsumerTrendApplicationsLeaderboard",
         "security": [
@@ -115676,7 +123379,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate the consumerorg leaderboard for the  consumer trend report at space scope.\n",
+        "summary": "Consumer trend report consumer org leaderboard\n",
         "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including top_data and bottom_data along with other metrics over time at the space scope.\n",
         "operationId": "reports_spacespaceConsumerTrendConsumerorgsLeaderboard",
         "security": [
@@ -115737,7 +123440,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate a application for the leaderboard for the consumer trend report at space scope.\n",
+        "summary": "Application detail report\n",
         "description": "Return the data for the application leaderboard in the consumer trend report, including API call counts and other metrics over time at the space scope.\n",
         "operationId": "reports_spaceApplicationDetail",
         "security": [
@@ -115798,7 +123501,7 @@
         }
       ],
       "get": {
-        "summary": "Get the data needed to populate a consumerorg for the leaderboard for the consumer trend report at space scope.\n",
+        "summary": "Consumer org detail report\n",
         "description": "Return the data for the consumerorg leaderboard in the consumer trend report, including API call counts and other metrics over time at the space scope.\n",
         "operationId": "reports_spaceConsumerorgDetail",
         "security": [
@@ -115817,6 +123520,12 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
           }
         ],
         "responses": {
@@ -115874,7 +123583,7 @@
         }
       ],
       "get": {
-        "summary": "Snapshot of the number of shards allocated to each data node and their disk space.",
+        "summary": "Snapshot of the number of shards allocated to each data node and their disk space",
         "description": "Provides a snapshot of the number of shards allocated to each data node and their disk space.\n",
         "operationId": "clustermgmt_cat_getAllocation",
         "security": [
@@ -115968,7 +123677,7 @@
         }
       ],
       "get": {
-        "summary": "Returns high-level information about indices in a cluster.",
+        "summary": "Returns high-level information about indices in a cluster",
         "description": "Returns high-level information about indices in a cluster, including backing indices for data streams.\n",
         "operationId": "clustermgmt_cat_getIndices",
         "security": [
@@ -116013,7 +123722,7 @@
       }
     },
     "/{analytics-service}/cloud/clustermgmt/storage/cat/nodes": {
-      "description": "Returns information about a cluster’s nodes.\n",
+      "description": "Returns information about a cluster's nodes.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -116056,8 +123765,8 @@
         }
       ],
       "get": {
-        "summary": "Information about a cluster’s nodes.",
-        "description": "Returns information about a cluster’s nodes.\n",
+        "summary": "Information about a cluster's nodes",
+        "description": "Returns information about a cluster's nodes.\n",
         "operationId": "clustermgmt_cat_getNodes",
         "security": [
           {
@@ -116101,7 +123810,7 @@
       }
     },
     "/{analytics-service}/cloud/clustermgmt/storage/cat/recovery": {
-      "description": "Returns information about ongoing and completed shard recoveries, similar to the index recovery API. For data streams, the API returns information about the stream’s backing indices.\n",
+      "description": "Returns information about ongoing and completed shard recoveries, similar to the index recovery API. For data streams, the API returns information about the stream's backing indices.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -116141,8 +123850,8 @@
         }
       ],
       "get": {
-        "summary": "Returns information about ongoing and completed shard recoveries.",
-        "description": "Returns information about ongoing and completed shard recoveries, similar to the index recovery API. For data streams, the API returns information about the stream’s backing indices.\n",
+        "summary": "Returns information about ongoing and completed shard recoveries",
+        "description": "Returns information about ongoing and completed shard recoveries, similar to the index recovery API. For data streams, the API returns information about the stream's backing indices.\n",
         "operationId": "clustermgmt_cat_getRecovery",
         "security": [
           {
@@ -116186,7 +123895,7 @@
       }
     },
     "/{analytics-service}/cloud/clustermgmt/storage/cat/shards": {
-      "description": "The shards command is the detailed view of what nodes contain which shards. It will tell you if it’s a primary or replica, the number of docs, the bytes it takes on disk, and the node where it’s located. For data streams, the API returns information about the stream’s backing indices.\n",
+      "description": "The shards command is the detailed view of what nodes contain which shards. It will tell you if it's a primary or replica, the number of docs, the bytes it takes on disk, and the node where it's located. For data streams, the API returns information about the stream's backing indices.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -116223,8 +123932,8 @@
         }
       ],
       "get": {
-        "summary": "Detailed view of what nodes contain which shards.",
-        "description": "The shards command is the detailed view of what nodes contain which shards. It will tell you if it’s a primary or replica, the number of docs, the bytes it takes on disk, and the node where it’s located. For data streams, the API returns information about the stream’s backing indices.\n",
+        "summary": "Detailed view of what nodes contain which shards",
+        "description": "The shards command is the detailed view of what nodes contain which shards. It will tell you if it's a primary or replica, the number of docs, the bytes it takes on disk, and the node where it's located. For data streams, the API returns information about the stream's backing indices.\n",
         "operationId": "clustermgmt_cat_getShards",
         "security": [
           {
@@ -116268,7 +123977,7 @@
       }
     },
     "/{analytics-service}/cloud/clustermgmt/storage/cat/aliases": {
-      "description": "Retrieves the cluster’s index aliases, including filter and routing information. The API does not return data stream aliases.\n",
+      "description": "Retrieves the cluster's index aliases, including filter and routing information. The API does not return data stream aliases.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -116299,8 +124008,8 @@
         }
       ],
       "get": {
-        "summary": "Retrieves the cluster’s index aliases, including filter and routing information.",
-        "description": "Retrieves the cluster’s index aliases, including filter and routing information. The API does not return data stream aliases.\n",
+        "summary": "Retrieves the cluster's index aliases, including filter and routing information",
+        "description": "Retrieves the cluster's index aliases, including filter and routing information. The API does not return data stream aliases.\n",
         "operationId": "clustermgmt_cat_getAliases",
         "security": [
           {
@@ -116366,7 +124075,7 @@
         }
       ],
       "get": {
-        "summary": "Returns cluster nodes information.",
+        "summary": "Returns cluster nodes information",
         "description": "The cluster nodes info API allows to retrieve one or more (or all) of the cluster nodes information. All the nodes selective options are explained here. By default, it returns all attributes and core settings for a node.\n",
         "operationId": "clustermgmt_nodes_getNodes",
         "security": [
@@ -116394,7 +124103,7 @@
       }
     },
     "/{analytics-service}/cloud/clustermgmt/storage/nodes/hot-threads": {
-      "description": "This API yields a breakdown of the hot threads on each selected node in the cluster. The output is plain text with a breakdown of each node’s top hot threads.\n",
+      "description": "This API yields a breakdown of the hot threads on each selected node in the cluster. The output is plain text with a breakdown of each node's top hot threads.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -116428,8 +124137,8 @@
         }
       ],
       "get": {
-        "summary": "Returns the hot threads on each selected node in the cluster.",
-        "description": "This API yields a breakdown of the hot threads on each selected node in the cluster. The output is plain text with a breakdown of each node’s top hot threads.\n",
+        "summary": "Returns the hot threads on each selected node in the cluster",
+        "description": "This API yields a breakdown of the hot threads on each selected node in the cluster. The output is plain text with a breakdown of each node's top hot threads.\n",
         "operationId": "clustermgmt_nodes_getNodesHotThreads",
         "security": [
           {
@@ -116499,7 +124208,7 @@
         }
       ],
       "get": {
-        "summary": "Returns cluster nodes statistics.",
+        "summary": "Returns cluster nodes statistics",
         "description": "You can use the cluster nodes stats API to retrieve statistics for nodes in a cluster. All the nodes selective options are explained here. By default, all stats are returned. You can limit the returned information by using metrics.\n",
         "operationId": "clustermgmt_nodes_getNodesStats",
         "security": [
@@ -116546,7 +124255,7 @@
         }
       ],
       "get": {
-        "summary": "Returns information on the usage of features.",
+        "summary": "Returns information on the usage of features",
         "description": "The cluster nodes usage API allows you to retrieve information on the usage of features for each node.\n",
         "operationId": "clustermgmt_nodes_getNodesUsage",
         "security": [
@@ -116617,7 +124326,7 @@
         }
       ],
       "get": {
-        "summary": "Returns cluster nodes statistics.",
+        "summary": "Returns cluster nodes statistics",
         "description": "You can use the cluster nodes stats API to retrieve statistics for nodes in a cluster. All the nodes selective options are explained here. By default, all stats are returned. You can limit the returned information by using metrics.\n",
         "operationId": "clustermgmt_nodes_getStatsMetric",
         "security": [
@@ -116667,7 +124376,7 @@
         }
       ],
       "get": {
-        "summary": "Returns information on the usage of features.",
+        "summary": "Returns information on the usage of features",
         "description": "The cluster nodes usage API allows you to retrieve information on the usage of features for each node.\n",
         "operationId": "clustermgmt_nodes_getUsageMetric",
         "security": [
@@ -116720,7 +124429,7 @@
         }
       ],
       "get": {
-        "summary": "Returns cluster nodes information.",
+        "summary": "Returns cluster nodes information",
         "description": "The cluster nodes info API allows to retrieve one or more (or all) of the cluster nodes information. By default, it returns all attributes and core settings for a node.\n",
         "operationId": "clustermgmt_nodes_getNodesByIdOrMetric",
         "security": [
@@ -116748,7 +124457,7 @@
       }
     },
     "/{analytics-service}/cloud/clustermgmt/storage/nodes/{node-id}/hot-threads": {
-      "description": "This API yields a breakdown of the hot threads on each selected node in the cluster.  The output is plain text with a breakdown of each node’s top hot threads.\n",
+      "description": "This API yields a breakdown of the hot threads on each selected node in the cluster.  The output is plain text with a breakdown of each node's top hot threads.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -116785,8 +124494,8 @@
         }
       ],
       "get": {
-        "summary": "Returns the hot threads on each selected node in the cluster.",
-        "description": "This API yields a breakdown of the hot threads on each selected node in the cluster.  The output is plain text with a breakdown of each node’s top hot threads.\n",
+        "summary": "Returns the hot threads on each selected node in the cluster",
+        "description": "This API yields a breakdown of the hot threads on each selected node in the cluster.  The output is plain text with a breakdown of each node's top hot threads.\n",
         "operationId": "clustermgmt_nodes_getNodesHotThreadsById",
         "security": [
           {
@@ -116859,7 +124568,7 @@
         }
       ],
       "get": {
-        "summary": "Returns cluster nodes statistics.",
+        "summary": "Returns cluster nodes statistics",
         "description": "You can use the cluster nodes stats API to retrieve statistics for nodes in a cluster. All the nodes selective options are explained here. By default, all stats are returned. You can limit the returned information by using metrics.\n",
         "operationId": "clustermgmt_nodes_getNodesStatsById",
         "security": [
@@ -116909,7 +124618,7 @@
         }
       ],
       "get": {
-        "summary": "Returns information on the usage of features.",
+        "summary": "Returns information on the usage of features",
         "description": "The cluster nodes usage API allows you to retrieve information on the usage of features for each node.\n",
         "operationId": "clustermgmt_nodes_getNodesUsageById",
         "security": [
@@ -116965,7 +124674,7 @@
         }
       ],
       "get": {
-        "summary": "Returns cluster nodes information.",
+        "summary": "Returns cluster nodes information",
         "description": "The cluster nodes info API allows to retrieve one or more (or all) of the cluster nodes information. By default, it returns all attributes and core settings for a node.\n",
         "operationId": "clustermgmt_nodes_getNodeMetricById",
         "security": [
@@ -117042,7 +124751,7 @@
         }
       ],
       "get": {
-        "summary": "Returns cluster nodes statistics.",
+        "summary": "Returns cluster nodes statistics",
         "description": "You can use the cluster nodes stats API to retrieve statistics for nodes in a cluster. All the nodes selective options are explained here. By default, all stats are returned. You can limit the returned information by using metrics.\n",
         "operationId": "clustermgmt_nodes_getNodesStatsByIdMetric",
         "security": [
@@ -117175,7 +124884,7 @@
         }
       ],
       "get": {
-        "summary": "Returns information on the usage of features.",
+        "summary": "Returns information on the usage of features",
         "description": "The cluster nodes usage API allows you to retrieve information on the usage of features for each node.\n",
         "operationId": "clustermgmt_nodes_getNodesUsageByIdMetric",
         "security": [
@@ -117213,7 +124922,7 @@
         }
       ],
       "post": {
-        "summary": "Reloads the keystore on nodes in the cluster.",
+        "summary": "Reloads the keystore on nodes in the cluster",
         "description": "Secure settings are stored in an on-disk keystore. Certain of these settings are reloadable. That is, you can change them on disk and reload them without restarting any nodes in the cluster. When you have updated reloadable secure settings in your keystore, you can use this API to reload those settings on each node.\n",
         "operationId": "clustermgmt_nodes_postReloadSecureSettings",
         "security": [
@@ -117268,7 +124977,7 @@
         }
       ],
       "post": {
-        "summary": "Reloads the keystore on nodes in the cluster.",
+        "summary": "Reloads the keystore on nodes in the cluster",
         "description": "Secure settings are stored in an on-disk keystore. Certain of these settings are reloadable. That is, you can change them on disk and reload them without restarting any nodes in the cluster. When you have updated reloadable secure settings in your keystore, you can use this API to reload those settings on each node.\n",
         "operationId": "clustermgmt_nodes_postReloadSecureSettingsById",
         "security": [
@@ -117370,7 +125079,7 @@
         }
       ],
       "delete": {
-        "summary": "Removes master-eligible nodes from the voting configuration exclusion list.",
+        "summary": "Removes master-eligible nodes from the voting configuration exclusion list",
         "description": "Removes master-eligible nodes from the voting configuration exclusion list.\n",
         "parameters": [
           {
@@ -117402,7 +125111,7 @@
         ]
       },
       "post": {
-        "summary": "Adds master-eligible nodes from the voting configuration exclusion list.",
+        "summary": "Adds master-eligible nodes from the voting configuration exclusion list",
         "description": "Adds master-eligible nodes from the voting configuration exclusion list.\n",
         "parameters": [
           {
@@ -117441,7 +125150,7 @@
       }
     },
     "/{analytics-service}/cloud/clustermgmt/storage/cluster/health": {
-      "description": "The cluster health API returns a simple status on the health of the cluster. You can also use the API to get the health status of only specified data streams and indices. For data streams, the API retrieves the health status of the stream’s backing indices.\n",
+      "description": "The cluster health API returns a simple status on the health of the cluster. You can also use the API to get the health status of only specified data streams and indices. For data streams, the API retrieves the health status of the stream's backing indices.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -117484,8 +125193,8 @@
         }
       ],
       "get": {
-        "summary": "Returns the health status of a cluster.",
-        "description": "The cluster health API returns a simple status on the health of the cluster. You can also use the API to get the health status of only specified data streams and indices. For data streams, the API retrieves the health status of the stream’s backing indices.\n",
+        "summary": "Returns the health status of a cluster",
+        "description": "The cluster health API returns a simple status on the health of the cluster. You can also use the API to get the health status of only specified data streams and indices. For data streams, the API retrieves the health status of the stream's backing indices.\n",
         "operationId": "clustermgmt_cluster_getHealth",
         "security": [
           {
@@ -117531,7 +125240,7 @@
         }
       ],
       "get": {
-        "summary": "Returns cluster-level changes that have not yet been executed.",
+        "summary": "Returns cluster-level changes that have not yet been executed",
         "description": "The pending cluster tasks API returns a list of any cluster-level changes (e.g. create index, update mapping, allocate or fail shard) which have not yet been executed.\n",
         "operationId": "clustermgmt_cluster_getPendingTasks",
         "security": [
@@ -117584,7 +125293,7 @@
         }
       ],
       "get": {
-        "summary": "Returns cluster-wide settings.",
+        "summary": "Returns cluster-wide settings",
         "description": "By default, this API call only returns settings that have been explicitly defined, but can also include the default settings by calling the include_defaults parameter.\n",
         "operationId": "clustermgmt_cluster_getSettings",
         "security": [
@@ -117611,7 +125320,7 @@
         ]
       },
       "put": {
-        "summary": "Configures dynamic cluster settings.",
+        "summary": "Configures dynamic cluster settings",
         "description": "You can configure and update dynamic settings on a running cluster using the cluster update settings API. Updates made using the cluster update settings API can be persistent, which apply across cluster restarts, or transient, which reset after a cluster restart. You can also reset transient or persistent settings by assigning them a null value using the API.\n",
         "operationId": "clustermgmt_cluster_putSettings",
         "security": [
@@ -117690,7 +125399,7 @@
         }
       ],
       "get": {
-        "summary": "Returns an internal representation of the cluster state for debugging or diagnostic purposes.",
+        "summary": "Returns an internal representation of the cluster state for debugging or diagnostic purposes",
         "description": "The cluster state is an internal data structure which keeps track of a variety of information needed by every node.\n",
         "operationId": "clustermgmt_cluster_getState",
         "security": [
@@ -117758,7 +125467,7 @@
         }
       ],
       "get": {
-        "summary": "Returns an internal representation of the cluster state for debugging or diagnostic purposes.",
+        "summary": "Returns an internal representation of the cluster state for debugging or diagnostic purposes",
         "description": "The cluster state is an internal data structure which keeps track of a variety of information needed by every node.\n",
         "operationId": "clustermgmt_cluster_getStateByMetrics",
         "security": [
@@ -117829,7 +125538,7 @@
         }
       ],
       "get": {
-        "summary": "Returns an internal representation of the cluster state for debugging or diagnostic purposes.",
+        "summary": "Returns an internal representation of the cluster state for debugging or diagnostic purposes",
         "description": "The cluster state is an internal data structure which keeps track of a variety of information needed by every node.\n",
         "operationId": "clustermgmt_cluster_getStateByMetricsTarget",
         "security": [
@@ -117873,7 +125582,7 @@
         }
       ],
       "get": {
-        "summary": "Returns cluster statistics.",
+        "summary": "Returns cluster statistics",
         "description": "The Cluster Stats API allows to retrieve statistics from a cluster wide perspective. The API returns basic index metrics (shard numbers, store size, memory usage) and information about the current nodes that form the cluster (number, roles, os, jvm versions, memory usage, cpu and installed plugins).\n",
         "operationId": "clustermgmt_cluster_getStats",
         "security": [
@@ -117920,7 +125629,7 @@
         }
       ],
       "get": {
-        "summary": "Returns cluster statistics.",
+        "summary": "Returns cluster statistics",
         "description": "The Cluster Stats API allows to retrieve statistics from a cluster wide perspective. The API returns basic index metrics (shard numbers, store size, memory usage) and information about the current nodes that form the cluster (number, roles, os, jvm versions, memory usage, cpu and installed plugins).\n",
         "operationId": "clustermgmt_cluster_getStatsByNodeFilter",
         "security": [
@@ -117979,7 +125688,7 @@
         }
       ],
       "post": {
-        "summary": "Changes the allocation of shards in a cluster.",
+        "summary": "Changes the allocation of shards in a cluster",
         "description": "The reroute command allows for manual changes to the allocation of individual shards in the cluster. For example, a shard can be moved from one node to another explicitly, an allocation can be cancelled, and an unassigned shard can be explicitly allocated to a specific node.\n",
         "operationId": "clustermgmt_cluster_postReroute",
         "security": [
@@ -118037,7 +125746,7 @@
         }
       ],
       "get": {
-        "summary": "Pipeline-specific information and settings for each pipeline.",
+        "summary": "Pipeline-specific information and settings for each pipeline",
         "description": "Provides pipeline-specific information and settings for each pipeline.\n",
         "operationId": "clustermgmt_ingestionNode_getIngestionPipelines",
         "security": [
@@ -118081,7 +125790,7 @@
         }
       ],
       "get": {
-        "summary": "Node-level info about the OS.",
+        "summary": "Node-level info about the OS",
         "description": "Provides node-level info about the OS.\n",
         "operationId": "clustermgmt_ingestionNode_getIngestionOs",
         "security": [
@@ -118125,7 +125834,7 @@
         }
       ],
       "get": {
-        "summary": "Node-level JVM info, including info about threads.",
+        "summary": "Node-level JVM info, including info about threads",
         "description": "Provides node-level JVM info, including info about threads.\n",
         "operationId": "clustermgmt_ingestionNode_getIngestionJvm",
         "security": [
@@ -118169,7 +125878,7 @@
         }
       ],
       "get": {
-        "summary": "Information about all Logstash plugins that are currently installed.",
+        "summary": "Information about all Logstash plugins that are currently installed",
         "description": "Provides information about all Logstash plugins that are currently installed.\n",
         "operationId": "clustermgmt_ingestionNode_getIngestionPlugins",
         "security": [
@@ -118213,7 +125922,7 @@
         }
       ],
       "get": {
-        "summary": "Information about the the current hot threads for Logstash.",
+        "summary": "Information about the the current hot threads for Logstash",
         "description": "Provides information about the the current hot threads for Logstash. It contains a breakdown of the top hot threads.\n",
         "operationId": "clustermgmt_ingestionNode_getIngestionHotThreads",
         "security": [
@@ -118257,7 +125966,7 @@
         }
       ],
       "get": {
-        "summary": "JVM stats, including stats about threads, memory usage, garbage collectors, and uptime.",
+        "summary": "JVM stats, including stats about threads, memory usage, garbage collectors, and uptime",
         "description": "Provides JVM stats, including stats about threads, memory usage, garbage collectors, and uptime.\n",
         "operationId": "clustermgmt_ingestionNode_getIngestionJvmNodeStats",
         "security": [
@@ -118301,7 +126010,7 @@
         }
       ],
       "get": {
-        "summary": "Process stats, including stats about file descriptors, memory consumption, and CPU usage.",
+        "summary": "Process stats, including stats about file descriptors, memory consumption, and CPU usage",
         "description": "Provides process stats, including stats about file descriptors, memory consumption, and CPU usage.\n",
         "operationId": "clustermgmt_ingestionNode_getIngestionProcessNodeStats",
         "security": [
@@ -118345,7 +126054,7 @@
         }
       ],
       "get": {
-        "summary": "Event-related statistics for the Logstash instance regardless of how many pipelines were created and destroyed.",
+        "summary": "Event-related statistics for the Logstash instance regardless of how many pipelines were created and destroyed",
         "description": "Provides event-related statistics for the Logstash instance regardless of how many pipelines were created and destroyed.\n",
         "operationId": "clustermgmt_ingestionNode_getIngestionEventsNodeStats",
         "security": [
@@ -118389,7 +126098,7 @@
         }
       ],
       "get": {
-        "summary": "Flow-related statistics for the Logstash instance regardless of how many pipelines were created and destroyed.",
+        "summary": "Flow-related statistics for the Logstash instance regardless of how many pipelines were created and destroyed",
         "description": "Provides flow-related statistics for the Logstash instance regardless of how many pipelines were created and destroyed.\n",
         "operationId": "clustermgmt_ingestionNode_getIngestionFlowNodeStats",
         "security": [
@@ -118433,7 +126142,7 @@
         }
       ],
       "get": {
-        "summary": "Runtime stats about each Logstash pipeline.",
+        "summary": "Runtime stats about each Logstash pipeline",
         "description": "Provides runtime stats about each Logstash pipeline.\n",
         "operationId": "clustermgmt_ingestionNode_getIngestionPipelinesNodeStats",
         "security": [
@@ -118477,7 +126186,7 @@
         }
       ],
       "get": {
-        "summary": "Runtime stats about config reload successes and failures.",
+        "summary": "Runtime stats about config reload successes and failures",
         "description": "Provides runtime stats about config reload successes and failures.\n",
         "operationId": "clustermgmt_ingestionNode_getIngestionReloadsNodeStats",
         "security": [
@@ -118521,7 +126230,7 @@
         }
       ],
       "get": {
-        "summary": "Runtime stats about cgroups when Logstash is running in a container.",
+        "summary": "Runtime stats about cgroups when Logstash is running in a container",
         "description": "Provides runtime stats about cgroups when Logstash is running in a container.\n",
         "operationId": "clustermgmt_ingestionNode_getIngestionOsNodeStats",
         "security": [
@@ -118565,7 +126274,7 @@
         }
       ],
       "get": {
-        "summary": "Stats for databases used with the Geoip filter plugin.",
+        "summary": "Stats for databases used with the Geoip filter plugin",
         "description": "Provides stats for databases used with the Geoip filter plugin.\n",
         "operationId": "clustermgmt_ingestionNode_getIngestionGeoipDownloadManagerNodeStats",
         "security": [
@@ -118609,7 +126318,7 @@
         }
       ],
       "get": {
-        "summary": "Cluster nodes information.",
+        "summary": "Cluster nodes information",
         "description": "Provides cluster nodes information.\n",
         "operationId": "clustermgmt_ingestionNode_getIngestionNodeInfo",
         "security": [
@@ -118647,7 +126356,7 @@
         }
       ],
       "get": {
-        "summary": "Returns configured remote cluster information.",
+        "summary": "Returns configured remote cluster information",
         "description": "The cluster remote info API allows you to retrieve all of the configured remote cluster information. It returns connection and endpoint information keyed by the configured remote cluster alias.\n",
         "operationId": "clustermgmt_cluster_getRemoteInfo",
         "security": [
@@ -118685,7 +126394,7 @@
         }
       ],
       "get": {
-        "summary": "Get opensearch settings.",
+        "summary": "Get opensearch settings",
         "description": "Get opensearch settings.\n",
         "operationId": "clustermgmt_settings_getStorageSettings",
         "security": [
@@ -118712,7 +126421,7 @@
         ]
       },
       "put": {
-        "summary": "Put opensearch settings.",
+        "summary": "Put opensearch settings",
         "description": "Put opensearch settings.\n",
         "operationId": "clustermgmt_settings_putStorageSettings",
         "requestBody": {
@@ -118754,7 +126463,7 @@
       }
     },
     "/{analytics-service}/cloud/clustermgmt/storage/recovery": {
-      "description": "Returns information about ongoing and completed shard recoveries for one or more indices. For data streams, the API returns information for the stream’s backing indices.\n",
+      "description": "Returns information about ongoing and completed shard recoveries for one or more indices. For data streams, the API returns information for the stream's backing indices.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -118770,8 +126479,8 @@
         }
       ],
       "get": {
-        "summary": "Use the index recovery API to get information about ongoing and completed shard recoveries.",
-        "description": "Returns information about ongoing and completed shard recoveries for one or more indices. For data streams, the API returns information for the stream’s backing indices.\n",
+        "summary": "Use the index recovery API to get information about ongoing and completed shard recoveries",
+        "description": "Returns information about ongoing and completed shard recoveries for one or more indices. For data streams, the API returns information for the stream's backing indices.\n",
         "operationId": "clustermgmt_index_getRecovery",
         "security": [
           {
@@ -118798,7 +126507,7 @@
       }
     },
     "/{analytics-service}/cloud/clustermgmt/storage/{index}/recovery": {
-      "description": "Returns information about ongoing and completed shard recoveries for one or more indices. For data streams, the API returns information for the stream’s backing indices.\n",
+      "description": "Returns information about ongoing and completed shard recoveries for one or more indices. For data streams, the API returns information for the stream's backing indices.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -118817,8 +126526,8 @@
         }
       ],
       "get": {
-        "summary": "Use the index recovery API to get information about ongoing and completed shard recoveries.",
-        "description": "Returns information about ongoing and completed shard recoveries for one or more indices. For data streams, the API returns information for the stream’s backing indices.\n",
+        "summary": "Use the index recovery API to get information about ongoing and completed shard recoveries",
+        "description": "Returns information about ongoing and completed shard recoveries for one or more indices. For data streams, the API returns information for the stream's backing indices.\n",
         "operationId": "clustermgmt_index_getRecoveryByIndex",
         "security": [
           {
@@ -118857,7 +126566,7 @@
         }
       ],
       "get": {
-        "summary": "Get snapshot repositories.",
+        "summary": "Get snapshot repositories",
         "description": "Gets information about one or more registered snapshot repositories.",
         "operationId": "clustermgmt_snapshot_getRepositories",
         "security": [
@@ -118894,7 +126603,7 @@
         }
       ],
       "get": {
-        "summary": "Get snapshot status.",
+        "summary": "Get snapshot status",
         "description": "Returns the status of all currently running snapshots in all repositories.",
         "operationId": "clustermgmt_snapshot_getStatus",
         "security": [
@@ -118937,7 +126646,7 @@
         }
       ],
       "get": {
-        "summary": "Get snapshot repository.",
+        "summary": "Get snapshot repository",
         "description": "Gets information about one or more registered snapshot repositories by name.",
         "operationId": "clustermgmt_snapshot_getRepository",
         "security": [
@@ -118977,7 +126686,7 @@
         }
       ],
       "get": {
-        "summary": "Get snapshot status by repository.",
+        "summary": "Get snapshot status by repository",
         "description": "Returns the status of all currently running snapshots in a repository.",
         "operationId": "clustermgmt_snapshot_getStatusByRepository",
         "security": [
@@ -119017,7 +126726,7 @@
         }
       ],
       "get": {
-        "summary": "Get snapshot.",
+        "summary": "Get snapshot",
         "description": "Retrieves information about one or more snapshots.",
         "operationId": "clustermgmt_snapshot_getSnapshot",
         "parameters": [
@@ -119052,7 +126761,7 @@
         ]
       },
       "delete": {
-        "summary": "Delete snapshot.",
+        "summary": "Delete snapshot",
         "description": "Deletes one or more snapshots",
         "operationId": "clustermgmt_snapshot_deleteSnapshot",
         "security": [
@@ -119095,7 +126804,7 @@
         }
       ],
       "get": {
-        "summary": "Get snapshot status by repository and snapshot.",
+        "summary": "Get snapshot status by repository and snapshot",
         "description": "Returns the status of a snapshot in a repository.",
         "operationId": "clustermgmt_snapshot_getStatusByRepositorySnapshot",
         "security": [
@@ -119138,7 +126847,7 @@
         }
       ],
       "post": {
-        "summary": "Verify snapshot repository.",
+        "summary": "Verify snapshot repository",
         "description": "Verifies that a snapshot repository is functional.",
         "operationId": "clustermgmt_snapshot_verifyRepository",
         "security": [
@@ -119179,8 +126888,8 @@
         }
       ],
       "get": {
-        "summary": "Returns indices information.",
-        "description": "Returns information about one or more indices. For data streams, the API returns information about the stream’s backing indices.\n",
+        "summary": "Returns indices information",
+        "description": "Returns information about one or more indices. For data streams, the API returns information about the stream's backing indices.\n",
         "operationId": "clustermgmt_index_getIndex",
         "parameters": [
           {
@@ -119232,7 +126941,7 @@
         ]
       },
       "delete": {
-        "summary": "Deletes one or more indices.",
+        "summary": "Deletes one or more indices",
         "description": "Deleting an index deletes its documents, shards, and metadata.\n",
         "operationId": "clustermgmt_index_deleteIndex",
         "parameters": [
@@ -119273,7 +126982,7 @@
         ]
       },
       "put": {
-        "summary": "Creates a new index.",
+        "summary": "Creates a new index",
         "description": "You can use the create index API to add a new index to a cluster.\n",
         "operationId": "clustermgmt_index_createIndex",
         "parameters": [
@@ -119357,7 +127066,7 @@
         }
       ],
       "post": {
-        "summary": "Closes an index.",
+        "summary": "Closes an index",
         "description": "You use the close index API to close open indices.\n",
         "operationId": "clustermgmt_index_closeIndex",
         "security": [
@@ -119385,7 +127094,7 @@
       }
     },
     "/{analytics-service}/cloud/clustermgmt/storage/{index}/open": {
-      "description": "You can use the open index API to re-open closed indices. If the request targets a data stream, the request re-opens any of the stream’s closed backing indices.\n",
+      "description": "You can use the open index API to re-open closed indices. If the request targets a data stream, the request re-opens any of the stream's closed backing indices.\n",
       "parameters": [
         {
           "$ref": "#/components/parameters/accept_language_optional"
@@ -119416,8 +127125,8 @@
         }
       ],
       "post": {
-        "summary": "Opens a closed index. For data streams, the API opens any closed backing indices.",
-        "description": "You can use the open index API to re-open closed indices. If the request targets a data stream, the request re-opens any of the stream’s closed backing indices.\n",
+        "summary": "Opens a closed index. For data streams, the API opens any closed backing indices",
+        "description": "You can use the open index API to re-open closed indices. If the request targets a data stream, the request re-opens any of the stream's closed backing indices.\n",
         "operationId": "clustermgmt_index_openIndex",
         "security": [
           {
@@ -119469,7 +127178,7 @@
         }
       ],
       "post": {
-        "summary": "Shrinks an existing index into a new index with fewer primary shards.",
+        "summary": "Shrinks an existing index into a new index with fewer primary shards",
         "description": "The shrink index API allows you to shrink an existing index into a new index with fewer primary shards. The requested number of primary shards in the target index must be a factor of the number of shards in the source index.\n",
         "operationId": "clustermgmt_index_shrinkIndex",
         "security": [
@@ -119522,7 +127231,7 @@
         }
       ],
       "post": {
-        "summary": "Splits an existing index into a new index with more primary shards.",
+        "summary": "Splits an existing index into a new index with more primary shards",
         "description": "The split index API allows you to split an existing index into a new index, where each original primary shard is split into two or more primary shards in the new index.\n",
         "operationId": "clustermgmt_index_splitIndex",
         "security": [
@@ -119589,7 +127298,7 @@
         }
       ],
       "post": {
-        "summary": "Clones an existing index.",
+        "summary": "Clones an existing index",
         "description": "Use the clone index API to clone an existing index into a new index, where each original primary shard is cloned into a new primary shard in the new index.\n",
         "operationId": "clustermgmt_index_cloneIndex",
         "security": [
@@ -119642,7 +127351,7 @@
         }
       ],
       "post": {
-        "summary": "Creates a new index for a data stream or index alias.",
+        "summary": "Creates a new index for a data stream or index alias",
         "description": "The rollover API creates a new index for a data stream or index alias.\n",
         "operationId": "clustermgmt_index_rolloverIndex",
         "security": [
@@ -119698,7 +127407,7 @@
         }
       ],
       "post": {
-        "summary": "Creates a new index for a data stream or index alias.",
+        "summary": "Creates a new index for a data stream or index alias",
         "description": "The rollover API creates a new index for a data stream or index alias.\n",
         "operationId": "clustermgmt_index_rolloverToTarget",
         "security": [
@@ -119798,7 +127507,7 @@
         }
       ],
       "get": {
-        "summary": "Flushes one or more data streams or indices.",
+        "summary": "Flushes one or more data streams or indices",
         "description": "Flushing a data stream or index is the process of making sure that any data that is currently only stored in the transaction log is also permanently stored in the Lucene index.\n",
         "operationId": "clustermgmt_index_getFlushByIndex",
         "security": [
@@ -119825,7 +127534,7 @@
         ]
       },
       "post": {
-        "summary": "Flushes one or more data streams or indices.",
+        "summary": "Flushes one or more data streams or indices",
         "description": "Flushing a data stream or index is the process of making sure that any data that is currently only stored in the transaction log is also permanently stored in the Lucene index.\n",
         "operationId": "clustermgmt_index_postFlushByIndex",
         "security": [
@@ -119878,7 +127587,7 @@
         }
       ],
       "get": {
-        "summary": "Flushes one or more data streams or indices.",
+        "summary": "Flushes one or more data streams or indices",
         "description": "Flushing a data stream or index is the process of making sure that any data that is currently only stored in the transaction log is also permanently stored in the Lucene index.\n",
         "operationId": "clustermgmt_index_getFlush",
         "security": [
@@ -119905,7 +127614,7 @@
         ]
       },
       "post": {
-        "summary": "Flushes one or more data streams or indices.",
+        "summary": "Flushes one or more data streams or indices",
         "description": "Flushing a data stream or index is the process of making sure that any data that is currently only stored in the transaction log is also permanently stored in the Lucene index.\n",
         "operationId": "clustermgmt_index_postFlush",
         "security": [
@@ -119949,7 +127658,7 @@
         }
       ],
       "get": {
-        "summary": "Retrieves information for one or more aliases.",
+        "summary": "Retrieves information for one or more aliases",
         "description": "Retrieves information for one or more aliases.\n",
         "operationId": "clustermgmt_index_getAliasByIndexAlias",
         "parameters": [
@@ -119990,7 +127699,7 @@
         ]
       },
       "put": {
-        "summary": "Adds a data stream or index to an alias.",
+        "summary": "Adds a data stream or index to an alias",
         "description": "Adds a data stream or index to an alias.\n",
         "operationId": "clustermgmt_index_putAliasByIndexAlias",
         "parameters": [
@@ -120039,7 +127748,7 @@
         ]
       },
       "post": {
-        "summary": "Adds a data stream or index to an alias.",
+        "summary": "Adds a data stream or index to an alias",
         "description": "Adds a data stream or index to an alias.\n",
         "operationId": "clustermgmt_index_postAliasByIndexAlias",
         "parameters": [
@@ -120088,7 +127797,7 @@
         ]
       },
       "delete": {
-        "summary": "Removes a data stream or index from an alias.",
+        "summary": "Removes a data stream or index from an alias",
         "description": "Removes a data stream or index from an alias.\n",
         "operationId": "clustermgmt_index_deleteAliasByIndexAlias",
         "parameters": [
@@ -120146,7 +127855,7 @@
         }
       ],
       "get": {
-        "summary": "Retrieves information for one or more aliases.",
+        "summary": "Retrieves information for one or more aliases",
         "description": "Retrieves information for one or more aliases.\n",
         "operationId": "clustermgmt_index_getAlias",
         "security": [
@@ -120199,7 +127908,7 @@
         }
       ],
       "get": {
-        "summary": "Retrieves information for one or more aliases.",
+        "summary": "Retrieves information for one or more aliases",
         "description": "Retrieves information for one or more aliases.\n",
         "operationId": "clustermgmt_index_getAliasbyName",
         "security": [
@@ -120243,7 +127952,7 @@
         }
       ],
       "post": {
-        "summary": "Performs one or more alias actions in a single atomic operation.",
+        "summary": "Performs one or more alias actions in a single atomic operation",
         "description": "Performs one or more alias actions in a single atomic operation.\n",
         "operationId": "clustermgmt_index_postAliases",
         "requestBody": {
@@ -120551,6 +128260,56 @@
           "type": "boolean"
         }
       },
+      "ai_model_optional": {
+        "name": "ai_model",
+        "in": "query",
+        "description": "Filter results by AI model name.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "bigcode/starcoder"
+        }
+      },
+      "ai_cache_hit_optional": {
+        "name": "ai_cache_hit",
+        "in": "query",
+        "description": "Filter results by AI cache hit.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "true"
+        }
+      },
+      "ai_request_tokens_optional": {
+        "name": "ai_request_tokens",
+        "in": "query",
+        "description": "Filter results by AI request tokens.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": 500
+        }
+      },
+      "ai_response_tokens_optional": {
+        "name": "ai_response_tokens",
+        "in": "query",
+        "description": "Filter results by AI response tokens.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": 500
+        }
+      },
+      "ai_total_tokens_optional": {
+        "name": "ai_total_tokens",
+        "in": "query",
+        "description": "Filter results by total AI response tokens.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": 1000
+        }
+      },
       "allow_no_indices_optional": {
         "name": "allow_no_indices",
         "in": "query",
@@ -120633,7 +128392,7 @@
       "bucket_interval_optional": {
         "name": "bucket_interval",
         "in": "query",
-        "description": "If set, return events with this specific bucket interval in the dashboard. The value would be in the format of xy, where x is a positive integer and y is the time unit (d, h, m or s). For example '8h', '2d', '5m'.\n",
+        "description": "The time interval between data points. For example, if you set `--timeframe` to 1 day, and you want 24 datapoints on the chart, then set `bucket_interval` to 1h. Format is an integer followed by the units: s|m|h|d (seconds, minutes, hours or days).\n",
         "required": false,
         "schema": {
           "type": "string",
@@ -121206,7 +128965,7 @@
       "ignore_unavailable_optional": {
         "name": "ignore_unavailable",
         "in": "query",
-        "description": "For operations about indices, if true, unavailable indices (missing or closed) will be ignored. For operations about snapshots, if true, unavailable snapshots (corrupted or otherwise temporarily can’t be returned) will be ignored. Defaults to false.\n",
+        "description": "For operations about indices, if true, unavailable indices (missing or closed) will be ignored. For operations about snapshots, if true, unavailable snapshots (corrupted or otherwise temporarily can't be returned) will be ignored. Defaults to false.\n",
         "required": false,
         "schema": {
           "type": "boolean"
@@ -121660,7 +129419,7 @@
       "status_code_optional": {
         "name": "status_code",
         "in": "query",
-        "description": "If set, only return events that match this response code e.g. 200 OK, 404 Not Found. It is also possible to use wildcard based values 10x, 20x, 30x, 40x, 50x.",
+        "description": "If set, only return events that match this response code e.g. 200 OK, 404 Not Found. It is also possible to use wildcard based values 10x, 20x, 30x, 40x, 50x. The values 'error' and 'success' can also be used to filter for all errors or all successful calls.",
         "required": false,
         "schema": {
           "type": "string",
@@ -121730,7 +129489,8 @@
             "last12hours",
             "last24hours",
             "last7days",
-            "last30days"
+            "last30days",
+            "all"
           ]
         }
       },
@@ -121924,6 +129684,60 @@
           }
         }
       },
+      "AiDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the AI Dashboard.",
+        "properties": {
+          "search_time": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "total_consumer_orgs": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_requests": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_tokens": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "token_count_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "token_heatmap": {
+            "$ref": "#/components/schemas/DateHourValueData"
+          },
+          "top_consumers_by_token_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "top_consumers_by_token": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "top_apps_by_token_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "top_apps_by_token": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "model_usage": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "cache_hits_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "top_apps_rate_limited": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "response_time_percentiles": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "request_token_count_percentiles": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "response_token_count_percentiles": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          }
+        }
+      },
       "ApiDashboardResponse": {
         "type": "object",
         "description": "Data to display on the API Dashboard.",
@@ -121931,44 +129745,35 @@
           "search_time": {
             "$ref": "#/components/schemas/NonNegativeInteger"
           },
-          "status_codes": {
-            "$ref": "#/components/schemas/GroupValueDataList"
-          },
-          "min_response_time": {
+          "total_apis": {
             "$ref": "#/components/schemas/DataItem"
           },
-          "avg_response_time": {
+          "total_paths": {
             "$ref": "#/components/schemas/DataItem"
           },
-          "max_response_time": {
+          "total_operations": {
             "$ref": "#/components/schemas/DataItem"
-          },
-          "total_api_calls": {
-            "$ref": "#/components/schemas/DataItem"
-          },
-          "total_errors": {
-            "$ref": "#/components/schemas/DataItem"
-          },
-          "errors": {
-            "$ref": "#/components/schemas/GroupDateValueItemData"
-          },
-          "response_times": {
-            "$ref": "#/components/schemas/GroupDateValueItemData"
-          },
-          "api_calls_per_day": {
-            "$ref": "#/components/schemas/GroupDateValueItemData"
           },
           "top_apis_over_time": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
           },
-          "top_apps_over_time": {
+          "top_apis_by_calls": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "top_apis_for_errors_over_time": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
           },
-          "top_corgs_over_time": {
-            "$ref": "#/components/schemas/GroupDateValueItemData"
+          "top_apis_by_errors": {
+            "$ref": "#/components/schemas/GroupValueDataList"
           },
-          "api_calls_per_day_per_hour": {
-            "$ref": "#/components/schemas/DateHourValueData"
+          "top_apis_using_analytics_storage": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "top_api_paths_by_calls": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "top_api_paths_by_errors": {
+            "$ref": "#/components/schemas/GroupValueDataList"
           }
         }
       },
@@ -122019,6 +129824,36 @@
           }
         }
       },
+      "ApplicationDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Application Dashboard.",
+        "properties": {
+          "search_time": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "total_applications": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "total_client_ids": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "top_apps_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "top_apps_by_calls": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "top_apps_for_errors_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "top_apps_by_errors": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "top_apps_rate_limited": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          }
+        }
+      },
       "BreakDownData": {
         "type": "object",
         "description": "Data to display the breakdown of API calls per catalog/org",
@@ -122037,6 +129872,70 @@
           },
           "bytes_sent": {
             "$ref": "#/components/schemas/GroupValueDataList"
+          }
+        }
+      },
+      "ClientDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Client Dashboard.",
+        "properties": {
+          "total_client_ips": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_countries": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_timezones": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_useragents": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_os": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_devices": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "geo_hash": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "key": {
+                      "type": "string"
+                    },
+                    "doc_count": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "top_countries": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
+          "top_timezones": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
+          "top_client_ips_errors_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "top_client_ips_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "top_os": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
+          "top_useragents": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
+          "top_devices": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
           }
         }
       },
@@ -122081,6 +129980,33 @@
       "ClusterName": {
         "type": "string",
         "description": "Number of the cluster"
+      },
+      "ConsumerDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Consumer Dashboard.",
+        "properties": {
+          "search_time": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "total_consumer_orgs": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "average_apps_per_consumer": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "top_corgs_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "top_consumers_by_calls": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "top_corgs_for_errors_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "top_consumers_by_errors": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          }
+        }
       },
       "ConsumptionDashboardResponse": {
         "type": "object",
@@ -122242,6 +130168,26 @@
         "description": "The API Event logged by the gateway",
         "additionalProperties": true,
         "properties": {
+          "ai_cache_hit": {
+            "type": "boolean",
+            "description": "If the request hit the gateway AI cache"
+          },
+          "ai_model": {
+            "type": "string",
+            "description": "The AI Model name/ID"
+          },
+          "ai_request_tokens": {
+            "type": "number",
+            "description": "The request AI token count"
+          },
+          "ai_response_tokens": {
+            "type": "number",
+            "description": "The response AI token count"
+          },
+          "ai_total_tokens": {
+            "type": "number",
+            "description": "The total of the AI request and response token counts"
+          },
           "api_version": {
             "type": "string",
             "description": "The version of the API"
@@ -122920,19 +130866,19 @@
           "max_response_time": {
             "$ref": "#/components/schemas/DataItem"
           },
-          "total_api_calls": {
-            "$ref": "#/components/schemas/DataItem"
+          "apis_with_slowest_response_time": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
           },
-          "top_apis_by_response_time": {
+          "apis_with_fastest_response_time": {
             "$ref": "#/components/schemas/GroupKeyValueDataList"
           },
           "response_times": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
           },
-          "data_usage_received": {
+          "response_times_successful_calls": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
           },
-          "data_usage_sent": {
+          "response_times_error_calls": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
           }
         }
@@ -123034,6 +130980,13 @@
           "end": {
             "type": "string",
             "format": "date-time"
+          },
+          "lifecycle_state": {
+            "type": "string",
+            "enum": [
+              "published",
+              "deprecated"
+            ]
           },
           "type": {
             "type": "string",
@@ -123142,20 +131095,35 @@
           "apps_per_plan": {
             "$ref": "#/components/schemas/GroupValueDataList"
           },
-          "total_api_calls": {
-            "$ref": "#/components/schemas/DataItem"
-          },
-          "total_apis": {
-            "$ref": "#/components/schemas/DataItem"
-          },
           "total_products": {
             "$ref": "#/components/schemas/DataItem"
           },
-          "total_consumer_orgs": {
+          "total_plans": {
             "$ref": "#/components/schemas/DataItem"
           },
-          "api_calls_per_day": {
+          "top_products_over_time": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "top_products_by_calls": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "top_products_for_errors_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "top_products_by_errors": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "top_plans_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "top_plans_by_calls": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "top_plans_for_errors_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "top_plans_by_errors": {
+            "$ref": "#/components/schemas/GroupValueDataList"
           }
         }
       },
@@ -123570,6 +131538,54 @@
           },
           "success_rate": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "total_errors": {
+            "$ref": "#/components/schemas/DataItem"
+          }
+        }
+      },
+      "SummaryDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Summary Dashboard.",
+        "properties": {
+          "search_time": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "avg_response_time": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_applications": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_apis": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_products": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_consumer_orgs": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_api_calls": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_errors": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "status_codes": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "response_times": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "api_calls_per_day": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "api_calls_per_day_per_hour": {
+            "$ref": "#/components/schemas/DateHourValueData"
           }
         }
       },
@@ -123600,33 +131616,12 @@
           },
           "transform_ok": {
             "type": "boolean"
-          }
-        }
-      },
-      "UsageDashboardResponse": {
-        "type": "object",
-        "description": "Data to display on the USAGE Dashboard.",
-        "properties": {
-          "search_time": {
-            "$ref": "#/components/schemas/NonNegativeInteger"
           },
-          "top_products_by_calls": {
-            "$ref": "#/components/schemas/GroupValueDataList"
+          "storage_memory_ok": {
+            "type": "boolean"
           },
-          "top_apis_by_calls": {
-            "$ref": "#/components/schemas/GroupValueDataList"
-          },
-          "top_client_ips_by_calls": {
-            "$ref": "#/components/schemas/GroupValueDataList"
-          },
-          "top_apps_by_calls": {
-            "$ref": "#/components/schemas/GroupValueDataList"
-          },
-          "top_apis_by_bytes_sent": {
-            "$ref": "#/components/schemas/GroupKeyValueDataList"
-          },
-          "top_apis_by_bytes_received": {
-            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          "reindex_ok": {
+            "type": "boolean"
           }
         }
       },
@@ -123666,6 +131661,12 @@
           },
           "total_response_size": {
             "$ref": "#/components/schemas/DataItem"
+          },
+          "data_usage_received": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "data_usage_sent": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
           }
         }
       },
@@ -123898,6 +131899,27 @@
           }
         }
       },
+      "CatalogBreakdown": {
+        "type": "array",
+        "description": "An array of catalog breakdown information",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "total": {
+              "type": "number"
+            },
+            "errors": {
+              "type": "number"
+            },
+            "success": {
+              "type": "number"
+            }
+          }
+        }
+      },
       "LeaderboardRanked": {
         "type": "array",
         "description": "An array of ranked data",
@@ -123912,6 +131934,9 @@
               "description": "The reference field for this artifact, e.g. apiname:version or productname:version or productname:version:plan",
               "type": "string",
               "example": "apiname:1.0.0"
+            },
+            "catalogs": {
+              "$ref": "#/components/schemas/CatalogBreakdown"
             },
             "total": {
               "type": "number"
@@ -124064,6 +132089,53 @@
           }
         }
       },
+      "RefApiCallsData": {
+        "type": "array",
+        "description": "An array of reference field details in the consumer trend report details",
+        "items": {
+          "type": "object",
+          "properties": {
+            "ref": {
+              "description": "The reference field for this artifact",
+              "type": "string",
+              "example": "corg-shirt"
+            },
+            "org_name": {
+              "type": "string"
+            },
+            "catalog_name": {
+              "type": "string"
+            },
+            "value": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "RefDetailData": {
+        "type": "array",
+        "description": "An array of reference field details in the application trend report details",
+        "items": {
+          "type": "object",
+          "properties": {
+            "rank": {
+              "type": "number"
+            },
+            "name": {
+              "type": "string"
+            },
+            "total": {
+              "type": "number"
+            },
+            "errors": {
+              "type": "number"
+            },
+            "success": {
+              "type": "number"
+            }
+          }
+        }
+      },
       "ConsumerTrendLeaderboardDetailReportResponse": {
         "type": "object",
         "description": "Leaderboard detail for the consumer trends report",
@@ -124118,11 +132190,32 @@
           },
           "product_leaderboard": {
             "$ref": "#/components/schemas/LeaderboardRanked"
+          },
+          "corg_names": {
+            "$ref": "#/components/schemas/RefApiCallsData"
+          },
+          "application_names": {
+            "$ref": "#/components/schemas/RefDetailData"
           }
         }
       }
     },
     "responses": {
+      "AiDashboardResponse": {
+        "description": "Data needed to populate the AI Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AiDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/AiDashboardResponse"
+            }
+          }
+        }
+      },
       "ApiDashboardResponse": {
         "description": "Data needed to populate the API Dashboard",
         "content": {
@@ -124183,6 +132276,21 @@
           }
         }
       },
+      "ApplicationDashboardResponse": {
+        "description": "Data needed to populate the Application Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ApplicationDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ApplicationDashboardResponse"
+            }
+          }
+        }
+      },
       "ClusterMgmtIngestionResponse": {
         "description": "Response from Logstash cluster management API.",
         "content": {
@@ -124209,6 +132317,21 @@
           "application/yaml": {
             "schema": {
               "$ref": "#/components/schemas/ClusterMgmtObjectResponse"
+            }
+          }
+        }
+      },
+      "ConsumerDashboardResponse": {
+        "description": "Data needed to populate the Consumer Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ConsumerDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ConsumerDashboardResponse"
             }
           }
         }
@@ -124348,6 +132471,21 @@
           }
         }
       },
+      "ClientDashboardResponse": {
+        "description": "Data needed to populate the Client Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ClientDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ClientDashboardResponse"
+            }
+          }
+        }
+      },
       "NoContentResponse": {
         "description": "The resource was deleted successfully."
       },
@@ -124456,17 +132594,17 @@
           }
         }
       },
-      "UsageDashboardResponse": {
-        "description": "Data needed to populate the Usage Dashboard",
+      "SummaryDashboardResponse": {
+        "description": "Data needed to populate the SUMMARY Dashboard",
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/UsageDashboardResponse"
+              "$ref": "#/components/schemas/SummaryDashboardResponse"
             }
           },
           "application/yaml": {
             "schema": {
-              "$ref": "#/components/schemas/UsageDashboardResponse"
+              "$ref": "#/components/schemas/SummaryDashboardResponse"
             }
           }
         }
@@ -125424,7 +133562,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=api-apic-apilist"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=api-apic-apilist"
         },
         "responses": {
           "200": {
@@ -125504,7 +133642,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=api-apic-apiget"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=api-apic-apiget"
         },
         "parameters": [
           {
@@ -125589,7 +133727,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=api-apic-apiget-document"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=api-apic-apiget-document"
         },
         "parameters": [
           {
@@ -125674,7 +133812,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=api-apic-apiaddattachment"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=api-apic-apiaddattachment"
         },
         "parameters": [
           {
@@ -125775,7 +133913,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=api-apic-apiaddtag"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=api-apic-apiaddtag"
         },
         "parameters": [
           {
@@ -125863,7 +134001,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=api-apic-apiseticon"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=api-apic-apiseticon"
         },
         "parameters": [
           {
@@ -125961,7 +134099,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-apic-configget"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=config-apic-apic-configget"
         },
         "responses": {
           "200": {
@@ -126041,7 +134179,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=application-apic-applicationlist"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=application-apic-applicationlist"
         },
         "responses": {
           "200": {
@@ -126121,7 +134259,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=application-apic-applicationget"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=application-apic-applicationget"
         },
         "parameters": [
           {
@@ -126206,7 +134344,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=org-apic-consumer-orglist"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=org-apic-consumer-orglist"
         },
         "responses": {
           "200": {
@@ -126286,7 +134424,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=org-apic-consumer-orgget"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=org-apic-consumer-orgget"
         },
         "parameters": [
           {
@@ -126374,7 +134512,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=content-apic-contentexport"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=content-apic-contentexport"
         },
         "parameters": [
           {
@@ -126462,7 +134600,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=content-apic-contentget-export"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=content-apic-contentget-export"
         },
         "responses": {
           "200": {
@@ -126556,7 +134694,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=content-apic-contentdelete-export"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=content-apic-contentdelete-export"
         },
         "responses": {
           "204": {
@@ -126612,7 +134750,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=content-apic-contentget-export-status"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=content-apic-contentget-export-status"
         },
         "responses": {
           "200": {
@@ -126715,7 +134853,7 @@
         "operationId": "custom_module_createImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=content-apic-contentimport"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=content-apic-contentimport"
         },
         "requestBody": {
           "content": {
@@ -126808,7 +134946,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=content-apic-contentdelete-import"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=content-apic-contentdelete-import"
         },
         "responses": {
           "204": {
@@ -126864,7 +135002,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=content-apic-contentget-import-status"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=content-apic-contentget-import-status"
         },
         "responses": {
           "200": {
@@ -126977,7 +135115,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=entity-apic-contentlist"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=entity-apic-contentlist"
         },
         "parameters": [
           {
@@ -127077,7 +135215,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=entity-apic-contentlist-types"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=entity-apic-contentlist-types"
         },
         "responses": {
           "200": {
@@ -127165,7 +135303,7 @@
         "operationId": "custom_module_createExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=module-apic-custom-modulecreate-export"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=module-apic-custom-modulecreate-export"
         },
         "responses": {
           "201": {
@@ -127241,7 +135379,7 @@
         "operationId": "custom_module_getExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=module-apic-custom-moduleget-export"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=module-apic-custom-moduleget-export"
         },
         "responses": {
           "200": {
@@ -127315,7 +135453,7 @@
         "operationId": "custom_module_deleteExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=module-apic-custom-moduledelete-export"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=module-apic-custom-moduledelete-export"
         },
         "responses": {
           "204": {
@@ -127364,7 +135502,7 @@
         "operationId": "custom_module_getExportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=module-apic-custom-moduleget-export-status"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=module-apic-custom-moduleget-export-status"
         },
         "responses": {
           "200": {
@@ -127470,7 +135608,7 @@
         "operationId": "custom_module_createImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=module-apic-custom-modulecreate-import"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=module-apic-custom-modulecreate-import"
         },
         "requestBody": {
           "content": {
@@ -127556,7 +135694,7 @@
         "operationId": "custom_module_deleteImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=module-apic-custom-moduledelete-import"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=module-apic-custom-moduledelete-import"
         },
         "responses": {
           "204": {
@@ -127605,7 +135743,7 @@
         "operationId": "custom_module_getImportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=module-apic-custom-moduleget-import-status"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=module-apic-custom-moduleget-import-status"
         },
         "responses": {
           "200": {
@@ -127708,7 +135846,7 @@
         "operationId": "custom_theme_createExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=theme-apic-custom-themecreate-export"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=theme-apic-custom-themecreate-export"
         },
         "responses": {
           "201": {
@@ -127784,7 +135922,7 @@
         "operationId": "custom_theme_getExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=theme-apic-custom-themeget-export"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=theme-apic-custom-themeget-export"
         },
         "responses": {
           "200": {
@@ -127858,7 +135996,7 @@
         "operationId": "custom_theme_deleteExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=theme-apic-custom-themedelete-export"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=theme-apic-custom-themedelete-export"
         },
         "responses": {
           "204": {
@@ -127907,7 +136045,7 @@
         "operationId": "custom_theme_getExportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=theme-apic-custom-themeget-export-status"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=theme-apic-custom-themeget-export-status"
         },
         "responses": {
           "200": {
@@ -128013,7 +136151,7 @@
         "operationId": "custom_theme_createImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=theme-apic-custom-themecreate-import"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=theme-apic-custom-themecreate-import"
         },
         "requestBody": {
           "content": {
@@ -128099,7 +136237,7 @@
         "operationId": "custom_theme_deleteImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=theme-apic-custom-themedelete-import"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=theme-apic-custom-themedelete-import"
         },
         "responses": {
           "204": {
@@ -128148,7 +136286,7 @@
         "operationId": "custom_theme_getImportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=theme-apic-custom-themeget-import-status"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=theme-apic-custom-themeget-import-status"
         },
         "responses": {
           "200": {
@@ -128258,7 +136396,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=translation-apic-custom-translationcreate-export"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=translation-apic-custom-translationcreate-export"
         },
         "parameters": [
           {
@@ -128346,7 +136484,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=translation-apic-custom-translationget-export"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=translation-apic-custom-translationget-export"
         },
         "responses": {
           "200": {
@@ -128427,7 +136565,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=translation-apic-custom-translationdelete-export"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=translation-apic-custom-translationdelete-export"
         },
         "responses": {
           "204": {
@@ -128483,7 +136621,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=translation-apic-custom-translationget-export-status"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=translation-apic-custom-translationget-export-status"
         },
         "responses": {
           "200": {
@@ -128593,7 +136731,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=translation-apic-custom-translationcreate-import"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=translation-apic-custom-translationcreate-import"
         },
         "requestBody": {
           "content": {
@@ -128686,7 +136824,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=translation-apic-custom-translationdelete-import"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=translation-apic-custom-translationdelete-import"
         },
         "responses": {
           "204": {
@@ -128742,7 +136880,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=translation-apic-custom-translationget-import-status"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=translation-apic-custom-translationget-import-status"
         },
         "responses": {
           "200": {
@@ -128852,7 +136990,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=export-entity-apic-export-entitylist"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=export-entity-apic-export-entitylist"
         },
         "responses": {
           "200": {
@@ -128922,7 +137060,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=export-entity-apic-export-entitycreate"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=export-entity-apic-export-entitycreate"
         },
         "parameters": [
           {
@@ -129010,7 +137148,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=export-entity-apic-export-entityget"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=export-entity-apic-export-entityget"
         },
         "responses": {
           "200": {
@@ -129080,7 +137218,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=export-entity-apic-export-entitydelete"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=export-entity-apic-export-entitydelete"
         },
         "responses": {
           "200": {
@@ -129163,7 +137301,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=export-entity-apic-export-entityadd-content"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=export-entity-apic-export-entityadd-content"
         },
         "parameters": [
           {
@@ -129254,7 +137392,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=export-entity-apic-export-entityremove-content"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=export-entity-apic-export-entityremove-content"
         },
         "parameters": [
           {
@@ -129345,7 +137483,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=export-entity-apic-export-entitylaunch"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=export-entity-apic-export-entitylaunch"
         },
         "responses": {
           "201": {
@@ -129428,7 +137566,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=export-entity-apic-export-entityget-launch-export"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=export-entity-apic-export-entityget-launch-export"
         },
         "responses": {
           "200": {
@@ -129522,7 +137660,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=export-entity-apic-export-entitydelete-launch-export"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=export-entity-apic-export-entitydelete-launch-export"
         },
         "responses": {
           "204": {
@@ -129578,7 +137716,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=export-entity-apic-export-entityget-launch-export-status"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=export-entity-apic-export-entityget-launch-export-status"
         },
         "responses": {
           "200": {
@@ -129688,7 +137826,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=page-apic-custom-webserver-pageget"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=page-apic-custom-webserver-pageget"
         },
         "responses": {
           "200": {
@@ -129758,7 +137896,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=page-apic-custom-webserver-pagedelete"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=page-apic-custom-webserver-pagedelete"
         },
         "responses": {
           "200": {
@@ -129828,7 +137966,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=page-apic-custom-webserver-pageset"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=page-apic-custom-webserver-pageset"
         },
         "requestBody": {
           "content": {
@@ -129918,7 +138056,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-sitecheck"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=site-apic-sitecheck"
         },
         "responses": {
           "200": {
@@ -129998,7 +138136,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-sitecreate-export"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=site-apic-sitecreate-export"
         },
         "responses": {
           "201": {
@@ -130081,7 +138219,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-siteget-export"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=site-apic-siteget-export"
         },
         "responses": {
           "200": {
@@ -130162,7 +138300,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-sitedelete-export"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=site-apic-sitedelete-export"
         },
         "responses": {
           "204": {
@@ -130218,7 +138356,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-siteget-export-status"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=site-apic-siteget-export-status"
         },
         "responses": {
           "200": {
@@ -130328,7 +138466,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-sitecreate-import"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=site-apic-sitecreate-import"
         },
         "requestBody": {
           "content": {
@@ -130421,7 +138559,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-sitedelete-import"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=site-apic-sitedelete-import"
         },
         "responses": {
           "204": {
@@ -130477,7 +138615,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=siteapic-siteget-import-status"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=siteapic-siteget-import-status"
         },
         "responses": {
           "200": {
@@ -130587,7 +138725,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-sitelogin-link"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=site-apic-sitelogin-link"
         },
         "responses": {
           "200": {
@@ -130667,7 +138805,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-sitestate"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=site-apic-sitestate"
         },
         "responses": {
           "200": {
@@ -130747,7 +138885,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=entity-apic-entitycount"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=entity-apic-entitycount"
         },
         "responses": {
           "200": {
@@ -130820,7 +138958,7 @@
         "operationId": "forums_disable",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=forums-apic-forumsdisable"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=forums-apic-forumsdisable"
         },
         "responses": {
           "200": {
@@ -130893,7 +139031,7 @@
         "operationId": "forums_enable",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=forums-apic-forumsenable"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=forums-apic-forumsenable"
         },
         "responses": {
           "200": {
@@ -130973,7 +139111,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=security-apic-securityclear-bans"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=security-apic-securityclear-bans"
         },
         "responses": {
           "200": {
@@ -131053,7 +139191,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-drupal-configget"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=config-apic-drupal-configget"
         },
         "parameters": [
           {
@@ -131131,7 +139269,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-drupal-configdelete"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=config-apic-drupal-configdelete"
         },
         "parameters": [
           {
@@ -131209,7 +139347,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-drupal-configset"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=config-apic-drupal-configset"
         },
         "parameters": [
           {
@@ -131300,7 +139438,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-drupal-configlist"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=config-apic-drupal-configlist"
         },
         "parameters": [
           {
@@ -131385,7 +139523,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=state-apic-drupal-stateget"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=state-apic-drupal-stateget"
         },
         "parameters": [
           {
@@ -131460,7 +139598,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=state-apic-drupal-statedelete"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=state-apic-drupal-statedelete"
         },
         "parameters": [
           {
@@ -131535,7 +139673,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=state-apic-drupal-stateset"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=state-apic-drupal-stateset"
         },
         "parameters": [
           {
@@ -131626,7 +139764,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=maintenance-apic-maintenancestatus"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=maintenance-apic-maintenancestatus"
         },
         "responses": {
           "200": {
@@ -131706,7 +139844,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=maintenance-apic-maintenanceenable"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=maintenance-apic-maintenanceenable"
         },
         "responses": {
           "200": {
@@ -131786,7 +139924,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=maintenance-apic-maintenancedisable"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=maintenance-apic-maintenancedisable"
         },
         "responses": {
           "200": {
@@ -131866,7 +140004,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=maintenance-apic-maintenancesearch-api-index-status"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=maintenance-apic-maintenancesearch-api-index-status"
         },
         "responses": {
           "200": {
@@ -131946,7 +140084,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=maintenance-apic-maintenancerebuild-node-access"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=maintenance-apic-maintenancerebuild-node-access"
         },
         "responses": {
           "200": {
@@ -132026,7 +140164,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=maintenance-apic-maintenancesearch-api-index-rebuild"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=maintenance-apic-maintenancesearch-api-index-rebuild"
         },
         "responses": {
           "200": {
@@ -132099,7 +140237,7 @@
         "operationId": "site_config_createExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-site-configcreate-export"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=config-apic-site-configcreate-export"
         },
         "responses": {
           "201": {
@@ -132175,7 +140313,7 @@
         "operationId": "site_config_getExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-site-configget-export"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=config-apic-site-configget-export"
         },
         "responses": {
           "200": {
@@ -132249,7 +140387,7 @@
         "operationId": "site_config_deleteExport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-site-configdelete-export"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=config-apic-site-configdelete-export"
         },
         "responses": {
           "204": {
@@ -132298,7 +140436,7 @@
         "operationId": "site_config_getExportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-site-configget-export-status"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=config-apic-site-configget-export-status"
         },
         "responses": {
           "200": {
@@ -132401,7 +140539,7 @@
         "operationId": "site_config_createImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-site-configcreate-import"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=config-apic-site-configcreate-import"
         },
         "requestBody": {
           "content": {
@@ -132487,7 +140625,7 @@
         "operationId": "site_config_deleteImport",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-site-configdelete-import"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=config-apic-site-configdelete-import"
         },
         "responses": {
           "204": {
@@ -132536,7 +140674,7 @@
         "operationId": "site_config_getImportStatus",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=config-apic-site-configget-import-status"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=config-apic-site-configget-import-status"
         },
         "responses": {
           "200": {
@@ -132646,7 +140784,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=queue-apic-queueget"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=queue-apic-queueget"
         },
         "responses": {
           "200": {
@@ -132711,7 +140849,7 @@
         "operationId": "backups_list",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=backups-apic-backupslist"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=backups-apic-backupslist"
         },
         "parameters": [
           {
@@ -132781,7 +140919,7 @@
         "operationId": "platforms_list",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=platforms-apic-platformslist"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=platforms-apic-platformslist"
         },
         "parameters": [
           {
@@ -132866,7 +141004,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=product-apic-productlist"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=product-apic-productlist"
         },
         "responses": {
           "200": {
@@ -132946,7 +141084,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=product-apic-productget"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=product-apic-productget"
         },
         "parameters": [
           {
@@ -133031,7 +141169,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=product-apic-productgetdocument"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=product-apic-productgetdocument"
         },
         "parameters": [
           {
@@ -133116,7 +141254,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=product-apic-productaddattachment"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=product-apic-productaddattachment"
         },
         "parameters": [
           {
@@ -133217,7 +141355,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=product-apic-productaddtag"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=product-apic-productaddtag"
         },
         "parameters": [
           {
@@ -133305,7 +141443,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=product-apic-productseticon"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=product-apic-productseticon"
         },
         "parameters": [
           {
@@ -133395,7 +141533,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=service-apic-servicelist"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=service-apic-servicelist"
         },
         "parameters": [
           {
@@ -133472,7 +141610,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=sites-apic-sitescheck"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=sites-apic-sitescheck"
         },
         "parameters": [
           {
@@ -133542,7 +141680,7 @@
         "operationId": "sites_list",
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=sites-apic-siteslist"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=sites-apic-siteslist"
         },
         "parameters": [
           {
@@ -133619,7 +141757,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=sites-apic-sitesresetupgradeattempts"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=sites-apic-sitesresetupgradeattempts"
         },
         "parameters": [
           {
@@ -133696,7 +141834,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=reset-apic-service-factory-resetdelete"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=reset-apic-service-factory-resetdelete"
         },
         "parameters": [
           {
@@ -133776,7 +141914,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=enabled-apic-ip-security-enabledupdate"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=enabled-apic-ip-security-enabledupdate"
         },
         "parameters": [
           {
@@ -133856,7 +141994,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=queue-apic-queuelist"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=queue-apic-queuelist"
         },
         "parameters": [
           {
@@ -133933,7 +142071,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=memory-apic-php-memorylist"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=memory-apic-php-memorylist"
         },
         "parameters": [
           {
@@ -134010,7 +142148,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=memory-apic-php-memoryupdate"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=memory-apic-php-memoryupdate"
         },
         "parameters": [
           {
@@ -134090,7 +142228,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=allowlist-apic-service-ip-allowlistadd"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=allowlist-apic-service-ip-allowlistadd"
         },
         "parameters": [
           {
@@ -134170,7 +142308,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=allowlist-apic-service-ip-allowlistremove"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=allowlist-apic-service-ip-allowlistremove"
         },
         "parameters": [
           {
@@ -134250,7 +142388,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=allowlist-apic-service-ip-allowlistdelete"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=allowlist-apic-service-ip-allowlistdelete"
         },
         "parameters": [
           {
@@ -134327,7 +142465,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=allowlist-apic-service-ip-allowlistlist"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=allowlist-apic-service-ip-allowlistlist"
         },
         "parameters": [
           {
@@ -134412,7 +142550,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=modules-apic-moduleslist"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=modules-apic-moduleslist"
         },
         "parameters": [
           {
@@ -134509,7 +142647,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=modules-apic-modulesenable"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=modules-apic-modulesenable"
         },
         "parameters": [
           {
@@ -134594,7 +142732,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=modules-apic-modulesdisable"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=modules-apic-modulesdisable"
         },
         "parameters": [
           {
@@ -134679,7 +142817,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=modules-apic-modulesdelete"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=modules-apic-modulesdelete"
         },
         "parameters": [
           {
@@ -134768,7 +142906,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=role-apic-roleget"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=role-apic-roleget"
         },
         "parameters": [
           {
@@ -134843,7 +142981,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=role-apic-rolecreate"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=role-apic-rolecreate"
         },
         "parameters": [
           {
@@ -134921,7 +143059,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=role-apic-roledelete"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=role-apic-roledelete"
         },
         "parameters": [
           {
@@ -135006,7 +143144,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=role-apic-roleaddpermission"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=role-apic-roleaddpermission"
         },
         "parameters": [
           {
@@ -135084,7 +143222,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=role-apic-roleremovepermission"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=role-apic-roleremovepermission"
         },
         "parameters": [
           {
@@ -135172,7 +143310,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=role-apic-rolelist"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=role-apic-rolelist"
         },
         "parameters": [
           {
@@ -135260,7 +143398,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=site-apic-sitecache-rebuild"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=site-apic-sitecache-rebuild"
         },
         "responses": {
           "200": {
@@ -135340,7 +143478,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=themes-apic-themeslist"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=themes-apic-themeslist"
         },
         "parameters": [
           {
@@ -135437,7 +143575,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=themes-apic-themesenable"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=themes-apic-themesenable"
         },
         "parameters": [
           {
@@ -135522,7 +143660,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=themes-apic-themesdisable"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=themes-apic-themesdisable"
         },
         "parameters": [
           {
@@ -135607,7 +143745,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=themes-apic-themesdelete"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=themes-apic-themesdelete"
         },
         "parameters": [
           {
@@ -135692,7 +143830,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=themes-apic-themesset-default"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=themes-apic-themesset-default"
         },
         "parameters": [
           {
@@ -135777,7 +143915,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=memcache-apic-memcacheget"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=memcache-apic-memcacheget"
         },
         "responses": {
           "200": {
@@ -135857,7 +143995,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=memcache-apic-memcacheenable"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=memcache-apic-memcacheenable"
         },
         "responses": {
           "200": {
@@ -135937,7 +144075,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=memcache-apic-memcachedisable"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=memcache-apic-memcachedisable"
         },
         "responses": {
           "200": {
@@ -136017,7 +144155,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=twig-apic-twigdebug-enable"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=twig-apic-twigdebug-enable"
         },
         "responses": {
           "200": {
@@ -136097,7 +144235,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=twig-apic-twigdebug-disable"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=twig-apic-twigdebug-disable"
         },
         "responses": {
           "200": {
@@ -136177,7 +144315,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=twig-apic-twigdebug-status"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=twig-apic-twigdebug-status"
         },
         "responses": {
           "200": {
@@ -136269,7 +144407,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=user-apic-useraddrole"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=user-apic-useraddrole"
         },
         "responses": {
           "200": {
@@ -136339,7 +144477,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=user-apic-userremoverole"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=user-apic-userremoverole"
         },
         "responses": {
           "200": {
@@ -136419,7 +144557,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=user-apic-userblock"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=user-apic-userblock"
         },
         "parameters": [
           {
@@ -136504,7 +144642,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=user-apic-userunblock"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=user-apic-userunblock"
         },
         "parameters": [
           {
@@ -136589,7 +144727,7 @@
         ],
         "externalDocs": {
           "description": "Additional documentation",
-          "url": "https://www.ibm.com/docs/en/api-connect/10.0.x?topic=user-apic-userinformation"
+          "url": "https://www.ibm.com/docs/en/SSMNED_10.0.8?topic=user-apic-userinformation"
         },
         "parameters": [
           {
@@ -137451,7 +145589,7 @@
         "name": "introduction",
         "title": "Introduction",
         "format": "b64html",
-        "content": "PGFydGljbGUgaWQ9ImludHJvZHVjdGlvbiIgY2xhc3M9InBhZ2UiPgoKICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBpbnRyby1oZWFkZXIiPgogICAgICAgIE9wZW4gQVBJIEV4cGxvcmVyIERvY3VtZW50YXRpb24gdjEwLjAuTEFURVNUCiAgICAgIDwvc3Bhbj4KICAgIDwvaDI+CiAgPC9kaXY+CiAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgaW50cm8tY29udGVudCI+CiAgICA8c2VjdGlvbj4KICAgICAgPGgyPkludHJvZHVjdGlvbjwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBwbGF0Zm9ybSBSRVNUIEFQSXMgZG9jdW1lbnRlZCBoZXJlIGZvciBJQk0gQVBJIENvbm5lY3QgdjEwIHByb3ZpZGUgY29tcGxldGUgYWNjZXNzIHRvIHRoZSBjYXBhYmlsaXR5IG9mIHRoZSBwbGF0Zm9ybS4gVGhleSBtYXkgYmUgdXNlZCB0byBhdXRvbWF0ZSBhZG1pbmlzdHJhdGlvbiBvZiB0aGUgcGxhdGZvcm07IGZvciBzY3JpcHRzIGFuZCB0b29scyB0byBzdXBwb3J0IGEgY29udGludW91cyBpbnRlZ3JhdGlvbiBlbnZpcm9ubWVudCBmb3IgQVBJIGRldmVsb3BtZW50IGFuZCBwdWJsaXNoaW5nOyBhbmQgZm9yIG1hbmFnZW1lbnQgb2YgY2F0YWxvZ3Mgb2YgQVBJcyBhbmQgdGhlaXIgc3Vic2NyaWJlcnMuIFRoZSBvcGVyYXRpb25zIHByb3ZpZGVkIGluIHRoZSBSRVNUIEFQSSBhbHNvIGNvcnJlc3BvbmQgZGlyZWN0bHkgd2l0aCBjb21tYW5kcyBpbiB0aGUgdG9vbGtpdCBDTEkuCiAgICAgIDwvcD4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+QVBJczwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBjYXBhYmlsaXR5IG9mIHRoZSBwbGF0Zm9ybSBpcyBjb21wcmlzZWQgb2YgdGhyZWUgQVBJcyB3aGljaCBhcmUgb3JpZW50ZWQgYXQgZGlmZmVyZW50IHNldHMgb2YgdXNlIGNhc2VzOgogICAgICA8L3A+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItYXBpcyI+PC9kaXY+CiAgICA8L3NlY3Rpb24+CiAgPC9kaXY+CjwvYXJ0aWNsZT4K"
+        "content": "PGFydGljbGUgaWQ9ImludHJvZHVjdGlvbiIgY2xhc3M9InBhZ2UiPgoKICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBpbnRyby1oZWFkZXIiPgogICAgICAgIE9wZW4gQVBJIEV4cGxvcmVyIERvY3VtZW50YXRpb24gdjEwLjAuOC5MQVRFU1QKICAgICAgPC9zcGFuPgogICAgPC9oMj4KICA8L2Rpdj4KICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfY29udGVudCBpbnRyby1jb250ZW50Ij4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+SW50cm9kdWN0aW9uPC9oMj4KICAgICAgPHA+CiAgICAgICAgVGhlIHBsYXRmb3JtIFJFU1QgQVBJcyBkb2N1bWVudGVkIGhlcmUgZm9yIElCTSBBUEkgQ29ubmVjdCB2MTAgcHJvdmlkZSBjb21wbGV0ZSBhY2Nlc3MgdG8gdGhlIGNhcGFiaWxpdHkgb2YgdGhlIHBsYXRmb3JtLiBUaGV5IG1heSBiZSB1c2VkIHRvIGF1dG9tYXRlIGFkbWluaXN0cmF0aW9uIG9mIHRoZSBwbGF0Zm9ybTsgZm9yIHNjcmlwdHMgYW5kIHRvb2xzIHRvIHN1cHBvcnQgYSBjb250aW51b3VzIGludGVncmF0aW9uIGVudmlyb25tZW50IGZvciBBUEkgZGV2ZWxvcG1lbnQgYW5kIHB1Ymxpc2hpbmc7IGFuZCBmb3IgbWFuYWdlbWVudCBvZiBjYXRhbG9ncyBvZiBBUElzIGFuZCB0aGVpciBzdWJzY3JpYmVycy4gVGhlIG9wZXJhdGlvbnMgcHJvdmlkZWQgaW4gdGhlIFJFU1QgQVBJIGFsc28gY29ycmVzcG9uZCBkaXJlY3RseSB3aXRoIGNvbW1hbmRzIGluIHRoZSB0b29sa2l0IENMSS4KICAgICAgPC9wPgogICAgPC9zZWN0aW9uPgogICAgPHNlY3Rpb24+CiAgICAgIDxoMj5BUElzPC9oMj4KICAgICAgPHA+CiAgICAgICAgVGhlIGNhcGFiaWxpdHkgb2YgdGhlIHBsYXRmb3JtIGlzIGNvbXByaXNlZCBvZiB0aHJlZSBBUElzIHdoaWNoIGFyZSBvcmllbnRlZCBhdCBkaWZmZXJlbnQgc2V0cyBvZiB1c2UgY2FzZXM6CiAgICAgIDwvcD4KICAgICAgPGRpdiBjbGFzcz0ic2hvdy1leHBsb3Jlci1hcGlzIj48L2Rpdj4KICAgIDwvc2VjdGlvbj4KICA8L2Rpdj4KPC9hcnRpY2xlPgo="
       },
       {
         "name": "concepts",
