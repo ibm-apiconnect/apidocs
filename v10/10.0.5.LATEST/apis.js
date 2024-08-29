@@ -40,12 +40,11 @@
         "10.0.5.5": "10.0.5.5.html",
         "10.0.5.6": "10.0.5.6.html",
         "10.0.5.7": "10.0.5.7.html",
+        "10.0.5.8": "10.0.5.8.html",
         "10.0.5.LATEST": "10.0.5.LATEST.html",
         "10.0.6.0": "10.0.6.0.html",
         "10.0.7.0": "10.0.7.0.html",
         "10.0.LATEST": "10.0.LATEST.html",
-        "10.0.8.0": "10.0.8.0.html",
-        "10.0.8.LATEST": "10.0.8.LATEST.html"
       }
     },
   apis: [
@@ -90980,74 +90979,6 @@
         ]
       }
     },
-    "/user-registries/{user-registry}/search": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/user-registry"
-        }
-      ],
-      "post": {
-        "summary": "Search for users in the user registry",
-        "description": "Search for users in the user registry",
-        "operationId": "user_registry_search",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UserSearch"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/UserSearch"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserList"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserList"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "User Management",
-          "Resource: User Registry"
-        ]
-      }
-    },
     "/user-registries/{user-registry}/users/{user}": {
       "description": "User object operations",
       "parameters": [
@@ -107795,7 +107726,7 @@
       ],
       "post": {
         "summary": "Transfer ownership of a saved query to a different user.",
-        "description": "Provide a body with new_owner_user_url: /api/user-registries/{org}/{user-registry}/users/{user} to transfer this query to a new owner.",
+        "description": "Provide a body with new_owner_user_url: `/api/user-registries/{org}/{user-registry}/users/{user}` to transfer this query to a new owner.",
         "operationId": "queries_cloudTransferOwner",
         "requestBody": {
           "required": true,
@@ -108234,7 +108165,7 @@
       ],
       "post": {
         "summary": "Transfer ownership of a saved query to a different user.",
-        "description": "Provide a body with new_owner_user_url: /api/user-registries/{org}/{user-registry}/users/{user} to transfer this query to a new owner.",
+        "description": "Provide a body with new_owner_user_url: `/api/user-registries/{org}/{user-registry}/users/{user}` to transfer this query to a new owner.",
         "operationId": "queries_orgTransferOwner",
         "requestBody": {
           "required": true,
@@ -108694,7 +108625,7 @@
       ],
       "post": {
         "summary": "Transfer ownership of a saved query to a different user.",
-        "description": "Provide a body with new_owner_user_url: /api/user-registries/{org}/{user-registry}/users/{user} to transfer this query to a new owner.",
+        "description": "Provide a body with new_owner_user_url: `/api/user-registries/{org}/{user-registry}/users/{user}` to transfer this query to a new owner.",
         "operationId": "queries_catalogTransferOwner",
         "requestBody": {
           "required": true,
@@ -109175,7 +109106,7 @@
       ],
       "post": {
         "summary": "Transfer ownership of a saved query to a different user.",
-        "description": "Provide a body with new_owner_user_url: /api/user-registries/{org}/{user-registry}/users/{user} to transfer this query to a new owner.",
+        "description": "Provide a body with new_owner_user_url: `/api/user-registries/{org}/{user-registry}/users/{user}` to transfer this query to a new owner.",
         "operationId": "queries_spaceTransferOwner",
         "requestBody": {
           "required": true,
