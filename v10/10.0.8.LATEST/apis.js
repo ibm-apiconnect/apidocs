@@ -44,8 +44,10 @@
         "10.0.5.LATEST": "10.0.5.LATEST.html",
         "10.0.6.0": "10.0.6.0.html",
         "10.0.7.0": "10.0.7.0.html",
-        "10.0.LATEST": "10.0.LATEST.html",
         "10.0.8.0": "10.0.8.0.html",
+        "10.0.8.1": "10.0.8.1.html",
+        "10.0.8.LATEST": "10.0.8.LATEST.html",
+        "10.0.LATEST": "10.0.LATEST.html",
         "10.0.8.LATEST": "10.0.8.LATEST.html"
       }
     },
@@ -198,11 +200,105 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/UserRegistry"
+              },
+              "examples": {
+                "lur": {
+                  "summary": "Example Local User Registry with case sensitive unique emails required.",
+                  "value": {
+                    "name": "acme-lur",
+                    "title": "Acme Local User Registry",
+                    "summary": "An example Local User Registry.",
+                    "registry_type": "lur",
+                    "case_sensitive": true,
+                    "email_required": true,
+                    "email_unique_if_exist": true,
+                    "integration_url": "https://acme-apim.example.com/api/cloud/integrations/user-registry/lur"
+                  }
+                },
+                "ldap": {
+                  "summary": "Example LDAP user registry using the search_dn authentication method and authenticated bind.",
+                  "value": {
+                    "name": "acme-ldap",
+                    "title": "Acme LDAP User Registry",
+                    "summary": "An example LDAP user registry.",
+                    "case_sensitive": true,
+                    "email_required": true,
+                    "email_unique_if_exist": true,
+                    "endpoint": {
+                      "endpoint": "ldap://acme-openldap.example.com:389",
+                      "tls_client_profile_url": null
+                    },
+                    "configuration": {
+                      "authentication_method": "search_dn",
+                      "authenticated_bind": "true",
+                      "search_dn_base": "dc=acme,dc=devops,dc=cloud",
+                      "protocol_version": "3",
+                      "search_dn_filter_prefix": "(&(uid=",
+                      "search_dn_filter_suffix": "))",
+                      "search_dn_scope": "sub",
+                      "admin_dn": "cn=admin,dc=acme,dc=devops,dc=cloud",
+                      "admin_password": "password123",
+                      "group_authentication_method": "none",
+                      "directory_type": "standard",
+                      "attribute_mapping": {}
+                    },
+                    "registry_type": "ldap",
+                    "user_managed": false,
+                    "integration_url": "https://acme-apim.example.com/api/cloud/integrations/user-registry/ldap"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/UserRegistry"
+              },
+              "examples": {
+                "lur": {
+                  "summary": "Example Local User Registry with case sensitive unique emails required.",
+                  "value": {
+                    "name": "acme-lur",
+                    "title": "Acme Local User Registry",
+                    "summary": "An example Local User Registry.",
+                    "registry_type": "lur",
+                    "case_sensitive": true,
+                    "email_required": true,
+                    "email_unique_if_exist": true,
+                    "integration_url": "https://acme-apim.example.com/api/cloud/integrations/user-registry/lur"
+                  }
+                },
+                "ldap": {
+                  "summary": "Example LDAP user registry using the search_dn authentication method and authenticated bind.",
+                  "value": {
+                    "name": "acme-ldap",
+                    "title": "Acme LDAP User Registry",
+                    "summary": "An example LDAP user registry.",
+                    "case_sensitive": true,
+                    "email_required": true,
+                    "email_unique_if_exist": true,
+                    "endpoint": {
+                      "endpoint": "ldap://acme-openldap.example.com:389",
+                      "tls_client_profile_url": null
+                    },
+                    "configuration": {
+                      "authentication_method": "search_dn",
+                      "authenticated_bind": "true",
+                      "search_dn_base": "dc=acme,dc=devops,dc=cloud",
+                      "protocol_version": "3",
+                      "search_dn_filter_prefix": "(&(uid=",
+                      "search_dn_filter_suffix": "))",
+                      "search_dn_scope": "sub",
+                      "admin_dn": "cn=admin,dc=acme,dc=devops,dc=cloud",
+                      "admin_password": "password123",
+                      "group_authentication_method": "none",
+                      "directory_type": "standard",
+                      "attribute_mapping": {}
+                    },
+                    "registry_type": "ldap",
+                    "user_managed": false,
+                    "integration_url": "https://acme-apim.example.com/api/cloud/integrations/user-registry/ldap"
+                  }
+                }
               }
             }
           }
@@ -6077,11 +6173,35 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/APIKey"
+              },
+              "examples": {
+                "apiKeyCreate": {
+                  "summary": "Example API Key creation.",
+                  "value": {
+                    "name": "acme-apikey",
+                    "description": "acme api key",
+                    "client_type": "toolkit",
+                    "token_exp": 3719,
+                    "ttl": 4150
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/APIKey"
+              },
+              "examples": {
+                "apiKeyCreate": {
+                  "summary": "Example API Key creation.",
+                  "value": {
+                    "name": "acme-apikey",
+                    "description": "acme api key",
+                    "client_type": "toolkit",
+                    "token_exp": 3719,
+                    "ttl": 4150
+                  }
+                }
               }
             }
           }
@@ -8791,11 +8911,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/AvailabilityZone"
+              },
+              "examples": {
+                "availabilityZoneCreate": {
+                  "summary": "Example availability zone creation.",
+                  "value": {
+                    "name": "acme-zone",
+                    "title": "acme zone",
+                    "summary": "An example availability zone"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/AvailabilityZone"
+              },
+              "examples": {
+                "availabilityZoneCreate": {
+                  "summary": "Example availability zone creation.",
+                  "value": {
+                    "name": "acme-zone",
+                    "title": "acme zone",
+                    "summary": "An example availability zone"
+                  }
+                }
               }
             }
           }
@@ -8992,11 +9132,29 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/AvailabilityZone"
+              },
+              "examples": {
+                "availabilityZoneUpdate": {
+                  "summary": "Example availability zone update.",
+                  "value": {
+                    "title": "acme zone update",
+                    "summary": "An example availability zone"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/AvailabilityZone"
+              },
+              "examples": {
+                "availabilityZoneUpdate": {
+                  "summary": "Example availability zone update.",
+                  "value": {
+                    "title": "acme zone update",
+                    "summary": "An example availability zone"
+                  }
+                }
               }
             }
           }
@@ -9095,11 +9253,95 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/GatewayService"
+              },
+              "examples": {
+                "apiGateway": {
+                  "summary": "Example API Gateway service with LDAP connection pool enabled.",
+                  "value": {
+                    "name": "acme-api-gateway-service",
+                    "title": "ACME API Gateway Service",
+                    "sni": [
+                      {
+                        "host": "*",
+                        "tls_server_profile_url": "https://acme-apim.example.com/api/orgs/tls-server-profiles"
+                      }
+                    ],
+                    "endpoint": "https://gw.acme-apim.example.com",
+                    "api_endpoint_base": "https://gw.acme-apim.example.com",
+                    "gateway_service_type": "datapower-api-gateway",
+                    "ldap_cxn_pool": {
+                      "enabled": true,
+                      "idle_timeout": 100,
+                      "max_pool_size": 30,
+                      "document_cache_size": 0
+                    }
+                  }
+                },
+                "v5Gateway": {
+                  "summary": "Example v5 Gateway service with communication of analytics set to internal service and communcation to jwt set to true.",
+                  "value": {
+                    "name": "acme-v5-gateway-service",
+                    "title": "ACME v5 Gateway Service",
+                    "sni": [
+                      {
+                        "host": "*",
+                        "tls_server_profile_url": "https://acme-apim.example.com/api/orgs/tls-server-profiles"
+                      }
+                    ],
+                    "endpoint": "https://gw.acme-apim.example.com",
+                    "api_endpoint_base": "https://gw.acme-apim.example.com",
+                    "gateway_service_type": "datapower-gateway",
+                    "communication_kind": "external",
+                    "communication_to_analytics_with_jwt": true
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/GatewayService"
+              },
+              "examples": {
+                "apiGateway": {
+                  "summary": "Example API Gateway service with LDAP connection pool enabled.",
+                  "value": {
+                    "name": "acme-api-gateway-service",
+                    "title": "ACME API Gateway Service",
+                    "sni": [
+                      {
+                        "host": "*",
+                        "tls_server_profile_url": "https://acme-apim.example.com/api/orgs/tls-server-profiles"
+                      }
+                    ],
+                    "endpoint": "https://gw.acme-apim.example.com",
+                    "api_endpoint_base": "https://gw.acme-apim.example.com",
+                    "gateway_service_type": "datapower-api-gateway",
+                    "ldap_cxn_pool": {
+                      "enabled": true,
+                      "idle_timeout": 100,
+                      "max_pool_size": 30,
+                      "document_cache_size": 0
+                    }
+                  }
+                },
+                "v5Gateway": {
+                  "summary": "Example v5 Gateway service with communication of analytics set to internal service and communcation to jwt set to true.",
+                  "value": {
+                    "name": "acme-v5-gateway-service",
+                    "title": "ACME v5 Gateway Service",
+                    "sni": [
+                      {
+                        "host": "*",
+                        "tls_server_profile_url": "https://acme-apim.example.com/api/orgs/tls-server-profiles"
+                      }
+                    ],
+                    "endpoint": "https://gw.acme-apim.example.com",
+                    "api_endpoint_base": "https://gw.acme-apim.example.com",
+                    "gateway_service_type": "datapower-gateway",
+                    "communication_kind": "external",
+                    "communication_to_analytics_with_jwt": true
+                  }
+                }
               }
             }
           }
@@ -9299,11 +9541,61 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/GatewayService"
+              },
+              "examples": {
+                "gatewayUpdate": {
+                  "summary": "Example of fields which can be updated on a gateway service with LDAP connection pool enabled.",
+                  "value": {
+                    "title": "ACME Updated Gateway Service",
+                    "summary": "An example gateway service",
+                    "sni": [
+                      {
+                        "host": "*",
+                        "tls_server_profile_url": "https://acme-apim.example.com/api/orgs/tls-server-profiles"
+                      }
+                    ],
+                    "endpoint": "https://gw.acme-apim.example.com",
+                    "api_endpoint_base": "https://gw.acme-apim.example.com",
+                    "gateway_service_type": "datapower-api-gateway",
+                    "ldap_cxn_pool": {
+                      "enabled": true,
+                      "idle_timeout": 120,
+                      "max_pool_size": 35,
+                      "document_cache_size": 0
+                    },
+                    "communication_to_analytics_with_jwt": true
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/GatewayService"
+              },
+              "examples": {
+                "gatewayUpdate": {
+                  "summary": "Example of fields which can be updated on a gateway service with LDAP connection pool enabled.",
+                  "value": {
+                    "title": "ACME Updated Gateway Service",
+                    "summary": "An example gateway service",
+                    "sni": [
+                      {
+                        "host": "*",
+                        "tls_server_profile_url": "https://acme-apim.example.com/api/orgs/tls-server-profiles"
+                      }
+                    ],
+                    "endpoint": "https://gw.acme-apim.example.com",
+                    "api_endpoint_base": "https://gw.acme-apim.example.com",
+                    "gateway_service_type": "datapower-api-gateway",
+                    "ldap_cxn_pool": {
+                      "enabled": true,
+                      "idle_timeout": 120,
+                      "max_pool_size": 35,
+                      "document_cache_size": 0
+                    },
+                    "communication_to_analytics_with_jwt": true
+                  }
+                }
               }
             }
           }
@@ -10491,11 +10783,37 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/PortalService"
+              },
+              "examples": {
+                "portalCreate": {
+                  "summary": "Example portal service creation.",
+                  "value": {
+                    "name": "acme-portal",
+                    "title": "acme portal service",
+                    "summary": "An example portal service",
+                    "endpoint": "https://api.portal.acme-apim.example.com",
+                    "web_endpoint_base": "https://portal.acme-apim.example.com",
+                    "communication_kind": "external"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/PortalService"
+              },
+              "examples": {
+                "portalCreate": {
+                  "summary": "Example portal service creation.",
+                  "value": {
+                    "name": "acme-portal",
+                    "title": "acme portal service",
+                    "summary": "An example portal service",
+                    "endpoint": "https://api.portal.acme-apim.example.com",
+                    "web_endpoint_base": "https://portal.acme-apim.example.com",
+                    "communication_kind": "external"
+                  }
+                }
               }
             }
           }
@@ -10698,11 +11016,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/PortalService"
+              },
+              "examples": {
+                "portalUpdate": {
+                  "summary": "Example portal service update.",
+                  "value": {
+                    "title": "acme portal service",
+                    "summary": "An example portal service update",
+                    "web_endpoint_base": "https://portal.acme-apim.example.com"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/PortalService"
+              },
+              "examples": {
+                "portalUpdate": {
+                  "summary": "Example portal service update.",
+                  "value": {
+                    "title": "acme portal service",
+                    "summary": "An example portal service update",
+                    "web_endpoint_base": "https://portal.acme-apim.example.com"
+                  }
+                }
               }
             }
           }
@@ -10858,11 +11196,33 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/AnalyticsService"
+              },
+              "examples": {
+                "analyticsCreate": {
+                  "summary": "Example analytics service.",
+                  "value": {
+                    "name": "acme-analytics-service",
+                    "title": "ACME Analytics Service",
+                    "endpoint": "https://a7s.acme-apim.example.com",
+                    "communication_from_apim_kind": "external"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/AnalyticsService"
+              },
+              "examples": {
+                "analyticsCreate": {
+                  "summary": "Example analytics service.",
+                  "value": {
+                    "name": "acme-analytics-service",
+                    "title": "ACME Analytics Service",
+                    "endpoint": "https://a7s.acme-apim.example.com",
+                    "communication_from_apim_kind": "external"
+                  }
+                }
               }
             }
           }
@@ -11062,11 +11422,29 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/AnalyticsService"
+              },
+              "examples": {
+                "analyticsUpdate": {
+                  "summary": "Example of fields which can be updated on an analytics service.",
+                  "value": {
+                    "title": "ACME Updated Analytics Service",
+                    "summary": "An example analytics service"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/AnalyticsService"
+              },
+              "examples": {
+                "analyticsUpdate": {
+                  "summary": "Example of fields which can be updated on an analytics service.",
+                  "value": {
+                    "title": "ACME Updated Analytics Service",
+                    "summary": "An example analytics service"
+                  }
+                }
               }
             }
           }
@@ -18194,6 +18572,10 @@
             "minimum": 0,
             "maximum": 2147483647
           },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time"
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -19203,6 +19585,12 @@
           "consumer_catalog_enabled": {
             "type": "boolean"
           },
+          "protected_properties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -19620,8 +20008,7 @@
             "type": "boolean"
           },
           "external_group_mapping_enabled": {
-            "type": "boolean",
-            "default": false
+            "type": "boolean"
           },
           "data_import_keyset_url": {
             "type": "string",
@@ -19908,8 +20295,7 @@
             "type": "boolean"
           },
           "external_group_mapping_enabled": {
-            "type": "boolean",
-            "default": false
+            "type": "boolean"
           },
           "data_import_keyset_url": {
             "type": "string",
@@ -20267,6 +20653,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "ai_gateway_enabled": {
+            "type": "boolean"
           },
           "metadata": {
             "type": "object",
@@ -21810,6 +22199,36 @@
             "type": "string",
             "format": "uri"
           },
+          "catalogs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "spaces": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "type": "string",
+                        "format": "uri"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -22333,6 +22752,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "ai_gateway_enabled": {
+            "type": "boolean"
           },
           "metadata": {
             "type": "object",
@@ -29223,8 +29645,7 @@
             "type": "boolean"
           },
           "external_group_mapping_enabled": {
-            "type": "boolean",
-            "default": false
+            "type": "boolean"
           },
           "onboarding": {
             "type": "string",
@@ -33434,11 +33855,105 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/UserRegistry"
+              },
+              "examples": {
+                "lur": {
+                  "summary": "Example Local User Registry with case sensitive unique emails required.",
+                  "value": {
+                    "name": "acme-lur",
+                    "title": "Acme Local User Registry",
+                    "summary": "An example Local User Registry.",
+                    "registry_type": "lur",
+                    "case_sensitive": true,
+                    "email_required": true,
+                    "email_unique_if_exist": true,
+                    "integration_url": "https://acme-apim.example.com/api/cloud/integrations/user-registry/lur"
+                  }
+                },
+                "ldap": {
+                  "summary": "Example LDAP user registry using the search_dn authentication method and authenticated bind.",
+                  "value": {
+                    "name": "acme-ldap",
+                    "title": "Acme LDAP User Registry",
+                    "summary": "An example LDAP user registry.",
+                    "case_sensitive": true,
+                    "email_required": true,
+                    "email_unique_if_exist": true,
+                    "endpoint": {
+                      "endpoint": "ldap://acme-openldap.example.com:389",
+                      "tls_client_profile_url": null
+                    },
+                    "configuration": {
+                      "authentication_method": "search_dn",
+                      "authenticated_bind": "true",
+                      "search_dn_base": "dc=acme,dc=devops,dc=cloud",
+                      "protocol_version": "3",
+                      "search_dn_filter_prefix": "(&(uid=",
+                      "search_dn_filter_suffix": "))",
+                      "search_dn_scope": "sub",
+                      "admin_dn": "cn=admin,dc=acme,dc=devops,dc=cloud",
+                      "admin_password": "password123",
+                      "group_authentication_method": "none",
+                      "directory_type": "standard",
+                      "attribute_mapping": {}
+                    },
+                    "registry_type": "ldap",
+                    "user_managed": false,
+                    "integration_url": "https://acme-apim.example.com/api/cloud/integrations/user-registry/ldap"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/UserRegistry"
+              },
+              "examples": {
+                "lur": {
+                  "summary": "Example Local User Registry with case sensitive unique emails required.",
+                  "value": {
+                    "name": "acme-lur",
+                    "title": "Acme Local User Registry",
+                    "summary": "An example Local User Registry.",
+                    "registry_type": "lur",
+                    "case_sensitive": true,
+                    "email_required": true,
+                    "email_unique_if_exist": true,
+                    "integration_url": "https://acme-apim.example.com/api/cloud/integrations/user-registry/lur"
+                  }
+                },
+                "ldap": {
+                  "summary": "Example LDAP user registry using the search_dn authentication method and authenticated bind.",
+                  "value": {
+                    "name": "acme-ldap",
+                    "title": "Acme LDAP User Registry",
+                    "summary": "An example LDAP user registry.",
+                    "case_sensitive": true,
+                    "email_required": true,
+                    "email_unique_if_exist": true,
+                    "endpoint": {
+                      "endpoint": "ldap://acme-openldap.example.com:389",
+                      "tls_client_profile_url": null
+                    },
+                    "configuration": {
+                      "authentication_method": "search_dn",
+                      "authenticated_bind": "true",
+                      "search_dn_base": "dc=acme,dc=devops,dc=cloud",
+                      "protocol_version": "3",
+                      "search_dn_filter_prefix": "(&(uid=",
+                      "search_dn_filter_suffix": "))",
+                      "search_dn_scope": "sub",
+                      "admin_dn": "cn=admin,dc=acme,dc=devops,dc=cloud",
+                      "admin_password": "password123",
+                      "group_authentication_method": "none",
+                      "directory_type": "standard",
+                      "attribute_mapping": {}
+                    },
+                    "registry_type": "ldap",
+                    "user_managed": false,
+                    "integration_url": "https://acme-apim.example.com/api/cloud/integrations/user-registry/ldap"
+                  }
+                }
               }
             }
           }
@@ -35161,11 +35676,35 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/APIKey"
+              },
+              "examples": {
+                "apiKeyCreate": {
+                  "summary": "Example API Key creation.",
+                  "value": {
+                    "name": "acme-apikey",
+                    "description": "acme api key",
+                    "client_type": "toolkit",
+                    "token_exp": 3719,
+                    "ttl": 4150
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/APIKey"
+              },
+              "examples": {
+                "apiKeyCreate": {
+                  "summary": "Example API Key creation.",
+                  "value": {
+                    "name": "acme-apikey",
+                    "description": "acme api key",
+                    "client_type": "toolkit",
+                    "token_exp": 3719,
+                    "ttl": 4150
+                  }
+                }
               }
             }
           }
@@ -41700,11 +42239,47 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CatalogSetting"
+              },
+              "examples": {
+                "catalogSettingUpdate": {
+                  "summary": "Example of fields which can be updated on a catalog settings object.",
+                  "value": {
+                    "title": "Updated ACME catalog settings",
+                    "summary": "Updated catalog settings",
+                    "user_registry_default_url": "https://api.acme.example.com/user-registry",
+                    "production_mode": true,
+                    "task_self_approval": true,
+                    "application_lifecycle": {
+                      "enabled": true
+                    },
+                    "spaces_enabled": false,
+                    "consumer_self_service_onboarding_approval": false,
+                    "consumer_self_service_onboarding_ttl": 259200
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/CatalogSetting"
+              },
+              "examples": {
+                "catalogSettingUpdate": {
+                  "summary": "Example of fields which can be updated on a catalog settings object.",
+                  "value": {
+                    "title": "Updated ACME catalog settings",
+                    "summary": "Updated catalog settings",
+                    "user_registry_default_url": "https://api.acme.example.com/user-registry",
+                    "production_mode": true,
+                    "task_self_approval": true,
+                    "application_lifecycle": {
+                      "enabled": true
+                    },
+                    "spaces_enabled": false,
+                    "consumer_self_service_onboarding_approval": false,
+                    "consumer_self_service_onboarding_ttl": 259200
+                  }
+                }
               }
             }
           }
@@ -76762,6 +77337,10 @@
             "minimum": 0,
             "maximum": 2147483647
           },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time"
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -77771,6 +78350,12 @@
           "consumer_catalog_enabled": {
             "type": "boolean"
           },
+          "protected_properties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -78188,8 +78773,7 @@
             "type": "boolean"
           },
           "external_group_mapping_enabled": {
-            "type": "boolean",
-            "default": false
+            "type": "boolean"
           },
           "data_import_keyset_url": {
             "type": "string",
@@ -78476,8 +79060,7 @@
             "type": "boolean"
           },
           "external_group_mapping_enabled": {
-            "type": "boolean",
-            "default": false
+            "type": "boolean"
           },
           "data_import_keyset_url": {
             "type": "string",
@@ -78835,6 +79418,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "ai_gateway_enabled": {
+            "type": "boolean"
           },
           "metadata": {
             "type": "object",
@@ -80378,6 +80964,36 @@
             "type": "string",
             "format": "uri"
           },
+          "catalogs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "spaces": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "type": "string",
+                        "format": "uri"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -80901,6 +81517,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "ai_gateway_enabled": {
+            "type": "boolean"
           },
           "metadata": {
             "type": "object",
@@ -87791,8 +88410,7 @@
             "type": "boolean"
           },
           "external_group_mapping_enabled": {
-            "type": "boolean",
-            "default": false
+            "type": "boolean"
           },
           "onboarding": {
             "type": "string",
@@ -107052,7 +107670,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/ConsumptionDashboardResponse"
+            "$ref": "#/components/responses/ConsumptionResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -109938,7 +110556,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/ConsumptionDashboardResponse"
+            "$ref": "#/components/responses/ConsumptionResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -112788,7 +113406,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/ConsumptionDashboardResponse"
+            "$ref": "#/components/responses/ConsumptionResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -115602,7 +116220,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/ConsumptionDashboardResponse"
+            "$ref": "#/components/responses/ConsumptionResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -118267,6 +118885,63 @@
         ]
       }
     },
+    "/{analytics-service}/catalogs/{org}/{catalog}/config-sync-data": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Send data to analytics on the usage of config-sync",
+        "description": "For obtaining billing information, we send data from config-sync to analytics\n",
+        "operationId": "configsync_uploadData",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfigSyncRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfigSyncRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConfigSyncResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: ConfigSync"
+        ]
+      }
+    },
     "/{analytics-service}/cloud/reports/apiusage": {
       "description": "Return the data needed to populate the API usage report at cloud scope.\n",
       "parameters": [
@@ -119535,6 +120210,70 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/ConsumerTrendLeaderboardDetailReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/reports/consumption": {
+      "description": "Return the data needed to populate the Consumption report at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Consumption report\n",
+        "description": "Return the data needed to populate the Consumption report at cloud scope.\n",
+        "operationId": "reports_cloudConsumption",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumptionResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -120829,6 +121568,70 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/ConsumerTrendLeaderboardDetailReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/reports/consumption": {
+      "description": "Return the data needed to populate the Consumption report at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Consumption report\n",
+        "description": "Return the data needed to populate the Consumption report at org scope.\n",
+        "operationId": "reports_orgConsumption",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumptionResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -122203,6 +123006,73 @@
         ]
       }
     },
+    "/{analytics-service}/catalogs/{org}/{catalog}/reports/consumption": {
+      "description": "Return the data needed to populate the Consumption report at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Consumption report\n",
+        "description": "Return the data needed to populate the Consumption report at catalog scope.\n",
+        "operationId": "reports_catalogConsumption",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumptionResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
     "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/apiusage": {
       "description": "Return the data needed to populate the API usage report at space scope.\n",
       "parameters": [
@@ -123533,6 +124403,76 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/ConsumerTrendLeaderboardDetailReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/reports/consumption": {
+      "description": "Return the data needed to populate the Consumption report at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Consumption report\n",
+        "description": "Return the data needed to populate the Consumption report at space scope.\n",
+        "operationId": "reports_spaceConsumption",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/daily_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumptionResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -130010,10 +130950,18 @@
           }
         }
       },
-      "ConsumptionDashboardResponse": {
+      "ConsumptionResponse": {
         "type": "object",
-        "description": "Data to display on the Consumption Dashboard.",
+        "description": "Data to display on the Consumption metrics.",
         "properties": {
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          },
           "monthly_summary": {
             "$ref": "#/components/schemas/GroupKeyValueDataList"
           },
@@ -131574,6 +132522,15 @@
           "total_errors": {
             "$ref": "#/components/schemas/DataItem"
           },
+          "transactions_per_second": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "description": "String representation of a float, but will be shown as `< 0.01` if greater than 0 but rounds to 0.",
+                "type": "string"
+              }
+            }
+          },
           "status_codes": {
             "$ref": "#/components/schemas/GroupValueDataList"
           },
@@ -132200,6 +133157,73 @@
             "$ref": "#/components/schemas/RefDetailData"
           }
         }
+      },
+      "ConfigSyncRequest": {
+        "type": "object",
+        "description": "Request payload for config sync data",
+        "properties": {
+          "org_name": {
+            "type": "string",
+            "description": "The provider organization name"
+          },
+          "org_id": {
+            "type": "string",
+            "description": "The provider organization ID"
+          },
+          "catalog_name": {
+            "type": "string",
+            "description": "The catalog name"
+          },
+          "catalog_id": {
+            "type": "string",
+            "description": "The catalog ID"
+          },
+          "datetime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The completion date time of the sync"
+          },
+          "consumer_orgs": {
+            "type": "number",
+            "description": "The number of consumer organizations"
+          },
+          "members": {
+            "type": "number",
+            "description": "The number of members"
+          },
+          "users": {
+            "type": "number",
+            "description": "The number of users"
+          },
+          "applications": {
+            "type": "number",
+            "description": "The number of applications"
+          },
+          "credentials": {
+            "type": "number",
+            "description": "The number of application credentials"
+          },
+          "subscriptions": {
+            "type": "number",
+            "description": "The number of subscriptions"
+          },
+          "charged": {
+            "type": "number",
+            "description": "The billed amount for all the synced resources"
+          }
+        }
+      },
+      "ConfigSyncResponse": {
+        "type": "object",
+        "description": "Response body from config sync",
+        "properties": {
+          "took": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "errors": {
+            "type": "boolean"
+          }
+        }
       }
     },
     "responses": {
@@ -132338,17 +133362,17 @@
           }
         }
       },
-      "ConsumptionDashboardResponse": {
-        "description": "Data needed to populate the Consumption Dashboard",
+      "ConsumptionResponse": {
+        "description": "Data needed to populate the Consumption metrics",
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ConsumptionDashboardResponse"
+              "$ref": "#/components/schemas/ConsumptionResponse"
             }
           },
           "application/yaml": {
             "schema": {
-              "$ref": "#/components/schemas/ConsumptionDashboardResponse"
+              "$ref": "#/components/schemas/ConsumptionResponse"
             }
           }
         }
@@ -132489,7 +133513,7 @@
         }
       },
       "NoContentResponse": {
-        "description": "The resource was deleted successfully."
+        "description": "The request was successfully processed."
       },
       "ProductDashboardResponse": {
         "description": "Data needed to populate the Product Dashboard",
@@ -132772,6 +133796,21 @@
           "application/yaml": {
             "schema": {
               "$ref": "#/components/schemas/ConsumerTrendLeaderboardDetailReportResponse"
+            }
+          }
+        }
+      },
+      "ConfigSyncResponse": {
+        "description": "Response from config-sync",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ConfigSyncResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ConfigSyncResponse"
             }
           }
         }
@@ -133158,6 +134197,12 @@
           },
           "last_api_calls": {
             "$ref": "#/components/schemas/ApiCallsList"
+          },
+          "top_apis_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "top_products_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
           }
         }
       },
