@@ -47,8 +47,9 @@
         "10.0.8.0": "10.0.8.0.html",
         "10.0.8.1": "10.0.8.1.html",
         "10.0.8.LATEST": "10.0.8.LATEST.html",
-        "10.0.LATEST": "10.0.LATEST.html",
-        "10.0.8.LATEST": "10.0.8.LATEST.html"
+        "10.0.9.0": "10.0.9.0.html",
+        "10.0.9.LATEST": "10.0.9.LATEST.html",
+        "10.0.LATEST": "10.0.LATEST.html"
       }
     },
   apis: [
