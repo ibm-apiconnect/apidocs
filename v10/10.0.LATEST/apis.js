@@ -48,6 +48,7 @@
         "10.0.8.1": "10.0.8.1.html",
         "10.0.8.LATEST": "10.0.8.LATEST.html",
         "10.0.9.0": "10.0.9.0.html",
+        "10.0.10.0": "10.0.10.0.html",
         "10.0.LATEST": "10.0.LATEST.html",
       }
     },
@@ -141,7 +142,7 @@
                 "$ref": "#/components/schemas/LogSpec"
               },
               "examples": {
-                "logSpecCreate": {
+                "LogSpec": {
                   "summary": "Example of log spec update.",
                   "value": {
                     "title": "Acme log spec update",
@@ -156,7 +157,7 @@
                 "$ref": "#/components/schemas/LogSpec"
               },
               "examples": {
-                "logSpecCreate": {
+                "LogSpec": {
                   "summary": "Example of log spec update.",
                   "value": {
                     "title": "Acme log spec update",
@@ -677,7 +678,7 @@
                 "$ref": "#/components/schemas/UserRegistry"
               },
               "examples": {
-                "lur": {
+                "UserRegistry": {
                   "summary": "Example Local User Registry update.",
                   "value": {
                     "title": "Acme LUR update",
@@ -692,7 +693,7 @@
                 "$ref": "#/components/schemas/UserRegistry"
               },
               "examples": {
-                "lur": {
+                "UserRegistry": {
                   "summary": "Example Local User Registry update.",
                   "value": {
                     "title": "Acme LUR update",
@@ -856,6 +857,53 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/TestConnectionCredentials"
+              },
+              "examples": {
+                "UserRegistrySavedTestConnection": {
+                  "summary": "Example user registry test connection",
+                  "value": {
+                    "username": "acme",
+                    "password": "Password123"
+                  }
+                },
+                "UserRegistryProvidedTestConnection": {
+                  "summary": "Example of testing configuration of ldap or authurl user registry",
+                  "value": {
+                    "user_registry": {
+                      "name": "acme-ldap",
+                      "title": "Acme LDAP User Registry",
+                      "summary": "An example LDAP user registry.",
+                      "case_sensitive": true,
+                      "email_required": true,
+                      "email_unique_if_exist": true,
+                      "endpoint": {
+                        "endpoint": "ldap://acme-openldap.example.com:389",
+                        "tls_client_profile_url": null
+                      },
+                      "configuration": {
+                        "authentication_method": "search_dn",
+                        "authenticated_bind": "true",
+                        "search_dn_base": "dc=acme,dc=devops,dc=cloud",
+                        "protocol_version": "3",
+                        "search_dn_filter_prefix": "(&(uid=",
+                        "search_dn_filter_suffix": "))",
+                        "search_dn_scope": "sub",
+                        "admin_dn": "cn=admin,dc=acme,dc=devops,dc=cloud",
+                        "admin_password": "password123",
+                        "group_authentication_method": "none",
+                        "directory_type": "standard",
+                        "attribute_mapping": {}
+                      },
+                      "registry_type": "ldap",
+                      "user_managed": false,
+                      "integration_url": "https://acme-apim.example.com/api/cloud/integrations/user-registry/ldap"
+                    },
+                    "credentials": {
+                      "username": "acme",
+                      "password": "Passw0rd123"
+                    }
+                  }
+                }
               }
             }
           }
@@ -984,6 +1032,53 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/UserRegistryTestConnection"
+              },
+              "examples": {
+                "UserRegistrySavedTestConnection": {
+                  "summary": "Example user registry test connection",
+                  "value": {
+                    "username": "acme",
+                    "password": "Password123"
+                  }
+                },
+                "UserRegistryProvidedTestConnection": {
+                  "summary": "Example of testing configuration of ldap or authurl user registry",
+                  "value": {
+                    "user_registry": {
+                      "name": "acme-ldap",
+                      "title": "Acme LDAP User Registry",
+                      "summary": "An example LDAP user registry.",
+                      "case_sensitive": true,
+                      "email_required": true,
+                      "email_unique_if_exist": true,
+                      "endpoint": {
+                        "endpoint": "ldap://acme-openldap.example.com:389",
+                        "tls_client_profile_url": null
+                      },
+                      "configuration": {
+                        "authentication_method": "search_dn",
+                        "authenticated_bind": "true",
+                        "search_dn_base": "dc=acme,dc=devops,dc=cloud",
+                        "protocol_version": "3",
+                        "search_dn_filter_prefix": "(&(uid=",
+                        "search_dn_filter_suffix": "))",
+                        "search_dn_scope": "sub",
+                        "admin_dn": "cn=admin,dc=acme,dc=devops,dc=cloud",
+                        "admin_password": "password123",
+                        "group_authentication_method": "none",
+                        "directory_type": "standard",
+                        "attribute_mapping": {}
+                      },
+                      "registry_type": "ldap",
+                      "user_managed": false,
+                      "integration_url": "https://acme-apim.example.com/api/cloud/integrations/user-registry/ldap"
+                    },
+                    "credentials": {
+                      "username": "acme",
+                      "password": "Passw0rd123"
+                    }
+                  }
+                }
               }
             }
           }
@@ -1043,6 +1138,15 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/UserSearch"
+              },
+              "examples": {
+                "UserSearch": {
+                  "summary": "Example search for users in user registry",
+                  "value": {
+                    "username": "acme",
+                    "remote": true
+                  }
+                }
               }
             }
           }
@@ -1102,11 +1206,41 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/User"
+              },
+              "examples": {
+                "User": {
+                  "summary": "Example of user create.",
+                  "value": {
+                    "summary": "An example user create",
+                    "email": "acme@example.com",
+                    "first_name": "ACME",
+                    "last_name": "Lastname",
+                    "name": "acme",
+                    "password": "acme@123",
+                    "title": "ACME User",
+                    "username": "acmeuser"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/User"
+              },
+              "examples": {
+                "User": {
+                  "summary": "Example of user create.",
+                  "value": {
+                    "summary": "An example user create",
+                    "email": "acme@example.com",
+                    "first_name": "ACME",
+                    "last_name": "Lastname",
+                    "name": "acme",
+                    "password": "acme@123",
+                    "title": "ACME User",
+                    "username": "acmeuser"
+                  }
+                }
               }
             }
           }
@@ -1306,11 +1440,37 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/User"
+              },
+              "examples": {
+                "User": {
+                  "summary": "Example of user Update.",
+                  "value": {
+                    "summary": "An example user update",
+                    "email": "acme-updated@example.com",
+                    "first_name": "ACMEUpdated",
+                    "last_name": "LastnameUpdated",
+                    "password": "acme-updated@123",
+                    "title": "ACME User Updated"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/User"
+              },
+              "examples": {
+                "User": {
+                  "summary": "Example of user Update.",
+                  "value": {
+                    "summary": "An example user update",
+                    "email": "acme-updated@example.com",
+                    "first_name": "ACMEUpdated",
+                    "last_name": "LastnameUpdated",
+                    "password": "acme-updated@123",
+                    "title": "ACME User Updated"
+                  }
+                }
               }
             }
           }
@@ -1398,6 +1558,15 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/RequestPasswordReset"
+              },
+              "examples": {
+                "RequestPasswordReset": {
+                  "summary": "Example of user request password reset.",
+                  "value": {
+                    "email": "acme@example.com",
+                    "realm": "provider/default-idp-2"
+                  }
+                }
               }
             }
           }
@@ -1952,7 +2121,7 @@
                 "$ref": "#/components/schemas/CloudSetting"
               },
               "examples": {
-                "cloudSettingUpdate": {
+                "CloudSetting": {
                   "summary": "Example of fields which can be updated on a cloud settings object.",
                   "value": {
                     "mail_server_url": "https://acme-apim.example.com/api/orgs/mail-servers",
@@ -2016,7 +2185,7 @@
                 "$ref": "#/components/schemas/CloudSetting"
               },
               "examples": {
-                "cloudSettingUpdate": {
+                "CloudSetting": {
                   "summary": "Example of fields which can be updated on a cloud settings object.",
                   "value": {
                     "mail_server_url": "https://acme-apim.example.com/api/orgs/mail-servers",
@@ -2479,7 +2648,7 @@
                 "$ref": "#/components/schemas/UserRegistrySetting"
               },
               "examples": {
-                "UserRegistrySettingUpdate": {
+                "UserRegistrySetting": {
                   "summary": "Example of User Registry Setting update.",
                   "value": {
                     "title": "User Registry Setting Update",
@@ -2504,7 +2673,7 @@
                 "$ref": "#/components/schemas/UserRegistrySetting"
               },
               "examples": {
-                "UserRegistrySettingUpdate": {
+                "UserRegistrySetting": {
                   "summary": "Example of User Registry Setting update.",
                   "value": {
                     "title": "User Registry Setting Update",
@@ -2617,11 +2786,87 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationStyle"
+              },
+              "examples": {
+                "NotificationStyle": {
+                  "summary": "Example of notification style update at org scope.",
+                  "value": {
+                    "title": "Acme notification style",
+                    "summary": "An example notification style",
+                    "allowed_html_tags": {
+                      "a": [
+                        "class",
+                        "href",
+                        "hreflang",
+                        "style"
+                      ],
+                      "p": [
+                        "class",
+                        "style"
+                      ],
+                      "br": [
+                        "class",
+                        "style"
+                      ],
+                      "h1": [
+                        "class",
+                        "id",
+                        "style"
+                      ],
+                      "img": [
+                        "class",
+                        "src",
+                        "alt",
+                        "width",
+                        "height",
+                        "style"
+                      ]
+                    }
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationStyle"
+              },
+              "examples": {
+                "NotificationStyle": {
+                  "summary": "Example of notification style update at org scope.",
+                  "value": {
+                    "title": "Acme notification style",
+                    "summary": "An example notification style",
+                    "allowed_html_tags": {
+                      "a": [
+                        "class",
+                        "href",
+                        "hreflang",
+                        "style"
+                      ],
+                      "p": [
+                        "class",
+                        "style"
+                      ],
+                      "br": [
+                        "class",
+                        "style"
+                      ],
+                      "h1": [
+                        "class",
+                        "id",
+                        "style"
+                      ],
+                      "img": [
+                        "class",
+                        "src",
+                        "alt",
+                        "width",
+                        "height",
+                        "style"
+                      ]
+                    }
+                  }
+                }
               }
             }
           }
@@ -2828,11 +3073,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at cloud scope and cloud subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello,\n\nYou have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at cloud scope and cloud subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -2981,6 +3254,23 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationLanguage"
+              },
+              "examples": {
+                "NotificationLanguage": {
+                  "summary": "Example of notification language update at cloud scope and cloud subcollection.",
+                  "value": {
+                    "title": "Example notification language update",
+                    "notification_template_name": "invitation",
+                    "notification_template_type": "consumer",
+                    "subject": "Invitation to create an API consumer organization in the Acme catalog",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text",
+                      "html"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -3134,11 +3424,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at cloud scope and admin subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello,\n\nYou have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at cloud scope and admin subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -3287,6 +3605,23 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationLanguage"
+              },
+              "examples": {
+                "NotificationLanguage": {
+                  "summary": "Example of notification language update at cloud scope and admin subcollection.",
+                  "value": {
+                    "title": "Example notification language update",
+                    "notification_template_name": "member-invitation",
+                    "notification_template_type": "admin",
+                    "subject": "Invitation to an admin organization in IBM API Connect",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text",
+                      "html"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -3440,11 +3775,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at cloud scope and provider subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello,\n\nYou have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at cloud scope and provider subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -3593,6 +3956,23 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationLanguage"
+              },
+              "examples": {
+                "NotificationLanguage": {
+                  "summary": "Example of notification language update at cloud scope and provider subcollection.",
+                  "value": {
+                    "title": "Example notification language update",
+                    "notification_template_name": "invitation",
+                    "notification_template_type": "provider",
+                    "subject": "Invitation to create an API provider organization in IBM API Connect",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text",
+                      "html"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -3746,11 +4126,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at cloud scope and catalog subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello,\n\nYou have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at cloud scope and catalog subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -3899,6 +4307,23 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationLanguage"
+              },
+              "examples": {
+                "NotificationLanguage": {
+                  "summary": "Example of notification language update at cloud scope and catalog subcollection.",
+                  "value": {
+                    "title": "Example notification language update",
+                    "notification_template_name": "invitation",
+                    "notification_template_type": "catalog",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text",
+                      "html"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -4052,11 +4477,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at cloud scope and space subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello,\n\nYou have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at cloud scope and space subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -4205,6 +4658,23 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationLanguage"
+              },
+              "examples": {
+                "NotificationLanguage": {
+                  "summary": "Example of notification language update at cloud scope and space subcollection.",
+                  "value": {
+                    "title": "Example notification language update",
+                    "notification_template_name": "invitation",
+                    "notification_template_type": "space",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text",
+                      "html"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -4358,11 +4828,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at cloud scope and consumer subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello,\n\nYou have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at cloud scope and consumer subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -4511,6 +5009,23 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationLanguage"
+              },
+              "examples": {
+                "NotificationLanguage": {
+                  "summary": "Example of notification language update at cloud scope and consumer subcollection.",
+                  "value": {
+                    "title": "Example notification language update",
+                    "notification_template_name": "invitation",
+                    "notification_template_type": "consumer",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text",
+                      "html"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -4617,7 +5132,7 @@
                 "$ref": "#/components/schemas/RoleDefault"
               },
               "examples": {
-                "roleDefaultCreate": {
+                "RoleDefault": {
                   "summary": "Example of role defaults creation.",
                   "value": {
                     "role_default_type": "provider",
@@ -4638,7 +5153,7 @@
                 "$ref": "#/components/schemas/RoleDefault"
               },
               "examples": {
-                "roleDefaultCreate": {
+                "RoleDefault": {
                   "summary": "Example of role defaults creation.",
                   "value": {
                     "role_default_type": "provider",
@@ -4847,7 +5362,7 @@
                 "$ref": "#/components/schemas/RoleDefault"
               },
               "examples": {
-                "roleDefaultUpdate": {
+                "RoleDefault": {
                   "summary": "Example of role defaults update.",
                   "value": {
                     "title": "Acme role defaults update",
@@ -4865,7 +5380,7 @@
                 "$ref": "#/components/schemas/RoleDefault"
               },
               "examples": {
-                "roleDefaultUpdate": {
+                "RoleDefault": {
                   "summary": "Example of role defaults update.",
                   "value": {
                     "title": "Acme role defaults update",
@@ -6278,6 +6793,299 @@
         ]
       }
     },
+    "/cloud/integrations/governance": {
+      "description": "The collection of Integration operations",
+      "post": {
+        "summary": "Create a Integration object",
+        "description": "Create a Integration object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "integration_createGovernanceSubcollection",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Integration"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/Integration"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful create",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Integration"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Integration"
+                }
+              }
+            }
+          },
+          "302": {
+            "description": "Redirect response",
+            "headers": {
+              "Location": {
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Management",
+          "Resource: Integration (Governance Subcollection)"
+        ]
+      },
+      "get": {
+        "summary": "List the Integration objects",
+        "description": "List the Integration objects",
+        "operationId": "integration_listGovernanceSubcollection",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Management",
+          "Resource: Integration (Governance Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Integration objects",
+        "description": "Clear the Integration objects",
+        "operationId": "integration_clearGovernanceSubcollection",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/confirm"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Management",
+          "Resource: Integration (Governance Subcollection)"
+        ]
+      }
+    },
+    "/cloud/integrations/governance/{integration}": {
+      "description": "Integration object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/integration"
+        }
+      ],
+      "get": {
+        "summary": "Get the Integration object by name or id",
+        "description": "Get the Integration object by name or id",
+        "operationId": "integration_getGovernanceSubcollection",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Integration"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Integration"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Management",
+          "Resource: Integration (Governance Subcollection)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Integration object by name or id",
+        "description": "Update the Integration object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "integration_updateGovernanceSubcollection",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Integration"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/Integration"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Integration"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Integration"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Management",
+          "Resource: Integration (Governance Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Integration object by name or id",
+        "description": "Delete the Integration object by name or id",
+        "operationId": "integration_delGovernanceSubcollection",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Integration"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Integration"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Management",
+          "Resource: Integration (Governance Subcollection)"
+        ]
+      }
+    },
     "/cloud/registrations": {
       "description": "The collection of Registration operations",
       "post": {
@@ -6296,11 +7104,97 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Registration"
+              },
+              "examples": {
+                "Registration": {
+                  "summary": "Example of Registration creation.",
+                  "value": {
+                    "name": "acme-registration",
+                    "title": "Acme registration",
+                    "summary": "An example registration creation",
+                    "state": "enabled",
+                    "client_type": "toolkit",
+                    "client_id": "5407142345766o1u",
+                    "client_secret": "password123",
+                    "scopes": [
+                      "cloud:view",
+                      "cloud:manage",
+                      "provider-org:view",
+                      "provider-org:manage",
+                      "org:view",
+                      "org:manage",
+                      "product-drafts:view",
+                      "product-drafts:edit",
+                      "api-drafts:view",
+                      "api-drafts:edit",
+                      "child:view",
+                      "child:create",
+                      "child:manage",
+                      "product:view",
+                      "product:stage",
+                      "product:manage",
+                      "approval:view",
+                      "approval:manage",
+                      "api-analytics:view",
+                      "api-analytics:manage",
+                      "consumer-org:view",
+                      "consumer-org:manage",
+                      "app:view:all",
+                      "app:manage:all",
+                      "my:view",
+                      "my:manage",
+                      "webhook:view"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Registration"
+              },
+              "examples": {
+                "Registration": {
+                  "summary": "Example of Registration creation.",
+                  "value": {
+                    "name": "acme-registration",
+                    "title": "Acme registration",
+                    "summary": "An example registration creation",
+                    "state": "enabled",
+                    "client_type": "toolkit",
+                    "client_id": "5407142345766o1u",
+                    "client_secret": "password123",
+                    "scopes": [
+                      "cloud:view",
+                      "cloud:manage",
+                      "provider-org:view",
+                      "provider-org:manage",
+                      "org:view",
+                      "org:manage",
+                      "product-drafts:view",
+                      "product-drafts:edit",
+                      "api-drafts:view",
+                      "api-drafts:edit",
+                      "child:view",
+                      "child:create",
+                      "child:manage",
+                      "product:view",
+                      "product:stage",
+                      "product:manage",
+                      "approval:view",
+                      "approval:manage",
+                      "api-analytics:view",
+                      "api-analytics:manage",
+                      "consumer-org:view",
+                      "consumer-org:manage",
+                      "app:view:all",
+                      "app:manage:all",
+                      "my:view",
+                      "my:manage",
+                      "webhook:view"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -6494,11 +7388,61 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Registration"
+              },
+              "examples": {
+                "Registration": {
+                  "summary": "Example of Registration update.",
+                  "value": {
+                    "title": "Acme registration",
+                    "summary": "An example registration update",
+                    "client_secret": "password456",
+                    "scopes": [
+                      "cloud:view",
+                      "cloud:manage",
+                      "provider-org:view",
+                      "provider-org:manage",
+                      "org:view",
+                      "org:manage",
+                      "product-drafts:view",
+                      "product-drafts:edit",
+                      "api-drafts:view",
+                      "api-drafts:edit",
+                      "child:view",
+                      "child:create",
+                      "child:manage"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Registration"
+              },
+              "examples": {
+                "Registration": {
+                  "summary": "Example of Registration update.",
+                  "value": {
+                    "title": "Acme registration",
+                    "summary": "An example registration update",
+                    "client_secret": "password456",
+                    "scopes": [
+                      "cloud:view",
+                      "cloud:manage",
+                      "provider-org:view",
+                      "provider-org:manage",
+                      "org:view",
+                      "org:manage",
+                      "product-drafts:view",
+                      "product-drafts:edit",
+                      "api-drafts:view",
+                      "api-drafts:edit",
+                      "child:view",
+                      "child:create",
+                      "child:manage"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -6591,7 +7535,7 @@
                 "$ref": "#/components/schemas/APIKey"
               },
               "examples": {
-                "apiKeyCreate": {
+                "APIKey": {
                   "summary": "Example API Key creation.",
                   "value": {
                     "name": "acme-apikey",
@@ -6608,7 +7552,7 @@
                 "$ref": "#/components/schemas/APIKey"
               },
               "examples": {
-                "apiKeyCreate": {
+                "APIKey": {
                   "summary": "Example API Key creation.",
                   "value": {
                     "name": "acme-apikey",
@@ -6872,7 +7816,7 @@
                 "$ref": "#/components/schemas/OrgSetting"
               },
               "examples": {
-                "orgSettingUpdate": {
+                "OrgSetting": {
                   "summary": "Example of fields which can be updated on a org settings object.",
                   "value": {
                     "title": "Updated ACME org settings",
@@ -6892,7 +7836,7 @@
                 "$ref": "#/components/schemas/OrgSetting"
               },
               "examples": {
-                "orgSettingUpdate": {
+                "OrgSetting": {
                   "summary": "Example of fields which can be updated on a org settings object.",
                   "value": {
                     "title": "Updated ACME org settings",
@@ -7124,11 +8068,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at org scope and admin subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello,\n\nYou have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at org scope and admin subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -7283,6 +8255,23 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationLanguage"
+              },
+              "examples": {
+                "NotificationLanguage": {
+                  "summary": "Example of notification language update at org scope and admin subcollection.",
+                  "value": {
+                    "title": "Example notification language update",
+                    "notification_template_name": "invitation",
+                    "notification_template_type": "admin",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text",
+                      "html"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -7386,11 +8375,29 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Org"
+              },
+              "examples": {
+                "Org": {
+                  "summary": "Example org update.",
+                  "value": {
+                    "summary": "An example org update",
+                    "title": "ACME Org Updated"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Org"
+              },
+              "examples": {
+                "Org": {
+                  "summary": "Example org update.",
+                  "value": {
+                    "summary": "An example org update",
+                    "title": "ACME Org Updated"
+                  }
+                }
               }
             }
           }
@@ -7498,6 +8505,20 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/TransferOwner"
+              },
+              "examples": {
+                "TransferOwnerMember": {
+                  "summary": "Example of owner transfer using member url.",
+                  "value": {
+                    "new_owner_member_url": "https://api.acme-apim.example.com/api/orgs/acme-org/members/acme-member"
+                  }
+                },
+                "TransferOwnerAssociate": {
+                  "summary": "Example of owner transfer using associate url.",
+                  "value": {
+                    "new_owner_associate_url": "https://api.acme-apim.example.com/api/orgs/acme-org/associates/acme-associate"
+                  }
+                }
               }
             }
           }
@@ -7737,7 +8758,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationCreate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation creation at org scope.",
                   "value": {
                     "name": "acme-invitation",
@@ -7759,7 +8780,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationCreate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation creation at org scope.",
                   "value": {
                     "name": "acme-invitation",
@@ -7972,7 +8993,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationUpdate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation update at org scope.",
                   "value": {
                     "title": "Acme member invitation update",
@@ -7991,7 +9012,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationUpdate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation update at org scope.",
                   "value": {
                     "title": "Acme member invitation update",
@@ -8311,11 +9332,45 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member create at org scope.",
+                  "value": {
+                    "name": "acme-member",
+                    "title": "ACME Member",
+                    "summary": "An example member create",
+                    "user": {
+                      "url": "https://acme-apim.example.com/api/user-registries/acme-org/acme-user-registry1/users/acme-user"
+                    },
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/orgs/acme-org/roles/role1",
+                      "https://acme-apim.example.com/api/orgs/acme-org/roles/role2"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member create at org scope.",
+                  "value": {
+                    "name": "acme-member",
+                    "title": "ACME Member",
+                    "summary": "An example member create",
+                    "user": {
+                      "url": "https://acme-apim.example.com/api/user-registries/acme-org/acme-user-registry1/users/acme-user"
+                    },
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/orgs/acme-org/roles/role1",
+                      "https://acme-apim.example.com/api/orgs/acme-org/roles/role2"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -8512,11 +9567,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member update at org scope.",
+                  "value": {
+                    "name": "updated-acme-member",
+                    "title": "Updated ACME Member",
+                    "summary": "An example member update",
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/orgs/acme-org/roles/role1",
+                      "https://acme-apim.example.com/api/orgs/acme-org/roles/role2"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member update at org scope.",
+                  "value": {
+                    "name": "updated-acme-member",
+                    "title": "Updated ACME Member",
+                    "summary": "An example member update",
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/orgs/acme-org/roles/role1",
+                      "https://acme-apim.example.com/api/orgs/acme-org/roles/role2"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -9197,7 +10280,7 @@
                 "$ref": "#/components/schemas/Role"
               },
               "examples": {
-                "roleCreate": {
+                "Role": {
                   "summary": "Example of role creation at org scope with external_group_mapping enabled.",
                   "value": {
                     "permission_urls": [
@@ -9224,7 +10307,7 @@
                 "$ref": "#/components/schemas/Role"
               },
               "examples": {
-                "roleCreate": {
+                "Role": {
                   "summary": "Example of role creation at org scope with external_group_mapping enabled.",
                   "value": {
                     "permission_urls": [
@@ -9442,7 +10525,7 @@
                 "$ref": "#/components/schemas/Role"
               },
               "examples": {
-                "roleUpdate": {
+                "Role": {
                   "summary": "Example of role update at org scope.",
                   "value": {
                     "permission_urls": [
@@ -9469,7 +10552,7 @@
                 "$ref": "#/components/schemas/Role"
               },
               "examples": {
-                "roleUpdate": {
+                "Role": {
                   "summary": "Example of role update at org scope.",
                   "value": {
                     "permission_urls": [
@@ -9586,7 +10669,7 @@
                 "$ref": "#/components/schemas/AvailabilityZone"
               },
               "examples": {
-                "availabilityZoneCreate": {
+                "AvailabilityZone": {
                   "summary": "Example availability zone creation.",
                   "value": {
                     "name": "acme-zone",
@@ -9601,7 +10684,7 @@
                 "$ref": "#/components/schemas/AvailabilityZone"
               },
               "examples": {
-                "availabilityZoneCreate": {
+                "AvailabilityZone": {
                   "summary": "Example availability zone creation.",
                   "value": {
                     "name": "acme-zone",
@@ -9807,7 +10890,7 @@
                 "$ref": "#/components/schemas/AvailabilityZone"
               },
               "examples": {
-                "availabilityZoneUpdate": {
+                "AvailabilityZone": {
                   "summary": "Example availability zone update.",
                   "value": {
                     "title": "acme zone update",
@@ -9821,7 +10904,7 @@
                 "$ref": "#/components/schemas/AvailabilityZone"
               },
               "examples": {
-                "availabilityZoneUpdate": {
+                "AvailabilityZone": {
                   "summary": "Example availability zone update.",
                   "value": {
                     "title": "acme zone update",
@@ -10122,6 +11205,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/confirm"
+          },
+          {
+            "$ref": "#/components/parameters/force"
           }
         ],
         "responses": {
@@ -10216,7 +11302,7 @@
                 "$ref": "#/components/schemas/GatewayService"
               },
               "examples": {
-                "gatewayUpdate": {
+                "GatewayService": {
                   "summary": "Example of fields which can be updated on a gateway service with LDAP connection pool enabled.",
                   "value": {
                     "title": "ACME Updated Gateway Service",
@@ -10246,7 +11332,7 @@
                 "$ref": "#/components/schemas/GatewayService"
               },
               "examples": {
-                "gatewayUpdate": {
+                "GatewayService": {
                   "summary": "Example of fields which can be updated on a gateway service with LDAP connection pool enabled.",
                   "value": {
                     "title": "ACME Updated Gateway Service",
@@ -10310,6 +11396,11 @@
             "oauth": [
               "org:manage"
             ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/force"
           }
         ],
         "responses": {
@@ -11458,7 +12549,7 @@
                 "$ref": "#/components/schemas/PortalService"
               },
               "examples": {
-                "portalCreate": {
+                "PortalService": {
                   "summary": "Example portal service creation.",
                   "value": {
                     "name": "acme-portal",
@@ -11476,7 +12567,7 @@
                 "$ref": "#/components/schemas/PortalService"
               },
               "examples": {
-                "portalCreate": {
+                "PortalService": {
                   "summary": "Example portal service creation.",
                   "value": {
                     "name": "acme-portal",
@@ -11691,7 +12782,7 @@
                 "$ref": "#/components/schemas/PortalService"
               },
               "examples": {
-                "portalUpdate": {
+                "PortalService": {
                   "summary": "Example portal service update.",
                   "value": {
                     "title": "acme portal service",
@@ -11706,7 +12797,7 @@
                 "$ref": "#/components/schemas/PortalService"
               },
               "examples": {
-                "portalUpdate": {
+                "PortalService": {
                   "summary": "Example portal service update.",
                   "value": {
                     "title": "acme portal service",
@@ -11871,7 +12962,7 @@
                 "$ref": "#/components/schemas/AnalyticsService"
               },
               "examples": {
-                "analyticsCreate": {
+                "AnalyticsService": {
                   "summary": "Example analytics service.",
                   "value": {
                     "name": "acme-analytics-service",
@@ -11887,7 +12978,7 @@
                 "$ref": "#/components/schemas/AnalyticsService"
               },
               "examples": {
-                "analyticsCreate": {
+                "AnalyticsService": {
                   "summary": "Example analytics service.",
                   "value": {
                     "name": "acme-analytics-service",
@@ -12097,7 +13188,7 @@
                 "$ref": "#/components/schemas/AnalyticsService"
               },
               "examples": {
-                "analyticsUpdate": {
+                "AnalyticsService": {
                   "summary": "Example of fields which can be updated on an analytics service.",
                   "value": {
                     "title": "ACME Updated Analytics Service",
@@ -12111,7 +13202,7 @@
                 "$ref": "#/components/schemas/AnalyticsService"
               },
               "examples": {
-                "analyticsUpdate": {
+                "AnalyticsService": {
                   "summary": "Example of fields which can be updated on an analytics service.",
                   "value": {
                     "title": "ACME Updated Analytics Service",
@@ -12213,11 +13304,97 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Opentelemetry"
+              },
+              "examples": {
+                "Opentelemetry": {
+                  "summary": "Example of opentelemetry creation.",
+                  "value": {
+                    "name": "opentelemetry",
+                    "title": "Opentelemetry",
+                    "endpoints": [
+                      {
+                        "protocol": "grpc",
+                        "endpoint": "https://open_telemetry.com",
+                        "tls_client_profile_url": "https://acme-apim.example.com/api/orgs/org1/tls-client-profiles/tls-client-profile1",
+                        "signals": [
+                          "logs"
+                        ]
+                      }
+                    ],
+                    "headers": [
+                      {
+                        "name": "Authorization",
+                        "value": "Bearer"
+                      }
+                    ],
+                    "attributes": [
+                      {
+                        "name": "env",
+                        "value": "production"
+                      }
+                    ],
+                    "batching": {
+                      "max-queue-size": 1000,
+                      "batch-size": 500,
+                      "export-interval": 3000,
+                      "export-timeout": 50000,
+                      "max-threads": 3
+                    },
+                    "sampling": {
+                      "parent-based": true,
+                      "sampler-type": "always_on",
+                      "sampler-ratio": 50
+                    }
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Opentelemetry"
+              },
+              "examples": {
+                "Opentelemetry": {
+                  "summary": "Example of opentelemetry creation.",
+                  "value": {
+                    "name": "opentelemetry",
+                    "title": "Opentelemetry",
+                    "endpoints": [
+                      {
+                        "protocol": "grpc",
+                        "endpoint": "https://open_telemetry.com",
+                        "tls_client_profile_url": "https://acme-apim.example.com/api/orgs/org1/tls-client-profiles/tls-client-profile1",
+                        "signals": [
+                          "logs"
+                        ]
+                      }
+                    ],
+                    "headers": [
+                      {
+                        "name": "Authorization",
+                        "value": "Bearer"
+                      }
+                    ],
+                    "attributes": [
+                      {
+                        "name": "env",
+                        "value": "production"
+                      }
+                    ],
+                    "batching": {
+                      "max-queue-size": 1000,
+                      "batch-size": 500,
+                      "export-interval": 3000,
+                      "export-timeout": 50000,
+                      "max-threads": 3
+                    },
+                    "sampling": {
+                      "parent-based": true,
+                      "sampler-type": "always_on",
+                      "sampler-ratio": 50
+                    }
+                  }
+                }
               }
             }
           }
@@ -12414,11 +13591,97 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Opentelemetry"
+              },
+              "examples": {
+                "Opentelemetry": {
+                  "summary": "Example of opentelemetry update.",
+                  "value": {
+                    "name": "opentelemetry",
+                    "title": "Opentelemetry",
+                    "endpoints": [
+                      {
+                        "protocol": "grpc",
+                        "endpoint": "https://open_telemetry.com",
+                        "tls_client_profile_url": "https://acme-apim.example.com/api/orgs/org1/tls-client-profiles/tls-client-profile1",
+                        "signals": [
+                          "logs"
+                        ]
+                      }
+                    ],
+                    "headers": [
+                      {
+                        "name": "Authorization",
+                        "value": "Bearer"
+                      }
+                    ],
+                    "attributes": [
+                      {
+                        "name": "env",
+                        "value": "production"
+                      }
+                    ],
+                    "batching": {
+                      "max-queue-size": 1000,
+                      "batch-size": 500,
+                      "export-interval": 3000,
+                      "export-timeout": 50000,
+                      "max-threads": 3
+                    },
+                    "sampling": {
+                      "parent-based": true,
+                      "sampler-type": "always_on",
+                      "sampler-ratio": 50
+                    }
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Opentelemetry"
+              },
+              "examples": {
+                "Opentelemetry": {
+                  "summary": "Example of opentelemetry update.",
+                  "value": {
+                    "name": "opentelemetry",
+                    "title": "Opentelemetry",
+                    "endpoints": [
+                      {
+                        "protocol": "grpc",
+                        "endpoint": "https://open_telemetry.com",
+                        "tls_client_profile_url": "https://acme-apim.example.com/api/orgs/org1/tls-client-profiles/tls-client-profile1",
+                        "signals": [
+                          "logs"
+                        ]
+                      }
+                    ],
+                    "headers": [
+                      {
+                        "name": "Authorization",
+                        "value": "Bearer"
+                      }
+                    ],
+                    "attributes": [
+                      {
+                        "name": "env",
+                        "value": "production"
+                      }
+                    ],
+                    "batching": {
+                      "max-queue-size": 1000,
+                      "batch-size": 500,
+                      "export-interval": 3000,
+                      "export-timeout": 50000,
+                      "max-threads": 3
+                    },
+                    "sampling": {
+                      "parent-based": true,
+                      "sampler-type": "always_on",
+                      "sampler-ratio": 50
+                    }
+                  }
+                }
               }
             }
           }
@@ -12500,7 +13763,7 @@
       ],
       "post": {
         "summary": "Creates an OAuth provider.",
-        "description": "Creates an OAuth provider resource.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
+        "description": "Creates an OAuth provider resource.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "oauth_provider_create",
         "security": [
           {
@@ -12863,7 +14126,7 @@
       },
       "patch": {
         "summary": "Creates an OAuth provider.",
-        "description": "Updates an OAuth provider resource.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
+        "description": "Updates an OAuth provider resource.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "oauth_provider_update",
         "security": [
           {
@@ -12879,7 +14142,7 @@
                 "$ref": "#/components/schemas/OauthProvider"
               },
               "examples": {
-                "oauthProviderUpdate": {
+                "OauthProvider": {
                   "summary": "Example of native oauth provider update.",
                   "value": {
                     "title": "Acme native oauth provider creation",
@@ -12918,7 +14181,7 @@
                 "$ref": "#/components/schemas/OauthProvider"
               },
               "examples": {
-                "oauthProviderUpdate": {
+                "OauthProvider": {
                   "summary": "Example of native oauth provider update.",
                   "value": {
                     "title": "Acme native oauth provider creation",
@@ -13047,7 +14310,7 @@
                 "$ref": "#/components/schemas/MailServer"
               },
               "examples": {
-                "mailServerCreate": {
+                "MailServer": {
                   "summary": "Example of mail server creation.",
                   "value": {
                     "name": "acme-mailserver",
@@ -13069,7 +14332,7 @@
                 "$ref": "#/components/schemas/MailServer"
               },
               "examples": {
-                "mailServerCreate": {
+                "MailServer": {
                   "summary": "Example of mail server creation.",
                   "value": {
                     "name": "acme-mailserver",
@@ -13282,7 +14545,7 @@
                 "$ref": "#/components/schemas/MailServer"
               },
               "examples": {
-                "mailServerUpdate": {
+                "MailServer": {
                   "summary": "Example of mail server update.",
                   "value": {
                     "title": "acme mailserver update",
@@ -13302,7 +14565,7 @@
                 "$ref": "#/components/schemas/MailServer"
               },
               "examples": {
-                "mailServerUpdate": {
+                "MailServer": {
                   "summary": "Example of mail server update.",
                   "value": {
                     "title": "acme mailserver update",
@@ -13417,6 +14680,35 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/MailServerSavedTestConnection"
+              },
+              "examples": {
+                "MailServerSavedTestConnection": {
+                  "summary": "Example of mail server test connection.",
+                  "value": {
+                    "recipients": [
+                      "acme@example.com"
+                    ]
+                  }
+                },
+                "MailServerProvidedTestConnection": {
+                  "summary": "Example of mail server test connection (test config only).",
+                  "value": {
+                    "mail_server": {
+                      "name": "acme-mail-server",
+                      "title": "Acme mail server test connection",
+                      "host": "acme.example.com",
+                      "port": 25,
+                      "credentials": {
+                        "username": "Acme",
+                        "password": "Passw0rd"
+                      },
+                      "secure": true
+                    },
+                    "recipients": [
+                      "acme@example.com"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -13465,6 +14757,35 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/MailServerProvidedTestConnection"
+              },
+              "examples": {
+                "MailServerSavedTestConnection": {
+                  "summary": "Example of mail server test connection.",
+                  "value": {
+                    "recipients": [
+                      "acme@example.com"
+                    ]
+                  }
+                },
+                "MailServerProvidedTestConnection": {
+                  "summary": "Example of mail server test connection (test config only).",
+                  "value": {
+                    "mail_server": {
+                      "name": "acme-mail-server",
+                      "title": "Acme mail server test connection",
+                      "host": "acme.example.com",
+                      "port": 25,
+                      "credentials": {
+                        "username": "Acme",
+                        "password": "Passw0rd"
+                      },
+                      "secure": true
+                    },
+                    "recipients": [
+                      "acme@example.com"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -13511,7 +14832,7 @@
                 "$ref": "#/components/schemas/TLSServerProfile"
               },
               "examples": {
-                "tlsServerProfileCreate": {
+                "TLSServerProfile": {
                   "summary": "Example of tls server profile creation.",
                   "value": {
                     "title": "acme TLS Server Profile",
@@ -13579,7 +14900,7 @@
                 "$ref": "#/components/schemas/TLSServerProfile"
               },
               "examples": {
-                "tlsServerProfileCreate": {
+                "TLSServerProfile": {
                   "summary": "Example of tls server profile creation.",
                   "value": {
                     "title": "acme TLS Server Profile",
@@ -13937,7 +15258,7 @@
                 "$ref": "#/components/schemas/TLSServerProfile"
               },
               "examples": {
-                "tlsServerProfileUpdate": {
+                "TLSServerProfile": {
                   "summary": "Example of tls server profile update by id.",
                   "value": {
                     "title": "acme TLS Server profile update",
@@ -13968,7 +15289,7 @@
                 "$ref": "#/components/schemas/TLSServerProfile"
               },
               "examples": {
-                "tlsServerProfileUpdate": {
+                "TLSServerProfile": {
                   "summary": "Example of tls server profile update by id.",
                   "value": {
                     "title": "acme TLS Server profile update",
@@ -14144,7 +15465,7 @@
                 "$ref": "#/components/schemas/TLSServerProfile"
               },
               "examples": {
-                "tlsServerProfileUpdate": {
+                "TLSServerProfile": {
                   "summary": "Example of tls server profile update by name and version.",
                   "value": {
                     "title": "acme TLS Server profile update",
@@ -14175,7 +15496,7 @@
                 "$ref": "#/components/schemas/TLSServerProfile"
               },
               "examples": {
-                "tlsServerProfileUpdate": {
+                "TLSServerProfile": {
                   "summary": "Example of tls server profile update by name and version.",
                   "value": {
                     "title": "acme TLS Server profile update",
@@ -14294,11 +15615,137 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/TLSClientProfile"
+              },
+              "examples": {
+                "TLSClientProfile": {
+                  "summary": "Example of tls client profile creation.",
+                  "value": {
+                    "title": "acme TLS Client Profile",
+                    "name": "acme-tls-client-profile",
+                    "version": "1.0.0",
+                    "summary": "An example TLS client profile",
+                    "insecure_server_connections": true,
+                    "server_name_indication": false,
+                    "keystore_url": "https://acme-apim.example.com/api/orgs/acme-org/keystores/acme-keystore",
+                    "truststore_url": "https://acme-apim.example.com/api/orgs/acme-org/truststores/acme-truststore",
+                    "protocols": [
+                      "tls_v1.0",
+                      "tls_v1.1",
+                      "tls_v1.2",
+                      "tls_v1.3"
+                    ],
+                    "ciphers": [
+                      "TLS_AES_256_GCM_SHA384",
+                      "TLS_CHACHA20_POLY1305_SHA256",
+                      "TLS_AES_128_GCM_SHA256",
+                      "TLS_AES_128_CCM_SHA256",
+                      "TLS_AES_128_CCM_8_SHA256",
+                      "ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+                      "ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+                      "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+                      "ECDHE_RSA_WITH_AES_256_CBC_SHA384",
+                      "ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+                      "ECDHE_RSA_WITH_AES_256_CBC_SHA",
+                      "DHE_DSS_WITH_AES_256_GCM_SHA384",
+                      "DHE_RSA_WITH_AES_256_GCM_SHA384",
+                      "DHE_RSA_WITH_AES_256_CBC_SHA256",
+                      "DHE_DSS_WITH_AES_256_CBC_SHA256",
+                      "DHE_RSA_WITH_AES_256_CBC_SHA",
+                      "DHE_DSS_WITH_AES_256_CBC_SHA",
+                      "RSA_WITH_AES_256_GCM_SHA384",
+                      "RSA_WITH_AES_256_CBC_SHA256",
+                      "RSA_WITH_AES_256_CBC_SHA",
+                      "ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+                      "ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+                      "ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+                      "ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+                      "ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+                      "ECDHE_RSA_WITH_AES_128_CBC_SHA",
+                      "DHE_DSS_WITH_AES_128_GCM_SHA256",
+                      "DHE_RSA_WITH_AES_128_GCM_SHA256",
+                      "DHE_RSA_WITH_AES_128_CBC_SHA256",
+                      "DHE_DSS_WITH_AES_128_CBC_SHA256",
+                      "DHE_RSA_WITH_AES_128_CBC_SHA",
+                      "DHE_DSS_WITH_AES_128_CBC_SHA",
+                      "RSA_WITH_AES_128_GCM_SHA256",
+                      "RSA_WITH_AES_128_CBC_SHA256",
+                      "RSA_WITH_AES_128_CBC_SHA",
+                      "ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA",
+                      "ECDHE_RSA_WITH_3DES_EDE_CBC_SHA",
+                      "DHE_RSA_WITH_3DES_EDE_CBC_SHA",
+                      "DHE_DSS_WITH_3DES_EDE_CBC_SHA",
+                      "RSA_WITH_3DES_EDE_CBC_SHA"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/TLSClientProfile"
+              },
+              "examples": {
+                "TLSClientProfile": {
+                  "summary": "Example of tls client profile creation.",
+                  "value": {
+                    "title": "acme TLS Client Profile",
+                    "name": "acme-tls-client-profile",
+                    "version": "1.0.0",
+                    "summary": "An example TLS client profile",
+                    "insecure_server_connections": true,
+                    "server_name_indication": false,
+                    "keystore_url": "https://acme-apim.example.com/api/orgs/acme-org/keystores/acme-keystore",
+                    "truststore_url": "https://acme-apim.example.com/api/orgs/acme-org/truststores/acme-truststore",
+                    "protocols": [
+                      "tls_v1.0",
+                      "tls_v1.1",
+                      "tls_v1.2",
+                      "tls_v1.3"
+                    ],
+                    "ciphers": [
+                      "TLS_AES_256_GCM_SHA384",
+                      "TLS_CHACHA20_POLY1305_SHA256",
+                      "TLS_AES_128_GCM_SHA256",
+                      "TLS_AES_128_CCM_SHA256",
+                      "TLS_AES_128_CCM_8_SHA256",
+                      "ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+                      "ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+                      "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+                      "ECDHE_RSA_WITH_AES_256_CBC_SHA384",
+                      "ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+                      "ECDHE_RSA_WITH_AES_256_CBC_SHA",
+                      "DHE_DSS_WITH_AES_256_GCM_SHA384",
+                      "DHE_RSA_WITH_AES_256_GCM_SHA384",
+                      "DHE_RSA_WITH_AES_256_CBC_SHA256",
+                      "DHE_DSS_WITH_AES_256_CBC_SHA256",
+                      "DHE_RSA_WITH_AES_256_CBC_SHA",
+                      "DHE_DSS_WITH_AES_256_CBC_SHA",
+                      "RSA_WITH_AES_256_GCM_SHA384",
+                      "RSA_WITH_AES_256_CBC_SHA256",
+                      "RSA_WITH_AES_256_CBC_SHA",
+                      "ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+                      "ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+                      "ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+                      "ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+                      "ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+                      "ECDHE_RSA_WITH_AES_128_CBC_SHA",
+                      "DHE_DSS_WITH_AES_128_GCM_SHA256",
+                      "DHE_RSA_WITH_AES_128_GCM_SHA256",
+                      "DHE_RSA_WITH_AES_128_CBC_SHA256",
+                      "DHE_DSS_WITH_AES_128_CBC_SHA256",
+                      "DHE_RSA_WITH_AES_128_CBC_SHA",
+                      "DHE_DSS_WITH_AES_128_CBC_SHA",
+                      "RSA_WITH_AES_128_GCM_SHA256",
+                      "RSA_WITH_AES_128_CBC_SHA256",
+                      "RSA_WITH_AES_128_CBC_SHA",
+                      "ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA",
+                      "ECDHE_RSA_WITH_3DES_EDE_CBC_SHA",
+                      "DHE_RSA_WITH_3DES_EDE_CBC_SHA",
+                      "DHE_DSS_WITH_3DES_EDE_CBC_SHA",
+                      "RSA_WITH_3DES_EDE_CBC_SHA"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -14591,11 +16038,63 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/TLSClientProfile"
+              },
+              "examples": {
+                "TLSClientProfile": {
+                  "summary": "Example of tls client profile update by id.",
+                  "value": {
+                    "title": "acme TLS Client profile update",
+                    "version": "1.0.0",
+                    "summary": "An example TLS client profile update",
+                    "insecure_server_connections": true,
+                    "server_name_indication": false,
+                    "keystore_url": "https://acme-apim.example.com/api/orgs/acme-org/keystores/acme-keystore",
+                    "truststore_url": "https://acme-apim.example.com/api/orgs/acme-org/truststores/acme-truststore",
+                    "protocols": [
+                      "tls_v1.2",
+                      "tls_v1.3"
+                    ],
+                    "ciphers": [
+                      "TLS_CHACHA20_POLY1305_SHA256",
+                      "TLS_AES_128_GCM_SHA256",
+                      "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+                      "ECDHE_RSA_WITH_AES_128_CBC_SHA",
+                      "DHE_RSA_WITH_AES_256_GCM_SHA384",
+                      "DHE_RSA_WITH_AES_256_CBC_SHA256"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/TLSClientProfile"
+              },
+              "examples": {
+                "TLSClientProfile": {
+                  "summary": "Example of tls client profile update by id.",
+                  "value": {
+                    "title": "acme TLS Client profile update",
+                    "version": "1.0.0",
+                    "summary": "An example TLS client profile update",
+                    "insecure_server_connections": true,
+                    "server_name_indication": false,
+                    "keystore_url": "https://acme-apim.example.com/api/orgs/acme-org/keystores/acme-keystore",
+                    "truststore_url": "https://acme-apim.example.com/api/orgs/acme-org/truststores/acme-truststore",
+                    "protocols": [
+                      "tls_v1.2",
+                      "tls_v1.3"
+                    ],
+                    "ciphers": [
+                      "TLS_CHACHA20_POLY1305_SHA256",
+                      "TLS_AES_128_GCM_SHA256",
+                      "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+                      "ECDHE_RSA_WITH_AES_128_CBC_SHA",
+                      "DHE_RSA_WITH_AES_256_GCM_SHA384",
+                      "DHE_RSA_WITH_AES_256_CBC_SHA256"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -14741,11 +16240,63 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/TLSClientProfile"
+              },
+              "examples": {
+                "TLSClientProfile": {
+                  "summary": "Example of tls client profile update by name and version.",
+                  "value": {
+                    "title": "acme TLS Client profile update",
+                    "version": "1.0.0",
+                    "summary": "An example TLS client profile update",
+                    "insecure_server_connections": true,
+                    "server_name_indication": false,
+                    "keystore_url": "https://acme-apim.example.com/api/orgs/acme-org/keystores/acme-keystore",
+                    "truststore_url": "https://acme-apim.example.com/api/orgs/acme-org/truststores/acme-truststore",
+                    "protocols": [
+                      "tls_v1.2",
+                      "tls_v1.3"
+                    ],
+                    "ciphers": [
+                      "TLS_CHACHA20_POLY1305_SHA256",
+                      "TLS_AES_128_GCM_SHA256",
+                      "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+                      "ECDHE_RSA_WITH_AES_128_CBC_SHA",
+                      "DHE_RSA_WITH_AES_256_GCM_SHA384",
+                      "DHE_RSA_WITH_AES_256_CBC_SHA256"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/TLSClientProfile"
+              },
+              "examples": {
+                "TLSClientProfile": {
+                  "summary": "Example of tls client profile update by name and version.",
+                  "value": {
+                    "title": "acme TLS Client profile update",
+                    "version": "1.0.0",
+                    "summary": "An example TLS client profile update",
+                    "insecure_server_connections": true,
+                    "server_name_indication": false,
+                    "keystore_url": "https://acme-apim.example.com/api/orgs/acme-org/keystores/acme-keystore",
+                    "truststore_url": "https://acme-apim.example.com/api/orgs/acme-org/truststores/acme-truststore",
+                    "protocols": [
+                      "tls_v1.2",
+                      "tls_v1.3"
+                    ],
+                    "ciphers": [
+                      "TLS_CHACHA20_POLY1305_SHA256",
+                      "TLS_AES_128_GCM_SHA256",
+                      "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+                      "ECDHE_RSA_WITH_AES_128_CBC_SHA",
+                      "DHE_RSA_WITH_AES_256_GCM_SHA384",
+                      "DHE_RSA_WITH_AES_256_CBC_SHA256"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -14841,11 +16392,35 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Keystore"
+              },
+              "examples": {
+                "Keystore": {
+                  "summary": "Example of keystore creation.",
+                  "value": {
+                    "title": "Acme keystore creation",
+                    "name": "acme-keystore",
+                    "summary": "An example keystore creation",
+                    "password": "Acme1234",
+                    "keystore": "-----BEGIN CERTIFICATE-----\nMIIC7jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMAwG\nA1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3BxETAPBgNVBAoTCEZyYW5rNERE\nMRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBucnQxGDAWBgNVBAMTD0ZyYW5rNEREIFdl\nYiCDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazRkZC5jb20wHhcNMTIw\nODIyMDUyNzQxWhcNMTcwODIxMDUyNzQxWeBKMQswCQYDVQQGEwJKUDEOMAwGA1UE\nCAwFVG9reW8xETAPBgNVBAoMCEZyYW5rNEREMRgwFgYDVQQDDA93d3cuZXhhbXBs\nZS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0z9FeMynsC8+u\ndvX+LciZxnh5uRj4C9S6tNeeAlIGCfQYk0zUcNFCoCkTknNQd/YEiawDLNbxBqut\nbMDZ1aarys1a1lYmUeVLCIqvzBkPJTSQsCopQQ9V8WuT252zzNzs68dVGNdCJd5J\nNRQykpwexmnjPPv0mvj7i8XgG379TyW6P+WWV5okeUkXJ9eJS2ouDYdR2SM9BoVW\n+FgxDu6BmXhozW5EfsnajFp7HL8kQClI0QOc79yuKl3492rH6bzFsFn2lfwWy9ic\n7cP8EpCTeFp1tFaD+vxBhPZkeTQ1HKx6hQ5zeHIB5ySJJZ7af8W8r4eTGYzbdRW2\n4DDHCPhZAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAQMv+BFvGdMVzkQaQ3/+2noVz\n/uAKbzpEL8xTcxYyP3lkOeh4FoxiSWqy5pGFALdPONoDuYFpLhjJSZaEwuvjI/Tr\nrGhLV1pRG9frwDFshqD2Vaj4ENBCBh6UpeBop5+285zQ4SI7q4U9oSebUDJiuOx6\n+tZ9KynmrbJpTSi0+BM=\n-----END CERTIFICATE-----\n-----BEGIN RSA PRIVATE KEY-----\nMII7pAIBABKCAQEAtM/RXjMp7AvPrnb1/i3ImcZ4ebkY+AvUurTXngJSBgn0GJNM\n1HDRQqApE5JzUHf2BImsAyzW8QarrWzA2dWmq8rNWtJWJlHlSwiKr8wZDyU0kLAq\nKUEPVfFrk9uds8zc7OvHVRjXQiXeSTUUMpKcHsZp4zz79Jr4+4vF4Bt+/U8luj/l\nlleaJHlJFyfXiUtqLg2HUdkjPQaFVvhYMQ7ugZl4aM1uRH7J2oxaexy/JEApSNED\nnO/cripd+Pdqx+m8xbBZ9pX8FsvYnO3D/BKQk3hadbRWg/r8QYT2ZHk0NRyseoUO\nc3hyAeckiSWe3n9lvK+HkxmM23UVtuAwxwj4WQIDAQABAoIBAE76H0d4La2PEy3v\nhE98DA0vJdx1PzTJZigPacb42H8OxfIeFQcOKDlj381OwNO7MliVEe9pHJG3CjH8\nONhtfBm5wa0UBtFCIFd/6aQUEDYPWECC0kemxV4Sz5yL5vxsVWufKThAW3XnOIrd\nhm74nvzKSeIZ9yvGrU6ipNHY8MUPm0DQVrVYE5MiKjKVExQ4uRAolV2hlmeQDlSt\nk85S0TUOWO1EvJZhsVVs7dBjjY10hIjv3gZPAO8CN75JzMeaNbmWv4RQj0B967in\nrqlOa5qYYt80tAWO4hmPRKCrv6PgThz8C0Cd8AgwNzvQD2d4JpmxxTzBT6/5lRng\nHhj/wQECgYEA2jxC0a4lGmp1q2aYE1Zyiq0UqjxA92pwFYJg3800MLkf96A+dOhd\nwDAc5aAKN8vQV5g33vKi5+pIHWUCskhTS8/PPGrfeqIvtphCj6b7LKosBOhdzrRD\nOsr+Az/SiR2h5l2lr/v7I8I86RTY7MBk4QcRb601kSagWLDNVzSSdhECgYEA1Bm0\n0sByqkQmFoUNRkwmShPfJeVLTCr1G4cllml6MqHmGyRDHxtcp1+CXlyJJemLQY2A\nqrM7/T4x2ta6ME2WgDydFe9M8oU3BbefNYovS6YnoyBqxCx7yZ1vO0Jo40rZI8Bi\nKoCi6e0Hugg4xyPRz9TTNLmr/yEC1qQesMhM9ckCgYEArsT7rfgMdq8zNOSgfTwJ\n1sztc7d1P67ZvCABfLlVRn+6/hAydGVyTus4+RvFkxGB8+RPOhiOJbQVtJSkKCqL\nqnbtu7DK7+ba1xvwkiJjnE1bm0KLfXIXNQpDik6eSHiWo2nzuo/Ne8GeDftIDbG2\nGBAVAp5v+6I3X0+X4nKTqEECgYEAwT4Cj5mjXxnkEdR7eahHwmpEf0RfzC+/Tate\nRXZsrUDwY34wYWEOk7fjEZIBqrcTl1ATEHNojpxh096bmHK4UnHnNRrn4nYY4W6g\n8ajK2oOxzWA1pjJZPiHgO/+PjLafC4G2br7wr2y0A3yGLnmmKVLgc0NPP42WBnVV\nOP/ljnECgYABlDdJCAehDNSv4mdEzY5bfD+VBFd2QsgE1hYhmUYYRNlgIfIL9Y8e\nCduqXFLNZ/LHdmtYembgUqrMiJTUqcbSrJt26kBQx0az3LAV+J2p68PQ85KR9ZPy\nN1jEnRqpAwEdw7S+8l0yVyaNkm66eRI80p+w3AxNbS9hJ/7UlV3lGA==\n-----END RSA PRIVATE KEY-----   \n"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Keystore"
+              },
+              "examples": {
+                "Keystore": {
+                  "summary": "Example of keystore creation.",
+                  "value": {
+                    "title": "Acme keystore creation",
+                    "name": "acme-keystore",
+                    "summary": "An example keystore creation",
+                    "password": "Acme1234",
+                    "keystore": "-----BEGIN CERTIFICATE-----\nMIIC7jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMAwG\nA1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3BxETAPBgNVBAoTCEZyYW5rNERE\nMRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBucnQxGDAWBgNVBAMTD0ZyYW5rNEREIFdl\nYiCDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazRkZC5jb20wHhcNMTIw\nODIyMDUyNzQxWhcNMTcwODIxMDUyNzQxWeBKMQswCQYDVQQGEwJKUDEOMAwGA1UE\nCAwFVG9reW8xETAPBgNVBAoMCEZyYW5rNEREMRgwFgYDVQQDDA93d3cuZXhhbXBs\nZS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0z9FeMynsC8+u\ndvX+LciZxnh5uRj4C9S6tNeeAlIGCfQYk0zUcNFCoCkTknNQd/YEiawDLNbxBqut\nbMDZ1aarys1a1lYmUeVLCIqvzBkPJTSQsCopQQ9V8WuT252zzNzs68dVGNdCJd5J\nNRQykpwexmnjPPv0mvj7i8XgG379TyW6P+WWV5okeUkXJ9eJS2ouDYdR2SM9BoVW\n+FgxDu6BmXhozW5EfsnajFp7HL8kQClI0QOc79yuKl3492rH6bzFsFn2lfwWy9ic\n7cP8EpCTeFp1tFaD+vxBhPZkeTQ1HKx6hQ5zeHIB5ySJJZ7af8W8r4eTGYzbdRW2\n4DDHCPhZAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAQMv+BFvGdMVzkQaQ3/+2noVz\n/uAKbzpEL8xTcxYyP3lkOeh4FoxiSWqy5pGFALdPONoDuYFpLhjJSZaEwuvjI/Tr\nrGhLV1pRG9frwDFshqD2Vaj4ENBCBh6UpeBop5+285zQ4SI7q4U9oSebUDJiuOx6\n+tZ9KynmrbJpTSi0+BM=\n-----END CERTIFICATE-----\n-----BEGIN RSA PRIVATE KEY-----\nMII7pAIBABKCAQEAtM/RXjMp7AvPrnb1/i3ImcZ4ebkY+AvUurTXngJSBgn0GJNM\n1HDRQqApE5JzUHf2BImsAyzW8QarrWzA2dWmq8rNWtJWJlHlSwiKr8wZDyU0kLAq\nKUEPVfFrk9uds8zc7OvHVRjXQiXeSTUUMpKcHsZp4zz79Jr4+4vF4Bt+/U8luj/l\nlleaJHlJFyfXiUtqLg2HUdkjPQaFVvhYMQ7ugZl4aM1uRH7J2oxaexy/JEApSNED\nnO/cripd+Pdqx+m8xbBZ9pX8FsvYnO3D/BKQk3hadbRWg/r8QYT2ZHk0NRyseoUO\nc3hyAeckiSWe3n9lvK+HkxmM23UVtuAwxwj4WQIDAQABAoIBAE76H0d4La2PEy3v\nhE98DA0vJdx1PzTJZigPacb42H8OxfIeFQcOKDlj381OwNO7MliVEe9pHJG3CjH8\nONhtfBm5wa0UBtFCIFd/6aQUEDYPWECC0kemxV4Sz5yL5vxsVWufKThAW3XnOIrd\nhm74nvzKSeIZ9yvGrU6ipNHY8MUPm0DQVrVYE5MiKjKVExQ4uRAolV2hlmeQDlSt\nk85S0TUOWO1EvJZhsVVs7dBjjY10hIjv3gZPAO8CN75JzMeaNbmWv4RQj0B967in\nrqlOa5qYYt80tAWO4hmPRKCrv6PgThz8C0Cd8AgwNzvQD2d4JpmxxTzBT6/5lRng\nHhj/wQECgYEA2jxC0a4lGmp1q2aYE1Zyiq0UqjxA92pwFYJg3800MLkf96A+dOhd\nwDAc5aAKN8vQV5g33vKi5+pIHWUCskhTS8/PPGrfeqIvtphCj6b7LKosBOhdzrRD\nOsr+Az/SiR2h5l2lr/v7I8I86RTY7MBk4QcRb601kSagWLDNVzSSdhECgYEA1Bm0\n0sByqkQmFoUNRkwmShPfJeVLTCr1G4cllml6MqHmGyRDHxtcp1+CXlyJJemLQY2A\nqrM7/T4x2ta6ME2WgDydFe9M8oU3BbefNYovS6YnoyBqxCx7yZ1vO0Jo40rZI8Bi\nKoCi6e0Hugg4xyPRz9TTNLmr/yEC1qQesMhM9ckCgYEArsT7rfgMdq8zNOSgfTwJ\n1sztc7d1P67ZvCABfLlVRn+6/hAydGVyTus4+RvFkxGB8+RPOhiOJbQVtJSkKCqL\nqnbtu7DK7+ba1xvwkiJjnE1bm0KLfXIXNQpDik6eSHiWo2nzuo/Ne8GeDftIDbG2\nGBAVAp5v+6I3X0+X4nKTqEECgYEAwT4Cj5mjXxnkEdR7eahHwmpEf0RfzC+/Tate\nRXZsrUDwY34wYWEOk7fjEZIBqrcTl1ATEHNojpxh096bmHK4UnHnNRrn4nYY4W6g\n8ajK2oOxzWA1pjJZPiHgO/+PjLafC4G2br7wr2y0A3yGLnmmKVLgc0NPP42WBnVV\nOP/ljnECgYABlDdJCAehDNSv4mdEzY5bfD+VBFd2QsgE1hYhmUYYRNlgIfIL9Y8e\nCduqXFLNZ/LHdmtYembgUqrMiJTUqcbSrJt26kBQx0az3LAV+J2p68PQ85KR9ZPy\nN1jEnRqpAwEdw7S+8l0yVyaNkm66eRI80p+w3AxNbS9hJ/7UlV3lGA==\n-----END RSA PRIVATE KEY-----   \n"
+                  }
+                }
               }
             }
           }
@@ -15042,11 +16617,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Keystore"
+              },
+              "examples": {
+                "Keystore": {
+                  "summary": "Example of keystore update.",
+                  "value": {
+                    "title": "Acme keystore update",
+                    "summary": "An example keystore update",
+                    "password": "Acme123",
+                    "private_key_entry": "-----BEGIN RSA PRIVATE KEY-----\nMII7pAIBABKCAQEAtM/RXjMp7AvPrnb1/i3ImcZ4ebkY+AvUurTXngJSBgn0GJNM\n1HDRQqApE5JzUHf2BImsAyzW8QarrWzA2dWmq8rNWtJWJlHlSwiKr8wZDyU0kLAq\nKUEPVfFrk9uds8zc7OvHVRjXQiXeSTUUMpKcHsZp4zz79Jr4+4vF4Bt+/U8luj/l\nlleaJHlJFyfXiUtqLg2HUdkjPQaFVvhYMQ7ugZl4aM1uRH7J2oxaexy/JEApSNED\nnO/cripd+Pdqx+m8xbBZ9pX8FsvYnO3D/BKQk3hadbRWg/r8QYT2ZHk0NRyseoUO\nc3hyAeckiSWe3n9lvK+HkxmM23UVtuAwxwj4WQIDAQABAoIBAE76H0d4La2PEy3v\nhE98DA0vJdx1PzTJZigPacb42H8OxfIeFQcOKDlj381OwNO7MliVEe9pHJG3CjH8\nONhtfBm5wa0UBtFCIFd/6aQUEDYPWECC0kemxV4Sz5yL5vxsVWufKThAW3XnOIrd\nhm74nvzKSeIZ9yvGrU6ipNHY8MUPm0DQVrVYE5MiKjKVExQ4uRAolV2hlmeQDlSt\nk85S0TUOWO1EvJZhsVVs7dBjjY10hIjv3gZPAO8CN75JzMeaNbmWv4RQj0B967in\nrqlOa5qYYt80tAWO4hmPRKCrv6PgThz8C0Cd8AgwNzvQD2d4JpmxxTzBT6/5lRng\nHhj/wQECgYEA2jxC0a4lGmp1q2aYE1Zyiq0UqjxA92pwFYJg3800MLkf96A+dOhd\nwDAc5aAKN8vQV5g33vKi5+pIHWUCskhTS8/PPGrfeqIvtphCj6b7LKosBOhdzrRD\nOsr+Az/SiR2h5l2lr/v7I8I86RTY7MBk4QcRb601kSagWLDNVzSSdhECgYEA1Bm0\n0sByqkQmFoUNRkwmShPfJeVLTCr1G4cllml6MqHmGyRDHxtcp1+CXlyJJemLQY2A\nqrM7/T4x2ta6ME2WgDydFe9M8oU3BbefNYovS6YnoyBqxCx7yZ1vO0Jo40rZI8Bi\nKoCi6e0Hugg4xyPRz9TTNLmr/yEC1qQesMhM9ckCgYEArsT7rfgMdq8zNOSgfTwJ\n1sztc7d1P67ZvCABfLlVRn+6/hAydGVyTus4+RvFkxGB8+RPOhiOJbQVtJSkKCqL\nqnbtu7DK7+ba1xvwkiJjnE1bm0KLfXIXNQpDik6eSHiWo2nzuo/Ne8GeDftIDbG2\nGBAVAp5v+6I3X0+X4nKTqEECgYEAwT4Cj5mjXxnkEdR7eahHwmpEf0RfzC+/Tate\nRXZsrUDwY34wYWEOk7fjEZIBqrcTl1ATEHNojpxh096bmHK4UnHnNRrn4nYY4W6g\n8ajK2oOxzWA1pjJZPiHgO/+PjLafC4G2br7wr2y0A3yGLnmmKVLgc0NPP42WBnVV\nOP/ljnECgYABlDdJCAehDNSv4mdEzY5bfD+VBFd2QsgE1hYhmUYYRNlgIfIL9Y8e\nCduqXFLNZ/LHdmtYembgUqrMiJTUqcbSrJt26kBQx0az3LAV+J2p68PQ85KR9ZPy\nN1jEnRqpAwEdw7S+8l0yVyaNkm66eRI80p+w3AxNbS9hJ/7UlV3lGA==\n-----END RSA PRIVATE KEY-----      \n",
+                    "public_certificate_entry": {
+                      "pem": "-----BEGIN CERTIFICATE-----\nMIIC7jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMAwG\nA1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3BxETAPBgNVBAoTCEZyYW5rNERE\nMRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBucnQxGDAWBgNVBAMTD0ZyYW5rNEREIFdl\nYiCDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazRkZC5jb20wHhcNMTIw\nODIyMDUyNzQxWhcNMTcwODIxMDUyNzQxWeBKMQswCQYDVQQGEwJKUDEOMAwGA1UE\nCAwFVG9reW8xETAPBgNVBAoMCEZyYW5rNEREMRgwFgYDVQQDDA93d3cuZXhhbXBs\nZS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0z9FeMynsC8+u\ndvX+LciZxnh5uRj4C9S6tNeeAlIGCfQYk0zUcNFCoCkTknNQd/YEiawDLNbxBqut\nbMDZ1aarys1a1lYmUeVLCIqvzBkPJTSQsCopQQ9V8WuT252zzNzs68dVGNdCJd5J\nNRQykpwexmnjPPv0mvj7i8XgG379TyW6P+WWV5okeUkXJ9eJS2ouDYdR2SM9BoVW\n+FgxDu6BmXhozW5EfsnajFp7HL8kQClI0QOc79yuKl3492rH6bzFsFn2lfwWy9ic\n7cP8EpCTeFp1tFaD+vxBhPZkeTQ1HKx6hQ5zeHIB5ySJJZ7af8W8r4eTGYzbdRW2\n4DDHCPhZAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAQMv+BFvGdMVzkQaQ3/+2noVz\n/uAKbzpEL8xTcxYyP3lkOeh4FoxiSWqy5pGFALdPONoDuYFpLhjJSZaEwuvjI/Tr\nrGhLV1pRG9frwDFshqD2Vaj4ENBCBh6UpeBop5+285zQ4SI7q4U9oSebUDJiuOx6\n+tZ9KynmrbJpTSi0+BM=\n-----END CERTIFICATE-----\n"
+                    }
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Keystore"
+              },
+              "examples": {
+                "Keystore": {
+                  "summary": "Example of keystore update.",
+                  "value": {
+                    "title": "Acme keystore update",
+                    "summary": "An example keystore update",
+                    "password": "Acme123",
+                    "private_key_entry": "-----BEGIN RSA PRIVATE KEY-----\nMII7pAIBABKCAQEAtM/RXjMp7AvPrnb1/i3ImcZ4ebkY+AvUurTXngJSBgn0GJNM\n1HDRQqApE5JzUHf2BImsAyzW8QarrWzA2dWmq8rNWtJWJlHlSwiKr8wZDyU0kLAq\nKUEPVfFrk9uds8zc7OvHVRjXQiXeSTUUMpKcHsZp4zz79Jr4+4vF4Bt+/U8luj/l\nlleaJHlJFyfXiUtqLg2HUdkjPQaFVvhYMQ7ugZl4aM1uRH7J2oxaexy/JEApSNED\nnO/cripd+Pdqx+m8xbBZ9pX8FsvYnO3D/BKQk3hadbRWg/r8QYT2ZHk0NRyseoUO\nc3hyAeckiSWe3n9lvK+HkxmM23UVtuAwxwj4WQIDAQABAoIBAE76H0d4La2PEy3v\nhE98DA0vJdx1PzTJZigPacb42H8OxfIeFQcOKDlj381OwNO7MliVEe9pHJG3CjH8\nONhtfBm5wa0UBtFCIFd/6aQUEDYPWECC0kemxV4Sz5yL5vxsVWufKThAW3XnOIrd\nhm74nvzKSeIZ9yvGrU6ipNHY8MUPm0DQVrVYE5MiKjKVExQ4uRAolV2hlmeQDlSt\nk85S0TUOWO1EvJZhsVVs7dBjjY10hIjv3gZPAO8CN75JzMeaNbmWv4RQj0B967in\nrqlOa5qYYt80tAWO4hmPRKCrv6PgThz8C0Cd8AgwNzvQD2d4JpmxxTzBT6/5lRng\nHhj/wQECgYEA2jxC0a4lGmp1q2aYE1Zyiq0UqjxA92pwFYJg3800MLkf96A+dOhd\nwDAc5aAKN8vQV5g33vKi5+pIHWUCskhTS8/PPGrfeqIvtphCj6b7LKosBOhdzrRD\nOsr+Az/SiR2h5l2lr/v7I8I86RTY7MBk4QcRb601kSagWLDNVzSSdhECgYEA1Bm0\n0sByqkQmFoUNRkwmShPfJeVLTCr1G4cllml6MqHmGyRDHxtcp1+CXlyJJemLQY2A\nqrM7/T4x2ta6ME2WgDydFe9M8oU3BbefNYovS6YnoyBqxCx7yZ1vO0Jo40rZI8Bi\nKoCi6e0Hugg4xyPRz9TTNLmr/yEC1qQesMhM9ckCgYEArsT7rfgMdq8zNOSgfTwJ\n1sztc7d1P67ZvCABfLlVRn+6/hAydGVyTus4+RvFkxGB8+RPOhiOJbQVtJSkKCqL\nqnbtu7DK7+ba1xvwkiJjnE1bm0KLfXIXNQpDik6eSHiWo2nzuo/Ne8GeDftIDbG2\nGBAVAp5v+6I3X0+X4nKTqEECgYEAwT4Cj5mjXxnkEdR7eahHwmpEf0RfzC+/Tate\nRXZsrUDwY34wYWEOk7fjEZIBqrcTl1ATEHNojpxh096bmHK4UnHnNRrn4nYY4W6g\n8ajK2oOxzWA1pjJZPiHgO/+PjLafC4G2br7wr2y0A3yGLnmmKVLgc0NPP42WBnVV\nOP/ljnECgYABlDdJCAehDNSv4mdEzY5bfD+VBFd2QsgE1hYhmUYYRNlgIfIL9Y8e\nCduqXFLNZ/LHdmtYembgUqrMiJTUqcbSrJt26kBQx0az3LAV+J2p68PQ85KR9ZPy\nN1jEnRqpAwEdw7S+8l0yVyaNkm66eRI80p+w3AxNbS9hJ/7UlV3lGA==\n-----END RSA PRIVATE KEY-----      \n",
+                    "public_certificate_entry": {
+                      "pem": "-----BEGIN CERTIFICATE-----\nMIIC7jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMAwG\nA1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3BxETAPBgNVBAoTCEZyYW5rNERE\nMRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBucnQxGDAWBgNVBAMTD0ZyYW5rNEREIFdl\nYiCDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazRkZC5jb20wHhcNMTIw\nODIyMDUyNzQxWhcNMTcwODIxMDUyNzQxWeBKMQswCQYDVQQGEwJKUDEOMAwGA1UE\nCAwFVG9reW8xETAPBgNVBAoMCEZyYW5rNEREMRgwFgYDVQQDDA93d3cuZXhhbXBs\nZS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0z9FeMynsC8+u\ndvX+LciZxnh5uRj4C9S6tNeeAlIGCfQYk0zUcNFCoCkTknNQd/YEiawDLNbxBqut\nbMDZ1aarys1a1lYmUeVLCIqvzBkPJTSQsCopQQ9V8WuT252zzNzs68dVGNdCJd5J\nNRQykpwexmnjPPv0mvj7i8XgG379TyW6P+WWV5okeUkXJ9eJS2ouDYdR2SM9BoVW\n+FgxDu6BmXhozW5EfsnajFp7HL8kQClI0QOc79yuKl3492rH6bzFsFn2lfwWy9ic\n7cP8EpCTeFp1tFaD+vxBhPZkeTQ1HKx6hQ5zeHIB5ySJJZ7af8W8r4eTGYzbdRW2\n4DDHCPhZAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAQMv+BFvGdMVzkQaQ3/+2noVz\n/uAKbzpEL8xTcxYyP3lkOeh4FoxiSWqy5pGFALdPONoDuYFpLhjJSZaEwuvjI/Tr\nrGhLV1pRG9frwDFshqD2Vaj4ENBCBh6UpeBop5+285zQ4SI7q4U9oSebUDJiuOx6\n+tZ9KynmrbJpTSi0+BM=\n-----END CERTIFICATE-----\n"
+                    }
+                  }
+                }
               }
             }
           }
@@ -15142,11 +16745,33 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Truststore"
+              },
+              "examples": {
+                "Truststore": {
+                  "summary": "Example truststore create.",
+                  "value": {
+                    "summary": "An example truststore create",
+                    "name": "acme-truststore",
+                    "title": "ACME Truststore",
+                    "truststore": "-----BEGIN CERTIFICATE-----\nMIIC2jCCAkMCAg38MA0HCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMaWg\nA1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxETAPBgNVBAoTCEZyYW5rNere\nMRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWBgNVbamTD0ZyYW5rNEREIFdl\nYiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazrKzC5jb20wHhcNMTIw\nODIyMDUyNzQxWhcNMTcwODIxMDUyNzQxWjBKMQswCQYdvqQGEwJKUDEOMAwGA1UE\nCAwFVG9reW8xETAPBgNVBAoMCEZyYW5rNEREMRgwFgYDVQQDDA94e4cuZXhhbxBs\nZS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0z9FeMynsC8+u\ndvX+LciZxnh5uRj4C9S6tNeeAlIGCfQYk0zUcNFCoCkTknNQd/YEiawDLNbxBqut\nbMDZ1aarys1a0lYmUeVLCIqvzBkPJTSQsCopQQ9V8WuT252zzNzs68dVGNdCJd5J\nNRQykpwexmnlOOv0mvj7i8XgG379TyW6P+WWV5okeUkXJ9eJS2ouDYdR2SM9BoVW\n+FgxDu6BmXhozW5EfsnajFp7HL8kQClI0QOc79yuKl3492rH6bzFsFn2lfwWy9ic\n7cP8EpCTeFp1tFaD+vxBhPZkeTQ1HKx6hQ5zeHIB5ySJJZ7af2W8r4eTGYzbdRW2\n4DDHCPhZAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAQMv+BFvGdMVzkQaQ3/+2noVz\n/uAKbzpEL8xTcxYyP3lkOeh4FoxiSWqy5pGFALdPONoDuYFpLhjJSZaEwuvjI/Tr\nrGhLV1pRG9frwDFshqD2Vaj4ENBCBh6UpeBop5+285zQ4SI7q4U9oSebUDJiuOx6\n+tZ9KynmrbJpTSi0+BM=\n-----END CERTIFICATE-----\n"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Truststore"
+              },
+              "examples": {
+                "Truststore": {
+                  "summary": "Example truststore create.",
+                  "value": {
+                    "summary": "An example truststore create",
+                    "name": "acme-truststore",
+                    "title": "ACME Truststore",
+                    "truststore": "-----BEGIN CERTIFICATE-----\nMIIC2jCCAkMCAg38MA0HCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMaWg\nA1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxETAPBgNVBAoTCEZyYW5rNere\nMRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWBgNVbamTD0ZyYW5rNEREIFdl\nYiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazrKzC5jb20wHhcNMTIw\nODIyMDUyNzQxWhcNMTcwODIxMDUyNzQxWjBKMQswCQYdvqQGEwJKUDEOMAwGA1UE\nCAwFVG9reW8xETAPBgNVBAoMCEZyYW5rNEREMRgwFgYDVQQDDA94e4cuZXhhbxBs\nZS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0z9FeMynsC8+u\ndvX+LciZxnh5uRj4C9S6tNeeAlIGCfQYk0zUcNFCoCkTknNQd/YEiawDLNbxBqut\nbMDZ1aarys1a0lYmUeVLCIqvzBkPJTSQsCopQQ9V8WuT252zzNzs68dVGNdCJd5J\nNRQykpwexmnlOOv0mvj7i8XgG379TyW6P+WWV5okeUkXJ9eJS2ouDYdR2SM9BoVW\n+FgxDu6BmXhozW5EfsnajFp7HL8kQClI0QOc79yuKl3492rH6bzFsFn2lfwWy9ic\n7cP8EpCTeFp1tFaD+vxBhPZkeTQ1HKx6hQ5zeHIB5ySJJZ7af2W8r4eTGYzbdRW2\n4DDHCPhZAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAQMv+BFvGdMVzkQaQ3/+2noVz\n/uAKbzpEL8xTcxYyP3lkOeh4FoxiSWqy5pGFALdPONoDuYFpLhjJSZaEwuvjI/Tr\nrGhLV1pRG9frwDFshqD2Vaj4ENBCBh6UpeBop5+285zQ4SI7q4U9oSebUDJiuOx6\n+tZ9KynmrbJpTSi0+BM=\n-----END CERTIFICATE-----\n"
+                  }
+                }
               }
             }
           }
@@ -15343,11 +16968,29 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Truststore"
+              },
+              "examples": {
+                "Truststore": {
+                  "summary": "Example truststore update.",
+                  "value": {
+                    "summary": "An example truststore update",
+                    "title": "ACME Truststore"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Truststore"
+              },
+              "examples": {
+                "Truststore": {
+                  "summary": "Example truststore update.",
+                  "value": {
+                    "summary": "An example truststore update",
+                    "title": "ACME Truststore"
+                  }
+                }
               }
             }
           }
@@ -15752,7 +17395,7 @@
                 "$ref": "#/components/schemas/JwkSet"
               },
               "examples": {
-                "jwkSetsCreate": {
+                "JwkSet": {
                   "summary": "Example of creating a JWK set containing a private and public key",
                   "value": {
                     "title": "acme-jwkset",
@@ -15785,7 +17428,7 @@
                 "$ref": "#/components/schemas/JwkSet"
               },
               "examples": {
-                "jwkSetsCreate": {
+                "JwkSet": {
                   "summary": "Example of creating a JWK set containing a private and public key",
                   "value": {
                     "title": "acme-jwkset",
@@ -16095,11 +17738,35 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Invitation"
+              },
+              "examples": {
+                "Invitation": {
+                  "summary": "Example of invitation creation at org scope.",
+                  "value": {
+                    "name": "acme-invitation",
+                    "title": "Acme invitation",
+                    "summary": "An example invitation creation at org scope",
+                    "notify": true,
+                    "email": "acme@example.com"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Invitation"
+              },
+              "examples": {
+                "Invitation": {
+                  "summary": "Example of invitation creation at org scope.",
+                  "value": {
+                    "name": "acme-invitation",
+                    "title": "Acme invitation",
+                    "summary": "An example invitation creation at org scope",
+                    "notify": true,
+                    "email": "acme@example.com"
+                  }
+                }
               }
             }
           }
@@ -16293,11 +17960,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Invitation"
+              },
+              "examples": {
+                "Invitation": {
+                  "summary": "Example of invitation update at org scope.",
+                  "value": {
+                    "title": "Acme invitation",
+                    "summary": "An example invitation update at org scope",
+                    "email": "acme@example.com"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Invitation"
+              },
+              "examples": {
+                "Invitation": {
+                  "summary": "Example of invitation update at org scope.",
+                  "value": {
+                    "title": "Acme invitation",
+                    "summary": "An example invitation update at org scope",
+                    "email": "acme@example.com"
+                  }
+                }
               }
             }
           }
@@ -16749,7 +18436,7 @@
                 "$ref": "#/components/schemas/Group"
               },
               "examples": {
-                "groupCreate": {
+                "Group": {
                   "summary": "Example of group creation at cloud scope.",
                   "value": {
                     "name": "acme-group",
@@ -16767,7 +18454,7 @@
                 "$ref": "#/components/schemas/Group"
               },
               "examples": {
-                "groupCreate": {
+                "Group": {
                   "summary": "Example of group creation at cloud scope.",
                   "value": {
                     "name": "acme-group",
@@ -16973,7 +18660,7 @@
                 "$ref": "#/components/schemas/Group"
               },
               "examples": {
-                "groupUpdate": {
+                "Group": {
                   "summary": "Example of group update at cloud scope.",
                   "value": {
                     "title": "Acme group update",
@@ -16991,7 +18678,7 @@
                 "$ref": "#/components/schemas/Group"
               },
               "examples": {
-                "groupUpdate": {
+                "Group": {
                   "summary": "Example of group update at cloud scope.",
                   "value": {
                     "title": "Acme group update",
@@ -17139,11 +18826,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Me"
+              },
+              "examples": {
+                "Me": {
+                  "summary": "Example of me update.",
+                  "value": {
+                    "email": "acmesteve@example.com",
+                    "first_name": "Acme",
+                    "last_name": "Steve"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Me"
+              },
+              "examples": {
+                "Me": {
+                  "summary": "Example of me update.",
+                  "value": {
+                    "email": "acmesteve@example.com",
+                    "first_name": "Acme",
+                    "last_name": "Steve"
+                  }
+                }
               }
             }
           }
@@ -17238,6 +18945,15 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ChangePassword"
+              },
+              "examples": {
+                "ChangePassword": {
+                  "summary": "Example of password update",
+                  "value": {
+                    "current_password": "password123",
+                    "password": "password456"
+                  }
+                }
               }
             }
           }
@@ -18238,6 +19954,19 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/EmailProviderOrgOwners"
+              },
+              "examples": {
+                "EmailProviderOrgOwners": {
+                  "summary": "Example of cloud emails send to owner",
+                  "value": {
+                    "subject": "Email to provider org owner",
+                    "body": "Example email to provider org owner",
+                    "content_type": "text",
+                    "org_urls": [
+                      "https://api.acme-apim.example.com/api/orgs/acme-org"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -18268,6 +19997,323 @@
         "tags": [
           "Provider Management",
           "Resource: Organization"
+        ]
+      }
+    },
+    "/orgs/{org}/watsonx-settings": {
+      "description": "The collection of Watsonx Settings operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Create a Watsonx Settings object",
+        "description": "Create a Watsonx Settings object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "watsonx_settings_createOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WatsonxSettings"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/WatsonxSettings"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful create",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettings"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettings"
+                }
+              }
+            }
+          },
+          "302": {
+            "description": "Redirect response",
+            "headers": {
+              "Location": {
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Watsonx Settings (Org Scope)"
+        ]
+      },
+      "get": {
+        "summary": "List the Watsonx Settings objects",
+        "description": "List the Watsonx Settings objects",
+        "operationId": "watsonx_settings_listOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettingsList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettingsList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Watsonx Settings (Org Scope)"
+        ]
+      }
+    },
+    "/orgs/{org}/watsonx-settings/{watsonx-settings}": {
+      "description": "Watsonx Settings object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/watsonx-settings"
+        }
+      ],
+      "get": {
+        "summary": "Get the Watsonx Settings object by name or id",
+        "description": "Get the Watsonx Settings object by name or id",
+        "operationId": "watsonx_settings_getOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettings"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettings"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Watsonx Settings (Org Scope)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Watsonx Settings object by name or id",
+        "description": "Update the Watsonx Settings object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "watsonx_settings_updateOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WatsonxSettings"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/WatsonxSettings"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettings"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettings"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Watsonx Settings (Org Scope)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Watsonx Settings object by name or id",
+        "description": "Delete the Watsonx Settings object by name or id",
+        "operationId": "watsonx_settings_delOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettings"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettings"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Watsonx Settings (Org Scope)"
+        ]
+      }
+    },
+    "/orgs/{org}/watsonx-settings/test-connection": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Test a WatsonX connection",
+        "description": "Test a WatsonX connection",
+        "operationId": "watsonx_settings_testConnection",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WatsonxSettingsTestConnection"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/WatsonxSettingsTestConnection"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Watsonx Settings (Org Scope)"
         ]
       }
     },
@@ -18652,6 +20698,15 @@
         "required": false,
         "schema": {
           "type": "boolean"
+        }
+      },
+      "full_path": {
+        "name": "full_path",
+        "in": "query",
+        "description": "full path of the API",
+        "required": false,
+        "schema": {
+          "type": "string"
         }
       },
       "gateway-service": {
@@ -19338,6 +21393,15 @@
           "type": "boolean"
         }
       },
+      "watsonx-settings": {
+        "name": "watsonx-settings",
+        "in": "path",
+        "description": "Watsonx Settings name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
       "webhook": {
         "name": "webhook",
         "in": "path",
@@ -19705,6 +21769,13 @@
               "internal_svc"
             ]
           },
+          "cloud_setting_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -19835,7 +21906,8 @@
               "datapower-gateway",
               "datapower-api-gateway",
               "event-gateway",
-              "lightweight-gateway"
+              "lightweight-gateway",
+              "wm-api-gateway"
             ]
           },
           "oai_version": {
@@ -20152,7 +22224,8 @@
             "type": "string",
             "enum": [
               "toolkit",
-              "atm"
+              "atm",
+              "ai"
             ]
           },
           "realm": {
@@ -20179,6 +22252,9 @@
           },
           "api_key": {
             "type": "string"
+          },
+          "multiple_use": {
+            "type": "boolean"
           },
           "description": {
             "type": "string"
@@ -21148,8 +23224,7 @@
             "type": "boolean"
           },
           "config_sync_target_catalog": {
-            "type": "boolean",
-            "default": false
+            "type": "boolean"
           },
           "custom_notification_templates_enabled": {
             "type": "boolean"
@@ -21326,8 +23401,7 @@
             "maximum": 2147483647
           },
           "api_key_multiple_uses": {
-            "type": "boolean",
-            "default": false
+            "type": "boolean"
           },
           "sso_settings": {
             "type": "object",
@@ -21449,6 +23523,13 @@
                   "required": [
                     "endpoint"
                   ]
+                }
+              },
+              "analytics_service_urls": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
                 }
               }
             }
@@ -23695,7 +25776,8 @@
               "datapower-gateway",
               "datapower-api-gateway",
               "event-gateway",
-              "lightweight-gateway"
+              "lightweight-gateway",
+              "wm-api-gateway"
             ]
           },
           "oai_version": {
@@ -23829,7 +25911,8 @@
                 "datapower-gateway",
                 "datapower-api-gateway",
                 "event-gateway",
-                "lightweight-gateway"
+                "lightweight-gateway",
+                "wm-api-gateway"
               ]
             }
           },
@@ -25949,73 +28032,6 @@
           }
         }
       },
-      "MyPermission": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "type": {
-            "type": "string",
-            "readOnly": true,
-            "enum": [
-              "my_permission"
-            ]
-          },
-          "api_version": {
-            "type": "string",
-            "readOnly": true,
-            "enum": [
-              "2.0.0"
-            ]
-          },
-          "id": {
-            "type": "string",
-            "readOnly": true
-          },
-          "name": {
-            "type": "string",
-            "maxLength": 255
-          },
-          "title": {
-            "type": "string",
-            "maxLength": 1023
-          },
-          "summary": {
-            "type": "string",
-            "maxLength": 65535
-          },
-          "scope_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "permissions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "metadata": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "url": {
-            "type": "string",
-            "readOnly": true,
-            "format": "uri"
-          }
-        }
-      },
       "MyPermissionList": {
         "type": "object",
         "additionalProperties": false,
@@ -26043,82 +28059,6 @@
             "items": {
               "$ref": "#/components/schemas/Space"
             }
-          }
-        }
-      },
-      "MyTask": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "type": {
-            "type": "string",
-            "readOnly": true,
-            "enum": [
-              "my_task"
-            ]
-          },
-          "api_version": {
-            "type": "string",
-            "readOnly": true,
-            "enum": [
-              "2.0.0"
-            ]
-          },
-          "id": {
-            "type": "string",
-            "readOnly": true
-          },
-          "name": {
-            "type": "string",
-            "maxLength": 255
-          },
-          "title": {
-            "type": "string",
-            "maxLength": 1023
-          },
-          "summary": {
-            "type": "string",
-            "maxLength": 65535
-          },
-          "scope": {
-            "type": "string"
-          },
-          "scope_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "tasks": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Task"
-            }
-          },
-          "actions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "metadata": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "url": {
-            "type": "string",
-            "readOnly": true,
-            "format": "uri"
           }
         }
       },
@@ -27198,13 +29138,14 @@
                   "type": "string",
                   "enum": [
                     "grpc",
-                    "http/proto",
+                    "http/protobuf",
                     "http/json"
                   ],
                   "default": "grpc"
                 },
                 "endpoint": {
-                  "type": "string"
+                  "type": "string",
+                  "format": "uri"
                 },
                 "tls_client_profile_url": {
                   "type": "string"
@@ -27222,8 +29163,7 @@
                 }
               },
               "required": [
-                "endpoint",
-                "tls_client_profile_url"
+                "endpoint"
               ]
             }
           },
@@ -27267,24 +29207,19 @@
             "type": "object",
             "properties": {
               "max-queue-size": {
-                "type": "integer",
-                "default": 2048
+                "type": "integer"
               },
               "batch-size": {
-                "type": "integer",
-                "default": 512
+                "type": "integer"
               },
               "export-interval": {
-                "type": "integer",
-                "default": 5000
+                "type": "integer"
               },
               "export-timeout": {
-                "type": "integer",
-                "default": 10000
+                "type": "integer"
               },
               "max-threads": {
-                "type": "integer",
-                "default": 5
+                "type": "integer"
               }
             }
           },
@@ -27292,8 +29227,7 @@
             "type": "object",
             "properties": {
               "parent-based": {
-                "type": "boolean",
-                "default": true
+                "type": "boolean"
               },
               "sampler-type": {
                 "type": "string",
@@ -27301,14 +29235,12 @@
                   "always_off",
                   "always_on",
                   "trace_id_ratio_based"
-                ],
-                "default": "always_on"
+                ]
               },
               "sampler-ratio": {
                 "type": "integer",
                 "minimum": 0,
-                "maximum": 100,
-                "default": 50
+                "maximum": 100
               }
             }
           },
@@ -28258,7 +30190,8 @@
                 "datapower-gateway",
                 "datapower-api-gateway",
                 "event-gateway",
-                "lightweight-gateway"
+                "lightweight-gateway",
+                "wm-api-gateway"
               ]
             }
           },
@@ -28807,11 +30740,13 @@
               "juhu",
               "designer",
               "atm",
+              "ai",
               "gateway",
               "portal",
               "ibm_cloud",
               "compliance",
-              "discovery"
+              "discovery",
+              "analytics"
             ]
           },
           "client_id": {
@@ -30173,7 +32108,9 @@
               "product_lifecycle",
               "subscription",
               "application_lifecycle",
-              "consumer_onboarding"
+              "consumer_onboarding",
+              "governance_validation",
+              "governance_validation_approval"
             ]
           },
           "state": {
@@ -30182,7 +32119,10 @@
               "pending",
               "approved",
               "rejected",
-              "cancelled"
+              "cancelled",
+              "governance_validation_in_progress",
+              "governance_validation_passed",
+              "governance_validation_failed"
             ]
           },
           "actions": {
@@ -30527,7 +32467,9 @@
               "send",
               "initialize",
               "delete-expired-data",
-              "system-maintenance"
+              "system-maintenance",
+              "analytics-upgrade",
+              "ootb-gateway-extension-upgrade"
             ]
           },
           "state": {
@@ -31742,6 +33684,140 @@
             "type": "string",
             "readOnly": true,
             "format": "uri"
+          }
+        }
+      },
+      "WatsonxSettings": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "watsonx_settings"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "scope": {
+            "type": "string"
+          },
+          "org_id": {
+            "type": "string"
+          },
+          "watsonxurl": {
+            "type": "string"
+          },
+          "is_default": {
+            "type": "boolean",
+            "default": false
+          },
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "api_key": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          },
+          "project_id": {
+            "type": "string"
+          },
+          "space_id": {
+            "type": "string"
+          },
+          "org": {
+            "type": "string"
+          },
+          "credential_type": {
+            "type": "string",
+            "enum": [
+              "ibm_managed",
+              "user_managed"
+            ]
+          },
+          "config_type": {
+            "type": "string",
+            "enum": [
+              "cloud",
+              "software"
+            ]
+          },
+          "version": {
+            "type": "string"
+          },
+          "instance_id": {
+            "type": "string"
+          },
+          "auth_type": {
+            "type": "string",
+            "enum": [
+              "iam",
+              "bearertoken",
+              "cp4d"
+            ]
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "WatsonxSettingsList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WatsonxSettings"
+            }
           }
         }
       },
@@ -33390,7 +35466,8 @@
               "gateway_service",
               "payment_method",
               "notification",
-              "user_registry"
+              "user_registry",
+              "governance"
             ]
           },
           "info": {
@@ -34049,7 +36126,8 @@
               "datapower-gateway",
               "datapower-api-gateway",
               "event-gateway",
-              "lightweight-gateway"
+              "lightweight-gateway",
+              "wm-api-gateway"
             ]
           }
         }
@@ -35518,6 +37596,147 @@
             "type": "string"
           }
         }
+      },
+      "MyTask": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scope_url": {
+            "type": "string"
+          },
+          "tasks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Task"
+            }
+          }
+        }
+      },
+      "MyPermission": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "my_permission"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "scope_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "permissions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      },
+      "WatsonxSettingsTestConnection": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "authType": {
+            "type": "string",
+            "enum": [
+              "iam",
+              "bearertoken",
+              "cp4d"
+            ]
+          },
+          "apiKey": {
+            "type": "string"
+          },
+          "bearerToken": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string",
+            "format": "password"
+          },
+          "watsonxurl": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "spaceId": {
+            "type": "string"
+          },
+          "config_type": {
+            "type": "string",
+            "enum": [
+              "cloud",
+              "software"
+            ]
+          },
+          "instanceId": {
+            "type": "string"
+          }
+        }
+      },
+      "GovernanceValidationStateResults": {
+        "properties": {
+          "scan_details": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "scan_state": {
+            "type": "string",
+            "enum": [
+              "governance_validation_passed",
+              "governance_validation_failed"
+            ]
+          },
+          "error_message": {
+            "type": "string"
+          },
+          "enforcement_policy": {
+            "type": "string"
+          }
+        },
+        "type": "object"
       }
     },
     "responses": {
@@ -35559,7 +37778,7 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
               "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
@@ -35590,7 +37809,7 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
               "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
@@ -35620,7 +37839,7 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
               "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
@@ -35652,7 +37871,7 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
               "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
@@ -36177,7 +38396,7 @@
                 "$ref": "#/components/schemas/UserRegistry"
               },
               "examples": {
-                "lur": {
+                "UserRegistry": {
                   "summary": "Example Local User Registry update.",
                   "value": {
                     "title": "Acme LUR update",
@@ -36192,7 +38411,7 @@
                 "$ref": "#/components/schemas/UserRegistry"
               },
               "examples": {
-                "lur": {
+                "UserRegistry": {
                   "summary": "Example Local User Registry update.",
                   "value": {
                     "title": "Acme LUR update",
@@ -36356,6 +38575,53 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/TestConnectionCredentials"
+              },
+              "examples": {
+                "UserRegistrySavedTestConnection": {
+                  "summary": "Example user registry test connection",
+                  "value": {
+                    "username": "acme",
+                    "password": "Password123"
+                  }
+                },
+                "UserRegistryProvidedTestConnection": {
+                  "summary": "Example of testing configuration of ldap or authurl user registry",
+                  "value": {
+                    "user_registry": {
+                      "name": "acme-ldap",
+                      "title": "Acme LDAP User Registry",
+                      "summary": "An example LDAP user registry.",
+                      "case_sensitive": true,
+                      "email_required": true,
+                      "email_unique_if_exist": true,
+                      "endpoint": {
+                        "endpoint": "ldap://acme-openldap.example.com:389",
+                        "tls_client_profile_url": null
+                      },
+                      "configuration": {
+                        "authentication_method": "search_dn",
+                        "authenticated_bind": "true",
+                        "search_dn_base": "dc=acme,dc=devops,dc=cloud",
+                        "protocol_version": "3",
+                        "search_dn_filter_prefix": "(&(uid=",
+                        "search_dn_filter_suffix": "))",
+                        "search_dn_scope": "sub",
+                        "admin_dn": "cn=admin,dc=acme,dc=devops,dc=cloud",
+                        "admin_password": "password123",
+                        "group_authentication_method": "none",
+                        "directory_type": "standard",
+                        "attribute_mapping": {}
+                      },
+                      "registry_type": "ldap",
+                      "user_managed": false,
+                      "integration_url": "https://acme-apim.example.com/api/cloud/integrations/user-registry/ldap"
+                    },
+                    "credentials": {
+                      "username": "acme",
+                      "password": "Passw0rd123"
+                    }
+                  }
+                }
               }
             }
           }
@@ -36484,6 +38750,53 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/UserRegistryTestConnection"
+              },
+              "examples": {
+                "UserRegistrySavedTestConnection": {
+                  "summary": "Example user registry test connection",
+                  "value": {
+                    "username": "acme",
+                    "password": "Password123"
+                  }
+                },
+                "UserRegistryProvidedTestConnection": {
+                  "summary": "Example of testing configuration of ldap or authurl user registry",
+                  "value": {
+                    "user_registry": {
+                      "name": "acme-ldap",
+                      "title": "Acme LDAP User Registry",
+                      "summary": "An example LDAP user registry.",
+                      "case_sensitive": true,
+                      "email_required": true,
+                      "email_unique_if_exist": true,
+                      "endpoint": {
+                        "endpoint": "ldap://acme-openldap.example.com:389",
+                        "tls_client_profile_url": null
+                      },
+                      "configuration": {
+                        "authentication_method": "search_dn",
+                        "authenticated_bind": "true",
+                        "search_dn_base": "dc=acme,dc=devops,dc=cloud",
+                        "protocol_version": "3",
+                        "search_dn_filter_prefix": "(&(uid=",
+                        "search_dn_filter_suffix": "))",
+                        "search_dn_scope": "sub",
+                        "admin_dn": "cn=admin,dc=acme,dc=devops,dc=cloud",
+                        "admin_password": "password123",
+                        "group_authentication_method": "none",
+                        "directory_type": "standard",
+                        "attribute_mapping": {}
+                      },
+                      "registry_type": "ldap",
+                      "user_managed": false,
+                      "integration_url": "https://acme-apim.example.com/api/cloud/integrations/user-registry/ldap"
+                    },
+                    "credentials": {
+                      "username": "acme",
+                      "password": "Passw0rd123"
+                    }
+                  }
+                }
               }
             }
           }
@@ -36543,6 +38856,15 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/UserSearch"
+              },
+              "examples": {
+                "UserSearch": {
+                  "summary": "Example search for users in user registry",
+                  "value": {
+                    "username": "acme",
+                    "remote": true
+                  }
+                }
               }
             }
           }
@@ -36602,11 +38924,41 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/User"
+              },
+              "examples": {
+                "User": {
+                  "summary": "Example of user create.",
+                  "value": {
+                    "summary": "An example user create",
+                    "email": "acme@example.com",
+                    "first_name": "ACME",
+                    "last_name": "Lastname",
+                    "name": "acme",
+                    "password": "acme@123",
+                    "title": "ACME User",
+                    "username": "acmeuser"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/User"
+              },
+              "examples": {
+                "User": {
+                  "summary": "Example of user create.",
+                  "value": {
+                    "summary": "An example user create",
+                    "email": "acme@example.com",
+                    "first_name": "ACME",
+                    "last_name": "Lastname",
+                    "name": "acme",
+                    "password": "acme@123",
+                    "title": "ACME User",
+                    "username": "acmeuser"
+                  }
+                }
               }
             }
           }
@@ -36806,11 +39158,37 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/User"
+              },
+              "examples": {
+                "User": {
+                  "summary": "Example of user Update.",
+                  "value": {
+                    "summary": "An example user update",
+                    "email": "acme-updated@example.com",
+                    "first_name": "ACMEUpdated",
+                    "last_name": "LastnameUpdated",
+                    "password": "acme-updated@123",
+                    "title": "ACME User Updated"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/User"
+              },
+              "examples": {
+                "User": {
+                  "summary": "Example of user Update.",
+                  "value": {
+                    "summary": "An example user update",
+                    "email": "acme-updated@example.com",
+                    "first_name": "ACMEUpdated",
+                    "last_name": "LastnameUpdated",
+                    "password": "acme-updated@123",
+                    "title": "ACME User Updated"
+                  }
+                }
               }
             }
           }
@@ -36898,6 +39276,15 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/RequestPasswordReset"
+              },
+              "examples": {
+                "RequestPasswordReset": {
+                  "summary": "Example of user request password reset.",
+                  "value": {
+                    "email": "acme@example.com",
+                    "realm": "provider/default-idp-2"
+                  }
+                }
               }
             }
           }
@@ -37455,11 +39842,147 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationStyle"
+              },
+              "examples": {
+                "NotificationStyle": {
+                  "summary": "Example of notification style update at org scope.",
+                  "value": {
+                    "title": "Acme notification style",
+                    "summary": "An example notification style",
+                    "allowed_html_tags": {
+                      "a": [
+                        "class",
+                        "href",
+                        "hreflang",
+                        "style"
+                      ],
+                      "p": [
+                        "class",
+                        "style"
+                      ],
+                      "br": [
+                        "class",
+                        "style"
+                      ],
+                      "h1": [
+                        "class",
+                        "id",
+                        "style"
+                      ],
+                      "img": [
+                        "class",
+                        "src",
+                        "alt",
+                        "data-entity-type",
+                        "data-entity-uuid",
+                        "data-align",
+                        "data-caption",
+                        "width",
+                        "height",
+                        "style"
+                      ],
+                      "cite": [
+                        "class",
+                        "style"
+                      ],
+                      "code": [
+                        "class",
+                        "style"
+                      ],
+                      "span": [
+                        "class",
+                        "style"
+                      ],
+                      "table": [
+                        "class",
+                        "id",
+                        "style"
+                      ],
+                      "strong": [
+                        "class",
+                        "style"
+                      ],
+                      "blockquote": [
+                        "class",
+                        "cite",
+                        "style"
+                      ]
+                    }
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationStyle"
+              },
+              "examples": {
+                "NotificationStyle": {
+                  "summary": "Example of notification style update at org scope.",
+                  "value": {
+                    "title": "Acme notification style",
+                    "summary": "An example notification style",
+                    "allowed_html_tags": {
+                      "a": [
+                        "class",
+                        "href",
+                        "hreflang",
+                        "style"
+                      ],
+                      "p": [
+                        "class",
+                        "style"
+                      ],
+                      "br": [
+                        "class",
+                        "style"
+                      ],
+                      "h1": [
+                        "class",
+                        "id",
+                        "style"
+                      ],
+                      "img": [
+                        "class",
+                        "src",
+                        "alt",
+                        "data-entity-type",
+                        "data-entity-uuid",
+                        "data-align",
+                        "data-caption",
+                        "width",
+                        "height",
+                        "style"
+                      ],
+                      "cite": [
+                        "class",
+                        "style"
+                      ],
+                      "code": [
+                        "class",
+                        "style"
+                      ],
+                      "span": [
+                        "class",
+                        "style"
+                      ],
+                      "table": [
+                        "class",
+                        "id",
+                        "style"
+                      ],
+                      "strong": [
+                        "class",
+                        "style"
+                      ],
+                      "blockquote": [
+                        "class",
+                        "cite",
+                        "style"
+                      ]
+                    }
+                  }
+                }
               }
             }
           }
@@ -37563,11 +40086,71 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationStyle"
+              },
+              "examples": {
+                "NotificationStyle": {
+                  "summary": "Example of notification style update at catalog scope.",
+                  "value": {
+                    "title": "Acme notification style",
+                    "summary": "An example notification style",
+                    "allowed_html_tags": {
+                      "a": [
+                        "class",
+                        "href",
+                        "hreflang",
+                        "style"
+                      ],
+                      "p": [
+                        "class",
+                        "style"
+                      ],
+                      "br": [
+                        "class",
+                        "style"
+                      ],
+                      "h1": [
+                        "class",
+                        "id",
+                        "style"
+                      ]
+                    }
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationStyle"
+              },
+              "examples": {
+                "NotificationStyle": {
+                  "summary": "Example of notification style update at catalog scope.",
+                  "value": {
+                    "title": "Acme notification style",
+                    "summary": "An example notification style",
+                    "allowed_html_tags": {
+                      "a": [
+                        "class",
+                        "href",
+                        "hreflang",
+                        "style"
+                      ],
+                      "p": [
+                        "class",
+                        "style"
+                      ],
+                      "br": [
+                        "class",
+                        "style"
+                      ],
+                      "h1": [
+                        "class",
+                        "id",
+                        "style"
+                      ]
+                    }
+                  }
+                }
               }
             }
           }
@@ -37670,6 +40253,36 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationStyle"
+              },
+              "examples": {
+                "NotificationStyle": {
+                  "summary": "Example of notification style update at consumer scope.",
+                  "value": {
+                    "title": "Acme notification style",
+                    "summary": "An example notification style",
+                    "allowed_html_tags": {
+                      "a": [
+                        "class",
+                        "href",
+                        "hreflang",
+                        "style"
+                      ],
+                      "p": [
+                        "class",
+                        "style"
+                      ],
+                      "br": [
+                        "class",
+                        "style"
+                      ],
+                      "h1": [
+                        "class",
+                        "id",
+                        "style"
+                      ]
+                    }
+                  }
+                }
               }
             }
           }
@@ -37723,7 +40336,7 @@
                 "$ref": "#/components/schemas/APIKey"
               },
               "examples": {
-                "apiKeyCreate": {
+                "APIKey": {
                   "summary": "Example API Key creation.",
                   "value": {
                     "name": "acme-apikey",
@@ -37740,7 +40353,7 @@
                 "$ref": "#/components/schemas/APIKey"
               },
               "examples": {
-                "apiKeyCreate": {
+                "APIKey": {
                   "summary": "Example API Key creation.",
                   "value": {
                     "name": "acme-apikey",
@@ -38004,7 +40617,7 @@
                 "$ref": "#/components/schemas/OrgSetting"
               },
               "examples": {
-                "orgSettingUpdate": {
+                "OrgSetting": {
                   "summary": "Example of fields which can be updated on a org settings object.",
                   "value": {
                     "title": "Updated ACME org settings",
@@ -38024,7 +40637,7 @@
                 "$ref": "#/components/schemas/OrgSetting"
               },
               "examples": {
-                "orgSettingUpdate": {
+                "OrgSetting": {
                   "summary": "Example of fields which can be updated on a org settings object.",
                   "value": {
                     "title": "Updated ACME org settings",
@@ -38256,11 +40869,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at org scope and provider subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello,\n\nYou have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at org scope and provider subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -38415,6 +41056,23 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationLanguage"
+              },
+              "examples": {
+                "NotificationLanguage": {
+                  "summary": "Example of notification language update at org scope and provider subcollection.",
+                  "value": {
+                    "title": "Example notification language update",
+                    "notification_template_name": "invitation",
+                    "notification_template_type": "provider",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text",
+                      "html"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -38576,11 +41234,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at org scope and catalog subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello,\n\nYou have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at org scope and catalog subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -38735,6 +41421,23 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationLanguage"
+              },
+              "examples": {
+                "NotificationLanguage": {
+                  "summary": "Example of notification language update at org scope and catalog subcollection.",
+                  "value": {
+                    "title": "Example notification language update",
+                    "notification_template_name": "invitation",
+                    "notification_template_type": "catalog",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text",
+                      "html"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -38896,11 +41599,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at org scope and space subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello,\n\nYou have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at org scope and space subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -39055,6 +41786,23 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationLanguage"
+              },
+              "examples": {
+                "NotificationLanguage": {
+                  "summary": "Example of notification language update at org scope and space subcollection.",
+                  "value": {
+                    "title": "Example notification language update",
+                    "notification_template_name": "invitation",
+                    "notification_template_type": "space",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text",
+                      "html"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -39216,11 +41964,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at org scope and consumer subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello,\n\nYou have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at org scope and consumer subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -39375,6 +42151,23 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationLanguage"
+              },
+              "examples": {
+                "NotificationLanguage": {
+                  "summary": "Example of notification language update at org scope and consumer subcollection.",
+                  "value": {
+                    "title": "Example notification language update",
+                    "notification_template_name": "invitation",
+                    "notification_template_type": "consumer",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text",
+                      "html"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -39478,11 +42271,29 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Org"
+              },
+              "examples": {
+                "Org": {
+                  "summary": "Example org update.",
+                  "value": {
+                    "summary": "An example org update",
+                    "title": "ACME Org Updated"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Org"
+              },
+              "examples": {
+                "Org": {
+                  "summary": "Example org update.",
+                  "value": {
+                    "summary": "An example org update",
+                    "title": "ACME Org Updated"
+                  }
+                }
               }
             }
           }
@@ -39590,6 +42401,20 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/TransferOwner"
+              },
+              "examples": {
+                "TransferOwnerMember": {
+                  "summary": "Example of owner transfer using member url.",
+                  "value": {
+                    "new_owner_member_url": "https://api.acme-apim.example.com/api/orgs/acme-org/members/acme-member"
+                  }
+                },
+                "TransferOwnerAssociate": {
+                  "summary": "Example of owner transfer using associate url.",
+                  "value": {
+                    "new_owner_associate_url": "https://api.acme-apim.example.com/api/orgs/acme-org/associates/acme-associate"
+                  }
+                }
               }
             }
           }
@@ -39829,7 +42654,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationCreate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation creation at org scope.",
                   "value": {
                     "name": "acme-invitation",
@@ -39851,7 +42676,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationCreate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation creation at org scope.",
                   "value": {
                     "name": "acme-invitation",
@@ -40064,7 +42889,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationUpdate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation update at org scope.",
                   "value": {
                     "title": "Acme member invitation update",
@@ -40083,7 +42908,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationUpdate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation update at org scope.",
                   "value": {
                     "title": "Acme member invitation update",
@@ -40403,11 +43228,45 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member create at org scope.",
+                  "value": {
+                    "name": "acme-member",
+                    "title": "ACME Member",
+                    "summary": "An example member create",
+                    "user": {
+                      "url": "https://acme-apim.example.com/api/user-registries/acme-org/acme-user-registry1/users/acme-user"
+                    },
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/orgs/acme-org/roles/role1",
+                      "https://acme-apim.example.com/api/orgs/acme-org/roles/role2"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member create at org scope.",
+                  "value": {
+                    "name": "acme-member",
+                    "title": "ACME Member",
+                    "summary": "An example member create",
+                    "user": {
+                      "url": "https://acme-apim.example.com/api/user-registries/acme-org/acme-user-registry1/users/acme-user"
+                    },
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/orgs/acme-org/roles/role1",
+                      "https://acme-apim.example.com/api/orgs/acme-org/roles/role2"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -40604,11 +43463,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member update at org scope.",
+                  "value": {
+                    "name": "updated-acme-member",
+                    "title": "Updated ACME Member",
+                    "summary": "An example member update",
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/orgs/acme-org/roles/role1",
+                      "https://acme-apim.example.com/api/orgs/acme-org/roles/role2"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member update at org scope.",
+                  "value": {
+                    "name": "updated-acme-member",
+                    "title": "Updated ACME Member",
+                    "summary": "An example member update",
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/orgs/acme-org/roles/role1",
+                      "https://acme-apim.example.com/api/orgs/acme-org/roles/role2"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -41184,7 +44071,7 @@
                 "$ref": "#/components/schemas/Role"
               },
               "examples": {
-                "roleCreate": {
+                "Role": {
                   "summary": "Example of role creation at org scope with external_group_mapping enabled.",
                   "value": {
                     "permission_urls": [
@@ -41211,7 +44098,7 @@
                 "$ref": "#/components/schemas/Role"
               },
               "examples": {
-                "roleCreate": {
+                "Role": {
                   "summary": "Example of role creation at org scope with external_group_mapping enabled.",
                   "value": {
                     "permission_urls": [
@@ -41429,7 +44316,7 @@
                 "$ref": "#/components/schemas/Role"
               },
               "examples": {
-                "roleUpdate": {
+                "Role": {
                   "summary": "Example of role update at org scope.",
                   "value": {
                     "permission_urls": [
@@ -41456,7 +44343,7 @@
                 "$ref": "#/components/schemas/Role"
               },
               "examples": {
-                "roleUpdate": {
+                "Role": {
                   "summary": "Example of role update at org scope.",
                   "value": {
                     "permission_urls": [
@@ -41783,7 +44670,7 @@
       ],
       "post": {
         "summary": "Creates an OAuth provider.",
-        "description": "Creates an OAuth provider resource.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
+        "description": "Creates an OAuth provider resource.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "oauth_provider_create",
         "security": [
           {
@@ -42146,7 +45033,7 @@
       },
       "patch": {
         "summary": "Creates an OAuth provider.",
-        "description": "Updates an OAuth provider resource.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
+        "description": "Updates an OAuth provider resource.\n\n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - created_at\n          - updated_at\n          - url\n          - org_url\n",
         "operationId": "oauth_provider_update",
         "security": [
           {
@@ -42162,7 +45049,7 @@
                 "$ref": "#/components/schemas/OauthProvider"
               },
               "examples": {
-                "oauthProviderUpdate": {
+                "OauthProvider": {
                   "summary": "Example of native oauth provider update.",
                   "value": {
                     "title": "Acme native oauth provider creation",
@@ -42201,7 +45088,7 @@
                 "$ref": "#/components/schemas/OauthProvider"
               },
               "examples": {
-                "oauthProviderUpdate": {
+                "OauthProvider": {
                   "summary": "Example of native oauth provider update.",
                   "value": {
                     "title": "Acme native oauth provider creation",
@@ -42328,11 +45215,41 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Billing"
+              },
+              "examples": {
+                "Billing": {
+                  "summary": "Example of billing creation",
+                  "value": {
+                    "title": "Acme billing",
+                    "name": "acme-billing",
+                    "summary": "An example billing creation",
+                    "integration_url": "https://acme-apim.example.com/api/cloud/integrations/billing/stripe",
+                    "configuration": {
+                      "full_access_key": "pqhcnmweryunauenosswo",
+                      "publishable_key": "yuqtunsdgoqwtyiofghnj"
+                    }
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Billing"
+              },
+              "examples": {
+                "Billing": {
+                  "summary": "Example of billing creation",
+                  "value": {
+                    "title": "Acme billing",
+                    "name": "acme-billing",
+                    "summary": "An example billing creation",
+                    "integration_url": "https://acme-apim.example.com/api/cloud/integrations/billing/stripe",
+                    "configuration": {
+                      "full_access_key": "pqhcnmweryunauenosswo",
+                      "publishable_key": "yuqtunsdgoqwtyiofghnj"
+                    }
+                  }
+                }
               }
             }
           }
@@ -42864,11 +45781,137 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/TLSClientProfile"
+              },
+              "examples": {
+                "TLSClientProfile": {
+                  "summary": "Example of tls client profile creation.",
+                  "value": {
+                    "title": "acme TLS Client Profile",
+                    "name": "acme-tls-client-profile",
+                    "version": "1.0.0",
+                    "summary": "An example TLS client profile",
+                    "insecure_server_connections": true,
+                    "server_name_indication": false,
+                    "keystore_url": "https://acme-apim.example.com/api/orgs/acme-org/keystores/acme-keystore",
+                    "truststore_url": "https://acme-apim.example.com/api/orgs/acme-org/truststores/acme-truststore",
+                    "protocols": [
+                      "tls_v1.0",
+                      "tls_v1.1",
+                      "tls_v1.2",
+                      "tls_v1.3"
+                    ],
+                    "ciphers": [
+                      "TLS_AES_256_GCM_SHA384",
+                      "TLS_CHACHA20_POLY1305_SHA256",
+                      "TLS_AES_128_GCM_SHA256",
+                      "TLS_AES_128_CCM_SHA256",
+                      "TLS_AES_128_CCM_8_SHA256",
+                      "ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+                      "ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+                      "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+                      "ECDHE_RSA_WITH_AES_256_CBC_SHA384",
+                      "ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+                      "ECDHE_RSA_WITH_AES_256_CBC_SHA",
+                      "DHE_DSS_WITH_AES_256_GCM_SHA384",
+                      "DHE_RSA_WITH_AES_256_GCM_SHA384",
+                      "DHE_RSA_WITH_AES_256_CBC_SHA256",
+                      "DHE_DSS_WITH_AES_256_CBC_SHA256",
+                      "DHE_RSA_WITH_AES_256_CBC_SHA",
+                      "DHE_DSS_WITH_AES_256_CBC_SHA",
+                      "RSA_WITH_AES_256_GCM_SHA384",
+                      "RSA_WITH_AES_256_CBC_SHA256",
+                      "RSA_WITH_AES_256_CBC_SHA",
+                      "ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+                      "ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+                      "ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+                      "ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+                      "ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+                      "ECDHE_RSA_WITH_AES_128_CBC_SHA",
+                      "DHE_DSS_WITH_AES_128_GCM_SHA256",
+                      "DHE_RSA_WITH_AES_128_GCM_SHA256",
+                      "DHE_RSA_WITH_AES_128_CBC_SHA256",
+                      "DHE_DSS_WITH_AES_128_CBC_SHA256",
+                      "DHE_RSA_WITH_AES_128_CBC_SHA",
+                      "DHE_DSS_WITH_AES_128_CBC_SHA",
+                      "RSA_WITH_AES_128_GCM_SHA256",
+                      "RSA_WITH_AES_128_CBC_SHA256",
+                      "RSA_WITH_AES_128_CBC_SHA",
+                      "ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA",
+                      "ECDHE_RSA_WITH_3DES_EDE_CBC_SHA",
+                      "DHE_RSA_WITH_3DES_EDE_CBC_SHA",
+                      "DHE_DSS_WITH_3DES_EDE_CBC_SHA",
+                      "RSA_WITH_3DES_EDE_CBC_SHA"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/TLSClientProfile"
+              },
+              "examples": {
+                "TLSClientProfile": {
+                  "summary": "Example of tls client profile creation.",
+                  "value": {
+                    "title": "acme TLS Client Profile",
+                    "name": "acme-tls-client-profile",
+                    "version": "1.0.0",
+                    "summary": "An example TLS client profile",
+                    "insecure_server_connections": true,
+                    "server_name_indication": false,
+                    "keystore_url": "https://acme-apim.example.com/api/orgs/acme-org/keystores/acme-keystore",
+                    "truststore_url": "https://acme-apim.example.com/api/orgs/acme-org/truststores/acme-truststore",
+                    "protocols": [
+                      "tls_v1.0",
+                      "tls_v1.1",
+                      "tls_v1.2",
+                      "tls_v1.3"
+                    ],
+                    "ciphers": [
+                      "TLS_AES_256_GCM_SHA384",
+                      "TLS_CHACHA20_POLY1305_SHA256",
+                      "TLS_AES_128_GCM_SHA256",
+                      "TLS_AES_128_CCM_SHA256",
+                      "TLS_AES_128_CCM_8_SHA256",
+                      "ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+                      "ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+                      "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+                      "ECDHE_RSA_WITH_AES_256_CBC_SHA384",
+                      "ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+                      "ECDHE_RSA_WITH_AES_256_CBC_SHA",
+                      "DHE_DSS_WITH_AES_256_GCM_SHA384",
+                      "DHE_RSA_WITH_AES_256_GCM_SHA384",
+                      "DHE_RSA_WITH_AES_256_CBC_SHA256",
+                      "DHE_DSS_WITH_AES_256_CBC_SHA256",
+                      "DHE_RSA_WITH_AES_256_CBC_SHA",
+                      "DHE_DSS_WITH_AES_256_CBC_SHA",
+                      "RSA_WITH_AES_256_GCM_SHA384",
+                      "RSA_WITH_AES_256_CBC_SHA256",
+                      "RSA_WITH_AES_256_CBC_SHA",
+                      "ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+                      "ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+                      "ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+                      "ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+                      "ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+                      "ECDHE_RSA_WITH_AES_128_CBC_SHA",
+                      "DHE_DSS_WITH_AES_128_GCM_SHA256",
+                      "DHE_RSA_WITH_AES_128_GCM_SHA256",
+                      "DHE_RSA_WITH_AES_128_CBC_SHA256",
+                      "DHE_DSS_WITH_AES_128_CBC_SHA256",
+                      "DHE_RSA_WITH_AES_128_CBC_SHA",
+                      "DHE_DSS_WITH_AES_128_CBC_SHA",
+                      "RSA_WITH_AES_128_GCM_SHA256",
+                      "RSA_WITH_AES_128_CBC_SHA256",
+                      "RSA_WITH_AES_128_CBC_SHA",
+                      "ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA",
+                      "ECDHE_RSA_WITH_3DES_EDE_CBC_SHA",
+                      "DHE_RSA_WITH_3DES_EDE_CBC_SHA",
+                      "DHE_DSS_WITH_3DES_EDE_CBC_SHA",
+                      "RSA_WITH_3DES_EDE_CBC_SHA"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -43161,11 +46204,63 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/TLSClientProfile"
+              },
+              "examples": {
+                "TLSClientProfile": {
+                  "summary": "Example of tls client profile update by id.",
+                  "value": {
+                    "title": "acme TLS Client profile update",
+                    "version": "1.0.0",
+                    "summary": "An example TLS client profile update",
+                    "insecure_server_connections": true,
+                    "server_name_indication": false,
+                    "keystore_url": "https://acme-apim.example.com/api/orgs/acme-org/keystores/acme-keystore",
+                    "truststore_url": "https://acme-apim.example.com/api/orgs/acme-org/truststores/acme-truststore",
+                    "protocols": [
+                      "tls_v1.2",
+                      "tls_v1.3"
+                    ],
+                    "ciphers": [
+                      "TLS_CHACHA20_POLY1305_SHA256",
+                      "TLS_AES_128_GCM_SHA256",
+                      "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+                      "ECDHE_RSA_WITH_AES_128_CBC_SHA",
+                      "DHE_RSA_WITH_AES_256_GCM_SHA384",
+                      "DHE_RSA_WITH_AES_256_CBC_SHA256"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/TLSClientProfile"
+              },
+              "examples": {
+                "TLSClientProfile": {
+                  "summary": "Example of tls client profile update by id.",
+                  "value": {
+                    "title": "acme TLS Client profile update",
+                    "version": "1.0.0",
+                    "summary": "An example TLS client profile update",
+                    "insecure_server_connections": true,
+                    "server_name_indication": false,
+                    "keystore_url": "https://acme-apim.example.com/api/orgs/acme-org/keystores/acme-keystore",
+                    "truststore_url": "https://acme-apim.example.com/api/orgs/acme-org/truststores/acme-truststore",
+                    "protocols": [
+                      "tls_v1.2",
+                      "tls_v1.3"
+                    ],
+                    "ciphers": [
+                      "TLS_CHACHA20_POLY1305_SHA256",
+                      "TLS_AES_128_GCM_SHA256",
+                      "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+                      "ECDHE_RSA_WITH_AES_128_CBC_SHA",
+                      "DHE_RSA_WITH_AES_256_GCM_SHA384",
+                      "DHE_RSA_WITH_AES_256_CBC_SHA256"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -43311,11 +46406,63 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/TLSClientProfile"
+              },
+              "examples": {
+                "TLSClientProfile": {
+                  "summary": "Example of tls client profile update by name and version.",
+                  "value": {
+                    "title": "acme TLS Client profile update",
+                    "version": "1.0.0",
+                    "summary": "An example TLS client profile update",
+                    "insecure_server_connections": true,
+                    "server_name_indication": false,
+                    "keystore_url": "https://acme-apim.example.com/api/orgs/acme-org/keystores/acme-keystore",
+                    "truststore_url": "https://acme-apim.example.com/api/orgs/acme-org/truststores/acme-truststore",
+                    "protocols": [
+                      "tls_v1.2",
+                      "tls_v1.3"
+                    ],
+                    "ciphers": [
+                      "TLS_CHACHA20_POLY1305_SHA256",
+                      "TLS_AES_128_GCM_SHA256",
+                      "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+                      "ECDHE_RSA_WITH_AES_128_CBC_SHA",
+                      "DHE_RSA_WITH_AES_256_GCM_SHA384",
+                      "DHE_RSA_WITH_AES_256_CBC_SHA256"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/TLSClientProfile"
+              },
+              "examples": {
+                "TLSClientProfile": {
+                  "summary": "Example of tls client profile update by name and version.",
+                  "value": {
+                    "title": "acme TLS Client profile update",
+                    "version": "1.0.0",
+                    "summary": "An example TLS client profile update",
+                    "insecure_server_connections": true,
+                    "server_name_indication": false,
+                    "keystore_url": "https://acme-apim.example.com/api/orgs/acme-org/keystores/acme-keystore",
+                    "truststore_url": "https://acme-apim.example.com/api/orgs/acme-org/truststores/acme-truststore",
+                    "protocols": [
+                      "tls_v1.2",
+                      "tls_v1.3"
+                    ],
+                    "ciphers": [
+                      "TLS_CHACHA20_POLY1305_SHA256",
+                      "TLS_AES_128_GCM_SHA256",
+                      "ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+                      "ECDHE_RSA_WITH_AES_128_CBC_SHA",
+                      "DHE_RSA_WITH_AES_256_GCM_SHA384",
+                      "DHE_RSA_WITH_AES_256_CBC_SHA256"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -43411,11 +46558,35 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Keystore"
+              },
+              "examples": {
+                "Keystore": {
+                  "summary": "Example of keystore creation.",
+                  "value": {
+                    "title": "Acme keystore creation",
+                    "name": "acme-keystore",
+                    "summary": "An example keystore creation",
+                    "password": "Acme1234",
+                    "keystore": "-----BEGIN CERTIFICATE-----\nMIIC7jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMAwG\nA1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3BxETAPBgNVBAoTCEZyYW5rNERE\nMRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBucnQxGDAWBgNVBAMTD0ZyYW5rNEREIFdl\nYiCDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazRkZC5jb20wHhcNMTIw\nODIyMDUyNzQxWhcNMTcwODIxMDUyNzQxWeBKMQswCQYDVQQGEwJKUDEOMAwGA1UE\nCAwFVG9reW8xETAPBgNVBAoMCEZyYW5rNEREMRgwFgYDVQQDDA93d3cuZXhhbXBs\nZS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0z9FeMynsC8+u\ndvX+LciZxnh5uRj4C9S6tNeeAlIGCfQYk0zUcNFCoCkTknNQd/YEiawDLNbxBqut\nbMDZ1aarys1a1lYmUeVLCIqvzBkPJTSQsCopQQ9V8WuT252zzNzs68dVGNdCJd5J\nNRQykpwexmnjPPv0mvj7i8XgG379TyW6P+WWV5okeUkXJ9eJS2ouDYdR2SM9BoVW\n+FgxDu6BmXhozW5EfsnajFp7HL8kQClI0QOc79yuKl3492rH6bzFsFn2lfwWy9ic\n7cP8EpCTeFp1tFaD+vxBhPZkeTQ1HKx6hQ5zeHIB5ySJJZ7af8W8r4eTGYzbdRW2\n4DDHCPhZAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAQMv+BFvGdMVzkQaQ3/+2noVz\n/uAKbzpEL8xTcxYyP3lkOeh4FoxiSWqy5pGFALdPONoDuYFpLhjJSZaEwuvjI/Tr\nrGhLV1pRG9frwDFshqD2Vaj4ENBCBh6UpeBop5+285zQ4SI7q4U9oSebUDJiuOx6\n+tZ9KynmrbJpTSi0+BM=\n-----END CERTIFICATE-----\n-----BEGIN RSA PRIVATE KEY-----\nMII7pAIBABKCAQEAtM/RXjMp7AvPrnb1/i3ImcZ4ebkY+AvUurTXngJSBgn0GJNM\n1HDRQqApE5JzUHf2BImsAyzW8QarrWzA2dWmq8rNWtJWJlHlSwiKr8wZDyU0kLAq\nKUEPVfFrk9uds8zc7OvHVRjXQiXeSTUUMpKcHsZp4zz79Jr4+4vF4Bt+/U8luj/l\nlleaJHlJFyfXiUtqLg2HUdkjPQaFVvhYMQ7ugZl4aM1uRH7J2oxaexy/JEApSNED\nnO/cripd+Pdqx+m8xbBZ9pX8FsvYnO3D/BKQk3hadbRWg/r8QYT2ZHk0NRyseoUO\nc3hyAeckiSWe3n9lvK+HkxmM23UVtuAwxwj4WQIDAQABAoIBAE76H0d4La2PEy3v\nhE98DA0vJdx1PzTJZigPacb42H8OxfIeFQcOKDlj381OwNO7MliVEe9pHJG3CjH8\nONhtfBm5wa0UBtFCIFd/6aQUEDYPWECC0kemxV4Sz5yL5vxsVWufKThAW3XnOIrd\nhm74nvzKSeIZ9yvGrU6ipNHY8MUPm0DQVrVYE5MiKjKVExQ4uRAolV2hlmeQDlSt\nk85S0TUOWO1EvJZhsVVs7dBjjY10hIjv3gZPAO8CN75JzMeaNbmWv4RQj0B967in\nrqlOa5qYYt80tAWO4hmPRKCrv6PgThz8C0Cd8AgwNzvQD2d4JpmxxTzBT6/5lRng\nHhj/wQECgYEA2jxC0a4lGmp1q2aYE1Zyiq0UqjxA92pwFYJg3800MLkf96A+dOhd\nwDAc5aAKN8vQV5g33vKi5+pIHWUCskhTS8/PPGrfeqIvtphCj6b7LKosBOhdzrRD\nOsr+Az/SiR2h5l2lr/v7I8I86RTY7MBk4QcRb601kSagWLDNVzSSdhECgYEA1Bm0\n0sByqkQmFoUNRkwmShPfJeVLTCr1G4cllml6MqHmGyRDHxtcp1+CXlyJJemLQY2A\nqrM7/T4x2ta6ME2WgDydFe9M8oU3BbefNYovS6YnoyBqxCx7yZ1vO0Jo40rZI8Bi\nKoCi6e0Hugg4xyPRz9TTNLmr/yEC1qQesMhM9ckCgYEArsT7rfgMdq8zNOSgfTwJ\n1sztc7d1P67ZvCABfLlVRn+6/hAydGVyTus4+RvFkxGB8+RPOhiOJbQVtJSkKCqL\nqnbtu7DK7+ba1xvwkiJjnE1bm0KLfXIXNQpDik6eSHiWo2nzuo/Ne8GeDftIDbG2\nGBAVAp5v+6I3X0+X4nKTqEECgYEAwT4Cj5mjXxnkEdR7eahHwmpEf0RfzC+/Tate\nRXZsrUDwY34wYWEOk7fjEZIBqrcTl1ATEHNojpxh096bmHK4UnHnNRrn4nYY4W6g\n8ajK2oOxzWA1pjJZPiHgO/+PjLafC4G2br7wr2y0A3yGLnmmKVLgc0NPP42WBnVV\nOP/ljnECgYABlDdJCAehDNSv4mdEzY5bfD+VBFd2QsgE1hYhmUYYRNlgIfIL9Y8e\nCduqXFLNZ/LHdmtYembgUqrMiJTUqcbSrJt26kBQx0az3LAV+J2p68PQ85KR9ZPy\nN1jEnRqpAwEdw7S+8l0yVyaNkm66eRI80p+w3AxNbS9hJ/7UlV3lGA==\n-----END RSA PRIVATE KEY-----   \n"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Keystore"
+              },
+              "examples": {
+                "Keystore": {
+                  "summary": "Example of keystore creation.",
+                  "value": {
+                    "title": "Acme keystore creation",
+                    "name": "acme-keystore",
+                    "summary": "An example keystore creation",
+                    "password": "Acme1234",
+                    "keystore": "-----BEGIN CERTIFICATE-----\nMIIC7jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMAwG\nA1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3BxETAPBgNVBAoTCEZyYW5rNERE\nMRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBucnQxGDAWBgNVBAMTD0ZyYW5rNEREIFdl\nYiCDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazRkZC5jb20wHhcNMTIw\nODIyMDUyNzQxWhcNMTcwODIxMDUyNzQxWeBKMQswCQYDVQQGEwJKUDEOMAwGA1UE\nCAwFVG9reW8xETAPBgNVBAoMCEZyYW5rNEREMRgwFgYDVQQDDA93d3cuZXhhbXBs\nZS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0z9FeMynsC8+u\ndvX+LciZxnh5uRj4C9S6tNeeAlIGCfQYk0zUcNFCoCkTknNQd/YEiawDLNbxBqut\nbMDZ1aarys1a1lYmUeVLCIqvzBkPJTSQsCopQQ9V8WuT252zzNzs68dVGNdCJd5J\nNRQykpwexmnjPPv0mvj7i8XgG379TyW6P+WWV5okeUkXJ9eJS2ouDYdR2SM9BoVW\n+FgxDu6BmXhozW5EfsnajFp7HL8kQClI0QOc79yuKl3492rH6bzFsFn2lfwWy9ic\n7cP8EpCTeFp1tFaD+vxBhPZkeTQ1HKx6hQ5zeHIB5ySJJZ7af8W8r4eTGYzbdRW2\n4DDHCPhZAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAQMv+BFvGdMVzkQaQ3/+2noVz\n/uAKbzpEL8xTcxYyP3lkOeh4FoxiSWqy5pGFALdPONoDuYFpLhjJSZaEwuvjI/Tr\nrGhLV1pRG9frwDFshqD2Vaj4ENBCBh6UpeBop5+285zQ4SI7q4U9oSebUDJiuOx6\n+tZ9KynmrbJpTSi0+BM=\n-----END CERTIFICATE-----\n-----BEGIN RSA PRIVATE KEY-----\nMII7pAIBABKCAQEAtM/RXjMp7AvPrnb1/i3ImcZ4ebkY+AvUurTXngJSBgn0GJNM\n1HDRQqApE5JzUHf2BImsAyzW8QarrWzA2dWmq8rNWtJWJlHlSwiKr8wZDyU0kLAq\nKUEPVfFrk9uds8zc7OvHVRjXQiXeSTUUMpKcHsZp4zz79Jr4+4vF4Bt+/U8luj/l\nlleaJHlJFyfXiUtqLg2HUdkjPQaFVvhYMQ7ugZl4aM1uRH7J2oxaexy/JEApSNED\nnO/cripd+Pdqx+m8xbBZ9pX8FsvYnO3D/BKQk3hadbRWg/r8QYT2ZHk0NRyseoUO\nc3hyAeckiSWe3n9lvK+HkxmM23UVtuAwxwj4WQIDAQABAoIBAE76H0d4La2PEy3v\nhE98DA0vJdx1PzTJZigPacb42H8OxfIeFQcOKDlj381OwNO7MliVEe9pHJG3CjH8\nONhtfBm5wa0UBtFCIFd/6aQUEDYPWECC0kemxV4Sz5yL5vxsVWufKThAW3XnOIrd\nhm74nvzKSeIZ9yvGrU6ipNHY8MUPm0DQVrVYE5MiKjKVExQ4uRAolV2hlmeQDlSt\nk85S0TUOWO1EvJZhsVVs7dBjjY10hIjv3gZPAO8CN75JzMeaNbmWv4RQj0B967in\nrqlOa5qYYt80tAWO4hmPRKCrv6PgThz8C0Cd8AgwNzvQD2d4JpmxxTzBT6/5lRng\nHhj/wQECgYEA2jxC0a4lGmp1q2aYE1Zyiq0UqjxA92pwFYJg3800MLkf96A+dOhd\nwDAc5aAKN8vQV5g33vKi5+pIHWUCskhTS8/PPGrfeqIvtphCj6b7LKosBOhdzrRD\nOsr+Az/SiR2h5l2lr/v7I8I86RTY7MBk4QcRb601kSagWLDNVzSSdhECgYEA1Bm0\n0sByqkQmFoUNRkwmShPfJeVLTCr1G4cllml6MqHmGyRDHxtcp1+CXlyJJemLQY2A\nqrM7/T4x2ta6ME2WgDydFe9M8oU3BbefNYovS6YnoyBqxCx7yZ1vO0Jo40rZI8Bi\nKoCi6e0Hugg4xyPRz9TTNLmr/yEC1qQesMhM9ckCgYEArsT7rfgMdq8zNOSgfTwJ\n1sztc7d1P67ZvCABfLlVRn+6/hAydGVyTus4+RvFkxGB8+RPOhiOJbQVtJSkKCqL\nqnbtu7DK7+ba1xvwkiJjnE1bm0KLfXIXNQpDik6eSHiWo2nzuo/Ne8GeDftIDbG2\nGBAVAp5v+6I3X0+X4nKTqEECgYEAwT4Cj5mjXxnkEdR7eahHwmpEf0RfzC+/Tate\nRXZsrUDwY34wYWEOk7fjEZIBqrcTl1ATEHNojpxh096bmHK4UnHnNRrn4nYY4W6g\n8ajK2oOxzWA1pjJZPiHgO/+PjLafC4G2br7wr2y0A3yGLnmmKVLgc0NPP42WBnVV\nOP/ljnECgYABlDdJCAehDNSv4mdEzY5bfD+VBFd2QsgE1hYhmUYYRNlgIfIL9Y8e\nCduqXFLNZ/LHdmtYembgUqrMiJTUqcbSrJt26kBQx0az3LAV+J2p68PQ85KR9ZPy\nN1jEnRqpAwEdw7S+8l0yVyaNkm66eRI80p+w3AxNbS9hJ/7UlV3lGA==\n-----END RSA PRIVATE KEY-----   \n"
+                  }
+                }
               }
             }
           }
@@ -43612,11 +46783,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Keystore"
+              },
+              "examples": {
+                "Keystore": {
+                  "summary": "Example of keystore update.",
+                  "value": {
+                    "title": "Acme keystore update",
+                    "summary": "An example keystore update",
+                    "password": "Acme123",
+                    "private_key_entry": "-----BEGIN RSA PRIVATE KEY-----\nMII7pAIBABKCAQEAtM/RXjMp7AvPrnb1/i3ImcZ4ebkY+AvUurTXngJSBgn0GJNM\n1HDRQqApE5JzUHf2BImsAyzW8QarrWzA2dWmq8rNWtJWJlHlSwiKr8wZDyU0kLAq\nKUEPVfFrk9uds8zc7OvHVRjXQiXeSTUUMpKcHsZp4zz79Jr4+4vF4Bt+/U8luj/l\nlleaJHlJFyfXiUtqLg2HUdkjPQaFVvhYMQ7ugZl4aM1uRH7J2oxaexy/JEApSNED\nnO/cripd+Pdqx+m8xbBZ9pX8FsvYnO3D/BKQk3hadbRWg/r8QYT2ZHk0NRyseoUO\nc3hyAeckiSWe3n9lvK+HkxmM23UVtuAwxwj4WQIDAQABAoIBAE76H0d4La2PEy3v\nhE98DA0vJdx1PzTJZigPacb42H8OxfIeFQcOKDlj381OwNO7MliVEe9pHJG3CjH8\nONhtfBm5wa0UBtFCIFd/6aQUEDYPWECC0kemxV4Sz5yL5vxsVWufKThAW3XnOIrd\nhm74nvzKSeIZ9yvGrU6ipNHY8MUPm0DQVrVYE5MiKjKVExQ4uRAolV2hlmeQDlSt\nk85S0TUOWO1EvJZhsVVs7dBjjY10hIjv3gZPAO8CN75JzMeaNbmWv4RQj0B967in\nrqlOa5qYYt80tAWO4hmPRKCrv6PgThz8C0Cd8AgwNzvQD2d4JpmxxTzBT6/5lRng\nHhj/wQECgYEA2jxC0a4lGmp1q2aYE1Zyiq0UqjxA92pwFYJg3800MLkf96A+dOhd\nwDAc5aAKN8vQV5g33vKi5+pIHWUCskhTS8/PPGrfeqIvtphCj6b7LKosBOhdzrRD\nOsr+Az/SiR2h5l2lr/v7I8I86RTY7MBk4QcRb601kSagWLDNVzSSdhECgYEA1Bm0\n0sByqkQmFoUNRkwmShPfJeVLTCr1G4cllml6MqHmGyRDHxtcp1+CXlyJJemLQY2A\nqrM7/T4x2ta6ME2WgDydFe9M8oU3BbefNYovS6YnoyBqxCx7yZ1vO0Jo40rZI8Bi\nKoCi6e0Hugg4xyPRz9TTNLmr/yEC1qQesMhM9ckCgYEArsT7rfgMdq8zNOSgfTwJ\n1sztc7d1P67ZvCABfLlVRn+6/hAydGVyTus4+RvFkxGB8+RPOhiOJbQVtJSkKCqL\nqnbtu7DK7+ba1xvwkiJjnE1bm0KLfXIXNQpDik6eSHiWo2nzuo/Ne8GeDftIDbG2\nGBAVAp5v+6I3X0+X4nKTqEECgYEAwT4Cj5mjXxnkEdR7eahHwmpEf0RfzC+/Tate\nRXZsrUDwY34wYWEOk7fjEZIBqrcTl1ATEHNojpxh096bmHK4UnHnNRrn4nYY4W6g\n8ajK2oOxzWA1pjJZPiHgO/+PjLafC4G2br7wr2y0A3yGLnmmKVLgc0NPP42WBnVV\nOP/ljnECgYABlDdJCAehDNSv4mdEzY5bfD+VBFd2QsgE1hYhmUYYRNlgIfIL9Y8e\nCduqXFLNZ/LHdmtYembgUqrMiJTUqcbSrJt26kBQx0az3LAV+J2p68PQ85KR9ZPy\nN1jEnRqpAwEdw7S+8l0yVyaNkm66eRI80p+w3AxNbS9hJ/7UlV3lGA==\n-----END RSA PRIVATE KEY-----      \n",
+                    "public_certificate_entry": {
+                      "pem": "-----BEGIN CERTIFICATE-----\nMIIC7jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMAwG\nA1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3BxETAPBgNVBAoTCEZyYW5rNERE\nMRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBucnQxGDAWBgNVBAMTD0ZyYW5rNEREIFdl\nYiCDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazRkZC5jb20wHhcNMTIw\nODIyMDUyNzQxWhcNMTcwODIxMDUyNzQxWeBKMQswCQYDVQQGEwJKUDEOMAwGA1UE\nCAwFVG9reW8xETAPBgNVBAoMCEZyYW5rNEREMRgwFgYDVQQDDA93d3cuZXhhbXBs\nZS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0z9FeMynsC8+u\ndvX+LciZxnh5uRj4C9S6tNeeAlIGCfQYk0zUcNFCoCkTknNQd/YEiawDLNbxBqut\nbMDZ1aarys1a1lYmUeVLCIqvzBkPJTSQsCopQQ9V8WuT252zzNzs68dVGNdCJd5J\nNRQykpwexmnjPPv0mvj7i8XgG379TyW6P+WWV5okeUkXJ9eJS2ouDYdR2SM9BoVW\n+FgxDu6BmXhozW5EfsnajFp7HL8kQClI0QOc79yuKl3492rH6bzFsFn2lfwWy9ic\n7cP8EpCTeFp1tFaD+vxBhPZkeTQ1HKx6hQ5zeHIB5ySJJZ7af8W8r4eTGYzbdRW2\n4DDHCPhZAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAQMv+BFvGdMVzkQaQ3/+2noVz\n/uAKbzpEL8xTcxYyP3lkOeh4FoxiSWqy5pGFALdPONoDuYFpLhjJSZaEwuvjI/Tr\nrGhLV1pRG9frwDFshqD2Vaj4ENBCBh6UpeBop5+285zQ4SI7q4U9oSebUDJiuOx6\n+tZ9KynmrbJpTSi0+BM=\n-----END CERTIFICATE-----\n"
+                    }
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Keystore"
+              },
+              "examples": {
+                "Keystore": {
+                  "summary": "Example of keystore update.",
+                  "value": {
+                    "title": "Acme keystore update",
+                    "summary": "An example keystore update",
+                    "password": "Acme123",
+                    "private_key_entry": "-----BEGIN RSA PRIVATE KEY-----\nMII7pAIBABKCAQEAtM/RXjMp7AvPrnb1/i3ImcZ4ebkY+AvUurTXngJSBgn0GJNM\n1HDRQqApE5JzUHf2BImsAyzW8QarrWzA2dWmq8rNWtJWJlHlSwiKr8wZDyU0kLAq\nKUEPVfFrk9uds8zc7OvHVRjXQiXeSTUUMpKcHsZp4zz79Jr4+4vF4Bt+/U8luj/l\nlleaJHlJFyfXiUtqLg2HUdkjPQaFVvhYMQ7ugZl4aM1uRH7J2oxaexy/JEApSNED\nnO/cripd+Pdqx+m8xbBZ9pX8FsvYnO3D/BKQk3hadbRWg/r8QYT2ZHk0NRyseoUO\nc3hyAeckiSWe3n9lvK+HkxmM23UVtuAwxwj4WQIDAQABAoIBAE76H0d4La2PEy3v\nhE98DA0vJdx1PzTJZigPacb42H8OxfIeFQcOKDlj381OwNO7MliVEe9pHJG3CjH8\nONhtfBm5wa0UBtFCIFd/6aQUEDYPWECC0kemxV4Sz5yL5vxsVWufKThAW3XnOIrd\nhm74nvzKSeIZ9yvGrU6ipNHY8MUPm0DQVrVYE5MiKjKVExQ4uRAolV2hlmeQDlSt\nk85S0TUOWO1EvJZhsVVs7dBjjY10hIjv3gZPAO8CN75JzMeaNbmWv4RQj0B967in\nrqlOa5qYYt80tAWO4hmPRKCrv6PgThz8C0Cd8AgwNzvQD2d4JpmxxTzBT6/5lRng\nHhj/wQECgYEA2jxC0a4lGmp1q2aYE1Zyiq0UqjxA92pwFYJg3800MLkf96A+dOhd\nwDAc5aAKN8vQV5g33vKi5+pIHWUCskhTS8/PPGrfeqIvtphCj6b7LKosBOhdzrRD\nOsr+Az/SiR2h5l2lr/v7I8I86RTY7MBk4QcRb601kSagWLDNVzSSdhECgYEA1Bm0\n0sByqkQmFoUNRkwmShPfJeVLTCr1G4cllml6MqHmGyRDHxtcp1+CXlyJJemLQY2A\nqrM7/T4x2ta6ME2WgDydFe9M8oU3BbefNYovS6YnoyBqxCx7yZ1vO0Jo40rZI8Bi\nKoCi6e0Hugg4xyPRz9TTNLmr/yEC1qQesMhM9ckCgYEArsT7rfgMdq8zNOSgfTwJ\n1sztc7d1P67ZvCABfLlVRn+6/hAydGVyTus4+RvFkxGB8+RPOhiOJbQVtJSkKCqL\nqnbtu7DK7+ba1xvwkiJjnE1bm0KLfXIXNQpDik6eSHiWo2nzuo/Ne8GeDftIDbG2\nGBAVAp5v+6I3X0+X4nKTqEECgYEAwT4Cj5mjXxnkEdR7eahHwmpEf0RfzC+/Tate\nRXZsrUDwY34wYWEOk7fjEZIBqrcTl1ATEHNojpxh096bmHK4UnHnNRrn4nYY4W6g\n8ajK2oOxzWA1pjJZPiHgO/+PjLafC4G2br7wr2y0A3yGLnmmKVLgc0NPP42WBnVV\nOP/ljnECgYABlDdJCAehDNSv4mdEzY5bfD+VBFd2QsgE1hYhmUYYRNlgIfIL9Y8e\nCduqXFLNZ/LHdmtYembgUqrMiJTUqcbSrJt26kBQx0az3LAV+J2p68PQ85KR9ZPy\nN1jEnRqpAwEdw7S+8l0yVyaNkm66eRI80p+w3AxNbS9hJ/7UlV3lGA==\n-----END RSA PRIVATE KEY-----      \n",
+                    "public_certificate_entry": {
+                      "pem": "-----BEGIN CERTIFICATE-----\nMIIC7jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMAwG\nA1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3BxETAPBgNVBAoTCEZyYW5rNERE\nMRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBucnQxGDAWBgNVBAMTD0ZyYW5rNEREIFdl\nYiCDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazRkZC5jb20wHhcNMTIw\nODIyMDUyNzQxWhcNMTcwODIxMDUyNzQxWeBKMQswCQYDVQQGEwJKUDEOMAwGA1UE\nCAwFVG9reW8xETAPBgNVBAoMCEZyYW5rNEREMRgwFgYDVQQDDA93d3cuZXhhbXBs\nZS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0z9FeMynsC8+u\ndvX+LciZxnh5uRj4C9S6tNeeAlIGCfQYk0zUcNFCoCkTknNQd/YEiawDLNbxBqut\nbMDZ1aarys1a1lYmUeVLCIqvzBkPJTSQsCopQQ9V8WuT252zzNzs68dVGNdCJd5J\nNRQykpwexmnjPPv0mvj7i8XgG379TyW6P+WWV5okeUkXJ9eJS2ouDYdR2SM9BoVW\n+FgxDu6BmXhozW5EfsnajFp7HL8kQClI0QOc79yuKl3492rH6bzFsFn2lfwWy9ic\n7cP8EpCTeFp1tFaD+vxBhPZkeTQ1HKx6hQ5zeHIB5ySJJZ7af8W8r4eTGYzbdRW2\n4DDHCPhZAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAQMv+BFvGdMVzkQaQ3/+2noVz\n/uAKbzpEL8xTcxYyP3lkOeh4FoxiSWqy5pGFALdPONoDuYFpLhjJSZaEwuvjI/Tr\nrGhLV1pRG9frwDFshqD2Vaj4ENBCBh6UpeBop5+285zQ4SI7q4U9oSebUDJiuOx6\n+tZ9KynmrbJpTSi0+BM=\n-----END CERTIFICATE-----\n"
+                    }
+                  }
+                }
               }
             }
           }
@@ -43712,11 +46911,33 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Truststore"
+              },
+              "examples": {
+                "Truststore": {
+                  "summary": "Example truststore create.",
+                  "value": {
+                    "summary": "An example truststore create",
+                    "name": "acme-truststore",
+                    "title": "ACME Truststore",
+                    "truststore": "-----BEGIN CERTIFICATE-----\nMIIC2jCCAkMCAg38MA0HCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMaWg\nA1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxETAPBgNVBAoTCEZyYW5rNere\nMRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWBgNVbamTD0ZyYW5rNEREIFdl\nYiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazrKzC5jb20wHhcNMTIw\nODIyMDUyNzQxWhcNMTcwODIxMDUyNzQxWjBKMQswCQYdvqQGEwJKUDEOMAwGA1UE\nCAwFVG9reW8xETAPBgNVBAoMCEZyYW5rNEREMRgwFgYDVQQDDA94e4cuZXhhbxBs\nZS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0z9FeMynsC8+u\ndvX+LciZxnh5uRj4C9S6tNeeAlIGCfQYk0zUcNFCoCkTknNQd/YEiawDLNbxBqut\nbMDZ1aarys1a0lYmUeVLCIqvzBkPJTSQsCopQQ9V8WuT252zzNzs68dVGNdCJd5J\nNRQykpwexmnlOOv0mvj7i8XgG379TyW6P+WWV5okeUkXJ9eJS2ouDYdR2SM9BoVW\n+FgxDu6BmXhozW5EfsnajFp7HL8kQClI0QOc79yuKl3492rH6bzFsFn2lfwWy9ic\n7cP8EpCTeFp1tFaD+vxBhPZkeTQ1HKx6hQ5zeHIB5ySJJZ7af2W8r4eTGYzbdRW2\n4DDHCPhZAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAQMv+BFvGdMVzkQaQ3/+2noVz\n/uAKbzpEL8xTcxYyP3lkOeh4FoxiSWqy5pGFALdPONoDuYFpLhjJSZaEwuvjI/Tr\nrGhLV1pRG9frwDFshqD2Vaj4ENBCBh6UpeBop5+285zQ4SI7q4U9oSebUDJiuOx6\n+tZ9KynmrbJpTSi0+BM=\n-----END CERTIFICATE-----\n"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Truststore"
+              },
+              "examples": {
+                "Truststore": {
+                  "summary": "Example truststore create.",
+                  "value": {
+                    "summary": "An example truststore create",
+                    "name": "acme-truststore",
+                    "title": "ACME Truststore",
+                    "truststore": "-----BEGIN CERTIFICATE-----\nMIIC2jCCAkMCAg38MA0HCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMaWg\nA1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxETAPBgNVBAoTCEZyYW5rNere\nMRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWBgNVbamTD0ZyYW5rNEREIFdl\nYiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazrKzC5jb20wHhcNMTIw\nODIyMDUyNzQxWhcNMTcwODIxMDUyNzQxWjBKMQswCQYdvqQGEwJKUDEOMAwGA1UE\nCAwFVG9reW8xETAPBgNVBAoMCEZyYW5rNEREMRgwFgYDVQQDDA94e4cuZXhhbxBs\nZS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0z9FeMynsC8+u\ndvX+LciZxnh5uRj4C9S6tNeeAlIGCfQYk0zUcNFCoCkTknNQd/YEiawDLNbxBqut\nbMDZ1aarys1a0lYmUeVLCIqvzBkPJTSQsCopQQ9V8WuT252zzNzs68dVGNdCJd5J\nNRQykpwexmnlOOv0mvj7i8XgG379TyW6P+WWV5okeUkXJ9eJS2ouDYdR2SM9BoVW\n+FgxDu6BmXhozW5EfsnajFp7HL8kQClI0QOc79yuKl3492rH6bzFsFn2lfwWy9ic\n7cP8EpCTeFp1tFaD+vxBhPZkeTQ1HKx6hQ5zeHIB5ySJJZ7af2W8r4eTGYzbdRW2\n4DDHCPhZAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAQMv+BFvGdMVzkQaQ3/+2noVz\n/uAKbzpEL8xTcxYyP3lkOeh4FoxiSWqy5pGFALdPONoDuYFpLhjJSZaEwuvjI/Tr\nrGhLV1pRG9frwDFshqD2Vaj4ENBCBh6UpeBop5+285zQ4SI7q4U9oSebUDJiuOx6\n+tZ9KynmrbJpTSi0+BM=\n-----END CERTIFICATE-----\n"
+                  }
+                }
               }
             }
           }
@@ -43913,11 +47134,29 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Truststore"
+              },
+              "examples": {
+                "Truststore": {
+                  "summary": "Example truststore update.",
+                  "value": {
+                    "summary": "An example truststore update",
+                    "title": "ACME Truststore"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Truststore"
+              },
+              "examples": {
+                "Truststore": {
+                  "summary": "Example truststore update.",
+                  "value": {
+                    "summary": "An example truststore update",
+                    "title": "ACME Truststore"
+                  }
+                }
               }
             }
           }
@@ -44322,7 +47561,7 @@
                 "$ref": "#/components/schemas/JwkSet"
               },
               "examples": {
-                "jwkSetsCreate": {
+                "JwkSet": {
                   "summary": "Example of creating a JWK set containing a private and public key",
                   "value": {
                     "title": "acme-jwkset",
@@ -44355,7 +47594,7 @@
                 "$ref": "#/components/schemas/JwkSet"
               },
               "examples": {
-                "jwkSetsCreate": {
+                "JwkSet": {
                   "summary": "Example of creating a JWK set containing a private and public key",
                   "value": {
                     "title": "acme-jwkset",
@@ -44724,7 +47963,7 @@
                 "$ref": "#/components/schemas/CatalogSetting"
               },
               "examples": {
-                "catalogSettingUpdate": {
+                "CatalogSetting": {
                   "summary": "Example of fields which can be updated on a catalog settings object.",
                   "value": {
                     "title": "Updated ACME catalog settings",
@@ -44747,7 +47986,7 @@
                 "$ref": "#/components/schemas/CatalogSetting"
               },
               "examples": {
-                "catalogSettingUpdate": {
+                "CatalogSetting": {
                   "summary": "Example of fields which can be updated on a catalog settings object.",
                   "value": {
                     "title": "Updated ACME catalog settings",
@@ -44871,11 +48110,27 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredGatewayService"
+              },
+              "examples": {
+                "ConfiguredGatewayService": {
+                  "summary": "Example of configured gateway service creation at catalog scope.",
+                  "value": {
+                    "gateway_service_url": "https://acme-apim.example.com/api/orgs/org1/gateway-services/acme-gateway-service"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredGatewayService"
+              },
+              "examples": {
+                "ConfiguredGatewayService": {
+                  "summary": "Example of configured gateway service creation at catalog scope.",
+                  "value": {
+                    "gateway_service_url": "https://acme-apim.example.com/api/orgs/org1/gateway-services/acme-gateway-service"
+                  }
+                }
               }
             }
           }
@@ -45171,11 +48426,27 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredGatewayService"
+              },
+              "examples": {
+                "ConfiguredGatewayService": {
+                  "summary": "Example of configured gateway service creation at space scope.",
+                  "value": {
+                    "gateway_service_url": "https://acme-apim.example.com/api/orgs/org1/gateway-services/acme-gateway-service"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredGatewayService"
+              },
+              "examples": {
+                "ConfiguredGatewayService": {
+                  "summary": "Example of configured gateway service creation at space scope.",
+                  "value": {
+                    "gateway_service_url": "https://acme-apim.example.com/api/orgs/org1/gateway-services/acme-gateway-service"
+                  }
+                }
               }
             }
           }
@@ -45474,11 +48745,27 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredCatalogUserRegistry"
+              },
+              "examples": {
+                "ConfiguredCatalogUserRegistry": {
+                  "summary": "Example configured catalog user registry create.",
+                  "value": {
+                    "user_registry_url": "https://acme-apim.example.com/api/user-registries/acme-org/acme-user-regsitry"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredCatalogUserRegistry"
+              },
+              "examples": {
+                "ConfiguredCatalogUserRegistry": {
+                  "summary": "Example configured catalog user registry create.",
+                  "value": {
+                    "user_registry_url": "https://acme-apim.example.com/api/user-registries/acme-org/acme-user-regsitry"
+                  }
+                }
               }
             }
           }
@@ -45772,7 +49059,7 @@
                 "$ref": "#/components/schemas/ConfiguredAPIUserRegistry"
               },
               "examples": {
-                "configuredApiUserRegistryCreate": {
+                "ConfiguredAPIUserRegistry": {
                   "summary": "Example of configured api user registry creation at catalog scope.",
                   "value": {
                     "user_registry_url": "https://api.acme-apim.example.com/api/user-registries/org1/user-registry-1"
@@ -45785,7 +49072,7 @@
                 "$ref": "#/components/schemas/ConfiguredAPIUserRegistry"
               },
               "examples": {
-                "configuredApiUserRegistryCreate": {
+                "ConfiguredAPIUserRegistry": {
                   "summary": "Example of configured api user registry creation at catalog scope.",
                   "value": {
                     "user_registry_url": "https://api.acme-apim.example.com/api/user-registries/org1/user-registry-1"
@@ -46045,7 +49332,7 @@
                 "$ref": "#/components/schemas/ConfiguredAPIUserRegistry"
               },
               "examples": {
-                "configuredApiUserRegistryCreate": {
+                "ConfiguredAPIUserRegistry": {
                   "summary": "Example of configured api user registry creation at space scope.",
                   "value": {
                     "user_registry_url": "https://api.acme-apim.example.com/api/user-registries/org1/user-registry-1"
@@ -46058,7 +49345,7 @@
                 "$ref": "#/components/schemas/ConfiguredAPIUserRegistry"
               },
               "examples": {
-                "configuredApiUserRegistryCreate": {
+                "ConfiguredAPIUserRegistry": {
                   "summary": "Example of configured api user registry creation at space scope.",
                   "value": {
                     "user_registry_url": "https://api.acme-apim.example.com/api/user-registries/org1/user-registry-1"
@@ -46316,11 +49603,27 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredTLSClientProfile"
+              },
+              "examples": {
+                "ConfiguredTLSClientProfileCatalog": {
+                  "summary": "Example configured catalog user registry create at catalog scope.",
+                  "value": {
+                    "tls_client_profile_url": "https://api.acme-apim.example.com/api/orgs/acme-org/tls-client-profiles/acme-tls-client-profile"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredTLSClientProfile"
+              },
+              "examples": {
+                "ConfiguredTLSClientProfileCatalog": {
+                  "summary": "Example configured catalog user registry create at catalog scope.",
+                  "value": {
+                    "tls_client_profile_url": "https://api.acme-apim.example.com/api/orgs/acme-org/tls-client-profiles/acme-tls-client-profile"
+                  }
+                }
               }
             }
           }
@@ -46769,11 +50072,27 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredTLSClientProfile"
+              },
+              "examples": {
+                "ConfiguredTLSClientProfileSpace": {
+                  "summary": "Example configured catalog user registry create at space scope.",
+                  "value": {
+                    "tls_client_profile_url": "https://api.acme-apim.example.com/api/orgs/acme-org/tls-client-profiles/acme-tls-client-profile"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredTLSClientProfile"
+              },
+              "examples": {
+                "ConfiguredTLSClientProfileSpace": {
+                  "summary": "Example configured catalog user registry create at space scope.",
+                  "value": {
+                    "tls_client_profile_url": "https://api.acme-apim.example.com/api/orgs/acme-org/tls-client-profiles/acme-tls-client-profile"
+                  }
+                }
               }
             }
           }
@@ -47228,11 +50547,27 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredBilling"
+              },
+              "examples": {
+                "ConfiguredBilling": {
+                  "summary": "Example of configured billing creation.",
+                  "value": {
+                    "billing_url": "https://api.acme-apim.example.com/api/orgs/acme-org/billings/acme-billing"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredBilling"
+              },
+              "examples": {
+                "ConfiguredBilling": {
+                  "summary": "Example of configured billing creation.",
+                  "value": {
+                    "billing_url": "https://api.acme-apim.example.com/api/orgs/acme-org/billings/acme-billing"
+                  }
+                }
               }
             }
           }
@@ -47482,11 +50817,27 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredOauthProvider"
+              },
+              "examples": {
+                "ConfiguredOauthProvider": {
+                  "summary": "Example of configured oauth provider creation at catalog scope.",
+                  "value": {
+                    "oauth_provider_url": "https://acme-apim.example.com/api/orgs/org1/oauth-providers/acme-oauth-provider"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredOauthProvider"
+              },
+              "examples": {
+                "ConfiguredOauthProvider": {
+                  "summary": "Example of configured oauth provider creation at catalog scope.",
+                  "value": {
+                    "oauth_provider_url": "https://acme-apim.example.com/api/orgs/org1/oauth-providers/acme-oauth-provider"
+                  }
+                }
               }
             }
           }
@@ -47739,11 +51090,27 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredOauthProvider"
+              },
+              "examples": {
+                "ConfiguredOauthProvider": {
+                  "summary": "Example of configured oauth provider creation at space scope.",
+                  "value": {
+                    "oauth_provider_url": "https://acme-apim.example.com/api/orgs/org1/oauth-providers/acme-oauth-provider"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredOauthProvider"
+              },
+              "examples": {
+                "ConfiguredOauthProvider": {
+                  "summary": "Example of configured oauth provider creation at space scope.",
+                  "value": {
+                    "oauth_provider_url": "https://acme-apim.example.com/api/orgs/org1/oauth-providers/acme-oauth-provider"
+                  }
+                }
               }
             }
           }
@@ -48165,11 +51532,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at catalog scope and catalog subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello,\n\nYou have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at catalog scope and catalog subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -48330,6 +51725,23 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationLanguage"
+              },
+              "examples": {
+                "NotificationLanguage": {
+                  "summary": "Example of notification language update at catalog scope and catalog subcollection.",
+                  "value": {
+                    "title": "Example notification language update",
+                    "notification_template_name": "invitation",
+                    "notification_template_type": "catalog",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text",
+                      "html"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -48497,11 +51909,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at catalog scope and space subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello,\n\nYou have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at catalog scope and space subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -48662,6 +52102,23 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationLanguage"
+              },
+              "examples": {
+                "NotificationLanguage": {
+                  "summary": "Example of notification language update at catalog scope and space subcollection.",
+                  "value": {
+                    "title": "Example notification language update",
+                    "notification_template_name": "invitation",
+                    "notification_template_type": "space",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text",
+                      "html"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -48829,11 +52286,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at catalog scope and consumer subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello,\n\nYou have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at catalog scope and consumer subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -48994,6 +52479,23 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationLanguage"
+              },
+              "examples": {
+                "NotificationLanguage": {
+                  "summary": "Example of notification language update at catalog scope and consumer subcollection.",
+                  "value": {
+                    "title": "Example notification language update",
+                    "notification_template_name": "invitation",
+                    "notification_template_type": "consumer",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text",
+                      "html"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -49233,11 +52735,27 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NameValuePairs"
+              },
+              "examples": {
+                "NameValuePairs": {
+                  "summary": "Example of property creation.",
+                  "value": {
+                    "acme": "acmevalue"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NameValuePairs"
+              },
+              "examples": {
+                "NameValuePairs": {
+                  "summary": "Example of property creation.",
+                  "value": {
+                    "acme": "acmevalue"
+                  }
+                }
               }
             }
           }
@@ -49437,11 +52955,27 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Property"
+              },
+              "examples": {
+                "Property": {
+                  "summary": "Example of property update.",
+                  "value": {
+                    "acme": "acmevalue"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Property"
+              },
+              "examples": {
+                "Property": {
+                  "summary": "Example of property update.",
+                  "value": {
+                    "acme": "acmevalue"
+                  }
+                }
               }
             }
           }
@@ -49537,11 +53071,33 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Catalog"
+              },
+              "examples": {
+                "Catalog": {
+                  "summary": "Example of catalog create.",
+                  "value": {
+                    "name": "acme-catalog",
+                    "title": "ACME Catalog",
+                    "summary": "An example catalog create",
+                    "owner_url": "https://api.acme-apim.example.com/api/user-registries/acme-org/acme-user-registry/users/acme-user"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Catalog"
+              },
+              "examples": {
+                "Catalog": {
+                  "summary": "Example of catalog create.",
+                  "value": {
+                    "name": "acme-catalog",
+                    "title": "ACME Catalog",
+                    "summary": "An example catalog create",
+                    "owner_url": "https://api.acme-apim.example.com/api/user-registries/acme-org/acme-user-registry/users/acme-user"
+                  }
+                }
               }
             }
           }
@@ -49738,11 +53294,29 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Catalog"
+              },
+              "examples": {
+                "Catalog": {
+                  "summary": "Example of catalog create.",
+                  "value": {
+                    "title": "ACME Catalog Updated",
+                    "summary": "An example catalog update"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Catalog"
+              },
+              "examples": {
+                "Catalog": {
+                  "summary": "Example of catalog create.",
+                  "value": {
+                    "title": "ACME Catalog Updated",
+                    "summary": "An example catalog update"
+                  }
+                }
               }
             }
           }
@@ -49853,6 +53427,20 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/TransferOwner"
+              },
+              "examples": {
+                "TransferOwnerMember": {
+                  "summary": "Example of owner transfer using member url.",
+                  "value": {
+                    "new_owner_member_url": "https://api.acme-apim.example.com/api/catalogs/acme-org/acme-catalog/members/acme-member"
+                  }
+                },
+                "TransferOwnerAssociate": {
+                  "summary": "Example of owner transfer using associate url.",
+                  "value": {
+                    "new_owner_associate_url": "https://api.acme-apim.example.com/api/orgs/acme-org/associates/acme-associate"
+                  }
+                }
               }
             }
           }
@@ -49920,6 +53508,20 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/EmailToOwners"
+              },
+              "examples": {
+                "EmailToOwners": {
+                  "summary": "Example of email to owners.",
+                  "value": {
+                    "subject": "An email to owners",
+                    "body": "This is an example email to owners",
+                    "content_type": "text",
+                    "consumer_org_urls": [
+                      "https://api.acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-consumer-org1",
+                      "https://api.acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-consumer-org2"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -49988,6 +53590,28 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/DraftProductPublish"
+              },
+              "examples": {
+                "DraftProductPublish": {
+                  "summary": "Example of draft product stage.",
+                  "value": {
+                    "draft_product_url": "https://api.acme-apim.example.com/api/orgs/acme-org/drafts/draft-products/draft-product-id",
+                    "visibility": {
+                      "view": {
+                        "enabled": true,
+                        "type": "public",
+                        "tags": [],
+                        "orgs": []
+                      },
+                      "subscribe": {
+                        "enabled": true,
+                        "type": "authenticated",
+                        "tags": [],
+                        "orgs": []
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -50059,6 +53683,28 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/DraftProductPublish"
+              },
+              "examples": {
+                "DraftProductPublish": {
+                  "summary": "Example of draft product publish.",
+                  "value": {
+                    "draft_product_url": "https://api.acme-apim.example.com/api/orgs/acme-org/drafts/draft-products/draft-product-id",
+                    "visibility": {
+                      "view": {
+                        "enabled": true,
+                        "type": "public",
+                        "tags": [],
+                        "orgs": []
+                      },
+                      "subscribe": {
+                        "enabled": true,
+                        "type": "authenticated",
+                        "tags": [],
+                        "orgs": []
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -50320,11 +53966,35 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Invitation"
+              },
+              "examples": {
+                "Invitation": {
+                  "summary": "Example of invitation creation at catalog scope.",
+                  "value": {
+                    "name": "acme-invitation",
+                    "title": "Acme invitation",
+                    "summary": "An example invitation creation at catalog scope",
+                    "notify": true,
+                    "email": "acme@example.com"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Invitation"
+              },
+              "examples": {
+                "Invitation": {
+                  "summary": "Example of invitation creation at catalog scope.",
+                  "value": {
+                    "name": "acme-invitation",
+                    "title": "Acme invitation",
+                    "summary": "An example invitation creation at catalog scope",
+                    "notify": true,
+                    "email": "acme@example.com"
+                  }
+                }
               }
             }
           }
@@ -50521,11 +54191,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Invitation"
+              },
+              "examples": {
+                "Invitation": {
+                  "summary": "Example of invitation update at catalog scope.",
+                  "value": {
+                    "title": "Acme invitation",
+                    "summary": "An example invitation update at catalog scope",
+                    "email": "acme@example.com"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Invitation"
+              },
+              "examples": {
+                "Invitation": {
+                  "summary": "Example of invitation update at catalog scope.",
+                  "value": {
+                    "title": "Acme invitation",
+                    "summary": "An example invitation update at catalog scope",
+                    "email": "acme@example.com"
+                  }
+                }
               }
             }
           }
@@ -50839,7 +54529,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationCreate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation creation at catalog scope.",
                   "value": {
                     "name": "acme-invitation",
@@ -50861,7 +54551,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationCreate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation creation at catalog scope.",
                   "value": {
                     "name": "acme-invitation",
@@ -51077,7 +54767,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationUpdate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation update at catalog scope.",
                   "value": {
                     "title": "Acme member invitation update",
@@ -51096,7 +54786,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationUpdate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation update at catalog scope.",
                   "value": {
                     "title": "Acme member invitation update",
@@ -51428,11 +55118,45 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member create at catalog scope.",
+                  "value": {
+                    "name": "acme-member",
+                    "title": "ACME Member",
+                    "summary": "An example member create",
+                    "user": {
+                      "url": "https://acme-apim.example.com/api/user-registries/acme-org/acme-user-registry1/users/acme-user"
+                    },
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/roles/role1",
+                      "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/roles/role1"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member create at catalog scope.",
+                  "value": {
+                    "name": "acme-member",
+                    "title": "ACME Member",
+                    "summary": "An example member create",
+                    "user": {
+                      "url": "https://acme-apim.example.com/api/user-registries/acme-org/acme-user-registry1/users/acme-user"
+                    },
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/roles/role1",
+                      "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/roles/role1"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -51632,11 +55356,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member update at catalog scope.",
+                  "value": {
+                    "name": "updated-acme-member",
+                    "title": "Updated ACME Member",
+                    "summary": "An example member update",
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/roles/role1",
+                      "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/roles/role2"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member update at catalog scope.",
+                  "value": {
+                    "name": "updated-acme-member",
+                    "title": "Updated ACME Member",
+                    "summary": "An example member update",
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/roles/role1",
+                      "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/roles/role2"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -51848,11 +55600,27 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Task"
+              },
+              "examples": {
+                "Task": {
+                  "summary": "Example of app update at catalog scope with state approved.",
+                  "value": {
+                    "state": "approved"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Task"
+              },
+              "examples": {
+                "Task": {
+                  "summary": "Example of app update at catalog scope with state approved.",
+                  "value": {
+                    "state": "approved"
+                  }
+                }
               }
             }
           }
@@ -52269,7 +56037,7 @@
                 "$ref": "#/components/schemas/Role"
               },
               "examples": {
-                "roleUpdate": {
+                "Role": {
                   "summary": "Example of role update at catalog scope.",
                   "value": {
                     "permission_urls": [
@@ -52295,7 +56063,7 @@
                 "$ref": "#/components/schemas/Role"
               },
               "examples": {
-                "roleUpdate": {
+                "Role": {
                   "summary": "Example of role update at catalog scope.",
                   "value": {
                     "permission_urls": [
@@ -55382,11 +59150,59 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Extension"
+              },
+              "examples": {
+                "Extension": {
+                  "summary": "Example of extension creation at catalog scope.",
+                  "value": {
+                    "info": {
+                      "name": "acme-extension",
+                      "version": "1.0.0",
+                      "title": "Acme extension creation",
+                      "description": "An example extension creation.",
+                      "termsOfService": "https://www.acme.com/legal",
+                      "contact": {
+                        "name": "Aaron Cohen",
+                        "url": "http://acme.example.com",
+                        "email": "acme@example.com"
+                      },
+                      "license": {
+                        "name": "Tom Clayton",
+                        "url": "http://acmelicense.example.com"
+                      }
+                    },
+                    "extension": "1.0.0"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Extension"
+              },
+              "examples": {
+                "Extension": {
+                  "summary": "Example of extension creation at catalog scope.",
+                  "value": {
+                    "info": {
+                      "name": "acme-extension",
+                      "version": "1.0.0",
+                      "title": "Acme extension creation",
+                      "description": "An example extension creation.",
+                      "termsOfService": "https://www.acme.com/legal",
+                      "contact": {
+                        "name": "Aaron Cohen",
+                        "url": "http://acme.example.com",
+                        "email": "acme@example.com"
+                      },
+                      "license": {
+                        "name": "Tom Clayton",
+                        "url": "http://acmelicense.example.com"
+                      }
+                    },
+                    "extension": "1.0.0"
+                  }
+                }
               }
             }
           }
@@ -55688,11 +59504,59 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Extension"
+              },
+              "examples": {
+                "Extension": {
+                  "summary": "Example of extension update by id at catalog scope.",
+                  "value": {
+                    "info": {
+                      "name": "acme-extension",
+                      "version": "1.0.0",
+                      "title": "Acme extension update",
+                      "description": "An example extension update.",
+                      "termsOfService": "https://www.acme.com/legal",
+                      "contact": {
+                        "name": "Aaron Cohen",
+                        "url": "http://acme.example.com",
+                        "email": "acme@example.com"
+                      },
+                      "license": {
+                        "name": "Tom Clayton",
+                        "url": "http://acmelicense.example.com"
+                      }
+                    },
+                    "extension": "1.0.0"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Extension"
+              },
+              "examples": {
+                "Extension": {
+                  "summary": "Example of extension update by id at catalog scope.",
+                  "value": {
+                    "info": {
+                      "name": "acme-extension",
+                      "version": "1.0.0",
+                      "title": "Acme extension update",
+                      "description": "An example extension update.",
+                      "termsOfService": "https://www.acme.com/legal",
+                      "contact": {
+                        "name": "Aaron Cohen",
+                        "url": "http://acme.example.com",
+                        "email": "acme@example.com"
+                      },
+                      "license": {
+                        "name": "Tom Clayton",
+                        "url": "http://acmelicense.example.com"
+                      }
+                    },
+                    "extension": "1.0.0"
+                  }
+                }
               }
             }
           }
@@ -55844,11 +59708,59 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Extension"
+              },
+              "examples": {
+                "Extension": {
+                  "summary": "Example of extension update by name and version at catalog scope.",
+                  "value": {
+                    "info": {
+                      "name": "acme-extension",
+                      "version": "1.0.0",
+                      "title": "Acme extension update",
+                      "description": "An example extension update.",
+                      "termsOfService": "https://www.acme.com/legal",
+                      "contact": {
+                        "name": "Aaron Cohen",
+                        "url": "http://acme.example.com",
+                        "email": "acme@example.com"
+                      },
+                      "license": {
+                        "name": "Tom Clayton",
+                        "url": "http://acmelicense.example.com"
+                      }
+                    },
+                    "extension": "1.0.0"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Extension"
+              },
+              "examples": {
+                "Extension": {
+                  "summary": "Example of extension update by name and version at catalog scope.",
+                  "value": {
+                    "info": {
+                      "name": "acme-extension",
+                      "version": "1.0.0",
+                      "title": "Acme extension update",
+                      "description": "An example extension update.",
+                      "termsOfService": "https://www.acme.com/legal",
+                      "contact": {
+                        "name": "Aaron Cohen",
+                        "url": "http://acme.example.com",
+                        "email": "acme@example.com"
+                      },
+                      "license": {
+                        "name": "Tom Clayton",
+                        "url": "http://acmelicense.example.com"
+                      }
+                    },
+                    "extension": "1.0.0"
+                  }
+                }
               }
             }
           }
@@ -56066,11 +59978,59 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Extension"
+              },
+              "examples": {
+                "Extension": {
+                  "summary": "Example of extension creation at space scope.",
+                  "value": {
+                    "info": {
+                      "name": "acme-extension",
+                      "version": "1.0.0",
+                      "title": "Acme extension creation",
+                      "description": "An example extension creation.",
+                      "termsOfService": "https://www.acme.com/legal",
+                      "contact": {
+                        "name": "Aaron Cohen",
+                        "url": "http://acme.example.com",
+                        "email": "acme@example.com"
+                      },
+                      "license": {
+                        "name": "Tom Clayton",
+                        "url": "http://acmelicense.example.com"
+                      }
+                    },
+                    "extension": "1.0.0"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Extension"
+              },
+              "examples": {
+                "Extension": {
+                  "summary": "Example of extension creation at space scope.",
+                  "value": {
+                    "info": {
+                      "name": "acme-extension",
+                      "version": "1.0.0",
+                      "title": "Acme extension creation",
+                      "description": "An example extension creation.",
+                      "termsOfService": "https://www.acme.com/legal",
+                      "contact": {
+                        "name": "Aaron Cohen",
+                        "url": "http://acme.example.com",
+                        "email": "acme@example.com"
+                      },
+                      "license": {
+                        "name": "Tom Clayton",
+                        "url": "http://acmelicense.example.com"
+                      }
+                    },
+                    "extension": "1.0.0"
+                  }
+                }
               }
             }
           }
@@ -56378,11 +60338,59 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Extension"
+              },
+              "examples": {
+                "Extension": {
+                  "summary": "Example of extension update by id at space scope.",
+                  "value": {
+                    "info": {
+                      "name": "acme-extension",
+                      "version": "1.0.0",
+                      "title": "Acme extension update",
+                      "description": "An example extension update.",
+                      "termsOfService": "https://www.acme.com/legal",
+                      "contact": {
+                        "name": "Aaron Cohen",
+                        "url": "http://acme.example.com",
+                        "email": "acme@example.com"
+                      },
+                      "license": {
+                        "name": "Tom Clayton",
+                        "url": "http://acmelicense.example.com"
+                      }
+                    },
+                    "extension": "1.0.0"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Extension"
+              },
+              "examples": {
+                "Extension": {
+                  "summary": "Example of extension update by id at space scope.",
+                  "value": {
+                    "info": {
+                      "name": "acme-extension",
+                      "version": "1.0.0",
+                      "title": "Acme extension update",
+                      "description": "An example extension update.",
+                      "termsOfService": "https://www.acme.com/legal",
+                      "contact": {
+                        "name": "Aaron Cohen",
+                        "url": "http://acme.example.com",
+                        "email": "acme@example.com"
+                      },
+                      "license": {
+                        "name": "Tom Clayton",
+                        "url": "http://acmelicense.example.com"
+                      }
+                    },
+                    "extension": "1.0.0"
+                  }
+                }
               }
             }
           }
@@ -56537,11 +60545,59 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Extension"
+              },
+              "examples": {
+                "Extension": {
+                  "summary": "Example of extension update by name and version at space scope.",
+                  "value": {
+                    "info": {
+                      "name": "acme-extension",
+                      "version": "1.0.0",
+                      "title": "Acme extension update",
+                      "description": "An example extension update.",
+                      "termsOfService": "https://www.acme.com/legal",
+                      "contact": {
+                        "name": "Aaron Cohen",
+                        "url": "http://acme.example.com",
+                        "email": "acme@example.com"
+                      },
+                      "license": {
+                        "name": "Tom Clayton",
+                        "url": "http://acmelicense.example.com"
+                      }
+                    },
+                    "extension": "1.0.0"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Extension"
+              },
+              "examples": {
+                "Extension": {
+                  "summary": "Example of extension update by name and version at space scope.",
+                  "value": {
+                    "info": {
+                      "name": "acme-extension",
+                      "version": "1.0.0",
+                      "title": "Acme extension update",
+                      "description": "An example extension update.",
+                      "termsOfService": "https://www.acme.com/legal",
+                      "contact": {
+                        "name": "Aaron Cohen",
+                        "url": "http://acme.example.com",
+                        "email": "acme@example.com"
+                      },
+                      "license": {
+                        "name": "Tom Clayton",
+                        "url": "http://acmelicense.example.com"
+                      }
+                    },
+                    "extension": "1.0.0"
+                  }
+                }
               }
             }
           }
@@ -57616,11 +61672,35 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyError"
+              },
+              "examples": {
+                "GlobalPolicyError": {
+                  "summary": "Example of global policy error creation at catalog scope.",
+                  "value": {
+                    "name": "acme",
+                    "title": "Acme Global policy error creation",
+                    "summary": "An example global policy error creation",
+                    "scope": "catalog",
+                    "global_policy_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyError"
+              },
+              "examples": {
+                "GlobalPolicyError": {
+                  "summary": "Example of global policy error creation at catalog scope.",
+                  "value": {
+                    "name": "acme",
+                    "title": "Acme Global policy error creation",
+                    "summary": "An example global policy error creation",
+                    "scope": "catalog",
+                    "global_policy_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             }
           }
@@ -57713,11 +61793,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyError"
+              },
+              "examples": {
+                "GlobalPolicyError": {
+                  "summary": "Example of global policy error update at catalog scope.",
+                  "value": {
+                    "title": "Acme Global policy error update",
+                    "summary": "An example global policy error update",
+                    "global_policy_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyError"
+              },
+              "examples": {
+                "GlobalPolicyError": {
+                  "summary": "Example of global policy error update at catalog scope.",
+                  "value": {
+                    "title": "Acme Global policy error update",
+                    "summary": "An example global policy error update",
+                    "global_policy_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             }
           }
@@ -57822,11 +61922,35 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyError"
+              },
+              "examples": {
+                "GlobalPolicyError": {
+                  "summary": "Example of global policy error creation at space scope.",
+                  "value": {
+                    "name": "acme",
+                    "title": "Acme Global policy error creation",
+                    "summary": "An example global policy error creation",
+                    "scope": "space",
+                    "global_policy_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyError"
+              },
+              "examples": {
+                "GlobalPolicyError": {
+                  "summary": "Example of global policy error creation at space scope.",
+                  "value": {
+                    "name": "acme",
+                    "title": "Acme Global policy error creation",
+                    "summary": "An example global policy error creation",
+                    "scope": "space",
+                    "global_policy_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             }
           }
@@ -57919,11 +62043,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyError"
+              },
+              "examples": {
+                "GlobalPolicyError": {
+                  "summary": "Example of global policy error update at space scope.",
+                  "value": {
+                    "title": "Acme Global policy error update",
+                    "summary": "An example global policy error update",
+                    "global_policy_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyError"
+              },
+              "examples": {
+                "GlobalPolicyError": {
+                  "summary": "Example of global policy error update at space scope.",
+                  "value": {
+                    "title": "Acme Global policy error update",
+                    "summary": "An example global policy error update",
+                    "global_policy_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             }
           }
@@ -58025,11 +62169,35 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyPrehook"
+              },
+              "examples": {
+                "GlobalPolicyPrehook": {
+                  "summary": "Example of global policy prehooks creation at catalog scope.",
+                  "value": {
+                    "name": "acme",
+                    "title": "Acme Global policy prehooks creation",
+                    "summary": "An example global policy prehooks creation",
+                    "scope": "catalog",
+                    "global_policy_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyPrehook"
+              },
+              "examples": {
+                "GlobalPolicyPrehook": {
+                  "summary": "Example of global policy prehooks creation at catalog scope.",
+                  "value": {
+                    "name": "acme",
+                    "title": "Acme Global policy prehooks creation",
+                    "summary": "An example global policy prehooks creation",
+                    "scope": "catalog",
+                    "global_policy_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             }
           }
@@ -58122,11 +62290,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyPrehook"
+              },
+              "examples": {
+                "GlobalPolicyPrehook": {
+                  "summary": "Example of global policy prehooks update at catalog scope.",
+                  "value": {
+                    "title": "Acme Global policy prehooks update",
+                    "summary": "An example global policy prehooks update",
+                    "global_policy_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyPrehook"
+              },
+              "examples": {
+                "GlobalPolicyPrehook": {
+                  "summary": "Example of global policy prehooks update at catalog scope.",
+                  "value": {
+                    "title": "Acme Global policy prehooks update",
+                    "summary": "An example global policy prehooks update",
+                    "global_policy_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             }
           }
@@ -58231,11 +62419,35 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyPrehook"
+              },
+              "examples": {
+                "GlobalPolicyPrehook": {
+                  "summary": "Example of global policy prehooks creation at space scope.",
+                  "value": {
+                    "name": "acme",
+                    "title": "Acme Global policy prehooks creation",
+                    "summary": "An example global policy prehooks creation",
+                    "scope": "space",
+                    "global_policy_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyPrehook"
+              },
+              "examples": {
+                "GlobalPolicyPrehook": {
+                  "summary": "Example of global policy prehooks creation at space scope.",
+                  "value": {
+                    "name": "acme",
+                    "title": "Acme Global policy prehooks creation",
+                    "summary": "An example global policy prehooks creation",
+                    "scope": "space",
+                    "global_policy_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             }
           }
@@ -58328,11 +62540,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyPrehook"
+              },
+              "examples": {
+                "GlobalPolicyPrehook": {
+                  "summary": "Example of global policy error update at space scope.",
+                  "value": {
+                    "title": "Acme Global policy prehooks update",
+                    "summary": "An example global policy prehooks update",
+                    "global_policy_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyPrehook"
+              },
+              "examples": {
+                "GlobalPolicyPrehook": {
+                  "summary": "Example of global policy error update at space scope.",
+                  "value": {
+                    "title": "Acme Global policy prehooks update",
+                    "summary": "An example global policy prehooks update",
+                    "global_policy_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             }
           }
@@ -58434,11 +62666,35 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyPosthook"
+              },
+              "examples": {
+                "GlobalPolicyPosthook": {
+                  "summary": "Example of global policy posthooks creation at catalog scope.",
+                  "value": {
+                    "name": "acme",
+                    "title": "Acme Global policy posthooks creation",
+                    "summary": "An example global policy posthooks creation",
+                    "scope": "catalog",
+                    "global_policy_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyPosthook"
+              },
+              "examples": {
+                "GlobalPolicyPosthook": {
+                  "summary": "Example of global policy posthooks creation at catalog scope.",
+                  "value": {
+                    "name": "acme",
+                    "title": "Acme Global policy posthooks creation",
+                    "summary": "An example global policy posthooks creation",
+                    "scope": "catalog",
+                    "global_policy_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             }
           }
@@ -58531,11 +62787,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyPosthook"
+              },
+              "examples": {
+                "GlobalPolicyPosthook": {
+                  "summary": "Example of global policy posthooks update at catalog scope.",
+                  "value": {
+                    "title": "Acme Global policy error update",
+                    "summary": "An example global policy error update",
+                    "global_policy_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyPosthook"
+              },
+              "examples": {
+                "GlobalPolicyPosthook": {
+                  "summary": "Example of global policy posthooks update at catalog scope.",
+                  "value": {
+                    "title": "Acme Global policy error update",
+                    "summary": "An example global policy error update",
+                    "global_policy_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             }
           }
@@ -58640,11 +62916,35 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyPosthook"
+              },
+              "examples": {
+                "GlobalPolicyPosthook": {
+                  "summary": "Example of global policy posthooks creation at space scope.",
+                  "value": {
+                    "name": "acme",
+                    "title": "Acme Global policy error creation",
+                    "summary": "An example global policy error creation",
+                    "scope": "space",
+                    "global_policy_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyPosthook"
+              },
+              "examples": {
+                "GlobalPolicyPosthook": {
+                  "summary": "Example of global policy posthooks creation at space scope.",
+                  "value": {
+                    "name": "acme",
+                    "title": "Acme Global policy error creation",
+                    "summary": "An example global policy error creation",
+                    "scope": "space",
+                    "global_policy_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             }
           }
@@ -58737,11 +63037,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyPosthook"
+              },
+              "examples": {
+                "GlobalPolicyPosthook": {
+                  "summary": "Example of global policy posthooks update at space scope.",
+                  "value": {
+                    "title": "Acme Global policy error update",
+                    "summary": "An example global policy error update",
+                    "global_policy_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/GlobalPolicyPosthook"
+              },
+              "examples": {
+                "GlobalPolicyPosthook": {
+                  "summary": "Example of global policy posthooks update at space scope.",
+                  "value": {
+                    "title": "Acme Global policy error update",
+                    "summary": "An example global policy error update",
+                    "global_policy_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/configured-gateway-services/acme-configured-gateway-service/global-policies/global-policy-id"
+                  }
+                }
               }
             }
           }
@@ -59421,7 +63741,7 @@
                 "$ref": "#/components/schemas/SpaceSetting"
               },
               "examples": {
-                "spaceSettingUpdate": {
+                "SpaceSetting": {
                   "summary": "Example of fields which can be updated on a space settings object.",
                   "value": {
                     "invitation_ttl": 172800,
@@ -59451,7 +63771,7 @@
                 "$ref": "#/components/schemas/SpaceSetting"
               },
               "examples": {
-                "spaceSettingUpdate": {
+                "SpaceSetting": {
                   "summary": "Example of fields which can be updated on a space settings object.",
                   "value": {
                     "invitation_ttl": 172800,
@@ -59711,11 +64031,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at space scope and space subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello,\n\nYou have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at space scope and space subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -59882,6 +64230,23 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationLanguage"
+              },
+              "examples": {
+                "NotificationLanguage": {
+                  "summary": "Example of notification language update at space scope and space subcollection.",
+                  "value": {
+                    "title": "Example notification language update",
+                    "notification_template_name": "invitation",
+                    "notification_template_type": "space",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text",
+                      "html"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -60055,11 +64420,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at space scope and consumer subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello,\n\nYou have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationTemplate"
+              },
+              "examples": {
+                "NotificationTemplate": {
+                  "summary": "Example of notification template update at space scope and consumer subcollection.",
+                  "value": {
+                    "title": "Acme notification template",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -60226,6 +64619,23 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/NotificationLanguage"
+              },
+              "examples": {
+                "NotificationLanguage": {
+                  "summary": "Example of notification language update at space scope and consumer subcollection.",
+                  "value": {
+                    "title": "Example notification language update",
+                    "notification_template_name": "invitation",
+                    "notification_template_type": "consumer",
+                    "subject": "Invitation to join Acme",
+                    "body": "Hello, You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.\n",
+                    "body_html": "Hello,<br><br>You have been invited to join Acme. This invitation provides access to collaborate and manage resources within the platform.<br><br>",
+                    "content_type": [
+                      "text",
+                      "html"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -60474,11 +64884,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Space"
+              },
+              "examples": {
+                "Space": {
+                  "summary": "Example of space creation.",
+                  "value": {
+                    "name": "acme-space",
+                    "title": "Acme space",
+                    "summary": "An example space creation"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Space"
+              },
+              "examples": {
+                "Space": {
+                  "summary": "Example of space creation.",
+                  "value": {
+                    "name": "acme-space",
+                    "title": "Acme space",
+                    "summary": "An example space creation"
+                  }
+                }
               }
             }
           }
@@ -60678,11 +65108,29 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Space"
+              },
+              "examples": {
+                "Space": {
+                  "summary": "Example of space update.",
+                  "value": {
+                    "title": "Acme space",
+                    "summary": "An example space updation"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Space"
+              },
+              "examples": {
+                "Space": {
+                  "summary": "Example of space update.",
+                  "value": {
+                    "title": "Acme space",
+                    "summary": "An example space updation"
+                  }
+                }
               }
             }
           }
@@ -60796,6 +65244,20 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/TransferOwner"
+              },
+              "examples": {
+                "TransferOwnerMember": {
+                  "summary": "Example of owner transfer using member url.",
+                  "value": {
+                    "new_owner_member_url": "https://api.acme-apim.example.com/api/spaces/org1/catalog1/space1/members/member1"
+                  }
+                },
+                "TransferOwnerAssociate": {
+                  "summary": "Example of owner transfer using associate url.",
+                  "value": {
+                    "new_owner_associate_url": "https://api.acme-apim.example.com/api/orgs/acme-org/associates/associate-id"
+                  }
+                }
               }
             }
           }
@@ -60866,6 +65328,20 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/EmailToOwners"
+              },
+              "examples": {
+                "EmailToOwners": {
+                  "summary": "Example of email to owners.",
+                  "value": {
+                    "subject": "An email to owners",
+                    "body": "This is an example email to owners",
+                    "content_type": "text",
+                    "consumer_org_urls": [
+                      "https://api.acme-apim.example.com/api/consumer-orgs/org1/catalog1/space1/consumer-org1",
+                      "https://api.acme-apim.example.com/api/consumer-orgs/org1/catalog1/space1/consumer-org2"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -60937,6 +65413,28 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/DraftProductPublish"
+              },
+              "examples": {
+                "DraftProductPublish": {
+                  "summary": "Example of draft product stage at space scope.",
+                  "value": {
+                    "draft_product_url": "https://api.acme-apim.example.com/api/orgs/acme-org/drafts/draft-products/draft-product-id",
+                    "visibility": {
+                      "view": {
+                        "enabled": true,
+                        "type": "public",
+                        "tags": [],
+                        "orgs": []
+                      },
+                      "subscribe": {
+                        "enabled": true,
+                        "type": "authenticated",
+                        "tags": [],
+                        "orgs": []
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -61011,6 +65509,28 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/DraftProductPublish"
+              },
+              "examples": {
+                "DraftProductPublish": {
+                  "summary": "Example of draft product publish at space scope.",
+                  "value": {
+                    "draft_product_url": "https://api.acme-apim.example.com/api/orgs/acme-org/drafts/draft-products/draft-product-id",
+                    "visibility": {
+                      "view": {
+                        "enabled": true,
+                        "type": "public",
+                        "tags": [],
+                        "orgs": []
+                      },
+                      "subscribe": {
+                        "enabled": true,
+                        "type": "authenticated",
+                        "tags": [],
+                        "orgs": []
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -61227,11 +65747,35 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Invitation"
+              },
+              "examples": {
+                "Invitation": {
+                  "summary": "Example of invitation creation at space scope.",
+                  "value": {
+                    "name": "acme-invitation",
+                    "title": "Acme invitation",
+                    "summary": "An example invitation creation at space scope",
+                    "notify": true,
+                    "email": "acme@example.com"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Invitation"
+              },
+              "examples": {
+                "Invitation": {
+                  "summary": "Example of invitation creation at space scope.",
+                  "value": {
+                    "name": "acme-invitation",
+                    "title": "Acme invitation",
+                    "summary": "An example invitation creation at space scope",
+                    "notify": true,
+                    "email": "acme@example.com"
+                  }
+                }
               }
             }
           }
@@ -61431,11 +65975,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Invitation"
+              },
+              "examples": {
+                "Invitation": {
+                  "summary": "Example of invitation update at space scope.",
+                  "value": {
+                    "title": "Acme invitation",
+                    "summary": "An example invitation update at space scope",
+                    "email": "acme@example.com"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Invitation"
+              },
+              "examples": {
+                "Invitation": {
+                  "summary": "Example of invitation update at space scope.",
+                  "value": {
+                    "title": "Acme invitation",
+                    "summary": "An example invitation update at space scope",
+                    "email": "acme@example.com"
+                  }
+                }
               }
             }
           }
@@ -61872,7 +66436,7 @@
                 "$ref": "#/components/schemas/Role"
               },
               "examples": {
-                "roleUpdate": {
+                "Role": {
                   "summary": "Example of role update at space scope.",
                   "value": {
                     "permission_urls": [
@@ -61898,7 +66462,7 @@
                 "$ref": "#/components/schemas/Role"
               },
               "examples": {
-                "roleUpdate": {
+                "Role": {
                   "summary": "Example of role update at space scope.",
                   "value": {
                     "permission_urls": [
@@ -61981,7 +66545,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationCreate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation creation at space scope.",
                   "value": {
                     "name": "acme-invitation",
@@ -62003,7 +66567,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationCreate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation creation at space scope.",
                   "value": {
                     "name": "acme-invitation",
@@ -62222,7 +66786,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationUpdate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation update at space scope.",
                   "value": {
                     "title": "Acme member invitation update",
@@ -62241,7 +66805,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationUpdate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation update at space scope.",
                   "value": {
                     "title": "Acme member invitation update",
@@ -62585,11 +67149,45 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member create at space scope.",
+                  "value": {
+                    "name": "acme-member",
+                    "title": "ACME Member",
+                    "summary": "An example member create",
+                    "user": {
+                      "url": "https://acme-apim.example.com/api/user-registries/acme-org/acme-user-registry1/users/acme-user"
+                    },
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/roles/role1",
+                      "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/roles/role2"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member create at space scope.",
+                  "value": {
+                    "name": "acme-member",
+                    "title": "ACME Member",
+                    "summary": "An example member create",
+                    "user": {
+                      "url": "https://acme-apim.example.com/api/user-registries/acme-org/acme-user-registry1/users/acme-user"
+                    },
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/roles/role1",
+                      "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/roles/role2"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -62792,11 +67390,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member update at space scope.",
+                  "value": {
+                    "name": "updated-acme-member",
+                    "title": "Updated ACME Member",
+                    "summary": "An example member update",
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/roles/role1",
+                      "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/roles/role1"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member update at space scope.",
+                  "value": {
+                    "name": "updated-acme-member",
+                    "title": "Updated ACME Member",
+                    "summary": "An example member update",
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/roles/role1",
+                      "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/roles/role1"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -63014,11 +67640,27 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Task"
+              },
+              "examples": {
+                "Task": {
+                  "summary": "Example of app update at space scope with state approved.",
+                  "value": {
+                    "state": "approved"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Task"
+              },
+              "examples": {
+                "Task": {
+                  "summary": "Example of app update at space scope with state approved.",
+                  "value": {
+                    "state": "approved"
+                  }
+                }
               }
             }
           }
@@ -63256,11 +67898,27 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConsumerOrgSetting"
+              },
+              "examples": {
+                "ConsumerOrgSetting": {
+                  "summary": "Example consumer-org setting update at catalog scope.",
+                  "value": {
+                    "invitation_ttl": 172800
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ConsumerOrgSetting"
+              },
+              "examples": {
+                "ConsumerOrgSetting": {
+                  "summary": "Example consumer-org setting update at catalog scope.",
+                  "value": {
+                    "invitation_ttl": 172800
+                  }
+                }
               }
             }
           }
@@ -63409,11 +68067,27 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConsumerOrgSetting"
+              },
+              "examples": {
+                "ConsumerOrgSetting": {
+                  "summary": "Example consumer-org setting update at space scope.",
+                  "value": {
+                    "invitation_ttl": 172800
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ConsumerOrgSetting"
+              },
+              "examples": {
+                "ConsumerOrgSetting": {
+                  "summary": "Example consumer-org setting update at space scope.",
+                  "value": {
+                    "invitation_ttl": 172800
+                  }
+                }
               }
             }
           }
@@ -63702,11 +68376,35 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Invitation"
+              },
+              "examples": {
+                "Invitation": {
+                  "summary": "Example of invitation creation at consumer-org scope.",
+                  "value": {
+                    "name": "acme-invitation",
+                    "title": "Acme invitation",
+                    "summary": "An example invitation creation at consumer-org scope",
+                    "notify": true,
+                    "email": "acme@example.com"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Invitation"
+              },
+              "examples": {
+                "Invitation": {
+                  "summary": "Example of invitation creation at consumer-org scope.",
+                  "value": {
+                    "name": "acme-invitation",
+                    "title": "Acme invitation",
+                    "summary": "An example invitation creation at consumer-org scope",
+                    "notify": true,
+                    "email": "acme@example.com"
+                  }
+                }
               }
             }
           }
@@ -63906,11 +68604,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Invitation"
+              },
+              "examples": {
+                "Invitation": {
+                  "summary": "Example of invitation update at consumer-org scope.",
+                  "value": {
+                    "title": "Acme invitation",
+                    "summary": "An example invitation update at consumer-org scope",
+                    "email": "acme@example.com"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Invitation"
+              },
+              "examples": {
+                "Invitation": {
+                  "summary": "Example of invitation update at consumer-org scope.",
+                  "value": {
+                    "title": "Acme invitation",
+                    "summary": "An example invitation update at consumer-org scope",
+                    "email": "acme@example.com"
+                  }
+                }
               }
             }
           }
@@ -64078,11 +68796,35 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Invitation"
+              },
+              "examples": {
+                "Invitation": {
+                  "summary": "Example of invitation creation at consumer-org(space-initiated) scope.",
+                  "value": {
+                    "name": "acme-invitation",
+                    "title": "Acme invitation",
+                    "summary": "An example invitation creation at consumer-org(space-initiated) scope",
+                    "notify": true,
+                    "email": "acme@example.com"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Invitation"
+              },
+              "examples": {
+                "Invitation": {
+                  "summary": "Example of invitation creation at consumer-org(space-initiated) scope.",
+                  "value": {
+                    "name": "acme-invitation",
+                    "title": "Acme invitation",
+                    "summary": "An example invitation creation at consumer-org(space-initiated) scope",
+                    "notify": true,
+                    "email": "acme@example.com"
+                  }
+                }
               }
             }
           }
@@ -64285,11 +69027,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Invitation"
+              },
+              "examples": {
+                "Invitation": {
+                  "summary": "Example of invitation update at consumer-org(space-initiated) scope.",
+                  "value": {
+                    "title": "Acme invitation",
+                    "summary": "An example invitation update at consumer-org(space-initiated) scope",
+                    "email": "acme@example.com"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Invitation"
+              },
+              "examples": {
+                "Invitation": {
+                  "summary": "Example of invitation update at consumer-org(space-initiated) scope.",
+                  "value": {
+                    "title": "Acme invitation",
+                    "summary": "An example invitation update at consumer-org(space-initiated) scope",
+                    "email": "acme@example.com"
+                  }
+                }
               }
             }
           }
@@ -64457,11 +69219,33 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConsumerOrg"
+              },
+              "examples": {
+                "ConsumerOrgCatalog": {
+                  "summary": "Example consumer org create at catalog scope.",
+                  "value": {
+                    "name": "acme-consumer-org",
+                    "title": "ACME Consumer Org",
+                    "summary": "An example consumer org create",
+                    "owner_url": "https://api.acme-apim.example.com/api/user-registries/acme-org/acme-user-registry/users/acme-user"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ConsumerOrg"
+              },
+              "examples": {
+                "ConsumerOrgCatalog": {
+                  "summary": "Example consumer org create at catalog scope.",
+                  "value": {
+                    "name": "acme-consumer-org",
+                    "title": "ACME Consumer Org",
+                    "summary": "An example consumer org create",
+                    "owner_url": "https://api.acme-apim.example.com/api/user-registries/acme-org/acme-user-registry/users/acme-user"
+                  }
+                }
               }
             }
           }
@@ -64669,11 +69453,29 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConsumerOrg"
+              },
+              "examples": {
+                "ConsumerOrgCatalog": {
+                  "summary": "Example consumer org update at catalog scope.",
+                  "value": {
+                    "title": "ACME Consumer Org Updated",
+                    "summary": "An example consumer org update"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ConsumerOrg"
+              },
+              "examples": {
+                "ConsumerOrgCatalog": {
+                  "summary": "Example consumer org update at catalog scope.",
+                  "value": {
+                    "title": "ACME Consumer Org Updated",
+                    "summary": "An example consumer org update"
+                  }
+                }
               }
             }
           }
@@ -64787,6 +69589,20 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/TransferOwner"
+              },
+              "examples": {
+                "TransferOwnerMember": {
+                  "summary": "Example of owner transfer using member url at catalog scope.",
+                  "value": {
+                    "new_owner_member_url": "https://api.acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-consumer-org/members/acme-member"
+                  }
+                },
+                "TransferOwnerAssociate": {
+                  "summary": "Example of owner transfer using associate url at catalog scope.",
+                  "value": {
+                    "new_owner_associate_url": "https://api.acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-consumer-org/associates/acme-associate"
+                  }
+                }
               }
             }
           }
@@ -64849,11 +69665,33 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConsumerOrg"
+              },
+              "examples": {
+                "ConsumerOrgCatalog": {
+                  "summary": "Example consumer org create at space scope.",
+                  "value": {
+                    "name": "acme-consumer-org",
+                    "title": "ACME Consumer Org",
+                    "summary": "An example consumer org create",
+                    "owner_url": "https://api.acme-apim.example.com/api/user-registries/acme-org/acme-user-registry/users/acme-user"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ConsumerOrg"
+              },
+              "examples": {
+                "ConsumerOrgCatalog": {
+                  "summary": "Example consumer org create at space scope.",
+                  "value": {
+                    "name": "acme-consumer-org",
+                    "title": "ACME Consumer Org",
+                    "summary": "An example consumer org create",
+                    "owner_url": "https://api.acme-apim.example.com/api/user-registries/acme-org/acme-user-registry/users/acme-user"
+                  }
+                }
               }
             }
           }
@@ -65064,11 +69902,29 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConsumerOrg"
+              },
+              "examples": {
+                "ConsumerOrgCatalog": {
+                  "summary": "Example consumer org update at space scope.",
+                  "value": {
+                    "title": "ACME Consumer Org Updated",
+                    "summary": "An example consumer org update"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ConsumerOrg"
+              },
+              "examples": {
+                "ConsumerOrgCatalog": {
+                  "summary": "Example consumer org update at space scope.",
+                  "value": {
+                    "title": "ACME Consumer Org Updated",
+                    "summary": "An example consumer org update"
+                  }
+                }
               }
             }
           }
@@ -65185,6 +70041,20 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/TransferOwner"
+              },
+              "examples": {
+                "TransferOwnerMember": {
+                  "summary": "Example of owner transfer using member url at space scope.",
+                  "value": {
+                    "new_owner_member_url": "https://api.acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-consumer-org/members/acme-member"
+                  }
+                },
+                "TransferOwnerAssociate": {
+                  "summary": "Example of owner transfer using associate url at space scope.",
+                  "value": {
+                    "new_owner_associate_url": "https://api.acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-consumer-org/associates/acme-associate"
+                  }
+                }
               }
             }
           }
@@ -65246,7 +70116,7 @@
                 "$ref": "#/components/schemas/Group"
               },
               "examples": {
-                "groupCreate": {
+                "Group": {
                   "summary": "Example of group creation at catalog scope.",
                   "value": {
                     "name": "acme-group",
@@ -65264,7 +70134,7 @@
                 "$ref": "#/components/schemas/Group"
               },
               "examples": {
-                "groupCreate": {
+                "Group": {
                   "summary": "Example of group creation at catalog scope.",
                   "value": {
                     "name": "acme-group",
@@ -65476,7 +70346,7 @@
                 "$ref": "#/components/schemas/Group"
               },
               "examples": {
-                "groupUpdate": {
+                "Group": {
                   "summary": "Example of group update at catalog scope.",
                   "value": {
                     "title": "Acme group update",
@@ -65494,7 +70364,7 @@
                 "$ref": "#/components/schemas/Group"
               },
               "examples": {
-                "groupUpdate": {
+                "Group": {
                   "summary": "Example of group update at catalog scope.",
                   "value": {
                     "title": "Acme group update",
@@ -65608,7 +70478,7 @@
                 "$ref": "#/components/schemas/Group"
               },
               "examples": {
-                "groupCreate": {
+                "Group": {
                   "summary": "Example of group creation at space scope.",
                   "value": {
                     "name": "acme-group",
@@ -65626,7 +70496,7 @@
                 "$ref": "#/components/schemas/Group"
               },
               "examples": {
-                "groupCreate": {
+                "Group": {
                   "summary": "Example of group creation at space scope.",
                   "value": {
                     "name": "acme-group",
@@ -65841,7 +70711,7 @@
                 "$ref": "#/components/schemas/Group"
               },
               "examples": {
-                "groupUpdate": {
+                "Group": {
                   "summary": "Example of group update at space scope.",
                   "value": {
                     "title": "Acme group update",
@@ -65859,7 +70729,7 @@
                 "$ref": "#/components/schemas/Group"
               },
               "examples": {
-                "groupUpdate": {
+                "Group": {
                   "summary": "Example of group update at space scope.",
                   "value": {
                     "title": "Acme group update",
@@ -65971,11 +70841,47 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/PaymentMethod"
+              },
+              "examples": {
+                "PaymentMethod": {
+                  "summary": "Example of payment method creation.",
+                  "value": {
+                    "name": "acme-payment",
+                    "title": "Acme payment method creation",
+                    "summary": "An example payment method creation",
+                    "billing_url": "https://api.acme-apim.example.com/api/catalogs/org/acme-catalog/configured-billings/configured-billing",
+                    "configuration": {
+                      "account_name": "Acme Steve",
+                      "account_email": "acme@example.com",
+                      "account_currency": "USD",
+                      "account_company": "XYZ",
+                      "account_phone": "(919) 555 6789"
+                    }
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/PaymentMethod"
+              },
+              "examples": {
+                "PaymentMethod": {
+                  "summary": "Example of payment method creation.",
+                  "value": {
+                    "name": "acme-payment",
+                    "title": "Acme payment method creation",
+                    "summary": "An example payment method creation",
+                    "billing_url": "https://api.acme-apim.example.com/api/catalogs/org/acme-catalog/configured-billings/configured-billing",
+                    "configuration": {
+                      "account_name": "Acme Steve",
+                      "account_email": "acme@example.com",
+                      "account_currency": "USD",
+                      "account_company": "XYZ",
+                      "account_phone": "(919) 555 6789"
+                    }
+                  }
+                }
               }
             }
           }
@@ -66146,11 +71052,47 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/PaymentMethod"
+              },
+              "examples": {
+                "PaymentMethod": {
+                  "summary": "Example of payment method update.",
+                  "value": {
+                    "name": "acme-payment",
+                    "title": "Acme payment method update",
+                    "summary": "An example payment method update",
+                    "billing_url": "https://api.acme-apim.example.com/api/catalogs/org/acme-catalog/configured-billings/configured-billing",
+                    "configuration": {
+                      "account_name": "Acme Steve",
+                      "account_email": "acme@example.com",
+                      "account_currency": "USD",
+                      "account_company": "XYZ",
+                      "account_phone": "(919) 555 6789"
+                    }
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/PaymentMethod"
+              },
+              "examples": {
+                "PaymentMethod": {
+                  "summary": "Example of payment method update.",
+                  "value": {
+                    "name": "acme-payment",
+                    "title": "Acme payment method update",
+                    "summary": "An example payment method update",
+                    "billing_url": "https://api.acme-apim.example.com/api/catalogs/org/acme-catalog/configured-billings/configured-billing",
+                    "configuration": {
+                      "account_name": "Acme Steve",
+                      "account_email": "acme@example.com",
+                      "account_currency": "USD",
+                      "account_company": "XYZ",
+                      "account_phone": "(919) 555 6789"
+                    }
+                  }
+                }
               }
             }
           }
@@ -66255,11 +71197,47 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/PaymentMethod"
+              },
+              "examples": {
+                "PaymentMethod": {
+                  "summary": "Example of payment method creation.",
+                  "value": {
+                    "name": "acme-payment",
+                    "title": "Acme payment method creation",
+                    "summary": "An example payment method creation",
+                    "billing_url": "https://api.acme-apim.example.com/api/catalogs/org/acme-catalog/configured-billings/configured-billing",
+                    "configuration": {
+                      "account_name": "Acme Steve",
+                      "account_email": "acme@example.com",
+                      "account_currency": "USD",
+                      "account_company": "XYZ",
+                      "account_phone": "(919) 555 6789"
+                    }
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/PaymentMethod"
+              },
+              "examples": {
+                "PaymentMethod": {
+                  "summary": "Example of payment method creation.",
+                  "value": {
+                    "name": "acme-payment",
+                    "title": "Acme payment method creation",
+                    "summary": "An example payment method creation",
+                    "billing_url": "https://api.acme-apim.example.com/api/catalogs/org/acme-catalog/configured-billings/configured-billing",
+                    "configuration": {
+                      "account_name": "Acme Steve",
+                      "account_email": "acme@example.com",
+                      "account_currency": "USD",
+                      "account_company": "XYZ",
+                      "account_phone": "(919) 555 6789"
+                    }
+                  }
+                }
               }
             }
           }
@@ -66433,11 +71411,47 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/PaymentMethod"
+              },
+              "examples": {
+                "PaymentMethod": {
+                  "summary": "Example of payment method update.",
+                  "value": {
+                    "name": "acme-payment",
+                    "title": "Acme payment method update",
+                    "summary": "An example payment method update",
+                    "billing_url": "https://api.acme-apim.example.com/api/catalogs/org/acme-catalog/configured-billings/configured-billing",
+                    "configuration": {
+                      "account_name": "Acme Steve",
+                      "account_email": "acme@example.com",
+                      "account_currency": "USD",
+                      "account_company": "XYZ",
+                      "account_phone": "(919) 555 6789"
+                    }
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/PaymentMethod"
+              },
+              "examples": {
+                "PaymentMethod": {
+                  "summary": "Example of payment method update.",
+                  "value": {
+                    "name": "acme-payment",
+                    "title": "Acme payment method update",
+                    "summary": "An example payment method update",
+                    "billing_url": "https://api.acme-apim.example.com/api/catalogs/org/acme-catalog/configured-billings/configured-billing",
+                    "configuration": {
+                      "account_name": "Acme Steve",
+                      "account_email": "acme@example.com",
+                      "account_currency": "USD",
+                      "account_company": "XYZ",
+                      "account_phone": "(919) 555 6789"
+                    }
+                  }
+                }
               }
             }
           }
@@ -67053,7 +72067,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationCreate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation creation at consumer-org scope.",
                   "value": {
                     "name": "acme-invitation",
@@ -67075,7 +72089,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationCreate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation creation at consumer-org scope.",
                   "value": {
                     "name": "acme-invitation",
@@ -67294,7 +72308,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationUpdate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation update at consumer-org scope.",
                   "value": {
                     "title": "Acme member invitation update",
@@ -67313,7 +72327,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationUpdate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation update at consumer-org scope.",
                   "value": {
                     "title": "Acme member invitation update",
@@ -67500,7 +72514,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationCreate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation creation at consumer-org(space initiated) scope.",
                   "value": {
                     "name": "acme-invitation",
@@ -67522,7 +72536,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationCreate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation creation at consumer-org(space initiated) scope.",
                   "value": {
                     "name": "acme-invitation",
@@ -67744,7 +72758,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationUpdate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation update at consumer-org(space initiated) scope.",
                   "value": {
                     "title": "Acme member invitation update",
@@ -67763,7 +72777,7 @@
                 "$ref": "#/components/schemas/MemberInvitation"
               },
               "examples": {
-                "memberInvitationUpdate": {
+                "MemberInvitation": {
                   "summary": "Example of member invitation update at consumer-org(space initiated) scope.",
                   "value": {
                     "title": "Acme member invitation update",
@@ -67948,11 +72962,45 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member create at consumer-org scope.",
+                  "value": {
+                    "name": "acme-member",
+                    "title": "ACME Member",
+                    "summary": "An example member create",
+                    "user": {
+                      "url": "https://acme-apim.example.com/api/user-registries/acme-org/acme-user-registry1/users/acme-user"
+                    },
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-consumer-org/roles/role1",
+                      "https://acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-consumer-org/roles/role2"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member create at consumer-org scope.",
+                  "value": {
+                    "name": "acme-member",
+                    "title": "ACME Member",
+                    "summary": "An example member create",
+                    "user": {
+                      "url": "https://acme-apim.example.com/api/user-registries/acme-org/acme-user-registry1/users/acme-user"
+                    },
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-consumer-org/roles/role1",
+                      "https://acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-consumer-org/roles/role2"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -68155,11 +73203,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member update at consumer-org scope.",
+                  "value": {
+                    "name": "updated-acme-member",
+                    "title": "Updated ACME Member",
+                    "summary": "An example member update",
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-consumer-org/roles/role1",
+                      "https://acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-consumer-org/roles/role1"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member update at consumer-org scope.",
+                  "value": {
+                    "name": "updated-acme-member",
+                    "title": "Updated ACME Member",
+                    "summary": "An example member update",
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-consumer-org/roles/role1",
+                      "https://acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-consumer-org/roles/role1"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -68264,11 +73340,45 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member create at consumer-org(space-initiated) scope.",
+                  "value": {
+                    "name": "acme-member",
+                    "title": "ACME Member",
+                    "summary": "An example member create",
+                    "user": {
+                      "url": "https://acme-apim.example.com/api/user-registries/acme-org/acme-user-registry1/users/acme-user"
+                    },
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-space/acme-consumer-org/roles/role1",
+                      "https://acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-space/acme-consumer-org/roles/role1"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member create at consumer-org(space-initiated) scope.",
+                  "value": {
+                    "name": "acme-member",
+                    "title": "ACME Member",
+                    "summary": "An example member create",
+                    "user": {
+                      "url": "https://acme-apim.example.com/api/user-registries/acme-org/acme-user-registry1/users/acme-user"
+                    },
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-space/acme-consumer-org/roles/role1",
+                      "https://acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-space/acme-consumer-org/roles/role1"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -68474,11 +73584,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member update at consumer-org(space-initiated).",
+                  "value": {
+                    "name": "updated-acme-member",
+                    "title": "Updated ACME Member",
+                    "summary": "An example member update",
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-space/acme-consumer-org/roles/role1",
+                      "https://acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-space/acme-consumer-org/roles/role1"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Member"
+              },
+              "examples": {
+                "Member": {
+                  "summary": "Example of member update at consumer-org(space-initiated).",
+                  "value": {
+                    "name": "updated-acme-member",
+                    "title": "Updated ACME Member",
+                    "summary": "An example member update",
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-space/acme-consumer-org/roles/role1",
+                      "https://acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-space/acme-consumer-org/roles/role1"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -68580,11 +73718,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/App"
+              },
+              "examples": {
+                "App": {
+                  "summary": "Example of app create.",
+                  "value": {
+                    "name": "acme-app",
+                    "title": "ACME App",
+                    "summary": "An example app create"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/App"
+              },
+              "examples": {
+                "App": {
+                  "summary": "Example of app create.",
+                  "value": {
+                    "name": "acme-app",
+                    "title": "ACME App",
+                    "summary": "An example app create"
+                  }
+                }
               }
             }
           }
@@ -68787,11 +73945,33 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/App"
+              },
+              "examples": {
+                "App": {
+                  "summary": "Example of app update with state enabled.",
+                  "value": {
+                    "name": "updated-acme-app",
+                    "title": "Updated ACME App",
+                    "summary": "An example app update",
+                    "state": "enabled"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/App"
+              },
+              "examples": {
+                "App": {
+                  "summary": "Example of app update with state enabled.",
+                  "value": {
+                    "name": "updated-acme-app",
+                    "title": "Updated ACME App",
+                    "summary": "An example app update",
+                    "state": "enabled"
+                  }
+                }
               }
             }
           }
@@ -69215,11 +74395,33 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Credential"
+              },
+              "examples": {
+                "Credential": {
+                  "summary": "Example of credential creation at catalog scope.",
+                  "value": {
+                    "name": "acme-credential",
+                    "title": "Acme credential creation",
+                    "client_id": "acme",
+                    "client_secret": "acme123"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Credential"
+              },
+              "examples": {
+                "Credential": {
+                  "summary": "Example of credential creation at catalog scope.",
+                  "value": {
+                    "name": "acme-credential",
+                    "title": "Acme credential creation",
+                    "client_id": "acme",
+                    "client_secret": "acme123"
+                  }
+                }
               }
             }
           }
@@ -69393,11 +74595,33 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Credential"
+              },
+              "examples": {
+                "Credential": {
+                  "summary": "Example of credential update at catalog scope.",
+                  "value": {
+                    "title": "Acme credential update",
+                    "summary": "An example credential update",
+                    "client_id": "acme",
+                    "client_secret": "acme1234"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Credential"
+              },
+              "examples": {
+                "Credential": {
+                  "summary": "Example of credential update at catalog scope.",
+                  "value": {
+                    "title": "Acme credential update",
+                    "summary": "An example credential update",
+                    "client_id": "acme",
+                    "client_secret": "acme1234"
+                  }
+                }
               }
             }
           }
@@ -69625,6 +74849,15 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Credential"
+              },
+              "examples": {
+                "Credential": {
+                  "summary": "Example of verifying client secret at catalog scope.",
+                  "value": {
+                    "client_id": "a5b88b99c71e14b5edd8916d2158bcef",
+                    "client_secret": "bfc79dd07d173d1484b9aca5ed76d993"
+                  }
+                }
               }
             }
           }
@@ -69693,11 +74926,33 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Credential"
+              },
+              "examples": {
+                "Credential": {
+                  "summary": "Example of credential creation at space scope.",
+                  "value": {
+                    "name": "acme-credential",
+                    "title": "Acme credential creation",
+                    "client_id": "acme",
+                    "client_secret": "acme123"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Credential"
+              },
+              "examples": {
+                "Credential": {
+                  "summary": "Example of credential creation at space scope.",
+                  "value": {
+                    "name": "acme-credential",
+                    "title": "Acme credential creation",
+                    "client_id": "acme",
+                    "client_secret": "acme123"
+                  }
+                }
               }
             }
           }
@@ -69906,11 +75161,33 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Credential"
+              },
+              "examples": {
+                "Credential": {
+                  "summary": "Example of credential update at space scope.",
+                  "value": {
+                    "title": "Acme credential update",
+                    "summary": "An example credential update",
+                    "client_id": "acme",
+                    "client_secret": "acme1234"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Credential"
+              },
+              "examples": {
+                "Credential": {
+                  "summary": "Example of credential update at space scope.",
+                  "value": {
+                    "title": "Acme credential update",
+                    "summary": "An example credential update",
+                    "client_id": "acme",
+                    "client_secret": "acme1234"
+                  }
+                }
               }
             }
           }
@@ -70147,6 +75424,15 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Credential"
+              },
+              "examples": {
+                "Credential": {
+                  "summary": "Example of verifying client secret at space scope.",
+                  "value": {
+                    "client_id": "a5b88b99c71e14b5edd8916d2158bcef",
+                    "client_secret": "bfc79dd07d173d1484b9aca5ed76d993"
+                  }
+                }
               }
             }
           }
@@ -70212,11 +75498,35 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Subscription"
+              },
+              "examples": {
+                "Subscription": {
+                  "summary": "Example of subscription create.",
+                  "value": {
+                    "name": "acme-subscription",
+                    "title": "ACME Subscription",
+                    "summary": "An example subscription create",
+                    "plan": "acme-plan",
+                    "product_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/products/acme-product"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Subscription"
+              },
+              "examples": {
+                "Subscription": {
+                  "summary": "Example of subscription create.",
+                  "value": {
+                    "name": "acme-subscription",
+                    "title": "ACME Subscription",
+                    "summary": "An example subscription create",
+                    "plan": "acme-plan",
+                    "product_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/products/acme-product"
+                  }
+                }
               }
             }
           }
@@ -70428,11 +75738,33 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Subscription"
+              },
+              "examples": {
+                "Subscription": {
+                  "summary": "Example of subscription update with state enabled.",
+                  "value": {
+                    "name": "acme-subscription",
+                    "title": "ACME Subscription",
+                    "summary": "An example subscription update",
+                    "state": "enabled"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Subscription"
+              },
+              "examples": {
+                "Subscription": {
+                  "summary": "Example of subscription update with state enabled.",
+                  "value": {
+                    "name": "acme-subscription",
+                    "title": "ACME Subscription",
+                    "summary": "An example subscription update",
+                    "state": "enabled"
+                  }
+                }
               }
             }
           }
@@ -70540,11 +75872,35 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Subscription"
+              },
+              "examples": {
+                "Subscription": {
+                  "summary": "Example of subscription create.",
+                  "value": {
+                    "name": "acme-subscription",
+                    "title": "ACME Subscription",
+                    "summary": "An example subscription create",
+                    "plan": "acme-plan",
+                    "product_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/products/acme-product"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Subscription"
+              },
+              "examples": {
+                "Subscription": {
+                  "summary": "Example of subscription create.",
+                  "value": {
+                    "name": "acme-subscription",
+                    "title": "ACME Subscription",
+                    "summary": "An example subscription create",
+                    "plan": "acme-plan",
+                    "product_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/products/acme-product"
+                  }
+                }
               }
             }
           }
@@ -70759,11 +76115,33 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Subscription"
+              },
+              "examples": {
+                "Subscription": {
+                  "summary": "Example of subscription update with state enabled.",
+                  "value": {
+                    "name": "acme-subscription",
+                    "title": "ACME Subscription",
+                    "summary": "An example subscription update",
+                    "state": "enabled"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Subscription"
+              },
+              "examples": {
+                "Subscription": {
+                  "summary": "Example of subscription update with state enabled.",
+                  "value": {
+                    "name": "acme-subscription",
+                    "title": "ACME Subscription",
+                    "summary": "An example subscription update",
+                    "state": "enabled"
+                  }
+                }
               }
             }
           }
@@ -71009,11 +76387,103 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/DraftProduct"
+              },
+              "examples": {
+                "DraftProduct": {
+                  "summary": "Example of draft product creation.",
+                  "value": {
+                    "info": {
+                      "version": "1.0.0",
+                      "title": "acme draft product creation",
+                      "name": "acme-draft-product",
+                      "summary": "An example draft product creation"
+                    },
+                    "gateways": [
+                      "datapower-api-gateway"
+                    ],
+                    "plans": {
+                      "default-plan": {
+                        "title": "Default Plan",
+                        "description": "Default Plan",
+                        "rate-limits": {
+                          "default": {
+                            "value": "100/1hour"
+                          }
+                        }
+                      }
+                    },
+                    "apis": {
+                      "acme-api1.0.0": {
+                        "name": "acme-api:1.0.0"
+                      },
+                      "acme2-api1.0.0": {
+                        "name": "acme2-api:1.0.0"
+                      }
+                    },
+                    "visibility": {
+                      "view": {
+                        "type": "public",
+                        "enabled": true
+                      },
+                      "subscribe": {
+                        "type": "authenticated",
+                        "enabled": true
+                      }
+                    },
+                    "product": "1.0.0"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/DraftProduct"
+              },
+              "examples": {
+                "DraftProduct": {
+                  "summary": "Example of draft product creation.",
+                  "value": {
+                    "info": {
+                      "version": "1.0.0",
+                      "title": "acme draft product creation",
+                      "name": "acme-draft-product",
+                      "summary": "An example draft product creation"
+                    },
+                    "gateways": [
+                      "datapower-api-gateway"
+                    ],
+                    "plans": {
+                      "default-plan": {
+                        "title": "Default Plan",
+                        "description": "Default Plan",
+                        "rate-limits": {
+                          "default": {
+                            "value": "100/1hour"
+                          }
+                        }
+                      }
+                    },
+                    "apis": {
+                      "acme-api1.0.0": {
+                        "name": "acme-api:1.0.0"
+                      },
+                      "acme2-api1.0.0": {
+                        "name": "acme2-api:1.0.0"
+                      }
+                    },
+                    "visibility": {
+                      "view": {
+                        "type": "public",
+                        "enabled": true
+                      },
+                      "subscribe": {
+                        "type": "authenticated",
+                        "enabled": true
+                      }
+                    },
+                    "product": "1.0.0"
+                  }
+                }
               }
             },
             "multipart/form-data": {
@@ -71308,11 +76778,109 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/DraftProduct"
+              },
+              "examples": {
+                "DraftProduct": {
+                  "summary": "Example of draft product update by id.",
+                  "value": {
+                    "info": {
+                      "title": "acme draft product update",
+                      "summary": "An example draft product update",
+                      "version": "1.0.0",
+                      "name": "acme-draft-product"
+                    },
+                    "gateways": [
+                      "datapower-api-gateway"
+                    ],
+                    "plans": {
+                      "acme-plan": {
+                        "title": "acme Plan",
+                        "description": "acme Plan",
+                        "rate-limits": {
+                          "default": {
+                            "value": "150/1hour"
+                          }
+                        }
+                      }
+                    },
+                    "apis": {
+                      "acme-api1.0.0": {
+                        "name": "acme-api:1.0.0"
+                      }
+                    },
+                    "visibility": {
+                      "view": {
+                        "type": "custom",
+                        "orgs": [
+                          "acme-org"
+                        ],
+                        "enabled": true
+                      },
+                      "subscribe": {
+                        "type": "custom",
+                        "orgs": [
+                          "acme-org"
+                        ],
+                        "enabled": true
+                      }
+                    },
+                    "product": "1.0.0"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/DraftProduct"
+              },
+              "examples": {
+                "DraftProduct": {
+                  "summary": "Example of draft product update by id.",
+                  "value": {
+                    "info": {
+                      "title": "acme draft product update",
+                      "summary": "An example draft product update",
+                      "version": "1.0.0",
+                      "name": "acme-draft-product"
+                    },
+                    "gateways": [
+                      "datapower-api-gateway"
+                    ],
+                    "plans": {
+                      "acme-plan": {
+                        "title": "acme Plan",
+                        "description": "acme Plan",
+                        "rate-limits": {
+                          "default": {
+                            "value": "150/1hour"
+                          }
+                        }
+                      }
+                    },
+                    "apis": {
+                      "acme-api1.0.0": {
+                        "name": "acme-api:1.0.0"
+                      }
+                    },
+                    "visibility": {
+                      "view": {
+                        "type": "custom",
+                        "orgs": [
+                          "acme-org"
+                        ],
+                        "enabled": true
+                      },
+                      "subscribe": {
+                        "type": "custom",
+                        "orgs": [
+                          "acme-org"
+                        ],
+                        "enabled": true
+                      }
+                    },
+                    "product": "1.0.0"
+                  }
+                }
               }
             },
             "multipart/form-data": {
@@ -71463,11 +77031,109 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/DraftProduct"
+              },
+              "examples": {
+                "DraftProduct": {
+                  "summary": "Example of draft product update by name and version.",
+                  "value": {
+                    "info": {
+                      "title": "acme draft product update",
+                      "summary": "An example draft product update",
+                      "version": "1.0.0",
+                      "name": "acme-draft-product"
+                    },
+                    "gateways": [
+                      "datapower-api-gateway"
+                    ],
+                    "plans": {
+                      "acme-plan": {
+                        "title": "acme Plan",
+                        "description": "acme Plan",
+                        "rate-limits": {
+                          "default": {
+                            "value": "150/1hour"
+                          }
+                        }
+                      }
+                    },
+                    "apis": {
+                      "acme-api1.0.0": {
+                        "name": "acme-api:1.0.0"
+                      }
+                    },
+                    "visibility": {
+                      "view": {
+                        "type": "custom",
+                        "orgs": [
+                          "acme-org"
+                        ],
+                        "enabled": true
+                      },
+                      "subscribe": {
+                        "type": "custom",
+                        "orgs": [
+                          "acme-org"
+                        ],
+                        "enabled": true
+                      }
+                    },
+                    "product": "1.0.0"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/DraftProduct"
+              },
+              "examples": {
+                "DraftProduct": {
+                  "summary": "Example of draft product update by name and version.",
+                  "value": {
+                    "info": {
+                      "title": "acme draft product update",
+                      "summary": "An example draft product update",
+                      "version": "1.0.0",
+                      "name": "acme-draft-product"
+                    },
+                    "gateways": [
+                      "datapower-api-gateway"
+                    ],
+                    "plans": {
+                      "acme-plan": {
+                        "title": "acme Plan",
+                        "description": "acme Plan",
+                        "rate-limits": {
+                          "default": {
+                            "value": "150/1hour"
+                          }
+                        }
+                      }
+                    },
+                    "apis": {
+                      "acme-api1.0.0": {
+                        "name": "acme-api:1.0.0"
+                      }
+                    },
+                    "visibility": {
+                      "view": {
+                        "type": "custom",
+                        "orgs": [
+                          "acme-org"
+                        ],
+                        "enabled": true
+                      },
+                      "subscribe": {
+                        "type": "custom",
+                        "orgs": [
+                          "acme-org"
+                        ],
+                        "enabled": true
+                      }
+                    },
+                    "product": "1.0.0"
+                  }
+                }
               }
             },
             "multipart/form-data": {
@@ -71707,6 +77373,52 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/DraftProduct"
+              },
+              "examples": {
+                "DraftProduct": {
+                  "summary": "Example of validating product.",
+                  "value": {
+                    "info": {
+                      "version": "1.0.0",
+                      "title": "acme draft product",
+                      "name": "acme-draft-product",
+                      "summary": "An example draft product"
+                    },
+                    "gateways": [
+                      "datapower-api-gateway"
+                    ],
+                    "plans": {
+                      "default-plan": {
+                        "title": "Default Plan",
+                        "description": "Default Plan",
+                        "rate-limits": {
+                          "default": {
+                            "value": "100/1hour"
+                          }
+                        }
+                      }
+                    },
+                    "apis": {
+                      "acme-api1.0.0": {
+                        "name": "acme-api:1.0.0"
+                      },
+                      "acme2-api1.0.0": {
+                        "name": "acme2-api:1.0.0"
+                      }
+                    },
+                    "visibility": {
+                      "view": {
+                        "type": "public",
+                        "enabled": true
+                      },
+                      "subscribe": {
+                        "type": "authenticated",
+                        "enabled": true
+                      }
+                    },
+                    "product": "1.0.0"
+                  }
+                }
               }
             }
           }
@@ -71898,11 +77610,275 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/DraftAPI"
+              },
+              "examples": {
+                "DraftAPI": {
+                  "summary": "Example of draft-apis creation.",
+                  "value": {
+                    "swagger": "2.0",
+                    "info": {
+                      "title": "Product Management API",
+                      "x-ibm-name": "product-management-api",
+                      "version": "1.0.0",
+                      "description": "An API for managing product details."
+                    },
+                    "basePath": "/products-api",
+                    "schemes": [
+                      "https"
+                    ],
+                    "consumes": [
+                      "application/json"
+                    ],
+                    "produces": [
+                      "application/json"
+                    ],
+                    "paths": {
+                      "/products": {
+                        "post": {
+                          "tags": [
+                            "product"
+                          ],
+                          "summary": "Create a new product.",
+                          "operationId": "product.create",
+                          "parameters": [
+                            {
+                              "name": "productData",
+                              "in": "body",
+                              "description": "Product details.",
+                              "required": true,
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "product_id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "description": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "product_id",
+                                  "name"
+                                ]
+                              }
+                            }
+                          ],
+                          "responses": {
+                            "200": {
+                              "description": "Product created successfully.",
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "message": {
+                                    "type": "string"
+                                  },
+                                  "product_id": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "tags": [
+                      {
+                        "name": "product",
+                        "description": "Operations related to products."
+                      }
+                    ],
+                    "x-ibm-configuration": {
+                      "enforced": true,
+                      "testable": true,
+                      "phase": "realized",
+                      "cors": {
+                        "enabled": true
+                      },
+                      "assembly": {
+                        "execute": [
+                          {
+                            "operation-switch": {
+                              "title": "operation-switch",
+                              "case": [
+                                {
+                                  "operations": [
+                                    "product.create"
+                                  ],
+                                  "execute": [
+                                    {
+                                      "invoke": {
+                                        "title": "invoke",
+                                        "timeout": 60,
+                                        "verb": "POST",
+                                        "target-url": "https://acme.com/products"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "gateway": "datapower-api-gateway",
+                    "type": "rest",
+                    "securityDefinitions": {
+                      "api-key-1": {
+                        "type": "apiKey",
+                        "in": "header",
+                        "name": "X-IBM-Client-Id",
+                        "x-key-type": "client_id"
+                      }
+                    },
+                    "security": [
+                      {
+                        "api-key-1": []
+                      }
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/DraftAPI"
+              },
+              "examples": {
+                "DraftAPI": {
+                  "summary": "Example of draft-apis creation.",
+                  "value": {
+                    "swagger": "2.0",
+                    "info": {
+                      "title": "Product Management API",
+                      "x-ibm-name": "product-management-api",
+                      "version": "1.0.0",
+                      "description": "An API for managing product details."
+                    },
+                    "basePath": "/products-api",
+                    "schemes": [
+                      "https"
+                    ],
+                    "consumes": [
+                      "application/json"
+                    ],
+                    "produces": [
+                      "application/json"
+                    ],
+                    "paths": {
+                      "/products": {
+                        "post": {
+                          "tags": [
+                            "product"
+                          ],
+                          "summary": "Create a new product.",
+                          "operationId": "product.create",
+                          "parameters": [
+                            {
+                              "name": "productData",
+                              "in": "body",
+                              "description": "Product details.",
+                              "required": true,
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "product_id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "description": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "product_id",
+                                  "name"
+                                ]
+                              }
+                            }
+                          ],
+                          "responses": {
+                            "200": {
+                              "description": "Product created successfully.",
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "message": {
+                                    "type": "string"
+                                  },
+                                  "product_id": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "tags": [
+                      {
+                        "name": "product",
+                        "description": "Operations related to products."
+                      }
+                    ],
+                    "x-ibm-configuration": {
+                      "enforced": true,
+                      "testable": true,
+                      "phase": "realized",
+                      "cors": {
+                        "enabled": true
+                      },
+                      "assembly": {
+                        "execute": [
+                          {
+                            "operation-switch": {
+                              "title": "operation-switch",
+                              "case": [
+                                {
+                                  "operations": [
+                                    "product.create"
+                                  ],
+                                  "execute": [
+                                    {
+                                      "invoke": {
+                                        "title": "invoke",
+                                        "timeout": 60,
+                                        "verb": "POST",
+                                        "target-url": "https://acme.com/products"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "gateway": "datapower-api-gateway",
+                    "type": "rest",
+                    "securityDefinitions": {
+                      "api-key-1": {
+                        "type": "apiKey",
+                        "in": "header",
+                        "name": "X-IBM-Client-Id",
+                        "x-key-type": "client_id"
+                      }
+                    },
+                    "security": [
+                      {
+                        "api-key-1": []
+                      }
+                    ]
+                  }
+                }
               }
             },
             "multipart/form-data": {
@@ -72208,11 +78184,145 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/DraftAPI"
+              },
+              "examples": {
+                "DraftAPI": {
+                  "summary": "Example of draft-apis update by id.",
+                  "value": {
+                    "swagger": "2.0",
+                    "info": {
+                      "title": "Product Management API",
+                      "x-ibm-name": "product-management-api",
+                      "version": "1.0.0",
+                      "description": "An API for managing product details."
+                    },
+                    "paths": {
+                      "/products": {
+                        "post": {
+                          "tags": [
+                            "product"
+                          ],
+                          "summary": "Create a new product.",
+                          "operationId": "product.create",
+                          "parameters": [
+                            {
+                              "name": "productData",
+                              "in": "body",
+                              "description": "Product details.",
+                              "required": true,
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "product_id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "description": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "product_id",
+                                  "name"
+                                ]
+                              }
+                            }
+                          ],
+                          "responses": {
+                            "201": {
+                              "description": "Product created successfully.",
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "message": {
+                                    "type": "string"
+                                  },
+                                  "product_id": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/DraftAPI"
+              },
+              "examples": {
+                "DraftAPI": {
+                  "summary": "Example of draft-apis update by id.",
+                  "value": {
+                    "swagger": "2.0",
+                    "info": {
+                      "title": "Product Management API",
+                      "x-ibm-name": "product-management-api",
+                      "version": "1.0.0",
+                      "description": "An API for managing product details."
+                    },
+                    "paths": {
+                      "/products": {
+                        "post": {
+                          "tags": [
+                            "product"
+                          ],
+                          "summary": "Create a new product.",
+                          "operationId": "product.create",
+                          "parameters": [
+                            {
+                              "name": "productData",
+                              "in": "body",
+                              "description": "Product details.",
+                              "required": true,
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "product_id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "description": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "product_id",
+                                  "name"
+                                ]
+                              }
+                            }
+                          ],
+                          "responses": {
+                            "201": {
+                              "description": "Product created successfully.",
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "message": {
+                                    "type": "string"
+                                  },
+                                  "product_id": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             },
             "multipart/form-data": {
@@ -72374,11 +78484,145 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/DraftAPI"
+              },
+              "examples": {
+                "DraftAPI": {
+                  "summary": "Example of draft-apis update by name and version.",
+                  "value": {
+                    "swagger": "2.0",
+                    "info": {
+                      "title": "Product Management API",
+                      "x-ibm-name": "product-management-api",
+                      "version": "1.0.0",
+                      "description": "An API for managing product details."
+                    },
+                    "paths": {
+                      "/products": {
+                        "post": {
+                          "tags": [
+                            "product"
+                          ],
+                          "summary": "Create a new product.",
+                          "operationId": "product.create",
+                          "parameters": [
+                            {
+                              "name": "productData",
+                              "in": "body",
+                              "description": "Product details.",
+                              "required": true,
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "product_id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "description": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "product_id",
+                                  "name"
+                                ]
+                              }
+                            }
+                          ],
+                          "responses": {
+                            "201": {
+                              "description": "Product created successfully.",
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "message": {
+                                    "type": "string"
+                                  },
+                                  "product_id": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/DraftAPI"
+              },
+              "examples": {
+                "DraftAPI": {
+                  "summary": "Example of draft-apis update by name and version.",
+                  "value": {
+                    "swagger": "2.0",
+                    "info": {
+                      "title": "Product Management API",
+                      "x-ibm-name": "product-management-api",
+                      "version": "1.0.0",
+                      "description": "An API for managing product details."
+                    },
+                    "paths": {
+                      "/products": {
+                        "post": {
+                          "tags": [
+                            "product"
+                          ],
+                          "summary": "Create a new product.",
+                          "operationId": "product.create",
+                          "parameters": [
+                            {
+                              "name": "productData",
+                              "in": "body",
+                              "description": "Product details.",
+                              "required": true,
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "product_id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "description": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "product_id",
+                                  "name"
+                                ]
+                              }
+                            }
+                          ],
+                          "responses": {
+                            "201": {
+                              "description": "Product created successfully.",
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "message": {
+                                    "type": "string"
+                                  },
+                                  "product_id": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             },
             "multipart/form-data": {
@@ -72612,6 +78856,138 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/DraftAPI"
+              },
+              "examples": {
+                "DraftAPI": {
+                  "summary": "Example of validating api.",
+                  "value": {
+                    "swagger": "2.0",
+                    "info": {
+                      "title": "Product Management API",
+                      "x-ibm-name": "product-management-api",
+                      "version": "1.0.0",
+                      "description": "An API for managing product details."
+                    },
+                    "basePath": "/products-api",
+                    "schemes": [
+                      "https"
+                    ],
+                    "consumes": [
+                      "application/json"
+                    ],
+                    "produces": [
+                      "application/json"
+                    ],
+                    "paths": {
+                      "/products": {
+                        "post": {
+                          "tags": [
+                            "product"
+                          ],
+                          "summary": "Create a new product.",
+                          "operationId": "product.create",
+                          "parameters": [
+                            {
+                              "name": "productData",
+                              "in": "body",
+                              "description": "Product details.",
+                              "required": true,
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "product_id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "description": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "product_id",
+                                  "name"
+                                ]
+                              }
+                            }
+                          ],
+                          "responses": {
+                            "200": {
+                              "description": "Product created successfully.",
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "message": {
+                                    "type": "string"
+                                  },
+                                  "product_id": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "tags": [
+                      {
+                        "name": "product",
+                        "description": "Operations related to products."
+                      }
+                    ],
+                    "x-ibm-configuration": {
+                      "enforced": true,
+                      "testable": true,
+                      "phase": "realized",
+                      "cors": {
+                        "enabled": true
+                      },
+                      "assembly": {
+                        "execute": [
+                          {
+                            "operation-switch": {
+                              "title": "operation-switch",
+                              "case": [
+                                {
+                                  "operations": [
+                                    "product.create"
+                                  ],
+                                  "execute": [
+                                    {
+                                      "invoke": {
+                                        "title": "invoke",
+                                        "timeout": 60,
+                                        "verb": "POST",
+                                        "target-url": "https://acme.com/products"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "gateway": "datapower-api-gateway",
+                    "type": "rest",
+                    "securityDefinitions": {
+                      "api-key-1": {
+                        "type": "apiKey",
+                        "in": "header",
+                        "name": "X-IBM-Client-Id",
+                        "x-key-type": "client_id"
+                      }
+                    },
+                    "security": [
+                      {
+                        "api-key-1": []
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -73399,11 +79775,57 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Product"
+              },
+              "examples": {
+                "Product": {
+                  "summary": "Example of product update by id at catalog scope.",
+                  "value": {
+                    "visibility": {
+                      "view": {
+                        "enabled": true,
+                        "type": "authenticated",
+                        "org_urls": [],
+                        "group_urls": []
+                      },
+                      "subscribe": {
+                        "enabled": true,
+                        "type": "custom",
+                        "org_urls": [
+                          "https://api.acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-consumer-org"
+                        ],
+                        "group_urls": []
+                      }
+                    }
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Product"
+              },
+              "examples": {
+                "Product": {
+                  "summary": "Example of product update by id at catalog scope.",
+                  "value": {
+                    "visibility": {
+                      "view": {
+                        "enabled": true,
+                        "type": "authenticated",
+                        "org_urls": [],
+                        "group_urls": []
+                      },
+                      "subscribe": {
+                        "enabled": true,
+                        "type": "custom",
+                        "org_urls": [
+                          "https://api.acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-consumer-org"
+                        ],
+                        "group_urls": []
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -73552,11 +79974,57 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Product"
+              },
+              "examples": {
+                "Product": {
+                  "summary": "Example of product update by name and version at catalog scope.",
+                  "value": {
+                    "visibility": {
+                      "view": {
+                        "enabled": true,
+                        "type": "authenticated",
+                        "org_urls": [],
+                        "group_urls": []
+                      },
+                      "subscribe": {
+                        "enabled": true,
+                        "type": "custom",
+                        "org_urls": [
+                          "https://api.acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-consumer-org"
+                        ],
+                        "group_urls": []
+                      }
+                    }
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Product"
+              },
+              "examples": {
+                "Product": {
+                  "summary": "Example of product update by name and version at catalog scope.",
+                  "value": {
+                    "visibility": {
+                      "view": {
+                        "enabled": true,
+                        "type": "authenticated",
+                        "org_urls": [],
+                        "group_urls": []
+                      },
+                      "subscribe": {
+                        "enabled": true,
+                        "type": "custom",
+                        "org_urls": [
+                          "https://api.acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-consumer-org"
+                        ],
+                        "group_urls": []
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -73662,6 +80130,24 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ProductPlanMapping"
+              },
+              "examples": {
+                "ProductPlanMapping": {
+                  "summary": "Example of supersede, replace and set migration target of product.",
+                  "value": {
+                    "product_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/products/product-id",
+                    "plans": [
+                      {
+                        "source": "default-plan",
+                        "target": "200Per5minHardLimit"
+                      },
+                      {
+                        "source": "200Per5minHardLimit",
+                        "target": "100Per5Min"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -73728,6 +80214,24 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ProductPlanMapping"
+              },
+              "examples": {
+                "ProductPlanMapping": {
+                  "summary": "Example of supersede, replace and set migration target of product.",
+                  "value": {
+                    "product_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/products/product-id",
+                    "plans": [
+                      {
+                        "source": "default-plan",
+                        "target": "200Per5minHardLimit"
+                      },
+                      {
+                        "source": "200Per5minHardLimit",
+                        "target": "100Per5Min"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -73794,6 +80298,24 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ProductPlanMapping"
+              },
+              "examples": {
+                "ProductPlanMapping": {
+                  "summary": "Example of supersede, replace and set migration target of product.",
+                  "value": {
+                    "product_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/products/product-id",
+                    "plans": [
+                      {
+                        "source": "default-plan",
+                        "target": "200Per5minHardLimit"
+                      },
+                      {
+                        "source": "200Per5minHardLimit",
+                        "target": "100Per5Min"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -73860,6 +80382,28 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/MigrateSubscriptionSubset"
+              },
+              "examples": {
+                "MigrateSubscriptionSubset": {
+                  "summary": "Example of migrate subscription of products at catalog scope.",
+                  "value": {
+                    "subscription_urls": [
+                      "https://acme-apim.example.com/api/apps/org1/catalog1/consumer-org1/app1/subscriptions/subscription1",
+                      "https://acme-apim.example.com/api/apps/org2/catalog2/consumer-org2/app2/subscriptions/subscription2"
+                    ],
+                    "product_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/products/product-id",
+                    "plans": [
+                      {
+                        "source": "default-plan",
+                        "target": "100Per5Min"
+                      },
+                      {
+                        "source": "200Per5minHardLimit",
+                        "target": "100Per5Min"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -73981,6 +80525,24 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ProductPlanMapping"
+              },
+              "examples": {
+                "ProductPlanMapping": {
+                  "summary": "Example of supersede, replace and set migration target of product.",
+                  "value": {
+                    "product_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/products/product-id",
+                    "plans": [
+                      {
+                        "source": "default-plan",
+                        "target": "200Per5minHardLimit"
+                      },
+                      {
+                        "source": "200Per5minHardLimit",
+                        "target": "100Per5Min"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -74050,6 +80612,24 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ProductPlanMapping"
+              },
+              "examples": {
+                "ProductPlanMapping": {
+                  "summary": "Example of supersede, replace and set migration target of product.",
+                  "value": {
+                    "product_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/products/product-id",
+                    "plans": [
+                      {
+                        "source": "default-plan",
+                        "target": "200Per5minHardLimit"
+                      },
+                      {
+                        "source": "200Per5minHardLimit",
+                        "target": "100Per5Min"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -74119,6 +80699,24 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ProductPlanMapping"
+              },
+              "examples": {
+                "ProductPlanMapping": {
+                  "summary": "Example of supersede, replace and set migration target of product.",
+                  "value": {
+                    "product_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/products/product-id",
+                    "plans": [
+                      {
+                        "source": "default-plan",
+                        "target": "200Per5minHardLimit"
+                      },
+                      {
+                        "source": "200Per5minHardLimit",
+                        "target": "100Per5Min"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -74188,6 +80786,28 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/MigrateSubscriptionSubset"
+              },
+              "examples": {
+                "MigrateSubscriptionSubset": {
+                  "summary": "Example of migrate subscription of products at catalog scope.",
+                  "value": {
+                    "subscription_urls": [
+                      "https://acme-apim.example.com/api/apps/org1/catalog1/consumer-org1/app1/subscriptions/subscription1",
+                      "https://acme-apim.example.com/api/apps/org2/catalog2/consumer-org2/app2/subscriptions/subscription2"
+                    ],
+                    "product_url": "https://acme-apim.example.com/api/catalogs/acme-org/acme-catalog/products/product-id",
+                    "plans": [
+                      {
+                        "source": "default-plan",
+                        "target": "100Per5Min"
+                      },
+                      {
+                        "source": "200Per5minHardLimit",
+                        "target": "100Per5Min"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -74430,6 +81050,9 @@
             "$ref": "#/components/parameters/base_path"
           },
           {
+            "$ref": "#/components/parameters/full_path"
+          },
+          {
             "$ref": "#/components/parameters/states"
           },
           {
@@ -74513,6 +81136,9 @@
           },
           {
             "$ref": "#/components/parameters/base_path"
+          },
+          {
+            "$ref": "#/components/parameters/full_path"
           },
           {
             "$ref": "#/components/parameters/states"
@@ -75276,11 +81902,57 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Product"
+              },
+              "examples": {
+                "Product": {
+                  "summary": "Example of product update by id at space scope.",
+                  "value": {
+                    "visibility": {
+                      "view": {
+                        "enabled": true,
+                        "type": "authenticated",
+                        "org_urls": [],
+                        "group_urls": []
+                      },
+                      "subscribe": {
+                        "enabled": true,
+                        "type": "custom",
+                        "org_urls": [
+                          "https://api.acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-space/acme-consumer-org"
+                        ],
+                        "group_urls": []
+                      }
+                    }
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Product"
+              },
+              "examples": {
+                "Product": {
+                  "summary": "Example of product update by id at space scope.",
+                  "value": {
+                    "visibility": {
+                      "view": {
+                        "enabled": true,
+                        "type": "authenticated",
+                        "org_urls": [],
+                        "group_urls": []
+                      },
+                      "subscribe": {
+                        "enabled": true,
+                        "type": "custom",
+                        "org_urls": [
+                          "https://api.acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-space/acme-consumer-org"
+                        ],
+                        "group_urls": []
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -75432,11 +82104,57 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Product"
+              },
+              "examples": {
+                "Product": {
+                  "summary": "Example of product update by name and version at space scope.",
+                  "value": {
+                    "visibility": {
+                      "view": {
+                        "enabled": true,
+                        "type": "authenticated",
+                        "org_urls": [],
+                        "group_urls": []
+                      },
+                      "subscribe": {
+                        "enabled": true,
+                        "type": "custom",
+                        "org_urls": [
+                          "https://api.acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-space/acme-consumer-org"
+                        ],
+                        "group_urls": []
+                      }
+                    }
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Product"
+              },
+              "examples": {
+                "Product": {
+                  "summary": "Example of product update by name and version at space scope.",
+                  "value": {
+                    "visibility": {
+                      "view": {
+                        "enabled": true,
+                        "type": "authenticated",
+                        "org_urls": [],
+                        "group_urls": []
+                      },
+                      "subscribe": {
+                        "enabled": true,
+                        "type": "custom",
+                        "org_urls": [
+                          "https://api.acme-apim.example.com/api/consumer-orgs/acme-org/acme-catalog/acme-space/acme-consumer-org"
+                        ],
+                        "group_urls": []
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -75545,6 +82263,24 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ProductPlanMapping"
+              },
+              "examples": {
+                "ProductPlanMapping": {
+                  "summary": "Example of supersede, replace and set migration target of product at space scope.",
+                  "value": {
+                    "product_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/products/product-id",
+                    "plans": [
+                      {
+                        "source": "default-plan",
+                        "target": "200Per5minHardLimit"
+                      },
+                      {
+                        "source": "200Per5minHardLimit",
+                        "target": "100Per5Min"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -75614,6 +82350,24 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ProductPlanMapping"
+              },
+              "examples": {
+                "ProductPlanMapping": {
+                  "summary": "Example of supersede, replace and set migration target of product at space scope.",
+                  "value": {
+                    "product_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/products/product-id",
+                    "plans": [
+                      {
+                        "source": "default-plan",
+                        "target": "200Per5minHardLimit"
+                      },
+                      {
+                        "source": "200Per5minHardLimit",
+                        "target": "100Per5Min"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -75683,6 +82437,24 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ProductPlanMapping"
+              },
+              "examples": {
+                "ProductPlanMapping": {
+                  "summary": "Example of supersede, replace and set migration target of product at space scope.",
+                  "value": {
+                    "product_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/products/product-id",
+                    "plans": [
+                      {
+                        "source": "default-plan",
+                        "target": "200Per5minHardLimit"
+                      },
+                      {
+                        "source": "200Per5minHardLimit",
+                        "target": "100Per5Min"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -75752,6 +82524,28 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/MigrateSubscriptionSubset"
+              },
+              "examples": {
+                "MigrateSubscriptionSubset": {
+                  "summary": "Example of migrate subscription of products at space scope.",
+                  "value": {
+                    "subscription_urls": [
+                      "https://acme-apim.example.com/api/apps/org1/catalog1/space1/consumer-org1/app1/subscriptions/subscription1",
+                      "https://acme-apim.example.com/api/apps/org2/catalog2/space2/consumer-org2/app2/subscriptions/subscription2"
+                    ],
+                    "product_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/products/product-id",
+                    "plans": [
+                      {
+                        "source": "default-plan",
+                        "target": "100Per5Min"
+                      },
+                      {
+                        "source": "200Per5minHardLimit",
+                        "target": "100Per5Min"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -75879,6 +82673,24 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ProductPlanMapping"
+              },
+              "examples": {
+                "ProductPlanMapping": {
+                  "summary": "Example of supersede, replace and set migration target of product at space scope.",
+                  "value": {
+                    "product_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/products/product-id",
+                    "plans": [
+                      {
+                        "source": "default-plan",
+                        "target": "200Per5minHardLimit"
+                      },
+                      {
+                        "source": "200Per5minHardLimit",
+                        "target": "100Per5Min"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -75951,6 +82763,24 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ProductPlanMapping"
+              },
+              "examples": {
+                "ProductPlanMapping": {
+                  "summary": "Example of supersede, replace and set migration target of product at space scope.",
+                  "value": {
+                    "product_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/products/product-id",
+                    "plans": [
+                      {
+                        "source": "default-plan",
+                        "target": "200Per5minHardLimit"
+                      },
+                      {
+                        "source": "200Per5minHardLimit",
+                        "target": "100Per5Min"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -76023,6 +82853,24 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ProductPlanMapping"
+              },
+              "examples": {
+                "ProductPlanMapping": {
+                  "summary": "Example of supersede, replace and set migration target of product at space scope.",
+                  "value": {
+                    "product_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/products/product-id",
+                    "plans": [
+                      {
+                        "source": "default-plan",
+                        "target": "200Per5minHardLimit"
+                      },
+                      {
+                        "source": "200Per5minHardLimit",
+                        "target": "100Per5Min"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -76095,6 +82943,28 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/MigrateSubscriptionSubset"
+              },
+              "examples": {
+                "MigrateSubscriptionSubset": {
+                  "summary": "Example of migrate subscription of products at space scope.",
+                  "value": {
+                    "subscription_urls": [
+                      "https://acme-apim.example.com/api/apps/org1/catalog1/space1/consumer-org1/app1/subscriptions/subscription1",
+                      "https://acme-apim.example.com/api/apps/org2/catalog2/space2/consumer-org2/app2/subscriptions/subscription2"
+                    ],
+                    "product_url": "https://acme-apim.example.com/api/spaces/acme-org/acme-catalog/acme-space/products/product-id",
+                    "plans": [
+                      {
+                        "source": "default-plan",
+                        "target": "100Per5Min"
+                      },
+                      {
+                        "source": "200Per5minHardLimit",
+                        "target": "100Per5Min"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -76986,11 +83856,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Me"
+              },
+              "examples": {
+                "Me": {
+                  "summary": "Example of me update.",
+                  "value": {
+                    "email": "acmesteve@example.com",
+                    "first_name": "Acme",
+                    "last_name": "Steve"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Me"
+              },
+              "examples": {
+                "Me": {
+                  "summary": "Example of me update.",
+                  "value": {
+                    "email": "acmesteve@example.com",
+                    "first_name": "Acme",
+                    "last_name": "Steve"
+                  }
+                }
               }
             }
           }
@@ -77085,6 +83975,15 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ChangePassword"
+              },
+              "examples": {
+                "ChangePassword": {
+                  "summary": "Example of password update",
+                  "value": {
+                    "current_password": "password123",
+                    "password": "password456"
+                  }
+                }
               }
             }
           }
@@ -77249,6 +84148,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/query"
           }
         ],
         "responses": {
@@ -78044,6 +84946,323 @@
         ]
       }
     },
+    "/orgs/{org}/watsonx-settings": {
+      "description": "The collection of Watsonx Settings operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Create a Watsonx Settings object",
+        "description": "Create a Watsonx Settings object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "watsonx_settings_createOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WatsonxSettings"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/WatsonxSettings"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful create",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettings"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettings"
+                }
+              }
+            }
+          },
+          "302": {
+            "description": "Redirect response",
+            "headers": {
+              "Location": {
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Watsonx Settings (Org Scope)"
+        ]
+      },
+      "get": {
+        "summary": "List the Watsonx Settings objects",
+        "description": "List the Watsonx Settings objects",
+        "operationId": "watsonx_settings_listOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettingsList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettingsList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Watsonx Settings (Org Scope)"
+        ]
+      }
+    },
+    "/orgs/{org}/watsonx-settings/{watsonx-settings}": {
+      "description": "Watsonx Settings object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/watsonx-settings"
+        }
+      ],
+      "get": {
+        "summary": "Get the Watsonx Settings object by name or id",
+        "description": "Get the Watsonx Settings object by name or id",
+        "operationId": "watsonx_settings_getOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettings"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettings"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Watsonx Settings (Org Scope)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Watsonx Settings object by name or id",
+        "description": "Update the Watsonx Settings object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "watsonx_settings_updateOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WatsonxSettings"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/WatsonxSettings"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettings"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettings"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Watsonx Settings (Org Scope)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Watsonx Settings object by name or id",
+        "description": "Delete the Watsonx Settings object by name or id",
+        "operationId": "watsonx_settings_delOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettings"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettings"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Watsonx Settings (Org Scope)"
+        ]
+      }
+    },
+    "/orgs/{org}/watsonx-settings/test-connection": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Test a WatsonX connection",
+        "description": "Test a WatsonX connection",
+        "operationId": "watsonx_settings_testConnection",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WatsonxSettingsTestConnection"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/WatsonxSettingsTestConnection"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Organization Resources",
+          "Resource: Watsonx Settings (Org Scope)"
+        ]
+      }
+    },
     "/cloud/devops/resource-service-statuses": {
       "description": "The collection of Resource Service Status operations",
       "get": {
@@ -78650,6 +85869,15 @@
         "required": false,
         "schema": {
           "type": "boolean"
+        }
+      },
+      "full_path": {
+        "name": "full_path",
+        "in": "query",
+        "description": "full path of the API",
+        "required": false,
+        "schema": {
+          "type": "string"
         }
       },
       "gateway-service": {
@@ -79489,6 +86717,15 @@
           "type": "boolean"
         }
       },
+      "watsonx-settings": {
+        "name": "watsonx-settings",
+        "in": "path",
+        "description": "Watsonx Settings name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
       "webhook": {
         "name": "webhook",
         "in": "path",
@@ -79856,6 +87093,13 @@
               "internal_svc"
             ]
           },
+          "cloud_setting_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -79986,7 +87230,8 @@
               "datapower-gateway",
               "datapower-api-gateway",
               "event-gateway",
-              "lightweight-gateway"
+              "lightweight-gateway",
+              "wm-api-gateway"
             ]
           },
           "oai_version": {
@@ -80303,7 +87548,8 @@
             "type": "string",
             "enum": [
               "toolkit",
-              "atm"
+              "atm",
+              "ai"
             ]
           },
           "realm": {
@@ -80330,6 +87576,9 @@
           },
           "api_key": {
             "type": "string"
+          },
+          "multiple_use": {
+            "type": "boolean"
           },
           "description": {
             "type": "string"
@@ -81299,8 +88548,7 @@
             "type": "boolean"
           },
           "config_sync_target_catalog": {
-            "type": "boolean",
-            "default": false
+            "type": "boolean"
           },
           "custom_notification_templates_enabled": {
             "type": "boolean"
@@ -81477,8 +88725,7 @@
             "maximum": 2147483647
           },
           "api_key_multiple_uses": {
-            "type": "boolean",
-            "default": false
+            "type": "boolean"
           },
           "sso_settings": {
             "type": "object",
@@ -81600,6 +88847,13 @@
                   "required": [
                     "endpoint"
                   ]
+                }
+              },
+              "analytics_service_urls": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
                 }
               }
             }
@@ -83846,7 +91100,8 @@
               "datapower-gateway",
               "datapower-api-gateway",
               "event-gateway",
-              "lightweight-gateway"
+              "lightweight-gateway",
+              "wm-api-gateway"
             ]
           },
           "oai_version": {
@@ -83980,7 +91235,8 @@
                 "datapower-gateway",
                 "datapower-api-gateway",
                 "event-gateway",
-                "lightweight-gateway"
+                "lightweight-gateway",
+                "wm-api-gateway"
               ]
             }
           },
@@ -86100,73 +93356,6 @@
           }
         }
       },
-      "MyPermission": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "type": {
-            "type": "string",
-            "readOnly": true,
-            "enum": [
-              "my_permission"
-            ]
-          },
-          "api_version": {
-            "type": "string",
-            "readOnly": true,
-            "enum": [
-              "2.0.0"
-            ]
-          },
-          "id": {
-            "type": "string",
-            "readOnly": true
-          },
-          "name": {
-            "type": "string",
-            "maxLength": 255
-          },
-          "title": {
-            "type": "string",
-            "maxLength": 1023
-          },
-          "summary": {
-            "type": "string",
-            "maxLength": 65535
-          },
-          "scope_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "permissions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "metadata": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "url": {
-            "type": "string",
-            "readOnly": true,
-            "format": "uri"
-          }
-        }
-      },
       "MyPermissionList": {
         "type": "object",
         "additionalProperties": false,
@@ -86194,82 +93383,6 @@
             "items": {
               "$ref": "#/components/schemas/Space"
             }
-          }
-        }
-      },
-      "MyTask": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "type": {
-            "type": "string",
-            "readOnly": true,
-            "enum": [
-              "my_task"
-            ]
-          },
-          "api_version": {
-            "type": "string",
-            "readOnly": true,
-            "enum": [
-              "2.0.0"
-            ]
-          },
-          "id": {
-            "type": "string",
-            "readOnly": true
-          },
-          "name": {
-            "type": "string",
-            "maxLength": 255
-          },
-          "title": {
-            "type": "string",
-            "maxLength": 1023
-          },
-          "summary": {
-            "type": "string",
-            "maxLength": 65535
-          },
-          "scope": {
-            "type": "string"
-          },
-          "scope_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "tasks": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Task"
-            }
-          },
-          "actions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "metadata": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "url": {
-            "type": "string",
-            "readOnly": true,
-            "format": "uri"
           }
         }
       },
@@ -87349,13 +94462,14 @@
                   "type": "string",
                   "enum": [
                     "grpc",
-                    "http/proto",
+                    "http/protobuf",
                     "http/json"
                   ],
                   "default": "grpc"
                 },
                 "endpoint": {
-                  "type": "string"
+                  "type": "string",
+                  "format": "uri"
                 },
                 "tls_client_profile_url": {
                   "type": "string"
@@ -87373,8 +94487,7 @@
                 }
               },
               "required": [
-                "endpoint",
-                "tls_client_profile_url"
+                "endpoint"
               ]
             }
           },
@@ -87418,24 +94531,19 @@
             "type": "object",
             "properties": {
               "max-queue-size": {
-                "type": "integer",
-                "default": 2048
+                "type": "integer"
               },
               "batch-size": {
-                "type": "integer",
-                "default": 512
+                "type": "integer"
               },
               "export-interval": {
-                "type": "integer",
-                "default": 5000
+                "type": "integer"
               },
               "export-timeout": {
-                "type": "integer",
-                "default": 10000
+                "type": "integer"
               },
               "max-threads": {
-                "type": "integer",
-                "default": 5
+                "type": "integer"
               }
             }
           },
@@ -87443,8 +94551,7 @@
             "type": "object",
             "properties": {
               "parent-based": {
-                "type": "boolean",
-                "default": true
+                "type": "boolean"
               },
               "sampler-type": {
                 "type": "string",
@@ -87452,14 +94559,12 @@
                   "always_off",
                   "always_on",
                   "trace_id_ratio_based"
-                ],
-                "default": "always_on"
+                ]
               },
               "sampler-ratio": {
                 "type": "integer",
                 "minimum": 0,
-                "maximum": 100,
-                "default": 50
+                "maximum": 100
               }
             }
           },
@@ -88409,7 +95514,8 @@
                 "datapower-gateway",
                 "datapower-api-gateway",
                 "event-gateway",
-                "lightweight-gateway"
+                "lightweight-gateway",
+                "wm-api-gateway"
               ]
             }
           },
@@ -88958,11 +96064,13 @@
               "juhu",
               "designer",
               "atm",
+              "ai",
               "gateway",
               "portal",
               "ibm_cloud",
               "compliance",
-              "discovery"
+              "discovery",
+              "analytics"
             ]
           },
           "client_id": {
@@ -90324,7 +97432,9 @@
               "product_lifecycle",
               "subscription",
               "application_lifecycle",
-              "consumer_onboarding"
+              "consumer_onboarding",
+              "governance_validation",
+              "governance_validation_approval"
             ]
           },
           "state": {
@@ -90333,7 +97443,10 @@
               "pending",
               "approved",
               "rejected",
-              "cancelled"
+              "cancelled",
+              "governance_validation_in_progress",
+              "governance_validation_passed",
+              "governance_validation_failed"
             ]
           },
           "actions": {
@@ -90678,7 +97791,9 @@
               "send",
               "initialize",
               "delete-expired-data",
-              "system-maintenance"
+              "system-maintenance",
+              "analytics-upgrade",
+              "ootb-gateway-extension-upgrade"
             ]
           },
           "state": {
@@ -91893,6 +99008,140 @@
             "type": "string",
             "readOnly": true,
             "format": "uri"
+          }
+        }
+      },
+      "WatsonxSettings": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "watsonx_settings"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "scope": {
+            "type": "string"
+          },
+          "org_id": {
+            "type": "string"
+          },
+          "watsonxurl": {
+            "type": "string"
+          },
+          "is_default": {
+            "type": "boolean",
+            "default": false
+          },
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "api_key": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          },
+          "project_id": {
+            "type": "string"
+          },
+          "space_id": {
+            "type": "string"
+          },
+          "org": {
+            "type": "string"
+          },
+          "credential_type": {
+            "type": "string",
+            "enum": [
+              "ibm_managed",
+              "user_managed"
+            ]
+          },
+          "config_type": {
+            "type": "string",
+            "enum": [
+              "cloud",
+              "software"
+            ]
+          },
+          "version": {
+            "type": "string"
+          },
+          "instance_id": {
+            "type": "string"
+          },
+          "auth_type": {
+            "type": "string",
+            "enum": [
+              "iam",
+              "bearertoken",
+              "cp4d"
+            ]
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "WatsonxSettingsList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WatsonxSettings"
+            }
           }
         }
       },
@@ -93541,7 +100790,8 @@
               "gateway_service",
               "payment_method",
               "notification",
-              "user_registry"
+              "user_registry",
+              "governance"
             ]
           },
           "info": {
@@ -94200,7 +101450,8 @@
               "datapower-gateway",
               "datapower-api-gateway",
               "event-gateway",
-              "lightweight-gateway"
+              "lightweight-gateway",
+              "wm-api-gateway"
             ]
           }
         }
@@ -95669,6 +102920,147 @@
             "type": "string"
           }
         }
+      },
+      "MyTask": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scope_url": {
+            "type": "string"
+          },
+          "tasks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Task"
+            }
+          }
+        }
+      },
+      "MyPermission": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "my_permission"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "scope_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "permissions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      },
+      "WatsonxSettingsTestConnection": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "authType": {
+            "type": "string",
+            "enum": [
+              "iam",
+              "bearertoken",
+              "cp4d"
+            ]
+          },
+          "apiKey": {
+            "type": "string"
+          },
+          "bearerToken": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string",
+            "format": "password"
+          },
+          "watsonxurl": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "spaceId": {
+            "type": "string"
+          },
+          "config_type": {
+            "type": "string",
+            "enum": [
+              "cloud",
+              "software"
+            ]
+          },
+          "instanceId": {
+            "type": "string"
+          }
+        }
+      },
+      "GovernanceValidationStateResults": {
+        "properties": {
+          "scan_details": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "scan_state": {
+            "type": "string",
+            "enum": [
+              "governance_validation_passed",
+              "governance_validation_failed"
+            ]
+          },
+          "error_message": {
+            "type": "string"
+          },
+          "enforcement_policy": {
+            "type": "string"
+          }
+        },
+        "type": "object"
       }
     },
     "responses": {
@@ -95710,7 +103102,7 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
               "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
@@ -95741,7 +103133,7 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
               "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
@@ -95771,7 +103163,7 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
               "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
@@ -95803,7 +103195,7 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
               "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
@@ -104847,6 +112239,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -104854,6 +112255,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -104898,6 +112302,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -104934,6 +112344,18 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/event_fields_optional"
           },
           {
@@ -104941,6 +112363,9 @@
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -104988,10 +112413,16 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -105046,6 +112477,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -105133,6 +112567,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -105140,6 +112583,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -105184,6 +112630,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -105220,6 +112672,18 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/event_fields_optional"
           },
           {
@@ -105227,6 +112691,9 @@
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -105268,7 +112735,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -105323,6 +112796,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -105523,6 +112999,9 @@
             "$ref": "#/components/parameters/api_resource_id_optional"
           },
           {
+            "$ref": "#/components/parameters/api_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
@@ -105565,6 +113044,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -105601,10 +113086,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -105646,7 +113146,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -105701,6 +113207,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -105788,6 +113297,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -105795,6 +113313,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -105839,6 +113360,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -105875,6 +113402,18 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/event_fields_optional"
           },
           {
@@ -105882,6 +113421,9 @@
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -105929,10 +113471,16 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -105981,6 +113529,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -106071,6 +113622,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -106078,6 +113638,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -106122,6 +113685,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -106158,6 +113727,18 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/event_fields_optional"
           },
           {
@@ -106165,6 +113746,9 @@
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -106206,7 +113790,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -106255,6 +113845,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -106458,6 +114051,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -106465,6 +114067,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -106509,6 +114114,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -106545,10 +114156,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -106590,7 +114216,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -106639,6 +114271,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -106729,6 +114364,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -106736,6 +114380,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -106780,6 +114427,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -106810,6 +114463,18 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/event_fields_optional"
           },
           {
@@ -106817,6 +114482,9 @@
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -106864,10 +114532,16 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -106916,6 +114590,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -107059,6 +114736,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -107066,6 +114752,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -107110,6 +114799,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -107140,10 +114835,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -107185,7 +114895,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -107234,6 +114950,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -107327,6 +115046,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -107334,6 +115062,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -107378,6 +115109,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -107408,6 +115145,18 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/event_fields_optional"
           },
           {
@@ -107415,6 +115164,9 @@
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -107462,10 +115214,16 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -107514,6 +115272,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -107657,6 +115418,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -107664,6 +115434,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -107708,6 +115481,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -107738,10 +115517,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -107783,7 +115577,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -107832,6 +115632,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -107910,6 +115713,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -107917,6 +115729,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -107961,6 +115776,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -107997,6 +115818,18 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/event_fields_optional"
           },
           {
@@ -108004,6 +115837,9 @@
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -108048,7 +115884,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -108103,6 +115945,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -108190,6 +116035,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -108197,6 +116051,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -108241,6 +116098,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -108277,6 +116140,18 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/event_fields_optional"
           },
           {
@@ -108284,6 +116159,9 @@
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -108328,7 +116206,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -108377,6 +116261,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -108467,6 +116354,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -108474,6 +116370,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -108518,6 +116417,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -108548,6 +116453,18 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/event_fields_optional"
           },
           {
@@ -108555,6 +116472,9 @@
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -108599,7 +116519,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -108648,6 +116574,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -108741,6 +116670,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -108748,6 +116686,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -108792,6 +116733,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -108822,6 +116769,18 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/event_fields_optional"
           },
           {
@@ -108829,6 +116788,9 @@
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -108873,7 +116835,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -108922,6 +116890,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -109000,6 +116971,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -109007,6 +116987,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -109054,6 +117037,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -109090,10 +117079,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -109138,7 +117142,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -109193,6 +117203,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -109277,6 +117290,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -109284,6 +117306,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -109331,6 +117356,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -109367,10 +117398,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -109415,7 +117461,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -109470,6 +117522,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -109554,6 +117609,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -109561,6 +117625,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -109608,6 +117675,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -109644,10 +117717,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -109692,7 +117780,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -109747,6 +117841,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -109831,6 +117928,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -109838,6 +117944,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -109885,6 +117994,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -109921,10 +118036,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -109969,7 +118099,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -110024,6 +118160,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -110108,6 +118247,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -110115,6 +118263,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -110162,6 +118313,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -110198,10 +118355,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -110246,7 +118418,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -110301,6 +118479,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -110385,6 +118566,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -110392,6 +118582,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -110439,6 +118632,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -110475,10 +118674,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -110523,7 +118737,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -110578,6 +118798,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -110662,6 +118885,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -110669,6 +118901,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -110716,6 +118951,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -110752,10 +118993,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -110800,7 +119056,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -110855,6 +119117,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -110939,6 +119204,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -110946,6 +119220,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -110993,6 +119270,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -111029,10 +119312,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -111077,7 +119375,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -111132,6 +119436,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -111216,6 +119523,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -111223,6 +119539,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -111270,6 +119589,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -111306,10 +119631,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -111354,7 +119694,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -111409,6 +119755,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -111493,6 +119842,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -111500,6 +119858,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -111547,6 +119908,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -111589,10 +119956,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -111640,10 +120022,16 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -111698,6 +120086,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -111782,6 +120173,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -111789,6 +120189,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -111836,6 +120239,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -111872,10 +120281,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -111920,7 +120344,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -111975,6 +120405,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -112059,6 +120492,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -112066,6 +120508,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -112113,6 +120558,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -112155,10 +120606,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -112206,10 +120672,16 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -112264,6 +120736,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -112351,6 +120826,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -112358,6 +120842,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -112405,6 +120892,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -112438,10 +120931,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -112486,7 +120994,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -112535,6 +121049,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -112622,6 +121139,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -112629,6 +121155,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -112676,6 +121205,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -112709,10 +121244,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -112757,7 +121307,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -112806,6 +121362,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -112893,6 +121452,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -112900,6 +121468,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -112947,6 +121518,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -112983,10 +121560,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -113031,7 +121623,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -113080,6 +121678,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -113167,6 +121768,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -113174,6 +121784,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -113221,6 +121834,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -113257,10 +121876,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -113305,7 +121939,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -113354,6 +121994,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -113441,6 +122084,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -113448,6 +122100,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -113495,6 +122150,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -113531,10 +122192,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -113579,7 +122255,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -113628,6 +122310,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -113715,6 +122400,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -113722,6 +122416,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -113769,6 +122466,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -113805,10 +122508,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -113853,7 +122571,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -113902,6 +122626,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -113989,6 +122716,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -113996,6 +122732,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -114043,6 +122782,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -114079,10 +122824,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -114127,7 +122887,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -114176,6 +122942,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -114263,6 +123032,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -114270,6 +123048,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -114317,6 +123098,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -114353,10 +123140,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -114401,7 +123203,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -114450,6 +123258,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -114537,6 +123348,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -114544,6 +123364,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -114591,6 +123414,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -114627,10 +123456,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -114675,7 +123519,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -114724,6 +123574,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -114811,6 +123664,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -114818,6 +123680,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -114865,6 +123730,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -114907,10 +123778,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -114958,10 +123844,16 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -115010,6 +123902,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -115097,6 +123992,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -115104,6 +124008,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -115151,6 +124058,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -115187,10 +124100,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -115235,7 +124163,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -115284,6 +124218,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -115371,6 +124308,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -115378,6 +124324,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -115425,6 +124374,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/catalog_id_optional"
           },
           {
@@ -115467,10 +124422,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -115518,10 +124488,16 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -115570,6 +124546,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -115660,6 +124639,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -115667,6 +124655,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -115714,6 +124705,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -115744,10 +124741,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -115792,7 +124804,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -115841,6 +124859,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -115931,6 +124952,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -115938,6 +124968,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -115985,6 +125018,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -116015,10 +125054,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -116063,7 +125117,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -116112,6 +125172,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -116202,6 +125265,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -116209,6 +125281,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -116256,6 +125331,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -116286,10 +125367,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -116334,7 +125430,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -116383,6 +125485,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -116473,6 +125578,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -116480,6 +125594,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -116527,6 +125644,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -116557,10 +125680,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -116605,7 +125743,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -116654,6 +125798,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -116744,6 +125891,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -116751,6 +125907,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -116798,6 +125957,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -116828,10 +125993,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -116876,7 +126056,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -116925,6 +126111,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -117015,6 +126204,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -117022,6 +126220,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -117069,6 +126270,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -117099,10 +126306,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -117147,7 +126369,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -117196,6 +126424,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -117286,6 +126517,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -117293,6 +126533,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -117340,6 +126583,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -117370,10 +126619,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -117418,7 +126682,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -117467,6 +126737,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -117557,6 +126830,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -117564,6 +126846,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -117611,6 +126896,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -117641,10 +126932,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -117689,7 +126995,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -117738,6 +127050,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -117828,6 +127143,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -117835,6 +127159,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -117882,6 +127209,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -117912,10 +127245,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -117960,7 +127308,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -118009,6 +127363,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -118099,6 +127456,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -118106,6 +127472,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -118153,6 +127522,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -118189,10 +127564,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -118240,10 +127630,16 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -118292,6 +127688,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -118382,6 +127781,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -118389,6 +127797,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -118436,6 +127847,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -118466,10 +127883,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -118514,7 +127946,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -118563,6 +128001,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -118653,6 +128094,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -118660,6 +128110,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -118707,6 +128160,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -118743,10 +128202,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -118794,10 +128268,16 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -118846,6 +128326,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -118939,6 +128422,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -118946,6 +128438,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -118993,6 +128488,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -119023,10 +128524,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -119071,7 +128587,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -119120,6 +128642,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -119207,6 +128732,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -119214,6 +128748,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -119261,6 +128798,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -119291,10 +128834,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -119339,7 +128897,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -119388,6 +128952,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -119475,6 +129042,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -119482,6 +129058,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -119529,6 +129108,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -119559,10 +129144,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -119607,7 +129207,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -119656,6 +129262,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -119743,6 +129352,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -119750,6 +129368,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -119797,6 +129418,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -119827,10 +129454,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -119875,7 +129517,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -119924,6 +129572,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -120011,6 +129662,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -120018,6 +129678,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -120065,6 +129728,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -120095,10 +129764,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -120143,7 +129827,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -120192,6 +129882,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -120279,6 +129972,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -120286,6 +129988,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -120333,6 +130038,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -120363,10 +130074,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -120411,7 +130137,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -120460,6 +130192,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -120547,6 +130282,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -120554,6 +130298,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -120601,6 +130348,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -120631,10 +130384,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -120679,7 +130447,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -120728,6 +130502,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -120815,6 +130592,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -120822,6 +130608,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -120869,6 +130658,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -120899,10 +130694,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -120947,7 +130757,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -120996,6 +130812,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -121083,6 +130902,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -121090,6 +130918,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -121137,6 +130968,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -121167,10 +131004,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -121215,7 +131067,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -121264,6 +131122,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -121351,6 +131212,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -121358,6 +131228,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -121405,6 +131278,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -121441,10 +131320,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -121492,10 +131386,16 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -121544,6 +131444,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -121631,6 +131534,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -121638,6 +131550,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -121685,6 +131600,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -121715,10 +131636,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -121763,7 +131699,13 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -121812,6 +131754,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -121899,6 +131844,15 @@
             "$ref": "#/components/parameters/ai_total_tokens_optional"
           },
           {
+            "$ref": "#/components/parameters/alert_action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/alert_type_optional"
+          },
+          {
             "$ref": "#/components/parameters/api_id_optional"
           },
           {
@@ -121906,6 +131860,9 @@
           },
           {
             "$ref": "#/components/parameters/api_resource_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_type_optional"
           },
           {
             "$ref": "#/components/parameters/api_version_optional"
@@ -121953,6 +131910,12 @@
             "$ref": "#/components/parameters/bytes_sent_optional"
           },
           {
+            "$ref": "#/components/parameters/cached_response_optional"
+          },
+          {
+            "$ref": "#/components/parameters/callback_request_optional"
+          },
+          {
             "$ref": "#/components/parameters/client_geoip_optional"
           },
           {
@@ -121989,10 +131952,25 @@
             "$ref": "#/components/parameters/event_id_optional"
           },
           {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/filter_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/gateway_ip_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_time_to_serve_request_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_type_optional"
@@ -122040,10 +132018,16 @@
             "$ref": "#/components/parameters/method_optional"
           },
           {
+            "$ref": "#/components/parameters/monitor_attribute_optional"
+          },
+          {
             "$ref": "#/components/parameters/offset_optional"
           },
           {
             "$ref": "#/components/parameters/opentracing_info_optional"
+          },
+          {
+            "$ref": "#/components/parameters/operation_path_optional"
           },
           {
             "$ref": "#/components/parameters/path_optional"
@@ -122092,6 +132076,9 @@
           },
           {
             "$ref": "#/components/parameters/response_http_headers_optional"
+          },
+          {
+            "$ref": "#/components/parameters/rule_name_optional"
           },
           {
             "$ref": "#/components/parameters/scope_optional"
@@ -122325,6 +132312,9 @@
           },
           {
             "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
           }
         ],
         "security": [
@@ -122377,6 +132367,9 @@
           },
           {
             "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
           }
         ],
         "security": [
@@ -122432,6 +132425,9 @@
           },
           {
             "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
           }
         ],
         "security": [
@@ -124519,6 +134515,165 @@
         ]
       }
     },
+    "/{analytics-service}/catalogs/{org}/{catalog}/corgs/{corg}/dashboard": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get data needed to populate the consumer analytics dashboard.\n",
+        "description": "Get data to populate the consumer analytics dashboard for a specific consumer organization. This endpoint requires provider level authentication.\n",
+        "operationId": "providerconsumeranalytics_catalogGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/accept_language_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ProviderConsumerAnalyticsResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: ProviderConsumerAnalytics"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/corgs/{corg}/apps/{app}/dashboard": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get data to populate the consumer analytics dashboard by app id.\n",
+        "description": "Get data to populate the consumer analytics dashboard for a specific application ID. This endpoint requires provider level authentication.\n",
+        "operationId": "providerconsumeranalytics_catalogGetByApp",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/accept_language_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ProviderConsumerAnalyticsResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: ProviderConsumerAnalytics"
+        ]
+      }
+    },
     "/{analytics-service}/cloud/reports/apiusage": {
       "description": "Return the data needed to populate the API usage report at cloud scope.\n",
       "parameters": [
@@ -125319,6 +135474,67 @@
         ]
       }
     },
+    "/{analytics-service}/cloud/reports/leaderboards/config-sync": {
+      "description": "Return the data needed to populate the config sync leaderboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/search_optional"
+        }
+      ],
+      "get": {
+        "summary": "Config sync leaderboard\n",
+        "description": "Return the data needed to populate the config sync leaderboard at cloud scope.\n",
+        "operationId": "reports_cloudConfigSyncLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
     "/{analytics-service}/cloud/reports/gateway-services/{gateway-service-name}": {
       "description": "Return the data needed to populate the gateway service leaderboard detail report at cloud scope.\n",
       "parameters": [
@@ -125360,6 +135576,61 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/GatewayServiceLeaderboardDetailReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/reports/config-sync/{catalog-name}": {
+      "description": "Return the data needed to populate the config sync leaderboard detail report at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog-name"
+        }
+      ],
+      "get": {
+        "summary": "Config sync detail report\n",
+        "description": "Return the data needed to populate the config sync leaderboard detail report at cloud scope.\n",
+        "operationId": "reports_cloudConfigSyncDetail",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConfigSyncLeaderboardDetailReportResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -126781,6 +137052,67 @@
         ]
       }
     },
+    "/{analytics-service}/orgs/{org}/reports/leaderboards/config-sync": {
+      "description": "Return the data needed to populate the config sync leaderboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/search_optional"
+        }
+      ],
+      "get": {
+        "summary": "Config sync leaderboard\n",
+        "description": "Return the data needed to populate the config sync leaderboard at org scope.\n",
+        "operationId": "reports_orgConfigSyncLeaderboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/LeaderboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
     "/{analytics-service}/orgs/{org}/reports/gateway-services/{gateway-service-name}": {
       "description": "Return the data needed to populate the gateway service leaderboard detail report at org scope.\n",
       "parameters": [
@@ -126822,6 +137154,61 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/GatewayServiceLeaderboardDetailReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/reports/config-sync/{catalog-name}": {
+      "description": "Return the data needed to populate the config sync leaderboard detail report at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog-name"
+        }
+      ],
+      "get": {
+        "summary": "Config sync detail report\n",
+        "description": "Return the data needed to populate the config sync leaderboard detail report at org scope.\n",
+        "operationId": "reports_orgConfigSyncDetail",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/report_timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_end_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/report_start_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConfigSyncLeaderboardDetailReportResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -130540,6 +140927,1036 @@
         "tags": [
           "Analytics",
           "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/summary": {
+      "description": "Return a result set of analytics summary events scoped to the cloud. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "List summary events at cloud scope",
+        "description": "Returns a result set of analytics summary events scoped to the cloud. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'.\n",
+        "operationId": "summary_cloudList",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_ref_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_fields_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_ref_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/sort_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/summary_event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SummaryListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Summary"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/summary/{summary-event-id}": {
+      "description": "Return a single analytics summary event by ID scoped to the cloud. The item in the result set is determined by the passed in request query to this API.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/summary-event-id"
+        },
+        {
+          "$ref": "#/components/parameters/event_fields_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get specific summary event at cloud scope",
+        "description": "Return a single analytics summary event by ID scoped to the cloud. The item in the result set is determined by the passed in request query to this API.\n",
+        "operationId": "summary_cloudGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SummaryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Summary"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/summary/count": {
+      "description": "Return a count of analytics summary events scoped to the cloud. The count in the result is the number of summary API events that match the passed in request query.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Count API calls for summary events at cloud scope",
+        "description": "Return the count of total API calls in analytics summary events scoped to the cloud that match the passed in request query.\n",
+        "operationId": "summary_cloudCount",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_ref_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_ref_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/summary_event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SummaryCountResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Summary"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/summary": {
+      "description": "Return a result set of analytics summary events scoped to the organization. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "List summary events at provider organization scope",
+        "description": "Returns a result set of analytics summary events scoped to the organization. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'.\n",
+        "operationId": "summary_orgList",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_ref_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_fields_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_ref_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/sort_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/summary_event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SummaryListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Summary"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/summary/{summary-event-id}": {
+      "description": "Return a single analytics summary event by ID scoped to the organization. The item in the result set is determined by the passed in request query to this API.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/summary-event-id"
+        },
+        {
+          "$ref": "#/components/parameters/event_fields_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get specific summary event at org scope",
+        "description": "Return a single analytics summary event by ID scoped to the org. The item in the result set is determined by the passed in request query to this API.\n",
+        "operationId": "summary_orgGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SummaryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Summary"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/summary/count": {
+      "description": "Return a count of analytics summary events scoped to the organization. The count in the result is the number of summary API events that match the passed in request query.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Count API calls for summary events at org scope",
+        "description": "Return the count of total API calls in analytics summary events scoped to the organization that match the passed in request query.\n",
+        "operationId": "summary_orgCount",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_ref_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_ref_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/summary_event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SummaryCountResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Summary"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/summary": {
+      "description": "Return a result set of analytics summary events scoped to the catalog. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "List summary events at catalog scope\n",
+        "description": "Returns a result set of analytics summary events scoped to the catalog. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'.\n",
+        "operationId": "summary_catalogList",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_ref_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_fields_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_ref_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/sort_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/summary_event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SummaryListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Summary"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/summary/{summary-event-id}": {
+      "description": "Return a single analytics summary event by ID scoped to the catalog. The item in the result set is determined by the passed in request query to this API.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/summary-event-id"
+        },
+        {
+          "$ref": "#/components/parameters/event_fields_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get specific summary event at catalog scope",
+        "description": "Return a single analytics summary event by ID scoped to the catalog. The item in the result set is determined by the passed in request query to this API.\n",
+        "operationId": "summary_catalogGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SummaryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Summary"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/summary/count": {
+      "description": "Return a count of analytics summary events scoped to the catalog. The count in the result is the number of summary API events that match the passed in request query.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Count API calls for summary events at catalog scope",
+        "description": "Return the count of total API calls in analytics summary events scoped to the catalog that match the passed in request query.\n",
+        "operationId": "summary_catalogCount",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_ref_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_ref_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/summary_event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SummaryCountResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Summary"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/summary": {
+      "description": "Return a result set of analytics summary events scoped to the space. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "List summary events at space scope",
+        "description": "Returns a result set of analytics summary events scoped to the space. The items in the result set are determined by the passed in request query to this API. The order of the result set is sorted from newest to oldest events by specified 'datetime'.\n",
+        "operationId": "summary_spaceList",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_ref_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_fields_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_ref_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/sort_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/summary_event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SummaryListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Summary"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/summary/{summary-event-id}": {
+      "description": "Return a single analytics summary event by ID scoped to the space. The item in the result set is determined by the passed in request query to this API.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/summary-event-id"
+        },
+        {
+          "$ref": "#/components/parameters/event_fields_optional"
+        }
+      ],
+      "get": {
+        "summary": "Get specific summary event at space scope",
+        "description": "Return a single analytics summary event by ID scoped to the space. The item in the result set is determined by the passed in request query to this API.\n",
+        "operationId": "summary_spaceGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SummaryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Summary"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/summary/count": {
+      "description": "Return a count of analytics summary events scoped to the space. The count in the result is the number of summary API events that match the passed in request query.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Count API calls for summary events at space scope",
+        "description": "Return the count of total API calls in analytics summary events scoped to the space that match the passed in request query.\n",
+        "operationId": "summary_spaceCount",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_ref_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_received_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bytes_sent_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/consumer_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_ref_optional"
+          },
+          {
+            "$ref": "#/components/parameters/provider_org_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/summary_event_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SummaryCountResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Summary"
         ]
       }
     },
@@ -134990,6 +146407,273 @@
           "Resource: Clustermgmt (storage)"
         ]
       }
+    },
+    "/{analytics-service}/cloud/audit/filterparameters": {
+      "description": "Return the list of audit filter parameters supported at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "description": "Return the list of audit filter parameters supported at cloud scope.\n",
+        "summary": "List audit filter parameters at cloud scope",
+        "operationId": "audit_cloudGetFilterParameters",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AuditFilterParamListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Audit"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/audit": {
+      "description": "Return a result set of audit records scoped to the cloud.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/start_time_optional"
+        },
+        {
+          "$ref": "#/components/parameters/end_time_optional"
+        }
+      ],
+      "get": {
+        "summary": "List audits at cloud scope",
+        "description": "Returns a list of audit records from the cloud scope.\n",
+        "operationId": "audit_cloudList",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AuditListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Audit"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/audit/{audit-id}": {
+      "description": "Return a single audit record by ID from cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/audit-id"
+        }
+      ],
+      "get": {
+        "summary": "Get audit record at cloud scope",
+        "description": "Returns a specific audit record by ID.\n",
+        "operationId": "audit_cloudGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AuditResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Audit"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/audit/filterparameters": {
+      "description": "Return the list of audit filter parameters supported at organization scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "description": "Return the list of audit filter parameters supported at organization scope.\n",
+        "summary": "List audit filter parameters at organization scope",
+        "operationId": "audit_orgGetFilterParameters",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AuditFilterParamListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Audit"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/audit": {
+      "description": "Return a result set of audit records scoped to the organization.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/limit_optional"
+        },
+        {
+          "$ref": "#/components/parameters/offset_optional"
+        },
+        {
+          "$ref": "#/components/parameters/start_time_optional"
+        },
+        {
+          "$ref": "#/components/parameters/end_time_optional"
+        }
+      ],
+      "get": {
+        "summary": "List audits at organization scope",
+        "description": "Returns a list of audit records for the specified organization.\n",
+        "operationId": "audit_orgList",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AuditListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Audit"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/audit/{audit-id}": {
+      "description": "Return a single audit record by ID for the specified organization.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/audit-id"
+        }
+      ],
+      "get": {
+        "summary": "Get audit record at organization scope",
+        "description": "Returns a specific audit record by ID for the given organization.\n",
+        "operationId": "audit_orgGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AuditResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Audit"
+        ]
+      }
     }
   },
   "components": {
@@ -135035,6 +146719,15 @@
         "name": "event-id",
         "in": "path",
         "description": "Analytics API event ID. This ID is globally unique across the analytics service.\n",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/Id"
+        }
+      },
+      "summary-event-id": {
+        "name": "summary-event-id",
+        "in": "path",
+        "description": "Analytics summary event ID. This ID is globally unique across the analytics service.\n",
         "required": true,
         "schema": {
           "$ref": "#/components/schemas/Id"
@@ -135149,10 +146842,30 @@
           "example": "custom_app"
         }
       },
+      "app": {
+        "name": "app",
+        "in": "path",
+        "description": "Filter results by application name or application id.",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "custom_app"
+        }
+      },
       "consumer-org-name": {
         "name": "consumer-org-name",
         "in": "path",
         "description": "Filter results by consumer organization name (filters on the `developer_org_name` data field).",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "my_consumer_org"
+        }
+      },
+      "corg": {
+        "name": "corg",
+        "in": "path",
+        "description": "Filter results by consumer organization id (filters on the `developer_org_id` data field) or consumer organization name (filters on the `developer_org_name` data field) .",
         "required": true,
         "schema": {
           "type": "string",
@@ -135167,6 +146880,16 @@
         "schema": {
           "type": "string",
           "example": "v5gw"
+        }
+      },
+      "catalog-name": {
+        "name": "catalog-name",
+        "in": "path",
+        "description": "Filter results by catalog name",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "api-connect-catalog-1"
         }
       },
       "space": {
@@ -135318,6 +147041,33 @@
           "example": 1000
         }
       },
+      "alert_action_optional": {
+        "name": "alert_action",
+        "in": "query",
+        "description": "Filter results by alert action.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "alert_description_optional": {
+        "name": "alert_description",
+        "in": "query",
+        "description": "Filter results by alert description.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "alert_type_optional": {
+        "name": "alert_type",
+        "in": "query",
+        "description": "Filter results by alert type.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "allow_no_indices_optional": {
         "name": "allow_no_indices",
         "in": "query",
@@ -135345,6 +147095,31 @@
         "schema": {
           "type": "string",
           "example": "custom_api"
+        }
+      },
+      "api_ref_optional": {
+        "name": "api_ref",
+        "in": "query",
+        "description": "Filter results by API reference (name:version)",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "card-services-lock-control-api-api:1.0.0"
+        }
+      },
+      "api_type_optional": {
+        "name": "api_type",
+        "in": "query",
+        "description": "Filter results by API type.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "rest",
+            "soap",
+            "graphql",
+            "mcp"
+          ]
         }
       },
       "api_version_optional": {
@@ -135395,6 +147170,16 @@
         "schema": {
           "type": "string",
           "example": "custom_app"
+        }
+      },
+      "audit-id": {
+        "name": "audit-id",
+        "in": "path",
+        "description": "Filter results by audit ID.",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "6c597223-b2b7-49dc-b956-14596b6cc8f1"
         }
       },
       "backend_method_optional": {
@@ -135531,6 +147316,26 @@
         "schema": {
           "type": "string",
           "example": 500
+        }
+      },
+      "cached_response_optional": {
+        "name": "cached_response",
+        "in": "query",
+        "description": "Filter results by cached response.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "true"
+        }
+      },
+      "callback_request_optional": {
+        "name": "callback_request",
+        "in": "query",
+        "description": "Filter results by callback request.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "true"
         }
       },
       "catalog_id_optional": {
@@ -135704,10 +147509,28 @@
           "type": "string"
         }
       },
+      "error_description_optional": {
+        "name": "error_description",
+        "in": "query",
+        "description": "Filter results by error description.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "error_limit_optional": {
         "name": "error_limit",
         "in": "query",
         "description": "If set, the number of items to return when requesting errors data.\n",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "error_message_optional": {
+        "name": "error_message",
+        "in": "query",
+        "description": "Filter results by error message.",
         "required": false,
         "schema": {
           "type": "string"
@@ -135740,6 +147563,15 @@
         "schema": {
           "type": "string",
           "example": "api_version,api_name,api_id"
+        }
+      },
+      "event_type_optional": {
+        "name": "event_type",
+        "in": "query",
+        "description": "Filter results by event type.",
+        "required": false,
+        "schema": {
+          "type": "string"
         }
       },
       "expand_wildcards_optional": {
@@ -135785,6 +147617,15 @@
           "type": "string"
         }
       },
+      "filter_name_optional": {
+        "name": "filter_name",
+        "in": "query",
+        "description": "Filter results by filter name.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "force_optional": {
         "name": "force",
         "in": "query",
@@ -135812,6 +147653,24 @@
           "type": "boolean"
         }
       },
+      "monitor_attribute_optional": {
+        "name": "monitor_attribute",
+        "in": "query",
+        "description": "Filter results by monitor attribute.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "operation_path_optional": {
+        "name": "operation_path",
+        "in": "query",
+        "description": "Filter results by operation path.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "provider_org_id_optional": {
         "name": "provider_org_id",
         "in": "query",
@@ -135836,6 +147695,15 @@
         "name": "return_format",
         "in": "query",
         "description": "Short version of the HTTP accept header. Valid values include JSON, YAML, etc.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rule_name_optional": {
+        "name": "rule_name",
+        "in": "query",
+        "description": "Filter results by rule_name.",
         "required": false,
         "schema": {
           "type": "string"
@@ -135891,6 +147759,16 @@
         "schema": {
           "type": "string",
           "example": "gateway-service1"
+        }
+      },
+      "gateway_time_to_serve_request_optional": {
+        "name": "gateway_time_to_serve_request",
+        "in": "query",
+        "description": "The time in milliseconds to handle the request in the gateway (not including any time for backend requests).",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "143"
         }
       },
       "gateway_type_optional": {
@@ -136333,6 +148211,16 @@
           "example": "custom_product"
         }
       },
+      "product_ref_optional": {
+        "name": "product_ref",
+        "in": "query",
+        "description": "Filter results by product reference (name:version)",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "api-connect-lueilwitz-mcclure-handcrafted-intelligent-fresh-tuna-product:1.0.0"
+        }
+      },
       "product_title_optional": {
         "name": "product_title",
         "in": "query",
@@ -136390,6 +148278,16 @@
         "schema": {
           "type": "string",
           "example": "space1"
+        }
+      },
+      "summary_event_id_optional": {
+        "name": "summary_event_id",
+        "in": "query",
+        "description": "If set, only return this specific summary event ID.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "x4xBahH6GwQTCgFcvgml0g"
         }
       },
       "rate_limit_optional": {
@@ -136914,6 +148812,17 @@
           }
         }
       },
+      "ConsumerApiCallsList": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ConsumerEventArray"
+          }
+        }
+      },
       "ApiDashboardResponse": {
         "type": "object",
         "description": "Data to display on the API Dashboard.",
@@ -136950,6 +148859,12 @@
           },
           "top_api_paths_by_errors": {
             "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "cached_api_calls_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "api_type_calls_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
           }
         }
       },
@@ -137157,6 +149072,54 @@
         "type": "string",
         "description": "Number of the cluster"
       },
+      "ProviderConsumerAnalyticsResponse": {
+        "type": "object",
+        "description": "Data to display on the consumer analytics Dashboard.",
+        "properties": {
+          "search_time": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "status_codes": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "min_response_time": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "avg_response_time": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "max_response_time": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_api_calls": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_errors": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "response_times": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "throttled_calls": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "api_calls_per_day": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "last_api_calls": {
+            "$ref": "#/components/schemas/ConsumerApiCallsList"
+          },
+          "top_apis_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "top_products_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          }
+        }
+      },
       "ConsumerDashboardResponse": {
         "type": "object",
         "description": "Data to display on the Consumer Dashboard.",
@@ -137183,6 +149146,181 @@
             "$ref": "#/components/schemas/GroupValueDataList"
           }
         }
+      },
+      "ConsumerEventArray": {
+        "type": "array",
+        "description": "Array of Consumer API events",
+        "items": {
+          "$ref": "#/components/schemas/ConsumerEventBody"
+        }
+      },
+      "ConsumerEventBody": {
+        "type": "object",
+        "description": "The API Event logged by the gateway",
+        "additionalProperties": true,
+        "properties": {
+          "api_version": {
+            "type": "string",
+            "description": "The version of the API"
+          },
+          "api_name": {
+            "type": "string",
+            "description": "The name of the API"
+          },
+          "api_id": {
+            "type": "string",
+            "description": "The ID of the API"
+          },
+          "api_resource_id": {
+            "type": "string",
+            "description": "The API resource ID"
+          },
+          "app_lifecycle_state": {
+            "type": "string",
+            "description": "The lifecycle state of the calling application"
+          },
+          "bytes_received": {
+            "type": "number",
+            "description": "The number of bytes received by the gateway"
+          },
+          "bytes_sent": {
+            "type": "number",
+            "description": "The number of bytes sent by the gateway"
+          },
+          "client_id": {
+            "type": "string",
+            "description": "The application client ID used"
+          },
+          "datetime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The date time of the API event from the gateway"
+          },
+          "developer_org_id": {
+            "type": "string",
+            "description": "The consumer organization ID"
+          },
+          "developer_org_name": {
+            "type": "string",
+            "description": "The consumer organization name"
+          },
+          "developer_org_title": {
+            "type": "string",
+            "description": "The consumer organization title"
+          },
+          "headers": {
+            "type": "object",
+            "description": "Internal headers array from ingestion"
+          },
+          "host": {
+            "type": "string",
+            "description": "The ingestion host IP address"
+          },
+          "http_user_agent": {
+            "type": "string",
+            "description": "The caller user agent string",
+            "example": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36"
+          },
+          "org_name": {
+            "type": "string",
+            "description": "The provider organization name"
+          },
+          "org_id": {
+            "type": "string",
+            "description": "The provider organization ID"
+          },
+          "plan_id": {
+            "type": "string",
+            "description": "The plan ID"
+          },
+          "plan_name": {
+            "type": "string",
+            "description": "The plan name"
+          },
+          "product_version": {
+            "type": "string",
+            "description": "The product version"
+          },
+          "product_name": {
+            "type": "string",
+            "description": "The product name"
+          },
+          "product_id": {
+            "type": "string",
+            "description": "The product ID"
+          },
+          "product_title": {
+            "type": "string",
+            "description": "The product title"
+          },
+          "query_string": {
+            "type": "string",
+            "description": "Any provided query parameters"
+          },
+          "request_body": {
+            "type": "string",
+            "description": "The request body payload"
+          },
+          "request_http_headers": {
+            "type": "array",
+            "description": "The request headers",
+            "items": {
+              "$ref": "#/components/schemas/HeaderItem"
+            }
+          },
+          "request_method": {
+            "type": "string",
+            "description": "The request HTTP method"
+          },
+          "request_protocol": {
+            "type": "string",
+            "description": "The request protocol"
+          },
+          "resource_id": {
+            "type": "string",
+            "description": "The resource ID"
+          },
+          "resource_path": {
+            "type": "string",
+            "description": "The resource path"
+          },
+          "response_body": {
+            "type": "string",
+            "description": "The response body payload"
+          },
+          "response_http_headers": {
+            "type": "array",
+            "description": "The response headers",
+            "items": {
+              "$ref": "#/components/schemas/HeaderItem"
+            }
+          },
+          "status_code": {
+            "type": "string",
+            "description": "The HTTP response status code",
+            "example": "200 OK"
+          },
+          "time_to_serve_request": {
+            "type": "number",
+            "description": "The time taken to serve the request"
+          },
+          "uri_path": {
+            "type": "string",
+            "description": "The URI path"
+          }
+        },
+        "required": [
+          "org_name",
+          "org_id",
+          "resource_path",
+          "status_code",
+          "product_name",
+          "product_version",
+          "product_id",
+          "api_name",
+          "api_version",
+          "api_id"
+        ]
       },
       "ConsumptionResponse": {
         "type": "object",
@@ -137388,6 +149526,16 @@
             "type": "string",
             "description": "The API resource ID"
           },
+          "api_type": {
+            "type": "string",
+            "description": "The API type, mcp, rest, soap or graphql",
+            "enum": [
+              "rest",
+              "soap",
+              "graphql",
+              "mcp"
+            ]
+          },
           "app_lifecycle_state": {
             "type": "string",
             "description": "The lifecycle state of the calling application"
@@ -137463,6 +149611,14 @@
           "bytes_sent": {
             "type": "number",
             "description": "The number of bytes sent by the gateway"
+          },
+          "cached_response": {
+            "type": "boolean",
+            "description": "Whether this response was served from the gateway cache or not"
+          },
+          "callback_request": {
+            "type": "boolean",
+            "description": "Shows whether this was a callback request"
           },
           "catalog_id": {
             "type": "string",
@@ -137569,6 +149725,21 @@
           "endpoint_url": {
             "type": "string"
           },
+          "event_type": {
+            "type": "string",
+            "description": "The event type"
+          },
+          "external_calls": {
+            "type": "array",
+            "description": "Array of information about external calls made by the gateway",
+            "items": {
+              "type": "object"
+            }
+          },
+          "gateway_host": {
+            "type": "string",
+            "description": "The host name of the gateway"
+          },
           "gateway_ip": {
             "type": "string",
             "description": "The IP address of the gateway"
@@ -137630,9 +149801,21 @@
               }
             }
           },
+          "gateway_port": {
+            "type": "string",
+            "description": "The port number of the gateway"
+          },
           "gateway_service_name": {
             "type": "string",
             "description": "The service name of the gateway (apigw only)"
+          },
+          "gateway_time_to_serve_request": {
+            "type": "number",
+            "description": "The gateway time taken to serve the request"
+          },
+          "gateway_type": {
+            "type": "string",
+            "description": "The type of the gateway"
           },
           "global_transaction_id": {
             "type": "string",
@@ -137671,6 +149854,10 @@
             "items": {
               "$ref": "#/components/schemas/OpentracingInfoItem"
             }
+          },
+          "operation_path": {
+            "type": "string",
+            "description": "The API operation path for REST, or SOAP operation name"
           },
           "org_name": {
             "type": "string",
@@ -137786,6 +149973,14 @@
           "uri_path": {
             "type": "string",
             "description": "The URI path"
+          },
+          "websocket_message_type": {
+            "type": "string",
+            "description": "The message type for websocket API calls"
+          },
+          "websocket_origin": {
+            "type": "string",
+            "description": "The origin of websocket API calls"
           }
         },
         "required": [
@@ -137853,6 +150048,146 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/Event"
+          }
+        ]
+      },
+      "Summary": {
+        "type": "object",
+        "description": "API event.",
+        "properties": {
+          "event": {
+            "$ref": "#/components/schemas/SummaryBody"
+          }
+        }
+      },
+      "SummaryBody": {
+        "type": "object",
+        "description": "The Analytics summary event which is generated by transforming the API event data",
+        "additionalProperties": true,
+        "properties": {
+          "api_ref": {
+            "type": "string",
+            "description": "The API reference (name:version)"
+          },
+          "app_name": {
+            "type": "string",
+            "description": "The name of the application"
+          },
+          "bytes_received": {
+            "type": "number",
+            "description": "The number of bytes received by the gateway"
+          },
+          "bytes_sent": {
+            "type": "number",
+            "description": "The number of bytes sent by the gateway"
+          },
+          "catalog_name": {
+            "type": "string",
+            "description": "The catalog name"
+          },
+          "datetime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The date time of the API event from the gateway"
+          },
+          "developer_org_name": {
+            "type": "string",
+            "description": "The consumer organization name"
+          },
+          "gateway_service_name": {
+            "type": "string",
+            "description": "The service name of the gateway (apigw only)"
+          },
+          "plan_id": {
+            "type": "string",
+            "description": "The plan ID"
+          },
+          "product_ref": {
+            "type": "string",
+            "description": "The product reference (product_name:version)"
+          },
+          "org_name": {
+            "type": "string",
+            "description": "The provider organization name"
+          },
+          "space_name": {
+            "type": "string",
+            "description": "The space name (not present for non-space APIs)"
+          },
+          "status_code": {
+            "type": "string",
+            "description": "The HTTP response status code",
+            "example": "200 OK"
+          },
+          "summary_event_id": {
+            "$ref": "#/components/schemas/Id"
+          },
+          "time_to_serve_request": {
+            "type": "number",
+            "description": "The time taken to serve the request"
+          }
+        }
+      },
+      "SummaryCountResponse": {
+        "type": "object",
+        "description": "Number of matching summary API events at the requested scope.",
+        "properties": {
+          "total_api_calls": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          }
+        }
+      },
+      "SummaryList": {
+        "type": "array",
+        "description": "Array of summary API events.",
+        "items": {
+          "$ref": "#/components/schemas/SummaryBody"
+        }
+      },
+      "SummaryListResponse": {
+        "type": "object",
+        "description": "Summary API event list response.",
+        "required": [
+          "total",
+          "search_time",
+          "events"
+        ],
+        "properties": {
+          "total": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "search_time": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "offset": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "limit": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "first": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "next": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "previous": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "last": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "events": {
+            "$ref": "#/components/schemas/SummaryList"
+          }
+        }
+      },
+      "SummaryResponse": {
+        "type": "object",
+        "description": "Summary API event response.",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Summary"
           }
         ]
       },
@@ -138099,6 +150434,18 @@
           "apis_with_fastest_response_time": {
             "$ref": "#/components/schemas/GroupKeyValueDataList"
           },
+          "apis_with_slowest_backend_response_time": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
+          "apis_with_fastest_backend_response_time": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
+          "apis_with_slowest_gateway_processing_time": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
+          "apis_with_fastest_gateway_processing_time": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
           "response_times": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
           },
@@ -138236,6 +150583,9 @@
           "api_call_volume": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
           },
+          "data_usage": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
           "breakdown": {
             "$ref": "#/components/schemas/BreakDownData"
           },
@@ -138299,6 +150649,9 @@
           "usage_data": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
           },
+          "data_usage": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
           "latency_data": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
           },
@@ -138307,6 +150660,53 @@
           },
           "product_leaderboard": {
             "$ref": "#/components/schemas/LeaderboardRanked"
+          }
+        }
+      },
+      "ConfigSyncLeaderboardDetailReportResponse": {
+        "type": "object",
+        "description": "Leaderboard detail for config sync report",
+        "properties": {
+          "search_time": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "org_name": {
+            "type": "string"
+          },
+          "catalog_name": {
+            "type": "string"
+          },
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "configSync"
+            ]
+          },
+          "total_apis": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_products": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_applications": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_consumer_orgs": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_users": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_subscriptions": {
+            "$ref": "#/components/schemas/DataItem"
           }
         }
       },
@@ -138892,6 +151292,45 @@
                 "x-example": "366d"
               }
             }
+          },
+          "audit_retention": {
+            "type": "object",
+            "required": [
+              "min_index_age"
+            ],
+            "properties": {
+              "min_index_age": {
+                "description": "The minimum age required to delete the audit index. Index age is the time between its creation and the present. Use d for day and h for hour, e.g. 30d or 800h.",
+                "type": "string",
+                "x-example": "30d"
+              }
+            }
+          },
+          "heartbeat_retention": {
+            "type": "object",
+            "required": [
+              "min_index_age"
+            ],
+            "properties": {
+              "min_index_age": {
+                "description": "The minimum age required to delete the heartbeat index. Index age is the time between its creation and the present. Use d for day and h for hour, e.g. 30d or 800h.",
+                "type": "string",
+                "x-example": "30d"
+              }
+            }
+          },
+          "metrics_retention": {
+            "type": "object",
+            "required": [
+              "min_index_age"
+            ],
+            "properties": {
+              "min_index_age": {
+                "description": "The minimum age required to delete the metrics index. Index age is the time between its creation and the present. Use d for day and h for hour, e.g. 30d or 800h.",
+                "type": "string",
+                "x-example": "30d"
+              }
+            }
           }
         }
       },
@@ -139300,7 +151739,8 @@
               "plan",
               "applications",
               "consumerOrg",
-              "gatewayService"
+              "gatewayService",
+              "configSync"
             ]
           },
           "leaderboard": {
@@ -139592,6 +152032,9 @@
           "api_calls": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
           },
+          "data_usage": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
           "breakdown": {
             "$ref": "#/components/schemas/BreakDownData"
           },
@@ -139684,6 +152127,280 @@
           },
           "errors": {
             "type": "boolean"
+          }
+        }
+      },
+      "AuditResponse": {
+        "type": "object",
+        "description": "A single audit record.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the audit record."
+          },
+          "org_id": {
+            "type": "string",
+            "description": "Provider organization ID."
+          },
+          "catalog_id": {
+            "type": "string",
+            "description": "Catalog ID."
+          },
+          "space_id": {
+            "type": "string",
+            "description": "Space ID."
+          },
+          "event_time": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp of the audit event."
+          },
+          "event_name": {
+            "type": "string",
+            "description": "Name of the audit event."
+          },
+          "type_uri": {
+            "type": "string",
+            "description": "The type URI."
+          },
+          "action": {
+            "type": "string",
+            "description": "Audit action."
+          },
+          "outcome": {
+            "type": "string",
+            "description": "Outcome of the event."
+          },
+          "event_type": {
+            "type": "string",
+            "description": "Type of the audit event."
+          },
+          "reason": {
+            "type": "object",
+            "properties": {
+              "reason_code": {
+                "type": "integer"
+              },
+              "reason_type": {
+                "type": "string"
+              }
+            }
+          },
+          "initiator": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "type_uri": {
+                "type": "string"
+              }
+            }
+          },
+          "target": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "type_uri": {
+                "type": "string"
+              },
+              "event_generator": {
+                "type": "string"
+              }
+            }
+          },
+          "request_data": {
+            "type": "object",
+            "description": "Request details."
+          },
+          "response_data": {
+            "type": "object",
+            "description": "Response details."
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "component": {
+                  "type": "string"
+                },
+                "scope": {
+                  "type": "string"
+                },
+                "method": {
+                  "type": "string"
+                },
+                "summary": {
+                  "type": "string"
+                },
+                "operation": {
+                  "type": "string"
+                },
+                "resource": {
+                  "type": "string"
+                },
+                "user": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string"
+                    },
+                    "context": {
+                      "type": "string"
+                    },
+                    "idp_name": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "registration": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "AuditListResponse": {
+        "type": "object",
+        "description": "Response for a list of audit records.",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "description": "Total number of audit records."
+          },
+          "took": {
+            "type": "integer",
+            "description": "Time in milliseconds taken for the query."
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Query offset."
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Query limit."
+          },
+          "audits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AuditResponse"
+            }
+          }
+        }
+      },
+      "AuditFilterParamListResponse": {
+        "type": "object",
+        "description": "List of supported audit filter parameters.",
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "topLevel": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AuditFilterParam"
+                }
+              },
+              "nested": {
+                "type": "object",
+                "properties": {
+                  "reason": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/AuditFilterParam"
+                    }
+                  },
+                  "initiator": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/AuditFilterParam"
+                    }
+                  },
+                  "target": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/AuditFilterParam"
+                    }
+                  },
+                  "attachments": {
+                    "type": "object",
+                    "properties": {
+                      "main": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/AuditFilterParam"
+                        }
+                      },
+                      "user": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/AuditFilterParam"
+                        }
+                      },
+                      "registration": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/AuditFilterParam"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "AuditFilterParam": {
+        "type": "object",
+        "description": "An audit filter parameter.",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the audit filter parameter."
+          },
+          "text": {
+            "type": "string",
+            "description": "The localized text for the filter parameter."
+          },
+          "type": {
+            "type": "string",
+            "description": "The data type of the filter parameter."
+          },
+          "operators": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string"
+                },
+                "operator": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       }
@@ -139779,6 +152496,21 @@
           }
         }
       },
+      "ConfigSyncLeaderboardDetailReportResponse": {
+        "description": "Data needed to populate the detailed view of the leaderboard for the config sync report",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ConfigSyncLeaderboardDetailReportResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ConfigSyncLeaderboardDetailReportResponse"
+            }
+          }
+        }
+      },
       "ApplicationDashboardResponse": {
         "description": "Data needed to populate the Application Dashboard",
         "content": {
@@ -139820,6 +152552,21 @@
           "application/yaml": {
             "schema": {
               "$ref": "#/components/schemas/ClusterMgmtObjectResponse"
+            }
+          }
+        }
+      },
+      "ProviderConsumerAnalyticsResponse": {
+        "description": "Data needed to populate the Provider level Consumer Analytics Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ProviderConsumerAnalyticsResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ProviderConsumerAnalyticsResponse"
             }
           }
         }
@@ -140112,6 +152859,51 @@
           }
         }
       },
+      "SummaryCountResponse": {
+        "description": "Number of summary API event calls at requested scope.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SummaryCountResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/SummaryCountResponse"
+            }
+          }
+        }
+      },
+      "SummaryListResponse": {
+        "description": "Summary events found at requested scope.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SummaryListResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/SummaryListResponse"
+            }
+          }
+        }
+      },
+      "SummaryResponse": {
+        "description": "Summary event matching supplied ID if exists at specified scope.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SummaryResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/SummaryResponse"
+            }
+          }
+        }
+      },
       "DataDashboardResponse": {
         "description": "Data needed to populate the Data Dashboard",
         "content": {
@@ -140321,6 +153113,51 @@
             }
           }
         }
+      },
+      "AuditListResponse": {
+        "description": "Response for the audit list endpoint.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AuditListResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/AuditListResponse"
+            }
+          }
+        }
+      },
+      "AuditResponse": {
+        "description": "Response for retrieving a single audit record.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AuditResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/AuditResponse"
+            }
+          }
+        }
+      },
+      "AuditFilterParamListResponse": {
+        "description": "Response for listing audit filter parameters.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AuditFilterParamListResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/AuditFilterParamListResponse"
+            }
+          }
+        }
       }
     },
     "securitySchemes": {
@@ -140423,6 +153260,24 @@
           },
           {
             "$ref": "#/components/parameters/x_ibm_consumer_context"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
           }
         ],
         "responses": {
@@ -140484,6 +153339,21 @@
           },
           {
             "$ref": "#/components/parameters/x_ibm_consumer_context"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
           }
         ],
         "responses": {
@@ -140516,6 +153386,26 @@
           "example": "en"
         }
       },
+      "api_name_optional": {
+        "name": "api_name",
+        "in": "query",
+        "description": "Filter results by API name.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "custom_api"
+        }
+      },
+      "api_version_optional": {
+        "name": "api_version",
+        "in": "query",
+        "description": "Filters results by API version.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "1.0.0"
+        }
+      },
       "app": {
         "name": "app",
         "in": "path",
@@ -140523,6 +153413,16 @@
         "required": true,
         "schema": {
           "type": "string"
+        }
+      },
+      "app_name_optional": {
+        "name": "app_name",
+        "in": "query",
+        "description": "Filters results by application name.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "custom_app"
         }
       },
       "end_time_optional": {
@@ -140562,6 +153462,36 @@
         "required": true,
         "schema": {
           "type": "string"
+        }
+      },
+      "plan_name_optional": {
+        "name": "plan_name",
+        "in": "query",
+        "description": "Filter results by plan name.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "default_plan"
+        }
+      },
+      "product_name_optional": {
+        "name": "product_name",
+        "in": "query",
+        "description": "Filters results by product name.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "custom_product"
+        }
+      },
+      "product_version_optional": {
+        "name": "product_version",
+        "in": "query",
+        "description": "Filters results by product version.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "2.0.0"
         }
       },
       "start_time_optional": {
@@ -141175,7 +154105,7 @@
         "security": [
           {
             "oauth": [
-              "api-analytics:manage"
+              "engagement:manage"
             ]
           }
         ],
@@ -141184,11 +154114,21 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/RuleCreateRequest"
+              },
+              "examples": {
+                "CreateRule": {
+                  "$ref": "#/components/examples/CreateRule"
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/RuleCreateRequest"
+              },
+              "examples": {
+                "CreateRule": {
+                  "$ref": "#/components/examples/CreateRule"
+                }
               }
             }
           }
@@ -141237,6 +154177,14 @@
             ]
           }
         ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_date_optional"
+          }
+        ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/RuleResponse"
@@ -141260,7 +154208,7 @@
         "security": [
           {
             "oauth": [
-              "api-analytics:manage"
+              "engagement:manage"
             ]
           }
         ],
@@ -141269,11 +154217,21 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/RuleUpdateRequest"
+              },
+              "examples": {
+                "UpdateRule": {
+                  "$ref": "#/components/examples/UpdateRule"
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/RuleUpdateRequest"
+              },
+              "examples": {
+                "UpdateRule": {
+                  "$ref": "#/components/examples/UpdateRule"
+                }
               }
             }
           }
@@ -141301,7 +154259,7 @@
         "security": [
           {
             "oauth": [
-              "api-analytics:manage"
+              "engagement:manage"
             ]
           }
         ],
@@ -141386,6 +154344,47 @@
         "tags": [
           "Engagement",
           "Resource: Tasks"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/rules/total-count": {
+      "description": "Returns the total count of all engagement rules within a specific organization.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Returns the total count of all engagement rules within a specific organization",
+        "description": "Returns the total count of all engagement rules within a specific organization.\n",
+        "operationId": "rules_orgTotalCount",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/RulesCountResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Rules"
         ]
       }
     },
@@ -141491,7 +154490,7 @@
         "security": [
           {
             "oauth": [
-              "api-analytics:manage"
+              "engagement:manage"
             ]
           }
         ],
@@ -141500,11 +154499,21 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/DestinationCreateRequest"
+              },
+              "examples": {
+                "CreateDestination": {
+                  "$ref": "#/components/examples/CreateDestination"
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/DestinationCreateRequest"
+              },
+              "examples": {
+                "CreateDestination": {
+                  "$ref": "#/components/examples/CreateDestination"
+                }
               }
             }
           }
@@ -141576,7 +154585,7 @@
         "security": [
           {
             "oauth": [
-              "api-analytics:manage"
+              "engagement:manage"
             ]
           }
         ],
@@ -141585,11 +154594,21 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/DestinationUpdateRequest"
+              },
+              "examples": {
+                "UpdateDestination": {
+                  "$ref": "#/components/examples/UpdateDestination"
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/DestinationUpdateRequest"
+              },
+              "examples": {
+                "UpdateDestination": {
+                  "$ref": "#/components/examples/UpdateDestination"
+                }
               }
             }
           }
@@ -141622,7 +154641,7 @@
         "security": [
           {
             "oauth": [
-              "api-analytics:manage"
+              "engagement:manage"
             ]
           }
         ],
@@ -141792,7 +154811,7 @@
         "security": [
           {
             "oauth": [
-              "api-analytics:manage"
+              "engagement:manage"
             ]
           }
         ],
@@ -141801,11 +154820,21 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/RuleCreateRequest"
+              },
+              "examples": {
+                "CreateRule": {
+                  "$ref": "#/components/examples/CreateRule"
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/RuleCreateRequest"
+              },
+              "examples": {
+                "CreateRule": {
+                  "$ref": "#/components/examples/CreateRule"
+                }
               }
             }
           }
@@ -141813,6 +154842,50 @@
         "responses": {
           "201": {
             "$ref": "#/components/responses/RuleCreateResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Rules"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/rules/total-count": {
+      "description": "Returns the total count of all engagement rules within a specific catalog.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Returns the total count of all engagement rules within a specific catalog",
+        "description": "Returns the total count of all engagement rules within a specific catalog.\n",
+        "operationId": "rules_catalogTotalCount",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/RulesCountResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -141857,6 +154930,14 @@
             ]
           }
         ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_date_optional"
+          }
+        ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/RuleResponse"
@@ -141880,7 +154961,7 @@
         "security": [
           {
             "oauth": [
-              "api-analytics:manage"
+              "engagement:manage"
             ]
           }
         ],
@@ -141889,11 +154970,21 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/RuleUpdateRequest"
+              },
+              "examples": {
+                "UpdateRule": {
+                  "$ref": "#/components/examples/UpdateRule"
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/RuleUpdateRequest"
+              },
+              "examples": {
+                "UpdateRule": {
+                  "$ref": "#/components/examples/UpdateRule"
+                }
               }
             }
           }
@@ -141921,7 +155012,7 @@
         "security": [
           {
             "oauth": [
-              "api-analytics:manage"
+              "engagement:manage"
             ]
           }
         ],
@@ -142120,7 +155211,7 @@
         "security": [
           {
             "oauth": [
-              "api-analytics:manage"
+              "engagement:manage"
             ]
           }
         ],
@@ -142129,11 +155220,21 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/DestinationCreateRequest"
+              },
+              "examples": {
+                "CreateDestination": {
+                  "$ref": "#/components/examples/CreateDestination"
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/DestinationCreateRequest"
+              },
+              "examples": {
+                "CreateDestination": {
+                  "$ref": "#/components/examples/CreateDestination"
+                }
               }
             }
           }
@@ -142208,7 +155309,7 @@
         "security": [
           {
             "oauth": [
-              "api-analytics:manage"
+              "engagement:manage"
             ]
           }
         ],
@@ -142217,11 +155318,21 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/DestinationUpdateRequest"
+              },
+              "examples": {
+                "UpdateDestination": {
+                  "$ref": "#/components/examples/UpdateDestination"
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/DestinationUpdateRequest"
+              },
+              "examples": {
+                "UpdateDestination": {
+                  "$ref": "#/components/examples/UpdateDestination"
+                }
               }
             }
           }
@@ -142249,7 +155360,7 @@
         "security": [
           {
             "oauth": [
-              "api-analytics:manage"
+              "engagement:manage"
             ]
           }
         ],
@@ -142324,6 +155435,154 @@
     }
   },
   "components": {
+    "examples": {
+      "CreateDestination": {
+        "summary": "Create new destination",
+        "value": {
+          "title": "My custom server",
+          "description": "the description of the target destination",
+          "config_type": "webhook",
+          "is_enabled": true,
+          "webhook": {
+            "target": "https://custom.server.example.com",
+            "header_params": {
+              "Content-Type": "application/json",
+              "my-header": "abcd"
+            },
+            "method": "POST"
+          }
+        }
+      },
+      "CreateRule": {
+        "summary": "An example rule",
+        "value": {
+          "title": "Large Payload",
+          "type": "per_query",
+          "enabled": true,
+          "data_source": "apievents",
+          "schedule": {
+            "schedule_type": "interval",
+            "period_interval": 1,
+            "period_unit": "MINUTES"
+          },
+          "metric": {
+            "avg": {
+              "field": "time_to_serve_request"
+            }
+          },
+          "group_by": "api_name",
+          "filters": [
+            {
+              "not": {
+                "bytes_sent": 0
+              }
+            }
+          ],
+          "timeframe": "string",
+          "triggers": [
+            {
+              "title": "Greater than 2000",
+              "severity": 1,
+              "condition": {
+                "operator": "gt",
+                "value": 2000
+              },
+              "actions": [
+                {
+                  "title": "string",
+                  "destination_id": "858c9f23-af13-4408-845d-4e2eec321959",
+                  "message": "API average latency greater than 2s",
+                  "subject": "Slow APIs",
+                  "to": "sre@example.com",
+                  "cc": "",
+                  "bcc": "",
+                  "throttle_enabled": true,
+                  "throttle": {
+                    "value": 1,
+                    "unit": "MINUTES"
+                  },
+                  "id": "9291caef-fdd2-4774-a927-a4f5e75d016a"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "UpdateDestination": {
+        "summary": "Update destination",
+        "value": {
+          "id": "c941e2ad-3650-472f-a022-07d6fe5ab9b5",
+          "title": "My custom server",
+          "description": "the description of the target destination",
+          "config_type": "webhook",
+          "is_enabled": true,
+          "webhook": {
+            "target": "https://custom.server.example.com",
+            "header_params": {
+              "Content-Type": "application/json",
+              "my-header": "abcd"
+            },
+            "method": "POST"
+          }
+        }
+      },
+      "UpdateRule": {
+        "summary": "An example rule",
+        "value": {
+          "id": "2651b739-6ff9-448d-967c-c15bfdaaf272",
+          "title": "Large Payload",
+          "type": "per_query",
+          "enabled": true,
+          "data_source": "apievents",
+          "schedule": {
+            "schedule_type": "interval",
+            "period_interval": 1,
+            "period_unit": "MINUTES"
+          },
+          "metric": {
+            "avg": {
+              "field": "time_to_serve_request"
+            }
+          },
+          "group_by": "api_name",
+          "filters": [
+            {
+              "not": {
+                "bytes_sent": 0
+              }
+            }
+          ],
+          "timeframe": "string",
+          "triggers": [
+            {
+              "title": "Greater than 2000",
+              "severity": 1,
+              "condition": {
+                "operator": "gt",
+                "value": 2000
+              },
+              "actions": [
+                {
+                  "title": "string",
+                  "destination_id": "858c9f23-af13-4408-845d-4e2eec321959",
+                  "message": "API average latency greater than 2s",
+                  "subject": "Slow APIs",
+                  "to": "sre@example.com",
+                  "cc": "",
+                  "bcc": "",
+                  "throttle_enabled": true,
+                  "throttle": {
+                    "value": 1,
+                    "unit": "MINUTES"
+                  },
+                  "id": "9291caef-fdd2-4774-a927-a4f5e75d016a"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
     "parameters": {
       "analytics-service": {
         "name": "analytics-service",
@@ -142948,10 +156207,7 @@
             "type": "boolean"
           },
           "data_source": {
-            "type": "string",
-            "enum": [
-              "apievents"
-            ]
+            "type": "string"
           },
           "schedule": {
             "type": "object",
@@ -143026,6 +156282,9 @@
             "properties": {
               "id": {
                 "$ref": "#/components/schemas/Id"
+              },
+              "alertHistory": {
+                "$ref": "#/components/schemas/AlertHistory"
               }
             }
           }
@@ -143080,6 +156339,21 @@
             "items": {
               "$ref": "#/components/schemas/Rule"
             }
+          }
+        }
+      },
+      "RuleCount": {
+        "type": "integer",
+        "description": "Total number of rules",
+        "minLength": 1,
+        "maxLength": 5
+      },
+      "RulesCountResponse": {
+        "type": "object",
+        "description": "Response object to Rule count",
+        "properties": {
+          "totalRules": {
+            "$ref": "#/components/schemas/RuleCount"
           }
         }
       },
@@ -143263,6 +156537,72 @@
             }
           }
         ]
+      },
+      "AlertHistory": {
+        "type": "object",
+        "description": "Response object for alert history",
+        "properties": {
+          "individualAlerts": {
+            "type": "array",
+            "description": "List of individual alert events",
+            "items": {
+              "type": "object"
+            }
+          },
+          "alertsOverTime": {
+            "type": "array",
+            "description": "Aggregated alerts over time intervals",
+            "items": {
+              "type": "object",
+              "properties": {
+                "timestamp": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "Timestamp of the alert aggregation"
+                },
+                "total_alerts": {
+                  "type": "integer",
+                  "description": "Total number of alerts at this timestamp"
+                },
+                "severity_info": {
+                  "type": "array",
+                  "description": "Severity distribution of alerts at this timestamp",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "level": {
+                        "type": "integer",
+                        "description": "Severity level of the alert"
+                      },
+                      "count": {
+                        "type": "integer",
+                        "description": "Number of alerts at this severity level"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "maxAlerts": {
+            "type": "object",
+            "description": "Maximum alerts recorded across all timestamps",
+            "properties": {
+              "value": {
+                "type": "integer",
+                "description": "Highest number of alerts in any time window"
+              },
+              "keys": {
+                "type": "array",
+                "description": "Timestamps where the maximum alerts occurred",
+                "items": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "responses": {
@@ -143272,11 +156612,21 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/DestinationResponse"
+            },
+            "examples": {
+              "UpdateDestination": {
+                "$ref": "#/components/examples/UpdateDestination"
+              }
             }
           },
           "application/yaml": {
             "schema": {
               "$ref": "#/components/schemas/DestinationResponse"
+            },
+            "examples": {
+              "UpdateDestination": {
+                "$ref": "#/components/examples/UpdateDestination"
+              }
             }
           }
         }
@@ -143287,11 +156637,21 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/DestinationCreateResponse"
+            },
+            "examples": {
+              "UpdateDestination": {
+                "$ref": "#/components/examples/UpdateDestination"
+              }
             }
           },
           "application/yaml": {
             "schema": {
               "$ref": "#/components/schemas/DestinationCreateResponse"
+            },
+            "examples": {
+              "UpdateDestination": {
+                "$ref": "#/components/examples/UpdateDestination"
+              }
             }
           }
         }
@@ -143350,11 +156710,21 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/RuleResponse"
+            },
+            "examples": {
+              "UpdateRule": {
+                "$ref": "#/components/examples/UpdateRule"
+              }
             }
           },
           "application/yaml": {
             "schema": {
               "$ref": "#/components/schemas/RuleResponse"
+            },
+            "examples": {
+              "UpdateRule": {
+                "$ref": "#/components/examples/UpdateRule"
+              }
             }
           }
         }
@@ -143365,11 +156735,21 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/RuleCreateResponse"
+            },
+            "examples": {
+              "UpdateRule": {
+                "$ref": "#/components/examples/UpdateRule"
+              }
             }
           },
           "application/yaml": {
             "schema": {
               "$ref": "#/components/schemas/RuleCreateResponse"
+            },
+            "examples": {
+              "UpdateRule": {
+                "$ref": "#/components/examples/UpdateRule"
+              }
             }
           }
         }
@@ -143385,6 +156765,21 @@
           "application/yaml": {
             "schema": {
               "$ref": "#/components/schemas/RulesListResponse"
+            }
+          }
+        }
+      },
+      "RulesCountResponse": {
+        "description": "A number of total Rules",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RulesCountResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/RulesCountResponse"
             }
           }
         }
@@ -143428,20 +156823,20 @@
           "implicit": {
             "authorizationUrl": "https://apimserver.example.com/api/oauth2/authorize",
             "scopes": {
-              "api-analytics:view": "View an engagement object"
+              "engagement:view": "View an engagement object"
             }
           },
           "password": {
             "tokenUrl": "https://apimserver.example.com/api/token",
             "refreshUrl": "https://apimserver.example.com/api/token",
             "scopes": {
-              "api-analytics:view": "View an engagement object"
+              "engagement:view": "View an engagement object"
             }
           },
           "clientCredentials": {
             "tokenUrl": "https://apimserver.example.com/api/token",
             "scopes": {
-              "api-analytics:view": "View an engagement object"
+              "engagement:view": "View an engagement object"
             }
           },
           "authorizationCode": {
@@ -143449,7 +156844,7 @@
             "tokenUrl": "https://apimserver.example.com/api/token",
             "refreshUrl": "https://apimserver.example.com/api/token",
             "scopes": {
-              "api-analytics:view": "View an engagement object"
+              "engagement:view": "View an engagement object"
             }
           }
         }
@@ -143576,7 +156971,7 @@
       ],
       "get": {
         "summary": "Get a specific api from a developer portal.",
-        "description": "Get a specific api from the developer portal of the provided org and catalog. The id or name:version of a specific api needs to be provided. e.g. 'id-of-api-called-example-3' or 'example:3.0.0'.",
+        "description": "Get a specific api from the developer portal of the provided org and catalog. The id or name:version of a specific api needs to be provided. e.g. './apic --mode portaladmin api:get --server **api** --catalog **catalog** --org **org** my-api:2.0.0'.",
         "operationId": "api_get",
         "security": [
           {
@@ -144193,7 +157588,7 @@
       ],
       "get": {
         "summary": "Get a specific application from a developer portal.",
-        "description": "Get a specific application from the developer portal of the provided org and catalog. The id of a specific application needs to be provided.",
+        "description": "Get a specific application from the developer portal of the provided org and catalog. The id of a specific application needs to be provided. e.g. './apic --mode portaladmin application:get --server **api** --catalog **catalog** --org **org** my-first-application '",
         "operationId": "application_get",
         "security": [
           {
@@ -144358,7 +157753,7 @@
       ],
       "get": {
         "summary": "Get a specific consumer org from a developer portal.",
-        "description": "Get a specific consumer org from the developer portal of the provided org and catalog. The id of a specific consumer organization needs to be provided.",
+        "description": "Get a specific consumer org from the developer portal of the provided org and catalog. The id of a specific consumer organization needs to be provided. e.g. './apic --mode portaladmin consumer-org:get --server **api** --catalog **catalog** --org **org** acme-org'",
         "operationId": "consumer_org_get",
         "security": [
           {
@@ -151178,7 +164573,7 @@
       ],
       "get": {
         "summary": "Get a specific product from a developer portal.",
-        "description": "Get a specific product from the developer portal of the provided org and catalog. The id or name:version of a specific product needs to be provided. e.g. 'id-of-product-called-example-3' or 'example:3.0.0'.",
+        "description": "Get a specific product from the developer portal of the provided org and catalog. The id or name:version of a specific product needs to be provided. e.g. './apic --mode portaladmin product:get --server **api** --catalog **catalog** --org **org** example:3.0.0'.",
         "operationId": "product_get",
         "security": [
           {
@@ -153077,7 +166472,7 @@
       ],
       "get": {
         "summary": "Get a role defined on the site.",
-        "description": "Gets a Drupal User Role defined on the site and all the permissions it has been granted",
+        "description": "Gets a Drupal User Role defined on the site and all the permissions it has been granted. e.g. './apic --mode portaladmin role:get --server **api** --catalog **catalog** --org **org** administrator'",
         "operationId": "role_get",
         "security": [
           {
