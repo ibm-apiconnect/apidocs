@@ -15,10 +15,10 @@
       headerActive: true,
       groupByTags: true,
       validateSwagger: false,
-      explorerDir: "/../app/",
+      explorerDir: "/velox/openapi-public/app/",
       routerType: "hash",
       versions: {
-        "10.0.1.1": "10.0.1.1.html",
+         "10.0.1.1": "10.0.1.1.html",
         "10.0.1.2": "10.0.1.2.html",
         "10.0.1.4": "10.0.1.4.html",
         "10.0.1.5": "10.0.1.5.html",
