@@ -15,10 +15,10 @@
       headerActive: true,
       groupByTags: true,
       validateSwagger: false,
-      explorerDir: "/velox/openapi-public/app/",
+      explorerDir: "/../app/",
       routerType: "hash",
       versions: {
-         "10.0.1.1": "10.0.1.1.html",
+        "10.0.1.1": "10.0.1.1.html",
         "10.0.1.2": "10.0.1.2.html",
         "10.0.1.4": "10.0.1.4.html",
         "10.0.1.5": "10.0.1.5.html",
@@ -49,7 +49,7 @@
         "10.0.8.LATEST": "10.0.8.LATEST.html",
         "10.0.9.0": "10.0.9.0.html",
         "10.0.10.0": "10.0.10.0.html",
-        "10.0.LATEST": "10.0.LATEST.html"
+        "10.0.LATEST": "10.0.LATEST.html",
       }
     },
   apis: [
@@ -33999,7 +33999,8 @@
                 "event_config_logs",
                 "feedback_2",
                 "ldap_cxn_pool",
-                "open_telemetry"
+                "open_telemetry",
+                "feedback_2_1"
               ]
             }
           },
@@ -37195,7 +37196,8 @@
             "type": "string",
             "enum": [
               "fail",
-              "success"
+              "success",
+              "publish_with_errors"
             ]
           },
           "message": {
@@ -99323,7 +99325,8 @@
                 "event_config_logs",
                 "feedback_2",
                 "ldap_cxn_pool",
-                "open_telemetry"
+                "open_telemetry",
+                "feedback_2_1"
               ]
             }
           },
@@ -102519,7 +102522,8 @@
             "type": "string",
             "enum": [
               "fail",
-              "success"
+              "success",
+              "publish_with_errors"
             ]
           },
           "message": {
@@ -116930,6 +116934,128 @@
         "tags": [
           "Analytics",
           "Resource: Events"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/audit-timeline": {
+      "description": "Return a result set of Audit events scoped to the cloud.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "List audits for timeline chart",
+        "description": "Returns a list of audit events sorted by eventTime, scoped to cloud.\n",
+        "operationId": "audit_cloudTimeline",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/accept_language_optional"
+          },
+          {
+            "$ref": "#/components/parameters/analytics-service"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AuditTimelineResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Audit"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/audit-timeline": {
+      "description": "Return a result set of Audit events scoped to the organization. The order of the result set is sorted from newest to oldest events by 'eventTime'.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Audit timeline at organization scope",
+        "description": "Returns a timeline of audit events across the provider organization.\n",
+        "operationId": "audit_orgTimeline",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/accept_language_optional"
+          },
+          {
+            "$ref": "#/components/parameters/analytics-service"
+          },
+          {
+            "$ref": "#/components/parameters/org"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AuditTimelineResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Audit"
         ]
       }
     },
@@ -132593,6 +132719,55 @@
         ]
       }
     },
+    "/{analytics-service}/cloud/queries/current-default": {
+      "description": "Returns the current default query shared by others at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "List current default query at cloud scope",
+        "description": "Returns the current default query shared by others at cloud scope.\n",
+        "operationId": "queries_cloudListCurrentDefault",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/saved_query_search_optional"
+          }
+        ],
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
     "/{analytics-service}/cloud/queries/{query-id}": {
       "description": "Return a single saved query by name or ID scoped to the cloud.\n",
       "parameters": [
@@ -132881,6 +133056,47 @@
         ]
       }
     },
+    "/{analytics-service}/cloud/queries/{query-id}/default": {
+      "description": "Set a query as default at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "post": {
+        "summary": "Set a shared query as the default query",
+        "description": "Set a shared query as the default query",
+        "operationId": "queries_cloudDefault",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
     "/{analytics-service}/orgs/{org}/queries": {
       "description": "The root of the 'queries' resource at org scope.\n",
       "parameters": [
@@ -132991,6 +133207,58 @@
         "summary": "List shared queries at org scope",
         "description": "Return a list of saved queries shared by others at org scope.\n",
         "operationId": "queries_orgListShared",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/saved_query_search_optional"
+          }
+        ],
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/queries/current-default": {
+      "description": "Return the current default query shared by others at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "List current default query at org scope",
+        "description": "Return the current default query shared by others at org scope.\n",
+        "operationId": "queries_orgListCurrentDefault",
         "parameters": [
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -133329,6 +133597,50 @@
         ]
       }
     },
+    "/{analytics-service}/orgs/{org}/queries/{query-id}/default": {
+      "description": "Set a query as default at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "post": {
+        "summary": "Set a shared query as the default query",
+        "description": "Set a shared query as the default query",
+        "operationId": "queries_orgDefault",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
     "/{analytics-service}/catalogs/{org}/{catalog}/queries": {
       "description": "The root of the 'queries' resource at catalog scope.\n",
       "parameters": [
@@ -133445,6 +133757,61 @@
         "summary": "List shared queries at catalog scope",
         "description": "Return a list of saved queries shared by others at catalog scope.\n",
         "operationId": "queries_catalogListShared",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/saved_query_search_optional"
+          }
+        ],
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/queries/current-default": {
+      "description": "Return the current default query shared by others at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "List current default query at catalog scope",
+        "description": "Return the current default query shared by others at catalog scope.\n",
+        "operationId": "queries_catalogListCurrentDefault",
         "parameters": [
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -133798,6 +134165,53 @@
         ]
       }
     },
+    "/{analytics-service}/catalogs/{org}/{catalog}/queries/{query-id}/default": {
+      "description": "Set a query as default at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "post": {
+        "summary": "Set a shared query as the default query",
+        "description": "Set a shared query as the default query",
+        "operationId": "queries_catalogDefault",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
     "/{analytics-service}/spaces/{org}/{catalog}/{space}/queries": {
       "description": "The root of the 'queries' resource at space scope.\n",
       "parameters": [
@@ -133920,6 +134334,64 @@
         "summary": "List shared queries at space scope",
         "description": "Return a list of saved queries shared by others at space scope.\n",
         "operationId": "queries_spaceListShared",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/saved_query_search_optional"
+          }
+        ],
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/queries/current-default": {
+      "description": "Return the current default query shared by others at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "List current default query at space scope",
+        "description": "Return the current default query shared by others at space scope.\n",
+        "operationId": "queries_spaceListsCurrentDefault",
         "parameters": [
           {
             "$ref": "#/components/parameters/limit_optional"
@@ -134264,6 +134736,56 @@
         "summary": "Make a personal copy of a shared query",
         "description": "Make a personal copy of a shared query.",
         "operationId": "queries_spaceClone",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QueryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Queries"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/queries/{query-id}/default": {
+      "description": "Set a query as default at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/query-id"
+        }
+      ],
+      "post": {
+        "summary": "Set a shared query as the default query",
+        "description": "Set a shared query as the default query.",
+        "operationId": "queries_spaceDefault",
         "security": [
           {
             "oauth": [
@@ -147114,12 +147636,7 @@
         "required": false,
         "schema": {
           "type": "string",
-          "enum": [
-            "rest",
-            "soap",
-            "graphql",
-            "mcp"
-          ]
+          "example": "rest"
         }
       },
       "api_version_optional": {
@@ -150206,6 +150723,21 @@
           }
         }
       },
+      "AuditTimelineResponse": {
+        "type": "object",
+        "description": "Discover timeline response.",
+        "properties": {
+          "total": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "search_time": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "api_calls_in_timeframe": {
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          }
+        }
+      },
       "FilterParam": {
         "type": "object",
         "description": "Filter parameter.",
@@ -150868,6 +151400,10 @@
             "type": "boolean",
             "default": false
           },
+          "default": {
+            "type": "boolean",
+            "default": false
+          },
           "org_id": {
             "type": "string"
           },
@@ -150915,6 +151451,10 @@
             "type": "string"
           },
           "shared": {
+            "type": "boolean",
+            "default": false
+          },
+          "default": {
             "type": "boolean",
             "default": false
           },
@@ -152672,6 +153212,21 @@
           "application/yaml": {
             "schema": {
               "$ref": "#/components/schemas/DiscoverTimelineResponse"
+            }
+          }
+        }
+      },
+      "AuditTimelineResponse": {
+        "description": "Data needed to populate the Audit Events Timeline graph",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AuditTimelineResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/AuditTimelineResponse"
             }
           }
         }
@@ -155828,7 +156383,8 @@
               "webhook",
               "email",
               "pagerduty",
-              "slack"
+              "slack",
+              "sns"
             ]
           },
           "is_enabled": {
@@ -155847,6 +156403,14 @@
             "type": "string",
             "description": "Slack channel ID (C1234567890 not #my-channel-name) (only used for slack destinations)",
             "example": "C1234567890"
+          },
+          "topic_arn": {
+            "type": "string",
+            "description": "AWS topic ARN (only used for SNS destinations)"
+          },
+          "role_arn": {
+            "type": "string",
+            "description": "AWS role ARN (optional and only used for SNS destinations)"
           },
           "webhook": {
             "type": "object",
