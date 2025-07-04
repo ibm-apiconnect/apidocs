@@ -116966,16 +116966,73 @@
             "$ref": "#/components/parameters/analytics-service"
           },
           {
+            "$ref": "#/components/parameters/action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/attachments_optional"
+          },
+          {
+            "$ref": "#/components/parameters/auditId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalogId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/eventGenerator_optional"
+          },
+          {
+            "$ref": "#/components/parameters/initiator_optional"
+          },
+          {
             "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/providerOrgId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/outcome_optional"
+          },
+          {
+            "$ref": "#/components/parameters/observer_optional"
           },
           {
             "$ref": "#/components/parameters/offset_optional"
           },
           {
+            "$ref": "#/components/parameters/requestData_optional"
+          },
+          {
+            "$ref": "#/components/parameters/requestPath_optional"
+          },
+          {
+            "$ref": "#/components/parameters/reason_optional"
+          },
+          {
+            "$ref": "#/components/parameters/responseData_optional"
+          },
+          {
             "$ref": "#/components/parameters/start_time_optional"
           },
           {
-            "$ref": "#/components/parameters/end_time_optional"
+            "$ref": "#/components/parameters/sort_optional"
+          },
+          {
+            "$ref": "#/components/parameters/spaceId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/target_optional"
+          },
+          {
+            "$ref": "#/components/parameters/typeURI_optional"
+          },
+          {
+            "$ref": "#/components/parameters/tags_optional"
           }
         ],
         "responses": {
@@ -117027,19 +117084,73 @@
             "$ref": "#/components/parameters/analytics-service"
           },
           {
-            "$ref": "#/components/parameters/org"
+            "$ref": "#/components/parameters/action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/attachments_optional"
+          },
+          {
+            "$ref": "#/components/parameters/auditId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalogId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/eventGenerator_optional"
+          },
+          {
+            "$ref": "#/components/parameters/initiator_optional"
           },
           {
             "$ref": "#/components/parameters/limit_optional"
           },
           {
+            "$ref": "#/components/parameters/org"
+          },
+          {
+            "$ref": "#/components/parameters/outcome_optional"
+          },
+          {
+            "$ref": "#/components/parameters/observer_optional"
+          },
+          {
             "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/requestData_optional"
+          },
+          {
+            "$ref": "#/components/parameters/requestPath_optional"
+          },
+          {
+            "$ref": "#/components/parameters/reason_optional"
+          },
+          {
+            "$ref": "#/components/parameters/responseData_optional"
           },
           {
             "$ref": "#/components/parameters/start_time_optional"
           },
           {
-            "$ref": "#/components/parameters/end_time_optional"
+            "$ref": "#/components/parameters/sort_optional"
+          },
+          {
+            "$ref": "#/components/parameters/spaceId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/target_optional"
+          },
+          {
+            "$ref": "#/components/parameters/typeURI_optional"
+          },
+          {
+            "$ref": "#/components/parameters/tags_optional"
           }
         ],
         "responses": {
@@ -135601,6 +135712,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
+          {
             "$ref": "#/components/parameters/provider_org_name_optional"
           },
           {
@@ -135661,6 +135775,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
           {
             "$ref": "#/components/parameters/provider_org_name_optional"
           },
@@ -135723,6 +135840,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
+          {
             "$ref": "#/components/parameters/provider_org_name_optional"
           },
           {
@@ -135783,6 +135903,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
           {
             "$ref": "#/components/parameters/provider_org_name_optional"
           },
@@ -135845,6 +135968,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
+          {
             "$ref": "#/components/parameters/provider_org_name_optional"
           },
           {
@@ -135906,6 +136032,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
+          {
             "$ref": "#/components/parameters/provider_org_name_optional"
           },
           {
@@ -135966,6 +136095,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
           {
             "$ref": "#/components/parameters/provider_org_name_optional"
           },
@@ -137182,6 +137314,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
+          {
             "$ref": "#/components/parameters/report_timeframe_optional"
           },
           {
@@ -137242,6 +137377,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
           },
@@ -137304,6 +137442,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
+          {
             "$ref": "#/components/parameters/report_timeframe_optional"
           },
           {
@@ -137364,6 +137505,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
           },
@@ -137426,6 +137570,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
+          {
             "$ref": "#/components/parameters/report_timeframe_optional"
           },
           {
@@ -137487,6 +137634,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
+          {
             "$ref": "#/components/parameters/report_timeframe_optional"
           },
           {
@@ -137547,6 +137697,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
           },
@@ -138796,6 +138949,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
+          {
             "$ref": "#/components/parameters/report_timeframe_optional"
           },
           {
@@ -138859,6 +139015,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
           },
@@ -138924,6 +139083,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
+          {
             "$ref": "#/components/parameters/report_timeframe_optional"
           },
           {
@@ -138987,6 +139149,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
           },
@@ -139052,6 +139217,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
+          {
             "$ref": "#/components/parameters/report_timeframe_optional"
           },
           {
@@ -139116,6 +139284,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
+          {
             "$ref": "#/components/parameters/report_timeframe_optional"
           },
           {
@@ -139179,6 +139350,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
           },
@@ -140366,6 +140540,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
+          {
             "$ref": "#/components/parameters/report_timeframe_optional"
           },
           {
@@ -140429,6 +140606,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
           },
@@ -140494,6 +140674,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
+          {
             "$ref": "#/components/parameters/report_timeframe_optional"
           },
           {
@@ -140557,6 +140740,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
           },
@@ -140622,6 +140808,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
+          {
             "$ref": "#/components/parameters/report_timeframe_optional"
           },
           {
@@ -140685,6 +140874,9 @@
           }
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/all_status_optional"
+          },
           {
             "$ref": "#/components/parameters/report_timeframe_optional"
           },
@@ -146976,18 +147168,6 @@
         },
         {
           "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/limit_optional"
-        },
-        {
-          "$ref": "#/components/parameters/offset_optional"
-        },
-        {
-          "$ref": "#/components/parameters/start_time_optional"
-        },
-        {
-          "$ref": "#/components/parameters/end_time_optional"
         }
       ],
       "get": {
@@ -146999,6 +147179,77 @@
             "oauth": [
               "api-analytics:view"
             ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/attachments_optional"
+          },
+          {
+            "$ref": "#/components/parameters/auditId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalogId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/eventGenerator_optional"
+          },
+          {
+            "$ref": "#/components/parameters/initiator_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/providerOrgId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/outcome_optional"
+          },
+          {
+            "$ref": "#/components/parameters/observer_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/requestData_optional"
+          },
+          {
+            "$ref": "#/components/parameters/requestPath_optional"
+          },
+          {
+            "$ref": "#/components/parameters/reason_optional"
+          },
+          {
+            "$ref": "#/components/parameters/responseData_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/sort_optional"
+          },
+          {
+            "$ref": "#/components/parameters/spaceId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/target_optional"
+          },
+          {
+            "$ref": "#/components/parameters/typeURI_optional"
+          },
+          {
+            "$ref": "#/components/parameters/tags_optional"
           }
         ],
         "responses": {
@@ -147111,18 +147362,6 @@
         },
         {
           "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/limit_optional"
-        },
-        {
-          "$ref": "#/components/parameters/offset_optional"
-        },
-        {
-          "$ref": "#/components/parameters/start_time_optional"
-        },
-        {
-          "$ref": "#/components/parameters/end_time_optional"
         }
       ],
       "get": {
@@ -147134,6 +147373,74 @@
             "oauth": [
               "api-analytics:view"
             ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/attachments_optional"
+          },
+          {
+            "$ref": "#/components/parameters/auditId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalogId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/eventGenerator_optional"
+          },
+          {
+            "$ref": "#/components/parameters/initiator_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/outcome_optional"
+          },
+          {
+            "$ref": "#/components/parameters/observer_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/requestData_optional"
+          },
+          {
+            "$ref": "#/components/parameters/requestPath_optional"
+          },
+          {
+            "$ref": "#/components/parameters/reason_optional"
+          },
+          {
+            "$ref": "#/components/parameters/responseData_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/sort_optional"
+          },
+          {
+            "$ref": "#/components/parameters/spaceId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/target_optional"
+          },
+          {
+            "$ref": "#/components/parameters/typeURI_optional"
+          },
+          {
+            "$ref": "#/components/parameters/tags_optional"
           }
         ],
         "responses": {
@@ -147513,6 +147820,26 @@
           "type": "boolean"
         }
       },
+      "action_optional": {
+        "name": "action",
+        "in": "query",
+        "description": "Filter result by audit action name",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "create"
+        }
+      },
+      "auditId_optional": {
+        "name": "id",
+        "in": "query",
+        "description": "Filter result by audit event id",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "a3d935afd935cb9da38fe4cd3db05056"
+        }
+      },
       "ai_model_optional": {
         "name": "ai_model",
         "in": "query",
@@ -147588,6 +147915,15 @@
         "required": false,
         "schema": {
           "type": "string"
+        }
+      },
+      "all_status_optional": {
+        "name": "all_status",
+        "in": "query",
+        "description": "If true, the response includes all status codes, including those that are not successful. Defaults to false.",
+        "required": false,
+        "schema": {
+          "type": "boolean"
         }
       },
       "allow_no_indices_optional": {
@@ -147688,6 +148024,22 @@
           "type": "string",
           "example": "custom_app"
         }
+      },
+      "attachments_optional": {
+        "name": "attachments",
+        "in": "query",
+        "description": "Filter result by audit attachments",
+        "required": false,
+        "schema": {
+          "type": "object"
+        },
+        "example": {
+          "user": {
+            "url": "www.url.com"
+          }
+        },
+        "style": "deepObject",
+        "explode": true
       },
       "audit-id": {
         "name": "audit-id",
@@ -147859,6 +148211,16 @@
         "name": "catalog_id",
         "in": "query",
         "description": "Filter results by catalog ID.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "6c592723-b2b7-49dc-b956-14596b6cc8f3"
+        }
+      },
+      "catalogId_optional": {
+        "name": "catalogId",
+        "in": "query",
+        "description": "Filter results by for audit catalog ID.",
         "required": false,
         "schema": {
           "type": "string",
@@ -148082,6 +148444,16 @@
           "example": "api_version,api_name,api_id"
         }
       },
+      "eventGenerator_optional": {
+        "name": "eventGenerator",
+        "in": "query",
+        "description": "filter result by where event was generated",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "analytics"
+        }
+      },
       "event_type_optional": {
         "name": "event_type",
         "in": "query",
@@ -148170,6 +148542,34 @@
           "type": "boolean"
         }
       },
+      "mode": {
+        "name": "mode",
+        "in": "path",
+        "description": "Specifies the deployment mode to delete the indices for",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "apicontrolplane",
+            "devportal",
+            "analytics"
+          ]
+        }
+      },
+      "initiator_optional": {
+        "name": "initiator",
+        "in": "query",
+        "description": "Filter result by audit initiator",
+        "required": false,
+        "schema": {
+          "type": "object"
+        },
+        "example": {
+          "typeURI": "www.url.com"
+        },
+        "style": "deepObject",
+        "explode": true
+      },
       "monitor_attribute_optional": {
         "name": "monitor_attribute",
         "in": "query",
@@ -148179,6 +148579,20 @@
           "type": "string"
         }
       },
+      "observer_optional": {
+        "name": "observer",
+        "in": "query",
+        "description": "Filter result by audit observer",
+        "required": false,
+        "schema": {
+          "type": "object"
+        },
+        "example": {
+          "id": "target"
+        },
+        "style": "deepObject",
+        "explode": true
+      },
       "operation_path_optional": {
         "name": "operation_path",
         "in": "query",
@@ -148186,6 +148600,26 @@
         "required": false,
         "schema": {
           "type": "string"
+        }
+      },
+      "outcome_optional": {
+        "name": "outcome",
+        "in": "query",
+        "description": "Filter result by audit outcome",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "success"
+        }
+      },
+      "providerOrgId_optional": {
+        "name": "orgId",
+        "in": "query",
+        "description": "Filter results by provider organization ID.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "dc299ac1-223d-4f53-94ce-2f264ea32d81"
         }
       },
       "provider_org_id_optional": {
@@ -148757,6 +149191,20 @@
           "example": "2.0.0"
         }
       },
+      "reason_optional": {
+        "name": "reason",
+        "in": "query",
+        "description": "Filter result by audit reason",
+        "required": false,
+        "schema": {
+          "type": "object"
+        },
+        "example": {
+          "reasonCode": 200
+        },
+        "style": "deepObject",
+        "explode": true
+      },
       "query_string_optional": {
         "name": "query_string",
         "in": "query",
@@ -148781,6 +149229,16 @@
         "name": "space_id",
         "in": "query",
         "description": "Filter results by space ID.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "c3ac3e87-fe39-4866-9ea4-01517d6e90cd"
+        }
+      },
+      "spaceId_optional": {
+        "name": "spaceId",
+        "in": "query",
+        "description": "Filter result by space Id",
         "required": false,
         "schema": {
           "type": "string",
@@ -148887,6 +149345,30 @@
         "style": "deepObject",
         "explode": true
       },
+      "requestPath_optional": {
+        "name": "requestPath",
+        "in": "query",
+        "description": "Filter audit result by request path",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "/api/orgs/e67d5d3d-7ef4-4b46-bac3-72fe0f6fdb7a/members/5efe0c66-0af9-4f57-8741-51077b71f0d5"
+        }
+      },
+      "responseData_optional": {
+        "name": "responseData",
+        "in": "query",
+        "description": "Filter result by audit response Data",
+        "required": false,
+        "schema": {
+          "type": "object"
+        },
+        "example": {
+          "url": "www.url.com"
+        },
+        "style": "deepObject",
+        "explode": true
+      },
       "resource_id_optional": {
         "name": "resource_id",
         "in": "query",
@@ -148930,6 +149412,20 @@
         "schema": {
           "type": "boolean"
         }
+      },
+      "requestData_optional": {
+        "name": "requestData",
+        "in": "query",
+        "description": "Filter audit results by requestData",
+        "required": false,
+        "schema": {
+          "type": "object"
+        },
+        "example": {
+          "url": "www.url.com"
+        },
+        "style": "deepObject",
+        "explode": true
       },
       "s_optional": {
         "name": "s",
@@ -148997,6 +149493,30 @@
           "type": "string",
           "format": "date-time"
         }
+      },
+      "tags_optional": {
+        "name": "tags",
+        "in": "query",
+        "description": "Filter result by audit tags",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "apicnonapievent"
+        }
+      },
+      "target_optional": {
+        "name": "target",
+        "in": "query",
+        "description": "Filter result by audit target",
+        "required": false,
+        "schema": {
+          "type": "object"
+        },
+        "example": {
+          "typeURI": "draft_api"
+        },
+        "style": "deepObject",
+        "explode": true
       },
       "threads_optional": {
         "name": "threads",
@@ -149084,6 +149604,15 @@
         "name": "types",
         "in": "query",
         "description": "A comma-separated list of document types for the indexing index metric.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "typeURI_optional": {
+        "name": "typeURI",
+        "in": "query",
+        "description": "Filter result by audit typeURI",
         "required": false,
         "schema": {
           "type": "string"
@@ -149482,6 +150011,11 @@
             "$ref": "#/components/schemas/GroupValueDataList"
           }
         }
+      },
+      "StatusCodesCount": {
+        "type": "object",
+        "description": "Data to display the breakdown of API calls per status code",
+        "$ref": "#/components/schemas/GroupValueDataList"
       },
       "ClientDashboardResponse": {
         "type": "object",
@@ -151120,6 +151654,9 @@
           },
           "breakdown": {
             "$ref": "#/components/schemas/BreakDownData"
+          },
+          "status_codes_count": {
+            "$ref": "#/components/schemas/StatusCodesCount"
           },
           "response_times": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
@@ -152771,6 +153308,9 @@
               "type": "object",
               "properties": {
                 "component": {
+                  "type": "string"
+                },
+                "eventGenerator": {
                   "type": "string"
                 },
                 "scope": {
@@ -169719,6 +170259,9309 @@
         }
       }
     }
+  },
+  "x-ibm-configuration": {
+    "testable": false
+  }
+},
+{
+  "openapi": "3.0.0",
+  "info": {
+    "x-ibm-name": "discovery",
+    "version": "2.0.0",
+    "title": "IBM API Connect Discovery API",
+    "description": "This API provides operations for accessing the API Discovery capabilities.",
+    "termsOfService": "https://www.ibm.com/legal",
+    "contact": {
+      "name": "IBM",
+      "url": "https://www.ibm.com",
+      "email": "help@ibm.com"
+    },
+    "license": {
+      "name": "tbd",
+      "url": "https://tbd.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://apimserver.example.com/discovery",
+      "description": "Local laptop testing"
+    }
+  ],
+  "paths": {
+    "/cloud/api-call-records/process": {
+      "post": {
+        "summary": "Processes a set of API Call Records that are not Org-scoped",
+        "description": "Processes a set of API Call Records that are not Org-scoped",
+        "operationId": "api_call_record_process",
+        "security": [
+          {
+            "oauth": [
+              "cloud:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/generate_apis"
+          },
+          {
+            "$ref": "#/components/parameters/autodiscover"
+          },
+          {
+            "$ref": "#/components/parameters/basepath"
+          },
+          {
+            "$ref": "#/components/parameters/discovered"
+          },
+          {
+            "$ref": "#/components/parameters/openapi_version"
+          },
+          {
+            "$ref": "#/components/parameters/title"
+          },
+          {
+            "$ref": "#/components/parameters/version"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscoveredAPICalls"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscoveredAPICalls"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/APICallRecordsProcessResult"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/APICallRecordsProcessResult"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Reconstructed APIs",
+          "Resource: API Call Record"
+        ]
+      }
+    },
+    "/cloud/api-call-records/clear": {
+      "delete": {
+        "summary": "Deletes all API Call Records that are not Org-scoped",
+        "description": "Deletes all  API Call Records that are not Org-scoped",
+        "operationId": "api_call_record_cloudclear",
+        "security": [
+          {
+            "oauth": [
+              "cloud:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/confirm"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Reconstructed APIs",
+          "Resource: API Call Record"
+        ]
+      }
+    },
+    "/cloud/{org}/api-call-records/process": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Processes a set of API Call Records for a pOrg from the Cloud scope",
+        "description": "Processes a set of API Call Records for a pOrg from the Cloud scope",
+        "operationId": "api_call_record_processOrgCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/generate_apis"
+          },
+          {
+            "$ref": "#/components/parameters/autodiscover"
+          },
+          {
+            "$ref": "#/components/parameters/basepath"
+          },
+          {
+            "$ref": "#/components/parameters/discovered"
+          },
+          {
+            "$ref": "#/components/parameters/openapi_version"
+          },
+          {
+            "$ref": "#/components/parameters/title"
+          },
+          {
+            "$ref": "#/components/parameters/version"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscoveredAPICalls"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscoveredAPICalls"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/APICallRecordsProcessResult"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/APICallRecordsProcessResult"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Reconstructed APIs",
+          "Resource: API Call Record"
+        ]
+      }
+    },
+    "/orgs/{org}/api-call-records/process": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Processes a set of API Call Records for a pOrg",
+        "description": "Processes a set of API Call Records for a pOrg",
+        "operationId": "api_call_record_processOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/generate_apis"
+          },
+          {
+            "$ref": "#/components/parameters/autodiscover"
+          },
+          {
+            "$ref": "#/components/parameters/basepath"
+          },
+          {
+            "$ref": "#/components/parameters/discovered"
+          },
+          {
+            "$ref": "#/components/parameters/openapi_version"
+          },
+          {
+            "$ref": "#/components/parameters/title"
+          },
+          {
+            "$ref": "#/components/parameters/version"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscoveredAPICalls"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscoveredAPICalls"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/APICallRecordsProcessResult"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/APICallRecordsProcessResult"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Reconstructed APIs",
+          "Resource: API Call Record"
+        ]
+      }
+    },
+    "/orgs/{org}/data-sources": {
+      "description": "The collection of Data Source operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Create a Data Source object",
+        "description": "Create a Data Source object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "data_source_create",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataSource"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DataSource"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful create",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSource"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSource"
+                }
+              }
+            }
+          },
+          "302": {
+            "description": "Redirect response",
+            "headers": {
+              "Location": {
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Data Sources and Collectors",
+          "Resource: Data Source"
+        ]
+      },
+      "get": {
+        "summary": "List the Data Source objects",
+        "description": "List the Data Source objects",
+        "operationId": "data_source_list",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/collector_type"
+          },
+          {
+            "$ref": "#/components/parameters/state"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSourceList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSourceList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Data Sources and Collectors",
+          "Resource: Data Source"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Data Source objects",
+        "description": "Clear the Data Source objects",
+        "operationId": "data_source_clear",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/confirm"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Data Sources and Collectors",
+          "Resource: Data Source"
+        ]
+      }
+    },
+    "/orgs/{org}/data-sources/{data-source}": {
+      "description": "Data Source object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/data-source"
+        }
+      ],
+      "get": {
+        "summary": "Get the Data Source object by name or id",
+        "description": "Get the Data Source object by name or id",
+        "operationId": "data_source_get",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSource"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSource"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Data Sources and Collectors",
+          "Resource: Data Source"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Data Source object by name or id",
+        "description": "Update the Data Source object by name or id\n          \n          Fields not allowed:\n          - name\n          \n          Fields allowed but ignored:\n          - last_run\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "data_source_update",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataSource"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DataSource"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSource"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSource"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Data Sources and Collectors",
+          "Resource: Data Source"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Data Source object by name or id",
+        "description": "Delete the Data Source object by name or id",
+        "operationId": "data_source_del",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSource"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSource"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Data Sources and Collectors",
+          "Resource: Data Source"
+        ]
+      }
+    },
+    "/cloud/data-sources": {
+      "get": {
+        "summary": "List the Data Source objects across orgs",
+        "description": "List the Data Source objects  across orgs",
+        "operationId": "data_source_listCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/state"
+          },
+          {
+            "$ref": "#/components/parameters/collector_type"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSourceList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSourceList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Data Sources and Collectors",
+          "Resource: Data Source"
+        ]
+      }
+    },
+    "/cloud/{org}/data-sources": {
+      "description": "Data Source object operations Cloud Scope",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Create a Data Source object at Cloud Scope",
+        "description": "Create a Data Source object at Cloud Scope\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "operationId": "data_source_createCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataSource"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DataSource"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful create",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSource"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSource"
+                }
+              }
+            }
+          },
+          "302": {
+            "description": "Redirect response",
+            "headers": {
+              "Location": {
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Data Sources and Collectors",
+          "Resource: Data Source"
+        ]
+      }
+    },
+    "/cloud/{org}/data-sources/{data-source}": {
+      "description": "Data Source object operations Cloud Scope",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/data-source"
+        }
+      ],
+      "patch": {
+        "summary": "Update the Data Source object by name or id for cloud",
+        "description": "Update the Data Source object by name or id for cloud\nFields not allowed:\\ - name\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "operationId": "data_source_updateCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataSource"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DataSource"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSource"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSource"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Data Sources and Collectors",
+          "Resource: Data Source"
+        ]
+      }
+    },
+    "/orgs/{org}/data-sources/limit": {
+      "description": "Data Source object operations Cloud Scope",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get remaining Data Source limit for an organisation",
+        "description": "Get the current value of data sources used and the maximum value of data sources allowed for an organisation",
+        "operationId": "data_source_getLimit",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSourceLimit"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSourceLimit"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Data Sources and Collectors",
+          "Resource: Data Source"
+        ]
+      }
+    },
+    "/cloud/{org}/data-sources/limit": {
+      "description": "Data Source object operations Cloud Scope",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get remaining Data Source limit for cloud",
+        "description": "Get the current value of data sources used and the maximum value of data sources allowed for cloud",
+        "operationId": "data_source_getLimitCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSourceLimit"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataSourceLimit"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Settings",
+          "Data Sources and Collectors",
+          "Resource: Data Source"
+        ]
+      }
+    },
+    "/token": {
+      "post": {
+        "summary": "Generate a token",
+        "description": "Generate a token",
+        "operationId": "data_source_token",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "User Management",
+          "Resource: Access Token (User Scope)"
+        ]
+      }
+    },
+    "/orgs/{org}/discovered-apis": {
+      "description": "Discovered API operations across all collections",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Create a Discovered API object",
+        "description": "Create a Discovered API object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "discovered_api_create",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscoveredAPI"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscoveredAPI"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful create",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              }
+            }
+          },
+          "302": {
+            "description": "Redirect response",
+            "headers": {
+              "Location": {
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Discovery",
+          "Resource: Discovered API by Id"
+        ]
+      },
+      "get": {
+        "summary": "List all Discovered API objects in all collections",
+        "description": "List all Discovered API objects in all collections",
+        "operationId": "discovered_api_listAll",
+        "security": [
+          {
+            "oauth": [
+              "org:view",
+              "api-drafts:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/api_ids"
+          },
+          {
+            "$ref": "#/components/parameters/document_specification"
+          },
+          {
+            "$ref": "#/components/parameters/show_hidden"
+          },
+          {
+            "$ref": "#/components/parameters/source"
+          },
+          {
+            "$ref": "#/components/parameters/state"
+          },
+          {
+            "$ref": "#/components/parameters/search_filter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPIList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPIList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Discovery",
+          "Resource: Discovered API by Id"
+        ]
+      },
+      "delete": {
+        "summary": "Clear all Discovered API objects in all collections",
+        "description": "Clear all Discovered API objects in all collections",
+        "operationId": "discovered_api_clearAll",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/confirm"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Discovery",
+          "Resource: Discovered API by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/discovered-apis/{discovered-api-name}": {
+      "description": "The collection of Discovered API operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/discovered-api-name"
+        }
+      ],
+      "get": {
+        "summary": "List the Discovered API objects",
+        "description": "List the Discovered API objects",
+        "operationId": "discovered_api_list",
+        "security": [
+          {
+            "oauth": [
+              "org:view",
+              "api-drafts:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/document_specification"
+          },
+          {
+            "$ref": "#/components/parameters/show_hidden"
+          },
+          {
+            "$ref": "#/components/parameters/source"
+          },
+          {
+            "$ref": "#/components/parameters/state"
+          },
+          {
+            "$ref": "#/components/parameters/search_filter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPIList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPIList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Discovery",
+          "Resource: Discovered API by Id"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Discovered API objects",
+        "description": "Clear the Discovered API objects",
+        "operationId": "discovered_api_clear",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/confirm"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Discovery",
+          "Resource: Discovered API by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/discovered-apis/{discovered-api-id}": {
+      "description": "Discovered API object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/discovered-api-id"
+        }
+      ],
+      "get": {
+        "summary": "Get the Discovered API object by id",
+        "description": "Get the Discovered API object by id",
+        "operationId": "discovered_api_get",
+        "security": [
+          {
+            "oauth": [
+              "org:view",
+              "api-drafts:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Discovery",
+          "Resource: Discovered API by Id"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Discovered API object by id",
+        "description": "Update the Discovered API object by id\n          \n          Fields not allowed:\n          - name\n          \n          Fields allowed but ignored:\n          - title\n          - version\n          - api_type\n          - document_specification\n          - info\n          - servers\n          - paths\n          - base_paths\n          - host\n          - schemes\n          - tags\n          - promotion_events\n          - source\n          - source_type\n          - original_format\n          - generated_url\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "discovered_api_update",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscoveredAPI"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscoveredAPI"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Discovery",
+          "Resource: Discovered API by Id"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Discovered API object by id",
+        "description": "Delete the Discovered API object by id",
+        "operationId": "discovered_api_del",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Discovery",
+          "Resource: Discovered API by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/discovered-apis/{discovered-api-name}/{discovered-api-version}": {
+      "description": "Discovered API object operations by name and version",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/discovered-api-name"
+        },
+        {
+          "$ref": "#/components/parameters/discovered-api-version"
+        }
+      ],
+      "get": {
+        "summary": "Get the Discovered API object by name and version",
+        "description": "Get the Discovered API object by name and version",
+        "operationId": "discovered_api_getByNameVersion",
+        "security": [
+          {
+            "oauth": [
+              "org:view",
+              "api-drafts:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Discovery",
+          "Resource: Discovered API by Id"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Discovered API object by name and version",
+        "description": "Update the Discovered API object by name and version\n          \n          Fields not allowed:\n          - name\n          \n          Fields allowed but ignored:\n          - title\n          - version\n          - api_type\n          - document_specification\n          - info\n          - servers\n          - paths\n          - base_paths\n          - host\n          - schemes\n          - tags\n          - promotion_events\n          - source\n          - source_type\n          - original_format\n          - generated_url\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "discovered_api_updateByNameVersion",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscoveredAPI"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscoveredAPI"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Discovery",
+          "Resource: Discovered API by Id"
+        ]
+      },
+      "delete": {
+        "summary": "Delete a Discovered API",
+        "description": "Delete a Discovered API",
+        "operationId": "discovered_api_delByNameVersion",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Discovery",
+          "Resource: Discovered API by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/discovered-apis/{discovered-api-id}/promote": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/discovered-api-id"
+        }
+      ],
+      "put": {
+        "summary": "Copy a Discovered API to API Manager as a Draft API",
+        "description": "Copy a Discovered API to API Manager as a Draft API",
+        "operationId": "discovered_api_promote",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/promotion_title"
+          },
+          {
+            "$ref": "#/components/parameters/promotion_version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PromotionResult"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/PromotionResult"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Discovery",
+          "Resource: Discovered API by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/discovered-apis/{discovered-api-name}/{discovered-api-version}/promote": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/discovered-api-name"
+        },
+        {
+          "$ref": "#/components/parameters/discovered-api-version"
+        }
+      ],
+      "put": {
+        "summary": "Copy a Discovered API to API Manager as a Draft API by name and version",
+        "description": "Copy a Discovered API to API Manager as a Draft API by name and version",
+        "operationId": "discovered_api_promoteByNameVersion",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/promotion_title"
+          },
+          {
+            "$ref": "#/components/parameters/promotion_version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PromotionResult"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/PromotionResult"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Discovery",
+          "Resource: Discovered API by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/discovered-apis/bulk": {
+      "description": "Discovered API operations across all collections",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Create Discovered API objects from a zip file",
+        "description": "Create each Discovered API object found in the archive of a zip of Discovered API objects",
+        "operationId": "discovered_api_bulkCreate",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscoveredAPIMultipartRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful bulk create",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BulkCreateResults"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/BulkCreateResults"
+                }
+              }
+            }
+          },
+          "302": {
+            "description": "Redirect response",
+            "headers": {
+              "Location": {
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Discovery",
+          "Resource: Bulk Discoverd API"
+        ]
+      }
+    },
+    "/orgs/{org}/discovered-apis/bulk/delete": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "delete": {
+        "summary": "Bulk Delete Discovered APIs by id",
+        "description": "Bulk Delete Discovered APIs by id",
+        "operationId": "discovered_api_bulkDelete",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/apis_selected"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BulkResults"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/BulkResults"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Discovery",
+          "Resource: Bulk Delete Discovered API"
+        ]
+      }
+    },
+    "/orgs/{org}/discovered-apis/bulk/hide": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "patch": {
+        "summary": "Bulk Hide/Unhide Discovered APIs by id",
+        "description": "Bulk Hide/Unhide Discovered APIs by id",
+        "operationId": "discovered_api_bulkHide",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/hidden"
+          },
+          {
+            "$ref": "#/components/parameters/apis_selected"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BulkResults"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/BulkResults"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Discovery",
+          "Resource: Bulk Hide Discovered API"
+        ]
+      }
+    },
+    "/orgs/{org}/discovered-apis/filters": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get filters for Discovered APIs",
+        "description": "Get filters for Discovered APIs",
+        "operationId": "discovered_api_getFilters",
+        "security": [
+          {
+            "oauth": [
+              "org:view",
+              "api-drafts:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPIFiltersResult"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPIFiltersResult"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Discovery",
+          "Resource: Discovered API by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/generated-apis": {
+      "description": "Generated API operations across all collections",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Create a Generated API object",
+        "description": "Create a Generated API object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "generated_api_create",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeneratedAPI"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/GeneratedAPI"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful create",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPI"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPI"
+                }
+              }
+            }
+          },
+          "302": {
+            "description": "Redirect response",
+            "headers": {
+              "Location": {
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Reconstructed APIs",
+          "Resource: Generated API by Id"
+        ]
+      },
+      "get": {
+        "summary": "List all Generated API objects in all collections",
+        "description": "List all Generated API objects in all collections",
+        "operationId": "generated_api_listAll",
+        "security": [
+          {
+            "oauth": [
+              "org:view",
+              "api-drafts:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/source"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPIList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPIList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Reconstructed APIs",
+          "Resource: Generated API by Id"
+        ]
+      },
+      "delete": {
+        "summary": "Clear all Generated API objects in all collections",
+        "description": "Clear all Generated API objects in all collections",
+        "operationId": "generated_api_clearAll",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/confirm"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Reconstructed APIs",
+          "Resource: Generated API by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/generated-apis/{generated-api-name}": {
+      "description": "The collection of Generated API operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/generated-api-name"
+        }
+      ],
+      "get": {
+        "summary": "List the Generated API objects",
+        "description": "List the Generated API objects",
+        "operationId": "generated_api_list",
+        "security": [
+          {
+            "oauth": [
+              "org:view",
+              "api-drafts:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/source"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPIList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPIList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Reconstructed APIs",
+          "Resource: Generated API by Id"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Generated API objects",
+        "description": "Clear the Generated API objects",
+        "operationId": "generated_api_clear",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/confirm"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Reconstructed APIs",
+          "Resource: Generated API by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/generated-apis/{generated-api-id}": {
+      "description": "Generated API object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/generated-api-id"
+        }
+      ],
+      "get": {
+        "summary": "Get the Generated API object by id",
+        "description": "Get the Generated API object by id",
+        "operationId": "generated_api_get",
+        "security": [
+          {
+            "oauth": [
+              "org:view",
+              "api-drafts:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPI"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPI"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Reconstructed APIs",
+          "Resource: Generated API by Id"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Generated API object by id",
+        "description": "Update the Generated API object by id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "generated_api_update",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeneratedAPI"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/GeneratedAPI"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPI"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPI"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Reconstructed APIs",
+          "Resource: Generated API by Id"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Generated API object by id",
+        "description": "Delete the Generated API object by id",
+        "operationId": "generated_api_del",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPI"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPI"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Reconstructed APIs",
+          "Resource: Generated API by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/generated-apis/{generated-api-name}/{generated-api-version}": {
+      "description": "Generated API object operations by name and version",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/generated-api-name"
+        },
+        {
+          "$ref": "#/components/parameters/generated-api-version"
+        }
+      ],
+      "get": {
+        "summary": "Get the Generated API object by name and version",
+        "description": "Get the Generated API object by name and version",
+        "operationId": "generated_api_getByNameVersion",
+        "security": [
+          {
+            "oauth": [
+              "org:view",
+              "api-drafts:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPI"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPI"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Reconstructed APIs",
+          "Resource: Generated API by Id"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Generated API object by name and version",
+        "description": "Update the Generated API object by name and version\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "generated_api_updateByNameVersion",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeneratedAPI"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/GeneratedAPI"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPI"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPI"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Reconstructed APIs",
+          "Resource: Generated API by Id"
+        ]
+      },
+      "delete": {
+        "summary": "Delete a Generated API",
+        "description": "Delete a Generated API",
+        "operationId": "generated_api_delByNameVersion",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPI"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPI"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Reconstructed APIs",
+          "Resource: Generated API by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/generated-apis/generate": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Generate an OpenAPI in a pOrg",
+        "description": "Generate an OpenAPI in a pOrg",
+        "operationId": "generated_api_generateOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/autodiscover"
+          },
+          {
+            "$ref": "#/components/parameters/basepath"
+          },
+          {
+            "$ref": "#/components/parameters/discovered"
+          },
+          {
+            "$ref": "#/components/parameters/openapi_version"
+          },
+          {
+            "$ref": "#/components/parameters/sensitivity"
+          },
+          {
+            "$ref": "#/components/parameters/title"
+          },
+          {
+            "$ref": "#/components/parameters/version"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscoveredAPICalls"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscoveredAPICalls"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPIList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPIList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Reconstructed APIs",
+          "Resource: Generated API by Id"
+        ]
+      }
+    },
+    "/cloud/{org}/generated-apis/generate": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Generate an OpenAPI in a pOrg for Cloud",
+        "description": "Generate an OpenAPIfor a pOrg",
+        "operationId": "generated_api_generateCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/autodiscover"
+          },
+          {
+            "$ref": "#/components/parameters/basepath"
+          },
+          {
+            "$ref": "#/components/parameters/discovered"
+          },
+          {
+            "$ref": "#/components/parameters/openapi_version"
+          },
+          {
+            "$ref": "#/components/parameters/sensitivity"
+          },
+          {
+            "$ref": "#/components/parameters/title"
+          },
+          {
+            "$ref": "#/components/parameters/version"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscoveredAPICalls"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscoveredAPICalls"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPIList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedAPIList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Reconstructed APIs",
+          "Resource: Generated API by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/generated-apis/discover/{generated-api-id}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/generated-api-id"
+        }
+      ],
+      "put": {
+        "summary": "Make a Discovered API from a Generated API",
+        "description": "Make a Discovered API from a Generated API",
+        "operationId": "generated_api_discoverOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Reconstructed APIs",
+          "Resource: Generated API by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/generated-apis/discover/{generated-api-name}/{generated-api-version}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/generated-api-name"
+        },
+        {
+          "$ref": "#/components/parameters/generated-api-version"
+        }
+      ],
+      "put": {
+        "summary": "Make a Discovered API from a Generated API by Name and Version",
+        "description": "Make a Discovered API from a Generated API by Name and Version",
+        "operationId": "generated_api_discoverByNameVersionOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage",
+              "api-drafts:edit"
+            ]
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Reconstructed APIs",
+          "Resource: Generated API by Id"
+        ]
+      }
+    },
+    "/cloud/{org}/generated-apis/discover/{generated-api-id}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/generated-api-id"
+        }
+      ],
+      "put": {
+        "summary": "Make a Discovered API from a Generated API Cloud Scope",
+        "description": "Make a Discovered API from a Generated API Cloud Scope",
+        "operationId": "generated_api_discoverCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Reconstructed APIs",
+          "Resource: Generated API by Id"
+        ]
+      }
+    },
+    "/cloud/{org}/generated-apis/discover/{generated-api-name}/{generated-api-version}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/generated-api-name"
+        },
+        {
+          "$ref": "#/components/parameters/generated-api-version"
+        }
+      ],
+      "put": {
+        "summary": "Make a Discovered API from a Generated API by Name and Version Cloud Scope",
+        "description": "Make a Discovered API from a Generated API by Name and Version Cloud Scope",
+        "operationId": "generated_api_discoverByNameVersionCloudScope",
+        "security": [
+          {
+            "oauth": [
+              "cloud:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveredAPI"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Reconstructed APIs",
+          "Resource: Generated API by Id"
+        ]
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "api_ids": {
+        "name": "api_ids",
+        "in": "query",
+        "description": "Ids of Discovered APIs selected for bulk download",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "apis_selected": {
+        "name": "apis_selected",
+        "in": "query",
+        "description": "Ids of Discovered APIs selected for bulk operations",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "autodiscover": {
+        "name": "autodiscover",
+        "in": "query",
+        "description": "Optional flag that will automatically create a Discovered API from a Generated API if true",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "basepath": {
+        "name": "basepath",
+        "in": "query",
+        "description": "Basepath to be used for generated OpenAPI 2 Document",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "collector_type": {
+        "name": "collector_type",
+        "in": "query",
+        "description": "Optional collector_type to use to filter the list of Datasources",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "confirm": {
+        "name": "confirm",
+        "in": "query",
+        "description": "Confirmation for critical updates",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "data-source": {
+        "name": "data-source",
+        "in": "path",
+        "description": "Data Source name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "data_source_id": {
+        "name": "data_source_id",
+        "in": "query",
+        "description": "Optional data source ID to filter API Call Records on",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "discovered": {
+        "name": "discovered",
+        "in": "query",
+        "description": "Optional flag to automatically create a Discovered API from a Generated API if true",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "discovered-api-id": {
+        "name": "discovered-api-id",
+        "in": "path",
+        "description": "Discovered API name",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "discovered-api-name": {
+        "name": "discovered-api-name",
+        "in": "path",
+        "description": "Discovered API name",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "discovered-api-version": {
+        "name": "discovered-api-version",
+        "in": "path",
+        "description": "Discovered API version name",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "document_specification": {
+        "name": "document_specification",
+        "in": "query",
+        "description": "Optional document specification (type) to use to filter Discovered API lists",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "fields": {
+        "name": "fields",
+        "in": "query",
+        "description": "List of field names to return",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "generate_apis": {
+        "name": "generate_apis",
+        "in": "query",
+        "description": "Optional flag that, if set to true will disable the generation of APIs when API Call records are sent",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "generated-api-id": {
+        "name": "generated-api-id",
+        "in": "path",
+        "description": "Generated API name",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "generated-api-name": {
+        "name": "generated-api-name",
+        "in": "path",
+        "description": "Generated API name",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "generated-api-version": {
+        "name": "generated-api-version",
+        "in": "path",
+        "description": "Generated API version name",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "hidden": {
+        "name": "hidden",
+        "in": "query",
+        "description": "Select to Hide or unhide the provided Discovered APIs",
+        "required": true,
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "invitation-token": {
+        "name": "invitation-token",
+        "in": "path",
+        "description": "Invitation Token name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "limit": {
+        "name": "limit",
+        "in": "query",
+        "description": "Maximum number of items to return",
+        "required": false,
+        "schema": {
+          "type": "integer"
+        }
+      },
+      "offset": {
+        "name": "offset",
+        "in": "query",
+        "description": "Offset item number from list to begin return",
+        "required": false,
+        "schema": {
+          "type": "integer"
+        }
+      },
+      "openapi_version": {
+        "name": "openapi_version",
+        "in": "query",
+        "description": "OpenAPI version to be used in generated Document",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "org": {
+        "name": "org",
+        "in": "path",
+        "description": "Organization name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "promotion_title": {
+        "name": "promotion_title",
+        "in": "query",
+        "description": "Optional custom name to be used for promotion to Draft API",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "promotion_version": {
+        "name": "promotion_version",
+        "in": "query",
+        "description": "Optional custom version to be used for promotion to Draft API",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "search_filter": {
+        "name": "search_filter",
+        "in": "query",
+        "description": "Optional search of Discovered APIs that contain provided values of their properties",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "sensitivity": {
+        "name": "sensitivity",
+        "in": "query",
+        "description": "Optional sensitivity for path parameter detection",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "show_hidden": {
+        "name": "show_hidden",
+        "in": "query",
+        "description": "Include results of hidden APIs or only return APIs that are not hidden",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "source": {
+        "name": "source",
+        "in": "query",
+        "description": "Optional source to use to filter Discovered API lists",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "state": {
+        "name": "state",
+        "in": "query",
+        "description": "Optional state to use to filter Discovered API lists",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "title": {
+        "name": "title",
+        "in": "query",
+        "description": "Title to be used for generated OpenAPI Document",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "version": {
+        "name": "version",
+        "in": "query",
+        "description": "Version to be used for generated OpenAPI Document",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "headers": {
+      "Location": {
+        "description": "URL referencing a newly created resource",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "schemas": {
+      "DataSource": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "data_source"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "enabled",
+              "disabled",
+              "paused",
+              "unhealthy"
+            ]
+          },
+          "source_address": {
+            "type": "string"
+          },
+          "collector_type": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": "string"
+          },
+          "last_run": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "message": {
+            "type": "string"
+          },
+          "options": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "gen_api_grouping": {
+                "type": "string",
+                "enum": [
+                  "path0",
+                  "server-based"
+                ]
+              },
+              "gen_api_sensitivity": {
+                "type": "number"
+              }
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "DataSourceList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataSource"
+            }
+          }
+        }
+      },
+      "DiscoveredAPI": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "discovered_api"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "version": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "discovered",
+              "copied"
+            ]
+          },
+          "api": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "info": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "title",
+              "version"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              }
+            }
+          },
+          "api_type": {
+            "type": "string",
+            "enum": [
+              "rest",
+              "graphql",
+              "asyncapi"
+            ]
+          },
+          "document_specification": {
+            "type": "string",
+            "enum": [
+              "asyncapi2.0",
+              "asyncapi2.1",
+              "openapi2",
+              "openapi3"
+            ]
+          },
+          "base_paths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "host": {
+            "type": "string"
+          },
+          "schemes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "servers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OpenApi3ServerDefinition"
+            }
+          },
+          "paths": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OpenApiPathDefinition"
+            }
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OpenApiTagDefinition"
+            }
+          },
+          "original_format": {
+            "type": "string",
+            "enum": [
+              "json",
+              "yaml"
+            ]
+          },
+          "data_source": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "source": {
+                "type": "string"
+              },
+              "collector_type": {
+                "type": "string"
+              },
+              "source_address": {
+                "type": "string"
+              },
+              "source_id": {
+                "type": "string"
+              },
+              "options": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          },
+          "source": {
+            "type": "string"
+          },
+          "source_type": {
+            "type": "string"
+          },
+          "promotion_events": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DiscoveredAPIPromotionEvent"
+            }
+          },
+          "generated_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "DiscoveredAPIList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DiscoveredAPI"
+            }
+          }
+        }
+      },
+      "GeneratedAPI": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "generated_api"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "version": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "api": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "swagger": {
+                "type": "string"
+              },
+              "info": {
+                "type": "object",
+                "additionalProperties": true,
+                "required": [
+                  "title",
+                  "version"
+                ],
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "x-ibm-name": {
+                    "type": "string"
+                  },
+                  "version": {
+                    "type": "string"
+                  },
+                  "x-ibm-summary": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "api_type": {
+            "type": "string",
+            "enum": [
+              "rest",
+              "wsdl",
+              "graphql",
+              "asyncapi"
+            ]
+          },
+          "oai_version": {
+            "type": "string",
+            "enum": [
+              "openapi2",
+              "openapi3"
+            ]
+          },
+          "document_specification": {
+            "type": "string",
+            "enum": [
+              "asyncapi2.0",
+              "asyncapi2.1",
+              "openapi2",
+              "openapi3"
+            ]
+          },
+          "data_source": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "source": {
+                "type": "string"
+              },
+              "collector_type": {
+                "type": "string"
+              },
+              "source_address": {
+                "type": "string"
+              },
+              "source_id": {
+                "type": "string"
+              },
+              "options": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          },
+          "source": {
+            "type": "string"
+          },
+          "source_type": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "GeneratedAPIList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GeneratedAPI"
+            }
+          }
+        }
+      },
+      "APICallRecordsProcessResult": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "APICallRecordRequest": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "source_id": {
+            "type": "string"
+          },
+          "source_batchid": {
+            "type": "string"
+          },
+          "process_stage": {
+            "type": "integer"
+          },
+          "calls_count": {
+            "type": "integer"
+          },
+          "calls_datetime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "call_client_id": {
+            "type": "string"
+          },
+          "call_src_ip": {
+            "type": "string"
+          },
+          "call_src_port": {
+            "type": "integer"
+          },
+          "call_dest_ip": {
+            "type": "string"
+          },
+          "call_dest_port": {
+            "type": "integer"
+          },
+          "call_dest_hostname": {
+            "type": "string"
+          },
+          "gateway_ip": {
+            "type": "string"
+          },
+          "operation": {
+            "type": "string",
+            "enum": [
+              "put",
+              "get",
+              "post",
+              "patch",
+              "options",
+              "head",
+              "delete",
+              "trace",
+              "connect"
+            ]
+          },
+          "path": {
+            "type": "string"
+          },
+          "user_agent": {
+            "type": "string"
+          },
+          "req_headers": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "rsp_code": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "BulkCreateResults": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_documents": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "BulkResults": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DiscoveredAPI"
+            }
+          }
+        }
+      },
+      "DataSourceLimit": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "data_sources": {
+            "type": "integer"
+          },
+          "max_data_source_limit": {
+            "type": "integer"
+          }
+        }
+      },
+      "DiscoveredAPICalls": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "discovered-api-calls": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/APICallRecordRequest"
+            }
+          }
+        }
+      },
+      "DiscoveredAPIFilter": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DiscoveredAPIFilterValue"
+            }
+          }
+        }
+      },
+      "DiscoveredAPIFiltersResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "filters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DiscoveredAPIFilter"
+            }
+          }
+        }
+      },
+      "DiscoveredAPIFilterValue": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          }
+        }
+      },
+      "DiscoveredAPIMultipartRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "discovered_api_objects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DiscoveredAPI"
+            }
+          }
+        }
+      },
+      "DiscoveredAPIObject": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      },
+      "DiscoveredAPIPromotionEvent": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "copied_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "reference": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "type": "integer",
+            "minimum": 400,
+            "maximum": 599
+          },
+          "message": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "FeatureDefinition": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "FeaturesListResult": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/FeatureDefinition"
+        }
+      },
+      "OpenApi2Definition": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "swagger": {
+            "type": "string",
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "info": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "title",
+              "version"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "OpenApi3ServerDefinition": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "server_address": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "OpenApiOperationDefinition": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "method"
+        ],
+        "properties": {
+          "method": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "operation_id": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "OpenApiPathDefinition": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "operations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OpenApiOperationDefinition"
+            }
+          }
+        }
+      },
+      "OpenApiTagDefinition": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "PromotionResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "draft_api": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "swagger": {
+                "type": "string"
+              },
+              "info": {
+                "type": "object",
+                "additionalProperties": true,
+                "required": [
+                  "title",
+                  "version"
+                ],
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "version": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "TokenRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "grant_type"
+        ],
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string",
+            "format": "password"
+          },
+          "assertion": {
+            "type": "string"
+          },
+          "realm": {
+            "type": "string"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "client_secret": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "refresh_token": {
+            "type": "string"
+          },
+          "api_key": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "string"
+          },
+          "grant_type": {
+            "type": "string",
+            "enum": [
+              "password",
+              "client_credentials",
+              "authorization_code",
+              "urn:ietf:params:oauth:grant-type:jwt-bearer",
+              "refresh_token",
+              "api_key"
+            ]
+          }
+        }
+      },
+      "TokenResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "token_type",
+          "expires_in"
+        ],
+        "properties": {
+          "access_token": {
+            "type": "string"
+          },
+          "id_token": {
+            "type": "string"
+          },
+          "token_type": {
+            "type": "string"
+          },
+          "expires_in": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2147483647
+          },
+          "refresh_token": {
+            "type": "string"
+          },
+          "refresh_expires_in": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2147483647
+          },
+          "collector_supported_versions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "OpenTelemetryTrace": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "resourceSpans": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OpenTelemetryResourceSpan"
+            }
+          }
+        }
+      },
+      "OpenTelemetryResourceSpan": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "resource": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "attributes": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/OpenTelemetryAttribute"
+                }
+              }
+            }
+          },
+          "scopeSpans": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OpenTelemetryScopeSpan"
+            }
+          }
+        }
+      },
+      "OpenTelemetryScopeSpan": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "scope": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "spans": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OpenTelemetrySpan"
+            }
+          }
+        }
+      },
+      "OpenTelemetrySpan": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "traceId": {
+            "type": "string"
+          },
+          "spanId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "kind": {
+            "oneOf": [
+              {
+                "type": "integer",
+                "format": "int32"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "status": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "code": {
+                "oneOf": [
+                  {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          },
+          "attributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OpenTelemetryAttribute"
+            }
+          }
+        }
+      },
+      "OpenTelemetryAttribute": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "value": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "stringValue": {
+                "type": "string"
+              },
+              "doubleValue": {
+                "type": "number",
+                "format": "double"
+              },
+              "intValue": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "boolValue": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "Error": {
+        "description": "Unexpected error",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "oauth": {
+        "type": "oauth2",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "/oauth2/authorize",
+            "scopes": {
+              "api-drafts:edit": "Create a Discovered API object, Clear all Discovered API objects in all collections, Clear the Discovered API objects, Update the Discovered API object by id, Delete the Discovered API object by id, Update the Discovered API object by name and version, Delete the Discovered API object by name and version, Create a Generated API object, Clear all Generated API objects in all collections, Clear the Generated API objects, Update the Generated API object by id, Delete the Generated API object by id, Update the Generated API object by name and version, Delete the Generated API object by name and version",
+              "api-drafts:view": "List all Discovered API objects in all collections, List the Discovered API objects, Get the Discovered API object by id, Get the Discovered API object by name and version, List all Generated API objects in all collections, List the Generated API objects, Get the Generated API object by id, Get the Generated API object by name and version",
+              "org:manage": "Create a Data Source object, Clear the Data Source objects, Update the Data Source object by name or id, Delete the Data Source object by name or id, Create a Discovered API object, Clear all Discovered API objects in all collections, Clear the Discovered API objects, Update the Discovered API object by id, Delete the Discovered API object by id, Update the Discovered API object by name and version, Delete the Discovered API object by name and version, Create a Generated API object, Clear all Generated API objects in all collections, Clear the Generated API objects, Update the Generated API object by id, Delete the Generated API object by id, Update the Generated API object by name and version, Delete the Generated API object by name and version",
+              "org:view": "List the Data Source objects, Get the Data Source object by name or id, List all Discovered API objects in all collections, List the Discovered API objects, Get the Discovered API object by id, Get the Discovered API object by name and version, List all Generated API objects in all collections, List the Generated API objects, Get the Generated API object by id, Get the Generated API object by name and version",
+              "cloud:manage": "Processes a set of API Call Records that are not Org-scoped, Deletes all API Call Records that are not Org-scoped, Processes a set of API Call Records for a pOrg from the Cloud scope, Create a Data Source object at Cloud Scope, Update the Data Source object by name or id for cloud, Generate an OpenAPI in a pOrg for Cloud, Make a Discovered API from a Generated API Cloud Scope, Make a Discovered API from a Generated API by Name and Version Cloud Scope",
+              "cloud:view": "List the Data Source objects across orgs, Get remaining Data Source limit for cloud"
+            }
+          },
+          "password": {
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
+            "scopes": {
+              "api-drafts:edit": "Create a Discovered API object, Clear all Discovered API objects in all collections, Clear the Discovered API objects, Update the Discovered API object by id, Delete the Discovered API object by id, Update the Discovered API object by name and version, Delete the Discovered API object by name and version, Create a Generated API object, Clear all Generated API objects in all collections, Clear the Generated API objects, Update the Generated API object by id, Delete the Generated API object by id, Update the Generated API object by name and version, Delete the Generated API object by name and version",
+              "api-drafts:view": "List all Discovered API objects in all collections, List the Discovered API objects, Get the Discovered API object by id, Get the Discovered API object by name and version, List all Generated API objects in all collections, List the Generated API objects, Get the Generated API object by id, Get the Generated API object by name and version",
+              "org:manage": "Create a Data Source object, Clear the Data Source objects, Update the Data Source object by name or id, Delete the Data Source object by name or id, Create a Discovered API object, Clear all Discovered API objects in all collections, Clear the Discovered API objects, Update the Discovered API object by id, Delete the Discovered API object by id, Update the Discovered API object by name and version, Delete the Discovered API object by name and version, Create a Generated API object, Clear all Generated API objects in all collections, Clear the Generated API objects, Update the Generated API object by id, Delete the Generated API object by id, Update the Generated API object by name and version, Delete the Generated API object by name and version",
+              "org:view": "List the Data Source objects, Get the Data Source object by name or id, List all Discovered API objects in all collections, List the Discovered API objects, Get the Discovered API object by id, Get the Discovered API object by name and version, List all Generated API objects in all collections, List the Generated API objects, Get the Generated API object by id, Get the Generated API object by name and version",
+              "cloud:manage": "Processes a set of API Call Records that are not Org-scoped, Deletes all API Call Records that are not Org-scoped, Processes a set of API Call Records for a pOrg from the Cloud scope, Create a Data Source object at Cloud Scope, Update the Data Source object by name or id for cloud, Generate an OpenAPI in a pOrg for Cloud, Make a Discovered API from a Generated API Cloud Scope, Make a Discovered API from a Generated API by Name and Version Cloud Scope",
+              "cloud:view": "List the Data Source objects across orgs, Get remaining Data Source limit for cloud"
+            }
+          },
+          "clientCredentials": {
+            "tokenUrl": "/token",
+            "scopes": {
+              "api-drafts:edit": "Create a Discovered API object, Clear all Discovered API objects in all collections, Clear the Discovered API objects, Update the Discovered API object by id, Delete the Discovered API object by id, Update the Discovered API object by name and version, Delete the Discovered API object by name and version, Create a Generated API object, Clear all Generated API objects in all collections, Clear the Generated API objects, Update the Generated API object by id, Delete the Generated API object by id, Update the Generated API object by name and version, Delete the Generated API object by name and version",
+              "api-drafts:view": "List all Discovered API objects in all collections, List the Discovered API objects, Get the Discovered API object by id, Get the Discovered API object by name and version, List all Generated API objects in all collections, List the Generated API objects, Get the Generated API object by id, Get the Generated API object by name and version",
+              "org:manage": "Create a Data Source object, Clear the Data Source objects, Update the Data Source object by name or id, Delete the Data Source object by name or id, Create a Discovered API object, Clear all Discovered API objects in all collections, Clear the Discovered API objects, Update the Discovered API object by id, Delete the Discovered API object by id, Update the Discovered API object by name and version, Delete the Discovered API object by name and version, Create a Generated API object, Clear all Generated API objects in all collections, Clear the Generated API objects, Update the Generated API object by id, Delete the Generated API object by id, Update the Generated API object by name and version, Delete the Generated API object by name and version",
+              "org:view": "List the Data Source objects, Get the Data Source object by name or id, List all Discovered API objects in all collections, List the Discovered API objects, Get the Discovered API object by id, Get the Discovered API object by name and version, List all Generated API objects in all collections, List the Generated API objects, Get the Generated API object by id, Get the Generated API object by name and version",
+              "cloud:manage": "Processes a set of API Call Records that are not Org-scoped, Deletes all API Call Records that are not Org-scoped, Processes a set of API Call Records for a pOrg from the Cloud scope, Create a Data Source object at Cloud Scope, Update the Data Source object by name or id for cloud, Generate an OpenAPI in a pOrg for Cloud, Make a Discovered API from a Generated API Cloud Scope, Make a Discovered API from a Generated API by Name and Version Cloud Scope",
+              "cloud:view": "List the Data Source objects across orgs, Get remaining Data Source limit for cloud"
+            }
+          },
+          "authorizationCode": {
+            "authorizationUrl": "/oauth2/authorize",
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
+            "scopes": {
+              "api-drafts:edit": "Create a Discovered API object, Clear all Discovered API objects in all collections, Clear the Discovered API objects, Update the Discovered API object by id, Delete the Discovered API object by id, Update the Discovered API object by name and version, Delete the Discovered API object by name and version, Create a Generated API object, Clear all Generated API objects in all collections, Clear the Generated API objects, Update the Generated API object by id, Delete the Generated API object by id, Update the Generated API object by name and version, Delete the Generated API object by name and version",
+              "api-drafts:view": "List all Discovered API objects in all collections, List the Discovered API objects, Get the Discovered API object by id, Get the Discovered API object by name and version, List all Generated API objects in all collections, List the Generated API objects, Get the Generated API object by id, Get the Generated API object by name and version",
+              "org:manage": "Create a Data Source object, Clear the Data Source objects, Update the Data Source object by name or id, Delete the Data Source object by name or id, Create a Discovered API object, Clear all Discovered API objects in all collections, Clear the Discovered API objects, Update the Discovered API object by id, Delete the Discovered API object by id, Update the Discovered API object by name and version, Delete the Discovered API object by name and version, Create a Generated API object, Clear all Generated API objects in all collections, Clear the Generated API objects, Update the Generated API object by id, Delete the Generated API object by id, Update the Generated API object by name and version, Delete the Generated API object by name and version",
+              "org:view": "List the Data Source objects, Get the Data Source object by name or id, List all Discovered API objects in all collections, List the Discovered API objects, Get the Discovered API object by id, Get the Discovered API object by name and version, List all Generated API objects in all collections, List the Generated API objects, Get the Generated API object by id, Get the Generated API object by name and version",
+              "cloud:manage": "Processes a set of API Call Records that are not Org-scoped, Deletes all API Call Records that are not Org-scoped, Processes a set of API Call Records for a pOrg from the Cloud scope, Create a Data Source object at Cloud Scope, Update the Data Source object by name or id for cloud, Generate an OpenAPI in a pOrg for Cloud, Make a Discovered API from a Generated API Cloud Scope, Make a Discovered API from a Generated API by Name and Version Cloud Scope",
+              "cloud:view": "List the Data Source objects across orgs, Get remaining Data Source limit for cloud"
+            }
+          }
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Additional documentation",
+    "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis"
+  },
+  "x-ibm-configuration": {
+    "testable": false
+  }
+},
+{
+  "openapi": "3.0.0",
+  "info": {
+    "x-ibm-name": "compliance",
+    "version": "2.0.0",
+    "title": "IBM API Connect Governance API",
+    "description": "This API provides operations for accessing the API Governance capabilities.",
+    "termsOfService": "https://www.ibm.com/legal",
+    "contact": {
+      "name": "IBM",
+      "url": "https://www.ibm.com",
+      "email": "help@ibm.com"
+    },
+    "license": {
+      "name": "tbd",
+      "url": "https://tbd.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://apimserver.example.com/governance",
+      "description": "Local laptop testing"
+    }
+  ],
+  "paths": {
+    "/validate": {
+      "post": {
+        "summary": "Validate an OpenAPI or Product",
+        "description": "Validate a Single OpenAPI or a Single Product with a specified list of Rulesets.\nIf no Rulesets are provided, spectral-oas and spectral-owasp Global Rulesets will be used for an OpenAPI document, whereas for an AsyncAPI document, the spectral-async Global Ruleset will be used.\nIf validating a Product, a list of one or more Rulesets to be used must be provided.",
+        "operationId": "compliance_validate",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rulesets"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/ValidationPublishMultipart"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComplianceResult"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComplianceResult"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Validation",
+          "Resource: API"
+        ]
+      }
+    },
+    "/orgs/{org}/validate": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Validate an OpenAPI or Product",
+        "description": "Validate a Single OpenAPI or a Single Product with a specified list of Rulesets.\nIf no Rulesets are provided, spectral-oas and spectral-owasp Global Rulesets will be used for an OpenAPI document, whereas for an AsyncAPI document, the spectral-async Global Ruleset will be used.\nIf validating a Product, a list of one or more Rulesets to be used must be provided.",
+        "operationId": "compliance_validateOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rulesets"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/ValidationPublishMultipart"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ComplianceRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/ComplianceRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComplianceResult"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComplianceResult"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Validation",
+          "Resource: API"
+        ]
+      }
+    },
+    "/orgs/{org}/validate/all": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Validate APIs or Products within a Provider Organization using a Configuration File",
+        "description": "Validate APIs or Products within a Provider Organization, using a Configuration File which contains the URLs of either APIs or Products to validate, as well as the Rulesets to use.",
+        "operationId": "compliance_validateAll",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ComplianceRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/ComplianceRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComplianceResults"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComplianceResults"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Validation",
+          "Resource: API"
+        ]
+      }
+    },
+    "/orgs/{org}/scan": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Scan OpenAPI Documents",
+        "description": "Scan OpenAPI Documents",
+        "operationId": "compliance_scanOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/scantitle"
+          },
+          {
+            "$ref": "#/components/parameters/scan_type"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ComplianceRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/ComplianceRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanCreateResult"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanCreateResult"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Validation",
+          "Resource: API"
+        ]
+      }
+    },
+    "/orgs/{org}/rescan/{scan}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/scan"
+        }
+      ],
+      "post": {
+        "summary": "Re-Scan OpenAPI Documents",
+        "description": "Re-Scan OpenAPI Documents",
+        "operationId": "compliance_rescanOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/scantitle"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanCreateResult"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanCreateResult"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Validation",
+          "Resource: API"
+        ]
+      }
+    },
+    "/orgs/{org}/rulesets": {
+      "description": "The collection of Ruleset operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "List the Ruleset objects",
+        "description": "List the Ruleset objects",
+        "operationId": "ruleset_list",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RulesetList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/RulesetList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Rulesets and Rules",
+          "Resource: Ruleset"
+        ]
+      },
+      "delete": {
+        "summary": "Delete all user created rulesets",
+        "description": "Delete all user created rulesets",
+        "operationId": "ruleset_clear",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/confirm"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Rulesets and Rules",
+          "Resource: Ruleset"
+        ]
+      }
+    },
+    "/orgs/{org}/rulesets/{ruleset}": {
+      "description": "Ruleset object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/ruleset"
+        }
+      ],
+      "get": {
+        "summary": "Download the Ruleset object as a file to the current directory by name or id",
+        "description": "Download the Ruleset object as a file to the current directory by name or id",
+        "operationId": "ruleset_get",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/ruleset_version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ruleset"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ruleset"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Rulesets and Rules",
+          "Resource: Ruleset"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Ruleset object by name or id",
+        "description": "Update the Ruleset object by name or id\n          \n          Fields not allowed:\n          - name\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "ruleset_update",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ruleset_version"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ruleset"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/Ruleset"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ruleset"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ruleset"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Rulesets and Rules",
+          "Resource: Ruleset"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Ruleset object by name or id",
+        "description": "Delete the Ruleset object by name or id",
+        "operationId": "ruleset_del",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ruleset_version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ruleset"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ruleset"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Rulesets and Rules",
+          "Resource: Ruleset"
+        ]
+      }
+    },
+    "/orgs/{org}/rulesets/create": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Create a new Ruleset",
+        "description": "Create a new Ruleset Fields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "operationId": "ruleset_create",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/SpectralRulesetMultipart"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RulesetRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/RulesetRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ruleset"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ruleset"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Rulesets and Rules",
+          "Resource: Ruleset"
+        ]
+      },
+      "put": {
+        "summary": "Update a Ruleset",
+        "description": "Update a Ruleset\nFields not allowed:\\ - name\nFields allowed but ignored:\\ - id - type - api_version - scope - created_at - updated_at - url",
+        "operationId": "ruleset_updateRuleset",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/SpectralRulesetMultipart"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RulesetRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/RulesetRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ruleset"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ruleset"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Rulesets and Rules",
+          "Resource: Ruleset"
+        ]
+      }
+    },
+    "/orgs/{org}/rulesets/all": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "List all rulesets and rules under those",
+        "description": "List all rulesets and rules under those",
+        "operationId": "ruleset_listAllFull",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/states"
+          },
+          {
+            "$ref": "#/components/parameters/show_all_versions"
+          },
+          {
+            "$ref": "#/components/parameters/ruleset_format_type"
+          },
+          {
+            "$ref": "#/components/parameters/ruleset_name"
+          },
+          {
+            "$ref": "#/components/parameters/ruleset_version"
+          },
+          {
+            "$ref": "#/components/parameters/ruleset_types"
+          },
+          {
+            "$ref": "#/components/parameters/visibility_types"
+          }
+        ],
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RulesetResponseList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/RulesetResponseList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Rulesets and Rules",
+          "Resource: Ruleset"
+        ]
+      }
+    },
+    "/orgs/{org}/rulesets/collection": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "List all rulesets and rules under those for given collection based on tags",
+        "description": "List all rulesets and rules under those for given collection based on tags",
+        "operationId": "ruleset_listAllByCollection",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/states"
+          },
+          {
+            "$ref": "#/components/parameters/show_all_versions"
+          },
+          {
+            "$ref": "#/components/parameters/ruleset_format_type"
+          }
+        ],
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RulesetsByDocumentsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RulesetsByDocumentsResponseList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/RulesetsByDocumentsResponseList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Rulesets and Rules",
+          "Resource: Ruleset"
+        ]
+      }
+    },
+    "/orgs/{org}/rulesets/{ruleset}/rules": {
+      "description": "Rule operations across all collections",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/ruleset"
+        }
+      ],
+      "post": {
+        "summary": "Create a Rule object",
+        "description": "Create a Rule object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "rule_create",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ruleset_version"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Rule"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/Rule"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful create",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rule"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rule"
+                }
+              }
+            }
+          },
+          "302": {
+            "description": "Redirect response",
+            "headers": {
+              "Location": {
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Rulesets and Rules",
+          "Resource: Rule by Id"
+        ]
+      },
+      "get": {
+        "summary": "List information about all Rules of a Ruleset",
+        "description": "To list all Rules of a global ruleset, you must be logged in as an Admin Organisation owner. To list all Rules of a custom ruleset, you must be logged in as a Provider Organisation owner.",
+        "operationId": "rule_listAll",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/ruleset_version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RuleList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/RuleList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Rulesets and Rules",
+          "Resource: Rule by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/rulesets/{ruleset}/rules/{rule-name}": {
+      "description": "The collection of Rule operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/ruleset"
+        },
+        {
+          "$ref": "#/components/parameters/rule-name"
+        }
+      ],
+      "get": {
+        "summary": "List information about the specified Rule of a Ruleset",
+        "description": "To list a Rule belonging to a global ruleset you must be logged in as Admin organisation owner. To list a Rule belonging to a custom ruleset, you must be logged in as a Provider organisation owner.",
+        "operationId": "rule_list",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/ruleset_version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RuleList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/RuleList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Rulesets and Rules",
+          "Resource: Rule by Id"
+        ]
+      },
+      "delete": {
+        "summary": "Delete all versions of a Rule by name for a single version of a Ruleset",
+        "description": "Delete all versions of a Rule by name for a single version of a Ruleset",
+        "operationId": "rule_clear",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/confirm"
+          },
+          {
+            "$ref": "#/components/parameters/ruleset_version"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Rulesets and Rules",
+          "Resource: Rule by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/rulesets/{ruleset}/rules/{rule-id}": {
+      "description": "Rule object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/ruleset"
+        },
+        {
+          "$ref": "#/components/parameters/rule-id"
+        }
+      ],
+      "get": {
+        "summary": "Download the Rule object as a file to the current directory by id",
+        "description": "Download the Rule object as a file to the current directory by id",
+        "operationId": "rule_get",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/ruleset_version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rule"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rule"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Rulesets and Rules",
+          "Resource: Rule by Id"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Rule object by id",
+        "description": "Update the Rule object by id\n          \n          Fields not allowed:\n          - name\n          \n          Fields allowed but ignored:\n          - version\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "rule_update",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ruleset_version"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Rule"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/Rule"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rule"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rule"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Rulesets and Rules",
+          "Resource: Rule by Id"
+        ]
+      },
+      "delete": {
+        "summary": "Delete a single user created Rule in a single Ruleset by id",
+        "description": "Delete a single user created Rule in a single Ruleset by id",
+        "operationId": "rule_del",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ruleset_version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rule"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rule"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Rulesets and Rules",
+          "Resource: Rule by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/rulesets/{ruleset}/rules/{rule-name}/{rule-version}": {
+      "description": "Rule object operations by name and version",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/ruleset"
+        },
+        {
+          "$ref": "#/components/parameters/rule-name"
+        },
+        {
+          "$ref": "#/components/parameters/rule-version"
+        }
+      ],
+      "get": {
+        "summary": "Download the Rule object as a file to the current directory by name:version or id",
+        "description": "Download the Rule object as a file to the current directory by name:version. If you would like to use the id of the Rule object the --id flag must be specified followed by the id of the Rule object.",
+        "operationId": "rule_getByNameVersion",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rule"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rule"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Rulesets and Rules",
+          "Resource: Rule by Id"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Rule object by name and version",
+        "description": "Update the Rule object by name and version\n          \n          Fields not allowed:\n          - name\n          \n          Fields allowed but ignored:\n          - version\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "rule_updateByNameVersion",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ruleset_version"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Rule"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/Rule"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rule"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rule"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Rulesets and Rules",
+          "Resource: Rule by Id"
+        ]
+      },
+      "delete": {
+        "summary": "Delete a Rule",
+        "description": "Delete a Rule",
+        "operationId": "rule_delByNameVersion",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ruleset_version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rule"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rule"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Rulesets and Rules",
+          "Resource: Rule by Id"
+        ]
+      }
+    },
+    "/orgs/{org}/scans": {
+      "description": "The collection of Scan operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "List the Scan objects",
+        "description": "List the Scan objects",
+        "operationId": "scan_listOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/collections"
+          },
+          {
+            "$ref": "#/components/parameters/status"
+          },
+          {
+            "$ref": "#/components/parameters/type"
+          },
+          {
+            "$ref": "#/components/parameters/scan_type"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan (Org Scope)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Scan objects",
+        "description": "Clear the Scan objects",
+        "operationId": "scan_clearOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/confirm"
+          },
+          {
+            "$ref": "#/components/parameters/scan_ids"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan (Org Scope)"
+        ]
+      }
+    },
+    "/orgs/{org}/scans/{scan}": {
+      "description": "Scan object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/scan"
+        }
+      ],
+      "get": {
+        "summary": "Get the Scan object by name or id",
+        "description": "Get the Scan object by name or id",
+        "operationId": "scan_getOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scan"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scan"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan (Org Scope)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Scan object by name or id",
+        "description": "Update the Scan object by name or id\n          \n          Fields allowed but ignored:\n          - name\n          - collection\n          - config\n          - documents\n          - progress\n          - reports\n          - scan_result\n          - status\n          - scan_type\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "scan_updateOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Scan"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/Scan"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scan"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scan"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan (Org Scope)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Scan object by name or id",
+        "description": "Delete the Scan object by name or id",
+        "operationId": "scan_delOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scan"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scan"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan (Org Scope)"
+        ]
+      }
+    },
+    "/orgs/{org}/scans/filters": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get filters for Scans",
+        "description": "Get filters for Scans",
+        "operationId": "scan_getFiltersOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanFiltersResult"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanFiltersResult"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan (Org Scope)"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/scans/filters": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Get filters for Scans",
+        "description": "Get filters for Scans",
+        "operationId": "scan_getFilterCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanFiltersResult"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanFiltersResult"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan (Org Scope)"
+        ]
+      }
+    },
+    "/spaces/{org}/{catalog}/{space}/scans/filters": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get filters for Scans",
+        "description": "Get filters for Scans",
+        "operationId": "scan_getFilterSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanFiltersResult"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanFiltersResult"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan (Org Scope)"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/scans": {
+      "description": "The collection of Scan operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "List the Scan objects",
+        "description": "List the Scan objects",
+        "operationId": "scan_listCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/collections"
+          },
+          {
+            "$ref": "#/components/parameters/status"
+          },
+          {
+            "$ref": "#/components/parameters/type"
+          },
+          {
+            "$ref": "#/components/parameters/scan_type"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan (Catalog Scope)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Scan objects",
+        "description": "Clear the Scan objects",
+        "operationId": "scan_clearCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/confirm"
+          },
+          {
+            "$ref": "#/components/parameters/scan_ids"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan (Catalog Scope)"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/scans/{scan}": {
+      "description": "Scan object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/scan"
+        }
+      ],
+      "get": {
+        "summary": "Get the Scan object by name or id",
+        "description": "Get the Scan object by name or id",
+        "operationId": "scan_getCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scan"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scan"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan (Catalog Scope)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Scan object by name or id",
+        "description": "Update the Scan object by name or id\n          \n          Fields allowed but ignored:\n          - name\n          - collection\n          - config\n          - documents\n          - progress\n          - reports\n          - scan_result\n          - status\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "scan_updateCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Scan"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/Scan"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scan"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scan"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan (Catalog Scope)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Scan object by name or id",
+        "description": "Delete the Scan object by name or id",
+        "operationId": "scan_delCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scan"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scan"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan (Catalog Scope)"
+        ]
+      }
+    },
+    "/spaces/{org}/{catalog}/{space}/scans": {
+      "description": "The collection of Scan operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "List the Scan objects",
+        "description": "List the Scan objects",
+        "operationId": "scan_listSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/collections"
+          },
+          {
+            "$ref": "#/components/parameters/status"
+          },
+          {
+            "$ref": "#/components/parameters/type"
+          },
+          {
+            "$ref": "#/components/parameters/scan_type"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan (Space Scope)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Scan objects",
+        "description": "Clear the Scan objects",
+        "operationId": "scan_clearSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/confirm"
+          },
+          {
+            "$ref": "#/components/parameters/scan_ids"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan (Space Scope)"
+        ]
+      }
+    },
+    "/spaces/{org}/{catalog}/{space}/scans/{scan}": {
+      "description": "Scan object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/scan"
+        }
+      ],
+      "get": {
+        "summary": "Get the Scan object by name or id",
+        "description": "Get the Scan object by name or id",
+        "operationId": "scan_getSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scan"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scan"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan (Space Scope)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Scan object by name or id",
+        "description": "Update the Scan object by name or id\n          \n          Fields allowed but ignored:\n          - name\n          - collection\n          - config\n          - documents\n          - progress\n          - reports\n          - scan_result\n          - status\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "scan_updateSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Scan"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/Scan"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scan"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scan"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan (Space Scope)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Scan object by name or id",
+        "description": "Delete the Scan object by name or id",
+        "operationId": "scan_delSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scan"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scan"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan (Space Scope)"
+        ]
+      }
+    },
+    "/orgs/{org}/scan-reports": {
+      "description": "The collection of Scan Report operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "List the Scan Report objects",
+        "description": "List the Scan Report objects",
+        "operationId": "scan_report_listOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReportList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReportList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan Report (Org Scope)"
+        ]
+      }
+    },
+    "/orgs/{org}/scan-reports/{scan-report}": {
+      "description": "Scan Report object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/scan-report"
+        }
+      ],
+      "get": {
+        "summary": "Get the Scan Report object by name or id",
+        "description": "Get the Scan Report object by name or id",
+        "operationId": "scan_report_getOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReport"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReport"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan Report (Org Scope)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Scan Report object by name or id",
+        "description": "Update the Scan Report object by name or id\n          \n          Fields allowed but ignored:\n          - name\n          - title\n          - top\n          - scan_details\n          - scan_url\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "scan_report_updateOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScanReport"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/ScanReport"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReport"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReport"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan Report (Org Scope)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Scan Report object by name or id",
+        "description": "Delete the Scan Report object by name or id",
+        "operationId": "scan_report_delOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReport"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReport"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan Report (Org Scope)"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/scan-reports": {
+      "description": "The collection of Scan Report operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "List the Scan Report objects",
+        "description": "List the Scan Report objects",
+        "operationId": "scan_report_listCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReportList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReportList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan Report (Catalog Scope)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Scan Report objects",
+        "description": "Clear the Scan Report objects",
+        "operationId": "scan_report_clearCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/confirm"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan Report (Catalog Scope)"
+        ]
+      }
+    },
+    "/catalogs/{org}/{catalog}/scan-reports/{scan-report}": {
+      "description": "Scan Report object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/scan-report"
+        }
+      ],
+      "get": {
+        "summary": "Get the Scan Report object by name or id",
+        "description": "Get the Scan Report object by name or id",
+        "operationId": "scan_report_getCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReport"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReport"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan Report (Catalog Scope)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Scan Report object by name or id",
+        "description": "Update the Scan Report object by name or id\n          \n          Fields allowed but ignored:\n          - name\n          - title\n          - top\n          - scan_details\n          - scan_url\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "scan_report_updateCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScanReport"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/ScanReport"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReport"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReport"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan Report (Catalog Scope)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Scan Report object by name or id",
+        "description": "Delete the Scan Report object by name or id",
+        "operationId": "scan_report_delCatalogScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReport"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReport"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan Report (Catalog Scope)"
+        ]
+      }
+    },
+    "/spaces/{org}/{catalog}/{space}/scan-reports": {
+      "description": "The collection of Scan Report operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "List the Scan Report objects",
+        "description": "List the Scan Report objects",
+        "operationId": "scan_report_listSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReportList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReportList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan Report (Space Scope)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Scan Report objects",
+        "description": "Clear the Scan Report objects",
+        "operationId": "scan_report_clearSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/confirm"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan Report (Space Scope)"
+        ]
+      }
+    },
+    "/spaces/{org}/{catalog}/{space}/scan-reports/{scan-report}": {
+      "description": "Scan Report object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/scan-report"
+        }
+      ],
+      "get": {
+        "summary": "Get the Scan Report object by name or id",
+        "description": "Get the Scan Report object by name or id",
+        "operationId": "scan_report_getSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReport"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReport"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan Report (Space Scope)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Scan Report object by name or id",
+        "description": "Update the Scan Report object by name or id\n          \n          Fields allowed but ignored:\n          - name\n          - title\n          - top\n          - scan_details\n          - scan_url\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "scan_report_updateSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScanReport"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/ScanReport"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReport"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReport"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan Report (Space Scope)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Scan Report object by name or id",
+        "description": "Delete the Scan Report object by name or id",
+        "operationId": "scan_report_delSpaceScope",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReport"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScanReport"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Compliance",
+          "Resource: Scan Report (Space Scope)"
+        ]
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "catalog": {
+        "name": "catalog",
+        "in": "path",
+        "description": "Catalog name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "collections": {
+        "name": "collections",
+        "in": "query",
+        "description": "Specify an optional comma-separated list of Catalog or Space IDs or Names to filter Scans list.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "confirm": {
+        "name": "confirm",
+        "in": "query",
+        "description": "Confirmation for critical updates",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "fields": {
+        "name": "fields",
+        "in": "query",
+        "description": "List of field names to return",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "invitation-token": {
+        "name": "invitation-token",
+        "in": "path",
+        "description": "Invitation Token name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "limit": {
+        "name": "limit",
+        "in": "query",
+        "description": "Maximum number of items to return",
+        "required": false,
+        "schema": {
+          "type": "integer"
+        }
+      },
+      "offset": {
+        "name": "offset",
+        "in": "query",
+        "description": "Offset item number from list to begin return",
+        "required": false,
+        "schema": {
+          "type": "integer"
+        }
+      },
+      "org": {
+        "name": "org",
+        "in": "path",
+        "description": "Organization name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rule-id": {
+        "name": "rule-id",
+        "in": "path",
+        "description": "Rule name",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rule-name": {
+        "name": "rule-name",
+        "in": "path",
+        "description": "Rule name",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rule-version": {
+        "name": "rule-version",
+        "in": "path",
+        "description": "Rule version name",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "ruleset": {
+        "name": "ruleset",
+        "in": "path",
+        "description": "Ruleset name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "ruleset_format_type": {
+        "name": "ruleset_format_type",
+        "in": "query",
+        "description": "List out rulesets that have the queried ruleset format type",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "ruleset_name": {
+        "name": "ruleset_name",
+        "in": "query",
+        "description": "Specify the name of the ruleset to be queried",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "ruleset_tag": {
+        "name": "ruleset_tag",
+        "in": "query",
+        "description": "Boolean indication if rulesets to be listed should have either a tag or an empty tag.",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "ruleset_types": {
+        "name": "ruleset_types",
+        "in": "query",
+        "description": "List out rulesets that have the queried ruleset types",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "ruleset_version": {
+        "name": "ruleset_version",
+        "in": "query",
+        "description": "Specify an explicit Ruleset version",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rulesets": {
+        "name": "rulesets",
+        "in": "query",
+        "description": "Define one or more rulesets to be used by providing the name in the format rulesetName1,rulesetName2 with no spaces when separating names by comma. If one ruleset name is mentioned no comma should be used.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "scan": {
+        "name": "scan",
+        "in": "path",
+        "description": "Scan name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "scan-job-result": {
+        "name": "scan-job-result",
+        "in": "path",
+        "description": "Scan Job Result name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "scan-report": {
+        "name": "scan-report",
+        "in": "path",
+        "description": "Scan Report name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "scan-result-doc-map": {
+        "name": "scan-result-doc-map",
+        "in": "path",
+        "description": "Scan Result Doc Map name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "scan_ids": {
+        "name": "scan_ids",
+        "in": "query",
+        "description": "Optional comma separated list of Scan IDs to perform bulk operations.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "scan_report_id": {
+        "name": "scan_report_id",
+        "in": "query",
+        "description": "Scan report id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "scan_type": {
+        "name": "scan_type",
+        "in": "query",
+        "description": "Optional type for Scan",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "scantitle": {
+        "name": "scantitle",
+        "in": "query",
+        "description": "Optional title for Scan",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "show_all_versions": {
+        "name": "show_all_versions",
+        "in": "query",
+        "description": "Boolean indication if all versions of a Ruleset should be listed",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "space": {
+        "name": "space",
+        "in": "path",
+        "description": "Space name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "states": {
+        "name": "states",
+        "in": "query",
+        "description": "List out rulesets that have the queried ruleset states",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "status": {
+        "name": "status",
+        "in": "query",
+        "description": "Specify an optional comma-separated list of statuses for Scans to filter Scans list.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "type": {
+        "name": "type",
+        "in": "query",
+        "description": "Specify a type for Scans (e.g. catalog/space) to filter Scans list.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "visibility_types": {
+        "name": "visibility_types",
+        "in": "query",
+        "description": "List out rulesets that have the queried visibility types",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "headers": {
+      "Location": {
+        "description": "URL referencing a newly created resource",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "schemas": {
+      "CatalogGovernanceSetting": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "catalog_governance_setting"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "scope": {
+            "type": "string"
+          },
+          "rulesets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "enforcement_policy": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "Rule": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "rule"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "version": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "message": {
+            "type": "string"
+          },
+          "recommended": {
+            "type": "boolean"
+          },
+          "type_db": {
+            "type": "string"
+          },
+          "given": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "error",
+              "warn",
+              "info",
+              "hint",
+              "off"
+            ]
+          },
+          "formats": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "oas2",
+                "oas3",
+                "oas3_0",
+                "oas3_1",
+                "aas2",
+                "aas3_0"
+              ]
+            }
+          },
+          "resolved": {
+            "type": "boolean"
+          },
+          "then_db": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "ruleset_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "RuleList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Rule"
+            }
+          }
+        }
+      },
+      "Ruleset": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "ruleset"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "original_name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "rule_count": {
+            "type": "integer"
+          },
+          "ruleset_version": {
+            "type": "string"
+          },
+          "ruleset_type": {
+            "type": "string",
+            "enum": [
+              "global-ibm",
+              "global-spectral",
+              "global-custom",
+              "custom"
+            ]
+          },
+          "ruleset_state": {
+            "type": "string",
+            "enum": [
+              "draft",
+              "published",
+              "archived"
+            ]
+          },
+          "ruleset_format_type": {
+            "type": "string",
+            "enum": [
+              "1",
+              "2"
+            ]
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/ResourceVisibility"
+          },
+          "rule_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "RulesetList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Ruleset"
+            }
+          }
+        }
+      },
+      "Scan": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "scan"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "scope": {
+            "type": "string"
+          },
+          "collection": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "parent_id": {
+                "type": "string"
+              },
+              "parent_name": {
+                "type": "string"
+              },
+              "parent_title": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "catalog",
+                  "space"
+                ]
+              },
+              "location": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          },
+          "config": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "documents_scanned": {
+            "type": "integer"
+          },
+          "progress": {
+            "type": "integer"
+          },
+          "reports": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "created_at": {
+                  "type": "string"
+                },
+                "report_url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "scan_result": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "errors": {
+                      "type": "string"
+                    },
+                    "warnings": {
+                      "type": "string"
+                    },
+                    "infos": {
+                      "type": "string"
+                    },
+                    "hints": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "scan_result": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "scan_type": {
+            "type": "string"
+          },
+          "tagged_rulesets": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "raw_tags": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "enforcement_config": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "ScanList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Scan"
+            }
+          }
+        }
+      },
+      "ScanJobResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "scan_job_result"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "scope": {
+            "type": "string"
+          },
+          "scan_id": {
+            "type": "string"
+          },
+          "job_id": {
+            "type": "string"
+          },
+          "document": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "ScanJobResultList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ScanJobResult"
+            }
+          }
+        }
+      },
+      "ScanReport": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "scan_report"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "scope": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "scan_details": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "top": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "scan_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "internal_scan_report_id": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "ScanReportList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ScanReport"
+            }
+          }
+        }
+      },
+      "ScanResultDocMap": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "scan_result_doc_map"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "scope": {
+            "type": "string"
+          },
+          "scan_id": {
+            "type": "string"
+          },
+          "doc_result_id": {
+            "type": "string"
+          },
+          "scan_report_id": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "ScanResultDocMapList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ScanResultDocMap"
+            }
+          }
+        }
+      },
+      "CatalogSettingRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ruleset_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "enforcement_policy": {
+            "type": "string"
+          }
+        }
+      },
+      "CatalogSettingResponse": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "rulesets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "ruleset_version": {
+                  "type": "string"
+                },
+                "tags": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                },
+                "ruleset_format_type": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            }
+          }
+        }
+      },
+      "CatalogSettingValidationRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "readOnly": true
+            }
+          },
+          "task_url": {
+            "type": "string"
+          }
+        }
+      },
+      "Compliance": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "ComplianceRequest": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "tags_enabled": {
+            "type": "boolean"
+          },
+          "tags": {
+            "type": "object"
+          },
+          "apiUrls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "readOnly": true
+            }
+          },
+          "productUrls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "readOnly": true
+            }
+          },
+          "collectionUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "config": {
+            "$ref": "#/components/schemas/ConfigDefinition"
+          }
+        }
+      },
+      "ComplianceResult": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResultResponse"
+            }
+          }
+        }
+      },
+      "ComplianceResults": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResultResponse"
+            }
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "type": "integer",
+            "minimum": 400,
+            "maximum": 599
+          },
+          "message": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "OpenApi2Definition": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "swagger": {
+            "type": "string",
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "info": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "title",
+              "version"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "ValidationPublishMultipart": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductDefinition"
+            }
+          },
+          "openapi": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OpenApi2Definition"
+            }
+          },
+          "config": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ConfigDefinition"
+            }
+          }
+        },
+        "oneOf": [
+          {
+            "required": [
+              "product"
+            ]
+          },
+          {
+            "required": [
+              "openapi"
+            ]
+          }
+        ]
+      },
+      "RulesetsByDocumentsRequest": {
+        "type": "object",
+        "properties": {
+          "collectionUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "apiUrls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "readOnly": true
+            }
+          },
+          "productUrls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "readOnly": true
+            }
+          },
+          "product": {
+            "type": "object"
+          },
+          "api": {
+            "type": "object"
+          }
+        },
+        "oneOf": [
+          {
+            "required": [
+              "product"
+            ]
+          },
+          {
+            "required": [
+              "api"
+            ]
+          },
+          {
+            "required": [
+              "collectionUrl"
+            ]
+          },
+          {
+            "required": [
+              "apiUrls"
+            ]
+          },
+          {
+            "required": [
+              "productUrls"
+            ]
+          }
+        ]
+      },
+      "ConfigDefinition": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "rulesets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ConfigRuleset"
+            }
+          }
+        }
+      },
+      "ConfigRuleset": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "rulesetName": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "disabled": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ScanFilter": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ScanFilterValue"
+            }
+          }
+        }
+      },
+      "ScanFiltersResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "filters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ScanFilter"
+            }
+          }
+        }
+      },
+      "ScanFilterValue": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          }
+        }
+      },
+      "SpectralRulesetMultipart": {
+        "type": "object",
+        "required": [
+          "ruleset"
+        ],
+        "properties": {
+          "ruleset": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RulesetRequest"
+            }
+          }
+        }
+      },
+      "RulesetRequest": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "ruleset_version": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "ruleset_type": {
+            "type": "string",
+            "enum": [
+              "global-ibm",
+              "global-spectral",
+              "global-custom",
+              "custom"
+            ]
+          },
+          "ruleset_format_type": {
+            "type": "string",
+            "enum": [
+              "1",
+              "2"
+            ]
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/ResourceVisibility"
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RuleRequest"
+            }
+          }
+        }
+      },
+      "RulesetResponse": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "ruleset_version": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "ruleset_type": {
+            "type": "string",
+            "enum": [
+              "global-ibm",
+              "global-spectral",
+              "global-custom",
+              "custom"
+            ]
+          },
+          "ruleset_format_type": {
+            "type": "string"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/ResourceVisibility"
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RuleResponse"
+            }
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "RulesetResponseList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RulesetResponse"
+            }
+          },
+          "total_results": {
+            "type": "integer"
+          }
+        }
+      },
+      "RulesetsByDocumentsResponseList": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "tags": {
+            "type": "object"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RulesetResponse"
+            }
+          },
+          "total_results": {
+            "type": "integer"
+          }
+        }
+      },
+      "RuleRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "message": {
+            "type": "string"
+          },
+          "recommended": {
+            "type": "boolean"
+          },
+          "type": {
+            "type": "string"
+          },
+          "given": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "error",
+              "warn",
+              "info",
+              "hint",
+              "off"
+            ]
+          },
+          "formats": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "oas2",
+                "oas3",
+                "oas3_0",
+                "oas3_1",
+                "aas2",
+                "aas3_0"
+              ]
+            }
+          },
+          "resolved": {
+            "type": "boolean"
+          },
+          "then": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ResultResponse": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "ruleset_name": {
+            "type": "string"
+          },
+          "rule_name": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "error",
+              "warn",
+              "info",
+              "hint",
+              "off"
+            ]
+          },
+          "api_name": {
+            "type": "string"
+          },
+          "doc_title": {
+            "type": "string"
+          },
+          "catalog": {
+            "type": "string"
+          },
+          "space": {
+            "type": "string"
+          },
+          "product_title": {
+            "type": "string"
+          },
+          "start_line": {
+            "type": "integer"
+          },
+          "end_line": {
+            "type": "integer"
+          },
+          "validation_result": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ResultsResponse": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "document_result": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResultResponse"
+            }
+          }
+        }
+      },
+      "RuleResponse": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "message": {
+            "type": "string"
+          },
+          "recommended": {
+            "type": "boolean"
+          },
+          "type": {
+            "type": "string"
+          },
+          "given": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "error",
+              "warn",
+              "info",
+              "hint",
+              "off"
+            ]
+          },
+          "formats": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "oas2",
+                "oas3",
+                "oas3_0",
+                "oas3_1",
+                "aas2",
+                "aas3_0"
+              ]
+            }
+          },
+          "resolved": {
+            "type": "boolean"
+          },
+          "then": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "ResourceVisibility": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "public",
+              "private",
+              "custom"
+            ]
+          },
+          "org_urls": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        }
+      },
+      "ScanCreateResult": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "ProductDefinition": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "product": {
+            "type": "string",
+            "enum": [
+              "1.0.0"
+            ]
+          },
+          "info": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "name",
+              "version"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "Error": {
+        "description": "Unexpected error",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "oauth": {
+        "type": "oauth2",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "/oauth2/authorize",
+            "scopes": {
+              "org:manage": "Delete all user created rulesets, Update the Ruleset object by name or id, Delete the Ruleset object by name or id, Create a Rule object, Delete all versions of a Rule by name for a single version of a Ruleset, Update the Rule object by id, Delete a single user created Rule in a single Ruleset by id, Update the Rule object by name and version, Delete the Rule object by name and version, Create a Scan object, Clear the Scan objects, Update the Scan object by name or id, Delete the Scan object by name or id, Create a Scan Report object, Update the Scan Report object by name or id, Delete the Scan Report object by name or id",
+              "org:view": "List the Ruleset objects, Download the Ruleset object as a file to the current directory by name or id, List information about all Rules of a Ruleset, List information about the specified Rule of a Ruleset, Download the Rule object as a file to the current directory by id, Download the Rule object as a file to the current directory by name:version or id, List the Scan objects, Get the Scan object by name or id, List the Scan Report objects, Get the Scan Report object by name or id",
+              "product:manage": "Create a catalog setting by name or id, Validate product api using catalog governance setting"
+            }
+          },
+          "password": {
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
+            "scopes": {
+              "org:manage": "Delete all user created rulesets, Update the Ruleset object by name or id, Delete the Ruleset object by name or id, Create a Rule object, Delete all versions of a Rule by name for a single version of a Ruleset, Update the Rule object by id, Delete a single user created Rule in a single Ruleset by id, Update the Rule object by name and version, Delete the Rule object by name and version, Create a Scan object, Clear the Scan objects, Update the Scan object by name or id, Delete the Scan object by name or id, Create a Scan Report object, Update the Scan Report object by name or id, Delete the Scan Report object by name or id",
+              "org:view": "List the Ruleset objects, Download the Ruleset object as a file to the current directory by name or id, List information about all Rules of a Ruleset, List information about the specified Rule of a Ruleset, Download the Rule object as a file to the current directory by id, Download the Rule object as a file to the current directory by name:version or id, List the Scan objects, Get the Scan object by name or id, List the Scan Report objects, Get the Scan Report object by name or id",
+              "product:manage": "Create a catalog setting by name or id, Validate product api using catalog governance setting"
+            }
+          },
+          "clientCredentials": {
+            "tokenUrl": "/token",
+            "scopes": {
+              "org:manage": "Delete all user created rulesets, Update the Ruleset object by name or id, Delete the Ruleset object by name or id, Create a Rule object, Delete all versions of a Rule by name for a single version of a Ruleset, Update the Rule object by id, Delete a single user created Rule in a single Ruleset by id, Update the Rule object by name and version, Delete the Rule object by name and version, Create a Scan object, Clear the Scan objects, Update the Scan object by name or id, Delete the Scan object by name or id, Create a Scan Report object, Update the Scan Report object by name or id, Delete the Scan Report object by name or id",
+              "org:view": "List the Ruleset objects, Download the Ruleset object as a file to the current directory by name or id, List information about all Rules of a Ruleset, List information about the specified Rule of a Ruleset, Download the Rule object as a file to the current directory by id, Download the Rule object as a file to the current directory by name:version or id, List the Scan objects, Get the Scan object by name or id, List the Scan Report objects, Get the Scan Report object by name or id",
+              "product:manage": "Create a catalog setting by name or id, Validate product api using catalog governance setting"
+            }
+          },
+          "authorizationCode": {
+            "authorizationUrl": "/oauth2/authorize",
+            "tokenUrl": "/token",
+            "refreshUrl": "/token",
+            "scopes": {
+              "org:manage": "Delete all user created rulesets, Update the Ruleset object by name or id, Delete the Ruleset object by name or id, Create a Rule object, Delete all versions of a Rule by name for a single version of a Ruleset, Update the Rule object by id, Delete a single user created Rule in a single Ruleset by id, Update the Rule object by name and version, Delete the Rule object by name and version, Create a Scan object, Clear the Scan objects, Update the Scan object by name or id, Delete the Scan object by name or id, Create a Scan Report object, Update the Scan Report object by name or id, Delete the Scan Report object by name or id",
+              "org:view": "List the Ruleset objects, Download the Ruleset object as a file to the current directory by name or id, List information about all Rules of a Ruleset, List information about the specified Rule of a Ruleset, Download the Rule object as a file to the current directory by id, Download the Rule object as a file to the current directory by name:version or id, List the Scan objects, Get the Scan object by name or id, List the Scan Report objects, Get the Scan Report object by name or id",
+              "product:manage": "Create a catalog setting by name or id, Validate product api using catalog governance setting"
+            }
+          }
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Additional documentation",
+    "url": "https://www.ibm.com/knowledge-center/api-connect/platform-apis"
   },
   "x-ibm-configuration": {
     "testable": false
