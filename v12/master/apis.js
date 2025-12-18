@@ -2309,6 +2309,24 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ApiControlPlaneEndpointTestConnection"
+              },
+              "examples": {
+                "ApiControlPlaneEndpointTestConnection": {
+                  "summary": "Example for control plane endpoint test connection.",
+                  "value": {
+                    "endpoint": {
+                      "endpoint": "https://api.fam.acme-apim.example.com",
+                      "tls_client_profile_url": "https://acme-apim.example.com/api/orgs/org1/tls-client-profiles/tls-client-profile1"
+                    },
+                    "credentials": {
+                      "password": "******",
+                      "username": "administrator"
+                    },
+                    "ui_endpoint": {
+                      "endpoint": "https://fam.acme-apim.example.com"
+                    }
+                  }
+                }
               }
             }
           }
@@ -9918,7 +9936,6 @@
                 "Member": {
                   "summary": "Example of member update at org scope.",
                   "value": {
-                    "name": "updated-acme-member",
                     "title": "Updated ACME Member",
                     "summary": "An example member update",
                     "role_urls": [
@@ -9937,7 +9954,6 @@
                 "Member": {
                   "summary": "Example of member update at org scope.",
                   "value": {
-                    "name": "updated-acme-member",
                     "title": "Updated ACME Member",
                     "summary": "An example member update",
                     "role_urls": [
@@ -13942,7 +13958,6 @@
                 "Opentelemetry": {
                   "summary": "Example of opentelemetry update.",
                   "value": {
-                    "name": "opentelemetry",
                     "title": "Opentelemetry",
                     "endpoints": [
                       {
@@ -13990,7 +14005,6 @@
                 "Opentelemetry": {
                   "summary": "Example of opentelemetry update.",
                   "value": {
-                    "name": "opentelemetry",
                     "title": "Opentelemetry",
                     "endpoints": [
                       {
@@ -14654,11 +14668,47 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/JwtProvider"
+              },
+              "examples": {
+                "JWTProvider": {
+                  "summary": "Example for JWT provider create",
+                  "value": {
+                    "name": "JWTProvider",
+                    "title": "JWT Provider",
+                    "summary": "Example for creating JWT Provider",
+                    "debug": false,
+                    "gateway_version": "12000",
+                    "native_jwt_provider": {
+                      "jwks_config": "signing"
+                    },
+                    "tls_client_profile_urls": [
+                      "https://api.acme-apim.example.com/api/orgs/acme-org/tls-client-profiles/acme-tls-client-profile"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/JwtProvider"
+              },
+              "examples": {
+                "JWTProvider": {
+                  "summary": "Example for JWT provider create",
+                  "value": {
+                    "name": "JWTProvider",
+                    "title": "JWT Provider",
+                    "summary": "Example for creating JWT Provider",
+                    "debug": false,
+                    "gateway_version": "12000",
+                    "native_jwt_provider": {
+                      "jwks_config": "signing"
+                    },
+                    "tls_client_profile_urls": [
+                      "https://api.acme-apim.example.com/api/orgs/acme-org/tls-client-profiles/acme-tls-client-profile"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -14855,11 +14905,45 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/JwtProvider"
+              },
+              "examples": {
+                "JWTProvider": {
+                  "summary": "Example for JWT provider update",
+                  "value": {
+                    "title": "JWT Provider",
+                    "summary": "Example for updating JWT Provider",
+                    "debug": false,
+                    "gateway_version": "12000",
+                    "native_jwt_provider": {
+                      "jwks_config": "signing"
+                    },
+                    "tls_client_profile_urls": [
+                      "https://api.acme-apim.example.com/api/orgs/acme-org/tls-client-profiles/acme-tls-client-profile"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/JwtProvider"
+              },
+              "examples": {
+                "JWTProvider": {
+                  "summary": "Example for JWT provider update",
+                  "value": {
+                    "title": "JWT Provider",
+                    "summary": "Example for updating JWT Provider",
+                    "debug": false,
+                    "gateway_version": "12000",
+                    "native_jwt_provider": {
+                      "jwks_config": "signing"
+                    },
+                    "tls_client_profile_urls": [
+                      "https://api.acme-apim.example.com/api/orgs/acme-org/tls-client-profiles/acme-tls-client-profile"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -26423,6 +26507,13 @@
               "format": "uri"
             }
           },
+          "jwt_provider_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
           "tls_client_profile_urls": {
             "type": "array",
             "items": {
@@ -30905,6 +30996,13 @@
             "$ref": "#/components/schemas/ResourceVisibility"
           },
           "user_registry_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "jwt_provider_urls": {
             "type": "array",
             "items": {
               "type": "string",
@@ -53015,11 +53113,33 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/UserGroup"
+              },
+              "examples": {
+                "UserGroup": {
+                  "summary": "Example for user-group create",
+                  "value": {
+                    "name": "AcmeTeam",
+                    "title": "Acme Team",
+                    "summary": "User-group for Acme team",
+                    "user_urls": "https://acme-apim.example.com/api/user-registries/admin/api-manager-lur/users/user1"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/UserGroup"
+              },
+              "examples": {
+                "UserGroup": {
+                  "summary": "Example for user-group create",
+                  "value": {
+                    "name": "AcmeTeam",
+                    "title": "Acme Team",
+                    "summary": "User-group for Acme team",
+                    "user_urls": "https://acme-apim.example.com/api/user-registries/admin/api-manager-lur/users/user1"
+                  }
+                }
               }
             }
           }
@@ -53216,11 +53336,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/UserGroup"
+              },
+              "examples": {
+                "UserGroup": {
+                  "summary": "Example for user-group update",
+                  "value": {
+                    "title": "Acme Team",
+                    "summary": "Update user-group for Acme team",
+                    "user_urls": "https://acme-apim.example.com/api/user-registries/admin/api-manager-lur/users/user1"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/UserGroup"
+              },
+              "examples": {
+                "UserGroup": {
+                  "summary": "Example for user-group update",
+                  "value": {
+                    "title": "Acme Team",
+                    "summary": "Update user-group for Acme team",
+                    "user_urls": "https://acme-apim.example.com/api/user-registries/admin/api-manager-lur/users/user1"
+                  }
+                }
               }
             }
           }
@@ -54132,7 +54272,6 @@
                 "Member": {
                   "summary": "Example of member update at org scope.",
                   "value": {
-                    "name": "updated-acme-member",
                     "title": "Updated ACME Member",
                     "summary": "An example member update",
                     "role_urls": [
@@ -54151,7 +54290,6 @@
                 "Member": {
                   "summary": "Example of member update at org scope.",
                   "value": {
-                    "name": "updated-acme-member",
                     "title": "Updated ACME Member",
                     "summary": "An example member update",
                     "role_urls": [
@@ -54260,11 +54398,39 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/UserGroupRoleAssignment"
+              },
+              "examples": {
+                "UserGroupRoleAssignment": {
+                  "summary": "Example for user-group role assignment create",
+                  "value": {
+                    "name": "AcmeTeamAdminRole",
+                    "title": "Admin Role for Acme Team",
+                    "summary": "Assigns administrator-level permissions to the Acme user group\nwithin the organization.\n",
+                    "user_group_url": "https://acme-apim.example.com/api/orgs/org1/user-groups/usergroup1",
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/orgs/alpha/roles/admin"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/UserGroupRoleAssignment"
+              },
+              "examples": {
+                "UserGroupRoleAssignment": {
+                  "summary": "Example for user-group role assignment create",
+                  "value": {
+                    "name": "AcmeTeamAdminRole",
+                    "title": "Admin Role for Acme Team",
+                    "summary": "Assigns administrator-level permissions to the Acme user group\nwithin the organization.\n",
+                    "user_group_url": "https://acme-apim.example.com/api/orgs/org1/user-groups/usergroup1",
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/orgs/alpha/roles/admin"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -54461,11 +54627,37 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/UserGroupRoleAssignment"
+              },
+              "examples": {
+                "UserGroupRoleAssignment": {
+                  "summary": "Example for user-group role assignment update",
+                  "value": {
+                    "title": "Admin Role for Acme Team",
+                    "summary": "Assigns administrator-level permissions to the Acme user group\nwithin the organization.\n",
+                    "user_group_url": "https://acme-apim.example.com/api/orgs/org1/user-groups/usergroup1",
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/orgs/alpha/roles/admin"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/UserGroupRoleAssignment"
+              },
+              "examples": {
+                "UserGroupRoleAssignment": {
+                  "summary": "Example for user-group role assignment update",
+                  "value": {
+                    "title": "Admin Role for Acme Team",
+                    "summary": "Assigns administrator-level permissions to the Acme user group\nwithin the organization.\n",
+                    "user_group_url": "https://acme-apim.example.com/api/orgs/org1/user-groups/usergroup1",
+                    "role_urls": [
+                      "https://acme-apim.example.com/api/orgs/alpha/roles/admin"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -55423,11 +55615,37 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Team"
+              },
+              "examples": {
+                "Team": {
+                  "summary": "Example for teams create",
+                  "value": {
+                    "name": "AcmeTeam",
+                    "summary": "Example for acme team create",
+                    "title": "Acme Team",
+                    "user_group_urls": [
+                      "https://acme-apim.example.com/api/orgs/org1/user-groups/usergroup1"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Team"
+              },
+              "examples": {
+                "Team": {
+                  "summary": "Example for teams create",
+                  "value": {
+                    "name": "AcmeTeam",
+                    "summary": "Example for acme team create",
+                    "title": "Acme Team",
+                    "user_group_urls": [
+                      "https://acme-apim.example.com/api/orgs/org1/user-groups/usergroup1"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -55624,11 +55842,35 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Team"
+              },
+              "examples": {
+                "Team": {
+                  "summary": "Example for teams update",
+                  "value": {
+                    "title": "Acme Team",
+                    "summary": "Example for acme team update",
+                    "user_group_urls": [
+                      "https://acme-apim.example.com/api/orgs/org1/user-groups/usergroup1"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Team"
+              },
+              "examples": {
+                "Team": {
+                  "summary": "Example for teams update",
+                  "value": {
+                    "title": "Acme Team",
+                    "summary": "Example for acme team update",
+                    "user_group_urls": [
+                      "https://acme-apim.example.com/api/orgs/org1/user-groups/usergroup1"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -56481,11 +56723,47 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/JwtProvider"
+              },
+              "examples": {
+                "JWTProvider": {
+                  "summary": "Example for JWT provider create",
+                  "value": {
+                    "name": "JWTProvider",
+                    "title": "JWT Provider",
+                    "summary": "Example for creating JWT Provider",
+                    "debug": false,
+                    "gateway_version": "12000",
+                    "native_jwt_provider": {
+                      "jwks_config": "signing"
+                    },
+                    "tls_client_profile_urls": [
+                      "https://api.acme-apim.example.com/api/orgs/acme-org/tls-client-profiles/acme-tls-client-profile"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/JwtProvider"
+              },
+              "examples": {
+                "JWTProvider": {
+                  "summary": "Example for JWT provider create",
+                  "value": {
+                    "name": "JWTProvider",
+                    "title": "JWT Provider",
+                    "summary": "Example for creating JWT Provider",
+                    "debug": false,
+                    "gateway_version": "12000",
+                    "native_jwt_provider": {
+                      "jwks_config": "signing"
+                    },
+                    "tls_client_profile_urls": [
+                      "https://api.acme-apim.example.com/api/orgs/acme-org/tls-client-profiles/acme-tls-client-profile"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -56682,11 +56960,45 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/JwtProvider"
+              },
+              "examples": {
+                "JWTProvider": {
+                  "summary": "Example for JWT provider update",
+                  "value": {
+                    "title": "JWT Provider",
+                    "summary": "Example for updating JWT Provider",
+                    "debug": false,
+                    "gateway_version": "12000",
+                    "native_jwt_provider": {
+                      "jwks_config": "signing"
+                    },
+                    "tls_client_profile_urls": [
+                      "https://api.acme-apim.example.com/api/orgs/acme-org/tls-client-profiles/acme-tls-client-profile"
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/JwtProvider"
+              },
+              "examples": {
+                "JWTProvider": {
+                  "summary": "Example for JWT provider update",
+                  "value": {
+                    "title": "JWT Provider",
+                    "summary": "Example for updating JWT Provider",
+                    "debug": false,
+                    "gateway_version": "12000",
+                    "native_jwt_provider": {
+                      "jwks_config": "signing"
+                    },
+                    "tls_client_profile_urls": [
+                      "https://api.acme-apim.example.com/api/orgs/acme-org/tls-client-profiles/acme-tls-client-profile"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -62384,11 +62696,27 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredJwtProvider"
+              },
+              "examples": {
+                "ConfiguredJwtProvider": {
+                  "summary": "Example for Configure JWT provider",
+                  "value": {
+                    "jwt_provider_url": "https://api.acme-apim.example.com/api/orgs/acme-org/jwt-providers/jwt-provider1"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredJwtProvider"
+              },
+              "examples": {
+                "ConfiguredJwtProvider": {
+                  "summary": "Example for Configure JWT provider",
+                  "value": {
+                    "jwt_provider_url": "https://api.acme-apim.example.com/api/orgs/acme-org/jwt-providers/jwt-provider1"
+                  }
+                }
               }
             }
           }
@@ -62641,11 +62969,27 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredJwtProvider"
+              },
+              "examples": {
+                "ConfiguredJwtProvider": {
+                  "summary": "Example for Configure JWT provider",
+                  "value": {
+                    "jwt_provider_url": "https://api.acme-apim.example.com/api/orgs/acme-org/jwt-providers/jwt-provider1"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredJwtProvider"
+              },
+              "examples": {
+                "ConfiguredJwtProvider": {
+                  "summary": "Example for Configure JWT provider",
+                  "value": {
+                    "jwt_provider_url": "https://api.acme-apim.example.com/api/orgs/acme-org/jwt-providers/jwt-provider1"
+                  }
+                }
               }
             }
           }
@@ -63449,11 +63793,27 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredPortalService"
+              },
+              "examples": {
+                "ConfiguredPortalService": {
+                  "summary": "Example of configured portal service creation at catalog scope.",
+                  "value": {
+                    "portal_service_url": "https://acme-apim.example.com/api/orgs/org1/portal-services/acme-portal-service"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ConfiguredPortalService"
+              },
+              "examples": {
+                "ConfiguredPortalService": {
+                  "summary": "Example of configured portal service creation at catalog scope.",
+                  "value": {
+                    "portal_service_url": "https://acme-apim.example.com/api/orgs/org1/portal-services/acme-portal-service"
+                  }
+                }
               }
             }
           }
@@ -68063,7 +68423,6 @@
                 "Member": {
                   "summary": "Example of member update at catalog scope.",
                   "value": {
-                    "name": "updated-acme-member",
                     "title": "Updated ACME Member",
                     "summary": "An example member update",
                     "role_urls": [
@@ -68082,7 +68441,6 @@
                 "Member": {
                   "summary": "Example of member update at catalog scope.",
                   "value": {
-                    "name": "updated-acme-member",
                     "title": "Updated ACME Member",
                     "summary": "An example member update",
                     "role_urls": [
@@ -74450,11 +74808,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Strategy"
+              },
+              "examples": {
+                "Strategy": {
+                  "summary": "Example for strategy create",
+                  "value": {
+                    "name": "acme-strategy",
+                    "title": "ACME Strategy",
+                    "summary": "Example for acme strategy create"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Strategy"
+              },
+              "examples": {
+                "Strategy": {
+                  "summary": "Example for strategy create",
+                  "value": {
+                    "name": "acme-strategy",
+                    "title": "ACME Strategy",
+                    "summary": "Example for acme strategy create"
+                  }
+                }
               }
             }
           }
@@ -74657,11 +75035,45 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Strategy"
+              },
+              "examples": {
+                "Strategy": {
+                  "summary": "Example for strategy update",
+                  "value": {
+                    "title": "Acme Strategy",
+                    "summary": "Example for acme strategy update",
+                    "strategy_type": "oauth2",
+                    "dcr_config": {
+                      "application_type": "public",
+                      "allowed_grant_types": [
+                        "refresh_token"
+                      ]
+                    },
+                    "auth_server_alias": "mobile-auth-server"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Strategy"
+              },
+              "examples": {
+                "Strategy": {
+                  "summary": "Example for strategy update",
+                  "value": {
+                    "title": "Acme Strategy",
+                    "summary": "Example for acme strategy update",
+                    "strategy_type": "oauth2",
+                    "dcr_config": {
+                      "application_type": "public",
+                      "allowed_grant_types": [
+                        "refresh_token"
+                      ]
+                    },
+                    "auth_server_alias": "mobile-auth-server"
+                  }
+                }
               }
             }
           }
@@ -74766,11 +75178,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Strategy"
+              },
+              "examples": {
+                "Strategy": {
+                  "summary": "Example for strategy create",
+                  "value": {
+                    "name": "acme-strategy",
+                    "title": "ACME Strategy",
+                    "summary": "Example for acme strategy create"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Strategy"
+              },
+              "examples": {
+                "Strategy": {
+                  "summary": "Example for strategy create",
+                  "value": {
+                    "name": "acme-strategy",
+                    "title": "ACME Strategy",
+                    "summary": "Example for acme strategy create"
+                  }
+                }
               }
             }
           }
@@ -74976,11 +75408,45 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Strategy"
+              },
+              "examples": {
+                "Strategy": {
+                  "summary": "Example for strategy update",
+                  "value": {
+                    "title": "Acme Strategy",
+                    "summary": "Example for acme strategy update",
+                    "strategy_type": "oauth2",
+                    "dcr_config": {
+                      "application_type": "public",
+                      "allowed_grant_types": [
+                        "refresh_token"
+                      ]
+                    },
+                    "auth_server_alias": "mobile-auth-server"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Strategy"
+              },
+              "examples": {
+                "Strategy": {
+                  "summary": "Example for strategy update",
+                  "value": {
+                    "title": "Acme Strategy",
+                    "summary": "Example for acme strategy update",
+                    "strategy_type": "oauth2",
+                    "dcr_config": {
+                      "application_type": "public",
+                      "allowed_grant_types": [
+                        "refresh_token"
+                      ]
+                    },
+                    "auth_server_alias": "mobile-auth-server"
+                  }
+                }
               }
             }
           }
@@ -77682,11 +78148,29 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/SimpleAlias"
+              },
+              "examples": {
+                "SimpleAlias": {
+                  "summary": "Example for Simple Alias",
+                  "value": {
+                    "name": "acme-simple-alias",
+                    "title": "ACME Simple Alias"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/SimpleAlias"
+              },
+              "examples": {
+                "SimpleAlias": {
+                  "summary": "Example for Simple Alias",
+                  "value": {
+                    "name": "acme-simple-alias",
+                    "title": "ACME Simple Alias"
+                  }
+                }
               }
             }
           }
@@ -77886,11 +78370,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/SimpleAlias"
+              },
+              "examples": {
+                "SimpleAlias": {
+                  "summary": "Example for Simple Alias",
+                  "value": {
+                    "name": "acme-simple-alias",
+                    "title": "Updated ACME Simple Alias",
+                    "value": "alias"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/SimpleAlias"
+              },
+              "examples": {
+                "SimpleAlias": {
+                  "summary": "Example for Simple Alias",
+                  "value": {
+                    "name": "acme-simple-alias",
+                    "title": "Updated ACME Simple Alias",
+                    "value": "alias"
+                  }
+                }
               }
             }
           }
@@ -77992,11 +78496,29 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/SimpleAlias"
+              },
+              "examples": {
+                "SimpleAlias": {
+                  "summary": "Example for Simple Alias",
+                  "value": {
+                    "name": "acme-simple-alias",
+                    "title": "ACME Simple Alias"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/SimpleAlias"
+              },
+              "examples": {
+                "SimpleAlias": {
+                  "summary": "Example for Simple Alias",
+                  "value": {
+                    "name": "acme-simple-alias",
+                    "title": "ACME Simple Alias"
+                  }
+                }
               }
             }
           }
@@ -78199,11 +78721,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/SimpleAlias"
+              },
+              "examples": {
+                "SimpleAlias": {
+                  "summary": "Example for Simple Alias",
+                  "value": {
+                    "name": "updated-acme-simple-alias",
+                    "title": "Updated ACME Simple Alias",
+                    "value": "alias"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/SimpleAlias"
+              },
+              "examples": {
+                "SimpleAlias": {
+                  "summary": "Example for Simple Alias",
+                  "value": {
+                    "name": "updated-acme-simple-alias",
+                    "title": "Updated ACME Simple Alias",
+                    "value": "alias"
+                  }
+                }
               }
             }
           }
@@ -82382,7 +82924,6 @@
                 "Member": {
                   "summary": "Example of member update at space scope.",
                   "value": {
-                    "name": "updated-acme-member",
                     "title": "Updated ACME Member",
                     "summary": "An example member update",
                     "role_urls": [
@@ -82401,7 +82942,6 @@
                 "Member": {
                   "summary": "Example of member update at space scope.",
                   "value": {
-                    "name": "updated-acme-member",
                     "title": "Updated ACME Member",
                     "summary": "An example member update",
                     "role_urls": [
@@ -86539,7 +87079,6 @@
                 "PaymentMethod": {
                   "summary": "Example of payment method update.",
                   "value": {
-                    "name": "acme-payment",
                     "title": "Acme payment method update",
                     "summary": "An example payment method update",
                     "billing_url": "https://api.acme-apim.example.com/api/catalogs/org/acme-catalog/configured-billings/configured-billing",
@@ -86562,7 +87101,6 @@
                 "PaymentMethod": {
                   "summary": "Example of payment method update.",
                   "value": {
-                    "name": "acme-payment",
                     "title": "Acme payment method update",
                     "summary": "An example payment method update",
                     "billing_url": "https://api.acme-apim.example.com/api/catalogs/org/acme-catalog/configured-billings/configured-billing",
@@ -86898,7 +87436,6 @@
                 "PaymentMethod": {
                   "summary": "Example of payment method update.",
                   "value": {
-                    "name": "acme-payment",
                     "title": "Acme payment method update",
                     "summary": "An example payment method update",
                     "billing_url": "https://api.acme-apim.example.com/api/catalogs/org/acme-catalog/configured-billings/configured-billing",
@@ -86921,7 +87458,6 @@
                 "PaymentMethod": {
                   "summary": "Example of payment method update.",
                   "value": {
-                    "name": "acme-payment",
                     "title": "Acme payment method update",
                     "summary": "An example payment method update",
                     "billing_url": "https://api.acme-apim.example.com/api/catalogs/org/acme-catalog/configured-billings/configured-billing",
@@ -88690,7 +89226,6 @@
                 "Member": {
                   "summary": "Example of member update at consumer-org scope.",
                   "value": {
-                    "name": "updated-acme-member",
                     "title": "Updated ACME Member",
                     "summary": "An example member update",
                     "role_urls": [
@@ -88709,7 +89244,6 @@
                 "Member": {
                   "summary": "Example of member update at consumer-org scope.",
                   "value": {
-                    "name": "updated-acme-member",
                     "title": "Updated ACME Member",
                     "summary": "An example member update",
                     "role_urls": [
@@ -89071,7 +89605,6 @@
                 "Member": {
                   "summary": "Example of member update at consumer-org(space-initiated).",
                   "value": {
-                    "name": "updated-acme-member",
                     "title": "Updated ACME Member",
                     "summary": "An example member update",
                     "role_urls": [
@@ -89090,7 +89623,6 @@
                 "Member": {
                   "summary": "Example of member update at consumer-org(space-initiated).",
                   "value": {
-                    "name": "updated-acme-member",
                     "title": "Updated ACME Member",
                     "summary": "An example member update",
                     "role_urls": [
@@ -89432,7 +89964,6 @@
                 "App": {
                   "summary": "Example of app update with state enabled.",
                   "value": {
-                    "name": "updated-acme-app",
                     "title": "Updated ACME App",
                     "summary": "An example app update",
                     "state": "enabled"
@@ -89448,7 +89979,6 @@
                 "App": {
                   "summary": "Example of app update with state enabled.",
                   "value": {
-                    "name": "updated-acme-app",
                     "title": "Updated ACME App",
                     "summary": "An example app update",
                     "state": "enabled"
@@ -89877,11 +90407,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Strategy"
+              },
+              "examples": {
+                "Strategy": {
+                  "summary": "Example for strategy create",
+                  "value": {
+                    "name": "acme-strategy",
+                    "title": "ACME Strategy",
+                    "summary": "Example for acme strategy create"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Strategy"
+              },
+              "examples": {
+                "Strategy": {
+                  "summary": "Example for strategy create",
+                  "value": {
+                    "name": "acme-strategy",
+                    "title": "ACME Strategy",
+                    "summary": "Example for acme strategy create"
+                  }
+                }
               }
             }
           }
@@ -90087,11 +90637,45 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Strategy"
+              },
+              "examples": {
+                "Strategy": {
+                  "summary": "Example for strategy update",
+                  "value": {
+                    "title": "Acme Strategy",
+                    "summary": "Example for acme strategy update",
+                    "strategy_type": "oauth2",
+                    "dcr_config": {
+                      "application_type": "public",
+                      "allowed_grant_types": [
+                        "refresh_token"
+                      ]
+                    },
+                    "auth_server_alias": "mobile-auth-server"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Strategy"
+              },
+              "examples": {
+                "Strategy": {
+                  "summary": "Example for strategy update",
+                  "value": {
+                    "title": "Acme Strategy",
+                    "summary": "Example for acme strategy update",
+                    "strategy_type": "oauth2",
+                    "dcr_config": {
+                      "application_type": "public",
+                      "allowed_grant_types": [
+                        "refresh_token"
+                      ]
+                    },
+                    "auth_server_alias": "mobile-auth-server"
+                  }
+                }
               }
             }
           }
@@ -90199,11 +90783,29 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Strategy"
+              },
+              "examples": {
+                "Strategy": {
+                  "summary": "Example for strategy create",
+                  "value": {
+                    "name": "acme-strategy",
+                    "title": "ACME Strategy"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Strategy"
+              },
+              "examples": {
+                "Strategy": {
+                  "summary": "Example for strategy create",
+                  "value": {
+                    "name": "acme-strategy",
+                    "title": "ACME Strategy"
+                  }
+                }
               }
             }
           }
@@ -90412,11 +91014,45 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Strategy"
+              },
+              "examples": {
+                "Strategy": {
+                  "summary": "Example for strategy update",
+                  "value": {
+                    "title": "Acme Strategy",
+                    "summary": "Example for acme strategy update",
+                    "strategy_type": "oauth2",
+                    "dcr_config": {
+                      "application_type": "public",
+                      "allowed_grant_types": [
+                        "refresh_token"
+                      ]
+                    },
+                    "auth_server_alias": "mobile-auth-server"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/Strategy"
+              },
+              "examples": {
+                "Strategy": {
+                  "summary": "Example for strategy update",
+                  "value": {
+                    "title": "Acme Strategy",
+                    "summary": "Example for acme strategy update",
+                    "strategy_type": "oauth2",
+                    "dcr_config": {
+                      "application_type": "public",
+                      "allowed_grant_types": [
+                        "refresh_token"
+                      ]
+                    },
+                    "auth_server_alias": "mobile-auth-server"
+                  }
+                }
               }
             }
           }
@@ -92804,7 +93440,6 @@
                 "Subscription": {
                   "summary": "Example of subscription update with state enabled.",
                   "value": {
-                    "name": "acme-subscription",
                     "title": "ACME Subscription",
                     "summary": "An example subscription update",
                     "state": "enabled"
@@ -92820,7 +93455,6 @@
                 "Subscription": {
                   "summary": "Example of subscription update with state enabled.",
                   "value": {
-                    "name": "acme-subscription",
                     "title": "ACME Subscription",
                     "summary": "An example subscription update",
                     "state": "enabled"
@@ -93181,7 +93815,6 @@
                 "Subscription": {
                   "summary": "Example of subscription update with state enabled.",
                   "value": {
-                    "name": "acme-subscription",
                     "title": "ACME Subscription",
                     "summary": "An example subscription update",
                     "state": "enabled"
@@ -93197,7 +93830,6 @@
                 "Subscription": {
                   "summary": "Example of subscription update with state enabled.",
                   "value": {
-                    "name": "acme-subscription",
                     "title": "ACME Subscription",
                     "summary": "An example subscription update",
                     "state": "enabled"
@@ -103112,9 +103744,7 @@
                 "Project": {
                   "summary": "Example for project create",
                   "value": {
-                    "type": "project",
-                    "api_version": "2.0.0",
-                    "name": "sample-project",
+                    "name": "SampleProject",
                     "title": "My Sample API Project update title",
                     "summary": "A sample project for demonstrating the project create command"
                   }
@@ -103129,9 +103759,7 @@
                 "Project": {
                   "summary": "Example for project create",
                   "value": {
-                    "type": "project",
-                    "api_version": "2.0.0",
-                    "name": "sample-project",
+                    "name": "SampleProject",
                     "title": "My Sample API Project update title",
                     "summary": "A sample project for demonstrating the project create command"
                   }
@@ -103337,9 +103965,6 @@
                 "Project": {
                   "summary": "Example for project update",
                   "value": {
-                    "type": "project",
-                    "api_version": "2.0.0",
-                    "name": "sample-project",
                     "title": "My Sample API Project update title",
                     "summary": "A sample project for demonstrating the project update command"
                   }
@@ -103354,9 +103979,6 @@
                 "Project": {
                   "summary": "Example for project update",
                   "value": {
-                    "type": "project",
-                    "api_version": "2.0.0",
-                    "name": "sample-project",
                     "title": "My Sample API Project update title",
                     "summary": "A sample project for demonstrating the project update command"
                   }
@@ -103468,23 +104090,22 @@
                 "ProjectFile": {
                   "summary": "Example for project-files create",
                   "value": {
-                    "type": "project_file",
                     "files": [
                       {
                         "source_path": "project/data/spec.yaml",
-                        "file_path": "petstore/spec.yaml",
+                        "file_path": "SampleProject/spec.yaml",
                         "mimetype": "application/yaml",
                         "version": "1.0.0"
                       },
                       {
                         "source_path": "project/data/datapowerassembly.yaml",
-                        "file_path": "petstore/datapowerassembly.yaml",
+                        "file_path": "SampleProject/datapowerassembly.yaml",
                         "mimetype": "application/yaml",
                         "version": "1.0.0"
                       },
                       {
                         "source_path": "project/data/format.xsl",
-                        "file_path": "petstore/format.xsl",
+                        "file_path": "SampleProject/format.xsl",
                         "mimetype": "text/plain",
                         "version": "1.0.0"
                       }
@@ -104796,11 +105417,10 @@
                 "ProjectFile": {
                   "summary": "Example for project-file update",
                   "value": {
-                    "type": "project_file",
-                    "file_path": "project/data/datapowerassembly.yaml",
-                    "version": "1.0.0",
-                    "source_path": "petstore/datapowerassembly.yaml",
-                    "mimetype": "application/yaml"
+                    "source_path": "project/data/datapowerassembly.yaml",
+                    "file_path": "SampleProject/datapowerassembly.yaml",
+                    "mimetype": "application/yaml",
+                    "version": "1.0.0"
                   }
                 }
               }
@@ -104813,11 +105433,10 @@
                 "ProjectFile": {
                   "summary": "Example for project-file update",
                   "value": {
-                    "type": "project_file",
-                    "file_path": "project/data/datapowerassembly.yaml",
-                    "version": "1.0.0",
-                    "source_path": "petstore/datapowerassembly.yaml",
-                    "mimetype": "application/yaml"
+                    "source_path": "project/data/datapowerassembly.yaml",
+                    "file_path": "SampleProject/datapowerassembly.yaml",
+                    "mimetype": "application/yaml",
+                    "version": "1.0.0"
                   }
                 }
               }
@@ -104978,11 +105597,10 @@
                 "ProjectFile": {
                   "summary": "Example for project-file update",
                   "value": {
-                    "type": "project_file",
-                    "file_path": "project/data/datapowerassembly.yaml",
-                    "version": "1.0.0",
-                    "source_path": "petstore/datapowerassembly.yaml",
-                    "mimetype": "application/yaml"
+                    "source_path": "project/data/datapowerassembly.yaml",
+                    "file_path": "SampleProject/datapowerassembly.yaml",
+                    "mimetype": "application/yaml",
+                    "version": "1.0.0"
                   }
                 }
               }
@@ -104995,11 +105613,10 @@
                 "ProjectFile": {
                   "summary": "Example for project-file update",
                   "value": {
-                    "type": "project_file",
-                    "file_path": "project/data/datapowerassembly.yaml",
-                    "version": "1.0.0",
-                    "source_path": "petstore/datapowerassembly.yaml",
-                    "mimetype": "application/yaml"
+                    "source_path": "project/data/datapowerassembly.yaml",
+                    "file_path": "SampleProject/datapowerassembly.yaml",
+                    "mimetype": "application/yaml",
+                    "version": "1.0.0"
                   }
                 }
               }
@@ -111040,6 +111657,13 @@
               "format": "uri"
             }
           },
+          "jwt_provider_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
           "tls_client_profile_urls": {
             "type": "array",
             "items": {
@@ -115522,6 +116146,13 @@
             "$ref": "#/components/schemas/ResourceVisibility"
           },
           "user_registry_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "jwt_provider_urls": {
             "type": "array",
             "items": {
               "type": "string",
