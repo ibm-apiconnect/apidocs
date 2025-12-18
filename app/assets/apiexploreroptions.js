@@ -1,12 +1,12 @@
-/********************************************************* {COPYRIGHT-TOP} ***
+/** ******************************************************* {COPYRIGHT-TOP} ***
  * Licensed Materials - Property of IBM
  *
- * (C) Copyright IBM Corporation 2017, 2024
+ * (C) Copyright IBM Corporation 2017, 2025
  *
  * All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or disclosure
  * restricted by GSA ADP Schedule Contract with IBM Corp.
- ********************************************************** {COPYRIGHT-END} **/
+ ********************************************************** {COPYRIGHT-END} * */
 
 window.apiConnectExplorer = {
   attachPoint: '#root',
@@ -18,8 +18,9 @@ window.apiConnectExplorer = {
     apiMaxDepth: 9,
     routerType: 'hash',
     exampleArrayItems: 3,
-// enable proxyUrl to route through the webpack dev proxy
-//    proxyUrl: "/api/proxyService"
+   // removeIBMKeys: true,
+    // enable proxyUrl to route through the webpack dev proxy
+    //    proxyUrl: "/api/proxyService"
     infoSectionEntries: [
       [
         {
@@ -41,8 +42,8 @@ window.apiConnectExplorer = {
     ],
     documentationEntries: [
       [
-        {title: "Test Documentation", url: "/assets/testDocumentation.html", extractPortalContent: true},
-        {title: "Not found url", url: "/notFoundURL.html"}
+        { title: "Test Documentation", url: "/assets/testDocumentation.html", extractPortalContent: true },
+        { title: "Not found url", url: "/notFoundURL.html" }
       ]
     ]
   },
@@ -155,7 +156,7 @@ window.apiConnectExplorer = {
       "subscribed": false
     }
   ],
-  /*docs: [
+  /* docs: [
     {
       "name": "introduction",
       "title": "Introduction",
@@ -185,6 +186,6 @@ window.apiConnectExplorer = {
         }
       ]
     }
-  ],*/
+  ], */
   apis: window.apis
 };
