@@ -21961,6 +21961,12 @@
                   },
                   "x-ibm-summary": {
                     "type": "string"
+                  },
+                  "x-postman-collection-id": {
+                    "type": "string"
+                  },
+                  "x-postman-workspace-id": {
+                    "type": "string"
                   }
                 }
               }
@@ -22022,6 +22028,12 @@
                     "type": "string"
                   },
                   "x-ibm-summary": {
+                    "type": "string"
+                  },
+                  "x-postman-collection-id": {
+                    "type": "string"
+                  },
+                  "x-postman-workspace-id": {
                     "type": "string"
                   }
                 }
@@ -25741,6 +25753,12 @@
                     "type": "string"
                   },
                   "x-ibm-summary": {
+                    "type": "string"
+                  },
+                  "x-postman-collection-id": {
+                    "type": "string"
+                  },
+                  "x-postman-workspace-id": {
                     "type": "string"
                   }
                 }
@@ -87287,6 +87305,12 @@
                   },
                   "x-ibm-summary": {
                     "type": "string"
+                  },
+                  "x-postman-collection-id": {
+                    "type": "string"
+                  },
+                  "x-postman-workspace-id": {
+                    "type": "string"
                   }
                 }
               }
@@ -87348,6 +87372,12 @@
                     "type": "string"
                   },
                   "x-ibm-summary": {
+                    "type": "string"
+                  },
+                  "x-postman-collection-id": {
+                    "type": "string"
+                  },
+                  "x-postman-workspace-id": {
                     "type": "string"
                   }
                 }
@@ -91067,6 +91097,12 @@
                     "type": "string"
                   },
                   "x-ibm-summary": {
+                    "type": "string"
+                  },
+                  "x-postman-collection-id": {
+                    "type": "string"
+                  },
+                  "x-postman-workspace-id": {
                     "type": "string"
                   }
                 }
@@ -103676,6 +103712,13 @@
         "summary": "List all Permission objects in all collections",
         "description": "List all Permission objects in all collections",
         "operationId": "permission_listAll",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -103722,6 +103765,13 @@
         "summary": "List the Permission objects",
         "description": "List the Permission objects",
         "operationId": "permission_listOrgSubcollection",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -103773,6 +103823,13 @@
         "summary": "Get the Permission object by name or id",
         "description": "Get the Permission object by name or id",
         "operationId": "permission_getOrgSubcollection",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -103813,6 +103870,13 @@
         "summary": "List the Permission objects",
         "description": "List the Permission objects",
         "operationId": "permission_listConsumerSubcollection",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -103864,6 +103928,13 @@
         "summary": "Get the Permission object by name or id",
         "description": "Get the Permission object by name or id",
         "operationId": "permission_getConsumerSubcollection",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
         "parameters": [
           {
             "$ref": "#/components/parameters/fields"
@@ -104364,7 +104435,7 @@
           }
         },
         "tags": [
-          "Provider Management",
+          "Consumer Management",
           "Resource: Group"
         ]
       }
@@ -112159,7 +112230,7 @@
               "my:manage": "Update the Me object, Delete the Me object",
               "my:view": "Get the Me object, List the My Permission objects, List the My Organization objects",
               "org:manage": "Create a My Organization object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
-              "org:view": "Get the Organization object by name or id, Get the Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the User Registry objects, Get the User Registry object by name or id, Get the User object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, Get the Billing object by name or id, List the Billing objects, List the Payment Method objects, Get the Payment Method object by name or id, List the Payment Method Type objects, Get the Payment Method Type object by name or id"
+              "org:view": "List all Permission objects in all collections, Get the Organization object by name or id, Get the Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the User Registry objects, Get the User Registry object by name or id, Get the User object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, Get the Billing object by name or id, List the Billing objects, List the Payment Method objects, Get the Payment Method object by name or id, List the Payment Method Type objects, Get the Payment Method Type object by name or id"
             }
           },
           "authorizationCode": {
@@ -112172,7 +112243,7 @@
               "my:manage": "Update the Me object, Delete the Me object",
               "my:view": "Get the Me object, List the My Permission objects, List the My Organization objects",
               "org:manage": "Create a My Organization object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
-              "org:view": "Get the Organization object by name or id, Get the Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the User Registry objects, Get the User Registry object by name or id, Get the User object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, Get the Billing object by name or id, List the Billing objects, List the Payment Method objects, Get the Payment Method object by name or id, List the Payment Method Type objects, Get the Payment Method Type object by name or id"
+              "org:view": "List all Permission objects in all collections, Get the Organization object by name or id, Get the Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the User Registry objects, Get the User Registry object by name or id, Get the User object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, Get the Billing object by name or id, List the Billing objects, List the Payment Method objects, Get the Payment Method object by name or id, List the Payment Method Type objects, Get the Payment Method Type object by name or id"
             }
           }
         }
@@ -141688,6 +141759,9 @@
             "$ref": "#/components/parameters/end_time_optional"
           },
           {
+            "$ref": "#/components/parameters/event_count_optional"
+          },
+          {
             "$ref": "#/components/parameters/event_fields_optional"
           },
           {
@@ -141758,6 +141832,9 @@
         },
         {
           "$ref": "#/components/parameters/summary-event-id"
+        },
+        {
+          "$ref": "#/components/parameters/event_count_optional"
         },
         {
           "$ref": "#/components/parameters/event_fields_optional"
@@ -141833,6 +141910,9 @@
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_count_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
@@ -141935,6 +142015,9 @@
             "$ref": "#/components/parameters/end_time_optional"
           },
           {
+            "$ref": "#/components/parameters/event_count_optional"
+          },
+          {
             "$ref": "#/components/parameters/event_fields_optional"
           },
           {
@@ -142008,6 +142091,9 @@
         },
         {
           "$ref": "#/components/parameters/summary-event-id"
+        },
+        {
+          "$ref": "#/components/parameters/event_count_optional"
         },
         {
           "$ref": "#/components/parameters/event_fields_optional"
@@ -142086,6 +142172,9 @@
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_count_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
@@ -142191,6 +142280,9 @@
             "$ref": "#/components/parameters/end_time_optional"
           },
           {
+            "$ref": "#/components/parameters/event_count_optional"
+          },
+          {
             "$ref": "#/components/parameters/event_fields_optional"
           },
           {
@@ -142267,6 +142359,9 @@
         },
         {
           "$ref": "#/components/parameters/summary-event-id"
+        },
+        {
+          "$ref": "#/components/parameters/event_count_optional"
         },
         {
           "$ref": "#/components/parameters/event_fields_optional"
@@ -142348,6 +142443,9 @@
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_count_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
@@ -142456,6 +142554,9 @@
             "$ref": "#/components/parameters/end_time_optional"
           },
           {
+            "$ref": "#/components/parameters/event_count_optional"
+          },
+          {
             "$ref": "#/components/parameters/event_fields_optional"
           },
           {
@@ -142535,6 +142636,9 @@
         },
         {
           "$ref": "#/components/parameters/summary-event-id"
+        },
+        {
+          "$ref": "#/components/parameters/event_count_optional"
         },
         {
           "$ref": "#/components/parameters/event_fields_optional"
@@ -142619,6 +142723,9 @@
           },
           {
             "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/event_count_optional"
           },
           {
             "$ref": "#/components/parameters/gateway_service_name_optional"
@@ -148434,6 +148541,16 @@
           "example": "pLjDDYYBeE56v55xyHfQ"
         }
       },
+      "event_count_optional": {
+        "name": "event_count",
+        "in": "query",
+        "description": "Filter results by event count",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "example": 30
+        }
+      },
       "event_fields_optional": {
         "name": "fields",
         "in": "query",
@@ -149956,6 +150073,9 @@
           "breakdown": {
             "$ref": "#/components/schemas/BreakDownData"
           },
+          "status_codes_count": {
+            "$ref": "#/components/schemas/StatusCodesCount"
+          },
           "response_times": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
           }
@@ -151145,6 +151265,10 @@
             "type": "string",
             "description": "The consumer organization name"
           },
+          "event_count": {
+            "type": "number",
+            "description": "The number of API calls aggregated into this summary record"
+          },
           "gateway_service_name": {
             "type": "string",
             "description": "The service name of the gateway (apigw only)"
@@ -151285,7 +151409,133 @@
           "type": {
             "type": "string"
           },
-          "operators": {
+          "nestedFields": {
+            "$ref": "#/components/schemas/FilterParamListLevel1"
+          }
+        }
+      },
+      "FilterParamLevel1": {
+        "type": "object",
+        "description": "Filter parameter for nested fields.",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "nestedFields": {
+            "$ref": "#/components/schemas/FilterParamListLevel2"
+          }
+        }
+      },
+      "FilterParamLevel2": {
+        "type": "object",
+        "description": "Filter parameter for nested fields.",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "nestedFields": {
+            "$ref": "#/components/schemas/FilterParamListLevel3"
+          }
+        }
+      },
+      "FilterParamLevel3": {
+        "type": "object",
+        "description": "Filter parameter for nested fields.",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "nestedFields": {
+            "$ref": "#/components/schemas/FilterParamListLevel4"
+          }
+        }
+      },
+      "FilterParamLevel4": {
+        "type": "object",
+        "description": "Filter parameter for nested fields.",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "nestedFields": {
+            "$ref": "#/components/schemas/FilterParamListLevel5"
+          }
+        }
+      },
+      "FilterParamLevel5": {
+        "type": "object",
+        "description": "Filter parameter for nested fields.",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "OperatorsTypeList": {
+        "type": "object",
+        "description": "Object of operators by type.",
+        "properties": {
+          "string": {
+            "$ref": "#/components/schemas/OperatorList"
+          },
+          "number": {
+            "$ref": "#/components/schemas/OperatorList"
+          },
+          "date": {
+            "$ref": "#/components/schemas/OperatorList"
+          },
+          "ipaddress": {
+            "$ref": "#/components/schemas/OperatorList"
+          },
+          "boolean": {
+            "$ref": "#/components/schemas/OperatorList"
+          },
+          "object": {
             "$ref": "#/components/schemas/OperatorList"
           }
         }
@@ -151297,12 +151547,50 @@
           "$ref": "#/components/schemas/FilterParam"
         }
       },
+      "FilterParamListLevel1": {
+        "type": "array",
+        "description": "Array of filter params for nested fields.",
+        "items": {
+          "$ref": "#/components/schemas/FilterParamLevel1"
+        }
+      },
+      "FilterParamListLevel2": {
+        "type": "array",
+        "description": "Array of filter params for nested fields.",
+        "items": {
+          "$ref": "#/components/schemas/FilterParamLevel2"
+        }
+      },
+      "FilterParamListLevel3": {
+        "type": "array",
+        "description": "Array of filter params for nested fields.",
+        "items": {
+          "$ref": "#/components/schemas/FilterParamLevel3"
+        }
+      },
+      "FilterParamListLevel4": {
+        "type": "array",
+        "description": "Array of filter params for nested fields.",
+        "items": {
+          "$ref": "#/components/schemas/FilterParamLevel4"
+        }
+      },
+      "FilterParamListLevel5": {
+        "type": "array",
+        "description": "Array of filter params for nested fields.",
+        "items": {
+          "$ref": "#/components/schemas/FilterParamLevel5"
+        }
+      },
       "FilterParamListResponse": {
         "type": "object",
         "description": "Parameter list response.",
         "properties": {
           "params": {
             "$ref": "#/components/schemas/FilterParamList"
+          },
+          "operatorsByType": {
+            "$ref": "#/components/schemas/OperatorsTypeList"
           }
         }
       },
@@ -153272,6 +153560,17 @@
               "name": {
                 "type": "string"
               },
+              "host": {
+                "type": "object",
+                "properties": {
+                  "agent": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "string"
+                  }
+                }
+              },
               "type_uri": {
                 "type": "string"
               }
@@ -153380,6 +153679,18 @@
           "limit": {
             "type": "integer",
             "description": "Query limit."
+          },
+          "first": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "next": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "previous": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "last": {
+            "$ref": "#/components/schemas/PaginationLink"
           },
           "audits": {
             "type": "array",
@@ -157066,6 +157377,9 @@
                 "fields": {
                   "$ref": "#/components/schemas/FilterParamList"
                 },
+                "operatorsByType": {
+                  "$ref": "#/components/schemas/OperatorsTypeList"
+                },
                 "metrics": {
                   "type": "object",
                   "description": "Available aggregation metrics",
@@ -157181,8 +157495,110 @@
           "nested": {
             "type": "boolean"
           },
-          "operators": {
-            "$ref": "#/components/schemas/OperatorList"
+          "nestedFields": {
+            "$ref": "#/components/schemas/FilterParamListLevel1"
+          }
+        }
+      },
+      "FilterParamLevel1": {
+        "type": "object",
+        "description": "Filter parameter for nested fields.",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "nestedFields": {
+            "$ref": "#/components/schemas/FilterParamListLevel2"
+          }
+        }
+      },
+      "FilterParamLevel2": {
+        "type": "object",
+        "description": "Filter parameter for nested fields.",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "nestedFields": {
+            "$ref": "#/components/schemas/FilterParamListLevel3"
+          }
+        }
+      },
+      "FilterParamLevel3": {
+        "type": "object",
+        "description": "Filter parameter for nested fields.",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "nestedFields": {
+            "$ref": "#/components/schemas/FilterParamListLevel4"
+          }
+        }
+      },
+      "FilterParamLevel4": {
+        "type": "object",
+        "description": "Filter parameter for nested fields.",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "nestedFields": {
+            "$ref": "#/components/schemas/FilterParamListLevel5"
+          }
+        }
+      },
+      "FilterParamLevel5": {
+        "type": "object",
+        "description": "Filter parameter for nested fields.",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
           }
         }
       },
@@ -157191,6 +157607,65 @@
         "description": "Array of filter params.",
         "items": {
           "$ref": "#/components/schemas/FilterParam"
+        }
+      },
+      "FilterParamListLevel1": {
+        "type": "array",
+        "description": "Array of filter params for nested fields.",
+        "items": {
+          "$ref": "#/components/schemas/FilterParamLevel1"
+        }
+      },
+      "FilterParamListLevel2": {
+        "type": "array",
+        "description": "Array of filter params for nested fields.",
+        "items": {
+          "$ref": "#/components/schemas/FilterParamLevel2"
+        }
+      },
+      "FilterParamListLevel3": {
+        "type": "array",
+        "description": "Array of filter params for nested fields.",
+        "items": {
+          "$ref": "#/components/schemas/FilterParamLevel3"
+        }
+      },
+      "FilterParamListLevel4": {
+        "type": "array",
+        "description": "Array of filter params for nested fields.",
+        "items": {
+          "$ref": "#/components/schemas/FilterParamLevel4"
+        }
+      },
+      "FilterParamListLevel5": {
+        "type": "array",
+        "description": "Array of filter params for nested fields.",
+        "items": {
+          "$ref": "#/components/schemas/FilterParamLevel5"
+        }
+      },
+      "OperatorsTypeList": {
+        "type": "object",
+        "description": "Object of operators by type.",
+        "properties": {
+          "string": {
+            "$ref": "#/components/schemas/OperatorList"
+          },
+          "number": {
+            "$ref": "#/components/schemas/OperatorList"
+          },
+          "date": {
+            "$ref": "#/components/schemas/OperatorList"
+          },
+          "ipaddress": {
+            "$ref": "#/components/schemas/OperatorList"
+          },
+          "boolean": {
+            "$ref": "#/components/schemas/OperatorList"
+          },
+          "object": {
+            "$ref": "#/components/schemas/OperatorList"
+          }
         }
       },
       "Id": {
@@ -177665,6 +178140,15 @@
           "type": "string"
         }
       },
+      "function_type": {
+        "name": "function_type",
+        "in": "query",
+        "description": "Specify the spectral function type of rules to be returned.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "invitation-token": {
         "name": "invitation-token",
         "in": "path",
@@ -177724,6 +178208,15 @@
         "in": "path",
         "description": "Rule version name",
         "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rule_format": {
+        "name": "rule_format",
+        "in": "query",
+        "description": "Specify the format of rules to be returned.",
+        "required": false,
         "schema": {
           "type": "string"
         }
