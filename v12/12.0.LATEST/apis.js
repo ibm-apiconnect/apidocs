@@ -18,8 +18,8 @@
       explorerDir: "/../app/",
       routerType: "hash",
       versions: {
-"12.0.LATEST": "VERSION_PREFIX12.0.LATEST.html",
-        "v10": "V10_LINK"      }
+"12.0.LATEST": "12.0.LATEST.html",
+        "v10": "../v10/index.html"      }
     },
   apis: [
 {
