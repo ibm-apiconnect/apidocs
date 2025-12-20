@@ -44,7 +44,8 @@
         "10.0.5.LATEST": "10.0.5.LATEST.html",
         "10.0.8.0": "10.0.8.0.html",
         "10.0.8.1": "10.0.8.1.html",
-        "10.0.8.LATEST": "10.0.8.LATEST.html"
+        "10.0.8.LATEST": "10.0.8.LATEST.html",
+        "v12": "../v12/index.html"
       }
     },
   apis: [
