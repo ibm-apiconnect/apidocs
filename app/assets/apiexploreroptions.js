@@ -12,7 +12,6 @@ window.apiConnectExplorer = {
   attachPoint: '#root',
   options: {
     loggedIn: false,
-    renderSchemaView: true,
     tryIt: true,
     headerActive: false,
     apiMaxDepth: 9,
