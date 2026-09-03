@@ -18564,33 +18564,11 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
-              },
-              "examples": {
-                "XsltTransformationAlias": {
-                  "summary": "Example for XSLT transformation alias create",
-                  "value": {
-                    "name": "acme-xslt-alias",
-                    "title": "ACME XSLT Transformation Alias",
-                    "summary": "Example XSLT transformation alias for ACME org",
-                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
-                  }
-                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
-              },
-              "examples": {
-                "XsltTransformationAlias": {
-                  "summary": "Example for XSLT transformation alias create",
-                  "value": {
-                    "name": "acme-xslt-alias",
-                    "title": "ACME XSLT Transformation Alias",
-                    "summary": "Example XSLT transformation alias for ACME org",
-                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
-                  }
-                }
               }
             },
             "multipart/form-data": {
@@ -18885,31 +18863,11 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
-              },
-              "examples": {
-                "XsltTransformationAlias": {
-                  "summary": "Example for XSLT transformation alias update",
-                  "value": {
-                    "title": "ACME XSLT Transformation Alias",
-                    "summary": "Updated XSLT transformation alias for ACME org",
-                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
-                  }
-                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
-              },
-              "examples": {
-                "XsltTransformationAlias": {
-                  "summary": "Example for XSLT transformation alias update",
-                  "value": {
-                    "title": "ACME XSLT Transformation Alias",
-                    "summary": "Updated XSLT transformation alias for ACME org",
-                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
-                  }
-                }
               }
             },
             "multipart/form-data": {
@@ -19060,33 +19018,11 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
-              },
-              "examples": {
-                "XsltTransformationAlias": {
-                  "summary": "Example for XSLT transformation alias update by name and version",
-                  "value": {
-                    "name": "acme-xslt-alias",
-                    "title": "ACME XSLT Transformation Alias",
-                    "summary": "Updated XSLT transformation alias for ACME org",
-                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
-                  }
-                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
-              },
-              "examples": {
-                "XsltTransformationAlias": {
-                  "summary": "Example for XSLT transformation alias update by name and version",
-                  "value": {
-                    "name": "acme-xslt-alias",
-                    "title": "ACME XSLT Transformation Alias",
-                    "summary": "Updated XSLT transformation alias for ACME org",
-                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
-                  }
-                }
               }
             },
             "multipart/form-data": {
@@ -23025,15 +22961,6 @@
           "type": "string"
         }
       },
-      "calc_dep": {
-        "name": "calc_dep",
-        "in": "query",
-        "description": "Calculate dependencies",
-        "required": false,
-        "schema": {
-          "type": "boolean"
-        }
-      },
       "capture-id": {
         "name": "capture-id",
         "in": "path",
@@ -25038,8 +24965,7 @@
             "enum": [
               "toolkit",
               "atm",
-              "ai",
-              "transition_helper"
+              "ai"
             ]
           },
           "realm": {
@@ -29430,33 +29356,6 @@
             },
             "nullable": true
           },
-          "key_exchange_mechanisms": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "enum": [
-                "MLKEM512",
-                "MLKEM768",
-                "X25519MLKEM768",
-                "SecP256r1MLKEM768",
-                "MLKEM1024",
-                "SecP384r1MLKEM1024",
-                "p256",
-                "p384",
-                "p521",
-                "x25519",
-                "x448",
-                "ffdhe2048",
-                "ffdhe3072",
-                "ffdhe4096",
-                "ffdhe6144",
-                "ffdhe8192",
-                "brainpoolP256",
-                "brainpoolP384",
-                "brainpoolP512"
-              ]
-            }
-          },
           "elliptic_curve_auto_negotiation": {
             "type": "boolean",
             "default": true
@@ -30478,11 +30377,6 @@
           },
           "certificate_info": {
             "type": "string"
-          },
-          "cert_name": {
-            "type": "string",
-            "nullable": true,
-            "description": "User-friendly name for certificate selection, auto-generated from certificate CN/SAN/O or fingerprint"
           },
           "metadata": {
             "type": "object",
@@ -32652,11 +32546,6 @@
             "type": "string",
             "maxLength": 65535
           },
-          "key_name": {
-            "type": "string",
-            "nullable": true,
-            "description": "Name for the primary key+certificate pair, auto-generated from certificate or user-provided"
-          },
           "private_key_entry": {
             "type": "string",
             "format": "password"
@@ -32671,41 +32560,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/CertEntry"
-            }
-          },
-          "key_entries": {
-            "type": "array",
-            "nullable": true,
-            "description": "Additional key+certificate pairs beyond the first (for multi-key keystores)",
-            "items": {
-              "type": "object",
-              "required": [
-                "key_name",
-                "private_key_entry",
-                "public_certificate_entry"
-              ],
-              "properties": {
-                "key_name": {
-                  "type": "string",
-                  "description": "Name for this key+certificate pair, auto-generated from certificate CN or user-provided"
-                },
-                "private_key_entry": {
-                  "type": "string",
-                  "format": "password",
-                  "description": "Private key in PEM format"
-                },
-                "public_certificate_entry": {
-                  "$ref": "#/components/schemas/CertEntry"
-                },
-                "trusted_certificate_entries": {
-                  "type": "array",
-                  "nullable": true,
-                  "items": {
-                    "$ref": "#/components/schemas/CertEntry"
-                  },
-                  "description": "CA certificate chain for this key+certificate pair"
-                }
-              }
             }
           },
           "keystore": {
@@ -35222,12 +35076,6 @@
             "type": "boolean",
             "nullable": true
           },
-          "portal_chatbot_consumer_roles": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -37160,8 +37008,7 @@
               "analytics",
               "transition_helper",
               "analytics_proxy",
-              "mcp_registry",
-              "security_center"
+              "mcp_registry"
             ]
           },
           "client_id": {
@@ -39024,10 +38871,7 @@
             "enum": [
               "subscription",
               "create_subscription_approval",
-              "delete_subscription_approval",
-              "create_app_approval",
-              "register_app_approval",
-              "update_app_approval"
+              "delete_subscription_approval"
             ]
           },
           "state": {
@@ -39712,33 +39556,6 @@
             },
             "nullable": true
           },
-          "key_exchange_mechanisms": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "enum": [
-                "MLKEM512",
-                "MLKEM768",
-                "X25519MLKEM768",
-                "SecP256r1MLKEM768",
-                "MLKEM1024",
-                "SecP384r1MLKEM1024",
-                "p256",
-                "p384",
-                "p521",
-                "x25519",
-                "x448",
-                "ffdhe2048",
-                "ffdhe3072",
-                "ffdhe4096",
-                "ffdhe6144",
-                "ffdhe8192",
-                "brainpoolP256",
-                "brainpoolP384",
-                "brainpoolP512"
-              ]
-            }
-          },
           "elliptic_curve_auto_negotiation": {
             "type": "boolean",
             "default": true
@@ -39801,16 +39618,6 @@
             "type": "string",
             "format": "uri",
             "nullable": true
-          },
-          "key_name": {
-            "type": "string",
-            "nullable": true,
-            "description": "Selects a specific key+certificate pair from the keystore by name (for multi-key keystores). If not specified, uses the first/default key."
-          },
-          "cert_name": {
-            "type": "string",
-            "nullable": true,
-            "description": "Selects a specific certificate from the truststore by name. If not specified, all certificates in the truststore are used."
           },
           "webhook_urls": {
             "type": "array",
@@ -40040,33 +39847,6 @@
             },
             "nullable": true
           },
-          "key_exchange_mechanisms": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "enum": [
-                "MLKEM512",
-                "MLKEM768",
-                "X25519MLKEM768",
-                "SecP256r1MLKEM768",
-                "MLKEM1024",
-                "SecP384r1MLKEM1024",
-                "p256",
-                "p384",
-                "p521",
-                "x25519",
-                "x448",
-                "ffdhe2048",
-                "ffdhe3072",
-                "ffdhe4096",
-                "ffdhe6144",
-                "ffdhe8192",
-                "brainpoolP256",
-                "brainpoolP384",
-                "brainpoolP512"
-              ]
-            }
-          },
           "elliptic_curve": {
             "type": "array",
             "items": {
@@ -40120,20 +39900,10 @@
             "type": "string",
             "format": "uri"
           },
-          "key_name": {
-            "type": "string",
-            "nullable": true,
-            "description": "Selects a specific key+certificate pair from the keystore by name (for multi-key keystores). If not specified, uses the first/default key."
-          },
           "truststore_url": {
             "type": "string",
             "format": "uri",
             "nullable": true
-          },
-          "cert_name": {
-            "type": "string",
-            "nullable": true,
-            "description": "Selects a specific certificate from the truststore by name. If not specified, all certificates in the truststore are used."
           },
           "gateway_service_urls": {
             "type": "array",
@@ -41510,41 +41280,6 @@
             "items": {
               "$ref": "#/components/schemas/XsltTransformationAlias"
             }
-          }
-        }
-      },
-      "CreateProjectFilesOrgScopeResponse": {
-        "type": "object",
-        "properties": {
-          "project": {
-            "$ref": "#/components/schemas/Project"
-          },
-          "total_results": {
-            "type": "integer"
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ProjectFile"
-            }
-          }
-        }
-      },
-      "CreateProjectFilesOrgScopeRequest": {
-        "type": "object",
-        "required": [
-          "projectName",
-          "archive"
-        ],
-        "properties": {
-          "projectName": {
-            "type": "string",
-            "description": "Name of the project to create"
-          },
-          "archive": {
-            "type": "string",
-            "format": "binary",
-            "description": "Zip archive containing project files"
           }
         }
       },
@@ -42937,9 +42672,6 @@
             "$ref": "#/components/schemas/ProjectInboundBulkHead"
           },
           {
-            "$ref": "#/components/schemas/ProjectInboundBulkHeadV2"
-          },
-          {
             "$ref": "#/components/schemas/ProjectSetMediaType"
           },
           {
@@ -43000,13 +42732,7 @@
             "$ref": "#/components/schemas/ProjectHTTPEndpoint"
           },
           {
-            "$ref": "#/components/schemas/ProjectHTTPEndpointV2"
-          },
-          {
             "$ref": "#/components/schemas/ProjectMockEndpoint"
-          },
-          {
-            "$ref": "#/components/schemas/ProjectMockEndpointV2"
           },
           {
             "$ref": "#/components/schemas/ProjectMockResponse"
@@ -43025,9 +42751,6 @@
           },
           {
             "$ref": "#/components/schemas/ProjectScope"
-          },
-          {
-            "$ref": "#/components/schemas/ProjectScopeV2"
           },
           {
             "$ref": "#/components/schemas/ProjectCORS"
@@ -43070,11 +42793,7 @@
           "Set",
           "RateLimit",
           "RateLimitDef",
-          "Scope",
-          "SOAPEndpoint",
-          "InboundAuthMessage",
-          "SOAPMessageConfig",
-          "SOAPToRESTMapping"
+          "Scope"
         ],
         "type": "string"
       },
@@ -44521,14 +44240,7 @@
           "file": {
             "type": "array",
             "items": {
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/ProjectFile"
-                },
-                {
-                  "$ref": "#/components/schemas/ProjectZip"
-                }
-              ]
+              "$ref": "#/components/schemas/ProjectFile"
             }
           }
         }
@@ -45595,8 +45307,7 @@
           "domain": {
             "enum": [
               "api",
-              "ai-platform",
-              "mcp"
+              "ai-platform"
             ],
             "type": "string"
           },
@@ -45892,32 +45603,10 @@
             "additionalProperties": false,
             "properties": {
               "api-spec": {
-                "type": "object",
-                "required": [
-                  "$path"
-                ],
-                "additionalProperties": false,
-                "properties": {
-                  "$path": {
-                    "description": "Specifies the path to the referencing resource The path can be relative to the referring file or absolute from the project folder This could point to yaml, json, wsdl or zip files",
-                    "type": "string"
-                  },
-                  "rootFile": {
-                    "description": "Entry point file within ZIP archive (required for ZIP archives containing WSDL) applicable only for WebMethods gateway. Specifies the path to the main WSDL file within the ZIP archive. Example: 'global_weather.wsdl' or 'wsdl/services/weather/GlobalWeather.wsdl'",
-                    "type": "string"
-                  }
-                }
+                "$ref": "#/components/schemas/ProjectPath"
               },
               "rest-def": {
-                "oneOf": [
-                  {
-                    "$ref": "#/components/schemas/ProjectPath"
-                  },
-                  {
-                    "$ref": "#/components/schemas/ProjectReference"
-                  }
-                ],
-                "description": "REST definition for SOAP APIs: for DataPower gateways, specify the path to the API spec YAML file using $path; for webMethods Gateway, specify a reference to a SOAPToRESTMapping asset using $ref."
+                "$ref": "#/components/schemas/ProjectPath"
               },
               "uriSchemes": {
                 "$ref": "#/components/schemas/ProjectReference"
@@ -47444,10 +47133,7 @@
             "type": "string"
           },
           "apiVersion": {
-            "type": "string",
-            "enum": [
-              "api.ibm.com/v1"
-            ]
+            "type": "string"
           },
           "metadata": {
             "$ref": "#/components/schemas/ProjectMetadata"
@@ -47498,135 +47184,6 @@
                 }
               }
             }
-          }
-        }
-      },
-      "ProjectScopeV2": {
-        "description": "The message identifies the scope",
-        "type": "object",
-        "required": [
-          "kind",
-          "apiVersion",
-          "metadata",
-          "spec"
-        ],
-        "additionalProperties": false,
-        "properties": {
-          "kind": {
-            "enum": [
-              "Scope"
-            ],
-            "type": "string"
-          },
-          "apiVersion": {
-            "type": "string",
-            "enum": [
-              "api.ibm.com/v2"
-            ]
-          },
-          "metadata": {
-            "$ref": "#/components/schemas/ProjectMetadata"
-          },
-          "spec": {
-            "oneOf": [
-              {
-                "type": "object",
-                "additionalProperties": false,
-                "required": [
-                  "rest",
-                  "policy-sequence"
-                ],
-                "properties": {
-                  "policy-sequence": {
-                    "$ref": "#/components/schemas/ProjectReferenceList"
-                  },
-                  "rest": {
-                    "type": "object",
-                    "required": [
-                      "resources"
-                    ],
-                    "additionalProperties": false,
-                    "properties": {
-                      "resources": {
-                        "description": "Multiple instances of resources can be given",
-                        "type": "array",
-                        "items": {
-                          "description": "Multiple instances of methods for each resource can be given",
-                          "type": "object",
-                          "required": [
-                            "methods",
-                            "path"
-                          ],
-                          "additionalProperties": false,
-                          "properties": {
-                            "methods": {
-                              "type": "array",
-                              "minItems": 1,
-                              "items": {
-                                "type": "string",
-                                "enum": [
-                                  "get",
-                                  "post",
-                                  "put",
-                                  "delete",
-                                  "patch",
-                                  "head",
-                                  "keep"
-                                ]
-                              }
-                            },
-                            "path": {
-                              "type": "string"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              },
-              {
-                "type": "object",
-                "additionalProperties": false,
-                "required": [
-                  "soap",
-                  "policy-sequence"
-                ],
-                "properties": {
-                  "policy-sequence": {
-                    "$ref": "#/components/schemas/ProjectReferenceList"
-                  },
-                  "soap": {
-                    "type": "object",
-                    "required": [
-                      "operations"
-                    ],
-                    "additionalProperties": false,
-                    "properties": {
-                      "operations": {
-                        "description": "Multiple instances of operations can be given",
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "required": [
-                            "name"
-                          ],
-                          "additionalProperties": false,
-                          "properties": {
-                            "name": {
-                              "type": "string"
-                            },
-                            "description": {
-                              "type": "string"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            ]
           }
         }
       },
@@ -47917,48 +47474,6 @@
                     "http",
                     "https"
                   ]
-                }
-              },
-              "extensions": {
-                "description": "Gateway-specific extensions for URI schemes configuration",
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "webm-gateway": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "apiVersion": {
-                        "type": "string",
-                        "description": "API version for webm-gateway extension"
-                      },
-                      "spec": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                          "soap": {
-                            "type": "object",
-                            "description": "SOAP-specific configuration for webm-gateway",
-                            "additionalProperties": false,
-                            "properties": {
-                              "version": {
-                                "type": "string",
-                                "enum": [
-                                  "1.1",
-                                  "1.2"
-                                ],
-                                "description": "SOAP version (1.1 or 1.2)"
-                              },
-                              "validateVersion": {
-                                "type": "boolean",
-                                "description": "Whether to validate SOAP version"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
                 }
               }
             }
@@ -49054,10 +48569,7 @@
             "type": "string"
           },
           "apiVersion": {
-            "type": "string",
-            "enum": [
-              "api.ibm.com/v1"
-            ]
+            "type": "string"
           },
           "metadata": {
             "$ref": "#/components/schemas/ProjectMetadata"
@@ -49084,70 +48596,6 @@
                 "properties": {
                   "retryAfterValue": {
                     "type": "integer"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "ProjectInboundBulkHeadV2": {
-        "type": "object",
-        "required": [
-          "kind",
-          "apiVersion",
-          "metadata",
-          "spec"
-        ],
-        "additionalProperties": false,
-        "properties": {
-          "kind": {
-            "enum": [
-              "InboundBulkHead"
-            ],
-            "type": "string"
-          },
-          "apiVersion": {
-            "type": "string",
-            "enum": [
-              "api.ibm.com/v2"
-            ]
-          },
-          "metadata": {
-            "$ref": "#/components/schemas/ProjectMetadata"
-          },
-          "spec": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": [
-              "maxConcurrentCalls",
-              "retryAfterResponseHeader"
-            ],
-            "properties": {
-              "maxConcurrentCalls": {
-                "type": "integer"
-              },
-              "retryAfterResponseHeader": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "retryAfterValue": {
-                    "type": "integer"
-                  }
-                }
-              },
-              "rest": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "enableBulkheadForCallbacks": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "maxConcurrentCallbacks": {
-                        "type": "integer"
-                      }
-                    }
                   }
                 }
               }
@@ -49912,46 +49360,6 @@
                                           }
                                         }
                                       ]
-                                    }
-                                  }
-                                }
-                              },
-                              "wsSecurityUsernameToken": {
-                                "type": "object",
-                                "additionalProperties": false,
-                                "properties": {
-                                  "applicationSecurity": {
-                                    "type": "object",
-                                    "additionalProperties": false,
-                                    "properties": {
-                                      "mode": {
-                                        "type": "string",
-                                        "enum": [
-                                          "authorize",
-                                          "identify",
-                                          "authenticate"
-                                        ]
-                                      }
-                                    }
-                                  }
-                                }
-                              },
-                              "wsSecurityX509Certificate": {
-                                "type": "object",
-                                "additionalProperties": false,
-                                "properties": {
-                                  "applicationSecurity": {
-                                    "type": "object",
-                                    "additionalProperties": false,
-                                    "properties": {
-                                      "mode": {
-                                        "type": "string",
-                                        "enum": [
-                                          "authorize",
-                                          "identify",
-                                          "authenticate"
-                                        ]
-                                      }
                                     }
                                   }
                                 }
@@ -51055,57 +50463,8 @@
             "oneOf": [
               {
                 "type": "object",
-                "description": "Default routing - Applicable only for SOAP",
-                "additionalProperties": false,
-                "required": [
-                  "default-endpoint"
-                ],
-                "properties": {
-                  "default-endpoint": {
-                    "$ref": "#/components/schemas/ProjectReference"
-                  }
-                }
-              },
-              {
-                "type": "object",
-                "description": "Load balancer routing with multiple endpoints",
-                "required": [
-                  "load-balancer-endpoints"
-                ],
-                "additionalProperties": false,
-                "properties": {
-                  "load-balancer-endpoints": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                      "type": "object",
-                      "required": [
-                        "$ref"
-                      ],
-                      "additionalProperties": false,
-                      "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "description": "Reference to SOAP Endpoint"
-                        },
-                        "suspendDuration": {
-                          "type": "integer",
-                          "description": "Suspend duration in seconds",
-                          "minimum": 0
-                        }
-                      }
-                    }
-                  }
-                }
-              },
-              {
-                "type": "object",
                 "description": "Routing info for conditional routing",
                 "additionalProperties": false,
-                "required": [
-                  "default-endpoint",
-                  "conditional-endpoints"
-                ],
                 "properties": {
                   "default-endpoint": {
                     "$ref": "#/components/schemas/ProjectReference"
@@ -51131,10 +50490,6 @@
                 "type": "object",
                 "description": "Routing info for content based routing",
                 "additionalProperties": false,
-                "required": [
-                  "default-endpoint",
-                  "content-based-endpoints"
-                ],
                 "properties": {
                   "default-endpoint": {
                     "$ref": "#/components/schemas/ProjectReference"
@@ -51203,10 +50558,6 @@
                 "type": "object",
                 "description": "Routing info for dynamic routing",
                 "additionalProperties": false,
-                "required": [
-                  "default-endpoint",
-                  "dynamic-endpoints"
-                ],
                 "properties": {
                   "default-endpoint": {
                     "$ref": "#/components/schemas/ProjectReference"
@@ -51379,10 +50730,7 @@
             "type": "string"
           },
           "apiVersion": {
-            "type": "string",
-            "enum": [
-              "api.ibm.com/v1"
-            ]
+            "type": "string"
           },
           "metadata": {
             "$ref": "#/components/schemas/ProjectMetadata"
@@ -51447,79 +50795,6 @@
           }
         }
       },
-      "ProjectHTTPEndpointV2": {
-        "type": "object",
-        "required": [
-          "kind",
-          "apiVersion",
-          "metadata",
-          "spec"
-        ],
-        "additionalProperties": false,
-        "properties": {
-          "kind": {
-            "enum": [
-              "HTTPEndpoint"
-            ],
-            "type": "string"
-          },
-          "apiVersion": {
-            "type": "string",
-            "enum": [
-              "api.ibm.com/v2"
-            ]
-          },
-          "metadata": {
-            "$ref": "#/components/schemas/ProjectMetadata"
-          },
-          "spec": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "url": {
-                "type": "string"
-              },
-              "method": {
-                "type": "string"
-              },
-              "connectTimeout": {
-                "maximum": 4294967295,
-                "minimum": 0,
-                "type": "integer"
-              },
-              "readTimeout": {
-                "maximum": 4294967295,
-                "minimum": 0,
-                "type": "integer"
-              },
-              "nativeServiceTimeout": {
-                "maximum": 4294967295,
-                "minimum": 0,
-                "type": "integer"
-              },
-              "serviceRegistryParameters": {
-                "type": "array",
-                "items": {
-                  "description": "A key-value pair specifying an SSL configuration parameter.",
-                  "type": "object",
-                  "additionalProperties": false,
-                  "properties": {
-                    "name": {
-                      "type": "string"
-                    },
-                    "value": {
-                      "type": "string"
-                    }
-                  }
-                }
-              },
-              "tlsClientProfile": {
-                "type": "string"
-              }
-            }
-          }
-        }
-      },
       "ProjectMockEndpoint": {
         "type": "object",
         "required": [
@@ -51537,10 +50812,7 @@
             "type": "string"
           },
           "apiVersion": {
-            "type": "string",
-            "enum": [
-              "api.ibm.com/v1"
-            ]
+            "type": "string"
           },
           "metadata": {
             "$ref": "#/components/schemas/ProjectMetadata"
@@ -51583,106 +50855,6 @@
                 }
               }
             }
-          }
-        }
-      },
-      "ProjectMockEndpointV2": {
-        "type": "object",
-        "required": [
-          "kind",
-          "apiVersion",
-          "metadata",
-          "spec"
-        ],
-        "additionalProperties": false,
-        "properties": {
-          "kind": {
-            "enum": [
-              "MockEndpoint"
-            ],
-            "type": "string"
-          },
-          "apiVersion": {
-            "type": "string",
-            "enum": [
-              "api.ibm.com/v2"
-            ]
-          },
-          "metadata": {
-            "$ref": "#/components/schemas/ProjectMetadata"
-          },
-          "spec": {
-            "oneOf": [
-              {
-                "type": "object",
-                "additionalProperties": false,
-                "required": [
-                  "rest"
-                ],
-                "properties": {
-                  "rest": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "paths": {
-                        "type": "object",
-                        "additionalProperties": {
-                          "type": "object",
-                          "additionalProperties": false,
-                          "properties": {
-                            "get": {
-                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
-                            },
-                            "post": {
-                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
-                            },
-                            "put": {
-                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
-                            },
-                            "patch": {
-                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
-                            },
-                            "delete": {
-                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
-                            },
-                            "head": {
-                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
-                            },
-                            "options": {
-                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
-                            },
-                            "trace": {
-                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              },
-              {
-                "type": "object",
-                "additionalProperties": false,
-                "required": [
-                  "soap"
-                ],
-                "properties": {
-                  "soap": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "operations": {
-                        "type": "object",
-                        "additionalProperties": {
-                          "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            ]
           }
         }
       },
@@ -53462,23 +52634,6 @@
           }
         }
       },
-      "ProjectUrl": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "project_url"
-        ],
-        "properties": {
-          "project_url": {
-            "type": "string",
-            "format": "uri",
-            "description": "URL of the project to publish"
-          },
-          "visibility": {
-            "$ref": "#/components/schemas/Visibility"
-          }
-        }
-      },
       "ProjectZip": {
         "type": "object",
         "additionalProperties": true
@@ -53624,66 +52779,6 @@
           }
         ]
       },
-      "GatewayPortingAssessmentBulkActionRequest": {
-        "type": "object",
-        "properties": {
-          "products": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "type": "object",
-                  "properties": {
-                    "scope": {
-                      "type": "string"
-                    },
-                    "space": {
-                      "type": "string"
-                    },
-                    "product_url": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "product_url"
-                  ],
-                  "additionalProperties": false
-                },
-                {
-                  "type": "object",
-                  "properties": {
-                    "scope": {
-                      "type": "string"
-                    },
-                    "space": {
-                      "type": "string"
-                    },
-                    "product": {
-                      "type": "object",
-                      "properties": {
-                        "name": {
-                          "type": "string"
-                        },
-                        "version": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "name",
-                        "version"
-                      ]
-                    }
-                  },
-                  "required": [
-                    "product"
-                  ],
-                  "additionalProperties": false
-                }
-              ]
-            }
-          }
-        }
-      },
       "GatewayPortingAssessmentCreateProjectRequest": {
         "type": "object",
         "properties": {
@@ -53761,24 +52856,6 @@
         }
       },
       "GatewayPortingAssessmentListProductsResponse": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "total_results": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 2147483647
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        }
-      },
-      "GatewayPortingAssessmentListCatalogsResponse": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -65997,24 +65074,6 @@
             "multipart/form-data": {
               "schema": {
                 "$ref": "#/components/schemas/ProgrammingPackageMultipart"
-              },
-              "examples": {
-                "ProgrammingPackage": {
-                  "summary": "Example for programming package create",
-                  "value": {
-                    "name": "acme-programming-package",
-                    "version": "1.0.0",
-                    "title": "ACME Programming Package",
-                    "summary": "Example programming package for ACME org",
-                    "programming_package_type": "lua",
-                    "programming_package_files": [
-                      {
-                        "file_path": "programming-packages/acme-module.lua",
-                        "mimetype": "text/x-lua"
-                      }
-                    ]
-                  }
-                }
               }
             }
           }
@@ -66307,43 +65366,11 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ProgrammingPackage"
-              },
-              "examples": {
-                "ProgrammingPackage": {
-                  "summary": "Example for programming package update",
-                  "value": {
-                    "title": "ACME Programming Package",
-                    "summary": "Updated programming package for ACME org",
-                    "programming_package_type": "lua",
-                    "programming_package_files": [
-                      {
-                        "file_path": "programming-packages/acme-module.lua",
-                        "mimetype": "text/x-lua"
-                      }
-                    ]
-                  }
-                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ProgrammingPackage"
-              },
-              "examples": {
-                "ProgrammingPackage": {
-                  "summary": "Example for programming package update",
-                  "value": {
-                    "title": "ACME Programming Package",
-                    "summary": "Updated programming package for ACME org",
-                    "programming_package_type": "lua",
-                    "programming_package_files": [
-                      {
-                        "file_path": "programming-packages/acme-module.lua",
-                        "mimetype": "text/x-lua"
-                      }
-                    ]
-                  }
-                }
               }
             },
             "multipart/form-data": {
@@ -66494,47 +65521,11 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ProgrammingPackage"
-              },
-              "examples": {
-                "ProgrammingPackage": {
-                  "summary": "Example for programming package update by name and version",
-                  "value": {
-                    "name": "acme-programming-package",
-                    "version": "1.0.0",
-                    "title": "ACME Programming Package",
-                    "summary": "Updated programming package for ACME org",
-                    "programming_package_type": "lua",
-                    "programming_package_files": [
-                      {
-                        "file_path": "programming-packages/acme-module.lua",
-                        "mimetype": "text/x-lua"
-                      }
-                    ]
-                  }
-                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ProgrammingPackage"
-              },
-              "examples": {
-                "ProgrammingPackage": {
-                  "summary": "Example for programming package update by name and version",
-                  "value": {
-                    "name": "acme-programming-package",
-                    "version": "1.0.0",
-                    "title": "ACME Programming Package",
-                    "summary": "Updated programming package for ACME org",
-                    "programming_package_type": "lua",
-                    "programming_package_files": [
-                      {
-                        "file_path": "programming-packages/acme-module.lua",
-                        "mimetype": "text/x-lua"
-                      }
-                    ]
-                  }
-                }
               }
             },
             "multipart/form-data": {
@@ -66725,33 +65716,11 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
-              },
-              "examples": {
-                "XsltTransformationAlias": {
-                  "summary": "Example for XSLT transformation alias create",
-                  "value": {
-                    "name": "acme-xslt-alias",
-                    "title": "ACME XSLT Transformation Alias",
-                    "summary": "Example XSLT transformation alias for ACME org",
-                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
-                  }
-                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
-              },
-              "examples": {
-                "XsltTransformationAlias": {
-                  "summary": "Example for XSLT transformation alias create",
-                  "value": {
-                    "name": "acme-xslt-alias",
-                    "title": "ACME XSLT Transformation Alias",
-                    "summary": "Example XSLT transformation alias for ACME org",
-                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
-                  }
-                }
               }
             },
             "multipart/form-data": {
@@ -67046,31 +66015,11 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
-              },
-              "examples": {
-                "XsltTransformationAlias": {
-                  "summary": "Example for XSLT transformation alias update",
-                  "value": {
-                    "title": "ACME XSLT Transformation Alias",
-                    "summary": "Updated XSLT transformation alias for ACME org",
-                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
-                  }
-                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
-              },
-              "examples": {
-                "XsltTransformationAlias": {
-                  "summary": "Example for XSLT transformation alias update",
-                  "value": {
-                    "title": "ACME XSLT Transformation Alias",
-                    "summary": "Updated XSLT transformation alias for ACME org",
-                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
-                  }
-                }
               }
             },
             "multipart/form-data": {
@@ -67221,33 +66170,11 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
-              },
-              "examples": {
-                "XsltTransformationAlias": {
-                  "summary": "Example for XSLT transformation alias update by name and version",
-                  "value": {
-                    "name": "acme-xslt-alias",
-                    "title": "ACME XSLT Transformation Alias",
-                    "summary": "Updated XSLT transformation alias for ACME org",
-                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
-                  }
-                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
-              },
-              "examples": {
-                "XsltTransformationAlias": {
-                  "summary": "Example for XSLT transformation alias update by name and version",
-                  "value": {
-                    "name": "acme-xslt-alias",
-                    "title": "ACME XSLT Transformation Alias",
-                    "summary": "Updated XSLT transformation alias for ACME org",
-                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
-                  }
-                }
               }
             },
             "multipart/form-data": {
@@ -79457,16 +78384,6 @@
             "multipart/form-data": {
               "schema": {
                 "$ref": "#/components/schemas/ProjectZipMultipart"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProjectUrl"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/ProjectUrl"
               }
             }
           }
@@ -94067,16 +92984,6 @@
               "schema": {
                 "$ref": "#/components/schemas/ProjectZipMultipart"
               }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProjectUrl"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/ProjectUrl"
-              }
             }
           }
         },
@@ -94128,23 +93035,11 @@
         },
         {
           "$ref": "#/components/parameters/export_portable"
-        },
-        {
-          "$ref": "#/components/parameters/expand"
-        },
-        {
-          "$ref": "#/components/parameters/gateway_type"
-        },
-        {
-          "$ref": "#/components/parameters/name"
-        },
-        {
-          "$ref": "#/components/parameters/version"
         }
       ],
       "get": {
-        "summary": "List products with porting compatibility details for a catalog or space",
-        "description": "List products with porting compatibility details for a catalog or space",
+        "summary": "List products with porting compatibility analysis for a given catalog or space",
+        "description": "List products with porting compatibility analysis for a given catalog or space",
         "operationId": "space_listProductsSpaceSubcollection",
         "security": [
           {
@@ -117147,65 +116042,6 @@
         ]
       }
     },
-    "/orgs/{org}/project-files": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/calc_dep"
-        }
-      ],
-      "post": {
-        "summary": "Create project with files from archive",
-        "description": "Create a new project and populate it with files from a zip archive.\nFor adding files to an EXISTING project, use /orgs/{org}/projects/{project}/create-project-files\n",
-        "operationId": "project_createProjectFilesOrgScope",
-        "security": [
-          {
-            "oauth": [
-              "project:manage"
-            ]
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateProjectFilesOrgScopeRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Project created successfully with files",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CreateProjectFilesOrgScopeResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CreateProjectFilesOrgScopeResponse"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Project",
-          "Resource: Project"
-        ]
-      }
-    },
     "/orgs/{org}/projects/{project}/create-project-files": {
       "parameters": [
         {
@@ -117213,9 +116049,6 @@
         },
         {
           "$ref": "#/components/parameters/project"
-        },
-        {
-          "$ref": "#/components/parameters/calc_dep"
         }
       ],
       "post": {
@@ -118893,58 +117726,6 @@
         ]
       }
     },
-    "/orgs/{org}/gateway-porting-assessments/catalogs": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/offset"
-        },
-        {
-          "$ref": "#/components/parameters/limit"
-        }
-      ],
-      "get": {
-        "summary": "List catalogs for porting compatibility assessment",
-        "description": "List catalogs for porting compatibility assessment",
-        "operationId": "gateway_porting_assessment_listCatalogs",
-        "security": [
-          {
-            "oauth": [
-              "child:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/GatewayPortingAssessmentListCatalogsResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/GatewayPortingAssessmentListCatalogsResponse"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "DataPower Nano Gateway API Porting Advisor",
-          "Resource: Gateway Porting Assessment"
-        ]
-      }
-    },
     "/orgs/{org}/catalog/{catalog}/gateway-porting-assessments/products": {
       "parameters": [
         {
@@ -118961,23 +117742,11 @@
         },
         {
           "$ref": "#/components/parameters/export_portable"
-        },
-        {
-          "$ref": "#/components/parameters/expand"
-        },
-        {
-          "$ref": "#/components/parameters/gateway_type"
-        },
-        {
-          "$ref": "#/components/parameters/name"
-        },
-        {
-          "$ref": "#/components/parameters/version"
         }
       ],
       "get": {
-        "summary": "List products with porting compatibility details for a catalog or space",
-        "description": "List products with porting compatibility details for a catalog or space",
+        "summary": "List products with porting compatibility analysis for a given catalog or space",
+        "description": "List products with porting compatibility analysis for a given catalog or space",
         "operationId": "gateway_porting_assessment_listProducts",
         "security": [
           {
@@ -119315,70 +118084,6 @@
           "Resource: Gateway Porting Assessment"
         ]
       }
-    },
-    "/orgs/{org}/catalog/{catalog}/gateway-porting-assessments/calculate-compatibility-bulk": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        }
-      ],
-      "post": {
-        "summary": "Calculate porting compatibility for DataPower Nano Gateway In Bulk",
-        "description": "Calculate porting compatibility for DataPower Nano Gateway In Bulk",
-        "operationId": "gateway_porting_assessment_calculateCompatibilityBulk",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GatewayPortingAssessmentBulkActionRequest"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/GatewayPortingAssessmentBulkActionRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/GatewayPortingAssessmentActionResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/GatewayPortingAssessmentActionResponse"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "DataPower Nano Gateway API Porting Advisor",
-          "Resource: Gateway Porting Assessment"
-        ]
-      }
     }
   },
   "components": {
@@ -119552,15 +118257,6 @@
         "required": true,
         "schema": {
           "type": "string"
-        }
-      },
-      "calc_dep": {
-        "name": "calc_dep",
-        "in": "query",
-        "description": "Calculate dependencies",
-        "required": false,
-        "schema": {
-          "type": "boolean"
         }
       },
       "capture-id": {
@@ -122224,8 +120920,7 @@
             "enum": [
               "toolkit",
               "atm",
-              "ai",
-              "transition_helper"
+              "ai"
             ]
           },
           "realm": {
@@ -126616,33 +125311,6 @@
             },
             "nullable": true
           },
-          "key_exchange_mechanisms": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "enum": [
-                "MLKEM512",
-                "MLKEM768",
-                "X25519MLKEM768",
-                "SecP256r1MLKEM768",
-                "MLKEM1024",
-                "SecP384r1MLKEM1024",
-                "p256",
-                "p384",
-                "p521",
-                "x25519",
-                "x448",
-                "ffdhe2048",
-                "ffdhe3072",
-                "ffdhe4096",
-                "ffdhe6144",
-                "ffdhe8192",
-                "brainpoolP256",
-                "brainpoolP384",
-                "brainpoolP512"
-              ]
-            }
-          },
           "elliptic_curve_auto_negotiation": {
             "type": "boolean",
             "default": true
@@ -127664,11 +126332,6 @@
           },
           "certificate_info": {
             "type": "string"
-          },
-          "cert_name": {
-            "type": "string",
-            "nullable": true,
-            "description": "User-friendly name for certificate selection, auto-generated from certificate CN/SAN/O or fingerprint"
           },
           "metadata": {
             "type": "object",
@@ -129838,11 +128501,6 @@
             "type": "string",
             "maxLength": 65535
           },
-          "key_name": {
-            "type": "string",
-            "nullable": true,
-            "description": "Name for the primary key+certificate pair, auto-generated from certificate or user-provided"
-          },
           "private_key_entry": {
             "type": "string",
             "format": "password"
@@ -129857,41 +128515,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/CertEntry"
-            }
-          },
-          "key_entries": {
-            "type": "array",
-            "nullable": true,
-            "description": "Additional key+certificate pairs beyond the first (for multi-key keystores)",
-            "items": {
-              "type": "object",
-              "required": [
-                "key_name",
-                "private_key_entry",
-                "public_certificate_entry"
-              ],
-              "properties": {
-                "key_name": {
-                  "type": "string",
-                  "description": "Name for this key+certificate pair, auto-generated from certificate CN or user-provided"
-                },
-                "private_key_entry": {
-                  "type": "string",
-                  "format": "password",
-                  "description": "Private key in PEM format"
-                },
-                "public_certificate_entry": {
-                  "$ref": "#/components/schemas/CertEntry"
-                },
-                "trusted_certificate_entries": {
-                  "type": "array",
-                  "nullable": true,
-                  "items": {
-                    "$ref": "#/components/schemas/CertEntry"
-                  },
-                  "description": "CA certificate chain for this key+certificate pair"
-                }
-              }
             }
           },
           "keystore": {
@@ -132408,12 +131031,6 @@
             "type": "boolean",
             "nullable": true
           },
-          "portal_chatbot_consumer_roles": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -134346,8 +132963,7 @@
               "analytics",
               "transition_helper",
               "analytics_proxy",
-              "mcp_registry",
-              "security_center"
+              "mcp_registry"
             ]
           },
           "client_id": {
@@ -136210,10 +134826,7 @@
             "enum": [
               "subscription",
               "create_subscription_approval",
-              "delete_subscription_approval",
-              "create_app_approval",
-              "register_app_approval",
-              "update_app_approval"
+              "delete_subscription_approval"
             ]
           },
           "state": {
@@ -136898,33 +135511,6 @@
             },
             "nullable": true
           },
-          "key_exchange_mechanisms": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "enum": [
-                "MLKEM512",
-                "MLKEM768",
-                "X25519MLKEM768",
-                "SecP256r1MLKEM768",
-                "MLKEM1024",
-                "SecP384r1MLKEM1024",
-                "p256",
-                "p384",
-                "p521",
-                "x25519",
-                "x448",
-                "ffdhe2048",
-                "ffdhe3072",
-                "ffdhe4096",
-                "ffdhe6144",
-                "ffdhe8192",
-                "brainpoolP256",
-                "brainpoolP384",
-                "brainpoolP512"
-              ]
-            }
-          },
           "elliptic_curve_auto_negotiation": {
             "type": "boolean",
             "default": true
@@ -136987,16 +135573,6 @@
             "type": "string",
             "format": "uri",
             "nullable": true
-          },
-          "key_name": {
-            "type": "string",
-            "nullable": true,
-            "description": "Selects a specific key+certificate pair from the keystore by name (for multi-key keystores). If not specified, uses the first/default key."
-          },
-          "cert_name": {
-            "type": "string",
-            "nullable": true,
-            "description": "Selects a specific certificate from the truststore by name. If not specified, all certificates in the truststore are used."
           },
           "webhook_urls": {
             "type": "array",
@@ -137226,33 +135802,6 @@
             },
             "nullable": true
           },
-          "key_exchange_mechanisms": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "enum": [
-                "MLKEM512",
-                "MLKEM768",
-                "X25519MLKEM768",
-                "SecP256r1MLKEM768",
-                "MLKEM1024",
-                "SecP384r1MLKEM1024",
-                "p256",
-                "p384",
-                "p521",
-                "x25519",
-                "x448",
-                "ffdhe2048",
-                "ffdhe3072",
-                "ffdhe4096",
-                "ffdhe6144",
-                "ffdhe8192",
-                "brainpoolP256",
-                "brainpoolP384",
-                "brainpoolP512"
-              ]
-            }
-          },
           "elliptic_curve": {
             "type": "array",
             "items": {
@@ -137306,20 +135855,10 @@
             "type": "string",
             "format": "uri"
           },
-          "key_name": {
-            "type": "string",
-            "nullable": true,
-            "description": "Selects a specific key+certificate pair from the keystore by name (for multi-key keystores). If not specified, uses the first/default key."
-          },
           "truststore_url": {
             "type": "string",
             "format": "uri",
             "nullable": true
-          },
-          "cert_name": {
-            "type": "string",
-            "nullable": true,
-            "description": "Selects a specific certificate from the truststore by name. If not specified, all certificates in the truststore are used."
           },
           "gateway_service_urls": {
             "type": "array",
@@ -138696,41 +137235,6 @@
             "items": {
               "$ref": "#/components/schemas/XsltTransformationAlias"
             }
-          }
-        }
-      },
-      "CreateProjectFilesOrgScopeResponse": {
-        "type": "object",
-        "properties": {
-          "project": {
-            "$ref": "#/components/schemas/Project"
-          },
-          "total_results": {
-            "type": "integer"
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ProjectFile"
-            }
-          }
-        }
-      },
-      "CreateProjectFilesOrgScopeRequest": {
-        "type": "object",
-        "required": [
-          "projectName",
-          "archive"
-        ],
-        "properties": {
-          "projectName": {
-            "type": "string",
-            "description": "Name of the project to create"
-          },
-          "archive": {
-            "type": "string",
-            "format": "binary",
-            "description": "Zip archive containing project files"
           }
         }
       },
@@ -140123,9 +138627,6 @@
             "$ref": "#/components/schemas/ProjectInboundBulkHead"
           },
           {
-            "$ref": "#/components/schemas/ProjectInboundBulkHeadV2"
-          },
-          {
             "$ref": "#/components/schemas/ProjectSetMediaType"
           },
           {
@@ -140186,13 +138687,7 @@
             "$ref": "#/components/schemas/ProjectHTTPEndpoint"
           },
           {
-            "$ref": "#/components/schemas/ProjectHTTPEndpointV2"
-          },
-          {
             "$ref": "#/components/schemas/ProjectMockEndpoint"
-          },
-          {
-            "$ref": "#/components/schemas/ProjectMockEndpointV2"
           },
           {
             "$ref": "#/components/schemas/ProjectMockResponse"
@@ -140211,9 +138706,6 @@
           },
           {
             "$ref": "#/components/schemas/ProjectScope"
-          },
-          {
-            "$ref": "#/components/schemas/ProjectScopeV2"
           },
           {
             "$ref": "#/components/schemas/ProjectCORS"
@@ -140256,11 +138748,7 @@
           "Set",
           "RateLimit",
           "RateLimitDef",
-          "Scope",
-          "SOAPEndpoint",
-          "InboundAuthMessage",
-          "SOAPMessageConfig",
-          "SOAPToRESTMapping"
+          "Scope"
         ],
         "type": "string"
       },
@@ -141707,14 +140195,7 @@
           "file": {
             "type": "array",
             "items": {
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/ProjectFile"
-                },
-                {
-                  "$ref": "#/components/schemas/ProjectZip"
-                }
-              ]
+              "$ref": "#/components/schemas/ProjectFile"
             }
           }
         }
@@ -142781,8 +141262,7 @@
           "domain": {
             "enum": [
               "api",
-              "ai-platform",
-              "mcp"
+              "ai-platform"
             ],
             "type": "string"
           },
@@ -143078,32 +141558,10 @@
             "additionalProperties": false,
             "properties": {
               "api-spec": {
-                "type": "object",
-                "required": [
-                  "$path"
-                ],
-                "additionalProperties": false,
-                "properties": {
-                  "$path": {
-                    "description": "Specifies the path to the referencing resource The path can be relative to the referring file or absolute from the project folder This could point to yaml, json, wsdl or zip files",
-                    "type": "string"
-                  },
-                  "rootFile": {
-                    "description": "Entry point file within ZIP archive (required for ZIP archives containing WSDL) applicable only for WebMethods gateway. Specifies the path to the main WSDL file within the ZIP archive. Example: 'global_weather.wsdl' or 'wsdl/services/weather/GlobalWeather.wsdl'",
-                    "type": "string"
-                  }
-                }
+                "$ref": "#/components/schemas/ProjectPath"
               },
               "rest-def": {
-                "oneOf": [
-                  {
-                    "$ref": "#/components/schemas/ProjectPath"
-                  },
-                  {
-                    "$ref": "#/components/schemas/ProjectReference"
-                  }
-                ],
-                "description": "REST definition for SOAP APIs: for DataPower gateways, specify the path to the API spec YAML file using $path; for webMethods Gateway, specify a reference to a SOAPToRESTMapping asset using $ref."
+                "$ref": "#/components/schemas/ProjectPath"
               },
               "uriSchemes": {
                 "$ref": "#/components/schemas/ProjectReference"
@@ -144630,10 +143088,7 @@
             "type": "string"
           },
           "apiVersion": {
-            "type": "string",
-            "enum": [
-              "api.ibm.com/v1"
-            ]
+            "type": "string"
           },
           "metadata": {
             "$ref": "#/components/schemas/ProjectMetadata"
@@ -144684,135 +143139,6 @@
                 }
               }
             }
-          }
-        }
-      },
-      "ProjectScopeV2": {
-        "description": "The message identifies the scope",
-        "type": "object",
-        "required": [
-          "kind",
-          "apiVersion",
-          "metadata",
-          "spec"
-        ],
-        "additionalProperties": false,
-        "properties": {
-          "kind": {
-            "enum": [
-              "Scope"
-            ],
-            "type": "string"
-          },
-          "apiVersion": {
-            "type": "string",
-            "enum": [
-              "api.ibm.com/v2"
-            ]
-          },
-          "metadata": {
-            "$ref": "#/components/schemas/ProjectMetadata"
-          },
-          "spec": {
-            "oneOf": [
-              {
-                "type": "object",
-                "additionalProperties": false,
-                "required": [
-                  "rest",
-                  "policy-sequence"
-                ],
-                "properties": {
-                  "policy-sequence": {
-                    "$ref": "#/components/schemas/ProjectReferenceList"
-                  },
-                  "rest": {
-                    "type": "object",
-                    "required": [
-                      "resources"
-                    ],
-                    "additionalProperties": false,
-                    "properties": {
-                      "resources": {
-                        "description": "Multiple instances of resources can be given",
-                        "type": "array",
-                        "items": {
-                          "description": "Multiple instances of methods for each resource can be given",
-                          "type": "object",
-                          "required": [
-                            "methods",
-                            "path"
-                          ],
-                          "additionalProperties": false,
-                          "properties": {
-                            "methods": {
-                              "type": "array",
-                              "minItems": 1,
-                              "items": {
-                                "type": "string",
-                                "enum": [
-                                  "get",
-                                  "post",
-                                  "put",
-                                  "delete",
-                                  "patch",
-                                  "head",
-                                  "keep"
-                                ]
-                              }
-                            },
-                            "path": {
-                              "type": "string"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              },
-              {
-                "type": "object",
-                "additionalProperties": false,
-                "required": [
-                  "soap",
-                  "policy-sequence"
-                ],
-                "properties": {
-                  "policy-sequence": {
-                    "$ref": "#/components/schemas/ProjectReferenceList"
-                  },
-                  "soap": {
-                    "type": "object",
-                    "required": [
-                      "operations"
-                    ],
-                    "additionalProperties": false,
-                    "properties": {
-                      "operations": {
-                        "description": "Multiple instances of operations can be given",
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "required": [
-                            "name"
-                          ],
-                          "additionalProperties": false,
-                          "properties": {
-                            "name": {
-                              "type": "string"
-                            },
-                            "description": {
-                              "type": "string"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            ]
           }
         }
       },
@@ -145103,48 +143429,6 @@
                     "http",
                     "https"
                   ]
-                }
-              },
-              "extensions": {
-                "description": "Gateway-specific extensions for URI schemes configuration",
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "webm-gateway": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "apiVersion": {
-                        "type": "string",
-                        "description": "API version for webm-gateway extension"
-                      },
-                      "spec": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                          "soap": {
-                            "type": "object",
-                            "description": "SOAP-specific configuration for webm-gateway",
-                            "additionalProperties": false,
-                            "properties": {
-                              "version": {
-                                "type": "string",
-                                "enum": [
-                                  "1.1",
-                                  "1.2"
-                                ],
-                                "description": "SOAP version (1.1 or 1.2)"
-                              },
-                              "validateVersion": {
-                                "type": "boolean",
-                                "description": "Whether to validate SOAP version"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
                 }
               }
             }
@@ -146240,10 +144524,7 @@
             "type": "string"
           },
           "apiVersion": {
-            "type": "string",
-            "enum": [
-              "api.ibm.com/v1"
-            ]
+            "type": "string"
           },
           "metadata": {
             "$ref": "#/components/schemas/ProjectMetadata"
@@ -146270,70 +144551,6 @@
                 "properties": {
                   "retryAfterValue": {
                     "type": "integer"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "ProjectInboundBulkHeadV2": {
-        "type": "object",
-        "required": [
-          "kind",
-          "apiVersion",
-          "metadata",
-          "spec"
-        ],
-        "additionalProperties": false,
-        "properties": {
-          "kind": {
-            "enum": [
-              "InboundBulkHead"
-            ],
-            "type": "string"
-          },
-          "apiVersion": {
-            "type": "string",
-            "enum": [
-              "api.ibm.com/v2"
-            ]
-          },
-          "metadata": {
-            "$ref": "#/components/schemas/ProjectMetadata"
-          },
-          "spec": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": [
-              "maxConcurrentCalls",
-              "retryAfterResponseHeader"
-            ],
-            "properties": {
-              "maxConcurrentCalls": {
-                "type": "integer"
-              },
-              "retryAfterResponseHeader": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "retryAfterValue": {
-                    "type": "integer"
-                  }
-                }
-              },
-              "rest": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "enableBulkheadForCallbacks": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "maxConcurrentCallbacks": {
-                        "type": "integer"
-                      }
-                    }
                   }
                 }
               }
@@ -147098,46 +145315,6 @@
                                           }
                                         }
                                       ]
-                                    }
-                                  }
-                                }
-                              },
-                              "wsSecurityUsernameToken": {
-                                "type": "object",
-                                "additionalProperties": false,
-                                "properties": {
-                                  "applicationSecurity": {
-                                    "type": "object",
-                                    "additionalProperties": false,
-                                    "properties": {
-                                      "mode": {
-                                        "type": "string",
-                                        "enum": [
-                                          "authorize",
-                                          "identify",
-                                          "authenticate"
-                                        ]
-                                      }
-                                    }
-                                  }
-                                }
-                              },
-                              "wsSecurityX509Certificate": {
-                                "type": "object",
-                                "additionalProperties": false,
-                                "properties": {
-                                  "applicationSecurity": {
-                                    "type": "object",
-                                    "additionalProperties": false,
-                                    "properties": {
-                                      "mode": {
-                                        "type": "string",
-                                        "enum": [
-                                          "authorize",
-                                          "identify",
-                                          "authenticate"
-                                        ]
-                                      }
                                     }
                                   }
                                 }
@@ -148241,57 +146418,8 @@
             "oneOf": [
               {
                 "type": "object",
-                "description": "Default routing - Applicable only for SOAP",
-                "additionalProperties": false,
-                "required": [
-                  "default-endpoint"
-                ],
-                "properties": {
-                  "default-endpoint": {
-                    "$ref": "#/components/schemas/ProjectReference"
-                  }
-                }
-              },
-              {
-                "type": "object",
-                "description": "Load balancer routing with multiple endpoints",
-                "required": [
-                  "load-balancer-endpoints"
-                ],
-                "additionalProperties": false,
-                "properties": {
-                  "load-balancer-endpoints": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                      "type": "object",
-                      "required": [
-                        "$ref"
-                      ],
-                      "additionalProperties": false,
-                      "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "description": "Reference to SOAP Endpoint"
-                        },
-                        "suspendDuration": {
-                          "type": "integer",
-                          "description": "Suspend duration in seconds",
-                          "minimum": 0
-                        }
-                      }
-                    }
-                  }
-                }
-              },
-              {
-                "type": "object",
                 "description": "Routing info for conditional routing",
                 "additionalProperties": false,
-                "required": [
-                  "default-endpoint",
-                  "conditional-endpoints"
-                ],
                 "properties": {
                   "default-endpoint": {
                     "$ref": "#/components/schemas/ProjectReference"
@@ -148317,10 +146445,6 @@
                 "type": "object",
                 "description": "Routing info for content based routing",
                 "additionalProperties": false,
-                "required": [
-                  "default-endpoint",
-                  "content-based-endpoints"
-                ],
                 "properties": {
                   "default-endpoint": {
                     "$ref": "#/components/schemas/ProjectReference"
@@ -148389,10 +146513,6 @@
                 "type": "object",
                 "description": "Routing info for dynamic routing",
                 "additionalProperties": false,
-                "required": [
-                  "default-endpoint",
-                  "dynamic-endpoints"
-                ],
                 "properties": {
                   "default-endpoint": {
                     "$ref": "#/components/schemas/ProjectReference"
@@ -148565,10 +146685,7 @@
             "type": "string"
           },
           "apiVersion": {
-            "type": "string",
-            "enum": [
-              "api.ibm.com/v1"
-            ]
+            "type": "string"
           },
           "metadata": {
             "$ref": "#/components/schemas/ProjectMetadata"
@@ -148633,79 +146750,6 @@
           }
         }
       },
-      "ProjectHTTPEndpointV2": {
-        "type": "object",
-        "required": [
-          "kind",
-          "apiVersion",
-          "metadata",
-          "spec"
-        ],
-        "additionalProperties": false,
-        "properties": {
-          "kind": {
-            "enum": [
-              "HTTPEndpoint"
-            ],
-            "type": "string"
-          },
-          "apiVersion": {
-            "type": "string",
-            "enum": [
-              "api.ibm.com/v2"
-            ]
-          },
-          "metadata": {
-            "$ref": "#/components/schemas/ProjectMetadata"
-          },
-          "spec": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "url": {
-                "type": "string"
-              },
-              "method": {
-                "type": "string"
-              },
-              "connectTimeout": {
-                "maximum": 4294967295,
-                "minimum": 0,
-                "type": "integer"
-              },
-              "readTimeout": {
-                "maximum": 4294967295,
-                "minimum": 0,
-                "type": "integer"
-              },
-              "nativeServiceTimeout": {
-                "maximum": 4294967295,
-                "minimum": 0,
-                "type": "integer"
-              },
-              "serviceRegistryParameters": {
-                "type": "array",
-                "items": {
-                  "description": "A key-value pair specifying an SSL configuration parameter.",
-                  "type": "object",
-                  "additionalProperties": false,
-                  "properties": {
-                    "name": {
-                      "type": "string"
-                    },
-                    "value": {
-                      "type": "string"
-                    }
-                  }
-                }
-              },
-              "tlsClientProfile": {
-                "type": "string"
-              }
-            }
-          }
-        }
-      },
       "ProjectMockEndpoint": {
         "type": "object",
         "required": [
@@ -148723,10 +146767,7 @@
             "type": "string"
           },
           "apiVersion": {
-            "type": "string",
-            "enum": [
-              "api.ibm.com/v1"
-            ]
+            "type": "string"
           },
           "metadata": {
             "$ref": "#/components/schemas/ProjectMetadata"
@@ -148769,106 +146810,6 @@
                 }
               }
             }
-          }
-        }
-      },
-      "ProjectMockEndpointV2": {
-        "type": "object",
-        "required": [
-          "kind",
-          "apiVersion",
-          "metadata",
-          "spec"
-        ],
-        "additionalProperties": false,
-        "properties": {
-          "kind": {
-            "enum": [
-              "MockEndpoint"
-            ],
-            "type": "string"
-          },
-          "apiVersion": {
-            "type": "string",
-            "enum": [
-              "api.ibm.com/v2"
-            ]
-          },
-          "metadata": {
-            "$ref": "#/components/schemas/ProjectMetadata"
-          },
-          "spec": {
-            "oneOf": [
-              {
-                "type": "object",
-                "additionalProperties": false,
-                "required": [
-                  "rest"
-                ],
-                "properties": {
-                  "rest": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "paths": {
-                        "type": "object",
-                        "additionalProperties": {
-                          "type": "object",
-                          "additionalProperties": false,
-                          "properties": {
-                            "get": {
-                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
-                            },
-                            "post": {
-                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
-                            },
-                            "put": {
-                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
-                            },
-                            "patch": {
-                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
-                            },
-                            "delete": {
-                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
-                            },
-                            "head": {
-                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
-                            },
-                            "options": {
-                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
-                            },
-                            "trace": {
-                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              },
-              {
-                "type": "object",
-                "additionalProperties": false,
-                "required": [
-                  "soap"
-                ],
-                "properties": {
-                  "soap": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "operations": {
-                        "type": "object",
-                        "additionalProperties": {
-                          "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            ]
           }
         }
       },
@@ -150648,23 +148589,6 @@
           }
         }
       },
-      "ProjectUrl": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "project_url"
-        ],
-        "properties": {
-          "project_url": {
-            "type": "string",
-            "format": "uri",
-            "description": "URL of the project to publish"
-          },
-          "visibility": {
-            "$ref": "#/components/schemas/Visibility"
-          }
-        }
-      },
       "ProjectZip": {
         "type": "object",
         "additionalProperties": true
@@ -150810,66 +148734,6 @@
           }
         ]
       },
-      "GatewayPortingAssessmentBulkActionRequest": {
-        "type": "object",
-        "properties": {
-          "products": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "type": "object",
-                  "properties": {
-                    "scope": {
-                      "type": "string"
-                    },
-                    "space": {
-                      "type": "string"
-                    },
-                    "product_url": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "product_url"
-                  ],
-                  "additionalProperties": false
-                },
-                {
-                  "type": "object",
-                  "properties": {
-                    "scope": {
-                      "type": "string"
-                    },
-                    "space": {
-                      "type": "string"
-                    },
-                    "product": {
-                      "type": "object",
-                      "properties": {
-                        "name": {
-                          "type": "string"
-                        },
-                        "version": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "name",
-                        "version"
-                      ]
-                    }
-                  },
-                  "required": [
-                    "product"
-                  ],
-                  "additionalProperties": false
-                }
-              ]
-            }
-          }
-        }
-      },
       "GatewayPortingAssessmentCreateProjectRequest": {
         "type": "object",
         "properties": {
@@ -150947,24 +148811,6 @@
         }
       },
       "GatewayPortingAssessmentListProductsResponse": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "total_results": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 2147483647
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        }
-      },
-      "GatewayPortingAssessmentListCatalogsResponse": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -157906,131 +155752,6 @@
           "Resource: Mcp Server by Id (Org Scope)"
         ]
       }
-    },
-    "/portal-chatbot": {
-      "post": {
-        "summary": "Create a new AI Agent chat session",
-        "description": "Create a new chat session with the AI Agent",
-        "operationId": "portal_chatbot_chat",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/consumer_org_url"
-          }
-        ],
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PortalChatbot"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/PortalChatbot"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PortalChatbot"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/PortalChatbot"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Portal Chatbot (Org Scope)"
-        ]
-      }
-    },
-    "/portal-chatbot/{chat-session}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/chat-session"
-        },
-        {
-          "$ref": "#/components/parameters/consumer_org_url"
-        }
-      ],
-      "post": {
-        "summary": "Send message to AI Agent",
-        "description": "Send a message to the AI Agent and receive a response, or execute a plan",
-        "operationId": "portal_chatbot_chatById",
-        "security": [
-          {
-            "oauth": [
-              "org:view"
-            ]
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PortalChatbot"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/PortalChatbot"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PortalChatbot"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/PortalChatbot"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Portal",
-          "Resource: Portal Chatbot (Org Scope)"
-        ]
-      }
     }
   },
   "components": {
@@ -158150,15 +155871,6 @@
         "required": false,
         "schema": {
           "type": "boolean"
-        }
-      },
-      "chat-session": {
-        "name": "chat-session",
-        "in": "path",
-        "description": "Chat session ID",
-        "required": true,
-        "schema": {
-          "type": "string"
         }
       },
       "client_id": {
@@ -158435,15 +156147,6 @@
         "name": "permission",
         "in": "path",
         "description": "Permission name or id",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "portal-chatbot": {
-        "name": "portal-chatbot",
-        "in": "path",
-        "description": "Portal Chatbot name or id",
         "required": true,
         "schema": {
           "type": "string"
@@ -158920,7 +156623,7 @@
           "version": {
             "type": "string"
           },
-          "rate_limit_notification_settings": {
+          "rate_limit_notifications": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -159457,13 +157160,21 @@
           "state": {
             "type": "string",
             "enum": [
-              "online",
-              "offline"
+              "published",
+              "deprecated"
             ]
           },
-          "mcp_server_kind": {
+          "mcp_server": {
             "type": "object",
             "additionalProperties": true
+          },
+          "state_pending": {
+            "type": "string",
+            "nullable": true,
+            "enum": [
+              "published",
+              "deprecated"
+            ]
           },
           "org_url": {
             "type": "string",
@@ -160155,21 +157866,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Permission"
-            }
-          }
-        }
-      },
-      "PortalChatbotList": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "total_results": {
-            "type": "integer"
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PortalChatbot"
             }
           }
         }
@@ -161892,38 +159588,6 @@
           "version": {
             "type": "string",
             "description": "The client version"
-          }
-        }
-      },
-      "PortalChatbot": {
-        "type": "object",
-        "additionalProperties": true,
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Request/response type. Use 'user-message' to send a message. Use 'user-plan' to execute a plan (toolcalls required). Response types include 'agent-plan' and 'agent-response'."
-          },
-          "message": {
-            "type": "string",
-            "description": "The user's message to send to the AI agent (used with type 'user-message')",
-            "maxLength": 4000
-          },
-          "agent_message": {
-            "type": "string",
-            "description": "The AI agent's response message",
-            "items": {
-              "type": "object"
-            }
-          },
-          "plan_title": {
-            "type": "string",
-            "nullable": true,
-            "description": "Title of the plan from the AI agent"
-          },
-          "plan_description": {
-            "type": "string",
-            "nullable": true,
-            "description": "Description of the plan from the AI agent"
           }
         }
       },
@@ -166553,9 +164217,6 @@
             "$ref": "#/components/parameters/timeframe_optional"
           },
           {
-            "$ref": "#/components/parameters/timezone_optional"
-          },
-          {
             "$ref": "#/components/parameters/transaction_id_optional"
           },
           {
@@ -166938,9 +164599,6 @@
             "$ref": "#/components/parameters/timeframe_optional"
           },
           {
-            "$ref": "#/components/parameters/timezone_optional"
-          },
-          {
             "$ref": "#/components/parameters/transaction_id_optional"
           },
           {
@@ -167320,9 +164978,6 @@
             "$ref": "#/components/parameters/timeframe_optional"
           },
           {
-            "$ref": "#/components/parameters/timezone_optional"
-          },
-          {
             "$ref": "#/components/parameters/transaction_id_optional"
           },
           {
@@ -167699,9 +165354,6 @@
             "$ref": "#/components/parameters/timeframe_optional"
           },
           {
-            "$ref": "#/components/parameters/timezone_optional"
-          },
-          {
             "$ref": "#/components/parameters/transaction_id_optional"
           },
           {
@@ -167835,9 +165487,6 @@
             "$ref": "#/components/parameters/timeframe_optional"
           },
           {
-            "$ref": "#/components/parameters/timezone_optional"
-          },
-          {
             "$ref": "#/components/parameters/typeURI_optional"
           }
         ],
@@ -167960,9 +165609,6 @@
           },
           {
             "$ref": "#/components/parameters/timeframe_optional"
-          },
-          {
-            "$ref": "#/components/parameters/timezone_optional"
           },
           {
             "$ref": "#/components/parameters/typeURI_optional"
@@ -194653,7 +192299,7 @@
           "$ref": "#/components/parameters/analytics-service"
         },
         {
-          "$ref": "#/components/parameters/usage-evolution-report-type"
+          "$ref": "#/components/parameters/usage_evolution_report_type"
         },
         {
           "$ref": "#/components/parameters/provider_org_name_optional"
@@ -194703,7 +192349,7 @@
           "$ref": "#/components/parameters/analytics-service"
         },
         {
-          "$ref": "#/components/parameters/report-type"
+          "$ref": "#/components/parameters/report_type"
         },
         {
           "$ref": "#/components/parameters/provider_org_name_optional"
@@ -195042,49 +192688,6 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/IwhiMeteringReportResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Reports"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/reports/ums": {
-      "description": "Return UMS (Usage Metering Service) metering data for license compliance tracking at cloud scope.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        }
-      ],
-      "get": {
-        "summary": "UMS metering report\n",
-        "description": "Return UMS metering data with total API call count for license compliance tracking at cloud scope. This report is used by scheduled reports to send data to IBM Usage Metering Service (UMS) for on-premises container-based license tracking.\n",
-        "operationId": "reports_cloudUms",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/schedule_optional"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/UmsReportResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -197249,7 +194852,7 @@
           "$ref": "#/components/parameters/org"
         },
         {
-          "$ref": "#/components/parameters/usage-evolution-report-type"
+          "$ref": "#/components/parameters/usage_evolution_report_type"
         },
         {
           "$ref": "#/components/parameters/provider_org_name_optional"
@@ -197305,7 +194908,7 @@
           "$ref": "#/components/parameters/org"
         },
         {
-          "$ref": "#/components/parameters/report-type"
+          "$ref": "#/components/parameters/report_type"
         },
         {
           "$ref": "#/components/parameters/provider_org_name_optional"
@@ -197668,52 +195271,6 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/IwhiMeteringReportResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Reports"
-        ]
-      }
-    },
-    "/{analytics-service}/orgs/{org}/reports/ums": {
-      "description": "Return UMS (Usage Metering Service) metering data for license compliance tracking at org scope.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/org"
-        }
-      ],
-      "get": {
-        "summary": "UMS metering report\n",
-        "description": "Return UMS metering data with total API call count for license compliance tracking at org scope. This report is used by scheduled reports to send data to IBM Usage Metering Service (UMS) for on-premises container-based license tracking.\n",
-        "operationId": "reports_orgUms",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/schedule_optional"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/UmsReportResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -199764,7 +197321,7 @@
           "$ref": "#/components/parameters/catalog"
         },
         {
-          "$ref": "#/components/parameters/usage-evolution-report-type"
+          "$ref": "#/components/parameters/usage_evolution_report_type"
         },
         {
           "$ref": "#/components/parameters/provider_org_name_optional"
@@ -199893,7 +197450,7 @@
           "$ref": "#/components/parameters/catalog"
         },
         {
-          "$ref": "#/components/parameters/report-type"
+          "$ref": "#/components/parameters/report_type"
         },
         {
           "$ref": "#/components/parameters/provider_org_name_optional"
@@ -202192,7 +199749,7 @@
           "$ref": "#/components/parameters/space"
         },
         {
-          "$ref": "#/components/parameters/usage-evolution-report-type"
+          "$ref": "#/components/parameters/usage_evolution_report_type"
         },
         {
           "$ref": "#/components/parameters/provider_org_name_optional"
@@ -202327,7 +199884,7 @@
           "$ref": "#/components/parameters/space"
         },
         {
-          "$ref": "#/components/parameters/report-type"
+          "$ref": "#/components/parameters/report_type"
         },
         {
           "$ref": "#/components/parameters/provider_org_name_optional"
@@ -204649,647 +202206,6 @@
         "responses": {
           "200": {
             "description": "Successful output of the _cat/aliases command",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtTextResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/cat/tasks": {
-      "description": "Returns information about tasks currently executing on the cluster.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/return_format_optional"
-        },
-        {
-          "$ref": "#/components/parameters/detailed_optional"
-        },
-        {
-          "$ref": "#/components/parameters/actions_optional"
-        },
-        {
-          "$ref": "#/components/parameters/nodes_optional"
-        },
-        {
-          "$ref": "#/components/parameters/parent_task_id_optional"
-        },
-        {
-          "$ref": "#/components/parameters/h_optional"
-        },
-        {
-          "$ref": "#/components/parameters/help_optional"
-        },
-        {
-          "$ref": "#/components/parameters/s_optional"
-        },
-        {
-          "$ref": "#/components/parameters/time_optional"
-        },
-        {
-          "$ref": "#/components/parameters/v_columns_optional"
-        },
-        {
-          "$ref": "#/components/parameters/pretty_optional"
-        }
-      ],
-      "get": {
-        "summary": "Returns information about tasks currently executing on the cluster",
-        "description": "Returns information about tasks currently executing on the cluster.\n",
-        "operationId": "clustermgmt_cat_getTasks",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the _cat/tasks command",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtTextResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/cat/thread-pool": {
-      "description": "Returns thread pool statistics for each node in the cluster.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/return_format_optional"
-        },
-        {
-          "$ref": "#/components/parameters/h_optional"
-        },
-        {
-          "$ref": "#/components/parameters/help_optional"
-        },
-        {
-          "$ref": "#/components/parameters/local_optional"
-        },
-        {
-          "$ref": "#/components/parameters/master_timeout_optional"
-        },
-        {
-          "$ref": "#/components/parameters/s_optional"
-        },
-        {
-          "$ref": "#/components/parameters/v_columns_optional"
-        },
-        {
-          "$ref": "#/components/parameters/pretty_optional"
-        }
-      ],
-      "get": {
-        "summary": "Returns thread pool statistics for each node in the cluster",
-        "description": "Returns thread pool statistics for each node in the cluster.\n",
-        "operationId": "clustermgmt_cat_getThreadPool",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the _cat/thread_pool command",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtTextResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/cat/thread-pool/{thread-pool-patterns}": {
-      "description": "Returns thread pool statistics for matching thread pool patterns for each node in the cluster.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/thread-pool-patterns"
-        },
-        {
-          "$ref": "#/components/parameters/return_format_optional"
-        },
-        {
-          "$ref": "#/components/parameters/h_optional"
-        },
-        {
-          "$ref": "#/components/parameters/help_optional"
-        },
-        {
-          "$ref": "#/components/parameters/local_optional"
-        },
-        {
-          "$ref": "#/components/parameters/master_timeout_optional"
-        },
-        {
-          "$ref": "#/components/parameters/s_optional"
-        },
-        {
-          "$ref": "#/components/parameters/v_columns_optional"
-        },
-        {
-          "$ref": "#/components/parameters/pretty_optional"
-        }
-      ],
-      "get": {
-        "summary": "Returns thread pool statistics for matching thread pool patterns",
-        "description": "Returns thread pool statistics for matching thread pool patterns for each node in the cluster.\n",
-        "operationId": "clustermgmt_cat_getThreadPoolByPatterns",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the _cat/thread_pool command",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtTextResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/cat/plugins": {
-      "description": "Returns information about installed OpenSearch plugins on each node.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/return_format_optional"
-        },
-        {
-          "$ref": "#/components/parameters/h_optional"
-        },
-        {
-          "$ref": "#/components/parameters/help_optional"
-        },
-        {
-          "$ref": "#/components/parameters/local_optional"
-        },
-        {
-          "$ref": "#/components/parameters/master_timeout_optional"
-        },
-        {
-          "$ref": "#/components/parameters/s_optional"
-        },
-        {
-          "$ref": "#/components/parameters/time_optional"
-        },
-        {
-          "$ref": "#/components/parameters/v_columns_optional"
-        },
-        {
-          "$ref": "#/components/parameters/pretty_optional"
-        }
-      ],
-      "get": {
-        "summary": "Returns information about installed OpenSearch plugins",
-        "description": "Returns information about installed OpenSearch plugins on each node.\n",
-        "operationId": "clustermgmt_cat_getPlugins",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the _cat/plugins command",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtTextResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/cat/segments": {
-      "description": "Returns low-level information about the Lucene segments in index shards.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/bytes_optional"
-        },
-        {
-          "$ref": "#/components/parameters/return_format_optional"
-        },
-        {
-          "$ref": "#/components/parameters/h_optional"
-        },
-        {
-          "$ref": "#/components/parameters/help_optional"
-        },
-        {
-          "$ref": "#/components/parameters/s_optional"
-        },
-        {
-          "$ref": "#/components/parameters/v_columns_optional"
-        },
-        {
-          "$ref": "#/components/parameters/pretty_optional"
-        }
-      ],
-      "get": {
-        "summary": "Returns Lucene segment information",
-        "description": "Returns low-level information about the Lucene segments in index shards.\n",
-        "operationId": "clustermgmt_cat_getSegments",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the _cat/segments command",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtTextResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/cat/segments/{index}": {
-      "description": "Returns low-level information about the Lucene segments in index shards for a specific index.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/index"
-        },
-        {
-          "$ref": "#/components/parameters/bytes_optional"
-        },
-        {
-          "$ref": "#/components/parameters/return_format_optional"
-        },
-        {
-          "$ref": "#/components/parameters/h_optional"
-        },
-        {
-          "$ref": "#/components/parameters/help_optional"
-        },
-        {
-          "$ref": "#/components/parameters/s_optional"
-        },
-        {
-          "$ref": "#/components/parameters/v_columns_optional"
-        },
-        {
-          "$ref": "#/components/parameters/pretty_optional"
-        }
-      ],
-      "get": {
-        "summary": "Returns Lucene segment information for a specific index",
-        "description": "Returns low-level information about the Lucene segments in index shards for a specific index.\n",
-        "operationId": "clustermgmt_cat_getSegmentsByIndex",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the _cat/segments command",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtTextResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/cat/fielddata": {
-      "description": "Returns the amount of memory used by fielddata on every node.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/bytes_optional"
-        },
-        {
-          "$ref": "#/components/parameters/return_format_optional"
-        },
-        {
-          "$ref": "#/components/parameters/h_optional"
-        },
-        {
-          "$ref": "#/components/parameters/help_optional"
-        },
-        {
-          "$ref": "#/components/parameters/s_optional"
-        },
-        {
-          "$ref": "#/components/parameters/v_columns_optional"
-        },
-        {
-          "$ref": "#/components/parameters/pretty_optional"
-        }
-      ],
-      "get": {
-        "summary": "Returns fielddata memory usage",
-        "description": "Returns the amount of memory used by fielddata on every node.\n",
-        "operationId": "clustermgmt_cat_getFielddata",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the _cat/fielddata command",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtTextResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/cat/fielddata/{fields}": {
-      "description": "Returns the amount of memory used by fielddata for specific fields on every node.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/fields"
-        },
-        {
-          "$ref": "#/components/parameters/bytes_optional"
-        },
-        {
-          "$ref": "#/components/parameters/return_format_optional"
-        },
-        {
-          "$ref": "#/components/parameters/h_optional"
-        },
-        {
-          "$ref": "#/components/parameters/help_optional"
-        },
-        {
-          "$ref": "#/components/parameters/s_optional"
-        },
-        {
-          "$ref": "#/components/parameters/v_columns_optional"
-        },
-        {
-          "$ref": "#/components/parameters/pretty_optional"
-        }
-      ],
-      "get": {
-        "summary": "Returns fielddata memory usage for specific fields",
-        "description": "Returns the amount of memory used by fielddata for specific fields on every node.\n",
-        "operationId": "clustermgmt_cat_getFielddataByFields",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful output of the _cat/fielddata command",
             "content": {
               "text/plain": {
                 "schema": {
@@ -207670,1143 +204586,6 @@
           {
             "oauth": [
               "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/tasks": {
-      "description": "Returns information about tasks currently executing on the cluster.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/actions_optional"
-        },
-        {
-          "$ref": "#/components/parameters/detailed_optional"
-        },
-        {
-          "$ref": "#/components/parameters/group_by_tasks_optional"
-        },
-        {
-          "$ref": "#/components/parameters/nodes_optional"
-        },
-        {
-          "$ref": "#/components/parameters/parent_task_id_optional"
-        },
-        {
-          "$ref": "#/components/parameters/wait_for_completion_optional"
-        }
-      ],
-      "get": {
-        "summary": "Returns information about tasks currently executing on the cluster",
-        "description": "Returns information about tasks currently executing on the cluster.\n",
-        "operationId": "clustermgmt_tasks_listTasks",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/tasks/stuck": {
-      "description": "Identifies long-running and stuck tasks with detailed metadata and cancellable status.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/threshold_ms_optional"
-        },
-        {
-          "$ref": "#/components/parameters/actions_optional"
-        }
-      ],
-      "get": {
-        "summary": "Identify long-running and stuck tasks",
-        "description": "Identifies long-running and stuck tasks with detailed metadata and cancellable status.\n",
-        "operationId": "clustermgmt_tasks_getStuckTasks",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/tasks/{task-id}": {
-      "description": "Returns information about a specific task.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/task-id"
-        },
-        {
-          "$ref": "#/components/parameters/wait_for_completion_optional"
-        }
-      ],
-      "get": {
-        "summary": "Returns information about a specific task",
-        "description": "Returns information about a specific task.\n",
-        "operationId": "clustermgmt_tasks_getTask",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/tasks/cancel": {
-      "description": "Cancels tasks matching query criteria.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/actions_optional"
-        },
-        {
-          "$ref": "#/components/parameters/nodes_optional"
-        },
-        {
-          "$ref": "#/components/parameters/parent_task_id_optional"
-        }
-      ],
-      "post": {
-        "summary": "Cancels tasks matching query criteria",
-        "description": "Cancels tasks matching query criteria.\n",
-        "operationId": "clustermgmt_tasks_cancelTasks",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:manage"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/tasks/{task-id}/cancel": {
-      "description": "Cancels a specific task by ID.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/task-id"
-        },
-        {
-          "$ref": "#/components/parameters/actions_optional"
-        },
-        {
-          "$ref": "#/components/parameters/nodes_optional"
-        },
-        {
-          "$ref": "#/components/parameters/parent_task_id_optional"
-        }
-      ],
-      "post": {
-        "summary": "Cancels a specific task by ID",
-        "description": "Cancels a specific task by ID.\n",
-        "operationId": "clustermgmt_tasks_cancelTaskById",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:manage"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/tasks/emergency-drain": {
-      "description": "Performs emergency draining: cancels cancellable tasks, optionally disables threat intel monitors, and clears search caches.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/actions_optional"
-        },
-        {
-          "$ref": "#/components/parameters/disable_monitors_optional"
-        }
-      ],
-      "post": {
-        "summary": "Emergency drain tasks and clear search caches",
-        "description": "Performs emergency draining: cancels cancellable tasks, optionally disables threat intel monitors, and clears search caches.\n",
-        "operationId": "clustermgmt_tasks_emergencyDrain",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:manage"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/threat-intel/monitors": {
-      "description": "Lists configured Threat Intelligence monitors.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        }
-      ],
-      "get": {
-        "summary": "List Threat Intelligence monitors",
-        "description": "Lists configured Threat Intelligence monitors.\n",
-        "operationId": "clustermgmt_tasks_listThreatIntelMonitors",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/threat-intel/monitors/disable-all": {
-      "description": "Disables all active Threat Intelligence monitors.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        }
-      ],
-      "post": {
-        "summary": "Disable all Threat Intelligence monitors",
-        "description": "Disables all active Threat Intelligence monitors.\n",
-        "operationId": "clustermgmt_tasks_disableAllThreatIntelMonitors",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:manage"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/threat-intel/monitors/{monitor-id}/disable": {
-      "description": "Disables a specific Threat Intelligence monitor by ID.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/monitor-id"
-        }
-      ],
-      "post": {
-        "summary": "Disable a Threat Intelligence monitor by ID",
-        "description": "Disables a specific Threat Intelligence monitor by ID.\n",
-        "operationId": "clustermgmt_tasks_disableThreatIntelMonitor",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:manage"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/threat-intel/monitors/{monitor-id}/enable": {
-      "description": "Enables a specific Threat Intelligence monitor by ID.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/monitor-id"
-        }
-      ],
-      "post": {
-        "summary": "Enable a Threat Intelligence monitor by ID",
-        "description": "Enables a specific Threat Intelligence monitor by ID.\n",
-        "operationId": "clustermgmt_tasks_enableThreatIntelMonitor",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:manage"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/cluster/search-backpressure": {
-      "description": "Returns Search Backpressure and Workload Management (WLM) statistics.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        }
-      ],
-      "get": {
-        "summary": "Returns Search Backpressure and WLM statistics",
-        "description": "Returns Search Backpressure and Workload Management (WLM) statistics.\n",
-        "operationId": "clustermgmt_tasks_getSearchBackpressureStats",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/cluster/search-backpressure/mode": {
-      "description": "Updates Search Backpressure operational mode (enforced, monitor_only, disabled).\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        }
-      ],
-      "put": {
-        "summary": "Update Search Backpressure mode",
-        "description": "Updates Search Backpressure operational mode (enforced, monitor_only, disabled).\n",
-        "operationId": "clustermgmt_tasks_putSearchBackpressureMode",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:manage"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/plugins/anomaly-detection/stats": {
-      "description": "Returns statistics about the Anomaly Detection plugin.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        }
-      ],
-      "get": {
-        "summary": "Returns Anomaly Detection plugin statistics",
-        "description": "Returns statistics about the Anomaly Detection plugin.\n",
-        "operationId": "clustermgmt_plugins_getAnomalyDetectionStats",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/plugins/anomaly-detection/stats/{node-metric}": {
-      "description": "Returns statistics about the Anomaly Detection plugin filtered by node or metric.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/node-metric"
-        }
-      ],
-      "get": {
-        "summary": "Returns filtered Anomaly Detection plugin statistics",
-        "description": "Returns statistics about the Anomaly Detection plugin filtered by node or metric.\n",
-        "operationId": "clustermgmt_plugins_getAnomalyDetectionStatsByNodeMetric",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/plugins/security-analytics/stats": {
-      "description": "Returns statistics about the Security Analytics plugin.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        }
-      ],
-      "get": {
-        "summary": "Returns Security Analytics plugin statistics",
-        "description": "Returns statistics about the Security Analytics plugin.\n",
-        "operationId": "clustermgmt_plugins_getSecurityAnalyticsStats",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/plugins/security-analytics/stats/{node-metric}": {
-      "description": "Returns statistics about the Security Analytics plugin filtered by node or metric.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/node-metric"
-        }
-      ],
-      "get": {
-        "summary": "Returns filtered Security Analytics plugin statistics",
-        "description": "Returns statistics about the Security Analytics plugin filtered by node or metric.\n",
-        "operationId": "clustermgmt_plugins_getSecurityAnalyticsStatsByNodeMetric",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/plugins/alerting/stats": {
-      "description": "Returns statistics about the Alerting plugin.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        }
-      ],
-      "get": {
-        "summary": "Returns Alerting plugin statistics",
-        "description": "Returns statistics about the Alerting plugin.\n",
-        "operationId": "clustermgmt_plugins_getAlertingStats",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/plugins/alerting/stats/{node-metric}": {
-      "description": "Returns statistics about the Alerting plugin filtered by node or metric.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/node-metric"
-        }
-      ],
-      "get": {
-        "summary": "Returns filtered Alerting plugin statistics",
-        "description": "Returns statistics about the Alerting plugin filtered by node or metric.\n",
-        "operationId": "clustermgmt_plugins_getAlertingStatsByNodeMetric",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/plugins/async-search/stats": {
-      "description": "Returns statistics about asynchronous search operations.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        }
-      ],
-      "get": {
-        "summary": "Returns asynchronous search statistics",
-        "description": "Returns statistics about asynchronous search operations.\n",
-        "operationId": "clustermgmt_plugins_getAsyncSearchStats",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/plugins/async-search/{id}": {
-      "description": "Retrieves or cancels an asynchronous search operation by ID.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/id"
-        }
-      ],
-      "get": {
-        "summary": "Get asynchronous search by ID",
-        "description": "Retrieves the status and results of an asynchronous search operation.\n",
-        "operationId": "clustermgmt_plugins_getAsyncSearch",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      },
-      "delete": {
-        "summary": "Delete or cancel asynchronous search by ID",
-        "description": "Deletes or cancels an asynchronous search operation.\n",
-        "operationId": "clustermgmt_plugins_deleteAsyncSearch",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:manage"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/cluster/breakers": {
-      "description": "Returns circuit breaker statistics and current memory usage across cluster nodes.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        }
-      ],
-      "get": {
-        "summary": "Returns circuit breaker statistics",
-        "description": "Returns circuit breaker statistics and current memory usage across cluster nodes.\n",
-        "operationId": "clustermgmt_plugins_getCircuitBreakers",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/ism/explain": {
-      "description": "Explains the Index State Management (ISM) status for managed indices.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        }
-      ],
-      "get": {
-        "summary": "Explains ISM status for managed indices",
-        "description": "Explains the Index State Management (ISM) status for managed indices.\n",
-        "operationId": "clustermgmt_plugins_getIsmExplain",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/ism/explain/{index}": {
-      "description": "Explains the Index State Management (ISM) status for a specific index.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/index"
-        }
-      ],
-      "get": {
-        "summary": "Explains ISM status for a specific index",
-        "description": "Explains the Index State Management (ISM) status for a specific index.\n",
-        "operationId": "clustermgmt_plugins_getIsmExplainByIndex",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/ism/policies": {
-      "description": "Returns configured Index State Management (ISM) lifecycle policies.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        }
-      ],
-      "get": {
-        "summary": "Returns ISM policies",
-        "description": "Returns configured Index State Management (ISM) lifecycle policies.\n",
-        "operationId": "clustermgmt_plugins_getIsmPolicies",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/ism/policies/{policy-id}": {
-      "description": "Returns a configured Index State Management (ISM) lifecycle policy by policy ID.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/policy-id"
-        }
-      ],
-      "get": {
-        "summary": "Returns an ISM policy by ID",
-        "description": "Returns a configured Index State Management (ISM) lifecycle policy by policy ID.\n",
-        "operationId": "clustermgmt_plugins_getIsmPolicyById",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/ism/retry": {
-      "description": "Retries failed Index State Management (ISM) policy actions on managed indices.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        }
-      ],
-      "post": {
-        "summary": "Retry failed ISM actions",
-        "description": "Retries failed Index State Management (ISM) policy actions on managed indices.\n",
-        "operationId": "clustermgmt_plugins_retryIsm",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:manage"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Analytics",
-          "Resource: Clustermgmt (storage)"
-        ]
-      }
-    },
-    "/{analytics-service}/cloud/clustermgmt/storage/ism/retry/{index}": {
-      "description": "Retries failed Index State Management (ISM) policy actions on a specific index.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/index"
-        }
-      ],
-      "post": {
-        "summary": "Retry failed ISM actions on index",
-        "description": "Retries failed Index State Management (ISM) policy actions on a specific index.\n",
-        "operationId": "clustermgmt_plugins_retryIsmByIndex",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:manage"
             ]
           }
         ],
@@ -218159,96 +213938,6 @@
           "type": "string"
         }
       },
-      "task-id": {
-        "name": "task-id",
-        "in": "path",
-        "description": "ID of the task.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "thread-pool-patterns": {
-        "name": "thread-pool-patterns",
-        "in": "path",
-        "description": "A comma-separated list of thread pool names or patterns used to limit the request.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "node-metric": {
-        "name": "node-metric",
-        "in": "path",
-        "description": "Node or metric filter.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "monitor-id": {
-        "name": "monitor-id",
-        "in": "path",
-        "description": "ID of the threat intelligence monitor.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "id": {
-        "name": "id",
-        "in": "path",
-        "description": "Unique identifier.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "policy-id": {
-        "name": "policy-id",
-        "in": "path",
-        "description": "Identifier of the ISM policy.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "fields": {
-        "name": "fields",
-        "in": "path",
-        "description": "Comma-separated list of field names.",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "threshold_ms_optional": {
-        "name": "threshold_ms",
-        "in": "query",
-        "description": "Running time threshold in milliseconds for identifying stuck tasks. Defaults to 600000 (10 minutes).",
-        "required": false,
-        "schema": {
-          "type": "integer"
-        }
-      },
-      "disable_monitors_optional": {
-        "name": "disable_monitors",
-        "in": "query",
-        "description": "Whether to disable active threat intelligence monitors during emergency drain. Defaults to true.",
-        "required": false,
-        "schema": {
-          "type": "boolean"
-        }
-      },
-      "actions_optional": {
-        "name": "actions",
-        "in": "query",
-        "description": "Comma-separated list or wildcard expression of actions used to limit the request.",
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
       "active_only_optional": {
         "name": "active_only",
         "in": "query",
@@ -218727,7 +214416,7 @@
       "catalogId_optional": {
         "name": "catalogId",
         "in": "query",
-        "description": "Filter results by catalog ID.",
+        "description": "Filter results by for audit catalog ID.",
         "required": false,
         "schema": {
           "type": "string",
@@ -219081,7 +214770,6 @@
             "devportal",
             "analytics",
             "apiagent",
-            "apisecurity",
             "all"
           ]
         }
@@ -219621,38 +215309,6 @@
         "required": false,
         "schema": {
           "type": "string"
-        }
-      },
-      "parent_task_id_optional": {
-        "name": "parent_task_id",
-        "in": "query",
-        "description": "Return tasks with specified parent task ID.",
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "nodes_optional": {
-        "name": "nodes",
-        "in": "query",
-        "description": "Comma-separated list of node IDs or names used to limit the request.",
-        "required": false,
-        "schema": {
-          "type": "string"
-        }
-      },
-      "group_by_tasks_optional": {
-        "name": "group_by",
-        "in": "query",
-        "description": "Key used to group tasks in the response.",
-        "required": false,
-        "schema": {
-          "type": "string",
-          "enum": [
-            "nodes",
-            "parents",
-            "none"
-          ]
         }
       },
       "mcp_method_name_optional": {
@@ -220627,15 +216283,6 @@
           "type": "boolean"
         }
       },
-      "wait_for_completion_optional": {
-        "name": "wait_for_completion",
-        "in": "query",
-        "description": "Should the request block until the task is complete. Defaults to false.",
-        "required": false,
-        "schema": {
-          "type": "boolean"
-        }
-      },
       "wait_for_nodes_optional": {
         "name": "wait_for_nodes",
         "in": "query",
@@ -220705,7 +216352,7 @@
           "example": "1"
         }
       },
-      "usage-evolution-report-type": {
+      "usage_evolution_report_type": {
         "name": "usage-evolution-report-type",
         "in": "path",
         "description": "Type of entity for usage evolution report",
@@ -220722,7 +216369,7 @@
           "example": "apis"
         }
       },
-      "report-type": {
+      "report_type": {
         "name": "report-type",
         "in": "path",
         "description": "Type of entity for disk usage report",
@@ -221752,30 +217399,12 @@
             "format": "date-time"
           },
           "monthly_summary": {
-            "description": "Status-code breakdown for all calls (used by the \"All\" chart view)",
-            "$ref": "#/components/schemas/GroupKeyValueDataList"
-          },
-          "monthly_summary_ai": {
-            "description": "Status-code breakdown for AI calls only (api_type llm or mcp)",
-            "$ref": "#/components/schemas/GroupKeyValueDataList"
-          },
-          "monthly_summary_api": {
-            "description": "Status-code breakdown for non-AI API calls only",
             "$ref": "#/components/schemas/GroupKeyValueDataList"
           },
           "monthly_data": {
             "$ref": "#/components/schemas/ConsumptionDataList"
           },
           "daily_summary": {
-            "description": "Status-code breakdown for all calls (used by the \"All\" chart view)",
-            "$ref": "#/components/schemas/GroupKeyValueDataList"
-          },
-          "daily_summary_ai": {
-            "description": "Status-code breakdown for AI calls only (api_type llm or mcp)",
-            "$ref": "#/components/schemas/GroupKeyValueDataList"
-          },
-          "daily_summary_api": {
-            "description": "Status-code breakdown for non-AI API calls only",
             "$ref": "#/components/schemas/GroupKeyValueDataList"
           },
           "daily_data": {
@@ -221984,14 +217613,6 @@
           },
           "other": {
             "type": "number"
-          },
-          "ai_calls": {
-            "type": "number",
-            "description": "Number of AI calls (api_type llm or mcp)"
-          },
-          "api_calls": {
-            "type": "number",
-            "description": "Number of non-AI API calls"
           }
         }
       },
@@ -225185,9 +220806,6 @@
           },
           "api_agent": {
             "type": "boolean"
-          },
-          "api_security_mode_enabled": {
-            "type": "boolean"
           }
         }
       },
@@ -226922,87 +222540,6 @@
             }
           }
         }
-      },
-      "UmsReportResponse": {
-        "type": "object",
-        "description": "UMS (Usage Metering Service) metering data for license compliance tracking",
-        "properties": {
-          "data": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "processing": {
-                  "type": "string",
-                  "enum": [
-                    "ADD",
-                    "MAX"
-                  ],
-                  "description": "Processing type for metric aggregation"
-                },
-                "instances": {
-                  "type": "array",
-                  "description": "List of instances reporting metrics",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "metrics": {
-                        "type": "array",
-                        "description": "List of metrics for this instance",
-                        "items": {
-                          "type": "object",
-                          "properties": {
-                            "productId": {
-                              "type": "string",
-                              "description": "Product ID from license annotations"
-                            },
-                            "productName": {
-                              "type": "string",
-                              "description": "Product name from license annotations"
-                            },
-                            "cloudpakId": {
-                              "type": "string",
-                              "description": "Cloud Pak ID (empty for non-CP4I environments)"
-                            },
-                            "cloudpakName": {
-                              "type": "string",
-                              "description": "Cloud Pak name (empty for non-CP4I environments)"
-                            },
-                            "metricName": {
-                              "type": "string",
-                              "description": "Metric name from license annotations"
-                            },
-                            "metricDescription": {
-                              "type": "string",
-                              "description": "Description of the metric being reported"
-                            },
-                            "metricType": {
-                              "type": "string",
-                              "enum": [
-                                "CONTRACTUAL",
-                                "USAGE"
-                              ],
-                              "description": "Type of metric (CONTRACTUAL for compliance)"
-                            },
-                            "measurementTimestamp": {
-                              "type": "string",
-                              "format": "date-time",
-                              "description": "Timestamp when measurement was taken (ISO 8601 format)"
-                            },
-                            "metricQuantity": {
-                              "type": "integer",
-                              "description": "Total API call count (API + AI calls combined)"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
       }
     },
     "responses": {
@@ -228058,21 +223595,6 @@
             }
           }
         }
-      },
-      "UmsReportResponse": {
-        "description": "UMS metering data for license compliance tracking",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/UmsReportResponse"
-            }
-          },
-          "application/yaml": {
-            "schema": {
-              "$ref": "#/components/schemas/UmsReportResponse"
-            }
-          }
-        }
       }
     },
     "securitySchemes": {
@@ -229031,412 +224553,6 @@
         ]
       }
     },
-    "/{analytics-service}/orgs/{org}/anomaly-detectors": {
-      "description": "Return anomaly detectors for a provider organization.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/org"
-        }
-      ],
-      "get": {
-        "summary": "List anomaly detectors at provider organization scope",
-        "description": "Returns all anomaly detectors belonging to a provider organization.\n",
-        "operationId": "anomaly_detectors_orgList",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/limit_optional"
-          },
-          {
-            "$ref": "#/components/parameters/offset_optional"
-          },
-          {
-            "$ref": "#/components/parameters/search_optional"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/AnomalyDetectorsListResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Engagement",
-          "Resource: Anomaly Detectors"
-        ]
-      },
-      "post": {
-        "summary": "Create an anomaly detector at provider organization scope",
-        "description": "Creates a new anomaly detector for the provider organization. Use detector_type \"latency\" or \"traffic-volume\" to provision a pre-built detector, or omit detector_type to supply a fully custom configuration.\n",
-        "operationId": "anomaly_detectors_orgCreate",
-        "security": [
-          {
-            "oauth": [
-              "engagement:manage"
-            ]
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AnomalyDetectorCreateRequest"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/AnomalyDetectorCreateRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "$ref": "#/components/responses/AnomalyDetectorCreateResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Engagement",
-          "Resource: Anomaly Detectors"
-        ]
-      }
-    },
-    "/{analytics-service}/orgs/{org}/anomaly-detectors/templates/{detector-type}": {
-      "description": "Create a pre-configured anomaly detector from a built-in template.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/detector-type"
-        }
-      ],
-      "post": {
-        "summary": "Create an anomaly detector from a template",
-        "description": "Creates an anomaly detector using a pre-built template. The detectorType path parameter must be one of \"latency\", \"traffic-volume\", or \"api-event-volume\".\n",
-        "operationId": "anomaly_detectors_orgCreateFromTemplate",
-        "security": [
-          {
-            "oauth": [
-              "engagement:manage"
-            ]
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AnomalyDetectorTemplateRequest"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/AnomalyDetectorTemplateRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "$ref": "#/components/responses/AnomalyDetectorCreateResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Engagement",
-          "Resource: Anomaly Detectors"
-        ]
-      }
-    },
-    "/{analytics-service}/orgs/{org}/anomaly-detectors/validate/model": {
-      "description": "Validate anomaly detector configuration against OpenSearch before creation.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/org"
-        }
-      ],
-      "post": {
-        "summary": "Validate anomaly detector configuration",
-        "description": "Runs a pre-flight check using the OpenSearch Anomaly Detection _validate/model endpoint. Returns validation errors without creating a detector.\n",
-        "operationId": "anomaly_detectors_orgValidate",
-        "security": [
-          {
-            "oauth": [
-              "engagement:manage"
-            ]
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AnomalyDetectorRequest"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/AnomalyDetectorRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Validation result from OpenSearch"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Engagement",
-          "Resource: Anomaly Detectors"
-        ]
-      }
-    },
-    "/{analytics-service}/orgs/{org}/anomaly-detectors/{detector-id}": {
-      "description": "Retrieve, update, or delete a single anomaly detector.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/detector-id"
-        }
-      ],
-      "get": {
-        "summary": "Get an anomaly detector",
-        "description": "Returns a single anomaly detector.\n",
-        "operationId": "anomaly_detectors_orgGet",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/AnomalyDetectorResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Engagement",
-          "Resource: Anomaly Detectors"
-        ]
-      },
-      "put": {
-        "summary": "Update an anomaly detector",
-        "description": "Updates a single anomaly detector.\n",
-        "operationId": "anomaly_detectors_orgUpdate",
-        "security": [
-          {
-            "oauth": [
-              "engagement:manage"
-            ]
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AnomalyDetectorUpdateRequest"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/AnomalyDetectorUpdateRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/AnomalyDetectorResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Engagement",
-          "Resource: Anomaly Detectors"
-        ]
-      },
-      "delete": {
-        "summary": "Delete an anomaly detector",
-        "description": "Deletes a single anomaly detector.\n",
-        "operationId": "anomaly_detectors_orgDelete",
-        "security": [
-          {
-            "oauth": [
-              "engagement:manage"
-            ]
-          }
-        ],
-        "responses": {
-          "204": {
-            "$ref": "#/components/responses/NoContentResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Engagement",
-          "Resource: Anomaly Detectors"
-        ]
-      }
-    },
-    "/{analytics-service}/orgs/{org}/anomaly-detectors/{detector-id}/start": {
-      "description": "Start an anomaly detector.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/detector-id"
-        }
-      ],
-      "post": {
-        "summary": "Start an anomaly detector",
-        "description": "Starts a stopped or newly created anomaly detector.\n",
-        "operationId": "anomaly_detectors_orgStart",
-        "security": [
-          {
-            "oauth": [
-              "engagement:manage"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/AnomalyDetectorResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Engagement",
-          "Resource: Anomaly Detectors"
-        ]
-      }
-    },
-    "/{analytics-service}/orgs/{org}/anomaly-detectors/{detector-id}/stop": {
-      "description": "Stop an anomaly detector.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/detector-id"
-        }
-      ],
-      "post": {
-        "summary": "Stop an anomaly detector",
-        "description": "Stops a running anomaly detector.\n",
-        "operationId": "anomaly_detectors_orgStop",
-        "security": [
-          {
-            "oauth": [
-              "engagement:manage"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/AnomalyDetectorResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Engagement",
-          "Resource: Anomaly Detectors"
-        ]
-      }
-    },
     "/{analytics-service}/orgs/{org}/rules": {
       "description": "Return a result set of engagement rules.\n",
       "parameters": [
@@ -230093,71 +225209,6 @@
         "tags": [
           "Engagement",
           "Resource: Destinations"
-        ]
-      }
-    },
-    "/{analytics-service}/orgs/{org}/notifications": {
-      "description": "Send an engagement notification to create a Jira ticket.\n",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/accept_language_optional"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        },
-        {
-          "$ref": "#/components/parameters/org"
-        }
-      ],
-      "post": {
-        "summary": "Create a Jira ticket notification at provider organization scope",
-        "description": "Triggers the creation of a Jira ticket via the configured Jira destination.\n",
-        "operationId": "notifications_orgCreate",
-        "security": [
-          {
-            "oauth": [
-              "engagement:manage"
-            ]
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationCreateRequest"
-              },
-              "examples": {
-                "CreateNotification": {
-                  "$ref": "#/components/examples/CreateNotification"
-                }
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/NotificationCreateRequest"
-              },
-              "examples": {
-                "CreateNotification": {
-                  "$ref": "#/components/examples/CreateNotification"
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "$ref": "#/components/responses/NotificationCreateResponse"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Engagement",
-          "Resource: Notifications"
         ]
       }
     },
@@ -231893,41 +226944,6 @@
   },
   "components": {
     "examples": {
-      "CreateNotification": {
-        "summary": "Create Jira ticket notification",
-        "value": {
-          "config_type": "jira",
-          "destination_id": "858c9f23-af13-4408-845d-4e2eec321959",
-          "content": {
-            "overall_assessment": {
-              "summary": "Test issue from Keystone integration",
-              "ai_severity": "high",
-              "root_cause": "Manual test trigger"
-            },
-            "execution_context": {
-              "finding_id": "test-001",
-              "api_id": "test-api",
-              "notification_message": "Verifying Jira destination config"
-            },
-            "recommended_actions": [
-              {
-                "priority": 1,
-                "priority_label": "CRITICAL",
-                "title": "Verify Jira integration",
-                "category": "security",
-                "detailed_explanation": "This is a test issue created to verify the Jira destination.",
-                "implementation_guidance": {
-                  "immediate_action": "Check that this ticket appeared in the CLOUDAI project.",
-                  "verification": "View the ticket in Jira and confirm all fields are populated."
-                },
-                "evidence": [
-                  "Manual test triggered via curl"
-                ]
-              }
-            ]
-          }
-        }
-      },
       "CreateDestination": {
         "summary": "Create new destination",
         "value": {
@@ -232125,29 +227141,6 @@
         "required": true,
         "schema": {
           "type": "string"
-        }
-      },
-      "detector-id": {
-        "name": "detector-id",
-        "in": "path",
-        "description": "Anomaly detector ID. This ID is globally unique across the analytics service.\n",
-        "required": true,
-        "schema": {
-          "$ref": "#/components/schemas/Id"
-        }
-      },
-      "detector-type": {
-        "name": "detector-type",
-        "in": "path",
-        "description": "Built-in anomaly detector type. Supported values: \"latency\", \"traffic-volume\", \"api-event-volume\".\n",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "enum": [
-            "latency",
-            "traffic-volume",
-            "api-event-volume"
-          ]
         }
       },
       "destination-id": {
@@ -232388,9 +227381,7 @@
               "slack",
               "sns",
               "ilmt",
-              "iwhi-metering",
-              "ums",
-              "jira"
+              "iwhi-metering"
             ]
           },
           "is_enabled": {
@@ -232426,32 +227417,6 @@
           "api_key": {
             "type": "string",
             "description": "API key for authentication (only used for IWHI metering destinations)"
-          },
-          "jira_host": {
-            "type": "string",
-            "x-bhendi-no-ref-rewrite": true,
-            "description": "Jira host URL (only used for Jira destinations)"
-          },
-          "project_key": {
-            "type": "string",
-            "description": "Jira project key (only used for Jira destinations)",
-            "example": "OPS"
-          },
-          "issue_type": {
-            "type": "string",
-            "description": "Jira issue type (only used for Jira destinations)",
-            "example": "Bug"
-          },
-          "username": {
-            "type": "string",
-            "description": "Jira account username / email address (only used for Jira destinations)",
-            "example": "user@example.com"
-          },
-          "api_token": {
-            "type": "string",
-            "writeOnly": true,
-            "description": "Jira API token for authentication (only used for Jira destinations)",
-            "example": "ATATT3xFfGF09_EXAMPLE"
           },
           "webhook": {
             "type": "object",
@@ -232545,140 +227510,6 @@
       "DestinationUpdateRequest": {
         "description": "Request object to update a destination",
         "$ref": "#/components/schemas/Destination"
-      },
-      "NotificationCreateRequest": {
-        "description": "Request object to create a Jira ticket notification",
-        "type": "object",
-        "required": [
-          "config_type",
-          "destination_id",
-          "content"
-        ],
-        "properties": {
-          "config_type": {
-            "type": "string",
-            "description": "The type of notification destination",
-            "enum": [
-              "jira"
-            ]
-          },
-          "destination_id": {
-            "$ref": "#/components/schemas/Id"
-          },
-          "content": {
-            "type": "object",
-            "description": "The content used to populate the Jira ticket",
-            "properties": {
-              "overall_assessment": {
-                "type": "object",
-                "description": "AI-generated assessment of the finding",
-                "properties": {
-                  "summary": {
-                    "type": "string",
-                    "description": "Short summary of the finding"
-                  },
-                  "ai_severity": {
-                    "type": "string",
-                    "description": "AI-assessed severity level (e.g. low, medium, high, critical)"
-                  },
-                  "root_cause": {
-                    "type": "string",
-                    "description": "AI-identified root cause of the finding"
-                  }
-                }
-              },
-              "execution_context": {
-                "type": "object",
-                "description": "Contextual metadata about the finding and its environment",
-                "properties": {
-                  "finding_id": {
-                    "type": "string",
-                    "description": "Unique identifier for the finding"
-                  },
-                  "api_id": {
-                    "type": "string",
-                    "description": "Identifier of the API associated with the finding"
-                  },
-                  "notification_message": {
-                    "type": "string",
-                    "description": "Human-readable message describing the notification trigger"
-                  }
-                }
-              },
-              "recommended_actions": {
-                "type": "array",
-                "description": "Prioritised list of remediation actions",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "priority": {
-                      "type": "integer",
-                      "description": "Numeric priority (1 = highest)"
-                    },
-                    "priority_label": {
-                      "type": "string",
-                      "description": "Human-readable priority label (e.g. CRITICAL, HIGH)"
-                    },
-                    "title": {
-                      "type": "string",
-                      "description": "Short title of the recommended action"
-                    },
-                    "category": {
-                      "type": "string",
-                      "description": "Category of the action (e.g. security, performance)"
-                    },
-                    "detailed_explanation": {
-                      "type": "string",
-                      "description": "Full explanation of the recommended action"
-                    },
-                    "implementation_guidance": {
-                      "type": "object",
-                      "description": "Guidance for implementing the action",
-                      "properties": {
-                        "immediate_action": {
-                          "type": "string",
-                          "description": "Immediate step to take"
-                        },
-                        "verification": {
-                          "type": "string",
-                          "description": "How to verify the action was successful"
-                        }
-                      }
-                    },
-                    "evidence": {
-                      "type": "array",
-                      "description": "Supporting evidence for this action",
-                      "items": {
-                        "type": "string"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "NotificationCreateResponse": {
-        "description": "Response object after creating a Jira ticket notification",
-        "type": "object",
-        "properties": {
-          "issue_key": {
-            "type": "string",
-            "description": "The Jira issue key of the created ticket (e.g. OPS-42)",
-            "example": "OPS-42"
-          },
-          "issue_url": {
-            "type": "string",
-            "description": "URL to the created Jira issue",
-            "example": "https://your-org.atlassian.net/browse/OPS-42"
-          },
-          "status": {
-            "type": "string",
-            "description": "Result status of the notification operation",
-            "example": "created"
-          }
-        }
       },
       "EngagementConfigResponse": {
         "type": "object",
@@ -233111,92 +227942,6 @@
         "properties": {
           "href": {
             "type": "string"
-          }
-        }
-      },
-      "AnomalyDetectorRequest": {
-        "type": "object",
-        "description": "An anomaly detector configuration",
-        "additionalProperties": true
-      },
-      "AnomalyDetector": {
-        "type": "object",
-        "description": "An anomaly detector with system-assigned ID",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/AnomalyDetectorRequest"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "id": {
-                "$ref": "#/components/schemas/Id"
-              }
-            }
-          }
-        ]
-      },
-      "AnomalyDetectorResponse": {
-        "description": "An anomaly detector response",
-        "$ref": "#/components/schemas/AnomalyDetector"
-      },
-      "AnomalyDetectorCreateRequest": {
-        "description": "Request object to create an anomaly detector. Supports an optional start_on_create boolean — when true the director starts the detector immediately after creation in a single API call.",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/AnomalyDetectorRequest"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "start_on_create": {
-                "type": "boolean",
-                "description": "When true, the director starts the detector immediately after it is created. The response includes a `started` boolean indicating whether the start succeeded.\n"
-              }
-            }
-          }
-        ]
-      },
-      "AnomalyDetectorCreateResponse": {
-        "description": "Response object to create an anomaly detector",
-        "$ref": "#/components/schemas/AnomalyDetector"
-      },
-      "AnomalyDetectorUpdateRequest": {
-        "description": "Request object to update an anomaly detector",
-        "$ref": "#/components/schemas/AnomalyDetectorRequest"
-      },
-      "AnomalyDetectorTemplateRequest": {
-        "description": "Request body for creating a detector from a template (name is optional)",
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Optional custom name for the detector. Defaults to \"{type}-detector\"."
-          },
-          "start_on_create": {
-            "type": "boolean",
-            "description": "When true, the director starts the detector immediately after it is created. The response includes a `started` boolean indicating whether the start succeeded.\n"
-          }
-        }
-      },
-      "AnomalyDetectorsListResponse": {
-        "description": "List of anomaly detectors",
-        "type": "object",
-        "properties": {
-          "total": {
-            "$ref": "#/components/schemas/NonNegativeInteger"
-          },
-          "offset": {
-            "$ref": "#/components/schemas/NonNegativeInteger"
-          },
-          "limit": {
-            "$ref": "#/components/schemas/NonNegativeInteger"
-          },
-          "anomaly_detectors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AnomalyDetector"
-            }
           }
         }
       },
@@ -233729,21 +228474,6 @@
       }
     },
     "responses": {
-      "NotificationCreateResponse": {
-        "description": "A notification create response",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/NotificationCreateResponse"
-            }
-          },
-          "application/yaml": {
-            "schema": {
-              "$ref": "#/components/schemas/NotificationCreateResponse"
-            }
-          }
-        }
-      },
       "DestinationResponse": {
         "description": "A destination response",
         "content": {
@@ -233841,51 +228571,6 @@
       },
       "NoContentResponse": {
         "description": "The request was successfully processed."
-      },
-      "AnomalyDetectorResponse": {
-        "description": "An anomaly detector response",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/AnomalyDetectorResponse"
-            }
-          },
-          "application/yaml": {
-            "schema": {
-              "$ref": "#/components/schemas/AnomalyDetectorResponse"
-            }
-          }
-        }
-      },
-      "AnomalyDetectorCreateResponse": {
-        "description": "An anomaly detector create response",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/AnomalyDetectorCreateResponse"
-            }
-          },
-          "application/yaml": {
-            "schema": {
-              "$ref": "#/components/schemas/AnomalyDetectorCreateResponse"
-            }
-          }
-        }
-      },
-      "AnomalyDetectorsListResponse": {
-        "description": "List of anomaly detectors",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/AnomalyDetectorsListResponse"
-            }
-          },
-          "application/yaml": {
-            "schema": {
-              "$ref": "#/components/schemas/AnomalyDetectorsListResponse"
-            }
-          }
-        }
       },
       "RuleResponse": {
         "description": "A rule response",
@@ -249862,10 +244547,6 @@
               },
               "gen_api_sensitivity": {
                 "type": "number"
-              },
-              "auto_promote": {
-                "type": "boolean",
-                "default": false
               }
             }
           },
