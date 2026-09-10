@@ -1,6 +1,6 @@
 {
   "main.css": "https://ibm-apiconnect.github.io/apidocs/app/css/explorer.css",
-  "main.js": "https://ibm-apiconnect.github.io/apidocs/app/static/js/main.318d5742.js",
+  "main.js": "https://ibm-apiconnect.github.io/apidocs/app/static/js/main.2c6d66dc.js",
   "static/js/308.5275ccda.chunk.js": "https://ibm-apiconnect.github.io/apidocs/app/static/js/308.5275ccda.chunk.js",
   "static/js/709.144b46b4.chunk.js": "https://ibm-apiconnect.github.io/apidocs/app/static/js/709.144b46b4.chunk.js",
   "worker-script.min.js": "https://ibm-apiconnect.github.io/apidocs/app/3ccf5b02f61f225d.js",
@@ -275,6 +275,6 @@
   "IBMPlexSans-Light.woff": "https://ibm-apiconnect.github.io/apidocs/app/4c6042cb9d7525f1.woff",
   "IBMPlexMono-Light.woff": "https://ibm-apiconnect.github.io/apidocs/app/9d0c2641dbde8fe4.woff",
   "explorer.css.map": "https://ibm-apiconnect.github.io/apidocs/app/css/explorer.css.map",
-  "main.318d5742.js.map": "https://ibm-apiconnect.github.io/apidocs/app/static/js/main.318d5742.js.map",
+  "main.2c6d66dc.js.map": "https://ibm-apiconnect.github.io/apidocs/app/static/js/main.2c6d66dc.js.map",
   "709.144b46b4.chunk.js.map": "https://ibm-apiconnect.github.io/apidocs/app/static/js/709.144b46b4.chunk.js.map"
 }
