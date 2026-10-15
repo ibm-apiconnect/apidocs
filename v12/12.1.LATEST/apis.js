@@ -7450,6 +7450,299 @@
         ]
       }
     },
+    "/cloud/integrations/itopsplatform": {
+      "description": "The collection of Integration operations",
+      "post": {
+        "summary": "Create a Integration object",
+        "description": "Create a Integration object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "integration_createItopsplatformSubcollection",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Integration"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/Integration"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful create",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Integration"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Integration"
+                }
+              }
+            }
+          },
+          "302": {
+            "description": "Redirect response",
+            "headers": {
+              "Location": {
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Management",
+          "Resource: Integration (Itopsplatform Subcollection)"
+        ]
+      },
+      "get": {
+        "summary": "List the Integration objects",
+        "description": "List the Integration objects",
+        "operationId": "integration_listItopsplatformSubcollection",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Management",
+          "Resource: Integration (Itopsplatform Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Integration objects",
+        "description": "Clear the Integration objects",
+        "operationId": "integration_clearItopsplatformSubcollection",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/confirm"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Management",
+          "Resource: Integration (Itopsplatform Subcollection)"
+        ]
+      }
+    },
+    "/cloud/integrations/itopsplatform/{integration}": {
+      "description": "Integration object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/integration"
+        }
+      ],
+      "get": {
+        "summary": "Get the Integration object by name or id",
+        "description": "Get the Integration object by name or id",
+        "operationId": "integration_getItopsplatformSubcollection",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Integration"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Integration"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Management",
+          "Resource: Integration (Itopsplatform Subcollection)"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Integration object by name or id",
+        "description": "Update the Integration object by name or id\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "integration_updateItopsplatformSubcollection",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Integration"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/Integration"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Integration"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Integration"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Management",
+          "Resource: Integration (Itopsplatform Subcollection)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Integration object by name or id",
+        "description": "Delete the Integration object by name or id",
+        "operationId": "integration_delItopsplatformSubcollection",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Integration"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Integration"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Management",
+          "Resource: Integration (Itopsplatform Subcollection)"
+        ]
+      }
+    },
     "/cloud/registrations": {
       "description": "The collection of Registration operations",
       "post": {
@@ -15538,6 +15831,299 @@
         ]
       }
     },
+    "/cloud/itopsplatforms": {
+      "description": "The collection of Itopsplatform operations",
+      "post": {
+        "summary": "Create a Itopsplatform object",
+        "description": "Create a Itopsplatform object\n          \n          Required fields:\n          - integration_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "itopsplatform_create",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Itopsplatform"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/Itopsplatform"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful create",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Itopsplatform"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Itopsplatform"
+                }
+              }
+            }
+          },
+          "302": {
+            "description": "Redirect response",
+            "headers": {
+              "Location": {
+                "description": "Redirect payload",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Management",
+          "Resource: Itopsplatform"
+        ]
+      },
+      "get": {
+        "summary": "List the Itopsplatform objects",
+        "description": "List the Itopsplatform objects",
+        "operationId": "itopsplatform_list",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItopsplatformList"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItopsplatformList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Management",
+          "Resource: Itopsplatform"
+        ]
+      },
+      "delete": {
+        "summary": "Clear the Itopsplatform objects",
+        "description": "Clear the Itopsplatform objects",
+        "operationId": "itopsplatform_clear",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/confirm"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Management",
+          "Resource: Itopsplatform"
+        ]
+      }
+    },
+    "/cloud/itopsplatforms/{itopsplatform}": {
+      "description": "Itopsplatform object operations",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/itopsplatform"
+        }
+      ],
+      "get": {
+        "summary": "Get the Itopsplatform object by name or id",
+        "description": "Get the Itopsplatform object by name or id",
+        "operationId": "itopsplatform_get",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Itopsplatform"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Itopsplatform"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Management",
+          "Resource: Itopsplatform"
+        ]
+      },
+      "patch": {
+        "summary": "Update the Itopsplatform object by name or id",
+        "description": "Update the Itopsplatform object by name or id\n          \n          Fields not allowed to be null:\n          - integration_url\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
+        "operationId": "itopsplatform_update",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Itopsplatform"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/Itopsplatform"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Itopsplatform"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Itopsplatform"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Management",
+          "Resource: Itopsplatform"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the Itopsplatform object by name or id",
+        "description": "Delete the Itopsplatform object by name or id",
+        "operationId": "itopsplatform_del",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Itopsplatform"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Itopsplatform"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Cloud Management",
+          "Resource: Itopsplatform"
+        ]
+      }
+    },
     "/orgs/{org}/tls-server-profiles": {
       "description": "TLS Server Profile operations across all collections",
       "parameters": [
@@ -18564,11 +19150,33 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
+              },
+              "examples": {
+                "XsltTransformationAlias": {
+                  "summary": "Example for XSLT transformation alias create",
+                  "value": {
+                    "name": "acme-xslt-alias",
+                    "title": "ACME XSLT Transformation Alias",
+                    "summary": "Example XSLT transformation alias for ACME org",
+                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
+              },
+              "examples": {
+                "XsltTransformationAlias": {
+                  "summary": "Example for XSLT transformation alias create",
+                  "value": {
+                    "name": "acme-xslt-alias",
+                    "title": "ACME XSLT Transformation Alias",
+                    "summary": "Example XSLT transformation alias for ACME org",
+                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
+                  }
+                }
               }
             },
             "multipart/form-data": {
@@ -18863,11 +19471,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
+              },
+              "examples": {
+                "XsltTransformationAlias": {
+                  "summary": "Example for XSLT transformation alias update",
+                  "value": {
+                    "title": "ACME XSLT Transformation Alias",
+                    "summary": "Updated XSLT transformation alias for ACME org",
+                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
+              },
+              "examples": {
+                "XsltTransformationAlias": {
+                  "summary": "Example for XSLT transformation alias update",
+                  "value": {
+                    "title": "ACME XSLT Transformation Alias",
+                    "summary": "Updated XSLT transformation alias for ACME org",
+                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
+                  }
+                }
               }
             },
             "multipart/form-data": {
@@ -19018,11 +19646,33 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
+              },
+              "examples": {
+                "XsltTransformationAlias": {
+                  "summary": "Example for XSLT transformation alias update by name and version",
+                  "value": {
+                    "name": "acme-xslt-alias",
+                    "title": "ACME XSLT Transformation Alias",
+                    "summary": "Updated XSLT transformation alias for ACME org",
+                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
+              },
+              "examples": {
+                "XsltTransformationAlias": {
+                  "summary": "Example for XSLT transformation alias update by name and version",
+                  "value": {
+                    "name": "acme-xslt-alias",
+                    "title": "ACME XSLT Transformation Alias",
+                    "summary": "Updated XSLT transformation alias for ACME org",
+                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
+                  }
+                }
               }
             },
             "multipart/form-data": {
@@ -22769,8 +23419,20 @@
           }
         },
         "responses": {
-          "204": {
-            "description": "Success"
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettingsTestConnectionResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettingsTestConnectionResponse"
+                }
+              }
+            }
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -22959,6 +23621,15 @@
         "required": false,
         "schema": {
           "type": "string"
+        }
+      },
+      "calc_dep": {
+        "name": "calc_dep",
+        "in": "query",
+        "description": "Calculate dependencies",
+        "required": false,
+        "schema": {
+          "type": "boolean"
         }
       },
       "capture-id": {
@@ -23276,6 +23947,15 @@
           "type": "string"
         }
       },
+      "integration-operation": {
+        "name": "integration-operation",
+        "in": "path",
+        "description": "Integration Operation name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
       "invitation": {
         "name": "invitation",
         "in": "path",
@@ -23299,6 +23979,15 @@
         "in": "query",
         "description": "token",
         "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "itopsplatform": {
+        "name": "itopsplatform",
+        "in": "path",
+        "description": "Itopsplatform name or id",
+        "required": true,
         "schema": {
           "type": "string"
         }
@@ -24965,7 +25654,8 @@
             "enum": [
               "toolkit",
               "atm",
-              "ai"
+              "ai",
+              "transition_helper"
             ]
           },
           "realm": {
@@ -26685,6 +27375,11 @@
               }
             }
           },
+          "api_security_analytics_service_url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -27425,6 +28120,18 @@
           "ai_gateway_enabled": {
             "type": "boolean"
           },
+          "cipher_suites": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "disabled_protocols": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "opentelemetry_url": {
             "type": "string",
             "format": "uri",
@@ -28109,7 +28816,8 @@
             "enum": [
               "5000",
               "6000",
-              "12000"
+              "12000",
+              "13000"
             ]
           },
           "advanced_scope": {
@@ -28836,6 +29544,126 @@
                     }
                   }
                 }
+              },
+              "third_party_config_13000": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "introspection_mode": {
+                    "type": "string",
+                    "enum": [
+                      "remote",
+                      "local"
+                    ]
+                  },
+                  "remote_introspection": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "gateway_user": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "local_introspection": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "issuer": {
+                        "type": "string"
+                      },
+                      "jwks_uri": {
+                        "type": "string"
+                      },
+                      "use_local_clock_skew": {
+                        "type": "boolean"
+                      },
+                      "clock_skew_in_seconds": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "token_generator": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "access_token_exp_interval": {
+                        "type": "integer"
+                      },
+                      "auth_code_exp_interval": {
+                        "type": "integer"
+                      },
+                      "expiry": {
+                        "type": "integer"
+                      },
+                      "enforce_pkce": {
+                        "type": "boolean"
+                      },
+                      "algorithm": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "refresh_token_url": {
+                    "type": "string"
+                  },
+                  "dcr": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "provider_name": {
+                        "type": "string"
+                      },
+                      "endpoint": {
+                        "type": "string"
+                      },
+                      "endpoint_headers": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      },
+                      "auth_type": {
+                        "type": "string",
+                        "enum": [
+                          "basic",
+                          "token",
+                          "refresh_token",
+                          "client_credentials",
+                          "none"
+                        ]
+                      },
+                      "username": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "password": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "token": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "token_type": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "client_id": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "client_secret": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "scope": {
+                        "type": "string",
+                        "nullable": true
+                      }
+                    }
+                  }
+                }
               }
             }
           },
@@ -29355,6 +30183,33 @@
               ]
             },
             "nullable": true
+          },
+          "key_exchange_mechanisms": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "MLKEM512",
+                "MLKEM768",
+                "X25519MLKEM768",
+                "SecP256r1MLKEM768",
+                "MLKEM1024",
+                "SecP384r1MLKEM1024",
+                "p256",
+                "p384",
+                "p521",
+                "x25519",
+                "x448",
+                "ffdhe2048",
+                "ffdhe3072",
+                "ffdhe4096",
+                "ffdhe6144",
+                "ffdhe8192",
+                "brainpoolP256",
+                "brainpoolP384",
+                "brainpoolP512"
+              ]
+            }
           },
           "elliptic_curve_auto_negotiation": {
             "type": "boolean",
@@ -30378,6 +31233,11 @@
           "certificate_info": {
             "type": "string"
           },
+          "cert_name": {
+            "type": "string",
+            "nullable": true,
+            "description": "User-friendly name for certificate selection, auto-generated from certificate CN/SAN/O or fingerprint"
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -30653,9 +31513,7 @@
           "gateway_type": {
             "type": "string",
             "enum": [
-              "datapower-gateway",
               "datapower-api-gateway",
-              "datapower-nano-gateway",
               "wm-api-gateway"
             ]
           },
@@ -30951,6 +31809,18 @@
           },
           "ai_gateway_enabled": {
             "type": "boolean"
+          },
+          "cipher_suites": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "disabled_protocols": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "dp_nano_gw_limits": {
             "type": "object",
@@ -31837,6 +32707,13 @@
               "format": "uri"
             }
           },
+          "integration_operation_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -31871,6 +32748,185 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Integration"
+            }
+          }
+        }
+      },
+      "IntegrationOperation": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "integration_operation"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "enabled",
+              "disabled"
+            ]
+          },
+          "category": {
+            "type": "string"
+          },
+          "trigger": {
+            "type": "string",
+            "enum": [
+              "manual",
+              "automatic",
+              "scheduled"
+            ]
+          },
+          "scope": {
+            "type": "string",
+            "enum": [
+              "cloud",
+              "org",
+              "catalog",
+              "space"
+            ]
+          },
+          "http_method": {
+            "type": "string",
+            "enum": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          },
+          "operation_path": {
+            "type": "string"
+          },
+          "parameters": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "input_schema": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "output_schemas": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "invoke_input_schema": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "invoke_output_schemas": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "settings": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "result_type": {
+            "type": "string",
+            "enum": [
+              "none",
+              "sync",
+              "download",
+              "async"
+            ]
+          },
+          "exec_permissions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confirmation_required": {
+            "type": "boolean"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "schema_components": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "schedule": {
+            "type": "object",
+            "properties": {
+              "cronExpression": {
+                "type": "string"
+              },
+              "input": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          },
+          "remote_api_versions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "IntegrationOperationList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntegrationOperation"
             }
           }
         }
@@ -31972,6 +33028,98 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Invitation"
+            }
+          }
+        }
+      },
+      "Itopsplatform": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "itopsplatform"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "integration_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/ResourceVisibility"
+          },
+          "endpoint": {
+            "$ref": "#/components/schemas/SecuredEndpoint"
+          },
+          "configuration": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "credentials": {
+            "$ref": "#/components/schemas/ItOpsCredentials"
+          },
+          "remote_api_version": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "ItopsplatformList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Itopsplatform"
             }
           }
         }
@@ -32546,6 +33694,11 @@
             "type": "string",
             "maxLength": 65535
           },
+          "key_name": {
+            "type": "string",
+            "nullable": true,
+            "description": "Name for the primary key+certificate pair, auto-generated from certificate or user-provided"
+          },
           "private_key_entry": {
             "type": "string",
             "format": "password"
@@ -32560,6 +33713,41 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/CertEntry"
+            }
+          },
+          "key_entries": {
+            "type": "array",
+            "nullable": true,
+            "description": "Additional key+certificate pairs beyond the first (for multi-key keystores)",
+            "items": {
+              "type": "object",
+              "required": [
+                "key_name",
+                "private_key_entry",
+                "public_certificate_entry"
+              ],
+              "properties": {
+                "key_name": {
+                  "type": "string",
+                  "description": "Name for this key+certificate pair, auto-generated from certificate CN or user-provided"
+                },
+                "private_key_entry": {
+                  "type": "string",
+                  "format": "password",
+                  "description": "Private key in PEM format"
+                },
+                "public_certificate_entry": {
+                  "$ref": "#/components/schemas/CertEntry"
+                },
+                "trusted_certificate_entries": {
+                  "type": "array",
+                  "nullable": true,
+                  "items": {
+                    "$ref": "#/components/schemas/CertEntry"
+                  },
+                  "description": "CA certificate chain for this key+certificate pair"
+                }
+              }
             }
           },
           "keystore": {
@@ -33666,7 +34854,8 @@
             "enum": [
               "5000",
               "6000",
-              "12000"
+              "12000",
+              "13000"
             ]
           },
           "advanced_scope": {
@@ -34391,6 +35580,126 @@
                     }
                   }
                 }
+              },
+              "third_party_config_13000": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "introspection_mode": {
+                    "type": "string",
+                    "enum": [
+                      "remote",
+                      "local"
+                    ]
+                  },
+                  "remote_introspection": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "gateway_user": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "local_introspection": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "issuer": {
+                        "type": "string"
+                      },
+                      "jwks_uri": {
+                        "type": "string"
+                      },
+                      "use_local_clock_skew": {
+                        "type": "boolean"
+                      },
+                      "clock_skew_in_seconds": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "token_generator": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "access_token_exp_interval": {
+                        "type": "integer"
+                      },
+                      "auth_code_exp_interval": {
+                        "type": "integer"
+                      },
+                      "expiry": {
+                        "type": "integer"
+                      },
+                      "enforce_pkce": {
+                        "type": "boolean"
+                      },
+                      "algorithm": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "refresh_token_url": {
+                    "type": "string"
+                  },
+                  "dcr": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "provider_name": {
+                        "type": "string"
+                      },
+                      "endpoint": {
+                        "type": "string"
+                      },
+                      "endpoint_headers": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      },
+                      "auth_type": {
+                        "type": "string",
+                        "enum": [
+                          "basic",
+                          "token",
+                          "refresh_token",
+                          "client_credentials",
+                          "none"
+                        ]
+                      },
+                      "username": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "password": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "token": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "token_type": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "client_id": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "client_secret": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "scope": {
+                        "type": "string",
+                        "nullable": true
+                      }
+                    }
+                  }
+                }
               }
             }
           },
@@ -35075,6 +36384,12 @@
           "api_agent_enabled": {
             "type": "boolean",
             "nullable": true
+          },
+          "portal_chatbot_consumer_roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "metadata": {
             "type": "object",
@@ -37008,7 +38323,8 @@
               "analytics",
               "transition_helper",
               "analytics_proxy",
-              "mcp_registry"
+              "mcp_registry",
+              "security_center"
             ]
           },
           "client_id": {
@@ -38871,7 +40187,10 @@
             "enum": [
               "subscription",
               "create_subscription_approval",
-              "delete_subscription_approval"
+              "delete_subscription_approval",
+              "create_app_approval",
+              "register_app_approval",
+              "update_app_approval"
             ]
           },
           "state": {
@@ -39556,6 +40875,33 @@
             },
             "nullable": true
           },
+          "key_exchange_mechanisms": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "MLKEM512",
+                "MLKEM768",
+                "X25519MLKEM768",
+                "SecP256r1MLKEM768",
+                "MLKEM1024",
+                "SecP384r1MLKEM1024",
+                "p256",
+                "p384",
+                "p521",
+                "x25519",
+                "x448",
+                "ffdhe2048",
+                "ffdhe3072",
+                "ffdhe4096",
+                "ffdhe6144",
+                "ffdhe8192",
+                "brainpoolP256",
+                "brainpoolP384",
+                "brainpoolP512"
+              ]
+            }
+          },
           "elliptic_curve_auto_negotiation": {
             "type": "boolean",
             "default": true
@@ -39618,6 +40964,16 @@
             "type": "string",
             "format": "uri",
             "nullable": true
+          },
+          "key_name": {
+            "type": "string",
+            "nullable": true,
+            "description": "Selects a specific key+certificate pair from the keystore by name (for multi-key keystores). If not specified, uses the first/default key."
+          },
+          "cert_name": {
+            "type": "string",
+            "nullable": true,
+            "description": "Selects a specific certificate from the truststore by name. If not specified, all certificates in the truststore are used."
           },
           "webhook_urls": {
             "type": "array",
@@ -39847,6 +41203,33 @@
             },
             "nullable": true
           },
+          "key_exchange_mechanisms": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "MLKEM512",
+                "MLKEM768",
+                "X25519MLKEM768",
+                "SecP256r1MLKEM768",
+                "MLKEM1024",
+                "SecP384r1MLKEM1024",
+                "p256",
+                "p384",
+                "p521",
+                "x25519",
+                "x448",
+                "ffdhe2048",
+                "ffdhe3072",
+                "ffdhe4096",
+                "ffdhe6144",
+                "ffdhe8192",
+                "brainpoolP256",
+                "brainpoolP384",
+                "brainpoolP512"
+              ]
+            }
+          },
           "elliptic_curve": {
             "type": "array",
             "items": {
@@ -39900,10 +41283,20 @@
             "type": "string",
             "format": "uri"
           },
+          "key_name": {
+            "type": "string",
+            "nullable": true,
+            "description": "Selects a specific key+certificate pair from the keystore by name (for multi-key keystores). If not specified, uses the first/default key."
+          },
           "truststore_url": {
             "type": "string",
             "format": "uri",
             "nullable": true
+          },
+          "cert_name": {
+            "type": "string",
+            "nullable": true,
+            "description": "Selects a specific certificate from the truststore by name. If not specified, all certificates in the truststore are used."
           },
           "gateway_service_urls": {
             "type": "array",
@@ -41280,6 +42673,41 @@
             "items": {
               "$ref": "#/components/schemas/XsltTransformationAlias"
             }
+          }
+        }
+      },
+      "CreateProjectFilesOrgScopeResponse": {
+        "type": "object",
+        "properties": {
+          "project": {
+            "$ref": "#/components/schemas/Project"
+          },
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProjectFile"
+            }
+          }
+        }
+      },
+      "CreateProjectFilesOrgScopeRequest": {
+        "type": "object",
+        "required": [
+          "projectName",
+          "archive"
+        ],
+        "properties": {
+          "projectName": {
+            "type": "string",
+            "description": "Name of the project to create"
+          },
+          "archive": {
+            "type": "string",
+            "format": "binary",
+            "description": "Zip archive containing project files"
           }
         }
       },
@@ -42672,6 +44100,9 @@
             "$ref": "#/components/schemas/ProjectInboundBulkHead"
           },
           {
+            "$ref": "#/components/schemas/ProjectInboundBulkHeadV2"
+          },
+          {
             "$ref": "#/components/schemas/ProjectSetMediaType"
           },
           {
@@ -42732,7 +44163,13 @@
             "$ref": "#/components/schemas/ProjectHTTPEndpoint"
           },
           {
+            "$ref": "#/components/schemas/ProjectHTTPEndpointV2"
+          },
+          {
             "$ref": "#/components/schemas/ProjectMockEndpoint"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectMockEndpointV2"
           },
           {
             "$ref": "#/components/schemas/ProjectMockResponse"
@@ -42751,6 +44188,9 @@
           },
           {
             "$ref": "#/components/schemas/ProjectScope"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectScopeV2"
           },
           {
             "$ref": "#/components/schemas/ProjectCORS"
@@ -42793,7 +44233,11 @@
           "Set",
           "RateLimit",
           "RateLimitDef",
-          "Scope"
+          "Scope",
+          "SOAPEndpoint",
+          "InboundAuthMessage",
+          "SOAPMessageConfig",
+          "SOAPToRESTMapping"
         ],
         "type": "string"
       },
@@ -42843,7 +44287,8 @@
               "payment_method",
               "notification",
               "user_registry",
-              "governance"
+              "governance",
+              "itopsplatform"
             ]
           },
           "info": {
@@ -44240,7 +45685,14 @@
           "file": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ProjectFile"
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ProjectFile"
+                },
+                {
+                  "$ref": "#/components/schemas/ProjectZip"
+                }
+              ]
             }
           }
         }
@@ -45307,7 +46759,8 @@
           "domain": {
             "enum": [
               "api",
-              "ai-platform"
+              "ai-platform",
+              "mcp"
             ],
             "type": "string"
           },
@@ -45323,6 +46776,13 @@
               }
             }
           }
+        }
+      },
+      "ProjectNanoGwTelemetry": {
+        "description": "Optional telemetry attributes pushed to OpenTelemetry endpoint for nano gateway policies",
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
         }
       },
       "ProjectReference": {
@@ -45516,6 +46976,9 @@
                                 "type": "integer"
                               }
                             }
+                          },
+                          "telemetry": {
+                            "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
                           }
                         }
                       }
@@ -45603,10 +47066,32 @@
             "additionalProperties": false,
             "properties": {
               "api-spec": {
-                "$ref": "#/components/schemas/ProjectPath"
+                "type": "object",
+                "required": [
+                  "$path"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "$path": {
+                    "description": "Specifies the path to the referencing resource The path can be relative to the referring file or absolute from the project folder This could point to yaml, json, wsdl or zip files",
+                    "type": "string"
+                  },
+                  "rootFile": {
+                    "description": "Entry point file within ZIP archive (required for ZIP archives containing WSDL) applicable only for WebMethods gateway. Specifies the path to the main WSDL file within the ZIP archive. Example: 'global_weather.wsdl' or 'wsdl/services/weather/GlobalWeather.wsdl'",
+                    "type": "string"
+                  }
+                }
               },
               "rest-def": {
-                "$ref": "#/components/schemas/ProjectPath"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/ProjectPath"
+                  },
+                  {
+                    "$ref": "#/components/schemas/ProjectReference"
+                  }
+                ],
+                "description": "REST definition for SOAP APIs: for DataPower gateways, specify the path to the API spec YAML file using $path; for webMethods Gateway, specify a reference to a SOAPToRESTMapping asset using $ref."
               },
               "uriSchemes": {
                 "$ref": "#/components/schemas/ProjectReference"
@@ -47133,7 +48618,10 @@
             "type": "string"
           },
           "apiVersion": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v1"
+            ]
           },
           "metadata": {
             "$ref": "#/components/schemas/ProjectMetadata"
@@ -47184,6 +48672,135 @@
                 }
               }
             }
+          }
+        }
+      },
+      "ProjectScopeV2": {
+        "description": "The message identifies the scope",
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "Scope"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v2"
+            ]
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "rest",
+                  "policy-sequence"
+                ],
+                "properties": {
+                  "policy-sequence": {
+                    "$ref": "#/components/schemas/ProjectReferenceList"
+                  },
+                  "rest": {
+                    "type": "object",
+                    "required": [
+                      "resources"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "resources": {
+                        "description": "Multiple instances of resources can be given",
+                        "type": "array",
+                        "items": {
+                          "description": "Multiple instances of methods for each resource can be given",
+                          "type": "object",
+                          "required": [
+                            "methods",
+                            "path"
+                          ],
+                          "additionalProperties": false,
+                          "properties": {
+                            "methods": {
+                              "type": "array",
+                              "minItems": 1,
+                              "items": {
+                                "type": "string",
+                                "enum": [
+                                  "get",
+                                  "post",
+                                  "put",
+                                  "delete",
+                                  "patch",
+                                  "head",
+                                  "keep"
+                                ]
+                              }
+                            },
+                            "path": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "soap",
+                  "policy-sequence"
+                ],
+                "properties": {
+                  "policy-sequence": {
+                    "$ref": "#/components/schemas/ProjectReferenceList"
+                  },
+                  "soap": {
+                    "type": "object",
+                    "required": [
+                      "operations"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "operations": {
+                        "description": "Multiple instances of operations can be given",
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "name"
+                          ],
+                          "additionalProperties": false,
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "description": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
         }
       },
@@ -47397,6 +49014,22 @@
                         }
                       }
                     }
+                  },
+                  "dp-nano-gateway": {
+                    "type": "object",
+                    "properties": {
+                      "apiVersion": {
+                        "type": "string"
+                      },
+                      "spec": {
+                        "type": "object",
+                        "properties": {
+                          "telemetry": {
+                            "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }
@@ -47474,6 +49107,48 @@
                     "http",
                     "https"
                   ]
+                }
+              },
+              "extensions": {
+                "description": "Gateway-specific extensions for URI schemes configuration",
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "webm-gateway": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "apiVersion": {
+                        "type": "string",
+                        "description": "API version for webm-gateway extension"
+                      },
+                      "spec": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "soap": {
+                            "type": "object",
+                            "description": "SOAP-specific configuration for webm-gateway",
+                            "additionalProperties": false,
+                            "properties": {
+                              "version": {
+                                "type": "string",
+                                "enum": [
+                                  "1.1",
+                                  "1.2"
+                                ],
+                                "description": "SOAP version (1.1 or 1.2)"
+                              },
+                              "validateVersion": {
+                                "type": "boolean",
+                                "description": "Whether to validate SOAP version"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -47769,6 +49444,22 @@
                         }
                       }
                     }
+                  },
+                  "dp-nano-gateway": {
+                    "type": "object",
+                    "properties": {
+                      "apiVersion": {
+                        "type": "string"
+                      },
+                      "spec": {
+                        "type": "object",
+                        "properties": {
+                          "telemetry": {
+                            "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }
@@ -47865,6 +49556,27 @@
                   },
                   "message": {
                     "type": "string"
+                  },
+                  "extensions": {
+                    "type": "object",
+                    "properties": {
+                      "dp-nano-gateway": {
+                        "type": "object",
+                        "properties": {
+                          "apiVersion": {
+                            "type": "string"
+                          },
+                          "spec": {
+                            "type": "object",
+                            "properties": {
+                              "telemetry": {
+                                "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               },
@@ -47912,6 +49624,27 @@
                   },
                   "message": {
                     "type": "string"
+                  },
+                  "extensions": {
+                    "type": "object",
+                    "properties": {
+                      "dp-nano-gateway": {
+                        "type": "object",
+                        "properties": {
+                          "apiVersion": {
+                            "type": "string"
+                          },
+                          "spec": {
+                            "type": "object",
+                            "properties": {
+                              "telemetry": {
+                                "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               },
@@ -47972,6 +49705,27 @@
                   },
                   "message": {
                     "type": "string"
+                  },
+                  "extensions": {
+                    "type": "object",
+                    "properties": {
+                      "dp-nano-gateway": {
+                        "type": "object",
+                        "properties": {
+                          "apiVersion": {
+                            "type": "string"
+                          },
+                          "spec": {
+                            "type": "object",
+                            "properties": {
+                              "telemetry": {
+                                "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               },
@@ -48009,6 +49763,27 @@
                   },
                   "message": {
                     "type": "string"
+                  },
+                  "extensions": {
+                    "type": "object",
+                    "properties": {
+                      "dp-nano-gateway": {
+                        "type": "object",
+                        "properties": {
+                          "apiVersion": {
+                            "type": "string"
+                          },
+                          "spec": {
+                            "type": "object",
+                            "properties": {
+                              "telemetry": {
+                                "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               },
@@ -48131,6 +49906,27 @@
                   },
                   "message": {
                     "type": "string"
+                  },
+                  "extensions": {
+                    "type": "object",
+                    "properties": {
+                      "dp-nano-gateway": {
+                        "type": "object",
+                        "properties": {
+                          "apiVersion": {
+                            "type": "string"
+                          },
+                          "spec": {
+                            "type": "object",
+                            "properties": {
+                              "telemetry": {
+                                "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               },
@@ -48144,6 +49940,27 @@
                   },
                   "message": {
                     "type": "string"
+                  },
+                  "extensions": {
+                    "type": "object",
+                    "properties": {
+                      "dp-nano-gateway": {
+                        "type": "object",
+                        "properties": {
+                          "apiVersion": {
+                            "type": "string"
+                          },
+                          "spec": {
+                            "type": "object",
+                            "properties": {
+                              "telemetry": {
+                                "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }
@@ -48484,6 +50301,22 @@
                         }
                       }
                     }
+                  },
+                  "dp-nano-gateway": {
+                    "type": "object",
+                    "properties": {
+                      "apiVersion": {
+                        "type": "string"
+                      },
+                      "spec": {
+                        "type": "object",
+                        "properties": {
+                          "telemetry": {
+                            "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }
@@ -48569,7 +50402,10 @@
             "type": "string"
           },
           "apiVersion": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v1"
+            ]
           },
           "metadata": {
             "$ref": "#/components/schemas/ProjectMetadata"
@@ -48596,6 +50432,70 @@
                 "properties": {
                   "retryAfterValue": {
                     "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ProjectInboundBulkHeadV2": {
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "InboundBulkHead"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v2"
+            ]
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "maxConcurrentCalls",
+              "retryAfterResponseHeader"
+            ],
+            "properties": {
+              "maxConcurrentCalls": {
+                "type": "integer"
+              },
+              "retryAfterResponseHeader": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "retryAfterValue": {
+                    "type": "integer"
+                  }
+                }
+              },
+              "rest": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "enableBulkheadForCallbacks": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "maxConcurrentCallbacks": {
+                        "type": "integer"
+                      }
+                    }
                   }
                 }
               }
@@ -49360,6 +51260,46 @@
                                           }
                                         }
                                       ]
+                                    }
+                                  }
+                                }
+                              },
+                              "wsSecurityUsernameToken": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                  "applicationSecurity": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                      "mode": {
+                                        "type": "string",
+                                        "enum": [
+                                          "authorize",
+                                          "identify",
+                                          "authenticate"
+                                        ]
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "wsSecurityX509Certificate": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                  "applicationSecurity": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                      "mode": {
+                                        "type": "string",
+                                        "enum": [
+                                          "authorize",
+                                          "identify",
+                                          "authenticate"
+                                        ]
+                                      }
                                     }
                                   }
                                 }
@@ -50463,8 +52403,57 @@
             "oneOf": [
               {
                 "type": "object",
+                "description": "Default routing - Applicable only for SOAP",
+                "additionalProperties": false,
+                "required": [
+                  "default-endpoint"
+                ],
+                "properties": {
+                  "default-endpoint": {
+                    "$ref": "#/components/schemas/ProjectReference"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "description": "Load balancer routing with multiple endpoints",
+                "required": [
+                  "load-balancer-endpoints"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "load-balancer-endpoints": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "$ref"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "$ref": {
+                          "type": "string",
+                          "description": "Reference to SOAP Endpoint"
+                        },
+                        "suspendDuration": {
+                          "type": "integer",
+                          "description": "Suspend duration in seconds",
+                          "minimum": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
                 "description": "Routing info for conditional routing",
                 "additionalProperties": false,
+                "required": [
+                  "default-endpoint",
+                  "conditional-endpoints"
+                ],
                 "properties": {
                   "default-endpoint": {
                     "$ref": "#/components/schemas/ProjectReference"
@@ -50490,6 +52479,10 @@
                 "type": "object",
                 "description": "Routing info for content based routing",
                 "additionalProperties": false,
+                "required": [
+                  "default-endpoint",
+                  "content-based-endpoints"
+                ],
                 "properties": {
                   "default-endpoint": {
                     "$ref": "#/components/schemas/ProjectReference"
@@ -50558,6 +52551,10 @@
                 "type": "object",
                 "description": "Routing info for dynamic routing",
                 "additionalProperties": false,
+                "required": [
+                  "default-endpoint",
+                  "dynamic-endpoints"
+                ],
                 "properties": {
                   "default-endpoint": {
                     "$ref": "#/components/schemas/ProjectReference"
@@ -50730,7 +52727,10 @@
             "type": "string"
           },
           "apiVersion": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v1"
+            ]
           },
           "metadata": {
             "$ref": "#/components/schemas/ProjectMetadata"
@@ -50795,6 +52795,79 @@
           }
         }
       },
+      "ProjectHTTPEndpointV2": {
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "HTTPEndpoint"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v2"
+            ]
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "url": {
+                "type": "string"
+              },
+              "method": {
+                "type": "string"
+              },
+              "connectTimeout": {
+                "maximum": 4294967295,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "readTimeout": {
+                "maximum": 4294967295,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "nativeServiceTimeout": {
+                "maximum": 4294967295,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "serviceRegistryParameters": {
+                "type": "array",
+                "items": {
+                  "description": "A key-value pair specifying an SSL configuration parameter.",
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "tlsClientProfile": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
       "ProjectMockEndpoint": {
         "type": "object",
         "required": [
@@ -50812,7 +52885,10 @@
             "type": "string"
           },
           "apiVersion": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v1"
+            ]
           },
           "metadata": {
             "$ref": "#/components/schemas/ProjectMetadata"
@@ -50855,6 +52931,106 @@
                 }
               }
             }
+          }
+        }
+      },
+      "ProjectMockEndpointV2": {
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "MockEndpoint"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v2"
+            ]
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "rest"
+                ],
+                "properties": {
+                  "rest": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "paths": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "get": {
+                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
+                            },
+                            "post": {
+                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
+                            },
+                            "put": {
+                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
+                            },
+                            "patch": {
+                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
+                            },
+                            "delete": {
+                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
+                            },
+                            "head": {
+                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
+                            },
+                            "options": {
+                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
+                            },
+                            "trace": {
+                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "soap"
+                ],
+                "properties": {
+                  "soap": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "operations": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
         }
       },
@@ -51719,6 +53895,22 @@
                         }
                       }
                     }
+                  },
+                  "dp-nano-gateway": {
+                    "type": "object",
+                    "properties": {
+                      "apiVersion": {
+                        "type": "string"
+                      },
+                      "spec": {
+                        "type": "object",
+                        "properties": {
+                          "telemetry": {
+                            "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }
@@ -51769,6 +53961,30 @@
           },
           "instanceId": {
             "type": "string"
+          }
+        }
+      },
+      "WatsonxSettingsTestConnectionResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "available_models": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "model_type": {
+                  "type": "string"
+                },
+                "model_id": {
+                  "type": "string"
+                },
+                "is_latest": {
+                  "type": "boolean"
+                }
+              }
+            }
           }
         }
       },
@@ -52634,6 +54850,23 @@
           }
         }
       },
+      "ProjectUrl": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "project_url"
+        ],
+        "properties": {
+          "project_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL of the project to publish"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/Visibility"
+          }
+        }
+      },
       "ProjectZip": {
         "type": "object",
         "additionalProperties": true
@@ -52779,6 +55012,66 @@
           }
         ]
       },
+      "GatewayPortingAssessmentBulkActionRequest": {
+        "type": "object",
+        "properties": {
+          "products": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "scope": {
+                      "type": "string"
+                    },
+                    "space": {
+                      "type": "string"
+                    },
+                    "product_url": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "product_url"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "scope": {
+                      "type": "string"
+                    },
+                    "space": {
+                      "type": "string"
+                    },
+                    "product": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "version": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "version"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "product"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          }
+        }
+      },
       "GatewayPortingAssessmentCreateProjectRequest": {
         "type": "object",
         "properties": {
@@ -52870,6 +55163,62 @@
               "type": "object",
               "additionalProperties": true
             }
+          }
+        }
+      },
+      "GatewayPortingAssessmentListCatalogsResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2147483647
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "GatewayPortingAssessmentDownloadProjectScaffoldingFilesRequest": {
+        "type": "object",
+        "properties": {
+          "catalog": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "string"
+          },
+          "space": {
+            "type": "string"
+          },
+          "apis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "project_name": {
+            "type": "string"
+          },
+          "gateway_porting_assessment_url": {
+            "type": "string"
+          },
+          "project_title": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": {
+            "type": "string"
           }
         }
       },
@@ -53238,6 +55587,72 @@
           }
         }
       },
+      "ItOpsCredentials": {
+        "type": "object",
+        "required": [
+          "authentication_type"
+        ],
+        "properties": {
+          "authentication_type": {
+            "type": "string",
+            "enum": [
+              "basic",
+              "apikey"
+            ]
+          }
+        },
+        "oneOf": [
+          {
+            "title": "BasicCredentials",
+            "required": [
+              "authentication_type",
+              "username",
+              "password"
+            ],
+            "properties": {
+              "authentication_type": {
+                "type": "string",
+                "enum": [
+                  "basic"
+                ]
+              },
+              "username": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string",
+                "format": "password"
+              }
+            }
+          },
+          {
+            "title": "ApiKeyCredentials",
+            "additionalProperties": false,
+            "required": [
+              "authentication_type",
+              "api_key"
+            ],
+            "properties": {
+              "authentication_type": {
+                "type": "string",
+                "enum": [
+                  "apikey"
+                ]
+              },
+              "api_key": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "discriminator": {
+          "propertyName": "authentication_type",
+          "mapping": {
+            "basic": "#/components/schemas/ItOpsCredentials/oneOf/0",
+            "apikey": "#/components/schemas/ItOpsCredentials/oneOf/1"
+          }
+        }
+      },
       "XsltTransformationAliasMultipart": {
         "type": "object",
         "properties": {
@@ -53305,6 +55720,30 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ConfiguredXsltTransformationAlias"
+            }
+          }
+        }
+      },
+      "APIMatchRequest": {
+        "type": "object"
+      },
+      "APIMatchResponse": {
+        "type": "object",
+        "properties": {
+          "matches": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "match": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 100
+                }
+              }
             }
           }
         }
@@ -53520,8 +55959,8 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects, List the My User Group objects, List the My Team objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a User Group Role Assignment object, Clear the User Group Role Assignment objects, Update the User Group Role Assignment object by name or id, Delete the User Group Role Assignment object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Jwt Provider object, Clear the Jwt Provider objects, Update the Jwt Provider object by name or id, Delete the Jwt Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Programming Package object, Clear the Programming Package objects, Clear all Programming Package objects in all collections, Update the Programming Package object by id, Update the Programming Package object by name and version, Delete the Programming Package object by id, Delete the Programming Package object by name and version, List all Alias objects in all collections, Clear all Alias objects in all collections, Create a Xslt Transformation Alias object, Clear the Xslt Transformation Alias objects, Clear all Xslt Transformation Alias objects in all collections, Update the Xslt Transformation Alias object by id, Update the Xslt Transformation Alias object by name and version, Delete the Xslt Transformation Alias object by id, Delete the Xslt Transformation Alias object by name and version, Create a Http Transport Security Alias object, Clear the Http Transport Security Alias objects, Clear all Http Transport Security Alias objects in all collections, Update the Http Transport Security Alias object by id, Update the Http Transport Security Alias object by name and version, Delete the Http Transport Security Alias object by id, Delete the Http Transport Security Alias object by name and version, Create a Webmethods Integration Server Service Alias object, Clear the Webmethods Integration Server Service Alias objects, Clear all Webmethods Integration Server Service Alias objects in all collections, Update the Webmethods Integration Server Service Alias object by id, Update the Webmethods Integration Server Service Alias object by name and version, Delete the Webmethods Integration Server Service Alias object by id, Delete the Webmethods Integration Server Service Alias object by name and version, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Jwt Provider object, Clear the Configured Jwt Provider objects, Delete the Configured Jwt Provider object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Configured Portal Service object, Clear the Configured Portal Service objects, Delete the Configured Portal Service object by name or id, Create a Configured Programming Package object, Clear the Configured Programming Package objects, Delete the Configured Programming Package object by id, Delete the Configured Programming Package object by name and version, List all Configured Alias objects in all collections, Clear all Configured Alias objects in all collections, Create a Configured Xslt Transformation Alias object, Clear the Configured Xslt Transformation Alias objects, Clear all Configured Xslt Transformation Alias objects in all collections, Delete the Configured Xslt Transformation Alias object by id, Delete the Configured Xslt Transformation Alias object by name and version, Create a Configured Webmethods Integration Server Service Alias object, Clear the Configured Webmethods Integration Server Service Alias objects, Clear all Configured Webmethods Integration Server Service Alias objects in all collections, Delete the Configured Webmethods Integration Server Service Alias object by id, Delete the Configured Webmethods Integration Server Service Alias object by name and version, Create a Configured Http Transport Security Alias object, Clear the Configured Http Transport Security Alias objects, Clear all Configured Http Transport Security Alias objects in all collections, Delete the Configured Http Transport Security Alias object by id, Delete the Configured Http Transport Security Alias object by name and version, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Create a Simple Alias object, Clear the Simple Alias objects, Update the Simple Alias object by name or id, Delete the Simple Alias object by name or id, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, Create a User Group object, List the User Group objects, Clear the User Group objects, Get the User Group object by name or id, Update the User Group object by name or id, Delete the User Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the User Group Role Assignment objects, Get the User Group Role Assignment object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, Create a Team object, List the Team objects, Clear the Team objects, Get the Team object by name or id, Update the Team object by name or id, Delete the Team object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Jwt Provider objects, Get the Jwt Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, List the Programming Package objects, List all Programming Package objects in all collections, Get the Programming Package object by id, Get the Programming Package object by name and version, List the Xslt Transformation Alias objects, List all Xslt Transformation Alias objects in all collections, Get the Xslt Transformation Alias object by id, Get the Xslt Transformation Alias object by name and version, List the Http Transport Security Alias objects, List all Http Transport Security Alias objects in all collections, Get the Http Transport Security Alias object by id, Get the Http Transport Security Alias object by name and version, List the Webmethods Integration Server Service Alias objects, List all Webmethods Integration Server Service Alias objects in all collections, Get the Webmethods Integration Server Service Alias object by id, Get the Webmethods Integration Server Service Alias object by name and version, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Jwt Provider objects, Get the Configured Jwt Provider object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configured Portal Service objects, Get the Configured Portal Service object by name or id, List the Configured Programming Package objects, List all Configured Programming Package objects in all collections, Clear all Configured Programming Package objects in all collections, Get the Configured Programming Package object by id, Get the Configured Programming Package object by name and version, List the Configured Xslt Transformation Alias objects, List all Configured Xslt Transformation Alias objects in all collections, Get the Configured Xslt Transformation Alias object by id, Get the Configured Xslt Transformation Alias object by name and version, List the Configured Webmethods Integration Server Service Alias objects, List all Configured Webmethods Integration Server Service Alias objects in all collections, Get the Configured Webmethods Integration Server Service Alias object by id, Get the Configured Webmethods Integration Server Service Alias object by name and version, List the Configured Http Transport Security Alias objects, List all Configured Http Transport Security Alias objects in all collections, Get the Configured Http Transport Security Alias object by id, Get the Configured Http Transport Security Alias object by name and version, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, List the Simple Alias objects, Get the Simple Alias object by name or id, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, List the Resource Service Status objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a User Group Role Assignment object, Clear the User Group Role Assignment objects, Update the User Group Role Assignment object by name or id, Delete the User Group Role Assignment object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Jwt Provider object, Clear the Jwt Provider objects, Update the Jwt Provider object by name or id, Delete the Jwt Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Create a Itopsplatform object, Clear the Itopsplatform objects, Update the Itopsplatform object by name or id, Delete the Itopsplatform object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Programming Package object, Clear the Programming Package objects, Clear all Programming Package objects in all collections, Update the Programming Package object by id, Update the Programming Package object by name and version, Delete the Programming Package object by id, Delete the Programming Package object by name and version, List all Alias objects in all collections, Clear all Alias objects in all collections, Create a Xslt Transformation Alias object, Clear the Xslt Transformation Alias objects, Clear all Xslt Transformation Alias objects in all collections, Update the Xslt Transformation Alias object by id, Update the Xslt Transformation Alias object by name and version, Delete the Xslt Transformation Alias object by id, Delete the Xslt Transformation Alias object by name and version, Create a Http Transport Security Alias object, Clear the Http Transport Security Alias objects, Clear all Http Transport Security Alias objects in all collections, Update the Http Transport Security Alias object by id, Update the Http Transport Security Alias object by name and version, Delete the Http Transport Security Alias object by id, Delete the Http Transport Security Alias object by name and version, Create a Webmethods Integration Server Service Alias object, Clear the Webmethods Integration Server Service Alias objects, Clear all Webmethods Integration Server Service Alias objects in all collections, Update the Webmethods Integration Server Service Alias object by id, Update the Webmethods Integration Server Service Alias object by name and version, Delete the Webmethods Integration Server Service Alias object by id, Delete the Webmethods Integration Server Service Alias object by name and version, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Jwt Provider object, Clear the Configured Jwt Provider objects, Delete the Configured Jwt Provider object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Configured Portal Service object, Clear the Configured Portal Service objects, Delete the Configured Portal Service object by name or id, Create a Configured Programming Package object, Clear the Configured Programming Package objects, Delete the Configured Programming Package object by id, Delete the Configured Programming Package object by name and version, List all Configured Alias objects in all collections, Clear all Configured Alias objects in all collections, Create a Configured Xslt Transformation Alias object, Clear the Configured Xslt Transformation Alias objects, Clear all Configured Xslt Transformation Alias objects in all collections, Delete the Configured Xslt Transformation Alias object by id, Delete the Configured Xslt Transformation Alias object by name and version, Create a Configured Webmethods Integration Server Service Alias object, Clear the Configured Webmethods Integration Server Service Alias objects, Clear all Configured Webmethods Integration Server Service Alias objects in all collections, Delete the Configured Webmethods Integration Server Service Alias object by id, Delete the Configured Webmethods Integration Server Service Alias object by name and version, Create a Configured Http Transport Security Alias object, Clear the Configured Http Transport Security Alias objects, Clear all Configured Http Transport Security Alias objects in all collections, Delete the Configured Http Transport Security Alias object by id, Delete the Configured Http Transport Security Alias object by name and version, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Create a Simple Alias object, Clear the Simple Alias objects, Update the Simple Alias object by name or id, Delete the Simple Alias object by name or id, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, Create a User Group object, List the User Group objects, Clear the User Group objects, Get the User Group object by name or id, Update the User Group object by name or id, Delete the User Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the User Group Role Assignment objects, Get the User Group Role Assignment object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, Create a Team object, List the Team objects, Clear the Team objects, Get the Team object by name or id, Update the Team object by name or id, Delete the Team object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Jwt Provider objects, Get the Jwt Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Itopsplatform objects, Get the Itopsplatform object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, List the Programming Package objects, List all Programming Package objects in all collections, Get the Programming Package object by id, Get the Programming Package object by name and version, List the Xslt Transformation Alias objects, List all Xslt Transformation Alias objects in all collections, Get the Xslt Transformation Alias object by id, Get the Xslt Transformation Alias object by name and version, List the Http Transport Security Alias objects, List all Http Transport Security Alias objects in all collections, Get the Http Transport Security Alias object by id, Get the Http Transport Security Alias object by name and version, List the Webmethods Integration Server Service Alias objects, List all Webmethods Integration Server Service Alias objects in all collections, Get the Webmethods Integration Server Service Alias object by id, Get the Webmethods Integration Server Service Alias object by name and version, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Jwt Provider objects, Get the Configured Jwt Provider object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configured Portal Service objects, Get the Configured Portal Service object by name or id, List the Configured Programming Package objects, List all Configured Programming Package objects in all collections, Clear all Configured Programming Package objects in all collections, Get the Configured Programming Package object by id, Get the Configured Programming Package object by name and version, List the Configured Xslt Transformation Alias objects, List all Configured Xslt Transformation Alias objects in all collections, Get the Configured Xslt Transformation Alias object by id, Get the Configured Xslt Transformation Alias object by name and version, List the Configured Webmethods Integration Server Service Alias objects, List all Configured Webmethods Integration Server Service Alias objects in all collections, Get the Configured Webmethods Integration Server Service Alias object by id, Get the Configured Webmethods Integration Server Service Alias object by name and version, List the Configured Http Transport Security Alias objects, List all Configured Http Transport Security Alias objects in all collections, Get the Configured Http Transport Security Alias object by id, Get the Configured Http Transport Security Alias object by name and version, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, List the Simple Alias objects, Get the Simple Alias object by name or id, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
@@ -53552,8 +55991,8 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects, List the My User Group objects, List the My Team objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a User Group Role Assignment object, Clear the User Group Role Assignment objects, Update the User Group Role Assignment object by name or id, Delete the User Group Role Assignment object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Jwt Provider object, Clear the Jwt Provider objects, Update the Jwt Provider object by name or id, Delete the Jwt Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Programming Package object, Clear the Programming Package objects, Clear all Programming Package objects in all collections, Update the Programming Package object by id, Update the Programming Package object by name and version, Delete the Programming Package object by id, Delete the Programming Package object by name and version, List all Alias objects in all collections, Clear all Alias objects in all collections, Create a Xslt Transformation Alias object, Clear the Xslt Transformation Alias objects, Clear all Xslt Transformation Alias objects in all collections, Update the Xslt Transformation Alias object by id, Update the Xslt Transformation Alias object by name and version, Delete the Xslt Transformation Alias object by id, Delete the Xslt Transformation Alias object by name and version, Create a Http Transport Security Alias object, Clear the Http Transport Security Alias objects, Clear all Http Transport Security Alias objects in all collections, Update the Http Transport Security Alias object by id, Update the Http Transport Security Alias object by name and version, Delete the Http Transport Security Alias object by id, Delete the Http Transport Security Alias object by name and version, Create a Webmethods Integration Server Service Alias object, Clear the Webmethods Integration Server Service Alias objects, Clear all Webmethods Integration Server Service Alias objects in all collections, Update the Webmethods Integration Server Service Alias object by id, Update the Webmethods Integration Server Service Alias object by name and version, Delete the Webmethods Integration Server Service Alias object by id, Delete the Webmethods Integration Server Service Alias object by name and version, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Jwt Provider object, Clear the Configured Jwt Provider objects, Delete the Configured Jwt Provider object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Configured Portal Service object, Clear the Configured Portal Service objects, Delete the Configured Portal Service object by name or id, Create a Configured Programming Package object, Clear the Configured Programming Package objects, Delete the Configured Programming Package object by id, Delete the Configured Programming Package object by name and version, List all Configured Alias objects in all collections, Clear all Configured Alias objects in all collections, Create a Configured Xslt Transformation Alias object, Clear the Configured Xslt Transformation Alias objects, Clear all Configured Xslt Transformation Alias objects in all collections, Delete the Configured Xslt Transformation Alias object by id, Delete the Configured Xslt Transformation Alias object by name and version, Create a Configured Webmethods Integration Server Service Alias object, Clear the Configured Webmethods Integration Server Service Alias objects, Clear all Configured Webmethods Integration Server Service Alias objects in all collections, Delete the Configured Webmethods Integration Server Service Alias object by id, Delete the Configured Webmethods Integration Server Service Alias object by name and version, Create a Configured Http Transport Security Alias object, Clear the Configured Http Transport Security Alias objects, Clear all Configured Http Transport Security Alias objects in all collections, Delete the Configured Http Transport Security Alias object by id, Delete the Configured Http Transport Security Alias object by name and version, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Create a Simple Alias object, Clear the Simple Alias objects, Update the Simple Alias object by name or id, Delete the Simple Alias object by name or id, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, Create a User Group object, List the User Group objects, Clear the User Group objects, Get the User Group object by name or id, Update the User Group object by name or id, Delete the User Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the User Group Role Assignment objects, Get the User Group Role Assignment object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, Create a Team object, List the Team objects, Clear the Team objects, Get the Team object by name or id, Update the Team object by name or id, Delete the Team object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Jwt Provider objects, Get the Jwt Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, List the Programming Package objects, List all Programming Package objects in all collections, Get the Programming Package object by id, Get the Programming Package object by name and version, List the Xslt Transformation Alias objects, List all Xslt Transformation Alias objects in all collections, Get the Xslt Transformation Alias object by id, Get the Xslt Transformation Alias object by name and version, List the Http Transport Security Alias objects, List all Http Transport Security Alias objects in all collections, Get the Http Transport Security Alias object by id, Get the Http Transport Security Alias object by name and version, List the Webmethods Integration Server Service Alias objects, List all Webmethods Integration Server Service Alias objects in all collections, Get the Webmethods Integration Server Service Alias object by id, Get the Webmethods Integration Server Service Alias object by name and version, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Jwt Provider objects, Get the Configured Jwt Provider object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configured Portal Service objects, Get the Configured Portal Service object by name or id, List the Configured Programming Package objects, List all Configured Programming Package objects in all collections, Clear all Configured Programming Package objects in all collections, Get the Configured Programming Package object by id, Get the Configured Programming Package object by name and version, List the Configured Xslt Transformation Alias objects, List all Configured Xslt Transformation Alias objects in all collections, Get the Configured Xslt Transformation Alias object by id, Get the Configured Xslt Transformation Alias object by name and version, List the Configured Webmethods Integration Server Service Alias objects, List all Configured Webmethods Integration Server Service Alias objects in all collections, Get the Configured Webmethods Integration Server Service Alias object by id, Get the Configured Webmethods Integration Server Service Alias object by name and version, List the Configured Http Transport Security Alias objects, List all Configured Http Transport Security Alias objects in all collections, Get the Configured Http Transport Security Alias object by id, Get the Configured Http Transport Security Alias object by name and version, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, List the Simple Alias objects, Get the Simple Alias object by name or id, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, List the Resource Service Status objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a User Group Role Assignment object, Clear the User Group Role Assignment objects, Update the User Group Role Assignment object by name or id, Delete the User Group Role Assignment object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Jwt Provider object, Clear the Jwt Provider objects, Update the Jwt Provider object by name or id, Delete the Jwt Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Create a Itopsplatform object, Clear the Itopsplatform objects, Update the Itopsplatform object by name or id, Delete the Itopsplatform object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Programming Package object, Clear the Programming Package objects, Clear all Programming Package objects in all collections, Update the Programming Package object by id, Update the Programming Package object by name and version, Delete the Programming Package object by id, Delete the Programming Package object by name and version, List all Alias objects in all collections, Clear all Alias objects in all collections, Create a Xslt Transformation Alias object, Clear the Xslt Transformation Alias objects, Clear all Xslt Transformation Alias objects in all collections, Update the Xslt Transformation Alias object by id, Update the Xslt Transformation Alias object by name and version, Delete the Xslt Transformation Alias object by id, Delete the Xslt Transformation Alias object by name and version, Create a Http Transport Security Alias object, Clear the Http Transport Security Alias objects, Clear all Http Transport Security Alias objects in all collections, Update the Http Transport Security Alias object by id, Update the Http Transport Security Alias object by name and version, Delete the Http Transport Security Alias object by id, Delete the Http Transport Security Alias object by name and version, Create a Webmethods Integration Server Service Alias object, Clear the Webmethods Integration Server Service Alias objects, Clear all Webmethods Integration Server Service Alias objects in all collections, Update the Webmethods Integration Server Service Alias object by id, Update the Webmethods Integration Server Service Alias object by name and version, Delete the Webmethods Integration Server Service Alias object by id, Delete the Webmethods Integration Server Service Alias object by name and version, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Jwt Provider object, Clear the Configured Jwt Provider objects, Delete the Configured Jwt Provider object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Configured Portal Service object, Clear the Configured Portal Service objects, Delete the Configured Portal Service object by name or id, Create a Configured Programming Package object, Clear the Configured Programming Package objects, Delete the Configured Programming Package object by id, Delete the Configured Programming Package object by name and version, List all Configured Alias objects in all collections, Clear all Configured Alias objects in all collections, Create a Configured Xslt Transformation Alias object, Clear the Configured Xslt Transformation Alias objects, Clear all Configured Xslt Transformation Alias objects in all collections, Delete the Configured Xslt Transformation Alias object by id, Delete the Configured Xslt Transformation Alias object by name and version, Create a Configured Webmethods Integration Server Service Alias object, Clear the Configured Webmethods Integration Server Service Alias objects, Clear all Configured Webmethods Integration Server Service Alias objects in all collections, Delete the Configured Webmethods Integration Server Service Alias object by id, Delete the Configured Webmethods Integration Server Service Alias object by name and version, Create a Configured Http Transport Security Alias object, Clear the Configured Http Transport Security Alias objects, Clear all Configured Http Transport Security Alias objects in all collections, Delete the Configured Http Transport Security Alias object by id, Delete the Configured Http Transport Security Alias object by name and version, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Create a Simple Alias object, Clear the Simple Alias objects, Update the Simple Alias object by name or id, Delete the Simple Alias object by name or id, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, Create a User Group object, List the User Group objects, Clear the User Group objects, Get the User Group object by name or id, Update the User Group object by name or id, Delete the User Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the User Group Role Assignment objects, Get the User Group Role Assignment object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, Create a Team object, List the Team objects, Clear the Team objects, Get the Team object by name or id, Update the Team object by name or id, Delete the Team object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Jwt Provider objects, Get the Jwt Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Itopsplatform objects, Get the Itopsplatform object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, List the Programming Package objects, List all Programming Package objects in all collections, Get the Programming Package object by id, Get the Programming Package object by name and version, List the Xslt Transformation Alias objects, List all Xslt Transformation Alias objects in all collections, Get the Xslt Transformation Alias object by id, Get the Xslt Transformation Alias object by name and version, List the Http Transport Security Alias objects, List all Http Transport Security Alias objects in all collections, Get the Http Transport Security Alias object by id, Get the Http Transport Security Alias object by name and version, List the Webmethods Integration Server Service Alias objects, List all Webmethods Integration Server Service Alias objects in all collections, Get the Webmethods Integration Server Service Alias object by id, Get the Webmethods Integration Server Service Alias object by name and version, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Jwt Provider objects, Get the Configured Jwt Provider object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configured Portal Service objects, Get the Configured Portal Service object by name or id, List the Configured Programming Package objects, List all Configured Programming Package objects in all collections, Clear all Configured Programming Package objects in all collections, Get the Configured Programming Package object by id, Get the Configured Programming Package object by name and version, List the Configured Xslt Transformation Alias objects, List all Configured Xslt Transformation Alias objects in all collections, Get the Configured Xslt Transformation Alias object by id, Get the Configured Xslt Transformation Alias object by name and version, List the Configured Webmethods Integration Server Service Alias objects, List all Configured Webmethods Integration Server Service Alias objects in all collections, Get the Configured Webmethods Integration Server Service Alias object by id, Get the Configured Webmethods Integration Server Service Alias object by name and version, List the Configured Http Transport Security Alias objects, List all Configured Http Transport Security Alias objects in all collections, Get the Configured Http Transport Security Alias object by id, Get the Configured Http Transport Security Alias object by name and version, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, List the Simple Alias objects, Get the Simple Alias object by name or id, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
@@ -53583,8 +56022,8 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects, List the My User Group objects, List the My Team objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a User Group Role Assignment object, Clear the User Group Role Assignment objects, Update the User Group Role Assignment object by name or id, Delete the User Group Role Assignment object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Jwt Provider object, Clear the Jwt Provider objects, Update the Jwt Provider object by name or id, Delete the Jwt Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Programming Package object, Clear the Programming Package objects, Clear all Programming Package objects in all collections, Update the Programming Package object by id, Update the Programming Package object by name and version, Delete the Programming Package object by id, Delete the Programming Package object by name and version, List all Alias objects in all collections, Clear all Alias objects in all collections, Create a Xslt Transformation Alias object, Clear the Xslt Transformation Alias objects, Clear all Xslt Transformation Alias objects in all collections, Update the Xslt Transformation Alias object by id, Update the Xslt Transformation Alias object by name and version, Delete the Xslt Transformation Alias object by id, Delete the Xslt Transformation Alias object by name and version, Create a Http Transport Security Alias object, Clear the Http Transport Security Alias objects, Clear all Http Transport Security Alias objects in all collections, Update the Http Transport Security Alias object by id, Update the Http Transport Security Alias object by name and version, Delete the Http Transport Security Alias object by id, Delete the Http Transport Security Alias object by name and version, Create a Webmethods Integration Server Service Alias object, Clear the Webmethods Integration Server Service Alias objects, Clear all Webmethods Integration Server Service Alias objects in all collections, Update the Webmethods Integration Server Service Alias object by id, Update the Webmethods Integration Server Service Alias object by name and version, Delete the Webmethods Integration Server Service Alias object by id, Delete the Webmethods Integration Server Service Alias object by name and version, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Jwt Provider object, Clear the Configured Jwt Provider objects, Delete the Configured Jwt Provider object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Configured Portal Service object, Clear the Configured Portal Service objects, Delete the Configured Portal Service object by name or id, Create a Configured Programming Package object, Clear the Configured Programming Package objects, Delete the Configured Programming Package object by id, Delete the Configured Programming Package object by name and version, List all Configured Alias objects in all collections, Clear all Configured Alias objects in all collections, Create a Configured Xslt Transformation Alias object, Clear the Configured Xslt Transformation Alias objects, Clear all Configured Xslt Transformation Alias objects in all collections, Delete the Configured Xslt Transformation Alias object by id, Delete the Configured Xslt Transformation Alias object by name and version, Create a Configured Webmethods Integration Server Service Alias object, Clear the Configured Webmethods Integration Server Service Alias objects, Clear all Configured Webmethods Integration Server Service Alias objects in all collections, Delete the Configured Webmethods Integration Server Service Alias object by id, Delete the Configured Webmethods Integration Server Service Alias object by name and version, Create a Configured Http Transport Security Alias object, Clear the Configured Http Transport Security Alias objects, Clear all Configured Http Transport Security Alias objects in all collections, Delete the Configured Http Transport Security Alias object by id, Delete the Configured Http Transport Security Alias object by name and version, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Create a Simple Alias object, Clear the Simple Alias objects, Update the Simple Alias object by name or id, Delete the Simple Alias object by name or id, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, Create a User Group object, List the User Group objects, Clear the User Group objects, Get the User Group object by name or id, Update the User Group object by name or id, Delete the User Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the User Group Role Assignment objects, Get the User Group Role Assignment object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, Create a Team object, List the Team objects, Clear the Team objects, Get the Team object by name or id, Update the Team object by name or id, Delete the Team object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Jwt Provider objects, Get the Jwt Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, List the Programming Package objects, List all Programming Package objects in all collections, Get the Programming Package object by id, Get the Programming Package object by name and version, List the Xslt Transformation Alias objects, List all Xslt Transformation Alias objects in all collections, Get the Xslt Transformation Alias object by id, Get the Xslt Transformation Alias object by name and version, List the Http Transport Security Alias objects, List all Http Transport Security Alias objects in all collections, Get the Http Transport Security Alias object by id, Get the Http Transport Security Alias object by name and version, List the Webmethods Integration Server Service Alias objects, List all Webmethods Integration Server Service Alias objects in all collections, Get the Webmethods Integration Server Service Alias object by id, Get the Webmethods Integration Server Service Alias object by name and version, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Jwt Provider objects, Get the Configured Jwt Provider object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configured Portal Service objects, Get the Configured Portal Service object by name or id, List the Configured Programming Package objects, List all Configured Programming Package objects in all collections, Clear all Configured Programming Package objects in all collections, Get the Configured Programming Package object by id, Get the Configured Programming Package object by name and version, List the Configured Xslt Transformation Alias objects, List all Configured Xslt Transformation Alias objects in all collections, Get the Configured Xslt Transformation Alias object by id, Get the Configured Xslt Transformation Alias object by name and version, List the Configured Webmethods Integration Server Service Alias objects, List all Configured Webmethods Integration Server Service Alias objects in all collections, Get the Configured Webmethods Integration Server Service Alias object by id, Get the Configured Webmethods Integration Server Service Alias object by name and version, List the Configured Http Transport Security Alias objects, List all Configured Http Transport Security Alias objects in all collections, Get the Configured Http Transport Security Alias object by id, Get the Configured Http Transport Security Alias object by name and version, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, List the Simple Alias objects, Get the Simple Alias object by name or id, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, List the Resource Service Status objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a User Group Role Assignment object, Clear the User Group Role Assignment objects, Update the User Group Role Assignment object by name or id, Delete the User Group Role Assignment object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Jwt Provider object, Clear the Jwt Provider objects, Update the Jwt Provider object by name or id, Delete the Jwt Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Create a Itopsplatform object, Clear the Itopsplatform objects, Update the Itopsplatform object by name or id, Delete the Itopsplatform object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Programming Package object, Clear the Programming Package objects, Clear all Programming Package objects in all collections, Update the Programming Package object by id, Update the Programming Package object by name and version, Delete the Programming Package object by id, Delete the Programming Package object by name and version, List all Alias objects in all collections, Clear all Alias objects in all collections, Create a Xslt Transformation Alias object, Clear the Xslt Transformation Alias objects, Clear all Xslt Transformation Alias objects in all collections, Update the Xslt Transformation Alias object by id, Update the Xslt Transformation Alias object by name and version, Delete the Xslt Transformation Alias object by id, Delete the Xslt Transformation Alias object by name and version, Create a Http Transport Security Alias object, Clear the Http Transport Security Alias objects, Clear all Http Transport Security Alias objects in all collections, Update the Http Transport Security Alias object by id, Update the Http Transport Security Alias object by name and version, Delete the Http Transport Security Alias object by id, Delete the Http Transport Security Alias object by name and version, Create a Webmethods Integration Server Service Alias object, Clear the Webmethods Integration Server Service Alias objects, Clear all Webmethods Integration Server Service Alias objects in all collections, Update the Webmethods Integration Server Service Alias object by id, Update the Webmethods Integration Server Service Alias object by name and version, Delete the Webmethods Integration Server Service Alias object by id, Delete the Webmethods Integration Server Service Alias object by name and version, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Jwt Provider object, Clear the Configured Jwt Provider objects, Delete the Configured Jwt Provider object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Configured Portal Service object, Clear the Configured Portal Service objects, Delete the Configured Portal Service object by name or id, Create a Configured Programming Package object, Clear the Configured Programming Package objects, Delete the Configured Programming Package object by id, Delete the Configured Programming Package object by name and version, List all Configured Alias objects in all collections, Clear all Configured Alias objects in all collections, Create a Configured Xslt Transformation Alias object, Clear the Configured Xslt Transformation Alias objects, Clear all Configured Xslt Transformation Alias objects in all collections, Delete the Configured Xslt Transformation Alias object by id, Delete the Configured Xslt Transformation Alias object by name and version, Create a Configured Webmethods Integration Server Service Alias object, Clear the Configured Webmethods Integration Server Service Alias objects, Clear all Configured Webmethods Integration Server Service Alias objects in all collections, Delete the Configured Webmethods Integration Server Service Alias object by id, Delete the Configured Webmethods Integration Server Service Alias object by name and version, Create a Configured Http Transport Security Alias object, Clear the Configured Http Transport Security Alias objects, Clear all Configured Http Transport Security Alias objects in all collections, Delete the Configured Http Transport Security Alias object by id, Delete the Configured Http Transport Security Alias object by name and version, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Create a Simple Alias object, Clear the Simple Alias objects, Update the Simple Alias object by name or id, Delete the Simple Alias object by name or id, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, Create a User Group object, List the User Group objects, Clear the User Group objects, Get the User Group object by name or id, Update the User Group object by name or id, Delete the User Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the User Group Role Assignment objects, Get the User Group Role Assignment object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, Create a Team object, List the Team objects, Clear the Team objects, Get the Team object by name or id, Update the Team object by name or id, Delete the Team object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Jwt Provider objects, Get the Jwt Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Itopsplatform objects, Get the Itopsplatform object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, List the Programming Package objects, List all Programming Package objects in all collections, Get the Programming Package object by id, Get the Programming Package object by name and version, List the Xslt Transformation Alias objects, List all Xslt Transformation Alias objects in all collections, Get the Xslt Transformation Alias object by id, Get the Xslt Transformation Alias object by name and version, List the Http Transport Security Alias objects, List all Http Transport Security Alias objects in all collections, Get the Http Transport Security Alias object by id, Get the Http Transport Security Alias object by name and version, List the Webmethods Integration Server Service Alias objects, List all Webmethods Integration Server Service Alias objects in all collections, Get the Webmethods Integration Server Service Alias object by id, Get the Webmethods Integration Server Service Alias object by name and version, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Jwt Provider objects, Get the Configured Jwt Provider object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configured Portal Service objects, Get the Configured Portal Service object by name or id, List the Configured Programming Package objects, List all Configured Programming Package objects in all collections, Clear all Configured Programming Package objects in all collections, Get the Configured Programming Package object by id, Get the Configured Programming Package object by name and version, List the Configured Xslt Transformation Alias objects, List all Configured Xslt Transformation Alias objects in all collections, Get the Configured Xslt Transformation Alias object by id, Get the Configured Xslt Transformation Alias object by name and version, List the Configured Webmethods Integration Server Service Alias objects, List all Configured Webmethods Integration Server Service Alias objects in all collections, Get the Configured Webmethods Integration Server Service Alias object by id, Get the Configured Webmethods Integration Server Service Alias object by name and version, List the Configured Http Transport Security Alias objects, List all Configured Http Transport Security Alias objects in all collections, Get the Configured Http Transport Security Alias object by id, Get the Configured Http Transport Security Alias object by name and version, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, List the Simple Alias objects, Get the Simple Alias object by name or id, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
@@ -53616,8 +56055,8 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects, List the My User Group objects, List the My Team objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a User Group Role Assignment object, Clear the User Group Role Assignment objects, Update the User Group Role Assignment object by name or id, Delete the User Group Role Assignment object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Jwt Provider object, Clear the Jwt Provider objects, Update the Jwt Provider object by name or id, Delete the Jwt Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Programming Package object, Clear the Programming Package objects, Clear all Programming Package objects in all collections, Update the Programming Package object by id, Update the Programming Package object by name and version, Delete the Programming Package object by id, Delete the Programming Package object by name and version, List all Alias objects in all collections, Clear all Alias objects in all collections, Create a Xslt Transformation Alias object, Clear the Xslt Transformation Alias objects, Clear all Xslt Transformation Alias objects in all collections, Update the Xslt Transformation Alias object by id, Update the Xslt Transformation Alias object by name and version, Delete the Xslt Transformation Alias object by id, Delete the Xslt Transformation Alias object by name and version, Create a Http Transport Security Alias object, Clear the Http Transport Security Alias objects, Clear all Http Transport Security Alias objects in all collections, Update the Http Transport Security Alias object by id, Update the Http Transport Security Alias object by name and version, Delete the Http Transport Security Alias object by id, Delete the Http Transport Security Alias object by name and version, Create a Webmethods Integration Server Service Alias object, Clear the Webmethods Integration Server Service Alias objects, Clear all Webmethods Integration Server Service Alias objects in all collections, Update the Webmethods Integration Server Service Alias object by id, Update the Webmethods Integration Server Service Alias object by name and version, Delete the Webmethods Integration Server Service Alias object by id, Delete the Webmethods Integration Server Service Alias object by name and version, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Jwt Provider object, Clear the Configured Jwt Provider objects, Delete the Configured Jwt Provider object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Configured Portal Service object, Clear the Configured Portal Service objects, Delete the Configured Portal Service object by name or id, Create a Configured Programming Package object, Clear the Configured Programming Package objects, Delete the Configured Programming Package object by id, Delete the Configured Programming Package object by name and version, List all Configured Alias objects in all collections, Clear all Configured Alias objects in all collections, Create a Configured Xslt Transformation Alias object, Clear the Configured Xslt Transformation Alias objects, Clear all Configured Xslt Transformation Alias objects in all collections, Delete the Configured Xslt Transformation Alias object by id, Delete the Configured Xslt Transformation Alias object by name and version, Create a Configured Webmethods Integration Server Service Alias object, Clear the Configured Webmethods Integration Server Service Alias objects, Clear all Configured Webmethods Integration Server Service Alias objects in all collections, Delete the Configured Webmethods Integration Server Service Alias object by id, Delete the Configured Webmethods Integration Server Service Alias object by name and version, Create a Configured Http Transport Security Alias object, Clear the Configured Http Transport Security Alias objects, Clear all Configured Http Transport Security Alias objects in all collections, Delete the Configured Http Transport Security Alias object by id, Delete the Configured Http Transport Security Alias object by name and version, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Create a Simple Alias object, Clear the Simple Alias objects, Update the Simple Alias object by name or id, Delete the Simple Alias object by name or id, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, Create a User Group object, List the User Group objects, Clear the User Group objects, Get the User Group object by name or id, Update the User Group object by name or id, Delete the User Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the User Group Role Assignment objects, Get the User Group Role Assignment object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, Create a Team object, List the Team objects, Clear the Team objects, Get the Team object by name or id, Update the Team object by name or id, Delete the Team object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Jwt Provider objects, Get the Jwt Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, List the Programming Package objects, List all Programming Package objects in all collections, Get the Programming Package object by id, Get the Programming Package object by name and version, List the Xslt Transformation Alias objects, List all Xslt Transformation Alias objects in all collections, Get the Xslt Transformation Alias object by id, Get the Xslt Transformation Alias object by name and version, List the Http Transport Security Alias objects, List all Http Transport Security Alias objects in all collections, Get the Http Transport Security Alias object by id, Get the Http Transport Security Alias object by name and version, List the Webmethods Integration Server Service Alias objects, List all Webmethods Integration Server Service Alias objects in all collections, Get the Webmethods Integration Server Service Alias object by id, Get the Webmethods Integration Server Service Alias object by name and version, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Jwt Provider objects, Get the Configured Jwt Provider object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configured Portal Service objects, Get the Configured Portal Service object by name or id, List the Configured Programming Package objects, List all Configured Programming Package objects in all collections, Clear all Configured Programming Package objects in all collections, Get the Configured Programming Package object by id, Get the Configured Programming Package object by name and version, List the Configured Xslt Transformation Alias objects, List all Configured Xslt Transformation Alias objects in all collections, Get the Configured Xslt Transformation Alias object by id, Get the Configured Xslt Transformation Alias object by name and version, List the Configured Webmethods Integration Server Service Alias objects, List all Configured Webmethods Integration Server Service Alias objects in all collections, Get the Configured Webmethods Integration Server Service Alias object by id, Get the Configured Webmethods Integration Server Service Alias object by name and version, List the Configured Http Transport Security Alias objects, List all Configured Http Transport Security Alias objects in all collections, Get the Configured Http Transport Security Alias object by id, Get the Configured Http Transport Security Alias object by name and version, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, List the Simple Alias objects, Get the Simple Alias object by name or id, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, List the Resource Service Status objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a User Group Role Assignment object, Clear the User Group Role Assignment objects, Update the User Group Role Assignment object by name or id, Delete the User Group Role Assignment object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Jwt Provider object, Clear the Jwt Provider objects, Update the Jwt Provider object by name or id, Delete the Jwt Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Create a Itopsplatform object, Clear the Itopsplatform objects, Update the Itopsplatform object by name or id, Delete the Itopsplatform object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Programming Package object, Clear the Programming Package objects, Clear all Programming Package objects in all collections, Update the Programming Package object by id, Update the Programming Package object by name and version, Delete the Programming Package object by id, Delete the Programming Package object by name and version, List all Alias objects in all collections, Clear all Alias objects in all collections, Create a Xslt Transformation Alias object, Clear the Xslt Transformation Alias objects, Clear all Xslt Transformation Alias objects in all collections, Update the Xslt Transformation Alias object by id, Update the Xslt Transformation Alias object by name and version, Delete the Xslt Transformation Alias object by id, Delete the Xslt Transformation Alias object by name and version, Create a Http Transport Security Alias object, Clear the Http Transport Security Alias objects, Clear all Http Transport Security Alias objects in all collections, Update the Http Transport Security Alias object by id, Update the Http Transport Security Alias object by name and version, Delete the Http Transport Security Alias object by id, Delete the Http Transport Security Alias object by name and version, Create a Webmethods Integration Server Service Alias object, Clear the Webmethods Integration Server Service Alias objects, Clear all Webmethods Integration Server Service Alias objects in all collections, Update the Webmethods Integration Server Service Alias object by id, Update the Webmethods Integration Server Service Alias object by name and version, Delete the Webmethods Integration Server Service Alias object by id, Delete the Webmethods Integration Server Service Alias object by name and version, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Jwt Provider object, Clear the Configured Jwt Provider objects, Delete the Configured Jwt Provider object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Configured Portal Service object, Clear the Configured Portal Service objects, Delete the Configured Portal Service object by name or id, Create a Configured Programming Package object, Clear the Configured Programming Package objects, Delete the Configured Programming Package object by id, Delete the Configured Programming Package object by name and version, List all Configured Alias objects in all collections, Clear all Configured Alias objects in all collections, Create a Configured Xslt Transformation Alias object, Clear the Configured Xslt Transformation Alias objects, Clear all Configured Xslt Transformation Alias objects in all collections, Delete the Configured Xslt Transformation Alias object by id, Delete the Configured Xslt Transformation Alias object by name and version, Create a Configured Webmethods Integration Server Service Alias object, Clear the Configured Webmethods Integration Server Service Alias objects, Clear all Configured Webmethods Integration Server Service Alias objects in all collections, Delete the Configured Webmethods Integration Server Service Alias object by id, Delete the Configured Webmethods Integration Server Service Alias object by name and version, Create a Configured Http Transport Security Alias object, Clear the Configured Http Transport Security Alias objects, Clear all Configured Http Transport Security Alias objects in all collections, Delete the Configured Http Transport Security Alias object by id, Delete the Configured Http Transport Security Alias object by name and version, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Create a Simple Alias object, Clear the Simple Alias objects, Update the Simple Alias object by name or id, Delete the Simple Alias object by name or id, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, Create a User Group object, List the User Group objects, Clear the User Group objects, Get the User Group object by name or id, Update the User Group object by name or id, Delete the User Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the User Group Role Assignment objects, Get the User Group Role Assignment object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, Create a Team object, List the Team objects, Clear the Team objects, Get the Team object by name or id, Update the Team object by name or id, Delete the Team object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Jwt Provider objects, Get the Jwt Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Itopsplatform objects, Get the Itopsplatform object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, List the Programming Package objects, List all Programming Package objects in all collections, Get the Programming Package object by id, Get the Programming Package object by name and version, List the Xslt Transformation Alias objects, List all Xslt Transformation Alias objects in all collections, Get the Xslt Transformation Alias object by id, Get the Xslt Transformation Alias object by name and version, List the Http Transport Security Alias objects, List all Http Transport Security Alias objects in all collections, Get the Http Transport Security Alias object by id, Get the Http Transport Security Alias object by name and version, List the Webmethods Integration Server Service Alias objects, List all Webmethods Integration Server Service Alias objects in all collections, Get the Webmethods Integration Server Service Alias object by id, Get the Webmethods Integration Server Service Alias object by name and version, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Jwt Provider objects, Get the Configured Jwt Provider object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configured Portal Service objects, Get the Configured Portal Service object by name or id, List the Configured Programming Package objects, List all Configured Programming Package objects in all collections, Clear all Configured Programming Package objects in all collections, Get the Configured Programming Package object by id, Get the Configured Programming Package object by name and version, List the Configured Xslt Transformation Alias objects, List all Configured Xslt Transformation Alias objects in all collections, Get the Configured Xslt Transformation Alias object by id, Get the Configured Xslt Transformation Alias object by name and version, List the Configured Webmethods Integration Server Service Alias objects, List all Configured Webmethods Integration Server Service Alias objects in all collections, Get the Configured Webmethods Integration Server Service Alias object by id, Get the Configured Webmethods Integration Server Service Alias object by name and version, List the Configured Http Transport Security Alias objects, List all Configured Http Transport Security Alias objects in all collections, Get the Configured Http Transport Security Alias object by id, Get the Configured Http Transport Security Alias object by name and version, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, List the Simple Alias objects, Get the Simple Alias object by name or id, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
@@ -65074,6 +67513,24 @@
             "multipart/form-data": {
               "schema": {
                 "$ref": "#/components/schemas/ProgrammingPackageMultipart"
+              },
+              "examples": {
+                "ProgrammingPackage": {
+                  "summary": "Example for programming package create",
+                  "value": {
+                    "name": "acme-programming-package",
+                    "version": "1.0.0",
+                    "title": "ACME Programming Package",
+                    "summary": "Example programming package for ACME org",
+                    "programming_package_type": "lua",
+                    "programming_package_files": [
+                      {
+                        "file_path": "programming-packages/acme-module.lua",
+                        "mimetype": "text/x-lua"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -65366,11 +67823,43 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ProgrammingPackage"
+              },
+              "examples": {
+                "ProgrammingPackage": {
+                  "summary": "Example for programming package update",
+                  "value": {
+                    "title": "ACME Programming Package",
+                    "summary": "Updated programming package for ACME org",
+                    "programming_package_type": "lua",
+                    "programming_package_files": [
+                      {
+                        "file_path": "programming-packages/acme-module.lua",
+                        "mimetype": "text/x-lua"
+                      }
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ProgrammingPackage"
+              },
+              "examples": {
+                "ProgrammingPackage": {
+                  "summary": "Example for programming package update",
+                  "value": {
+                    "title": "ACME Programming Package",
+                    "summary": "Updated programming package for ACME org",
+                    "programming_package_type": "lua",
+                    "programming_package_files": [
+                      {
+                        "file_path": "programming-packages/acme-module.lua",
+                        "mimetype": "text/x-lua"
+                      }
+                    ]
+                  }
+                }
               }
             },
             "multipart/form-data": {
@@ -65521,11 +68010,47 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ProgrammingPackage"
+              },
+              "examples": {
+                "ProgrammingPackage": {
+                  "summary": "Example for programming package update by name and version",
+                  "value": {
+                    "name": "acme-programming-package",
+                    "version": "1.0.0",
+                    "title": "ACME Programming Package",
+                    "summary": "Updated programming package for ACME org",
+                    "programming_package_type": "lua",
+                    "programming_package_files": [
+                      {
+                        "file_path": "programming-packages/acme-module.lua",
+                        "mimetype": "text/x-lua"
+                      }
+                    ]
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/ProgrammingPackage"
+              },
+              "examples": {
+                "ProgrammingPackage": {
+                  "summary": "Example for programming package update by name and version",
+                  "value": {
+                    "name": "acme-programming-package",
+                    "version": "1.0.0",
+                    "title": "ACME Programming Package",
+                    "summary": "Updated programming package for ACME org",
+                    "programming_package_type": "lua",
+                    "programming_package_files": [
+                      {
+                        "file_path": "programming-packages/acme-module.lua",
+                        "mimetype": "text/x-lua"
+                      }
+                    ]
+                  }
+                }
               }
             },
             "multipart/form-data": {
@@ -65716,11 +68241,33 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
+              },
+              "examples": {
+                "XsltTransformationAlias": {
+                  "summary": "Example for XSLT transformation alias create",
+                  "value": {
+                    "name": "acme-xslt-alias",
+                    "title": "ACME XSLT Transformation Alias",
+                    "summary": "Example XSLT transformation alias for ACME org",
+                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
+              },
+              "examples": {
+                "XsltTransformationAlias": {
+                  "summary": "Example for XSLT transformation alias create",
+                  "value": {
+                    "name": "acme-xslt-alias",
+                    "title": "ACME XSLT Transformation Alias",
+                    "summary": "Example XSLT transformation alias for ACME org",
+                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
+                  }
+                }
               }
             },
             "multipart/form-data": {
@@ -66015,11 +68562,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
+              },
+              "examples": {
+                "XsltTransformationAlias": {
+                  "summary": "Example for XSLT transformation alias update",
+                  "value": {
+                    "title": "ACME XSLT Transformation Alias",
+                    "summary": "Updated XSLT transformation alias for ACME org",
+                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
+              },
+              "examples": {
+                "XsltTransformationAlias": {
+                  "summary": "Example for XSLT transformation alias update",
+                  "value": {
+                    "title": "ACME XSLT Transformation Alias",
+                    "summary": "Updated XSLT transformation alias for ACME org",
+                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
+                  }
+                }
               }
             },
             "multipart/form-data": {
@@ -66170,11 +68737,33 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
+              },
+              "examples": {
+                "XsltTransformationAlias": {
+                  "summary": "Example for XSLT transformation alias update by name and version",
+                  "value": {
+                    "name": "acme-xslt-alias",
+                    "title": "ACME XSLT Transformation Alias",
+                    "summary": "Updated XSLT transformation alias for ACME org",
+                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
+                  }
+                }
               }
             },
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/XsltTransformationAlias"
+              },
+              "examples": {
+                "XsltTransformationAlias": {
+                  "summary": "Example for XSLT transformation alias update by name and version",
+                  "value": {
+                    "name": "acme-xslt-alias",
+                    "title": "ACME XSLT Transformation Alias",
+                    "summary": "Updated XSLT transformation alias for ACME org",
+                    "xsl_file": "xslt-transformation-aliases/acme-transform.xsl"
+                  }
+                }
               }
             },
             "multipart/form-data": {
@@ -77866,7 +80455,7 @@
         "security": [
           {
             "oauth": [
-              "api:stage"
+              "product:stage"
             ]
           }
         ],
@@ -77934,7 +80523,7 @@
         "security": [
           {
             "oauth": [
-              "api:manage"
+              "product:manage"
             ]
           }
         ],
@@ -78156,7 +80745,7 @@
         "security": [
           {
             "oauth": [
-              "api:stage"
+              "product:stage"
             ]
           }
         ],
@@ -78230,7 +80819,7 @@
         "security": [
           {
             "oauth": [
-              "api:manage"
+              "product:manage"
             ]
           }
         ],
@@ -78345,6 +80934,74 @@
         ]
       }
     },
+    "/catalogs/{org}/{catalog}/match-api": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Search for a match for the given Catalog",
+        "description": "Search for a match for the given Catalog",
+        "operationId": "api_findApiMatch",
+        "security": [
+          {
+            "oauth": [
+              "product:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/scope"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/APIMatchRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/APIMatchRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIMatchResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIMatchResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Catalog Management",
+          "Resource: Catalog"
+        ]
+      }
+    },
     "/catalogs/{org}/{catalog}/publish-project": {
       "parameters": [
         {
@@ -78384,6 +81041,16 @@
             "multipart/form-data": {
               "schema": {
                 "$ref": "#/components/schemas/ProjectZipMultipart"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProjectUrl"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/ProjectUrl"
               }
             }
           }
@@ -92501,7 +95168,7 @@
         "security": [
           {
             "oauth": [
-              "api:stage"
+              "product:stage"
             ]
           }
         ],
@@ -92572,7 +95239,7 @@
         "security": [
           {
             "oauth": [
-              "api:manage"
+              "product:manage"
             ]
           }
         ],
@@ -92803,7 +95470,7 @@
         "security": [
           {
             "oauth": [
-              "api:stage"
+              "product:stage"
             ]
           }
         ],
@@ -92880,7 +95547,7 @@
         "security": [
           {
             "oauth": [
-              "api:manage"
+              "product:manage"
             ]
           }
         ],
@@ -92984,6 +95651,16 @@
               "schema": {
                 "$ref": "#/components/schemas/ProjectZipMultipart"
               }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProjectUrl"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/ProjectUrl"
+              }
             }
           }
         },
@@ -93035,11 +95712,23 @@
         },
         {
           "$ref": "#/components/parameters/export_portable"
+        },
+        {
+          "$ref": "#/components/parameters/expand"
+        },
+        {
+          "$ref": "#/components/parameters/gateway_type"
+        },
+        {
+          "$ref": "#/components/parameters/name"
+        },
+        {
+          "$ref": "#/components/parameters/version"
         }
       ],
       "get": {
-        "summary": "List products with porting compatibility analysis for a given catalog or space",
-        "description": "List products with porting compatibility analysis for a given catalog or space",
+        "summary": "List products with porting compatibility details for a catalog or space",
+        "description": "List products with porting compatibility details for a catalog or space",
         "operationId": "space_listProductsSpaceSubcollection",
         "security": [
           {
@@ -115631,8 +118320,20 @@
           }
         },
         "responses": {
-          "204": {
-            "description": "Success"
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettingsTestConnectionResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatsonxSettingsTestConnectionResponse"
+                }
+              }
+            }
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -116042,6 +118743,65 @@
         ]
       }
     },
+    "/orgs/{org}/project-files": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/calc_dep"
+        }
+      ],
+      "post": {
+        "summary": "Create project with files from archive",
+        "description": "Create a new project and populate it with files from a zip archive.\nFor adding files to an EXISTING project, use /orgs/{org}/projects/{project}/create-project-files\n",
+        "operationId": "project_createProjectFilesOrgScope",
+        "security": [
+          {
+            "oauth": [
+              "project:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProjectFilesOrgScopeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Project created successfully with files",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProjectFilesOrgScopeResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProjectFilesOrgScopeResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Project",
+          "Resource: Project"
+        ]
+      }
+    },
     "/orgs/{org}/projects/{project}/create-project-files": {
       "parameters": [
         {
@@ -116049,6 +118809,9 @@
         },
         {
           "$ref": "#/components/parameters/project"
+        },
+        {
+          "$ref": "#/components/parameters/calc_dep"
         }
       ],
       "post": {
@@ -117726,6 +120489,58 @@
         ]
       }
     },
+    "/orgs/{org}/gateway-porting-assessments/catalogs": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/offset"
+        },
+        {
+          "$ref": "#/components/parameters/limit"
+        }
+      ],
+      "get": {
+        "summary": "List catalogs for porting compatibility assessment",
+        "description": "List catalogs for porting compatibility assessment",
+        "operationId": "gateway_porting_assessment_listCatalogs",
+        "security": [
+          {
+            "oauth": [
+              "child:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GatewayPortingAssessmentListCatalogsResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GatewayPortingAssessmentListCatalogsResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "DataPower Nano Gateway API Porting Advisor",
+          "Resource: Gateway Porting Assessment"
+        ]
+      }
+    },
     "/orgs/{org}/catalog/{catalog}/gateway-porting-assessments/products": {
       "parameters": [
         {
@@ -117742,11 +120557,23 @@
         },
         {
           "$ref": "#/components/parameters/export_portable"
+        },
+        {
+          "$ref": "#/components/parameters/expand"
+        },
+        {
+          "$ref": "#/components/parameters/gateway_type"
+        },
+        {
+          "$ref": "#/components/parameters/name"
+        },
+        {
+          "$ref": "#/components/parameters/version"
         }
       ],
       "get": {
-        "summary": "List products with porting compatibility analysis for a given catalog or space",
-        "description": "List products with porting compatibility analysis for a given catalog or space",
+        "summary": "List products with porting compatibility details for a catalog or space",
+        "description": "List products with porting compatibility details for a catalog or space",
         "operationId": "gateway_porting_assessment_listProducts",
         "security": [
           {
@@ -117812,6 +120639,46 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/GatewayPortingAssessmentActionRequest"
+              },
+              "examples": {
+                "GatewayPortingAssessmentActionRequest": {
+                  "summary": "Example for gateway porting assessment calculate compatibility using product object",
+                  "value": {
+                    "catalog": "sandbox",
+                    "product": {
+                      "name": "acme-product",
+                      "version": "1.0.0"
+                    }
+                  }
+                },
+                "GatewayPortingAssessmentActionRequestProductUrl": {
+                  "summary": "Example for gateway porting assessment calculate compatibility using product URL",
+                  "value": {
+                    "catalog": "sandbox",
+                    "product_url": "https://acme-apim.example.com/api/catalogs/acme-org/sandbox/products/product-id"
+                  }
+                },
+                "GatewayPortingAssessmentActionRequestSpaceScope": {
+                  "summary": "Example for gateway porting assessment calculate compatibility at space scope using product object",
+                  "value": {
+                    "catalog": "sandbox",
+                    "scope": "space",
+                    "space": "development",
+                    "product": {
+                      "name": "acme-product",
+                      "version": "1.0.0"
+                    }
+                  }
+                },
+                "GatewayPortingAssessmentActionRequestSpaceScopeProductUrl": {
+                  "summary": "Example for gateway porting assessment calculate compatibility at space scope using product URL",
+                  "value": {
+                    "catalog": "sandbox",
+                    "scope": "space",
+                    "space": "development",
+                    "product_url": "https://acme-apim.example.com/api/spaces/acme-org/sandbox/development/products/product-id"
+                  }
+                }
               }
             }
           }
@@ -117873,6 +120740,26 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/GatewayPortingAssessmentCreateProjectRequest"
+              },
+              "examples": {
+                "GatewayPortingAssessmentCreateProjectRequest": {
+                  "summary": "Example for gateway porting assessment create project",
+                  "value": {
+                    "project_name": "acme-product-nano-project",
+                    "project_title": "Acme Product Nano Gateway Project",
+                    "description": "Project created from Gateway Porting Assessment",
+                    "gateway_porting_assessment_url": "https://acme-apim.example.com/api/orgs/acme-org/gateway-porting-assessments/ta-id",
+                    "tags": [
+                      "porting",
+                      "sandbox",
+                      "acme-product"
+                    ],
+                    "apis": [
+                      "acme-api",
+                      "billing-api"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -117934,6 +120821,18 @@
             "application/yaml": {
               "schema": {
                 "$ref": "#/components/schemas/GatewayPortingAssessmentCopyApisToProjectRequest"
+              },
+              "examples": {
+                "GatewayPortingAssessmentCopyApisToProjectRequest": {
+                  "summary": "Example for gateway porting assessment copy APIs to project",
+                  "value": {
+                    "project_name": "acme-product-nano-project",
+                    "gateway_porting_assessment_url": "https://acme-apim.example.com/api/orgs/acme-org/gateway-porting-assessments/ta-id",
+                    "apis": [
+                      "shipping-api"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -118054,12 +120953,32 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GatewayPortingAssessmentCreateProjectRequest"
+                "$ref": "#/components/schemas/GatewayPortingAssessmentDownloadProjectScaffoldingFilesRequest"
               }
             },
             "application/yaml": {
               "schema": {
-                "$ref": "#/components/schemas/GatewayPortingAssessmentCreateProjectRequest"
+                "$ref": "#/components/schemas/GatewayPortingAssessmentDownloadProjectScaffoldingFilesRequest"
+              },
+              "examples": {
+                "GatewayPortingAssessmentDownloadProjectScaffoldingFilesRequest": {
+                  "summary": "Example for gateway porting assessment download project scaffolding files",
+                  "value": {
+                    "project_name": "acme-product-nano-project",
+                    "project_title": "Acme Product Nano Gateway Project",
+                    "description": "Project created from Gateway Porting Assessment",
+                    "gateway_porting_assessment_url": "https://acme-apim.example.com/api/orgs/acme-org/gateway-porting-assessments/ta-id",
+                    "tags": [
+                      "porting",
+                      "sandbox",
+                      "acme-product"
+                    ],
+                    "apis": [
+                      "acme-api",
+                      "billing-api"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -118070,6 +120989,108 @@
             "content": {
               "application/zip": {},
               "application/octet-stream": {}
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "DataPower Nano Gateway API Porting Advisor",
+          "Resource: Gateway Porting Assessment"
+        ]
+      }
+    },
+    "/orgs/{org}/catalog/{catalog}/gateway-porting-assessments/calculate-compatibility-bulk": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "post": {
+        "summary": "Calculate porting compatibility for DataPower Nano Gateway In Bulk",
+        "description": "Calculate porting compatibility for DataPower Nano Gateway In Bulk",
+        "operationId": "gateway_porting_assessment_calculateCompatibilityBulk",
+        "security": [
+          {
+            "oauth": [
+              "org:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GatewayPortingAssessmentBulkActionRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/GatewayPortingAssessmentBulkActionRequest"
+              },
+              "examples": {
+                "GatewayPortingAssessmentBulkActionRequest": {
+                  "summary": "Example for gateway porting assessment calculate compatibility bulk",
+                  "value": {
+                    "products": [
+                      {
+                        "product": {
+                          "name": "billing-product",
+                          "version": "2.0.0"
+                        }
+                      },
+                      {
+                        "product_url": "https://acme-apim.example.com/api/catalogs/acme-org/sandbox/products/product-id"
+                      }
+                    ]
+                  }
+                },
+                "GatewayPortingAssessmentBulkActionRequestSpaceScope": {
+                  "summary": "Example for gateway porting assessment calculate compatibility bulk at space scope",
+                  "value": {
+                    "products": [
+                      {
+                        "scope": "space",
+                        "space": "development",
+                        "product": {
+                          "name": "inventory-product",
+                          "version": "1.5.0"
+                        }
+                      },
+                      {
+                        "scope": "space",
+                        "space": "development",
+                        "product_url": "https://acme-apim.example.com/api/spaces/acme-org/sandbox/development/products/product-id"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GatewayPortingAssessmentActionResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GatewayPortingAssessmentActionResponse"
+                }
+              }
             }
           },
           "4XX": {
@@ -118257,6 +121278,15 @@
         "required": true,
         "schema": {
           "type": "string"
+        }
+      },
+      "calc_dep": {
+        "name": "calc_dep",
+        "in": "query",
+        "description": "Calculate dependencies",
+        "required": false,
+        "schema": {
+          "type": "boolean"
         }
       },
       "capture-id": {
@@ -120920,7 +123950,8 @@
             "enum": [
               "toolkit",
               "atm",
-              "ai"
+              "ai",
+              "transition_helper"
             ]
           },
           "realm": {
@@ -122640,6 +125671,11 @@
               }
             }
           },
+          "api_security_analytics_service_url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -123380,6 +126416,18 @@
           "ai_gateway_enabled": {
             "type": "boolean"
           },
+          "cipher_suites": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "disabled_protocols": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "opentelemetry_url": {
             "type": "string",
             "format": "uri",
@@ -124064,7 +127112,8 @@
             "enum": [
               "5000",
               "6000",
-              "12000"
+              "12000",
+              "13000"
             ]
           },
           "advanced_scope": {
@@ -124791,6 +127840,126 @@
                     }
                   }
                 }
+              },
+              "third_party_config_13000": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "introspection_mode": {
+                    "type": "string",
+                    "enum": [
+                      "remote",
+                      "local"
+                    ]
+                  },
+                  "remote_introspection": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "gateway_user": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "local_introspection": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "issuer": {
+                        "type": "string"
+                      },
+                      "jwks_uri": {
+                        "type": "string"
+                      },
+                      "use_local_clock_skew": {
+                        "type": "boolean"
+                      },
+                      "clock_skew_in_seconds": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "token_generator": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "access_token_exp_interval": {
+                        "type": "integer"
+                      },
+                      "auth_code_exp_interval": {
+                        "type": "integer"
+                      },
+                      "expiry": {
+                        "type": "integer"
+                      },
+                      "enforce_pkce": {
+                        "type": "boolean"
+                      },
+                      "algorithm": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "refresh_token_url": {
+                    "type": "string"
+                  },
+                  "dcr": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "provider_name": {
+                        "type": "string"
+                      },
+                      "endpoint": {
+                        "type": "string"
+                      },
+                      "endpoint_headers": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      },
+                      "auth_type": {
+                        "type": "string",
+                        "enum": [
+                          "basic",
+                          "token",
+                          "refresh_token",
+                          "client_credentials",
+                          "none"
+                        ]
+                      },
+                      "username": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "password": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "token": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "token_type": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "client_id": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "client_secret": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "scope": {
+                        "type": "string",
+                        "nullable": true
+                      }
+                    }
+                  }
+                }
               }
             }
           },
@@ -125310,6 +128479,33 @@
               ]
             },
             "nullable": true
+          },
+          "key_exchange_mechanisms": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "MLKEM512",
+                "MLKEM768",
+                "X25519MLKEM768",
+                "SecP256r1MLKEM768",
+                "MLKEM1024",
+                "SecP384r1MLKEM1024",
+                "p256",
+                "p384",
+                "p521",
+                "x25519",
+                "x448",
+                "ffdhe2048",
+                "ffdhe3072",
+                "ffdhe4096",
+                "ffdhe6144",
+                "ffdhe8192",
+                "brainpoolP256",
+                "brainpoolP384",
+                "brainpoolP512"
+              ]
+            }
           },
           "elliptic_curve_auto_negotiation": {
             "type": "boolean",
@@ -126333,6 +129529,11 @@
           "certificate_info": {
             "type": "string"
           },
+          "cert_name": {
+            "type": "string",
+            "nullable": true,
+            "description": "User-friendly name for certificate selection, auto-generated from certificate CN/SAN/O or fingerprint"
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -126608,9 +129809,7 @@
           "gateway_type": {
             "type": "string",
             "enum": [
-              "datapower-gateway",
               "datapower-api-gateway",
-              "datapower-nano-gateway",
               "wm-api-gateway"
             ]
           },
@@ -126906,6 +130105,18 @@
           },
           "ai_gateway_enabled": {
             "type": "boolean"
+          },
+          "cipher_suites": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "disabled_protocols": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "dp_nano_gw_limits": {
             "type": "object",
@@ -127792,6 +131003,13 @@
               "format": "uri"
             }
           },
+          "integration_operation_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -127826,6 +131044,185 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Integration"
+            }
+          }
+        }
+      },
+      "IntegrationOperation": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "integration_operation"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "enabled",
+              "disabled"
+            ]
+          },
+          "category": {
+            "type": "string"
+          },
+          "trigger": {
+            "type": "string",
+            "enum": [
+              "manual",
+              "automatic",
+              "scheduled"
+            ]
+          },
+          "scope": {
+            "type": "string",
+            "enum": [
+              "cloud",
+              "org",
+              "catalog",
+              "space"
+            ]
+          },
+          "http_method": {
+            "type": "string",
+            "enum": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          },
+          "operation_path": {
+            "type": "string"
+          },
+          "parameters": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "input_schema": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "output_schemas": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "invoke_input_schema": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "invoke_output_schemas": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "settings": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "result_type": {
+            "type": "string",
+            "enum": [
+              "none",
+              "sync",
+              "download",
+              "async"
+            ]
+          },
+          "exec_permissions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confirmation_required": {
+            "type": "boolean"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "schema_components": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "schedule": {
+            "type": "object",
+            "properties": {
+              "cronExpression": {
+                "type": "string"
+              },
+              "input": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          },
+          "remote_api_versions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "IntegrationOperationList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntegrationOperation"
             }
           }
         }
@@ -127927,6 +131324,98 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Invitation"
+            }
+          }
+        }
+      },
+      "Itopsplatform": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "itopsplatform"
+            ]
+          },
+          "api_version": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "2.0.0"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1023
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 65535
+          },
+          "integration_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/ResourceVisibility"
+          },
+          "endpoint": {
+            "$ref": "#/components/schemas/SecuredEndpoint"
+          },
+          "configuration": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "credentials": {
+            "$ref": "#/components/schemas/ItOpsCredentials"
+          },
+          "remote_api_version": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "readOnly": true,
+            "format": "uri"
+          }
+        }
+      },
+      "ItopsplatformList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Itopsplatform"
             }
           }
         }
@@ -128501,6 +131990,11 @@
             "type": "string",
             "maxLength": 65535
           },
+          "key_name": {
+            "type": "string",
+            "nullable": true,
+            "description": "Name for the primary key+certificate pair, auto-generated from certificate or user-provided"
+          },
           "private_key_entry": {
             "type": "string",
             "format": "password"
@@ -128515,6 +132009,41 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/CertEntry"
+            }
+          },
+          "key_entries": {
+            "type": "array",
+            "nullable": true,
+            "description": "Additional key+certificate pairs beyond the first (for multi-key keystores)",
+            "items": {
+              "type": "object",
+              "required": [
+                "key_name",
+                "private_key_entry",
+                "public_certificate_entry"
+              ],
+              "properties": {
+                "key_name": {
+                  "type": "string",
+                  "description": "Name for this key+certificate pair, auto-generated from certificate CN or user-provided"
+                },
+                "private_key_entry": {
+                  "type": "string",
+                  "format": "password",
+                  "description": "Private key in PEM format"
+                },
+                "public_certificate_entry": {
+                  "$ref": "#/components/schemas/CertEntry"
+                },
+                "trusted_certificate_entries": {
+                  "type": "array",
+                  "nullable": true,
+                  "items": {
+                    "$ref": "#/components/schemas/CertEntry"
+                  },
+                  "description": "CA certificate chain for this key+certificate pair"
+                }
+              }
             }
           },
           "keystore": {
@@ -129621,7 +133150,8 @@
             "enum": [
               "5000",
               "6000",
-              "12000"
+              "12000",
+              "13000"
             ]
           },
           "advanced_scope": {
@@ -130346,6 +133876,126 @@
                     }
                   }
                 }
+              },
+              "third_party_config_13000": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "introspection_mode": {
+                    "type": "string",
+                    "enum": [
+                      "remote",
+                      "local"
+                    ]
+                  },
+                  "remote_introspection": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "gateway_user": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "local_introspection": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "issuer": {
+                        "type": "string"
+                      },
+                      "jwks_uri": {
+                        "type": "string"
+                      },
+                      "use_local_clock_skew": {
+                        "type": "boolean"
+                      },
+                      "clock_skew_in_seconds": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "token_generator": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "access_token_exp_interval": {
+                        "type": "integer"
+                      },
+                      "auth_code_exp_interval": {
+                        "type": "integer"
+                      },
+                      "expiry": {
+                        "type": "integer"
+                      },
+                      "enforce_pkce": {
+                        "type": "boolean"
+                      },
+                      "algorithm": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "refresh_token_url": {
+                    "type": "string"
+                  },
+                  "dcr": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "provider_name": {
+                        "type": "string"
+                      },
+                      "endpoint": {
+                        "type": "string"
+                      },
+                      "endpoint_headers": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      },
+                      "auth_type": {
+                        "type": "string",
+                        "enum": [
+                          "basic",
+                          "token",
+                          "refresh_token",
+                          "client_credentials",
+                          "none"
+                        ]
+                      },
+                      "username": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "password": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "token": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "token_type": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "client_id": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "client_secret": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "scope": {
+                        "type": "string",
+                        "nullable": true
+                      }
+                    }
+                  }
+                }
               }
             }
           },
@@ -131030,6 +134680,12 @@
           "api_agent_enabled": {
             "type": "boolean",
             "nullable": true
+          },
+          "portal_chatbot_consumer_roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "metadata": {
             "type": "object",
@@ -132963,7 +136619,8 @@
               "analytics",
               "transition_helper",
               "analytics_proxy",
-              "mcp_registry"
+              "mcp_registry",
+              "security_center"
             ]
           },
           "client_id": {
@@ -134826,7 +138483,10 @@
             "enum": [
               "subscription",
               "create_subscription_approval",
-              "delete_subscription_approval"
+              "delete_subscription_approval",
+              "create_app_approval",
+              "register_app_approval",
+              "update_app_approval"
             ]
           },
           "state": {
@@ -135511,6 +139171,33 @@
             },
             "nullable": true
           },
+          "key_exchange_mechanisms": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "MLKEM512",
+                "MLKEM768",
+                "X25519MLKEM768",
+                "SecP256r1MLKEM768",
+                "MLKEM1024",
+                "SecP384r1MLKEM1024",
+                "p256",
+                "p384",
+                "p521",
+                "x25519",
+                "x448",
+                "ffdhe2048",
+                "ffdhe3072",
+                "ffdhe4096",
+                "ffdhe6144",
+                "ffdhe8192",
+                "brainpoolP256",
+                "brainpoolP384",
+                "brainpoolP512"
+              ]
+            }
+          },
           "elliptic_curve_auto_negotiation": {
             "type": "boolean",
             "default": true
@@ -135573,6 +139260,16 @@
             "type": "string",
             "format": "uri",
             "nullable": true
+          },
+          "key_name": {
+            "type": "string",
+            "nullable": true,
+            "description": "Selects a specific key+certificate pair from the keystore by name (for multi-key keystores). If not specified, uses the first/default key."
+          },
+          "cert_name": {
+            "type": "string",
+            "nullable": true,
+            "description": "Selects a specific certificate from the truststore by name. If not specified, all certificates in the truststore are used."
           },
           "webhook_urls": {
             "type": "array",
@@ -135802,6 +139499,33 @@
             },
             "nullable": true
           },
+          "key_exchange_mechanisms": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "MLKEM512",
+                "MLKEM768",
+                "X25519MLKEM768",
+                "SecP256r1MLKEM768",
+                "MLKEM1024",
+                "SecP384r1MLKEM1024",
+                "p256",
+                "p384",
+                "p521",
+                "x25519",
+                "x448",
+                "ffdhe2048",
+                "ffdhe3072",
+                "ffdhe4096",
+                "ffdhe6144",
+                "ffdhe8192",
+                "brainpoolP256",
+                "brainpoolP384",
+                "brainpoolP512"
+              ]
+            }
+          },
           "elliptic_curve": {
             "type": "array",
             "items": {
@@ -135855,10 +139579,20 @@
             "type": "string",
             "format": "uri"
           },
+          "key_name": {
+            "type": "string",
+            "nullable": true,
+            "description": "Selects a specific key+certificate pair from the keystore by name (for multi-key keystores). If not specified, uses the first/default key."
+          },
           "truststore_url": {
             "type": "string",
             "format": "uri",
             "nullable": true
+          },
+          "cert_name": {
+            "type": "string",
+            "nullable": true,
+            "description": "Selects a specific certificate from the truststore by name. If not specified, all certificates in the truststore are used."
           },
           "gateway_service_urls": {
             "type": "array",
@@ -137235,6 +140969,41 @@
             "items": {
               "$ref": "#/components/schemas/XsltTransformationAlias"
             }
+          }
+        }
+      },
+      "CreateProjectFilesOrgScopeResponse": {
+        "type": "object",
+        "properties": {
+          "project": {
+            "$ref": "#/components/schemas/Project"
+          },
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProjectFile"
+            }
+          }
+        }
+      },
+      "CreateProjectFilesOrgScopeRequest": {
+        "type": "object",
+        "required": [
+          "projectName",
+          "archive"
+        ],
+        "properties": {
+          "projectName": {
+            "type": "string",
+            "description": "Name of the project to create"
+          },
+          "archive": {
+            "type": "string",
+            "format": "binary",
+            "description": "Zip archive containing project files"
           }
         }
       },
@@ -138627,6 +142396,9 @@
             "$ref": "#/components/schemas/ProjectInboundBulkHead"
           },
           {
+            "$ref": "#/components/schemas/ProjectInboundBulkHeadV2"
+          },
+          {
             "$ref": "#/components/schemas/ProjectSetMediaType"
           },
           {
@@ -138687,7 +142459,13 @@
             "$ref": "#/components/schemas/ProjectHTTPEndpoint"
           },
           {
+            "$ref": "#/components/schemas/ProjectHTTPEndpointV2"
+          },
+          {
             "$ref": "#/components/schemas/ProjectMockEndpoint"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectMockEndpointV2"
           },
           {
             "$ref": "#/components/schemas/ProjectMockResponse"
@@ -138706,6 +142484,9 @@
           },
           {
             "$ref": "#/components/schemas/ProjectScope"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectScopeV2"
           },
           {
             "$ref": "#/components/schemas/ProjectCORS"
@@ -138748,7 +142529,11 @@
           "Set",
           "RateLimit",
           "RateLimitDef",
-          "Scope"
+          "Scope",
+          "SOAPEndpoint",
+          "InboundAuthMessage",
+          "SOAPMessageConfig",
+          "SOAPToRESTMapping"
         ],
         "type": "string"
       },
@@ -138798,7 +142583,8 @@
               "payment_method",
               "notification",
               "user_registry",
-              "governance"
+              "governance",
+              "itopsplatform"
             ]
           },
           "info": {
@@ -140195,7 +143981,14 @@
           "file": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ProjectFile"
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ProjectFile"
+                },
+                {
+                  "$ref": "#/components/schemas/ProjectZip"
+                }
+              ]
             }
           }
         }
@@ -141262,7 +145055,8 @@
           "domain": {
             "enum": [
               "api",
-              "ai-platform"
+              "ai-platform",
+              "mcp"
             ],
             "type": "string"
           },
@@ -141278,6 +145072,13 @@
               }
             }
           }
+        }
+      },
+      "ProjectNanoGwTelemetry": {
+        "description": "Optional telemetry attributes pushed to OpenTelemetry endpoint for nano gateway policies",
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
         }
       },
       "ProjectReference": {
@@ -141471,6 +145272,9 @@
                                 "type": "integer"
                               }
                             }
+                          },
+                          "telemetry": {
+                            "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
                           }
                         }
                       }
@@ -141558,10 +145362,32 @@
             "additionalProperties": false,
             "properties": {
               "api-spec": {
-                "$ref": "#/components/schemas/ProjectPath"
+                "type": "object",
+                "required": [
+                  "$path"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "$path": {
+                    "description": "Specifies the path to the referencing resource The path can be relative to the referring file or absolute from the project folder This could point to yaml, json, wsdl or zip files",
+                    "type": "string"
+                  },
+                  "rootFile": {
+                    "description": "Entry point file within ZIP archive (required for ZIP archives containing WSDL) applicable only for WebMethods gateway. Specifies the path to the main WSDL file within the ZIP archive. Example: 'global_weather.wsdl' or 'wsdl/services/weather/GlobalWeather.wsdl'",
+                    "type": "string"
+                  }
+                }
               },
               "rest-def": {
-                "$ref": "#/components/schemas/ProjectPath"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/ProjectPath"
+                  },
+                  {
+                    "$ref": "#/components/schemas/ProjectReference"
+                  }
+                ],
+                "description": "REST definition for SOAP APIs: for DataPower gateways, specify the path to the API spec YAML file using $path; for webMethods Gateway, specify a reference to a SOAPToRESTMapping asset using $ref."
               },
               "uriSchemes": {
                 "$ref": "#/components/schemas/ProjectReference"
@@ -143088,7 +146914,10 @@
             "type": "string"
           },
           "apiVersion": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v1"
+            ]
           },
           "metadata": {
             "$ref": "#/components/schemas/ProjectMetadata"
@@ -143139,6 +146968,135 @@
                 }
               }
             }
+          }
+        }
+      },
+      "ProjectScopeV2": {
+        "description": "The message identifies the scope",
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "Scope"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v2"
+            ]
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "rest",
+                  "policy-sequence"
+                ],
+                "properties": {
+                  "policy-sequence": {
+                    "$ref": "#/components/schemas/ProjectReferenceList"
+                  },
+                  "rest": {
+                    "type": "object",
+                    "required": [
+                      "resources"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "resources": {
+                        "description": "Multiple instances of resources can be given",
+                        "type": "array",
+                        "items": {
+                          "description": "Multiple instances of methods for each resource can be given",
+                          "type": "object",
+                          "required": [
+                            "methods",
+                            "path"
+                          ],
+                          "additionalProperties": false,
+                          "properties": {
+                            "methods": {
+                              "type": "array",
+                              "minItems": 1,
+                              "items": {
+                                "type": "string",
+                                "enum": [
+                                  "get",
+                                  "post",
+                                  "put",
+                                  "delete",
+                                  "patch",
+                                  "head",
+                                  "keep"
+                                ]
+                              }
+                            },
+                            "path": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "soap",
+                  "policy-sequence"
+                ],
+                "properties": {
+                  "policy-sequence": {
+                    "$ref": "#/components/schemas/ProjectReferenceList"
+                  },
+                  "soap": {
+                    "type": "object",
+                    "required": [
+                      "operations"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "operations": {
+                        "description": "Multiple instances of operations can be given",
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "name"
+                          ],
+                          "additionalProperties": false,
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "description": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
         }
       },
@@ -143352,6 +147310,22 @@
                         }
                       }
                     }
+                  },
+                  "dp-nano-gateway": {
+                    "type": "object",
+                    "properties": {
+                      "apiVersion": {
+                        "type": "string"
+                      },
+                      "spec": {
+                        "type": "object",
+                        "properties": {
+                          "telemetry": {
+                            "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }
@@ -143429,6 +147403,48 @@
                     "http",
                     "https"
                   ]
+                }
+              },
+              "extensions": {
+                "description": "Gateway-specific extensions for URI schemes configuration",
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "webm-gateway": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "apiVersion": {
+                        "type": "string",
+                        "description": "API version for webm-gateway extension"
+                      },
+                      "spec": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "soap": {
+                            "type": "object",
+                            "description": "SOAP-specific configuration for webm-gateway",
+                            "additionalProperties": false,
+                            "properties": {
+                              "version": {
+                                "type": "string",
+                                "enum": [
+                                  "1.1",
+                                  "1.2"
+                                ],
+                                "description": "SOAP version (1.1 or 1.2)"
+                              },
+                              "validateVersion": {
+                                "type": "boolean",
+                                "description": "Whether to validate SOAP version"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -143724,6 +147740,22 @@
                         }
                       }
                     }
+                  },
+                  "dp-nano-gateway": {
+                    "type": "object",
+                    "properties": {
+                      "apiVersion": {
+                        "type": "string"
+                      },
+                      "spec": {
+                        "type": "object",
+                        "properties": {
+                          "telemetry": {
+                            "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }
@@ -143820,6 +147852,27 @@
                   },
                   "message": {
                     "type": "string"
+                  },
+                  "extensions": {
+                    "type": "object",
+                    "properties": {
+                      "dp-nano-gateway": {
+                        "type": "object",
+                        "properties": {
+                          "apiVersion": {
+                            "type": "string"
+                          },
+                          "spec": {
+                            "type": "object",
+                            "properties": {
+                              "telemetry": {
+                                "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               },
@@ -143867,6 +147920,27 @@
                   },
                   "message": {
                     "type": "string"
+                  },
+                  "extensions": {
+                    "type": "object",
+                    "properties": {
+                      "dp-nano-gateway": {
+                        "type": "object",
+                        "properties": {
+                          "apiVersion": {
+                            "type": "string"
+                          },
+                          "spec": {
+                            "type": "object",
+                            "properties": {
+                              "telemetry": {
+                                "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               },
@@ -143927,6 +148001,27 @@
                   },
                   "message": {
                     "type": "string"
+                  },
+                  "extensions": {
+                    "type": "object",
+                    "properties": {
+                      "dp-nano-gateway": {
+                        "type": "object",
+                        "properties": {
+                          "apiVersion": {
+                            "type": "string"
+                          },
+                          "spec": {
+                            "type": "object",
+                            "properties": {
+                              "telemetry": {
+                                "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               },
@@ -143964,6 +148059,27 @@
                   },
                   "message": {
                     "type": "string"
+                  },
+                  "extensions": {
+                    "type": "object",
+                    "properties": {
+                      "dp-nano-gateway": {
+                        "type": "object",
+                        "properties": {
+                          "apiVersion": {
+                            "type": "string"
+                          },
+                          "spec": {
+                            "type": "object",
+                            "properties": {
+                              "telemetry": {
+                                "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               },
@@ -144086,6 +148202,27 @@
                   },
                   "message": {
                     "type": "string"
+                  },
+                  "extensions": {
+                    "type": "object",
+                    "properties": {
+                      "dp-nano-gateway": {
+                        "type": "object",
+                        "properties": {
+                          "apiVersion": {
+                            "type": "string"
+                          },
+                          "spec": {
+                            "type": "object",
+                            "properties": {
+                              "telemetry": {
+                                "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               },
@@ -144099,6 +148236,27 @@
                   },
                   "message": {
                     "type": "string"
+                  },
+                  "extensions": {
+                    "type": "object",
+                    "properties": {
+                      "dp-nano-gateway": {
+                        "type": "object",
+                        "properties": {
+                          "apiVersion": {
+                            "type": "string"
+                          },
+                          "spec": {
+                            "type": "object",
+                            "properties": {
+                              "telemetry": {
+                                "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }
@@ -144439,6 +148597,22 @@
                         }
                       }
                     }
+                  },
+                  "dp-nano-gateway": {
+                    "type": "object",
+                    "properties": {
+                      "apiVersion": {
+                        "type": "string"
+                      },
+                      "spec": {
+                        "type": "object",
+                        "properties": {
+                          "telemetry": {
+                            "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }
@@ -144524,7 +148698,10 @@
             "type": "string"
           },
           "apiVersion": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v1"
+            ]
           },
           "metadata": {
             "$ref": "#/components/schemas/ProjectMetadata"
@@ -144551,6 +148728,70 @@
                 "properties": {
                   "retryAfterValue": {
                     "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ProjectInboundBulkHeadV2": {
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "InboundBulkHead"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v2"
+            ]
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "maxConcurrentCalls",
+              "retryAfterResponseHeader"
+            ],
+            "properties": {
+              "maxConcurrentCalls": {
+                "type": "integer"
+              },
+              "retryAfterResponseHeader": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "retryAfterValue": {
+                    "type": "integer"
+                  }
+                }
+              },
+              "rest": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "enableBulkheadForCallbacks": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "maxConcurrentCallbacks": {
+                        "type": "integer"
+                      }
+                    }
                   }
                 }
               }
@@ -145315,6 +149556,46 @@
                                           }
                                         }
                                       ]
+                                    }
+                                  }
+                                }
+                              },
+                              "wsSecurityUsernameToken": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                  "applicationSecurity": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                      "mode": {
+                                        "type": "string",
+                                        "enum": [
+                                          "authorize",
+                                          "identify",
+                                          "authenticate"
+                                        ]
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "wsSecurityX509Certificate": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                  "applicationSecurity": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                      "mode": {
+                                        "type": "string",
+                                        "enum": [
+                                          "authorize",
+                                          "identify",
+                                          "authenticate"
+                                        ]
+                                      }
                                     }
                                   }
                                 }
@@ -146418,8 +150699,57 @@
             "oneOf": [
               {
                 "type": "object",
+                "description": "Default routing - Applicable only for SOAP",
+                "additionalProperties": false,
+                "required": [
+                  "default-endpoint"
+                ],
+                "properties": {
+                  "default-endpoint": {
+                    "$ref": "#/components/schemas/ProjectReference"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "description": "Load balancer routing with multiple endpoints",
+                "required": [
+                  "load-balancer-endpoints"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "load-balancer-endpoints": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "$ref"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "$ref": {
+                          "type": "string",
+                          "description": "Reference to SOAP Endpoint"
+                        },
+                        "suspendDuration": {
+                          "type": "integer",
+                          "description": "Suspend duration in seconds",
+                          "minimum": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
                 "description": "Routing info for conditional routing",
                 "additionalProperties": false,
+                "required": [
+                  "default-endpoint",
+                  "conditional-endpoints"
+                ],
                 "properties": {
                   "default-endpoint": {
                     "$ref": "#/components/schemas/ProjectReference"
@@ -146445,6 +150775,10 @@
                 "type": "object",
                 "description": "Routing info for content based routing",
                 "additionalProperties": false,
+                "required": [
+                  "default-endpoint",
+                  "content-based-endpoints"
+                ],
                 "properties": {
                   "default-endpoint": {
                     "$ref": "#/components/schemas/ProjectReference"
@@ -146513,6 +150847,10 @@
                 "type": "object",
                 "description": "Routing info for dynamic routing",
                 "additionalProperties": false,
+                "required": [
+                  "default-endpoint",
+                  "dynamic-endpoints"
+                ],
                 "properties": {
                   "default-endpoint": {
                     "$ref": "#/components/schemas/ProjectReference"
@@ -146685,7 +151023,10 @@
             "type": "string"
           },
           "apiVersion": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v1"
+            ]
           },
           "metadata": {
             "$ref": "#/components/schemas/ProjectMetadata"
@@ -146750,6 +151091,79 @@
           }
         }
       },
+      "ProjectHTTPEndpointV2": {
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "HTTPEndpoint"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v2"
+            ]
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "url": {
+                "type": "string"
+              },
+              "method": {
+                "type": "string"
+              },
+              "connectTimeout": {
+                "maximum": 4294967295,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "readTimeout": {
+                "maximum": 4294967295,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "nativeServiceTimeout": {
+                "maximum": 4294967295,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "serviceRegistryParameters": {
+                "type": "array",
+                "items": {
+                  "description": "A key-value pair specifying an SSL configuration parameter.",
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "tlsClientProfile": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
       "ProjectMockEndpoint": {
         "type": "object",
         "required": [
@@ -146767,7 +151181,10 @@
             "type": "string"
           },
           "apiVersion": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v1"
+            ]
           },
           "metadata": {
             "$ref": "#/components/schemas/ProjectMetadata"
@@ -146810,6 +151227,106 @@
                 }
               }
             }
+          }
+        }
+      },
+      "ProjectMockEndpointV2": {
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "MockEndpoint"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v2"
+            ]
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "rest"
+                ],
+                "properties": {
+                  "rest": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "paths": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "get": {
+                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
+                            },
+                            "post": {
+                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
+                            },
+                            "put": {
+                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
+                            },
+                            "patch": {
+                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
+                            },
+                            "delete": {
+                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
+                            },
+                            "head": {
+                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
+                            },
+                            "options": {
+                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
+                            },
+                            "trace": {
+                              "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "soap"
+                ],
+                "properties": {
+                  "soap": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "operations": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "$ref": "#/components/schemas/ProjectMockEndpointMethodResponse"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
         }
       },
@@ -147674,6 +152191,22 @@
                         }
                       }
                     }
+                  },
+                  "dp-nano-gateway": {
+                    "type": "object",
+                    "properties": {
+                      "apiVersion": {
+                        "type": "string"
+                      },
+                      "spec": {
+                        "type": "object",
+                        "properties": {
+                          "telemetry": {
+                            "$ref": "#/components/schemas/ProjectNanoGwTelemetry"
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }
@@ -147724,6 +152257,30 @@
           },
           "instanceId": {
             "type": "string"
+          }
+        }
+      },
+      "WatsonxSettingsTestConnectionResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "available_models": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "model_type": {
+                  "type": "string"
+                },
+                "model_id": {
+                  "type": "string"
+                },
+                "is_latest": {
+                  "type": "boolean"
+                }
+              }
+            }
           }
         }
       },
@@ -148589,6 +153146,23 @@
           }
         }
       },
+      "ProjectUrl": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "project_url"
+        ],
+        "properties": {
+          "project_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL of the project to publish"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/Visibility"
+          }
+        }
+      },
       "ProjectZip": {
         "type": "object",
         "additionalProperties": true
@@ -148734,6 +153308,66 @@
           }
         ]
       },
+      "GatewayPortingAssessmentBulkActionRequest": {
+        "type": "object",
+        "properties": {
+          "products": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "scope": {
+                      "type": "string"
+                    },
+                    "space": {
+                      "type": "string"
+                    },
+                    "product_url": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "product_url"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "scope": {
+                      "type": "string"
+                    },
+                    "space": {
+                      "type": "string"
+                    },
+                    "product": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "version": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "version"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "product"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          }
+        }
+      },
       "GatewayPortingAssessmentCreateProjectRequest": {
         "type": "object",
         "properties": {
@@ -148825,6 +153459,62 @@
               "type": "object",
               "additionalProperties": true
             }
+          }
+        }
+      },
+      "GatewayPortingAssessmentListCatalogsResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2147483647
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "GatewayPortingAssessmentDownloadProjectScaffoldingFilesRequest": {
+        "type": "object",
+        "properties": {
+          "catalog": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "string"
+          },
+          "space": {
+            "type": "string"
+          },
+          "apis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "project_name": {
+            "type": "string"
+          },
+          "gateway_porting_assessment_url": {
+            "type": "string"
+          },
+          "project_title": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": {
+            "type": "string"
           }
         }
       },
@@ -149193,6 +153883,72 @@
           }
         }
       },
+      "ItOpsCredentials": {
+        "type": "object",
+        "required": [
+          "authentication_type"
+        ],
+        "properties": {
+          "authentication_type": {
+            "type": "string",
+            "enum": [
+              "basic",
+              "apikey"
+            ]
+          }
+        },
+        "oneOf": [
+          {
+            "title": "BasicCredentials",
+            "required": [
+              "authentication_type",
+              "username",
+              "password"
+            ],
+            "properties": {
+              "authentication_type": {
+                "type": "string",
+                "enum": [
+                  "basic"
+                ]
+              },
+              "username": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string",
+                "format": "password"
+              }
+            }
+          },
+          {
+            "title": "ApiKeyCredentials",
+            "additionalProperties": false,
+            "required": [
+              "authentication_type",
+              "api_key"
+            ],
+            "properties": {
+              "authentication_type": {
+                "type": "string",
+                "enum": [
+                  "apikey"
+                ]
+              },
+              "api_key": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "discriminator": {
+          "propertyName": "authentication_type",
+          "mapping": {
+            "basic": "#/components/schemas/ItOpsCredentials/oneOf/0",
+            "apikey": "#/components/schemas/ItOpsCredentials/oneOf/1"
+          }
+        }
+      },
       "XsltTransformationAliasMultipart": {
         "type": "object",
         "properties": {
@@ -149260,6 +154016,30 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ConfiguredXsltTransformationAlias"
+            }
+          }
+        }
+      },
+      "APIMatchRequest": {
+        "type": "object"
+      },
+      "APIMatchResponse": {
+        "type": "object",
+        "properties": {
+          "matches": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "match": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 100
+                }
+              }
             }
           }
         }
@@ -149475,8 +154255,8 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects, List the My User Group objects, List the My Team objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a User Group Role Assignment object, Clear the User Group Role Assignment objects, Update the User Group Role Assignment object by name or id, Delete the User Group Role Assignment object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Jwt Provider object, Clear the Jwt Provider objects, Update the Jwt Provider object by name or id, Delete the Jwt Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Programming Package object, Clear the Programming Package objects, Clear all Programming Package objects in all collections, Update the Programming Package object by id, Update the Programming Package object by name and version, Delete the Programming Package object by id, Delete the Programming Package object by name and version, List all Alias objects in all collections, Clear all Alias objects in all collections, Create a Xslt Transformation Alias object, Clear the Xslt Transformation Alias objects, Clear all Xslt Transformation Alias objects in all collections, Update the Xslt Transformation Alias object by id, Update the Xslt Transformation Alias object by name and version, Delete the Xslt Transformation Alias object by id, Delete the Xslt Transformation Alias object by name and version, Create a Http Transport Security Alias object, Clear the Http Transport Security Alias objects, Clear all Http Transport Security Alias objects in all collections, Update the Http Transport Security Alias object by id, Update the Http Transport Security Alias object by name and version, Delete the Http Transport Security Alias object by id, Delete the Http Transport Security Alias object by name and version, Create a Webmethods Integration Server Service Alias object, Clear the Webmethods Integration Server Service Alias objects, Clear all Webmethods Integration Server Service Alias objects in all collections, Update the Webmethods Integration Server Service Alias object by id, Update the Webmethods Integration Server Service Alias object by name and version, Delete the Webmethods Integration Server Service Alias object by id, Delete the Webmethods Integration Server Service Alias object by name and version, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Jwt Provider object, Clear the Configured Jwt Provider objects, Delete the Configured Jwt Provider object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Configured Portal Service object, Clear the Configured Portal Service objects, Delete the Configured Portal Service object by name or id, Create a Configured Programming Package object, Clear the Configured Programming Package objects, Delete the Configured Programming Package object by id, Delete the Configured Programming Package object by name and version, List all Configured Alias objects in all collections, Clear all Configured Alias objects in all collections, Create a Configured Xslt Transformation Alias object, Clear the Configured Xslt Transformation Alias objects, Clear all Configured Xslt Transformation Alias objects in all collections, Delete the Configured Xslt Transformation Alias object by id, Delete the Configured Xslt Transformation Alias object by name and version, Create a Configured Webmethods Integration Server Service Alias object, Clear the Configured Webmethods Integration Server Service Alias objects, Clear all Configured Webmethods Integration Server Service Alias objects in all collections, Delete the Configured Webmethods Integration Server Service Alias object by id, Delete the Configured Webmethods Integration Server Service Alias object by name and version, Create a Configured Http Transport Security Alias object, Clear the Configured Http Transport Security Alias objects, Clear all Configured Http Transport Security Alias objects in all collections, Delete the Configured Http Transport Security Alias object by id, Delete the Configured Http Transport Security Alias object by name and version, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Create a Simple Alias object, Clear the Simple Alias objects, Update the Simple Alias object by name or id, Delete the Simple Alias object by name or id, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, Create a User Group object, List the User Group objects, Clear the User Group objects, Get the User Group object by name or id, Update the User Group object by name or id, Delete the User Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the User Group Role Assignment objects, Get the User Group Role Assignment object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, Create a Team object, List the Team objects, Clear the Team objects, Get the Team object by name or id, Update the Team object by name or id, Delete the Team object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Jwt Provider objects, Get the Jwt Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, List the Programming Package objects, List all Programming Package objects in all collections, Get the Programming Package object by id, Get the Programming Package object by name and version, List the Xslt Transformation Alias objects, List all Xslt Transformation Alias objects in all collections, Get the Xslt Transformation Alias object by id, Get the Xslt Transformation Alias object by name and version, List the Http Transport Security Alias objects, List all Http Transport Security Alias objects in all collections, Get the Http Transport Security Alias object by id, Get the Http Transport Security Alias object by name and version, List the Webmethods Integration Server Service Alias objects, List all Webmethods Integration Server Service Alias objects in all collections, Get the Webmethods Integration Server Service Alias object by id, Get the Webmethods Integration Server Service Alias object by name and version, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Jwt Provider objects, Get the Configured Jwt Provider object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configured Portal Service objects, Get the Configured Portal Service object by name or id, List the Configured Programming Package objects, List all Configured Programming Package objects in all collections, Clear all Configured Programming Package objects in all collections, Get the Configured Programming Package object by id, Get the Configured Programming Package object by name and version, List the Configured Xslt Transformation Alias objects, List all Configured Xslt Transformation Alias objects in all collections, Get the Configured Xslt Transformation Alias object by id, Get the Configured Xslt Transformation Alias object by name and version, List the Configured Webmethods Integration Server Service Alias objects, List all Configured Webmethods Integration Server Service Alias objects in all collections, Get the Configured Webmethods Integration Server Service Alias object by id, Get the Configured Webmethods Integration Server Service Alias object by name and version, List the Configured Http Transport Security Alias objects, List all Configured Http Transport Security Alias objects in all collections, Get the Configured Http Transport Security Alias object by id, Get the Configured Http Transport Security Alias object by name and version, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, List the Simple Alias objects, Get the Simple Alias object by name or id, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, List the Resource Service Status objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a User Group Role Assignment object, Clear the User Group Role Assignment objects, Update the User Group Role Assignment object by name or id, Delete the User Group Role Assignment object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Jwt Provider object, Clear the Jwt Provider objects, Update the Jwt Provider object by name or id, Delete the Jwt Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Create a Itopsplatform object, Clear the Itopsplatform objects, Update the Itopsplatform object by name or id, Delete the Itopsplatform object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Programming Package object, Clear the Programming Package objects, Clear all Programming Package objects in all collections, Update the Programming Package object by id, Update the Programming Package object by name and version, Delete the Programming Package object by id, Delete the Programming Package object by name and version, List all Alias objects in all collections, Clear all Alias objects in all collections, Create a Xslt Transformation Alias object, Clear the Xslt Transformation Alias objects, Clear all Xslt Transformation Alias objects in all collections, Update the Xslt Transformation Alias object by id, Update the Xslt Transformation Alias object by name and version, Delete the Xslt Transformation Alias object by id, Delete the Xslt Transformation Alias object by name and version, Create a Http Transport Security Alias object, Clear the Http Transport Security Alias objects, Clear all Http Transport Security Alias objects in all collections, Update the Http Transport Security Alias object by id, Update the Http Transport Security Alias object by name and version, Delete the Http Transport Security Alias object by id, Delete the Http Transport Security Alias object by name and version, Create a Webmethods Integration Server Service Alias object, Clear the Webmethods Integration Server Service Alias objects, Clear all Webmethods Integration Server Service Alias objects in all collections, Update the Webmethods Integration Server Service Alias object by id, Update the Webmethods Integration Server Service Alias object by name and version, Delete the Webmethods Integration Server Service Alias object by id, Delete the Webmethods Integration Server Service Alias object by name and version, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Jwt Provider object, Clear the Configured Jwt Provider objects, Delete the Configured Jwt Provider object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Configured Portal Service object, Clear the Configured Portal Service objects, Delete the Configured Portal Service object by name or id, Create a Configured Programming Package object, Clear the Configured Programming Package objects, Delete the Configured Programming Package object by id, Delete the Configured Programming Package object by name and version, List all Configured Alias objects in all collections, Clear all Configured Alias objects in all collections, Create a Configured Xslt Transformation Alias object, Clear the Configured Xslt Transformation Alias objects, Clear all Configured Xslt Transformation Alias objects in all collections, Delete the Configured Xslt Transformation Alias object by id, Delete the Configured Xslt Transformation Alias object by name and version, Create a Configured Webmethods Integration Server Service Alias object, Clear the Configured Webmethods Integration Server Service Alias objects, Clear all Configured Webmethods Integration Server Service Alias objects in all collections, Delete the Configured Webmethods Integration Server Service Alias object by id, Delete the Configured Webmethods Integration Server Service Alias object by name and version, Create a Configured Http Transport Security Alias object, Clear the Configured Http Transport Security Alias objects, Clear all Configured Http Transport Security Alias objects in all collections, Delete the Configured Http Transport Security Alias object by id, Delete the Configured Http Transport Security Alias object by name and version, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Create a Simple Alias object, Clear the Simple Alias objects, Update the Simple Alias object by name or id, Delete the Simple Alias object by name or id, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, Create a User Group object, List the User Group objects, Clear the User Group objects, Get the User Group object by name or id, Update the User Group object by name or id, Delete the User Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the User Group Role Assignment objects, Get the User Group Role Assignment object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, Create a Team object, List the Team objects, Clear the Team objects, Get the Team object by name or id, Update the Team object by name or id, Delete the Team object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Jwt Provider objects, Get the Jwt Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Itopsplatform objects, Get the Itopsplatform object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, List the Programming Package objects, List all Programming Package objects in all collections, Get the Programming Package object by id, Get the Programming Package object by name and version, List the Xslt Transformation Alias objects, List all Xslt Transformation Alias objects in all collections, Get the Xslt Transformation Alias object by id, Get the Xslt Transformation Alias object by name and version, List the Http Transport Security Alias objects, List all Http Transport Security Alias objects in all collections, Get the Http Transport Security Alias object by id, Get the Http Transport Security Alias object by name and version, List the Webmethods Integration Server Service Alias objects, List all Webmethods Integration Server Service Alias objects in all collections, Get the Webmethods Integration Server Service Alias object by id, Get the Webmethods Integration Server Service Alias object by name and version, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Jwt Provider objects, Get the Configured Jwt Provider object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configured Portal Service objects, Get the Configured Portal Service object by name or id, List the Configured Programming Package objects, List all Configured Programming Package objects in all collections, Clear all Configured Programming Package objects in all collections, Get the Configured Programming Package object by id, Get the Configured Programming Package object by name and version, List the Configured Xslt Transformation Alias objects, List all Configured Xslt Transformation Alias objects in all collections, Get the Configured Xslt Transformation Alias object by id, Get the Configured Xslt Transformation Alias object by name and version, List the Configured Webmethods Integration Server Service Alias objects, List all Configured Webmethods Integration Server Service Alias objects in all collections, Get the Configured Webmethods Integration Server Service Alias object by id, Get the Configured Webmethods Integration Server Service Alias object by name and version, List the Configured Http Transport Security Alias objects, List all Configured Http Transport Security Alias objects in all collections, Get the Configured Http Transport Security Alias object by id, Get the Configured Http Transport Security Alias object by name and version, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, List the Simple Alias objects, Get the Simple Alias object by name or id, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
@@ -149507,8 +154287,8 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects, List the My User Group objects, List the My Team objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a User Group Role Assignment object, Clear the User Group Role Assignment objects, Update the User Group Role Assignment object by name or id, Delete the User Group Role Assignment object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Jwt Provider object, Clear the Jwt Provider objects, Update the Jwt Provider object by name or id, Delete the Jwt Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Programming Package object, Clear the Programming Package objects, Clear all Programming Package objects in all collections, Update the Programming Package object by id, Update the Programming Package object by name and version, Delete the Programming Package object by id, Delete the Programming Package object by name and version, List all Alias objects in all collections, Clear all Alias objects in all collections, Create a Xslt Transformation Alias object, Clear the Xslt Transformation Alias objects, Clear all Xslt Transformation Alias objects in all collections, Update the Xslt Transformation Alias object by id, Update the Xslt Transformation Alias object by name and version, Delete the Xslt Transformation Alias object by id, Delete the Xslt Transformation Alias object by name and version, Create a Http Transport Security Alias object, Clear the Http Transport Security Alias objects, Clear all Http Transport Security Alias objects in all collections, Update the Http Transport Security Alias object by id, Update the Http Transport Security Alias object by name and version, Delete the Http Transport Security Alias object by id, Delete the Http Transport Security Alias object by name and version, Create a Webmethods Integration Server Service Alias object, Clear the Webmethods Integration Server Service Alias objects, Clear all Webmethods Integration Server Service Alias objects in all collections, Update the Webmethods Integration Server Service Alias object by id, Update the Webmethods Integration Server Service Alias object by name and version, Delete the Webmethods Integration Server Service Alias object by id, Delete the Webmethods Integration Server Service Alias object by name and version, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Jwt Provider object, Clear the Configured Jwt Provider objects, Delete the Configured Jwt Provider object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Configured Portal Service object, Clear the Configured Portal Service objects, Delete the Configured Portal Service object by name or id, Create a Configured Programming Package object, Clear the Configured Programming Package objects, Delete the Configured Programming Package object by id, Delete the Configured Programming Package object by name and version, List all Configured Alias objects in all collections, Clear all Configured Alias objects in all collections, Create a Configured Xslt Transformation Alias object, Clear the Configured Xslt Transformation Alias objects, Clear all Configured Xslt Transformation Alias objects in all collections, Delete the Configured Xslt Transformation Alias object by id, Delete the Configured Xslt Transformation Alias object by name and version, Create a Configured Webmethods Integration Server Service Alias object, Clear the Configured Webmethods Integration Server Service Alias objects, Clear all Configured Webmethods Integration Server Service Alias objects in all collections, Delete the Configured Webmethods Integration Server Service Alias object by id, Delete the Configured Webmethods Integration Server Service Alias object by name and version, Create a Configured Http Transport Security Alias object, Clear the Configured Http Transport Security Alias objects, Clear all Configured Http Transport Security Alias objects in all collections, Delete the Configured Http Transport Security Alias object by id, Delete the Configured Http Transport Security Alias object by name and version, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Create a Simple Alias object, Clear the Simple Alias objects, Update the Simple Alias object by name or id, Delete the Simple Alias object by name or id, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, Create a User Group object, List the User Group objects, Clear the User Group objects, Get the User Group object by name or id, Update the User Group object by name or id, Delete the User Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the User Group Role Assignment objects, Get the User Group Role Assignment object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, Create a Team object, List the Team objects, Clear the Team objects, Get the Team object by name or id, Update the Team object by name or id, Delete the Team object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Jwt Provider objects, Get the Jwt Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, List the Programming Package objects, List all Programming Package objects in all collections, Get the Programming Package object by id, Get the Programming Package object by name and version, List the Xslt Transformation Alias objects, List all Xslt Transformation Alias objects in all collections, Get the Xslt Transformation Alias object by id, Get the Xslt Transformation Alias object by name and version, List the Http Transport Security Alias objects, List all Http Transport Security Alias objects in all collections, Get the Http Transport Security Alias object by id, Get the Http Transport Security Alias object by name and version, List the Webmethods Integration Server Service Alias objects, List all Webmethods Integration Server Service Alias objects in all collections, Get the Webmethods Integration Server Service Alias object by id, Get the Webmethods Integration Server Service Alias object by name and version, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Jwt Provider objects, Get the Configured Jwt Provider object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configured Portal Service objects, Get the Configured Portal Service object by name or id, List the Configured Programming Package objects, List all Configured Programming Package objects in all collections, Clear all Configured Programming Package objects in all collections, Get the Configured Programming Package object by id, Get the Configured Programming Package object by name and version, List the Configured Xslt Transformation Alias objects, List all Configured Xslt Transformation Alias objects in all collections, Get the Configured Xslt Transformation Alias object by id, Get the Configured Xslt Transformation Alias object by name and version, List the Configured Webmethods Integration Server Service Alias objects, List all Configured Webmethods Integration Server Service Alias objects in all collections, Get the Configured Webmethods Integration Server Service Alias object by id, Get the Configured Webmethods Integration Server Service Alias object by name and version, List the Configured Http Transport Security Alias objects, List all Configured Http Transport Security Alias objects in all collections, Get the Configured Http Transport Security Alias object by id, Get the Configured Http Transport Security Alias object by name and version, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, List the Simple Alias objects, Get the Simple Alias object by name or id, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, List the Resource Service Status objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a User Group Role Assignment object, Clear the User Group Role Assignment objects, Update the User Group Role Assignment object by name or id, Delete the User Group Role Assignment object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Jwt Provider object, Clear the Jwt Provider objects, Update the Jwt Provider object by name or id, Delete the Jwt Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Create a Itopsplatform object, Clear the Itopsplatform objects, Update the Itopsplatform object by name or id, Delete the Itopsplatform object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Programming Package object, Clear the Programming Package objects, Clear all Programming Package objects in all collections, Update the Programming Package object by id, Update the Programming Package object by name and version, Delete the Programming Package object by id, Delete the Programming Package object by name and version, List all Alias objects in all collections, Clear all Alias objects in all collections, Create a Xslt Transformation Alias object, Clear the Xslt Transformation Alias objects, Clear all Xslt Transformation Alias objects in all collections, Update the Xslt Transformation Alias object by id, Update the Xslt Transformation Alias object by name and version, Delete the Xslt Transformation Alias object by id, Delete the Xslt Transformation Alias object by name and version, Create a Http Transport Security Alias object, Clear the Http Transport Security Alias objects, Clear all Http Transport Security Alias objects in all collections, Update the Http Transport Security Alias object by id, Update the Http Transport Security Alias object by name and version, Delete the Http Transport Security Alias object by id, Delete the Http Transport Security Alias object by name and version, Create a Webmethods Integration Server Service Alias object, Clear the Webmethods Integration Server Service Alias objects, Clear all Webmethods Integration Server Service Alias objects in all collections, Update the Webmethods Integration Server Service Alias object by id, Update the Webmethods Integration Server Service Alias object by name and version, Delete the Webmethods Integration Server Service Alias object by id, Delete the Webmethods Integration Server Service Alias object by name and version, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Jwt Provider object, Clear the Configured Jwt Provider objects, Delete the Configured Jwt Provider object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Configured Portal Service object, Clear the Configured Portal Service objects, Delete the Configured Portal Service object by name or id, Create a Configured Programming Package object, Clear the Configured Programming Package objects, Delete the Configured Programming Package object by id, Delete the Configured Programming Package object by name and version, List all Configured Alias objects in all collections, Clear all Configured Alias objects in all collections, Create a Configured Xslt Transformation Alias object, Clear the Configured Xslt Transformation Alias objects, Clear all Configured Xslt Transformation Alias objects in all collections, Delete the Configured Xslt Transformation Alias object by id, Delete the Configured Xslt Transformation Alias object by name and version, Create a Configured Webmethods Integration Server Service Alias object, Clear the Configured Webmethods Integration Server Service Alias objects, Clear all Configured Webmethods Integration Server Service Alias objects in all collections, Delete the Configured Webmethods Integration Server Service Alias object by id, Delete the Configured Webmethods Integration Server Service Alias object by name and version, Create a Configured Http Transport Security Alias object, Clear the Configured Http Transport Security Alias objects, Clear all Configured Http Transport Security Alias objects in all collections, Delete the Configured Http Transport Security Alias object by id, Delete the Configured Http Transport Security Alias object by name and version, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Create a Simple Alias object, Clear the Simple Alias objects, Update the Simple Alias object by name or id, Delete the Simple Alias object by name or id, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, Create a User Group object, List the User Group objects, Clear the User Group objects, Get the User Group object by name or id, Update the User Group object by name or id, Delete the User Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the User Group Role Assignment objects, Get the User Group Role Assignment object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, Create a Team object, List the Team objects, Clear the Team objects, Get the Team object by name or id, Update the Team object by name or id, Delete the Team object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Jwt Provider objects, Get the Jwt Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Itopsplatform objects, Get the Itopsplatform object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, List the Programming Package objects, List all Programming Package objects in all collections, Get the Programming Package object by id, Get the Programming Package object by name and version, List the Xslt Transformation Alias objects, List all Xslt Transformation Alias objects in all collections, Get the Xslt Transformation Alias object by id, Get the Xslt Transformation Alias object by name and version, List the Http Transport Security Alias objects, List all Http Transport Security Alias objects in all collections, Get the Http Transport Security Alias object by id, Get the Http Transport Security Alias object by name and version, List the Webmethods Integration Server Service Alias objects, List all Webmethods Integration Server Service Alias objects in all collections, Get the Webmethods Integration Server Service Alias object by id, Get the Webmethods Integration Server Service Alias object by name and version, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Jwt Provider objects, Get the Configured Jwt Provider object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configured Portal Service objects, Get the Configured Portal Service object by name or id, List the Configured Programming Package objects, List all Configured Programming Package objects in all collections, Clear all Configured Programming Package objects in all collections, Get the Configured Programming Package object by id, Get the Configured Programming Package object by name and version, List the Configured Xslt Transformation Alias objects, List all Configured Xslt Transformation Alias objects in all collections, Get the Configured Xslt Transformation Alias object by id, Get the Configured Xslt Transformation Alias object by name and version, List the Configured Webmethods Integration Server Service Alias objects, List all Configured Webmethods Integration Server Service Alias objects in all collections, Get the Configured Webmethods Integration Server Service Alias object by id, Get the Configured Webmethods Integration Server Service Alias object by name and version, List the Configured Http Transport Security Alias objects, List all Configured Http Transport Security Alias objects in all collections, Get the Configured Http Transport Security Alias object by id, Get the Configured Http Transport Security Alias object by name and version, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, List the Simple Alias objects, Get the Simple Alias object by name or id, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
@@ -149538,8 +154318,8 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects, List the My User Group objects, List the My Team objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a User Group Role Assignment object, Clear the User Group Role Assignment objects, Update the User Group Role Assignment object by name or id, Delete the User Group Role Assignment object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Jwt Provider object, Clear the Jwt Provider objects, Update the Jwt Provider object by name or id, Delete the Jwt Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Programming Package object, Clear the Programming Package objects, Clear all Programming Package objects in all collections, Update the Programming Package object by id, Update the Programming Package object by name and version, Delete the Programming Package object by id, Delete the Programming Package object by name and version, List all Alias objects in all collections, Clear all Alias objects in all collections, Create a Xslt Transformation Alias object, Clear the Xslt Transformation Alias objects, Clear all Xslt Transformation Alias objects in all collections, Update the Xslt Transformation Alias object by id, Update the Xslt Transformation Alias object by name and version, Delete the Xslt Transformation Alias object by id, Delete the Xslt Transformation Alias object by name and version, Create a Http Transport Security Alias object, Clear the Http Transport Security Alias objects, Clear all Http Transport Security Alias objects in all collections, Update the Http Transport Security Alias object by id, Update the Http Transport Security Alias object by name and version, Delete the Http Transport Security Alias object by id, Delete the Http Transport Security Alias object by name and version, Create a Webmethods Integration Server Service Alias object, Clear the Webmethods Integration Server Service Alias objects, Clear all Webmethods Integration Server Service Alias objects in all collections, Update the Webmethods Integration Server Service Alias object by id, Update the Webmethods Integration Server Service Alias object by name and version, Delete the Webmethods Integration Server Service Alias object by id, Delete the Webmethods Integration Server Service Alias object by name and version, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Jwt Provider object, Clear the Configured Jwt Provider objects, Delete the Configured Jwt Provider object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Configured Portal Service object, Clear the Configured Portal Service objects, Delete the Configured Portal Service object by name or id, Create a Configured Programming Package object, Clear the Configured Programming Package objects, Delete the Configured Programming Package object by id, Delete the Configured Programming Package object by name and version, List all Configured Alias objects in all collections, Clear all Configured Alias objects in all collections, Create a Configured Xslt Transformation Alias object, Clear the Configured Xslt Transformation Alias objects, Clear all Configured Xslt Transformation Alias objects in all collections, Delete the Configured Xslt Transformation Alias object by id, Delete the Configured Xslt Transformation Alias object by name and version, Create a Configured Webmethods Integration Server Service Alias object, Clear the Configured Webmethods Integration Server Service Alias objects, Clear all Configured Webmethods Integration Server Service Alias objects in all collections, Delete the Configured Webmethods Integration Server Service Alias object by id, Delete the Configured Webmethods Integration Server Service Alias object by name and version, Create a Configured Http Transport Security Alias object, Clear the Configured Http Transport Security Alias objects, Clear all Configured Http Transport Security Alias objects in all collections, Delete the Configured Http Transport Security Alias object by id, Delete the Configured Http Transport Security Alias object by name and version, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Create a Simple Alias object, Clear the Simple Alias objects, Update the Simple Alias object by name or id, Delete the Simple Alias object by name or id, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, Create a User Group object, List the User Group objects, Clear the User Group objects, Get the User Group object by name or id, Update the User Group object by name or id, Delete the User Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the User Group Role Assignment objects, Get the User Group Role Assignment object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, Create a Team object, List the Team objects, Clear the Team objects, Get the Team object by name or id, Update the Team object by name or id, Delete the Team object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Jwt Provider objects, Get the Jwt Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, List the Programming Package objects, List all Programming Package objects in all collections, Get the Programming Package object by id, Get the Programming Package object by name and version, List the Xslt Transformation Alias objects, List all Xslt Transformation Alias objects in all collections, Get the Xslt Transformation Alias object by id, Get the Xslt Transformation Alias object by name and version, List the Http Transport Security Alias objects, List all Http Transport Security Alias objects in all collections, Get the Http Transport Security Alias object by id, Get the Http Transport Security Alias object by name and version, List the Webmethods Integration Server Service Alias objects, List all Webmethods Integration Server Service Alias objects in all collections, Get the Webmethods Integration Server Service Alias object by id, Get the Webmethods Integration Server Service Alias object by name and version, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Jwt Provider objects, Get the Configured Jwt Provider object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configured Portal Service objects, Get the Configured Portal Service object by name or id, List the Configured Programming Package objects, List all Configured Programming Package objects in all collections, Clear all Configured Programming Package objects in all collections, Get the Configured Programming Package object by id, Get the Configured Programming Package object by name and version, List the Configured Xslt Transformation Alias objects, List all Configured Xslt Transformation Alias objects in all collections, Get the Configured Xslt Transformation Alias object by id, Get the Configured Xslt Transformation Alias object by name and version, List the Configured Webmethods Integration Server Service Alias objects, List all Configured Webmethods Integration Server Service Alias objects in all collections, Get the Configured Webmethods Integration Server Service Alias object by id, Get the Configured Webmethods Integration Server Service Alias object by name and version, List the Configured Http Transport Security Alias objects, List all Configured Http Transport Security Alias objects in all collections, Get the Configured Http Transport Security Alias object by id, Get the Configured Http Transport Security Alias object by name and version, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, List the Simple Alias objects, Get the Simple Alias object by name or id, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, List the Resource Service Status objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a User Group Role Assignment object, Clear the User Group Role Assignment objects, Update the User Group Role Assignment object by name or id, Delete the User Group Role Assignment object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Jwt Provider object, Clear the Jwt Provider objects, Update the Jwt Provider object by name or id, Delete the Jwt Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Create a Itopsplatform object, Clear the Itopsplatform objects, Update the Itopsplatform object by name or id, Delete the Itopsplatform object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Programming Package object, Clear the Programming Package objects, Clear all Programming Package objects in all collections, Update the Programming Package object by id, Update the Programming Package object by name and version, Delete the Programming Package object by id, Delete the Programming Package object by name and version, List all Alias objects in all collections, Clear all Alias objects in all collections, Create a Xslt Transformation Alias object, Clear the Xslt Transformation Alias objects, Clear all Xslt Transformation Alias objects in all collections, Update the Xslt Transformation Alias object by id, Update the Xslt Transformation Alias object by name and version, Delete the Xslt Transformation Alias object by id, Delete the Xslt Transformation Alias object by name and version, Create a Http Transport Security Alias object, Clear the Http Transport Security Alias objects, Clear all Http Transport Security Alias objects in all collections, Update the Http Transport Security Alias object by id, Update the Http Transport Security Alias object by name and version, Delete the Http Transport Security Alias object by id, Delete the Http Transport Security Alias object by name and version, Create a Webmethods Integration Server Service Alias object, Clear the Webmethods Integration Server Service Alias objects, Clear all Webmethods Integration Server Service Alias objects in all collections, Update the Webmethods Integration Server Service Alias object by id, Update the Webmethods Integration Server Service Alias object by name and version, Delete the Webmethods Integration Server Service Alias object by id, Delete the Webmethods Integration Server Service Alias object by name and version, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Jwt Provider object, Clear the Configured Jwt Provider objects, Delete the Configured Jwt Provider object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Configured Portal Service object, Clear the Configured Portal Service objects, Delete the Configured Portal Service object by name or id, Create a Configured Programming Package object, Clear the Configured Programming Package objects, Delete the Configured Programming Package object by id, Delete the Configured Programming Package object by name and version, List all Configured Alias objects in all collections, Clear all Configured Alias objects in all collections, Create a Configured Xslt Transformation Alias object, Clear the Configured Xslt Transformation Alias objects, Clear all Configured Xslt Transformation Alias objects in all collections, Delete the Configured Xslt Transformation Alias object by id, Delete the Configured Xslt Transformation Alias object by name and version, Create a Configured Webmethods Integration Server Service Alias object, Clear the Configured Webmethods Integration Server Service Alias objects, Clear all Configured Webmethods Integration Server Service Alias objects in all collections, Delete the Configured Webmethods Integration Server Service Alias object by id, Delete the Configured Webmethods Integration Server Service Alias object by name and version, Create a Configured Http Transport Security Alias object, Clear the Configured Http Transport Security Alias objects, Clear all Configured Http Transport Security Alias objects in all collections, Delete the Configured Http Transport Security Alias object by id, Delete the Configured Http Transport Security Alias object by name and version, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Create a Simple Alias object, Clear the Simple Alias objects, Update the Simple Alias object by name or id, Delete the Simple Alias object by name or id, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, Create a User Group object, List the User Group objects, Clear the User Group objects, Get the User Group object by name or id, Update the User Group object by name or id, Delete the User Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the User Group Role Assignment objects, Get the User Group Role Assignment object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, Create a Team object, List the Team objects, Clear the Team objects, Get the Team object by name or id, Update the Team object by name or id, Delete the Team object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Jwt Provider objects, Get the Jwt Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Itopsplatform objects, Get the Itopsplatform object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, List the Programming Package objects, List all Programming Package objects in all collections, Get the Programming Package object by id, Get the Programming Package object by name and version, List the Xslt Transformation Alias objects, List all Xslt Transformation Alias objects in all collections, Get the Xslt Transformation Alias object by id, Get the Xslt Transformation Alias object by name and version, List the Http Transport Security Alias objects, List all Http Transport Security Alias objects in all collections, Get the Http Transport Security Alias object by id, Get the Http Transport Security Alias object by name and version, List the Webmethods Integration Server Service Alias objects, List all Webmethods Integration Server Service Alias objects in all collections, Get the Webmethods Integration Server Service Alias object by id, Get the Webmethods Integration Server Service Alias object by name and version, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Jwt Provider objects, Get the Configured Jwt Provider object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configured Portal Service objects, Get the Configured Portal Service object by name or id, List the Configured Programming Package objects, List all Configured Programming Package objects in all collections, Clear all Configured Programming Package objects in all collections, Get the Configured Programming Package object by id, Get the Configured Programming Package object by name and version, List the Configured Xslt Transformation Alias objects, List all Configured Xslt Transformation Alias objects in all collections, Get the Configured Xslt Transformation Alias object by id, Get the Configured Xslt Transformation Alias object by name and version, List the Configured Webmethods Integration Server Service Alias objects, List all Configured Webmethods Integration Server Service Alias objects in all collections, Get the Configured Webmethods Integration Server Service Alias object by id, Get the Configured Webmethods Integration Server Service Alias object by name and version, List the Configured Http Transport Security Alias objects, List all Configured Http Transport Security Alias objects in all collections, Get the Configured Http Transport Security Alias object by id, Get the Configured Http Transport Security Alias object by name and version, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, List the Simple Alias objects, Get the Simple Alias object by name or id, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
@@ -149571,8 +154351,8 @@
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects, List the My User Group objects, List the My Team objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a User Group Role Assignment object, Clear the User Group Role Assignment objects, Update the User Group Role Assignment object by name or id, Delete the User Group Role Assignment object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Jwt Provider object, Clear the Jwt Provider objects, Update the Jwt Provider object by name or id, Delete the Jwt Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Programming Package object, Clear the Programming Package objects, Clear all Programming Package objects in all collections, Update the Programming Package object by id, Update the Programming Package object by name and version, Delete the Programming Package object by id, Delete the Programming Package object by name and version, List all Alias objects in all collections, Clear all Alias objects in all collections, Create a Xslt Transformation Alias object, Clear the Xslt Transformation Alias objects, Clear all Xslt Transformation Alias objects in all collections, Update the Xslt Transformation Alias object by id, Update the Xslt Transformation Alias object by name and version, Delete the Xslt Transformation Alias object by id, Delete the Xslt Transformation Alias object by name and version, Create a Http Transport Security Alias object, Clear the Http Transport Security Alias objects, Clear all Http Transport Security Alias objects in all collections, Update the Http Transport Security Alias object by id, Update the Http Transport Security Alias object by name and version, Delete the Http Transport Security Alias object by id, Delete the Http Transport Security Alias object by name and version, Create a Webmethods Integration Server Service Alias object, Clear the Webmethods Integration Server Service Alias objects, Clear all Webmethods Integration Server Service Alias objects in all collections, Update the Webmethods Integration Server Service Alias object by id, Update the Webmethods Integration Server Service Alias object by name and version, Delete the Webmethods Integration Server Service Alias object by id, Delete the Webmethods Integration Server Service Alias object by name and version, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Jwt Provider object, Clear the Configured Jwt Provider objects, Delete the Configured Jwt Provider object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Configured Portal Service object, Clear the Configured Portal Service objects, Delete the Configured Portal Service object by name or id, Create a Configured Programming Package object, Clear the Configured Programming Package objects, Delete the Configured Programming Package object by id, Delete the Configured Programming Package object by name and version, List all Configured Alias objects in all collections, Clear all Configured Alias objects in all collections, Create a Configured Xslt Transformation Alias object, Clear the Configured Xslt Transformation Alias objects, Clear all Configured Xslt Transformation Alias objects in all collections, Delete the Configured Xslt Transformation Alias object by id, Delete the Configured Xslt Transformation Alias object by name and version, Create a Configured Webmethods Integration Server Service Alias object, Clear the Configured Webmethods Integration Server Service Alias objects, Clear all Configured Webmethods Integration Server Service Alias objects in all collections, Delete the Configured Webmethods Integration Server Service Alias object by id, Delete the Configured Webmethods Integration Server Service Alias object by name and version, Create a Configured Http Transport Security Alias object, Clear the Configured Http Transport Security Alias objects, Clear all Configured Http Transport Security Alias objects in all collections, Delete the Configured Http Transport Security Alias object by id, Delete the Configured Http Transport Security Alias object by name and version, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Create a Simple Alias object, Clear the Simple Alias objects, Update the Simple Alias object by name or id, Delete the Simple Alias object by name or id, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, Create a User Group object, List the User Group objects, Clear the User Group objects, Get the User Group object by name or id, Update the User Group object by name or id, Delete the User Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the User Group Role Assignment objects, Get the User Group Role Assignment object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, Create a Team object, List the Team objects, Clear the Team objects, Get the Team object by name or id, Update the Team object by name or id, Delete the Team object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Jwt Provider objects, Get the Jwt Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, List the Programming Package objects, List all Programming Package objects in all collections, Get the Programming Package object by id, Get the Programming Package object by name and version, List the Xslt Transformation Alias objects, List all Xslt Transformation Alias objects in all collections, Get the Xslt Transformation Alias object by id, Get the Xslt Transformation Alias object by name and version, List the Http Transport Security Alias objects, List all Http Transport Security Alias objects in all collections, Get the Http Transport Security Alias object by id, Get the Http Transport Security Alias object by name and version, List the Webmethods Integration Server Service Alias objects, List all Webmethods Integration Server Service Alias objects in all collections, Get the Webmethods Integration Server Service Alias object by id, Get the Webmethods Integration Server Service Alias object by name and version, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Jwt Provider objects, Get the Configured Jwt Provider object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configured Portal Service objects, Get the Configured Portal Service object by name or id, List the Configured Programming Package objects, List all Configured Programming Package objects in all collections, Clear all Configured Programming Package objects in all collections, Get the Configured Programming Package object by id, Get the Configured Programming Package object by name and version, List the Configured Xslt Transformation Alias objects, List all Configured Xslt Transformation Alias objects in all collections, Get the Configured Xslt Transformation Alias object by id, Get the Configured Xslt Transformation Alias object by name and version, List the Configured Webmethods Integration Server Service Alias objects, List all Configured Webmethods Integration Server Service Alias objects in all collections, Get the Configured Webmethods Integration Server Service Alias object by id, Get the Configured Webmethods Integration Server Service Alias object by name and version, List the Configured Http Transport Security Alias objects, List all Configured Http Transport Security Alias objects in all collections, Get the Configured Http Transport Security Alias object by id, Get the Configured Http Transport Security Alias object by name and version, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, List the Simple Alias objects, Get the Simple Alias object by name or id, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, List the Resource Service Status objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a User Group Role Assignment object, Clear the User Group Role Assignment objects, Update the User Group Role Assignment object by name or id, Delete the User Group Role Assignment object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Jwt Provider object, Clear the Jwt Provider objects, Update the Jwt Provider object by name or id, Delete the Jwt Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Create a Itopsplatform object, Clear the Itopsplatform objects, Update the Itopsplatform object by name or id, Delete the Itopsplatform object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Programming Package object, Clear the Programming Package objects, Clear all Programming Package objects in all collections, Update the Programming Package object by id, Update the Programming Package object by name and version, Delete the Programming Package object by id, Delete the Programming Package object by name and version, List all Alias objects in all collections, Clear all Alias objects in all collections, Create a Xslt Transformation Alias object, Clear the Xslt Transformation Alias objects, Clear all Xslt Transformation Alias objects in all collections, Update the Xslt Transformation Alias object by id, Update the Xslt Transformation Alias object by name and version, Delete the Xslt Transformation Alias object by id, Delete the Xslt Transformation Alias object by name and version, Create a Http Transport Security Alias object, Clear the Http Transport Security Alias objects, Clear all Http Transport Security Alias objects in all collections, Update the Http Transport Security Alias object by id, Update the Http Transport Security Alias object by name and version, Delete the Http Transport Security Alias object by id, Delete the Http Transport Security Alias object by name and version, Create a Webmethods Integration Server Service Alias object, Clear the Webmethods Integration Server Service Alias objects, Clear all Webmethods Integration Server Service Alias objects in all collections, Update the Webmethods Integration Server Service Alias object by id, Update the Webmethods Integration Server Service Alias object by name and version, Delete the Webmethods Integration Server Service Alias object by id, Delete the Webmethods Integration Server Service Alias object by name and version, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Jwt Provider object, Clear the Configured Jwt Provider objects, Delete the Configured Jwt Provider object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Configured Portal Service object, Clear the Configured Portal Service objects, Delete the Configured Portal Service object by name or id, Create a Configured Programming Package object, Clear the Configured Programming Package objects, Delete the Configured Programming Package object by id, Delete the Configured Programming Package object by name and version, List all Configured Alias objects in all collections, Clear all Configured Alias objects in all collections, Create a Configured Xslt Transformation Alias object, Clear the Configured Xslt Transformation Alias objects, Clear all Configured Xslt Transformation Alias objects in all collections, Delete the Configured Xslt Transformation Alias object by id, Delete the Configured Xslt Transformation Alias object by name and version, Create a Configured Webmethods Integration Server Service Alias object, Clear the Configured Webmethods Integration Server Service Alias objects, Clear all Configured Webmethods Integration Server Service Alias objects in all collections, Delete the Configured Webmethods Integration Server Service Alias object by id, Delete the Configured Webmethods Integration Server Service Alias object by name and version, Create a Configured Http Transport Security Alias object, Clear the Configured Http Transport Security Alias objects, Clear all Configured Http Transport Security Alias objects in all collections, Delete the Configured Http Transport Security Alias object by id, Delete the Configured Http Transport Security Alias object by name and version, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Create a Simple Alias object, Clear the Simple Alias objects, Update the Simple Alias object by name or id, Delete the Simple Alias object by name or id, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, Create a User Group object, List the User Group objects, Clear the User Group objects, Get the User Group object by name or id, Update the User Group object by name or id, Delete the User Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List the User Group Role Assignment objects, Get the User Group Role Assignment object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, Create a Team object, List the Team objects, Clear the Team objects, Get the Team object by name or id, Update the Team object by name or id, Delete the Team object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Jwt Provider objects, Get the Jwt Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Itopsplatform objects, Get the Itopsplatform object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, List the Programming Package objects, List all Programming Package objects in all collections, Get the Programming Package object by id, Get the Programming Package object by name and version, List the Xslt Transformation Alias objects, List all Xslt Transformation Alias objects in all collections, Get the Xslt Transformation Alias object by id, Get the Xslt Transformation Alias object by name and version, List the Http Transport Security Alias objects, List all Http Transport Security Alias objects in all collections, Get the Http Transport Security Alias object by id, Get the Http Transport Security Alias object by name and version, List the Webmethods Integration Server Service Alias objects, List all Webmethods Integration Server Service Alias objects in all collections, Get the Webmethods Integration Server Service Alias object by id, Get the Webmethods Integration Server Service Alias object by name and version, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Jwt Provider objects, Get the Configured Jwt Provider object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configured Portal Service objects, Get the Configured Portal Service object by name or id, List the Configured Programming Package objects, List all Configured Programming Package objects in all collections, Clear all Configured Programming Package objects in all collections, Get the Configured Programming Package object by id, Get the Configured Programming Package object by name and version, List the Configured Xslt Transformation Alias objects, List all Configured Xslt Transformation Alias objects in all collections, Get the Configured Xslt Transformation Alias object by id, Get the Configured Xslt Transformation Alias object by name and version, List the Configured Webmethods Integration Server Service Alias objects, List all Configured Webmethods Integration Server Service Alias objects in all collections, Get the Configured Webmethods Integration Server Service Alias object by id, Get the Configured Webmethods Integration Server Service Alias object by name and version, List the Configured Http Transport Security Alias objects, List all Configured Http Transport Security Alias objects in all collections, Get the Configured Http Transport Security Alias object by id, Get the Configured Http Transport Security Alias object by name and version, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, List the Simple Alias objects, Get the Simple Alias object by name or id, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
@@ -151810,70 +156590,6 @@
           "$ref": "#/components/parameters/org"
         }
       ],
-      "post": {
-        "summary": "Create a Member object",
-        "description": "Create a Member object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - user_registry_url\n",
-        "operationId": "member_createOrgScope",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Member"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/Member"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Member"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Member"
-                }
-              }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
-            "headers": {
-              "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Management",
-          "Resource: Member (Org Scope)"
-        ]
-      },
       "get": {
         "summary": "List the Member objects",
         "description": "List the Member objects",
@@ -155752,6 +160468,131 @@
           "Resource: Mcp Server by Id (Org Scope)"
         ]
       }
+    },
+    "/portal-chatbot": {
+      "post": {
+        "summary": "Create a new AI Agent chat session",
+        "description": "Create a new chat session with the AI Agent",
+        "operationId": "portal_chatbot_chat",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/consumer_org_url"
+          }
+        ],
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PortalChatbot"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/PortalChatbot"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PortalChatbot"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/PortalChatbot"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Portal Chatbot (Org Scope)"
+        ]
+      }
+    },
+    "/portal-chatbot/{chat-session}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/chat-session"
+        },
+        {
+          "$ref": "#/components/parameters/consumer_org_url"
+        }
+      ],
+      "post": {
+        "summary": "Send message to AI Agent",
+        "description": "Send a message to the AI Agent and receive a response, or execute a plan",
+        "operationId": "portal_chatbot_chatById",
+        "security": [
+          {
+            "oauth": [
+              "org:view"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PortalChatbot"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/PortalChatbot"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PortalChatbot"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/PortalChatbot"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Portal",
+          "Resource: Portal Chatbot (Org Scope)"
+        ]
+      }
     }
   },
   "components": {
@@ -155871,6 +160712,15 @@
         "required": false,
         "schema": {
           "type": "boolean"
+        }
+      },
+      "chat-session": {
+        "name": "chat-session",
+        "in": "path",
+        "description": "Chat session ID",
+        "required": true,
+        "schema": {
+          "type": "string"
         }
       },
       "client_id": {
@@ -156147,6 +160997,15 @@
         "name": "permission",
         "in": "path",
         "description": "Permission name or id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "portal-chatbot": {
+        "name": "portal-chatbot",
+        "in": "path",
+        "description": "Portal Chatbot name or id",
         "required": true,
         "schema": {
           "type": "string"
@@ -156623,7 +161482,7 @@
           "version": {
             "type": "string"
           },
-          "rate_limit_notifications": {
+          "rate_limit_notification_settings": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -157160,21 +162019,13 @@
           "state": {
             "type": "string",
             "enum": [
-              "published",
-              "deprecated"
+              "online",
+              "offline"
             ]
           },
-          "mcp_server": {
+          "mcp_server_kind": {
             "type": "object",
             "additionalProperties": true
-          },
-          "state_pending": {
-            "type": "string",
-            "nullable": true,
-            "enum": [
-              "published",
-              "deprecated"
-            ]
           },
           "org_url": {
             "type": "string",
@@ -157866,6 +162717,21 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Permission"
+            }
+          }
+        }
+      },
+      "PortalChatbotList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "total_results": {
+            "type": "integer"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PortalChatbot"
             }
           }
         }
@@ -159591,6 +164457,38 @@
           }
         }
       },
+      "PortalChatbot": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Request/response type. Use 'user-message' to send a message. Use 'user-plan' to execute a plan (toolcalls required). Response types include 'agent-plan' and 'agent-response'."
+          },
+          "message": {
+            "type": "string",
+            "description": "The user's message to send to the AI agent (used with type 'user-message')",
+            "maxLength": 4000
+          },
+          "agent_message": {
+            "type": "string",
+            "description": "The AI agent's response message",
+            "items": {
+              "type": "object"
+            }
+          },
+          "plan_title": {
+            "type": "string",
+            "nullable": true,
+            "description": "Title of the plan from the AI agent"
+          },
+          "plan_description": {
+            "type": "string",
+            "nullable": true,
+            "description": "Description of the plan from the AI agent"
+          }
+        }
+      },
       "GatewaySecret": {
         "type": "object",
         "additionalProperties": false,
@@ -159636,7 +164534,7 @@
               "app:view": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
               "my:manage": "Update the Me object, Delete the Me object",
               "my:view": "Get the Me object, List the My Permission objects, List the My Organization objects",
-              "org:manage": "Create a My Organization object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
+              "org:manage": "Create a My Organization object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Delete the Member Invitation object by name or id, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
               "org:view": "List all Permission objects in all collections, Get the Organization object by name or id, Get the Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the User Registry objects, Get the User Registry object by name or id, Get the User object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, Get the Billing object by name or id, List the Billing objects, List the Payment Method objects, Get the Payment Method object by name or id, List the Payment Method Type objects, Get the Payment Method Type object by name or id"
             }
           },
@@ -159649,7 +164547,7 @@
               "app:view": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
               "my:manage": "Update the Me object, Delete the Me object",
               "my:view": "Get the Me object, List the My Permission objects, List the My Organization objects",
-              "org:manage": "Create a My Organization object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
+              "org:manage": "Create a My Organization object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Delete the Member Invitation object by name or id, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
               "org:view": "List all Permission objects in all collections, Get the Organization object by name or id, Get the Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the User Registry objects, Get the User Registry object by name or id, Get the User object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, Get the Billing object by name or id, List the Billing objects, List the Payment Method objects, Get the Payment Method object by name or id, List the Payment Method Type objects, Get the Payment Method Type object by name or id"
             }
           }
@@ -160569,6 +165467,55 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/EventResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Events"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/events/{event-id}/context": {
+      "description": "Return investigation context for a single analytics API event scoped to the cloud: how the event compares with recent calls to the same operation, whether other calls around the same time had the same problem, what changed shortly before the event, and related calls.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/event-id"
+        }
+      ],
+      "get": {
+        "summary": "Get investigation context for an event at cloud scope",
+        "description": "Return investigation context for a single analytics API event scoped to the cloud. The response has four optional sections, each omitted when it cannot be calculated. 'baseline' compares the event's latency, sizes and status code with the same operation over the previous 24 hours. 'blast_radius' gives call and error counts, per-minute, for 15 minutes either side of the event for the operation, API, backend, gateway service and application. 'changes' lists changes detected in the 24 hours before the event, from API event traffic (for example a new gateway version or a backend starting to fail), from product lifecycle updates received from API Manager and, when the caller has permission to view audit data and audit data is sent to analytics, from API Manager audit events for the event's API, product, application and consumer organization. 'performance' compares the event's assembly policy durations with recent successful calls to the same operation and gives hourly latency percentiles. 'related' lists calls that share the event's global transaction ID, calls from the same client within 60 seconds, and the trace ID. All date-time values are UTC.\n",
+        "operationId": "events_cloudContext",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/use_gateway_validation_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/EventContextResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -161847,6 +166794,50 @@
         ]
       }
     },
+    "/{analytics-service}/orgs/{org}/events/{event-id}/context": {
+      "description": "Return investigation context for a single analytics API event scoped to the provider organization: how the event compares with recent calls to the same operation, whether other calls around the same time had the same problem, what changed shortly before the event, and related calls.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/event-id"
+        }
+      ],
+      "get": {
+        "summary": "Get investigation context for an event at organization scope",
+        "description": "Return investigation context for a single analytics API event scoped to the provider organization. The response has four optional sections, each omitted when it cannot be calculated. 'baseline' compares the event's latency, sizes and status code with the same operation over the previous 24 hours. 'blast_radius' gives call and error counts, per-minute, for 15 minutes either side of the event for the operation, API, backend, gateway service and application. 'changes' lists changes detected in the 24 hours before the event, from API event traffic (for example a new gateway version or a backend starting to fail), from product lifecycle updates received from API Manager and, when the caller has permission to view audit data and audit data is sent to analytics, from API Manager audit events for the event's API, product, application and consumer organization. 'performance' compares the event's assembly policy durations with recent successful calls to the same operation and gives hourly latency percentiles. 'related' lists calls that share the event's global transaction ID, calls from the same client within 60 seconds, and the trace ID. All date-time values are UTC.\n",
+        "operationId": "events_orgContext",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/EventContextResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Events"
+        ]
+      }
+    },
     "/{analytics-service}/orgs/{org}/events/count": {
       "description": "Return a count of analytics API events scoped to the provider organization. The count in the result is the number of API events that match the passed in request query.\n",
       "parameters": [
@@ -162658,6 +167649,53 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/EventResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Events"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/events/{event-id}/context": {
+      "description": "Return investigation context for a single analytics API event scoped to the catalog: how the event compares with recent calls to the same operation, whether other calls around the same time had the same problem, what changed shortly before the event, and related calls.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/event-id"
+        }
+      ],
+      "get": {
+        "summary": "Get investigation context for an event at catalog scope",
+        "description": "Return investigation context for a single analytics API event scoped to the catalog. The response has four optional sections, each omitted when it cannot be calculated. 'baseline' compares the event's latency, sizes and status code with the same operation over the previous 24 hours. 'blast_radius' gives call and error counts, per-minute, for 15 minutes either side of the event for the operation, API, backend, gateway service and application. 'changes' lists changes detected in the 24 hours before the event, from API event traffic (for example a new gateway version or a backend starting to fail), from product lifecycle updates received from API Manager and, when the caller has permission to view audit data and audit data is sent to analytics, from API Manager audit events for the event's API, product, application and consumer organization. 'performance' compares the event's assembly policy durations with recent successful calls to the same operation and gives hourly latency percentiles. 'related' lists calls that share the event's global transaction ID, calls from the same client within 60 seconds, and the trace ID. All date-time values are UTC.\n",
+        "operationId": "events_catalogContext",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/EventContextResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -163494,6 +168532,56 @@
         ]
       }
     },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/events/{event-id}/context": {
+      "description": "Return investigation context for a single analytics API event scoped to the space: how the event compares with recent calls to the same operation, whether other calls around the same time had the same problem, what changed shortly before the event, and related calls.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        },
+        {
+          "$ref": "#/components/parameters/event-id"
+        }
+      ],
+      "get": {
+        "summary": "Get investigation context for an event at space scope",
+        "description": "Return investigation context for a single analytics API event scoped to the space. The response has four optional sections, each omitted when it cannot be calculated. 'baseline' compares the event's latency, sizes and status code with the same operation over the previous 24 hours. 'blast_radius' gives call and error counts, per-minute, for 15 minutes either side of the event for the operation, API, backend, gateway service and application. 'changes' lists changes detected in the 24 hours before the event, from API event traffic (for example a new gateway version or a backend starting to fail), from product lifecycle updates received from API Manager and, when the caller has permission to view audit data and audit data is sent to analytics, from API Manager audit events for the event's API, product, application and consumer organization. 'performance' compares the event's assembly policy durations with recent successful calls to the same operation and gives hourly latency percentiles. 'related' lists calls that share the event's global transaction ID, calls from the same client within 60 seconds, and the trace ID. All date-time values are UTC.\n",
+        "operationId": "events_spaceContext",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/EventContextResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Events"
+        ]
+      }
+    },
     "/{analytics-service}/spaces/{org}/{catalog}/{space}/events/count": {
       "description": "Return a count of analytics API events scoped to the space. The count in the result is the number of API events that match the passed in request query.\n",
       "parameters": [
@@ -164217,6 +169305,9 @@
             "$ref": "#/components/parameters/timeframe_optional"
           },
           {
+            "$ref": "#/components/parameters/timezone_optional"
+          },
+          {
             "$ref": "#/components/parameters/transaction_id_optional"
           },
           {
@@ -164599,6 +169690,9 @@
             "$ref": "#/components/parameters/timeframe_optional"
           },
           {
+            "$ref": "#/components/parameters/timezone_optional"
+          },
+          {
             "$ref": "#/components/parameters/transaction_id_optional"
           },
           {
@@ -164978,6 +170072,9 @@
             "$ref": "#/components/parameters/timeframe_optional"
           },
           {
+            "$ref": "#/components/parameters/timezone_optional"
+          },
+          {
             "$ref": "#/components/parameters/transaction_id_optional"
           },
           {
@@ -165354,6 +170451,9 @@
             "$ref": "#/components/parameters/timeframe_optional"
           },
           {
+            "$ref": "#/components/parameters/timezone_optional"
+          },
+          {
             "$ref": "#/components/parameters/transaction_id_optional"
           },
           {
@@ -165415,6 +170515,24 @@
             "$ref": "#/components/parameters/action_optional"
           },
           {
+            "$ref": "#/components/parameters/audit_api_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_mcp_server_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_product_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_actor_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_area_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_changes_only_optional"
+          },
+          {
             "$ref": "#/components/parameters/analytics-service"
           },
           {
@@ -165422,6 +170540,9 @@
           },
           {
             "$ref": "#/components/parameters/auditId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_entity_optional"
           },
           {
             "$ref": "#/components/parameters/catalogId_optional"
@@ -165487,6 +170608,9 @@
             "$ref": "#/components/parameters/timeframe_optional"
           },
           {
+            "$ref": "#/components/parameters/timezone_optional"
+          },
+          {
             "$ref": "#/components/parameters/typeURI_optional"
           }
         ],
@@ -165539,6 +170663,24 @@
             "$ref": "#/components/parameters/action_optional"
           },
           {
+            "$ref": "#/components/parameters/audit_api_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_mcp_server_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_product_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_actor_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_area_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_changes_only_optional"
+          },
+          {
             "$ref": "#/components/parameters/analytics-service"
           },
           {
@@ -165546,6 +170688,9 @@
           },
           {
             "$ref": "#/components/parameters/auditId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_entity_optional"
           },
           {
             "$ref": "#/components/parameters/catalogId_optional"
@@ -165609,6 +170754,9 @@
           },
           {
             "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timezone_optional"
           },
           {
             "$ref": "#/components/parameters/typeURI_optional"
@@ -171066,6 +176214,249 @@
         ]
       }
     },
+    "/{analytics-service}/cloud/dashboards/api-backend": {
+      "description": "Return the data needed to populate the Backend dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Backend dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Backend dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudBackend",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_insights_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/BackendDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/status-code-mismatch": {
+      "description": "Return the paginated list of status code mismatch events at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the paginated list of status code mismatch events at cloud scope\n",
+        "description": "Return the paginated list of status code mismatch events at cloud scope.\n",
+        "operationId": "statusCodeMismatch_cloud",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/StatusCodeMismatchResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/policy-errors": {
+      "description": "Return the paginated list of policy error events at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the paginated list of policy error events at cloud scope\n",
+        "description": "Return the paginated list of policy error events at cloud scope.\n",
+        "operationId": "policyErrors_cloud",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/PolicyErrorsResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
     "/{analytics-service}/orgs/{org}/dashboards/api": {
       "description": "Return the data needed to populate the API dashboard at provider organization scope.\n",
       "parameters": [
@@ -176397,6 +181788,270 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/AiDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/api-backend": {
+      "description": "Return the data needed to populate the Backend dashboard at provider organization scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Backend dashboard at provider organization scope\n",
+        "description": "Return the data needed to populate the Backend dashboard at provider organization scope.\n",
+        "operationId": "dashboards_orgBackend",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_insights_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/BackendDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/status-code-mismatch": {
+      "description": "Return the paginated list of status code mismatch events at provider organization scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the paginated list of status code mismatch events at provider organization scope\n",
+        "description": "Return the paginated list of status code mismatch events at provider organization scope.\n",
+        "operationId": "statusCodeMismatch_org",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/StatusCodeMismatchResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/policy-errors": {
+      "description": "Return the paginated list of policy error events at provider organization scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the paginated list of policy error events at provider organization scope\n",
+        "description": "Return the paginated list of policy error events at provider organization scope.\n",
+        "operationId": "policyErrors_org",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalog_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/PolicyErrorsResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -181762,6 +187417,273 @@
         ]
       }
     },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/api-backend": {
+      "description": "Return the data needed to populate the Backend dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Backend dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Backend dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogBackend",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_insights_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/BackendDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/status-code-mismatch": {
+      "description": "Return the paginated list of status code mismatch events at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the paginated list of status code mismatch events at catalog scope\n",
+        "description": "Return the paginated list of status code mismatch events at catalog scope.\n",
+        "operationId": "statusCodeMismatch_catalog",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/StatusCodeMismatchResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/policy-errors": {
+      "description": "Return the paginated list of policy error events at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the paginated list of policy error events at catalog scope\n",
+        "description": "Return the paginated list of policy error events at catalog scope.\n",
+        "operationId": "policyErrors_catalog",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/space_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/PolicyErrorsResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
     "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/api": {
       "description": "Return the data needed to populate the API dashboard at space scope.\n",
       "parameters": [
@@ -187071,6 +192993,264 @@
         ]
       }
     },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/api-backend": {
+      "description": "Return the data needed to populate the Backend dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Backend dashboard at space scope\n",
+        "description": "Return the data needed to populate the Backend dashboard at space scope.\n",
+        "operationId": "dashboards_spaceBackend",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_time_to_serve_request_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ai_insights_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/BackendDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/status-code-mismatch": {
+      "description": "Return the paginated list of status code mismatch events at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the paginated list of status code mismatch events at space scope\n",
+        "description": "Return the paginated list of status code mismatch events at space scope.\n",
+        "operationId": "statusCodeMismatch_space",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/StatusCodeMismatchResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/policy-errors": {
+      "description": "Return the paginated list of policy error events at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the paginated list of policy error events at space scope\n",
+        "description": "Return the paginated list of policy error events at space scope.\n",
+        "operationId": "policyErrors_space",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_url_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_description_optional"
+          },
+          {
+            "$ref": "#/components/parameters/error_message_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/PolicyErrorsResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
     "/{analytics-service}/cloud/filterparameters": {
       "description": "Return the list of filter parameters supported at cloud scope.\n",
       "parameters": [
@@ -192299,7 +198479,7 @@
           "$ref": "#/components/parameters/analytics-service"
         },
         {
-          "$ref": "#/components/parameters/usage_evolution_report_type"
+          "$ref": "#/components/parameters/usage-evolution-report-type"
         },
         {
           "$ref": "#/components/parameters/provider_org_name_optional"
@@ -192349,7 +198529,7 @@
           "$ref": "#/components/parameters/analytics-service"
         },
         {
-          "$ref": "#/components/parameters/report_type"
+          "$ref": "#/components/parameters/report-type"
         },
         {
           "$ref": "#/components/parameters/provider_org_name_optional"
@@ -192688,6 +198868,49 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/IwhiMeteringReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/reports/ums": {
+      "description": "Return UMS (Usage Metering Service) metering data for license compliance tracking at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "UMS metering report\n",
+        "description": "Return UMS metering data with total API call count for license compliance tracking at cloud scope. This report is used by scheduled reports to send data to IBM Usage Metering Service (UMS) for on-premises container-based license tracking.\n",
+        "operationId": "reports_cloudUms",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/schedule_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/UmsReportResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -194852,7 +201075,7 @@
           "$ref": "#/components/parameters/org"
         },
         {
-          "$ref": "#/components/parameters/usage_evolution_report_type"
+          "$ref": "#/components/parameters/usage-evolution-report-type"
         },
         {
           "$ref": "#/components/parameters/provider_org_name_optional"
@@ -194908,7 +201131,7 @@
           "$ref": "#/components/parameters/org"
         },
         {
-          "$ref": "#/components/parameters/report_type"
+          "$ref": "#/components/parameters/report-type"
         },
         {
           "$ref": "#/components/parameters/provider_org_name_optional"
@@ -195271,6 +201494,52 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/IwhiMeteringReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Reports"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/reports/ums": {
+      "description": "Return UMS (Usage Metering Service) metering data for license compliance tracking at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "UMS metering report\n",
+        "description": "Return UMS metering data with total API call count for license compliance tracking at org scope. This report is used by scheduled reports to send data to IBM Usage Metering Service (UMS) for on-premises container-based license tracking.\n",
+        "operationId": "reports_orgUms",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/schedule_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/UmsReportResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -197321,7 +203590,7 @@
           "$ref": "#/components/parameters/catalog"
         },
         {
-          "$ref": "#/components/parameters/usage_evolution_report_type"
+          "$ref": "#/components/parameters/usage-evolution-report-type"
         },
         {
           "$ref": "#/components/parameters/provider_org_name_optional"
@@ -197450,7 +203719,7 @@
           "$ref": "#/components/parameters/catalog"
         },
         {
-          "$ref": "#/components/parameters/report_type"
+          "$ref": "#/components/parameters/report-type"
         },
         {
           "$ref": "#/components/parameters/provider_org_name_optional"
@@ -199749,7 +206018,7 @@
           "$ref": "#/components/parameters/space"
         },
         {
-          "$ref": "#/components/parameters/usage_evolution_report_type"
+          "$ref": "#/components/parameters/usage-evolution-report-type"
         },
         {
           "$ref": "#/components/parameters/provider_org_name_optional"
@@ -199884,7 +206153,7 @@
           "$ref": "#/components/parameters/space"
         },
         {
-          "$ref": "#/components/parameters/report_type"
+          "$ref": "#/components/parameters/report-type"
         },
         {
           "$ref": "#/components/parameters/provider_org_name_optional"
@@ -202206,6 +208475,647 @@
         "responses": {
           "200": {
             "description": "Successful output of the _cat/aliases command",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtTextResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/cat/tasks": {
+      "description": "Returns information about tasks currently executing on the cluster.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/detailed_optional"
+        },
+        {
+          "$ref": "#/components/parameters/actions_optional"
+        },
+        {
+          "$ref": "#/components/parameters/nodes_optional"
+        },
+        {
+          "$ref": "#/components/parameters/parent_task_id_optional"
+        },
+        {
+          "$ref": "#/components/parameters/h_optional"
+        },
+        {
+          "$ref": "#/components/parameters/help_optional"
+        },
+        {
+          "$ref": "#/components/parameters/s_optional"
+        },
+        {
+          "$ref": "#/components/parameters/time_optional"
+        },
+        {
+          "$ref": "#/components/parameters/v_columns_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Returns information about tasks currently executing on the cluster",
+        "description": "Returns information about tasks currently executing on the cluster.\n",
+        "operationId": "clustermgmt_cat_getTasks",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the _cat/tasks command",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtTextResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/cat/thread-pool": {
+      "description": "Returns thread pool statistics for each node in the cluster.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/h_optional"
+        },
+        {
+          "$ref": "#/components/parameters/help_optional"
+        },
+        {
+          "$ref": "#/components/parameters/local_optional"
+        },
+        {
+          "$ref": "#/components/parameters/master_timeout_optional"
+        },
+        {
+          "$ref": "#/components/parameters/s_optional"
+        },
+        {
+          "$ref": "#/components/parameters/v_columns_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Returns thread pool statistics for each node in the cluster",
+        "description": "Returns thread pool statistics for each node in the cluster.\n",
+        "operationId": "clustermgmt_cat_getThreadPool",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the _cat/thread_pool command",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtTextResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/cat/thread-pool/{thread-pool-patterns}": {
+      "description": "Returns thread pool statistics for matching thread pool patterns for each node in the cluster.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/thread-pool-patterns"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/h_optional"
+        },
+        {
+          "$ref": "#/components/parameters/help_optional"
+        },
+        {
+          "$ref": "#/components/parameters/local_optional"
+        },
+        {
+          "$ref": "#/components/parameters/master_timeout_optional"
+        },
+        {
+          "$ref": "#/components/parameters/s_optional"
+        },
+        {
+          "$ref": "#/components/parameters/v_columns_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Returns thread pool statistics for matching thread pool patterns",
+        "description": "Returns thread pool statistics for matching thread pool patterns for each node in the cluster.\n",
+        "operationId": "clustermgmt_cat_getThreadPoolByPatterns",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the _cat/thread_pool command",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtTextResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/cat/plugins": {
+      "description": "Returns information about installed OpenSearch plugins on each node.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/h_optional"
+        },
+        {
+          "$ref": "#/components/parameters/help_optional"
+        },
+        {
+          "$ref": "#/components/parameters/local_optional"
+        },
+        {
+          "$ref": "#/components/parameters/master_timeout_optional"
+        },
+        {
+          "$ref": "#/components/parameters/s_optional"
+        },
+        {
+          "$ref": "#/components/parameters/time_optional"
+        },
+        {
+          "$ref": "#/components/parameters/v_columns_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Returns information about installed OpenSearch plugins",
+        "description": "Returns information about installed OpenSearch plugins on each node.\n",
+        "operationId": "clustermgmt_cat_getPlugins",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the _cat/plugins command",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtTextResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/cat/segments": {
+      "description": "Returns low-level information about the Lucene segments in index shards.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/bytes_optional"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/h_optional"
+        },
+        {
+          "$ref": "#/components/parameters/help_optional"
+        },
+        {
+          "$ref": "#/components/parameters/s_optional"
+        },
+        {
+          "$ref": "#/components/parameters/v_columns_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Returns Lucene segment information",
+        "description": "Returns low-level information about the Lucene segments in index shards.\n",
+        "operationId": "clustermgmt_cat_getSegments",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the _cat/segments command",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtTextResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/cat/segments/{index}": {
+      "description": "Returns low-level information about the Lucene segments in index shards for a specific index.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/index"
+        },
+        {
+          "$ref": "#/components/parameters/bytes_optional"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/h_optional"
+        },
+        {
+          "$ref": "#/components/parameters/help_optional"
+        },
+        {
+          "$ref": "#/components/parameters/s_optional"
+        },
+        {
+          "$ref": "#/components/parameters/v_columns_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Returns Lucene segment information for a specific index",
+        "description": "Returns low-level information about the Lucene segments in index shards for a specific index.\n",
+        "operationId": "clustermgmt_cat_getSegmentsByIndex",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the _cat/segments command",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtTextResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/cat/fielddata": {
+      "description": "Returns the amount of memory used by fielddata on every node.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/bytes_optional"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/h_optional"
+        },
+        {
+          "$ref": "#/components/parameters/help_optional"
+        },
+        {
+          "$ref": "#/components/parameters/s_optional"
+        },
+        {
+          "$ref": "#/components/parameters/v_columns_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Returns fielddata memory usage",
+        "description": "Returns the amount of memory used by fielddata on every node.\n",
+        "operationId": "clustermgmt_cat_getFielddata",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the _cat/fielddata command",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtTextResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
+                }
+              },
+              "application/yaml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterMgmtCatResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/cat/fielddata/{fields}": {
+      "description": "Returns the amount of memory used by fielddata for specific fields on every node.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/fields"
+        },
+        {
+          "$ref": "#/components/parameters/bytes_optional"
+        },
+        {
+          "$ref": "#/components/parameters/return_format_optional"
+        },
+        {
+          "$ref": "#/components/parameters/h_optional"
+        },
+        {
+          "$ref": "#/components/parameters/help_optional"
+        },
+        {
+          "$ref": "#/components/parameters/s_optional"
+        },
+        {
+          "$ref": "#/components/parameters/v_columns_optional"
+        },
+        {
+          "$ref": "#/components/parameters/pretty_optional"
+        }
+      ],
+      "get": {
+        "summary": "Returns fielddata memory usage for specific fields",
+        "description": "Returns the amount of memory used by fielddata for specific fields on every node.\n",
+        "operationId": "clustermgmt_cat_getFielddataByFields",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful output of the _cat/fielddata command",
             "content": {
               "text/plain": {
                 "schema": {
@@ -204606,6 +211516,1143 @@
         ]
       }
     },
+    "/{analytics-service}/cloud/clustermgmt/storage/tasks": {
+      "description": "Returns information about tasks currently executing on the cluster.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/actions_optional"
+        },
+        {
+          "$ref": "#/components/parameters/detailed_optional"
+        },
+        {
+          "$ref": "#/components/parameters/group_by_tasks_optional"
+        },
+        {
+          "$ref": "#/components/parameters/nodes_optional"
+        },
+        {
+          "$ref": "#/components/parameters/parent_task_id_optional"
+        },
+        {
+          "$ref": "#/components/parameters/wait_for_completion_optional"
+        }
+      ],
+      "get": {
+        "summary": "Returns information about tasks currently executing on the cluster",
+        "description": "Returns information about tasks currently executing on the cluster.\n",
+        "operationId": "clustermgmt_tasks_listTasks",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/tasks/stuck": {
+      "description": "Identifies long-running and stuck tasks with detailed metadata and cancellable status.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/threshold_ms_optional"
+        },
+        {
+          "$ref": "#/components/parameters/actions_optional"
+        }
+      ],
+      "get": {
+        "summary": "Identify long-running and stuck tasks",
+        "description": "Identifies long-running and stuck tasks with detailed metadata and cancellable status.\n",
+        "operationId": "clustermgmt_tasks_getStuckTasks",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/tasks/{task-id}": {
+      "description": "Returns information about a specific task.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/task-id"
+        },
+        {
+          "$ref": "#/components/parameters/wait_for_completion_optional"
+        }
+      ],
+      "get": {
+        "summary": "Returns information about a specific task",
+        "description": "Returns information about a specific task.\n",
+        "operationId": "clustermgmt_tasks_getTask",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/tasks/cancel": {
+      "description": "Cancels tasks matching query criteria.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/actions_optional"
+        },
+        {
+          "$ref": "#/components/parameters/nodes_optional"
+        },
+        {
+          "$ref": "#/components/parameters/parent_task_id_optional"
+        }
+      ],
+      "post": {
+        "summary": "Cancels tasks matching query criteria",
+        "description": "Cancels tasks matching query criteria.\n",
+        "operationId": "clustermgmt_tasks_cancelTasks",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/tasks/{task-id}/cancel": {
+      "description": "Cancels a specific task by ID.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/task-id"
+        },
+        {
+          "$ref": "#/components/parameters/actions_optional"
+        },
+        {
+          "$ref": "#/components/parameters/nodes_optional"
+        },
+        {
+          "$ref": "#/components/parameters/parent_task_id_optional"
+        }
+      ],
+      "post": {
+        "summary": "Cancels a specific task by ID",
+        "description": "Cancels a specific task by ID.\n",
+        "operationId": "clustermgmt_tasks_cancelTaskById",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/tasks/emergency-drain": {
+      "description": "Performs emergency draining: cancels cancellable tasks, optionally disables threat intel monitors, and clears search caches.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/actions_optional"
+        },
+        {
+          "$ref": "#/components/parameters/disable_monitors_optional"
+        }
+      ],
+      "post": {
+        "summary": "Emergency drain tasks and clear search caches",
+        "description": "Performs emergency draining: cancels cancellable tasks, optionally disables threat intel monitors, and clears search caches.\n",
+        "operationId": "clustermgmt_tasks_emergencyDrain",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/threat-intel/monitors": {
+      "description": "Lists configured Threat Intelligence monitors.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "List Threat Intelligence monitors",
+        "description": "Lists configured Threat Intelligence monitors.\n",
+        "operationId": "clustermgmt_tasks_listThreatIntelMonitors",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/threat-intel/monitors/disable-all": {
+      "description": "Disables all active Threat Intelligence monitors.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "post": {
+        "summary": "Disable all Threat Intelligence monitors",
+        "description": "Disables all active Threat Intelligence monitors.\n",
+        "operationId": "clustermgmt_tasks_disableAllThreatIntelMonitors",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/threat-intel/monitors/{monitor-id}/disable": {
+      "description": "Disables a specific Threat Intelligence monitor by ID.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/monitor-id"
+        }
+      ],
+      "post": {
+        "summary": "Disable a Threat Intelligence monitor by ID",
+        "description": "Disables a specific Threat Intelligence monitor by ID.\n",
+        "operationId": "clustermgmt_tasks_disableThreatIntelMonitor",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/threat-intel/monitors/{monitor-id}/enable": {
+      "description": "Enables a specific Threat Intelligence monitor by ID.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/monitor-id"
+        }
+      ],
+      "post": {
+        "summary": "Enable a Threat Intelligence monitor by ID",
+        "description": "Enables a specific Threat Intelligence monitor by ID.\n",
+        "operationId": "clustermgmt_tasks_enableThreatIntelMonitor",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/cluster/search-backpressure": {
+      "description": "Returns Search Backpressure and Workload Management (WLM) statistics.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Returns Search Backpressure and WLM statistics",
+        "description": "Returns Search Backpressure and Workload Management (WLM) statistics.\n",
+        "operationId": "clustermgmt_tasks_getSearchBackpressureStats",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/cluster/search-backpressure/mode": {
+      "description": "Updates Search Backpressure operational mode (enforced, monitor_only, disabled).\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "put": {
+        "summary": "Update Search Backpressure mode",
+        "description": "Updates Search Backpressure operational mode (enforced, monitor_only, disabled).\n",
+        "operationId": "clustermgmt_tasks_putSearchBackpressureMode",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/plugins/anomaly-detection/stats": {
+      "description": "Returns statistics about the Anomaly Detection plugin.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Returns Anomaly Detection plugin statistics",
+        "description": "Returns statistics about the Anomaly Detection plugin.\n",
+        "operationId": "clustermgmt_plugins_getAnomalyDetectionStats",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/plugins/anomaly-detection/stats/{node-metric}": {
+      "description": "Returns statistics about the Anomaly Detection plugin filtered by node or metric.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/node-metric"
+        }
+      ],
+      "get": {
+        "summary": "Returns filtered Anomaly Detection plugin statistics",
+        "description": "Returns statistics about the Anomaly Detection plugin filtered by node or metric.\n",
+        "operationId": "clustermgmt_plugins_getAnomalyDetectionStatsByNodeMetric",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/plugins/security-analytics/stats": {
+      "description": "Returns statistics about the Security Analytics plugin.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Returns Security Analytics plugin statistics",
+        "description": "Returns statistics about the Security Analytics plugin.\n",
+        "operationId": "clustermgmt_plugins_getSecurityAnalyticsStats",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/plugins/security-analytics/stats/{node-metric}": {
+      "description": "Returns statistics about the Security Analytics plugin filtered by node or metric.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/node-metric"
+        }
+      ],
+      "get": {
+        "summary": "Returns filtered Security Analytics plugin statistics",
+        "description": "Returns statistics about the Security Analytics plugin filtered by node or metric.\n",
+        "operationId": "clustermgmt_plugins_getSecurityAnalyticsStatsByNodeMetric",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/plugins/alerting/stats": {
+      "description": "Returns statistics about the Alerting plugin.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Returns Alerting plugin statistics",
+        "description": "Returns statistics about the Alerting plugin.\n",
+        "operationId": "clustermgmt_plugins_getAlertingStats",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/plugins/alerting/stats/{node-metric}": {
+      "description": "Returns statistics about the Alerting plugin filtered by node or metric.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/node-metric"
+        }
+      ],
+      "get": {
+        "summary": "Returns filtered Alerting plugin statistics",
+        "description": "Returns statistics about the Alerting plugin filtered by node or metric.\n",
+        "operationId": "clustermgmt_plugins_getAlertingStatsByNodeMetric",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/plugins/async-search/stats": {
+      "description": "Returns statistics about asynchronous search operations.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Returns asynchronous search statistics",
+        "description": "Returns statistics about asynchronous search operations.\n",
+        "operationId": "clustermgmt_plugins_getAsyncSearchStats",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/plugins/async-search/{id}": {
+      "description": "Retrieves or cancels an asynchronous search operation by ID.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/id"
+        }
+      ],
+      "get": {
+        "summary": "Get asynchronous search by ID",
+        "description": "Retrieves the status and results of an asynchronous search operation.\n",
+        "operationId": "clustermgmt_plugins_getAsyncSearch",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      },
+      "delete": {
+        "summary": "Delete or cancel asynchronous search by ID",
+        "description": "Deletes or cancels an asynchronous search operation.\n",
+        "operationId": "clustermgmt_plugins_deleteAsyncSearch",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/cluster/breakers": {
+      "description": "Returns circuit breaker statistics and current memory usage across cluster nodes.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Returns circuit breaker statistics",
+        "description": "Returns circuit breaker statistics and current memory usage across cluster nodes.\n",
+        "operationId": "clustermgmt_plugins_getCircuitBreakers",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/ism/explain": {
+      "description": "Explains the Index State Management (ISM) status for managed indices.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Explains ISM status for managed indices",
+        "description": "Explains the Index State Management (ISM) status for managed indices.\n",
+        "operationId": "clustermgmt_plugins_getIsmExplain",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/ism/explain/{index}": {
+      "description": "Explains the Index State Management (ISM) status for a specific index.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/index"
+        }
+      ],
+      "get": {
+        "summary": "Explains ISM status for a specific index",
+        "description": "Explains the Index State Management (ISM) status for a specific index.\n",
+        "operationId": "clustermgmt_plugins_getIsmExplainByIndex",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/ism/policies": {
+      "description": "Returns configured Index State Management (ISM) lifecycle policies.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Returns ISM policies",
+        "description": "Returns configured Index State Management (ISM) lifecycle policies.\n",
+        "operationId": "clustermgmt_plugins_getIsmPolicies",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/ism/policies/{policy-id}": {
+      "description": "Returns a configured Index State Management (ISM) lifecycle policy by policy ID.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/policy-id"
+        }
+      ],
+      "get": {
+        "summary": "Returns an ISM policy by ID",
+        "description": "Returns a configured Index State Management (ISM) lifecycle policy by policy ID.\n",
+        "operationId": "clustermgmt_plugins_getIsmPolicyById",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/ism/retry": {
+      "description": "Retries failed Index State Management (ISM) policy actions on managed indices.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "post": {
+        "summary": "Retry failed ISM actions",
+        "description": "Retries failed Index State Management (ISM) policy actions on managed indices.\n",
+        "operationId": "clustermgmt_plugins_retryIsm",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/clustermgmt/storage/ism/retry/{index}": {
+      "description": "Retries failed Index State Management (ISM) policy actions on a specific index.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/index"
+        }
+      ],
+      "post": {
+        "summary": "Retry failed ISM actions on index",
+        "description": "Retries failed Index State Management (ISM) policy actions on a specific index.\n",
+        "operationId": "clustermgmt_plugins_retryIsmByIndex",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ClusterMgmtObjectResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Clustermgmt (storage)"
+        ]
+      }
+    },
     "/{analytics-service}/cloud/clustermgmt/storage/settings": {
       "description": "Manage opensearch settings.\n",
       "parameters": [
@@ -206280,10 +214327,31 @@
             "$ref": "#/components/parameters/action_optional"
           },
           {
+            "$ref": "#/components/parameters/audit_api_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_mcp_server_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_product_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_actor_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_area_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_changes_only_optional"
+          },
+          {
             "$ref": "#/components/parameters/attachments_optional"
           },
           {
             "$ref": "#/components/parameters/auditId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_entity_optional"
           },
           {
             "$ref": "#/components/parameters/catalogId_optional"
@@ -206416,6 +214484,287 @@
         ]
       }
     },
+    "/{analytics-service}/cloud/audit/dashboards/{audit-dashboard}": {
+      "description": "Return the data for an audit dashboard, aggregated from the audit records for the cloud.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/audit-dashboard"
+        }
+      ],
+      "get": {
+        "summary": "Get an audit dashboard at cloud scope",
+        "description": "Returns counts, time series and recent audit records for the requested audit dashboard. Accepts the same filters as the audit list.\n",
+        "operationId": "audit_cloudDashboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/accept_language_optional"
+          },
+          {
+            "$ref": "#/components/parameters/action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_api_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_mcp_server_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_product_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_actor_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_area_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_changes_only_optional"
+          },
+          {
+            "$ref": "#/components/parameters/analytics-service"
+          },
+          {
+            "$ref": "#/components/parameters/attachments_optional"
+          },
+          {
+            "$ref": "#/components/parameters/auditId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_entity_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalogId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/eventGenerator_optional"
+          },
+          {
+            "$ref": "#/components/parameters/initiator_optional"
+          },
+          {
+            "$ref": "#/components/parameters/logSourceCRN_optional"
+          },
+          {
+            "$ref": "#/components/parameters/logSourceType_optional"
+          },
+          {
+            "$ref": "#/components/parameters/observer_optional"
+          },
+          {
+            "$ref": "#/components/parameters/outcome_optional"
+          },
+          {
+            "$ref": "#/components/parameters/providerOrgId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/reason_optional"
+          },
+          {
+            "$ref": "#/components/parameters/requestData_optional"
+          },
+          {
+            "$ref": "#/components/parameters/requestPath_optional"
+          },
+          {
+            "$ref": "#/components/parameters/responseData_optional"
+          },
+          {
+            "$ref": "#/components/parameters/spaceId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/tags_optional"
+          },
+          {
+            "$ref": "#/components/parameters/target_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timezone_optional"
+          },
+          {
+            "$ref": "#/components/parameters/typeURI_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AuditDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Audit"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/audit/entities/{audit-entity-type}/{audit-entity-name}": {
+      "description": "Return the audit history of a product, API or MCP server across all organizations.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/audit-entity-name"
+        },
+        {
+          "$ref": "#/components/parameters/audit-entity-type"
+        }
+      ],
+      "get": {
+        "summary": "Get the audit history of a product, API or MCP server at cloud scope",
+        "description": "Returns a summary (first and last change, versions, actions, users and catalogs) and the audit records about the product, API or MCP server, including changes to its drafts, publishing and lifecycle changes. Accepts the same filters as the audit list.\n",
+        "operationId": "audit_cloudEntityHistory",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/accept_language_optional"
+          },
+          {
+            "$ref": "#/components/parameters/action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_actor_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_area_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_changes_only_optional"
+          },
+          {
+            "$ref": "#/components/parameters/analytics-service"
+          },
+          {
+            "$ref": "#/components/parameters/attachments_optional"
+          },
+          {
+            "$ref": "#/components/parameters/auditId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalogId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/eventGenerator_optional"
+          },
+          {
+            "$ref": "#/components/parameters/initiator_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/logSourceCRN_optional"
+          },
+          {
+            "$ref": "#/components/parameters/logSourceType_optional"
+          },
+          {
+            "$ref": "#/components/parameters/observer_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/outcome_optional"
+          },
+          {
+            "$ref": "#/components/parameters/providerOrgId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/reason_optional"
+          },
+          {
+            "$ref": "#/components/parameters/requestData_optional"
+          },
+          {
+            "$ref": "#/components/parameters/requestPath_optional"
+          },
+          {
+            "$ref": "#/components/parameters/responseData_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_entity_sort_optional"
+          },
+          {
+            "$ref": "#/components/parameters/spaceId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/tags_optional"
+          },
+          {
+            "$ref": "#/components/parameters/target_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timezone_optional"
+          },
+          {
+            "$ref": "#/components/parameters/typeURI_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_entity_version_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AuditEntityHistoryResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Audit"
+        ]
+      }
+    },
     "/{analytics-service}/orgs/{org}/audit/filterparameters": {
       "description": "Return the list of audit filter parameters supported at organization scope.\n",
       "parameters": [
@@ -206486,10 +214835,31 @@
             "$ref": "#/components/parameters/action_optional"
           },
           {
+            "$ref": "#/components/parameters/audit_api_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_mcp_server_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_product_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_actor_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_area_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_changes_only_optional"
+          },
+          {
             "$ref": "#/components/parameters/attachments_optional"
           },
           {
             "$ref": "#/components/parameters/auditId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_entity_optional"
           },
           {
             "$ref": "#/components/parameters/catalogId_optional"
@@ -206608,6 +214978,293 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/AuditResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Audit"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/audit/dashboards/{audit-dashboard}": {
+      "description": "Return the data for an audit dashboard, aggregated from the audit records for the provider organization.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/audit-dashboard"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get an audit dashboard at organization scope",
+        "description": "Returns counts, time series and recent audit records for the requested audit dashboard. Accepts the same filters as the audit list.\n",
+        "operationId": "audit_orgDashboard",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/accept_language_optional"
+          },
+          {
+            "$ref": "#/components/parameters/action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_api_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_mcp_server_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_product_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_actor_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_area_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_changes_only_optional"
+          },
+          {
+            "$ref": "#/components/parameters/analytics-service"
+          },
+          {
+            "$ref": "#/components/parameters/attachments_optional"
+          },
+          {
+            "$ref": "#/components/parameters/auditId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_entity_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalogId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/eventGenerator_optional"
+          },
+          {
+            "$ref": "#/components/parameters/initiator_optional"
+          },
+          {
+            "$ref": "#/components/parameters/logSourceCRN_optional"
+          },
+          {
+            "$ref": "#/components/parameters/logSourceType_optional"
+          },
+          {
+            "$ref": "#/components/parameters/observer_optional"
+          },
+          {
+            "$ref": "#/components/parameters/org"
+          },
+          {
+            "$ref": "#/components/parameters/outcome_optional"
+          },
+          {
+            "$ref": "#/components/parameters/reason_optional"
+          },
+          {
+            "$ref": "#/components/parameters/requestData_optional"
+          },
+          {
+            "$ref": "#/components/parameters/requestPath_optional"
+          },
+          {
+            "$ref": "#/components/parameters/responseData_optional"
+          },
+          {
+            "$ref": "#/components/parameters/spaceId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/tags_optional"
+          },
+          {
+            "$ref": "#/components/parameters/target_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timezone_optional"
+          },
+          {
+            "$ref": "#/components/parameters/typeURI_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AuditDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Audit"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/audit/entities/{audit-entity-type}/{audit-entity-name}": {
+      "description": "Return the audit history of a product, API or MCP server in the provider organization.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/audit-entity-name"
+        },
+        {
+          "$ref": "#/components/parameters/audit-entity-type"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the audit history of a product, API or MCP server at organization scope",
+        "description": "Returns a summary (first and last change, versions, actions, users and catalogs) and the audit records about the product, API or MCP server, including changes to its drafts, publishing and lifecycle changes. Accepts the same filters as the audit list.\n",
+        "operationId": "audit_orgEntityHistory",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/accept_language_optional"
+          },
+          {
+            "$ref": "#/components/parameters/action_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_actor_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_area_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_changes_only_optional"
+          },
+          {
+            "$ref": "#/components/parameters/analytics-service"
+          },
+          {
+            "$ref": "#/components/parameters/attachments_optional"
+          },
+          {
+            "$ref": "#/components/parameters/auditId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/catalogId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/eventGenerator_optional"
+          },
+          {
+            "$ref": "#/components/parameters/initiator_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/logSourceCRN_optional"
+          },
+          {
+            "$ref": "#/components/parameters/logSourceType_optional"
+          },
+          {
+            "$ref": "#/components/parameters/observer_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/org"
+          },
+          {
+            "$ref": "#/components/parameters/outcome_optional"
+          },
+          {
+            "$ref": "#/components/parameters/reason_optional"
+          },
+          {
+            "$ref": "#/components/parameters/requestData_optional"
+          },
+          {
+            "$ref": "#/components/parameters/requestPath_optional"
+          },
+          {
+            "$ref": "#/components/parameters/responseData_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_entity_sort_optional"
+          },
+          {
+            "$ref": "#/components/parameters/spaceId_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/tags_optional"
+          },
+          {
+            "$ref": "#/components/parameters/target_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timezone_optional"
+          },
+          {
+            "$ref": "#/components/parameters/typeURI_optional"
+          },
+          {
+            "$ref": "#/components/parameters/audit_entity_version_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AuditEntityHistoryResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -213938,6 +222595,96 @@
           "type": "string"
         }
       },
+      "task-id": {
+        "name": "task-id",
+        "in": "path",
+        "description": "ID of the task.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "thread-pool-patterns": {
+        "name": "thread-pool-patterns",
+        "in": "path",
+        "description": "A comma-separated list of thread pool names or patterns used to limit the request.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "node-metric": {
+        "name": "node-metric",
+        "in": "path",
+        "description": "Node or metric filter.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "monitor-id": {
+        "name": "monitor-id",
+        "in": "path",
+        "description": "ID of the threat intelligence monitor.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "id": {
+        "name": "id",
+        "in": "path",
+        "description": "Unique identifier.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "policy-id": {
+        "name": "policy-id",
+        "in": "path",
+        "description": "Identifier of the ISM policy.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "fields": {
+        "name": "fields",
+        "in": "path",
+        "description": "Comma-separated list of field names.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "threshold_ms_optional": {
+        "name": "threshold_ms",
+        "in": "query",
+        "description": "Running time threshold in milliseconds for identifying stuck tasks. Defaults to 600000 (10 minutes).",
+        "required": false,
+        "schema": {
+          "type": "integer"
+        }
+      },
+      "disable_monitors_optional": {
+        "name": "disable_monitors",
+        "in": "query",
+        "description": "Whether to disable active threat intelligence monitors during emergency drain. Defaults to true.",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "actions_optional": {
+        "name": "actions",
+        "in": "query",
+        "description": "Comma-separated list or wildcard expression of actions used to limit the request.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "active_only_optional": {
         "name": "active_only",
         "in": "query",
@@ -214237,6 +222984,155 @@
           "example": "6c597223-b2b7-49dc-b956-14596b6cc8f1"
         }
       },
+      "audit-entity-type": {
+        "name": "audit-entity-type",
+        "in": "path",
+        "description": "The type of resource whose audit history to return.",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "product",
+            "api",
+            "mcp_server"
+          ]
+        }
+      },
+      "audit-entity-name": {
+        "name": "audit-entity-name",
+        "in": "path",
+        "description": "The name of the product, API or MCP server. Its history includes changes to its drafts, publishing and lifecycle changes of every version.\n",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "maxLength": 256,
+          "pattern": "^[^:/]+$",
+          "example": "orders"
+        }
+      },
+      "audit_entity_optional": {
+        "name": "entity",
+        "in": "query",
+        "description": "If set, only return audit records about this product, API or MCP server, as <type>:<name> or <type>:<name>:<version> where type is product, api or mcp_server. Includes changes to its drafts, publishing and lifecycle changes.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "maxLength": 530,
+          "pattern": "^(product|api|mcp_server):[^:]+(:[^:]+)?$",
+          "example": "product:orders:1.0.0"
+        }
+      },
+      "audit_entity_version_optional": {
+        "name": "version",
+        "in": "query",
+        "description": "If set, only return the audit history of this version.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "maxLength": 256,
+          "pattern": "^[^:]+$",
+          "example": "1.0.0"
+        }
+      },
+      "audit_entity_sort_optional": {
+        "name": "sort",
+        "in": "query",
+        "description": "Order of the audit records by event time: -eventTime for newest first (the default) or eventTime for oldest first.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "eventTime",
+            "-eventTime"
+          ]
+        }
+      },
+      "audit_area_optional": {
+        "name": "area",
+        "in": "query",
+        "description": "If set, only return audit records about these areas, comma separated. lifecycle: publishing and product lifecycle; development: projects, draft APIs and draft products; consumers: consumer organizations, applications, subscriptions, approvals and credentials; access: sign-ins, users, members and roles; system: webhooks from gateways and portals; configuration: everything else.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "maxLength": 200,
+          "pattern": "^(lifecycle|development|consumers|access|configuration|system)(,(lifecycle|development|consumers|access|configuration|system))*$",
+          "example": "lifecycle,consumers"
+        }
+      },
+      "audit_actor_optional": {
+        "name": "actor",
+        "in": "query",
+        "description": "If set, only return audit records made by these kinds of actor, comma separated. people: users; clients: client applications, e.g. CI pipelines, using client credentials; system: API Connect itself.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "maxLength": 50,
+          "pattern": "^(people|clients|system)(,(people|clients|system))*$",
+          "example": "people"
+        }
+      },
+      "audit_changes_only_optional": {
+        "name": "changes_only",
+        "in": "query",
+        "description": "If true, only return changes: leave out reads, sign-ins, sign-outs and token refreshes. Defaults to false.\n",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "audit_api_optional": {
+        "name": "api",
+        "in": "query",
+        "description": "If set, only return audit records about the API with this name, or name:version for one version. Includes changes to its drafts, publishing and lifecycle changes. Use oneof: with a comma separated list for several, and not: or notoneof: to leave them out.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "maxLength": 2000,
+          "pattern": "^((equals|not|oneof|notoneof):)?[^:,]+(:[^:,]+)?(,[^:,]+(:[^:,]+)?)*$",
+          "example": "equals:orders-api"
+        }
+      },
+      "audit_mcp_server_optional": {
+        "name": "mcp_server",
+        "in": "query",
+        "description": "If set, only return audit records about the MCP server with this name, or name:version for one version. Includes changes to its drafts, publishing and lifecycle changes. Use oneof: with a comma separated list for several, and not: or notoneof: to leave them out.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "maxLength": 2000,
+          "pattern": "^((equals|not|oneof|notoneof):)?[^:,]+(:[^:,]+)?(,[^:,]+(:[^:,]+)?)*$",
+          "example": "equals:orders-mcp:1.0.0"
+        }
+      },
+      "audit_product_optional": {
+        "name": "product",
+        "in": "query",
+        "description": "If set, only return audit records about the product with this name, or name:version for one version. Includes changes to its drafts, publishing and lifecycle changes. Use oneof: with a comma separated list for several, and not: or notoneof: to leave them out.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "maxLength": 2000,
+          "pattern": "^((equals|not|oneof|notoneof):)?[^:,]+(:[^:,]+)?(,[^:,]+(:[^:,]+)?)*$",
+          "example": "oneof:orders,payments:2.0.0"
+        }
+      },
+      "audit-dashboard": {
+        "name": "audit-dashboard",
+        "in": "path",
+        "description": "The audit dashboard to return. overview: activity across the provider organization; lifecycle: publishing and product lifecycle; consumers: consumer organizations, applications and subscriptions; access: sign-ins, members and roles; configuration: configuration changes.\n",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "overview",
+            "lifecycle",
+            "consumers",
+            "access",
+            "configuration"
+          ],
+          "example": "overview"
+        }
+      },
       "backend_method_optional": {
         "name": "backend_method",
         "in": "query",
@@ -214416,7 +223312,7 @@
       "catalogId_optional": {
         "name": "catalogId",
         "in": "query",
-        "description": "Filter results by for audit catalog ID.",
+        "description": "Filter results by catalog ID.",
         "required": false,
         "schema": {
           "type": "string",
@@ -214770,6 +223666,7 @@
             "devportal",
             "analytics",
             "apiagent",
+            "apisecurity",
             "all"
           ]
         }
@@ -215309,6 +224206,38 @@
         "required": false,
         "schema": {
           "type": "string"
+        }
+      },
+      "parent_task_id_optional": {
+        "name": "parent_task_id",
+        "in": "query",
+        "description": "Return tasks with specified parent task ID.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "nodes_optional": {
+        "name": "nodes",
+        "in": "query",
+        "description": "Comma-separated list of node IDs or names used to limit the request.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "group_by_tasks_optional": {
+        "name": "group_by",
+        "in": "query",
+        "description": "Key used to group tasks in the response.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "nodes",
+            "parents",
+            "none"
+          ]
         }
       },
       "mcp_method_name_optional": {
@@ -216283,6 +225212,15 @@
           "type": "boolean"
         }
       },
+      "wait_for_completion_optional": {
+        "name": "wait_for_completion",
+        "in": "query",
+        "description": "Should the request block until the task is complete. Defaults to false.",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        }
+      },
       "wait_for_nodes_optional": {
         "name": "wait_for_nodes",
         "in": "query",
@@ -216352,7 +225290,7 @@
           "example": "1"
         }
       },
-      "usage_evolution_report_type": {
+      "usage-evolution-report-type": {
         "name": "usage-evolution-report-type",
         "in": "path",
         "description": "Type of entity for usage evolution report",
@@ -216369,7 +225307,7 @@
           "example": "apis"
         }
       },
-      "report_type": {
+      "report-type": {
         "name": "report-type",
         "in": "path",
         "description": "Type of entity for disk usage report",
@@ -217399,12 +226337,30 @@
             "format": "date-time"
           },
           "monthly_summary": {
+            "description": "Status-code breakdown for all calls (used by the \"All\" chart view)",
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
+          "monthly_summary_ai": {
+            "description": "Status-code breakdown for AI calls only (api_type llm or mcp)",
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
+          "monthly_summary_api": {
+            "description": "Status-code breakdown for non-AI API calls only",
             "$ref": "#/components/schemas/GroupKeyValueDataList"
           },
           "monthly_data": {
             "$ref": "#/components/schemas/ConsumptionDataList"
           },
           "daily_summary": {
+            "description": "Status-code breakdown for all calls (used by the \"All\" chart view)",
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
+          "daily_summary_ai": {
+            "description": "Status-code breakdown for AI calls only (api_type llm or mcp)",
+            "$ref": "#/components/schemas/GroupKeyValueDataList"
+          },
+          "daily_summary_api": {
+            "description": "Status-code breakdown for non-AI API calls only",
             "$ref": "#/components/schemas/GroupKeyValueDataList"
           },
           "daily_data": {
@@ -217613,6 +226569,14 @@
           },
           "other": {
             "type": "number"
+          },
+          "ai_calls": {
+            "type": "number",
+            "description": "Number of AI calls (api_type llm or mcp)"
+          },
+          "api_calls": {
+            "type": "number",
+            "description": "Number of non-AI API calls"
           }
         }
       },
@@ -217620,6 +226584,249 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ConsumptionDataItem"
+        }
+      },
+      "BackendDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Backend Dashboard.",
+        "properties": {
+          "search_time": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "top_backend_urls_for_4xx_errors_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "top_backend_urls_for_5xx_errors_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "backend_status_code": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "backend_time_to_serve_percentiles": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "top_slowest_backend_requests": {
+            "$ref": "#/components/schemas/BackendSlowRequestsData"
+          },
+          "status_code_mismatch": {
+            "$ref": "#/components/schemas/BackendStatusCodeMismatchData"
+          },
+          "policy_errors": {
+            "$ref": "#/components/schemas/BackendPolicyErrorsData"
+          }
+        }
+      },
+      "BackendSlowRequestsData": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Description of what this data represents"
+          },
+          "total": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BackendSlowRequestItem"
+            }
+          }
+        }
+      },
+      "BackendSlowRequestItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          },
+          "backend_url": {
+            "type": "string"
+          },
+          "api_name": {
+            "type": "string"
+          },
+          "backend_status_code": {
+            "type": "string"
+          }
+        }
+      },
+      "BackendPolicyErrorsData": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Description of what this data represents"
+          },
+          "total": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "offset": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "limit": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BackendPolicyErrorItem"
+            }
+          }
+        }
+      },
+      "BackendPolicyErrorItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "error_message": {
+            "type": "string"
+          },
+          "error_description": {
+            "type": "string"
+          },
+          "api_name": {
+            "type": "string"
+          },
+          "backend_url": {
+            "type": "string"
+          },
+          "status_code": {
+            "type": "string"
+          },
+          "backend_status_code": {
+            "type": "string"
+          }
+        }
+      },
+      "StatusCodeMismatchResponse": {
+        "type": "object",
+        "description": "Paginated list of status code mismatch events.",
+        "properties": {
+          "total": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "search_time": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "offset": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "limit": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "first": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "next": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "previous": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "last": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BackendStatusCodeMismatchItem"
+            }
+          }
+        }
+      },
+      "PolicyErrorsResponse": {
+        "type": "object",
+        "description": "Paginated list of policy error events.",
+        "properties": {
+          "total": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "search_time": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "offset": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "limit": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "first": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "next": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "previous": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "last": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BackendPolicyErrorItem"
+            }
+          }
+        }
+      },
+      "BackendStatusCodeMismatchData": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Description of what this data represents"
+          },
+          "total": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "matched_value": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "unmatched_value": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BackendStatusCodeMismatchItem"
+            }
+          }
+        }
+      },
+      "BackendStatusCodeMismatchItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "status_code": {
+            "type": "string"
+          },
+          "backend_status_code": {
+            "type": "string"
+          },
+          "api_name": {
+            "type": "string"
+          },
+          "backend_url": {
+            "type": "string"
+          }
         }
       },
       "DataItem": {
@@ -218400,6 +227607,646 @@
           }
         ]
       },
+      "EventContextResponse": {
+        "type": "object",
+        "description": "Investigation context for an API event, including a comparison of its performance with recent calls. Each section is optional and is omitted when it cannot be calculated. All date-time values are UTC.\n",
+        "properties": {
+          "baseline": {
+            "$ref": "#/components/schemas/EventContextBaseline"
+          },
+          "blast_radius": {
+            "$ref": "#/components/schemas/EventContextBlastRadius"
+          },
+          "changes": {
+            "$ref": "#/components/schemas/EventContextChanges"
+          },
+          "related": {
+            "$ref": "#/components/schemas/EventContextRelated"
+          },
+          "performance": {
+            "$ref": "#/components/schemas/EventContextPerformance"
+          }
+        }
+      },
+      "EventContextBaseline": {
+        "type": "object",
+        "description": "How the event compares with calls to the same operation (or, when the operation is not known, the same API version) over the baseline period.\n",
+        "required": [
+          "scope_field",
+          "scope_label",
+          "period",
+          "sample_size"
+        ],
+        "properties": {
+          "scope_field": {
+            "type": "string",
+            "description": "Event field the baseline is grouped on, for example api_resource_id."
+          },
+          "scope_label": {
+            "type": "string",
+            "description": "Readable label for the baseline scope."
+          },
+          "period": {
+            "type": "string",
+            "description": "Length of the baseline period, for example 24h."
+          },
+          "sample_size": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "latency_ms": {
+            "$ref": "#/components/schemas/EventContextPercentiles"
+          },
+          "gateway_latency_ms": {
+            "$ref": "#/components/schemas/EventContextPercentiles"
+          },
+          "backend_latency_ms": {
+            "$ref": "#/components/schemas/EventContextPercentiles"
+          },
+          "request_bytes": {
+            "$ref": "#/components/schemas/EventContextPercentiles"
+          },
+          "response_bytes": {
+            "$ref": "#/components/schemas/EventContextPercentiles"
+          },
+          "error_rate_pct": {
+            "type": "number",
+            "description": "Percentage of calls in the baseline period with a 4xx or 5xx status code."
+          },
+          "status_share": {
+            "type": "array",
+            "description": "Share of calls by status code over the baseline period (top 10).",
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string"
+                },
+                "pct": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      },
+      "EventContextPercentiles": {
+        "type": "object",
+        "description": "Percentiles over the baseline period and the event's own value.",
+        "properties": {
+          "p50": {
+            "type": "number"
+          },
+          "p90": {
+            "type": "number",
+            "nullable": true
+          },
+          "p95": {
+            "type": "number",
+            "nullable": true
+          },
+          "p99": {
+            "type": "number",
+            "nullable": true
+          },
+          "value": {
+            "type": "number",
+            "nullable": true,
+            "description": "Value for this event."
+          },
+          "percentile_rank": {
+            "type": "number",
+            "description": "Percentile rank (0-100) of this event's value within the baseline."
+          }
+        }
+      },
+      "EventContextBlastRadius": {
+        "type": "object",
+        "description": "Calls and errors around the event, grouped by related dimensions.",
+        "required": [
+          "window_start",
+          "window_end",
+          "bucket_seconds",
+          "dimensions"
+        ],
+        "properties": {
+          "window_start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "window_end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "bucket_seconds": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "baseline_period": {
+            "type": "string",
+            "description": "How far before the window the baseline error rates for each dimension are measured, for example 6h.\n",
+            "example": "6h"
+          },
+          "error_onset": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Start of the run of elevated error rates for the operation that includes the event, when it began inside the window.\n"
+          },
+          "affected_applications": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "affected_consumer_orgs": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "dimensions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EventContextBlastDimension"
+            }
+          }
+        }
+      },
+      "EventContextBlastDimension": {
+        "type": "object",
+        "required": [
+          "key",
+          "field",
+          "value",
+          "total",
+          "errors",
+          "error_rate_pct",
+          "baseline_error_rate_pct",
+          "series"
+        ],
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "One of operation, api, backend, gateway or application."
+          },
+          "field": {
+            "type": "string",
+            "description": "API event field the dimension filters on."
+          },
+          "value": {
+            "type": "string",
+            "description": "Value of the field for this event."
+          },
+          "display_value": {
+            "type": "string"
+          },
+          "discover_value": {
+            "type": "string",
+            "description": "Filter value to use when listing these events, when it differs from value (for example startswith:<backend URL>).\n"
+          },
+          "total": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "same_status": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "error_rate_pct": {
+            "type": "number"
+          },
+          "baseline_error_rate_pct": {
+            "type": "number"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EventContextTimeBucket"
+            }
+          }
+        }
+      },
+      "EventContextTimeBucket": {
+        "type": "object",
+        "properties": {
+          "t": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Start of the bucket."
+          },
+          "total": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          }
+        }
+      },
+      "EventContextChanges": {
+        "type": "object",
+        "properties": {
+          "lookback": {
+            "type": "string",
+            "description": "How far back changes were looked for, for example 24h."
+          },
+          "content_as_of": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the hourly API Manager content data for the event's catalog was last updated. Creates and updates after this time are not reported from that data yet.\n"
+          },
+          "audit_status": {
+            "type": "string",
+            "description": "Whether API Manager audit events are included in the items. included: the audit log was searched. not_permitted: the caller does not have permission to view audit data. unavailable: audit data is not being sent to analytics or could not be read.\n",
+            "enum": [
+              "included",
+              "not_permitted",
+              "unavailable"
+            ]
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EventContextChange"
+            }
+          }
+        }
+      },
+      "EventContextChange": {
+        "type": "object",
+        "required": [
+          "detected_at",
+          "source",
+          "entity_type",
+          "entity_name",
+          "change_type"
+        ],
+        "properties": {
+          "detected_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "detected_after": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Earliest time the change could have happened, when only a window is known."
+          },
+          "source": {
+            "type": "string",
+            "description": "traffic: derived from API events. management: product lifecycle notifications from API Manager. audit: API Manager audit log. content_snapshot: created_at/updated_at timestamps in the hourly API Manager content data.\n",
+            "enum": [
+              "traffic",
+              "management",
+              "audit",
+              "content_snapshot"
+            ]
+          },
+          "entity_type": {
+            "type": "string",
+            "description": "api, product, plan, gateway, backend, application, consumer_org, subscription, mcp_server or catalog.\n"
+          },
+          "entity_name": {
+            "type": "string"
+          },
+          "change_type": {
+            "type": "string",
+            "description": "new_version, version_change, status_change, first_seen, volume_change, state_change, updated, created, modified or audit.\n"
+          },
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string",
+            "description": "Audit events only. The operation performed, for example update or publish."
+          },
+          "actor": {
+            "type": "string",
+            "description": "Audit events only. Who made the change."
+          },
+          "audit_id": {
+            "type": "string",
+            "description": "Audit events only. ID of the audit record."
+          },
+          "snapshot_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "content_snapshot changes only. When the API Manager content data that reported the change was captured.\n"
+          },
+          "target_type": {
+            "type": "string",
+            "description": "Audit events only. The kind of API Manager object the record changed, for example app, subscription or catalog.\n"
+          },
+          "published": {
+            "type": "object",
+            "description": "Project publish audit events only. What the publish contained, as name:version strings. Lists stop at 100 entries in total, when truncated is true; total is always the full count.\n",
+            "properties": {
+              "products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "apis": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "mcp_servers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "total": {
+                "type": "integer"
+              },
+              "truncated": {
+                "type": "boolean"
+              }
+            }
+          },
+          "matched_resources": {
+            "type": "array",
+            "description": "Project publish audit events only. Which of this event's resources (product, api, mcp_server) the publish contained.\n",
+            "items": {
+              "type": "string"
+            }
+          },
+          "outcome": {
+            "type": "string",
+            "description": "Audit events only. Set to failure for a publish that failed partway; the items listed in published were published before the failure.\n",
+            "enum": [
+              "failure"
+            ]
+          },
+          "error": {
+            "type": "string",
+            "description": "Audit events only. Error reported by API Manager for a failed change."
+          },
+          "pending_approval": {
+            "type": "boolean",
+            "description": "Audit events only. True when the change is waiting for approval, so it is not yet live on the gateway.\n"
+          },
+          "relevance": {
+            "type": "string",
+            "description": "Audit events only. direct: the record names this event's API, product, application or consumer organization. catalog: a change in this event's catalog that does not say which product or API it affected (for example a product publish), so it may or may not be related.\n",
+            "enum": [
+              "direct",
+              "catalog"
+            ]
+          }
+        }
+      },
+      "EventContextPerformance": {
+        "type": "object",
+        "description": "How this event's assembly policies performed compared with a sample of up to 200 recent successful calls to the same operation (or API version) in the baseline period, plus hourly latency percentiles for the operation. Policy durations are worked out from latency_info: a policy lasts until the next one starts, and the last one until the response was sent.\n",
+        "properties": {
+          "scope_label": {
+            "type": "string"
+          },
+          "period": {
+            "type": "string"
+          },
+          "sample_size": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "total_ms": {
+            "$ref": "#/components/schemas/EventContextSampleStats"
+          },
+          "backend_ms": {
+            "$ref": "#/components/schemas/EventContextSampleStats"
+          },
+          "policies": {
+            "type": "array",
+            "description": "This event's policies, in the order they ran.",
+            "items": {
+              "$ref": "#/components/schemas/EventContextPolicy"
+            }
+          },
+          "missing_policies": {
+            "type": "array",
+            "description": "Policies that at least 80% of sampled calls ran but this event did not.\n",
+            "items": {
+              "$ref": "#/components/schemas/EventContextPolicy"
+            }
+          },
+          "unusual_policies": {
+            "type": "array",
+            "description": "Keys of this event's policies that fewer than 20% of sampled calls ran.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "biggest_contributor": {
+            "type": "string",
+            "description": "Key of the policy that took the most time more than usual."
+          },
+          "typical_event": {
+            "type": "object",
+            "description": "A sampled call with close to the median total latency, to compare with.",
+            "properties": {
+              "event_id": {
+                "$ref": "#/components/schemas/Id"
+              },
+              "datetime": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "time_to_serve_request": {
+                "type": "number"
+              }
+            }
+          },
+          "trend": {
+            "type": "object",
+            "properties": {
+              "interval": {
+                "type": "string",
+                "description": "Bucket size, for example 1h."
+              },
+              "series": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "t": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "count": {
+                      "$ref": "#/components/schemas/NonNegativeInteger"
+                    },
+                    "p50": {
+                      "type": "number",
+                      "nullable": true
+                    },
+                    "p95": {
+                      "type": "number",
+                      "nullable": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "EventContextSampleStats": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number",
+            "nullable": true,
+            "description": "Value for this event."
+          },
+          "p50": {
+            "type": "number"
+          },
+          "p95": {
+            "type": "number"
+          }
+        }
+      },
+      "EventContextPolicy": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Identifies the same policy across calls: task and name (or title), with a counter when a policy runs more than once.\n"
+          },
+          "task": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "value_ms": {
+            "type": "number",
+            "description": "Duration in this event."
+          },
+          "p50_ms": {
+            "type": "number"
+          },
+          "p95_ms": {
+            "type": "number"
+          },
+          "delta_ms": {
+            "type": "number",
+            "description": "This event's duration minus the usual (p50) duration."
+          },
+          "present_in_pct": {
+            "type": "number",
+            "description": "Percentage of sampled calls that ran this policy."
+          }
+        }
+      },
+      "EventContextRelated": {
+        "type": "object",
+        "properties": {
+          "global_transaction": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "events": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/EventContextRelatedEvent"
+                }
+              }
+            }
+          },
+          "same_client": {
+            "type": "object",
+            "properties": {
+              "client_id": {
+                "type": "string"
+              },
+              "app_name": {
+                "type": "string"
+              },
+              "window_seconds": {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              },
+              "events": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/EventContextRelatedEvent"
+                }
+              }
+            }
+          },
+          "trace": {
+            "type": "object",
+            "properties": {
+              "trace_id": {
+                "type": "string"
+              },
+              "span_id": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "description": "Link to the trace in the configured tracing UI, if one is configured."
+              },
+              "backend_name": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "EventContextRelatedEvent": {
+        "type": "object",
+        "required": [
+          "event_id",
+          "datetime"
+        ],
+        "properties": {
+          "event_id": {
+            "$ref": "#/components/schemas/Id"
+          },
+          "datetime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "offset_ms": {
+            "type": "integer",
+            "description": "Milliseconds from the event (negative is before)."
+          },
+          "api_name": {
+            "type": "string"
+          },
+          "api_version": {
+            "type": "string"
+          },
+          "request_method": {
+            "type": "string"
+          },
+          "uri_path": {
+            "type": "string"
+          },
+          "status_code": {
+            "type": "string"
+          },
+          "backend_status_code": {
+            "type": "string"
+          },
+          "time_to_serve_request": {
+            "type": "number"
+          },
+          "gateway_service_name": {
+            "type": "string"
+          },
+          "request_fingerprint_match": {
+            "type": "boolean",
+            "description": "True when method, path, query string and body match this event."
+          }
+        }
+      },
       "Summary": {
         "type": "object",
         "description": "API event.",
@@ -218581,6 +228428,157 @@
             "$ref": "#/components/schemas/GroupKeyValueDataList"
           }
         }
+      },
+      "AuditEntity": {
+        "type": "object",
+        "description": "A product, API or MCP server whose audit history was requested.",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "product",
+              "api",
+              "mcp_server"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string",
+            "description": "Present when the history was narrowed to one version."
+          }
+        }
+      },
+      "AuditEntityHistory": {
+        "type": "object",
+        "description": "The audit history of a product, API or MCP server: a summary and the matching audit records, paged and sorted like the audit list.\n",
+        "properties": {
+          "search_time": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "total": {
+            "description": "Number of audit records about the entity after filters.",
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "entity": {
+            "$ref": "#/components/schemas/AuditEntity"
+          },
+          "summary": {
+            "type": "object",
+            "properties": {
+              "first_seen": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true,
+                "description": "Time of the oldest matching audit record."
+              },
+              "last_seen": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true,
+                "description": "Time of the newest matching audit record."
+              },
+              "actions": {
+                "type": "object",
+                "description": "Number of audit records for each action, e.g. create, update, delete.",
+                "additionalProperties": {
+                  "type": "integer"
+                }
+              },
+              "outcomes": {
+                "type": "object",
+                "description": "Number of audit records for each outcome (success, failure, pending).",
+                "additionalProperties": {
+                  "type": "integer"
+                }
+              },
+              "users": {
+                "type": "array",
+                "description": "Who changed the entity most, by initiator name.",
+                "items": {
+                  "$ref": "#/components/schemas/AuditEntityCount"
+                }
+              },
+              "catalogs": {
+                "type": "array",
+                "description": "Catalogs the entity was changed in.",
+                "items": {
+                  "$ref": "#/components/schemas/AuditEntityCount"
+                }
+              },
+              "versions": {
+                "type": "array",
+                "description": "Versions of the entity with audit records, most recently changed first. Omitted when the history is for one version.\n",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "version": {
+                      "type": "string"
+                    },
+                    "events": {
+                      "type": "integer"
+                    },
+                    "last_seen": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "first": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "next": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "previous": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "last": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "audits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AuditResponse"
+            }
+          }
+        }
+      },
+      "AuditEntityCount": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "events": {
+            "type": "integer"
+          }
+        }
+      },
+      "AuditDashboard": {
+        "type": "object",
+        "description": "Data for an audit dashboard. Every dashboard has search_time, total and totals; the other properties depend on the dashboard. Time series are lists of { group, date, value }, counts are lists of { group, key?, value } and tables are lists of audit event rows whose id identifies the audit record.\n",
+        "properties": {
+          "search_time": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "total": {
+            "description": "Number of audit events in the timeframe after filters.",
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "totals": {
+            "type": "object",
+            "description": "Headline counts for the dashboard.",
+            "additionalProperties": {
+              "type": "integer"
+            }
+          }
+        },
+        "additionalProperties": true
       },
       "FilterParam": {
         "type": "object",
@@ -220806,6 +230804,9 @@
           },
           "api_agent": {
             "type": "boolean"
+          },
+          "api_security_mode_enabled": {
+            "type": "boolean"
           }
         }
       },
@@ -222014,7 +232015,22 @@
           },
           "type": {
             "type": "string",
-            "description": "The data type of the filter parameter."
+            "description": "The data type of the filter parameter: string, number, boolean, date, ipaddress, object, enum or entity. An enum filter has a fixed set of values; an entity filter takes a product, API or MCP server name, or name:version.\n"
+          },
+          "values": {
+            "type": "array",
+            "description": "The values of an enum filter parameter, with localized text.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "operators": {
             "type": "array",
@@ -222336,25 +232352,45 @@
             }
           },
           "chart_data": {
-            "type": "array",
+            "type": "object",
             "description": "Multi-stage Sankey chart data showing entity flows between consecutive periods (12m→9m, 9m→6m, 6m→3m, 3m→Now)",
-            "items": {
-              "type": "object",
-              "properties": {
-                "source": {
-                  "type": "string",
-                  "description": "Source entity with period label",
-                  "example": "payment-api: 1.0.0 (12 months ago)"
-                },
-                "target": {
-                  "type": "string",
-                  "description": "Target entity with period label",
-                  "example": "payment-api: 1.0.0 (9 months ago)"
-                },
-                "value": {
-                  "type": "number",
-                  "description": "Flow value (API call count)",
-                  "example": 15000
+            "properties": {
+              "description": {
+                "type": "string",
+                "description": "Human-readable, translated description of the chart data"
+              },
+              "data": {
+                "type": "array",
+                "description": "Flows between consecutive periods, one per entity per pair of periods",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "source": {
+                      "type": "string",
+                      "description": "Source entity with period label",
+                      "example": "payment-api: 1.0.0 (12 months ago)"
+                    },
+                    "target": {
+                      "type": "string",
+                      "description": "Target entity with period label",
+                      "example": "payment-api: 1.0.0 (9 months ago)"
+                    },
+                    "value": {
+                      "type": "number",
+                      "description": "Flow value (API call count). The lower of the source and target period usage, or the usage in the only period the entity appears in when it is new or dropped.",
+                      "example": 15000
+                    },
+                    "source_value": {
+                      "type": "number",
+                      "description": "API call count for the entity in the source period. 0 when the entity is not among the top entities for that period.",
+                      "example": 15000
+                    },
+                    "target_value": {
+                      "type": "number",
+                      "description": "API call count for the entity in the target period. 0 when the entity is not among the top entities for that period.",
+                      "example": 18000
+                    }
+                  }
                 }
               }
             }
@@ -222533,6 +232569,87 @@
                     "ApiCallsNumber": {
                       "type": "integer",
                       "description": "Total API call count (API + AI calls combined)"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "UmsReportResponse": {
+        "type": "object",
+        "description": "UMS (Usage Metering Service) metering data for license compliance tracking",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "processing": {
+                  "type": "string",
+                  "enum": [
+                    "ADD",
+                    "MAX"
+                  ],
+                  "description": "Processing type for metric aggregation"
+                },
+                "instances": {
+                  "type": "array",
+                  "description": "List of instances reporting metrics",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "metrics": {
+                        "type": "array",
+                        "description": "List of metrics for this instance",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "productId": {
+                              "type": "string",
+                              "description": "Product ID from license annotations"
+                            },
+                            "productName": {
+                              "type": "string",
+                              "description": "Product name from license annotations"
+                            },
+                            "cloudpakId": {
+                              "type": "string",
+                              "description": "Cloud Pak ID (empty for non-CP4I environments)"
+                            },
+                            "cloudpakName": {
+                              "type": "string",
+                              "description": "Cloud Pak name (empty for non-CP4I environments)"
+                            },
+                            "metricName": {
+                              "type": "string",
+                              "description": "Metric name from license annotations"
+                            },
+                            "metricDescription": {
+                              "type": "string",
+                              "description": "Description of the metric being reported"
+                            },
+                            "metricType": {
+                              "type": "string",
+                              "enum": [
+                                "CONTRACTUAL",
+                                "USAGE"
+                              ],
+                              "description": "Type of metric (CONTRACTUAL for compliance)"
+                            },
+                            "measurementTimestamp": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "Timestamp when measurement was taken (ISO 8601 format)"
+                            },
+                            "metricQuantity": {
+                              "type": "integer",
+                              "description": "Total API call count (API + AI calls combined)"
+                            }
+                          }
+                        }
+                      }
                     }
                   }
                 }
@@ -222948,6 +233065,21 @@
           }
         }
       },
+      "EventContextResponse": {
+        "description": "Investigation context for the API event matching the supplied ID, if it exists at the specified scope.\n",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/EventContextResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/EventContextResponse"
+            }
+          }
+        }
+      },
       "DiscoverTimelineResponse": {
         "description": "Data needed to populate the Gateway Dashboard",
         "content": {
@@ -222974,6 +233106,36 @@
           "application/yaml": {
             "schema": {
               "$ref": "#/components/schemas/AuditTimelineResponse"
+            }
+          }
+        }
+      },
+      "AuditEntityHistoryResponse": {
+        "description": "The audit history of a product, API or MCP server",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AuditEntityHistory"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/AuditEntityHistory"
+            }
+          }
+        }
+      },
+      "AuditDashboardResponse": {
+        "description": "Data needed to populate an audit dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AuditDashboard"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/AuditDashboard"
             }
           }
         }
@@ -223592,6 +233754,66 @@
           "application/yaml": {
             "schema": {
               "$ref": "#/components/schemas/IwhiMeteringReportResponse"
+            }
+          }
+        }
+      },
+      "UmsReportResponse": {
+        "description": "UMS metering data for license compliance tracking",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UmsReportResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/UmsReportResponse"
+            }
+          }
+        }
+      },
+      "BackendDashboardResponse": {
+        "description": "Data needed to populate the Backend Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/BackendDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/BackendDashboardResponse"
+            }
+          }
+        }
+      },
+      "StatusCodeMismatchResponse": {
+        "description": "Paginated list of status code mismatch events",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/StatusCodeMismatchResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/StatusCodeMismatchResponse"
+            }
+          }
+        }
+      },
+      "PolicyErrorsResponse": {
+        "description": "Paginated list of policy error events",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/PolicyErrorsResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/PolicyErrorsResponse"
             }
           }
         }
@@ -224553,6 +234775,412 @@
         ]
       }
     },
+    "/{analytics-service}/orgs/{org}/anomaly-detectors": {
+      "description": "Return anomaly detectors for a provider organization.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "List anomaly detectors at provider organization scope",
+        "description": "Returns all anomaly detectors belonging to a provider organization.\n",
+        "operationId": "anomaly_detectors_orgList",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AnomalyDetectorsListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Anomaly Detectors"
+        ]
+      },
+      "post": {
+        "summary": "Create an anomaly detector at provider organization scope",
+        "description": "Creates a new anomaly detector for the provider organization. Use detector_type \"latency\" or \"traffic-volume\" to provision a pre-built detector, or omit detector_type to supply a fully custom configuration.\n",
+        "operationId": "anomaly_detectors_orgCreate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnomalyDetectorCreateRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/AnomalyDetectorCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/AnomalyDetectorCreateResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Anomaly Detectors"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/anomaly-detectors/templates/{detector-type}": {
+      "description": "Create a pre-configured anomaly detector from a built-in template.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/detector-type"
+        }
+      ],
+      "post": {
+        "summary": "Create an anomaly detector from a template",
+        "description": "Creates an anomaly detector using a pre-built template. The detectorType path parameter must be one of \"latency\", \"traffic-volume\", or \"api-event-volume\".\n",
+        "operationId": "anomaly_detectors_orgCreateFromTemplate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnomalyDetectorTemplateRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/AnomalyDetectorTemplateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/AnomalyDetectorCreateResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Anomaly Detectors"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/anomaly-detectors/validate/model": {
+      "description": "Validate anomaly detector configuration against OpenSearch before creation.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Validate anomaly detector configuration",
+        "description": "Runs a pre-flight check using the OpenSearch Anomaly Detection _validate/model endpoint. Returns validation errors without creating a detector.\n",
+        "operationId": "anomaly_detectors_orgValidate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnomalyDetectorRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/AnomalyDetectorRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation result from OpenSearch"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Anomaly Detectors"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/anomaly-detectors/{detector-id}": {
+      "description": "Retrieve, update, or delete a single anomaly detector.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/detector-id"
+        }
+      ],
+      "get": {
+        "summary": "Get an anomaly detector",
+        "description": "Returns a single anomaly detector.\n",
+        "operationId": "anomaly_detectors_orgGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AnomalyDetectorResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Anomaly Detectors"
+        ]
+      },
+      "put": {
+        "summary": "Update an anomaly detector",
+        "description": "Updates a single anomaly detector.\n",
+        "operationId": "anomaly_detectors_orgUpdate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnomalyDetectorUpdateRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/AnomalyDetectorUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AnomalyDetectorResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Anomaly Detectors"
+        ]
+      },
+      "delete": {
+        "summary": "Delete an anomaly detector",
+        "description": "Deletes a single anomaly detector.\n",
+        "operationId": "anomaly_detectors_orgDelete",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/NoContentResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Anomaly Detectors"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/anomaly-detectors/{detector-id}/start": {
+      "description": "Start an anomaly detector.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/detector-id"
+        }
+      ],
+      "post": {
+        "summary": "Start an anomaly detector",
+        "description": "Starts a stopped or newly created anomaly detector.\n",
+        "operationId": "anomaly_detectors_orgStart",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AnomalyDetectorResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Anomaly Detectors"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/anomaly-detectors/{detector-id}/stop": {
+      "description": "Stop an anomaly detector.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/detector-id"
+        }
+      ],
+      "post": {
+        "summary": "Stop an anomaly detector",
+        "description": "Stops a running anomaly detector.\n",
+        "operationId": "anomaly_detectors_orgStop",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AnomalyDetectorResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Anomaly Detectors"
+        ]
+      }
+    },
     "/{analytics-service}/orgs/{org}/rules": {
       "description": "Return a result set of engagement rules.\n",
       "parameters": [
@@ -225209,6 +235837,71 @@
         "tags": [
           "Engagement",
           "Resource: Destinations"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/notifications": {
+      "description": "Send an engagement notification to create a Jira ticket.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Create a Jira ticket notification at provider organization scope",
+        "description": "Triggers the creation of a Jira ticket via the configured Jira destination.\n",
+        "operationId": "notifications_orgCreate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationCreateRequest"
+              },
+              "examples": {
+                "CreateNotification": {
+                  "$ref": "#/components/examples/CreateNotification"
+                }
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationCreateRequest"
+              },
+              "examples": {
+                "CreateNotification": {
+                  "$ref": "#/components/examples/CreateNotification"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/NotificationCreateResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Notifications"
         ]
       }
     },
@@ -226944,6 +237637,41 @@
   },
   "components": {
     "examples": {
+      "CreateNotification": {
+        "summary": "Create Jira ticket notification",
+        "value": {
+          "config_type": "jira",
+          "destination_id": "858c9f23-af13-4408-845d-4e2eec321959",
+          "content": {
+            "overall_assessment": {
+              "summary": "Test issue from Keystone integration",
+              "ai_severity": "high",
+              "root_cause": "Manual test trigger"
+            },
+            "execution_context": {
+              "finding_id": "test-001",
+              "api_id": "test-api",
+              "notification_message": "Verifying Jira destination config"
+            },
+            "recommended_actions": [
+              {
+                "priority": 1,
+                "priority_label": "CRITICAL",
+                "title": "Verify Jira integration",
+                "category": "security",
+                "detailed_explanation": "This is a test issue created to verify the Jira destination.",
+                "implementation_guidance": {
+                  "immediate_action": "Check that this ticket appeared in the CLOUDAI project.",
+                  "verification": "View the ticket in Jira and confirm all fields are populated."
+                },
+                "evidence": [
+                  "Manual test triggered via curl"
+                ]
+              }
+            ]
+          }
+        }
+      },
       "CreateDestination": {
         "summary": "Create new destination",
         "value": {
@@ -227141,6 +237869,29 @@
         "required": true,
         "schema": {
           "type": "string"
+        }
+      },
+      "detector-id": {
+        "name": "detector-id",
+        "in": "path",
+        "description": "Anomaly detector ID. This ID is globally unique across the analytics service.\n",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/Id"
+        }
+      },
+      "detector-type": {
+        "name": "detector-type",
+        "in": "path",
+        "description": "Built-in anomaly detector type. Supported values: \"latency\", \"traffic-volume\", \"api-event-volume\".\n",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "latency",
+            "traffic-volume",
+            "api-event-volume"
+          ]
         }
       },
       "destination-id": {
@@ -227381,7 +238132,9 @@
               "slack",
               "sns",
               "ilmt",
-              "iwhi-metering"
+              "iwhi-metering",
+              "ums",
+              "jira"
             ]
           },
           "is_enabled": {
@@ -227417,6 +238170,32 @@
           "api_key": {
             "type": "string",
             "description": "API key for authentication (only used for IWHI metering destinations)"
+          },
+          "jira_host": {
+            "type": "string",
+            "x-bhendi-no-ref-rewrite": true,
+            "description": "Jira host URL (only used for Jira destinations)"
+          },
+          "project_key": {
+            "type": "string",
+            "description": "Jira project key (only used for Jira destinations)",
+            "example": "OPS"
+          },
+          "issue_type": {
+            "type": "string",
+            "description": "Jira issue type (only used for Jira destinations)",
+            "example": "Bug"
+          },
+          "username": {
+            "type": "string",
+            "description": "Jira account username / email address (only used for Jira destinations)",
+            "example": "user@example.com"
+          },
+          "api_token": {
+            "type": "string",
+            "writeOnly": true,
+            "description": "Jira API token for authentication (only used for Jira destinations)",
+            "example": "ATATT3xFfGF09_EXAMPLE"
           },
           "webhook": {
             "type": "object",
@@ -227510,6 +238289,140 @@
       "DestinationUpdateRequest": {
         "description": "Request object to update a destination",
         "$ref": "#/components/schemas/Destination"
+      },
+      "NotificationCreateRequest": {
+        "description": "Request object to create a Jira ticket notification",
+        "type": "object",
+        "required": [
+          "config_type",
+          "destination_id",
+          "content"
+        ],
+        "properties": {
+          "config_type": {
+            "type": "string",
+            "description": "The type of notification destination",
+            "enum": [
+              "jira"
+            ]
+          },
+          "destination_id": {
+            "$ref": "#/components/schemas/Id"
+          },
+          "content": {
+            "type": "object",
+            "description": "The content used to populate the Jira ticket",
+            "properties": {
+              "overall_assessment": {
+                "type": "object",
+                "description": "AI-generated assessment of the finding",
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "description": "Short summary of the finding"
+                  },
+                  "ai_severity": {
+                    "type": "string",
+                    "description": "AI-assessed severity level (e.g. low, medium, high, critical)"
+                  },
+                  "root_cause": {
+                    "type": "string",
+                    "description": "AI-identified root cause of the finding"
+                  }
+                }
+              },
+              "execution_context": {
+                "type": "object",
+                "description": "Contextual metadata about the finding and its environment",
+                "properties": {
+                  "finding_id": {
+                    "type": "string",
+                    "description": "Unique identifier for the finding"
+                  },
+                  "api_id": {
+                    "type": "string",
+                    "description": "Identifier of the API associated with the finding"
+                  },
+                  "notification_message": {
+                    "type": "string",
+                    "description": "Human-readable message describing the notification trigger"
+                  }
+                }
+              },
+              "recommended_actions": {
+                "type": "array",
+                "description": "Prioritised list of remediation actions",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "priority": {
+                      "type": "integer",
+                      "description": "Numeric priority (1 = highest)"
+                    },
+                    "priority_label": {
+                      "type": "string",
+                      "description": "Human-readable priority label (e.g. CRITICAL, HIGH)"
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "Short title of the recommended action"
+                    },
+                    "category": {
+                      "type": "string",
+                      "description": "Category of the action (e.g. security, performance)"
+                    },
+                    "detailed_explanation": {
+                      "type": "string",
+                      "description": "Full explanation of the recommended action"
+                    },
+                    "implementation_guidance": {
+                      "type": "object",
+                      "description": "Guidance for implementing the action",
+                      "properties": {
+                        "immediate_action": {
+                          "type": "string",
+                          "description": "Immediate step to take"
+                        },
+                        "verification": {
+                          "type": "string",
+                          "description": "How to verify the action was successful"
+                        }
+                      }
+                    },
+                    "evidence": {
+                      "type": "array",
+                      "description": "Supporting evidence for this action",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "NotificationCreateResponse": {
+        "description": "Response object after creating a Jira ticket notification",
+        "type": "object",
+        "properties": {
+          "issue_key": {
+            "type": "string",
+            "description": "The Jira issue key of the created ticket (e.g. OPS-42)",
+            "example": "OPS-42"
+          },
+          "issue_url": {
+            "type": "string",
+            "description": "URL to the created Jira issue",
+            "example": "https://your-org.atlassian.net/browse/OPS-42"
+          },
+          "status": {
+            "type": "string",
+            "description": "Result status of the notification operation",
+            "example": "created"
+          }
+        }
       },
       "EngagementConfigResponse": {
         "type": "object",
@@ -227942,6 +238855,92 @@
         "properties": {
           "href": {
             "type": "string"
+          }
+        }
+      },
+      "AnomalyDetectorRequest": {
+        "type": "object",
+        "description": "An anomaly detector configuration",
+        "additionalProperties": true
+      },
+      "AnomalyDetector": {
+        "type": "object",
+        "description": "An anomaly detector with system-assigned ID",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AnomalyDetectorRequest"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/schemas/Id"
+              }
+            }
+          }
+        ]
+      },
+      "AnomalyDetectorResponse": {
+        "description": "An anomaly detector response",
+        "$ref": "#/components/schemas/AnomalyDetector"
+      },
+      "AnomalyDetectorCreateRequest": {
+        "description": "Request object to create an anomaly detector. Supports an optional start_on_create boolean — when true the director starts the detector immediately after creation in a single API call.",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AnomalyDetectorRequest"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "start_on_create": {
+                "type": "boolean",
+                "description": "When true, the director starts the detector immediately after it is created. The response includes a `started` boolean indicating whether the start succeeded.\n"
+              }
+            }
+          }
+        ]
+      },
+      "AnomalyDetectorCreateResponse": {
+        "description": "Response object to create an anomaly detector",
+        "$ref": "#/components/schemas/AnomalyDetector"
+      },
+      "AnomalyDetectorUpdateRequest": {
+        "description": "Request object to update an anomaly detector",
+        "$ref": "#/components/schemas/AnomalyDetectorRequest"
+      },
+      "AnomalyDetectorTemplateRequest": {
+        "description": "Request body for creating a detector from a template (name is optional)",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Optional custom name for the detector. Defaults to \"{type}-detector\"."
+          },
+          "start_on_create": {
+            "type": "boolean",
+            "description": "When true, the director starts the detector immediately after it is created. The response includes a `started` boolean indicating whether the start succeeded.\n"
+          }
+        }
+      },
+      "AnomalyDetectorsListResponse": {
+        "description": "List of anomaly detectors",
+        "type": "object",
+        "properties": {
+          "total": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "offset": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "limit": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "anomaly_detectors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AnomalyDetector"
+            }
           }
         }
       },
@@ -228474,6 +239473,21 @@
       }
     },
     "responses": {
+      "NotificationCreateResponse": {
+        "description": "A notification create response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/NotificationCreateResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/NotificationCreateResponse"
+            }
+          }
+        }
+      },
       "DestinationResponse": {
         "description": "A destination response",
         "content": {
@@ -228571,6 +239585,51 @@
       },
       "NoContentResponse": {
         "description": "The request was successfully processed."
+      },
+      "AnomalyDetectorResponse": {
+        "description": "An anomaly detector response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AnomalyDetectorResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/AnomalyDetectorResponse"
+            }
+          }
+        }
+      },
+      "AnomalyDetectorCreateResponse": {
+        "description": "An anomaly detector create response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AnomalyDetectorCreateResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/AnomalyDetectorCreateResponse"
+            }
+          }
+        }
+      },
+      "AnomalyDetectorsListResponse": {
+        "description": "List of anomaly detectors",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AnomalyDetectorsListResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/AnomalyDetectorsListResponse"
+            }
+          }
+        }
       },
       "RuleResponse": {
         "description": "A rule response",
@@ -244547,6 +255606,10 @@
               },
               "gen_api_sensitivity": {
                 "type": "number"
+              },
+              "auto_promote": {
+                "type": "boolean",
+                "default": false
               }
             }
           },
@@ -251640,7 +262703,7 @@
         "name": "introduction",
         "title": "Introduction",
         "format": "b64html",
-        "content": "PGFydGljbGUgaWQ9ImludHJvZHVjdGlvbiIgY2xhc3M9InBhZ2UiPgoKICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBpbnRyby1oZWFkZXIiPgogICAgICAgIE9wZW4gQVBJIEV4cGxvcmVyIERvY3VtZW50YXRpb24gdjEyLjEuTEFURVNUCiAgICAgIDwvc3Bhbj4KICAgIDwvaDI+CiAgPC9kaXY+CiAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgaW50cm8tY29udGVudCI+CiAgICA8c2VjdGlvbj4KICAgICAgPGgyPkludHJvZHVjdGlvbjwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBwbGF0Zm9ybSBSRVNUIEFQSXMgZG9jdW1lbnRlZCBoZXJlIGZvciBJQk0gQVBJIENvbm5lY3QgdjEyLjEgcHJvdmlkZSBjb21wbGV0ZSBhY2Nlc3MgdG8gdGhlIGNhcGFiaWxpdHkgb2YgdGhlIHBsYXRmb3JtLiBUaGV5IG1heSBiZSB1c2VkIHRvIGF1dG9tYXRlIGFkbWluaXN0cmF0aW9uIG9mIHRoZSBwbGF0Zm9ybTsgZm9yIHNjcmlwdHMgYW5kIHRvb2xzIHRvIHN1cHBvcnQgYSBjb250aW51b3VzIGludGVncmF0aW9uIGVudmlyb25tZW50IGZvciBBUEkgZGV2ZWxvcG1lbnQgYW5kIHB1Ymxpc2hpbmc7IGFuZCBmb3IgbWFuYWdlbWVudCBvZiBjYXRhbG9ncyBvZiBBUElzIGFuZCB0aGVpciBzdWJzY3JpYmVycy4gVGhlIG9wZXJhdGlvbnMgcHJvdmlkZWQgaW4gdGhlIFJFU1QgQVBJIGFsc28gY29ycmVzcG9uZCBkaXJlY3RseSB3aXRoIGNvbW1hbmRzIGluIHRoZSB0b29sa2l0IENMSS4KICAgICAgPC9wPgogICAgPC9zZWN0aW9uPgogICAgPHNlY3Rpb24+CiAgICAgIDxoMj5BUElzPC9oMj4KICAgICAgPHA+CiAgICAgICAgVGhlIGNhcGFiaWxpdHkgb2YgdGhlIHBsYXRmb3JtIGlzIGNvbXByaXNlZCBvZiB0aHJlZSBBUElzIHdoaWNoIGFyZSBvcmllbnRlZCBhdCBkaWZmZXJlbnQgc2V0cyBvZiB1c2UgY2FzZXM6CiAgICAgIDwvcD4KICAgICAgPGRpdiBjbGFzcz0ic2hvdy1leHBsb3Jlci1hcGlzIj48L2Rpdj4KICAgIDwvc2VjdGlvbj4KICA8L2Rpdj4KPC9hcnRpY2xlPgo="
+        "content": "PGFydGljbGUgaWQ9ImludHJvZHVjdGlvbiIgY2xhc3M9InBhZ2UiPgoKICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBpbnRyby1oZWFkZXIiPgogICAgICAgIE9wZW4gQVBJIEV4cGxvcmVyIERvY3VtZW50YXRpb24gdjEyLjEuTEFURVNUCiAgICAgIDwvc3Bhbj4KICAgIDwvaDI+CiAgPC9kaXY+CiAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgaW50cm8tY29udGVudCI+CiAgICA8c2VjdGlvbj4KICAgICAgPGgyPkludHJvZHVjdGlvbjwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBwbGF0Zm9ybSBSRVNUIEFQSXMgZG9jdW1lbnRlZCBoZXJlIGZvciBJQk0gQVBJIENvbm5lY3QgdjEyLjEgcHJvdmlkZSBjb21wbGV0ZSBhY2Nlc3MgdG8gdGhlIGNhcGFiaWxpdHkgb2YgdGhlIHBsYXRmb3JtLiBUaGV5IG1heSBiZSB1c2VkIHRvIGF1dG9tYXRlIGFkbWluaXN0cmF0aW9uIG9mIHRoZSBwbGF0Zm9ybTsgZm9yIHNjcmlwdHMgYW5kIHRvb2xzIHRvIHN1cHBvcnQgYSBjb250aW51b3VzIGludGVncmF0aW9uIGVudmlyb25tZW50IGZvciBBUEkgZGV2ZWxvcG1lbnQgYW5kIHB1Ymxpc2hpbmc7IGFuZCBmb3IgbWFuYWdlbWVudCBvZiBjYXRhbG9ncyBvZiBBUElzIGFuZCB0aGVpciBzdWJzY3JpYmVycy4gVGhlIG9wZXJhdGlvbnMgcHJvdmlkZWQgaW4gdGhlIFJFU1QgQVBJIGFsc28gY29ycmVzcG9uZCBkaXJlY3RseSB3aXRoIGNvbW1hbmRzIGluIHRoZSB0b29sa2l0IENMSS4KICAgICAgPC9wPgogICAgPC9zZWN0aW9uPgogICAgPHNlY3Rpb24+CiAgICAgIDxoMj5BUElzPC9oMj4KICAgICAgPHA+CiAgICAgICAgVGhlIGNhcGFiaWxpdHkgb2YgdGhlIHBsYXRmb3JtIGlzIGNvbXByaXNlZCBvZiB0aHJlZSBBUElzIHdoaWNoIGFyZSBvcmllbnRlZCBhdCBkaWZmZXJlbnQgc2V0cyBvZiB1c2UgY2FzZXM6CiAgICAgIDwvcD4KICAgICAgPGRpdiBjbGFzcz0ic2hvdy1leHBsb3Jlci1hcGlzIj48L2Rpdj4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+TWFjaGluZS1yZWFkYWJsZSBPcGVuQVBJIGZpbGVzPC9oMj4KICAgICAgPHA+CiAgICAgICAgVGhlIE9wZW5BUEkgZG9jdW1lbnRzIGZvciB0aGVzZSBBUElzIGFyZSBhdmFpbGFibGUgYXMgcGxhaW4gZmlsZXMgZm9yIHRvb2xzIGFuZCBBSSBhZ2VudHM6CiAgICAgICAgPGEgaHJlZj0iMTIuMS5MQVRFU1Qvb3BlbmFwaS9pbmRleC5qc29uIiB0YXJnZXQ9Il9ibGFuayIgcmVsPSJub29wZW5lciBub3JlZmVycmVyIj5pbmRleC5qc29uPC9hPgogICAgICAgIChsaXN0IG9mIEFQSXMpIGFuZAogICAgICAgIDxhIGhyZWY9IjEyLjEuTEFURVNUL29wZW5hcGkvbGxtcy50eHQiIHRhcmdldD0iX2JsYW5rIiByZWw9Im5vb3BlbmVyIG5vcmVmZXJyZXIiPmxsbXMudHh0PC9hPi4KICAgICAgICBUaGUgc2VydmVyIFVSTHMgaW4gdGhlc2UgZG9jdW1lbnRzIGFyZSBwbGFjZWhvbGRlcnMuCiAgICAgIDwvcD4KICAgIDwvc2VjdGlvbj4KICA8L2Rpdj4KPC9hcnRpY2xlPgo="
       },
       {
         "name": "concepts",

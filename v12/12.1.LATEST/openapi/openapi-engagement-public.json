@@ -1,0 +1,5135 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "x-ibm-name": "engagement",
+    "version": "2.0.0",
+    "title": "IBM API Connect Engagement API",
+    "x-ibm-summary": "API for the API Connect Engagement system",
+    "description": "## API for the API Connect Engagement system\n",
+    "termsOfService": "https://www.ibm.com/terms-of-service",
+    "contact": {
+      "name": "IBM",
+      "url": "https://www.ibm.com",
+      "email": "help@ibm.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "",
+      "description": "Engagement V2 base path"
+    }
+  ],
+  "paths": {
+    "/{analytics-service}/orgs/{org}/engagement-config": {
+      "description": "Return the supported engagement configuration at provider organization scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Engagement configuration supported at provider organization scope",
+        "description": "Return the supported engagement configuration at provider organization scope.\n",
+        "operationId": "engagementconfig_orgList",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/EngagementConfigResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Engagemment-config"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/anomaly-detectors": {
+      "description": "Return anomaly detectors for a provider organization.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "List anomaly detectors at provider organization scope",
+        "description": "Returns all anomaly detectors belonging to a provider organization.\n",
+        "operationId": "anomaly_detectors_orgList",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AnomalyDetectorsListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Anomaly Detectors"
+        ]
+      },
+      "post": {
+        "summary": "Create an anomaly detector at provider organization scope",
+        "description": "Creates a new anomaly detector for the provider organization. Use detector_type \"latency\" or \"traffic-volume\" to provision a pre-built detector, or omit detector_type to supply a fully custom configuration.\n",
+        "operationId": "anomaly_detectors_orgCreate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnomalyDetectorCreateRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/AnomalyDetectorCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/AnomalyDetectorCreateResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Anomaly Detectors"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/anomaly-detectors/templates/{detector-type}": {
+      "description": "Create a pre-configured anomaly detector from a built-in template.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/detector-type"
+        }
+      ],
+      "post": {
+        "summary": "Create an anomaly detector from a template",
+        "description": "Creates an anomaly detector using a pre-built template. The detectorType path parameter must be one of \"latency\", \"traffic-volume\", or \"api-event-volume\".\n",
+        "operationId": "anomaly_detectors_orgCreateFromTemplate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnomalyDetectorTemplateRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/AnomalyDetectorTemplateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/AnomalyDetectorCreateResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Anomaly Detectors"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/anomaly-detectors/validate/model": {
+      "description": "Validate anomaly detector configuration against OpenSearch before creation.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Validate anomaly detector configuration",
+        "description": "Runs a pre-flight check using the OpenSearch Anomaly Detection _validate/model endpoint. Returns validation errors without creating a detector.\n",
+        "operationId": "anomaly_detectors_orgValidate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnomalyDetectorRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/AnomalyDetectorRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation result from OpenSearch"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Anomaly Detectors"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/anomaly-detectors/{detector-id}": {
+      "description": "Retrieve, update, or delete a single anomaly detector.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/detector-id"
+        }
+      ],
+      "get": {
+        "summary": "Get an anomaly detector",
+        "description": "Returns a single anomaly detector.\n",
+        "operationId": "anomaly_detectors_orgGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AnomalyDetectorResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Anomaly Detectors"
+        ]
+      },
+      "put": {
+        "summary": "Update an anomaly detector",
+        "description": "Updates a single anomaly detector.\n",
+        "operationId": "anomaly_detectors_orgUpdate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnomalyDetectorUpdateRequest"
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/AnomalyDetectorUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AnomalyDetectorResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Anomaly Detectors"
+        ]
+      },
+      "delete": {
+        "summary": "Delete an anomaly detector",
+        "description": "Deletes a single anomaly detector.\n",
+        "operationId": "anomaly_detectors_orgDelete",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/NoContentResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Anomaly Detectors"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/anomaly-detectors/{detector-id}/start": {
+      "description": "Start an anomaly detector.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/detector-id"
+        }
+      ],
+      "post": {
+        "summary": "Start an anomaly detector",
+        "description": "Starts a stopped or newly created anomaly detector.\n",
+        "operationId": "anomaly_detectors_orgStart",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AnomalyDetectorResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Anomaly Detectors"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/anomaly-detectors/{detector-id}/stop": {
+      "description": "Stop an anomaly detector.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/detector-id"
+        }
+      ],
+      "post": {
+        "summary": "Stop an anomaly detector",
+        "description": "Stops a running anomaly detector.\n",
+        "operationId": "anomaly_detectors_orgStop",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AnomalyDetectorResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Anomaly Detectors"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/rules": {
+      "description": "Return a result set of engagement rules.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "List rules at provider organization scope",
+        "description": "Return a result set of engagement rules.\n",
+        "operationId": "rules_orgList",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/RulesListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Rules"
+        ]
+      },
+      "post": {
+        "summary": "Create a rule at provider organization scope",
+        "description": "Create an engagement rule.\n",
+        "operationId": "rules_orgCreate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RuleCreateRequest"
+              },
+              "examples": {
+                "CreateRule": {
+                  "$ref": "#/components/examples/CreateRule"
+                }
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/RuleCreateRequest"
+              },
+              "examples": {
+                "CreateRule": {
+                  "$ref": "#/components/examples/CreateRule"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/RuleCreateResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Rules"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/rules/{rule-id}": {
+      "description": "Retrieve a single engagement rule\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/rule-id"
+        }
+      ],
+      "get": {
+        "summary": "Get an engagement rule",
+        "description": "Returns a single engagement rule.\n",
+        "operationId": "rules_orgGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/RuleResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Rules"
+        ]
+      },
+      "put": {
+        "summary": "Update an engagement rule",
+        "description": "Updates a single engagement rule.\n",
+        "operationId": "rules_orgUpdate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RuleUpdateRequest"
+              },
+              "examples": {
+                "UpdateRule": {
+                  "$ref": "#/components/examples/UpdateRule"
+                }
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/RuleUpdateRequest"
+              },
+              "examples": {
+                "UpdateRule": {
+                  "$ref": "#/components/examples/UpdateRule"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/RuleResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Rules"
+        ]
+      },
+      "delete": {
+        "summary": "Delete an engagement rule",
+        "description": "Deletes a single engagement rule.\n",
+        "operationId": "rules_orgDelete",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/NoContentResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Rules"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/tasks": {
+      "description": "Return a result set of tasks for a given engagement rule.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "List tasks for an engagement rule at provider organization scope",
+        "description": "Return a result set of tasks.\n",
+        "operationId": "tasks_orgList",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ruleid_optional"
+          },
+          {
+            "$ref": "#/components/parameters/severity_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/TasksListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Tasks"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/rules/total-count": {
+      "description": "Returns the total count of all engagement rules within a specific organization.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Returns the total count of all engagement rules within a specific organization",
+        "description": "Returns the total count of all engagement rules within a specific organization.\n",
+        "operationId": "rules_orgTotalCount",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/RulesCountResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Rules"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/tasks/{task-id}": {
+      "description": "Retrieve a single engagement task\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/task-id"
+        }
+      ],
+      "get": {
+        "summary": "Get an engagement task",
+        "description": "Returns a single engagement task.\n",
+        "operationId": "tasks_orgGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/TaskResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Tasks"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/destinations": {
+      "description": "Return a result set of engagement destinations.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "List destinations at provider organization scope",
+        "description": "Return a result set of engagement destinations.\n",
+        "operationId": "destinations_orgList",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DestinationsListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Destinations"
+        ]
+      },
+      "post": {
+        "summary": "Create a destination at provider organization scope",
+        "description": "Create a destination.\n",
+        "operationId": "destinations_orgCreate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationCreateRequest"
+              },
+              "examples": {
+                "CreateDestination": {
+                  "$ref": "#/components/examples/CreateDestination"
+                }
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationCreateRequest"
+              },
+              "examples": {
+                "CreateDestination": {
+                  "$ref": "#/components/examples/CreateDestination"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/DestinationCreateResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Destinations"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/destinations/{destination-id}": {
+      "description": "Retrieve a single engagement destination\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/destination-id"
+        }
+      ],
+      "get": {
+        "summary": "Get an engagement destination",
+        "description": "Returns a single engagement destination.\n",
+        "operationId": "destinations_orgGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DestinationResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Destinations"
+        ]
+      },
+      "put": {
+        "summary": "Update an engagement destination",
+        "description": "Updates a single engagement destination.\n",
+        "operationId": "destinations_orgUpdate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationUpdateRequest"
+              },
+              "examples": {
+                "UpdateDestination": {
+                  "$ref": "#/components/examples/UpdateDestination"
+                }
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationUpdateRequest"
+              },
+              "examples": {
+                "UpdateDestination": {
+                  "$ref": "#/components/examples/UpdateDestination"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DestinationResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Destinations"
+        ]
+      },
+      "delete": {
+        "summary": "Delete an engagement destination",
+        "description": "Deletes a single engagement destination.\n",
+        "operationId": "destinations_orgDelete",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/force_optional"
+          }
+        ],
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/NoContentResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Destinations"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/destinations/{destination-id}/test": {
+      "description": "Test a single engagement destination\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/destination-id"
+        }
+      ],
+      "get": {
+        "summary": "Test an engagement destination",
+        "description": "Tests a single engagement destination.\n",
+        "operationId": "destinations_orgTest",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DestinationResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Destinations"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/notifications": {
+      "description": "Send an engagement notification to create a Jira ticket.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "post": {
+        "summary": "Create a Jira ticket notification at provider organization scope",
+        "description": "Triggers the creation of a Jira ticket via the configured Jira destination.\n",
+        "operationId": "notifications_orgCreate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationCreateRequest"
+              },
+              "examples": {
+                "CreateNotification": {
+                  "$ref": "#/components/examples/CreateNotification"
+                }
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationCreateRequest"
+              },
+              "examples": {
+                "CreateNotification": {
+                  "$ref": "#/components/examples/CreateNotification"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/NotificationCreateResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Notifications"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/scheduled-reports": {
+      "description": "Return a result set of scheduled reports.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "List scheduled reports at provider organization scope",
+        "description": "Return a result set of scheduled reports.\n",
+        "operationId": "scheduledreports_orgList",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ScheduledReportListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Scheduledreports"
+        ]
+      },
+      "post": {
+        "summary": "Create a scheduled report at provider organization scope",
+        "description": "Create scheduled report.\n",
+        "operationId": "scheduledreports_orgCreate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScheduledReportCreateRequest"
+              },
+              "examples": {
+                "CreateRule": {
+                  "$ref": "#/components/examples/CreateScheduledReport"
+                }
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/ScheduledReportCreateRequest"
+              },
+              "examples": {
+                "CreateRule": {
+                  "$ref": "#/components/examples/CreateScheduledReport"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/ScheduledReportCreateResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Scheduledreports"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/scheduled-reports/{scheduledreport-id}": {
+      "description": "Retrieve a single scheduled report\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/scheduledreport-id"
+        }
+      ],
+      "get": {
+        "summary": "Get a scheduled report",
+        "description": "Returns a single scheduled report.\n",
+        "operationId": "scheduledreports_orgGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ScheduledReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Scheduledreports"
+        ]
+      },
+      "put": {
+        "summary": "Update a scheduled report",
+        "description": "Updates a single scheduled report.\n",
+        "operationId": "scheduledreports_orgUpdate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScheduledReportUpdateRequest"
+              },
+              "examples": {
+                "UpdateRule": {
+                  "$ref": "#/components/examples/UpdateScheduledReport"
+                }
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/ScheduledReportUpdateRequest"
+              },
+              "examples": {
+                "UpdateRule": {
+                  "$ref": "#/components/examples/UpdateScheduledReport"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ScheduledReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Scheduledreports"
+        ]
+      },
+      "delete": {
+        "summary": "Delete a scheduled report",
+        "description": "Deletes a single scheduled report.\n",
+        "operationId": "scheduledreports_orgDelete",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/NoContentResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Scheduledreports"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/engagement-config": {
+      "description": "Return the supported engagement configuration at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Engagement configuration supported at catalog scope",
+        "description": "Return the supported engagement configuration at catalog scope.\n",
+        "operationId": "engagementconfig_catalogList",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/EngagementConfigResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Engagemment-config"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/rules": {
+      "description": "Return a result set of engagement rules.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "List rules at catalog scope",
+        "description": "Return a result set of engagement rules.\n",
+        "operationId": "rules_catalogList",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/RulesListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Rules"
+        ]
+      },
+      "post": {
+        "summary": "Create a rule at catalog scope",
+        "description": "Create an engagement rule.\n",
+        "operationId": "rules_catalogCreate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RuleCreateRequest"
+              },
+              "examples": {
+                "CreateRule": {
+                  "$ref": "#/components/examples/CreateRule"
+                }
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/RuleCreateRequest"
+              },
+              "examples": {
+                "CreateRule": {
+                  "$ref": "#/components/examples/CreateRule"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/RuleCreateResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Rules"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/rules/total-count": {
+      "description": "Returns the total count of all engagement rules within a specific catalog.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "Returns the total count of all engagement rules within a specific catalog",
+        "description": "Returns the total count of all engagement rules within a specific catalog.\n",
+        "operationId": "rules_catalogTotalCount",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/RulesCountResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Rules"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/rules/{rule-id}": {
+      "description": "Retrieve a single engagement rule\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/rule-id"
+        }
+      ],
+      "get": {
+        "summary": "Get an engagement rule",
+        "description": "Returns a single engagement rule.\n",
+        "operationId": "rules_catalogGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/RuleResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Rules"
+        ]
+      },
+      "put": {
+        "summary": "Update an engagement rule",
+        "description": "Updates a single engagement rule.\n",
+        "operationId": "rules_catalogUpdate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RuleUpdateRequest"
+              },
+              "examples": {
+                "UpdateRule": {
+                  "$ref": "#/components/examples/UpdateRule"
+                }
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/RuleUpdateRequest"
+              },
+              "examples": {
+                "UpdateRule": {
+                  "$ref": "#/components/examples/UpdateRule"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/RuleResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Rules"
+        ]
+      },
+      "delete": {
+        "summary": "Delete an engagement rule",
+        "description": "Deletes a single engagement rule.\n",
+        "operationId": "rules_catalogDelete",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/NoContentResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Rules"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/tasks": {
+      "description": "Return a result set of tasks for a given engagement rule.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "List tasks for an engagement rule at catalog scope",
+        "description": "Return a result set of tasks.\n",
+        "operationId": "tasks_catalogList",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          },
+          {
+            "$ref": "#/components/parameters/ruleid_optional"
+          },
+          {
+            "$ref": "#/components/parameters/severity_optional"
+          },
+          {
+            "$ref": "#/components/parameters/status_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/TasksListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Tasks"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/tasks/{task-id}": {
+      "description": "Retrieve a single engagement task\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/task-id"
+        }
+      ],
+      "get": {
+        "summary": "Get an engagement task",
+        "description": "Returns a single engagement task.\n",
+        "operationId": "tasks_catalogGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/TaskResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Tasks"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/destinations": {
+      "description": "Return a result set of engagement destinations.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "List destinations at catalog scope",
+        "description": "Return a result set of engagement destinations.\n",
+        "operationId": "destinations_catalogList",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DestinationsListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Destinations"
+        ]
+      },
+      "post": {
+        "summary": "Create a destination at catalog scope",
+        "description": "Create a destination.\n",
+        "operationId": "destinations_catalogCreate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationCreateRequest"
+              },
+              "examples": {
+                "CreateDestination": {
+                  "$ref": "#/components/examples/CreateDestination"
+                }
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationCreateRequest"
+              },
+              "examples": {
+                "CreateDestination": {
+                  "$ref": "#/components/examples/CreateDestination"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/DestinationCreateResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Destinations"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/destinations/{destination-id}": {
+      "description": "Retrieve a single engagement destination\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/destination-id"
+        }
+      ],
+      "get": {
+        "summary": "Get an engagement destination",
+        "description": "Returns a single engagement destination.\n",
+        "operationId": "destinations_catalogGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DestinationResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Destinations"
+        ]
+      },
+      "put": {
+        "summary": "Update an engagement destination",
+        "description": "Updates a single engagement destination.\n",
+        "operationId": "destinations_catalogUpdate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationUpdateRequest"
+              },
+              "examples": {
+                "UpdateDestination": {
+                  "$ref": "#/components/examples/UpdateDestination"
+                }
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationUpdateRequest"
+              },
+              "examples": {
+                "UpdateDestination": {
+                  "$ref": "#/components/examples/UpdateDestination"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DestinationResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Destinations"
+        ]
+      },
+      "delete": {
+        "summary": "Delete an engagement destination",
+        "description": "Deletes a single engagement destination.\n",
+        "operationId": "destinations_catalogDelete",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/force_optional"
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/NoContentResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Destinations"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/destinations/{destination-id}/test": {
+      "description": "Test an engagement destination\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/destination-id"
+        }
+      ],
+      "get": {
+        "summary": "Test an engagement destination",
+        "description": "Tests a single engagement destination.\n",
+        "operationId": "destinations_catalogTest",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DestinationResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Destinations"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/scheduled-reports": {
+      "description": "Return a result set of scheduled reports.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        }
+      ],
+      "get": {
+        "summary": "List scheduled reports at catalog scope",
+        "description": "Return a result set of scheduled reports.\n",
+        "operationId": "scheduledreports_catalogList",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ScheduledReportListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Scheduledreports"
+        ]
+      },
+      "post": {
+        "summary": "Create a scheduled report at catalog scope",
+        "description": "Create a scheduled report.\n",
+        "operationId": "scheduledreports_catalogCreate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScheduledReportCreateRequest"
+              },
+              "examples": {
+                "CreateRule": {
+                  "$ref": "#/components/examples/CreateScheduledReport"
+                }
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/ScheduledReportCreateRequest"
+              },
+              "examples": {
+                "CreateRule": {
+                  "$ref": "#/components/examples/CreateScheduledReport"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/ScheduledReportCreateResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Scheduledreports"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/scheduled-reports/{scheduledreport-id}": {
+      "description": "Retrieve a single scheduled report\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/scheduledreport-id"
+        }
+      ],
+      "get": {
+        "summary": "Get a scheduled report",
+        "description": "Returns a single scheduled report.\n",
+        "operationId": "scheduledreports_catalogGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ScheduledReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Scheduledreports"
+        ]
+      },
+      "put": {
+        "summary": "Update a scheduled report",
+        "description": "Updates a single schduled report.\n",
+        "operationId": "scheduledreports_catalogUpdate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScheduledReportUpdateRequest"
+              },
+              "examples": {
+                "UpdateRule": {
+                  "$ref": "#/components/examples/UpdateScheduledReport"
+                }
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/ScheduledReportUpdateRequest"
+              },
+              "examples": {
+                "UpdateRule": {
+                  "$ref": "#/components/examples/UpdateScheduledReport"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ScheduledReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Scheduledreports"
+        ]
+      },
+      "delete": {
+        "summary": "Delete a scheduled report",
+        "description": "Deletes a single scheduled report.\n",
+        "operationId": "scheduledreports_catalogDelete",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/NoContentResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Scheduledreports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/engagement-config": {
+      "description": "Return the supported engagement configuration at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Engagement configuration supported at cloud scope",
+        "description": "Return the supported engagement configuration at cloud scope.\n",
+        "operationId": "engagementconfig_cloudList",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/EngagementConfigResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Engagemment-config"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/scheduled-reports": {
+      "description": "Return a result set of scheduled reports.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "List scheduled reports at cloud scope",
+        "description": "Return a result set of scheduled reports.\n",
+        "operationId": "scheduledreports_cloudList",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ScheduledReportListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Scheduledreports"
+        ]
+      },
+      "post": {
+        "summary": "Create a scheduled report at cloud scope",
+        "description": "Create a scheduled report.\n",
+        "operationId": "scheduledreports_cloudCreate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScheduledReportCreateRequest"
+              },
+              "examples": {
+                "CreateRule": {
+                  "$ref": "#/components/examples/CreateScheduledReport"
+                }
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/ScheduledReportCreateRequest"
+              },
+              "examples": {
+                "CreateRule": {
+                  "$ref": "#/components/examples/CreateScheduledReport"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/ScheduledReportCreateResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Scheduledreports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/scheduled-reports/{scheduledreport-id}": {
+      "description": "Retrieve a single scheduled report\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/scheduledreport-id"
+        }
+      ],
+      "get": {
+        "summary": "Get a scheduled report",
+        "description": "Returns a single scheduled report.\n",
+        "operationId": "scheduledreports_cloudGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_date_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ScheduledReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Scheduledreports"
+        ]
+      },
+      "put": {
+        "summary": "Update a scheduled report",
+        "description": "Updates a single schduled report.\n",
+        "operationId": "scheduledreports_cloudUpdate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScheduledReportUpdateRequest"
+              },
+              "examples": {
+                "UpdateRule": {
+                  "$ref": "#/components/examples/UpdateScheduledReport"
+                }
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/ScheduledReportUpdateRequest"
+              },
+              "examples": {
+                "UpdateRule": {
+                  "$ref": "#/components/examples/UpdateScheduledReport"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ScheduledReportResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Scheduledreports"
+        ]
+      },
+      "delete": {
+        "summary": "Delete a scheduled report",
+        "description": "Deletes a single scheduled report.\n",
+        "operationId": "scheduledreports_cloudDelete",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/NoContentResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Scheduledreports"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/destinations": {
+      "description": "Return a result set of engagement destinations.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "List destinations at cloud scope",
+        "description": "Return a result set of engagement destinations.\n",
+        "operationId": "destinations_cloudList",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/search_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DestinationsListResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Destinations"
+        ]
+      },
+      "post": {
+        "summary": "Create a destination at cloud scope",
+        "description": "Create a destination.\n",
+        "operationId": "destinations_cloudCreate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationCreateRequest"
+              },
+              "examples": {
+                "CreateDestination": {
+                  "$ref": "#/components/examples/CreateDestination"
+                }
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationCreateRequest"
+              },
+              "examples": {
+                "CreateDestination": {
+                  "$ref": "#/components/examples/CreateDestination"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/DestinationCreateResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Destinations"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/destinations/{destination-id}": {
+      "description": "Retrieve a single engagement destination\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/destination-id"
+        }
+      ],
+      "get": {
+        "summary": "Get an engagement destination",
+        "description": "Returns a single engagement destination.\n",
+        "operationId": "destinations_cloudGet",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DestinationResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Destinations"
+        ]
+      },
+      "put": {
+        "summary": "Update an engagement destination",
+        "description": "Updates a single engagement destination.\n",
+        "operationId": "destinations_cloudUpdate",
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationUpdateRequest"
+              },
+              "examples": {
+                "UpdateDestination": {
+                  "$ref": "#/components/examples/UpdateDestination"
+                }
+              }
+            },
+            "application/yaml": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationUpdateRequest"
+              },
+              "examples": {
+                "UpdateDestination": {
+                  "$ref": "#/components/examples/UpdateDestination"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DestinationResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Destinations"
+        ]
+      },
+      "delete": {
+        "summary": "Delete an engagement destination",
+        "description": "Deletes a single engagement destination.\n",
+        "operationId": "destinations_cloudDelete",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/force_optional"
+          }
+        ],
+        "security": [
+          {
+            "oauth": [
+              "engagement:manage"
+            ]
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/NoContentResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Destinations"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/destinations/{destination-id}/test": {
+      "description": "Test a single engagement destination\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/destination-id"
+        }
+      ],
+      "get": {
+        "summary": "Test an engagement destination",
+        "description": "Tests a single engagement destination.\n",
+        "operationId": "destinations_cloudTest",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DestinationResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Engagement",
+          "Resource: Destinations"
+        ]
+      }
+    }
+  },
+  "components": {
+    "examples": {
+      "CreateNotification": {
+        "summary": "Create Jira ticket notification",
+        "value": {
+          "config_type": "jira",
+          "destination_id": "858c9f23-af13-4408-845d-4e2eec321959",
+          "content": {
+            "overall_assessment": {
+              "summary": "Test issue from Keystone integration",
+              "ai_severity": "high",
+              "root_cause": "Manual test trigger"
+            },
+            "execution_context": {
+              "finding_id": "test-001",
+              "api_id": "test-api",
+              "notification_message": "Verifying Jira destination config"
+            },
+            "recommended_actions": [
+              {
+                "priority": 1,
+                "priority_label": "CRITICAL",
+                "title": "Verify Jira integration",
+                "category": "security",
+                "detailed_explanation": "This is a test issue created to verify the Jira destination.",
+                "implementation_guidance": {
+                  "immediate_action": "Check that this ticket appeared in the CLOUDAI project.",
+                  "verification": "View the ticket in Jira and confirm all fields are populated."
+                },
+                "evidence": [
+                  "Manual test triggered via curl"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "CreateDestination": {
+        "summary": "Create new destination",
+        "value": {
+          "title": "My custom server",
+          "description": "the description of the target destination",
+          "config_type": "webhook",
+          "is_enabled": true,
+          "webhook": {
+            "target": "https://custom.server.example.com",
+            "header_params": {
+              "Content-Type": "application/json",
+              "my-header": "abcd"
+            },
+            "method": "POST"
+          }
+        }
+      },
+      "CreateScheduledReport": {
+        "summary": "Create new scheduled report",
+        "value": {
+          "report_type": "api_usage",
+          "report_name": "Weekly API Usage",
+          "schedule": "2h",
+          "enabled": "true,",
+          "destination_id": "wtITdJwBKR-k8RV-195b",
+          "parameters": {
+            "start": "2026-01-01T00:00:00.000Z",
+            "end": "2026-02-19T00:00:00.000Z"
+          }
+        }
+      },
+      "CreateRule": {
+        "summary": "An example rule",
+        "value": {
+          "title": "Large Payload",
+          "type": "per_query",
+          "enabled": true,
+          "data_source": "apievents",
+          "schedule": {
+            "schedule_type": "interval",
+            "period_interval": 1,
+            "period_unit": "MINUTES"
+          },
+          "metric": {
+            "avg": {
+              "field": "time_to_serve_request"
+            }
+          },
+          "group_by": "api_name",
+          "filters": [
+            {
+              "not": {
+                "bytes_sent": 0
+              }
+            }
+          ],
+          "timeframe": "string",
+          "triggers": [
+            {
+              "title": "Greater than 2000",
+              "severity": 1,
+              "condition": {
+                "operator": "gt",
+                "value": 2000
+              },
+              "actions": [
+                {
+                  "title": "string",
+                  "destination_id": "858c9f23-af13-4408-845d-4e2eec321959",
+                  "message": "API average latency greater than 2s",
+                  "subject": "Slow APIs",
+                  "to": "sre@example.com",
+                  "cc": "",
+                  "bcc": "",
+                  "throttle_enabled": true,
+                  "throttle": {
+                    "value": 1,
+                    "unit": "MINUTES"
+                  },
+                  "id": "9291caef-fdd2-4774-a927-a4f5e75d016a"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "UpdateDestination": {
+        "summary": "Update destination",
+        "value": {
+          "id": "c941e2ad-3650-472f-a022-07d6fe5ab9b5",
+          "title": "My custom server",
+          "description": "the description of the target destination",
+          "config_type": "webhook",
+          "is_enabled": true,
+          "webhook": {
+            "target": "https://custom.server.example.com",
+            "header_params": {
+              "Content-Type": "application/json",
+              "my-header": "abcd"
+            },
+            "method": "POST"
+          }
+        }
+      },
+      "UpdateScheduledReport": {
+        "summary": "Update scheduled report",
+        "value": {
+          "id": "2651b739-6ff9-448d-967c-c15bfdaaf272",
+          "report_type": "api_usage",
+          "report_name": "Weekly API Usage",
+          "schedule": "2h",
+          "enabled": "true,",
+          "destination_id": "wtITdJwBKR-k8RV-195b",
+          "parameters": {
+            "start": "2026-01-01T00:00:00.000Z",
+            "end": "2026-02-19T00:00:00.000Z"
+          },
+          "last_run": "2026-01-01T02:00:00.000Z",
+          "next_run": "2026-01-01T04:00:00.000Z",
+          "created_at": "2026-01-01T00:00:00.000Z",
+          "updated_at": "2026-01-01T02:00:00.000Z"
+        }
+      },
+      "UpdateRule": {
+        "summary": "An example rule",
+        "value": {
+          "id": "2651b739-6ff9-448d-967c-c15bfdaaf272",
+          "title": "Large Payload",
+          "type": "per_query",
+          "enabled": true,
+          "data_source": "apievents",
+          "schedule": {
+            "schedule_type": "interval",
+            "period_interval": 1,
+            "period_unit": "MINUTES"
+          },
+          "metric": {
+            "avg": {
+              "field": "time_to_serve_request"
+            }
+          },
+          "group_by": "api_name",
+          "filters": [
+            {
+              "not": {
+                "bytes_sent": 0
+              }
+            }
+          ],
+          "timeframe": "string",
+          "triggers": [
+            {
+              "title": "Greater than 2000",
+              "severity": 1,
+              "condition": {
+                "operator": "gt",
+                "value": 2000
+              },
+              "actions": [
+                {
+                  "title": "string",
+                  "destination_id": "858c9f23-af13-4408-845d-4e2eec321959",
+                  "message": "API average latency greater than 2s",
+                  "subject": "Slow APIs",
+                  "to": "sre@example.com",
+                  "cc": "",
+                  "bcc": "",
+                  "throttle_enabled": true,
+                  "throttle": {
+                    "value": 1,
+                    "unit": "MINUTES"
+                  },
+                  "id": "9291caef-fdd2-4774-a927-a4f5e75d016a"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "parameters": {
+      "analytics-service": {
+        "name": "analytics-service",
+        "in": "path",
+        "description": "Analytics service name or ID.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "catalog": {
+        "name": "catalog",
+        "in": "path",
+        "description": "Catalog name or ID.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "detector-id": {
+        "name": "detector-id",
+        "in": "path",
+        "description": "Anomaly detector ID. This ID is globally unique across the analytics service.\n",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/Id"
+        }
+      },
+      "detector-type": {
+        "name": "detector-type",
+        "in": "path",
+        "description": "Built-in anomaly detector type. Supported values: \"latency\", \"traffic-volume\", \"api-event-volume\".\n",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "latency",
+            "traffic-volume",
+            "api-event-volume"
+          ]
+        }
+      },
+      "destination-id": {
+        "name": "destination-id",
+        "in": "path",
+        "description": "Engagement destination ID. This ID is globally unique across the analytics service.\n",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/Id"
+        }
+      },
+      "org": {
+        "name": "org",
+        "in": "path",
+        "description": "Provider organization name or ID.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rule-id": {
+        "name": "rule-id",
+        "in": "path",
+        "description": "Engagement rule ID. This ID is globally unique across the analytics service.\n",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/Id"
+        }
+      },
+      "scheduledreport-id": {
+        "name": "scheduledreport-id",
+        "in": "path",
+        "description": "Scheduled report ID. This ID is globally unique across the analytics service.\n",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/Id"
+        }
+      },
+      "task-id": {
+        "name": "task-id",
+        "in": "path",
+        "description": "Engagement task ID. This ID is globally unique across the analytics service.\n",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/Id"
+        }
+      },
+      "end_date_optional": {
+        "name": "end",
+        "in": "query",
+        "description": "If set, only return items with a datetime equal or older than this. The date-time value should be in ISO format. For example, 2021-07-21T00:00:000Z.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "force_optional": {
+        "name": "force",
+        "in": "query",
+        "description": "Force delete a destination even if it is in use by other rules.",
+        "required": false,
+        "schema": {
+          "type": "boolean",
+          "example": true
+        }
+      },
+      "limit_optional": {
+        "name": "limit",
+        "in": "query",
+        "description": "If set, the number of items to return when requesting a list. Maximum: 500",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "50"
+        }
+      },
+      "offset_optional": {
+        "name": "offset",
+        "in": "query",
+        "description": "If set, the offset to be applied when requesting a list. e.g. return events starting from the 100th result",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "100"
+        }
+      },
+      "ruleid_optional": {
+        "name": "rule-id",
+        "in": "query",
+        "description": "Engagement rule ID. This ID is globally unique across the analytics service.\n",
+        "required": false,
+        "schema": {
+          "$ref": "#/components/schemas/Id"
+        }
+      },
+      "search_optional": {
+        "name": "search",
+        "in": "query",
+        "description": "Search for an item by name or description.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "mystring"
+        }
+      },
+      "severity_optional": {
+        "name": "severity",
+        "in": "query",
+        "description": "Rule severity.",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
+        }
+      },
+      "start_date_optional": {
+        "name": "start",
+        "in": "query",
+        "description": "If set, only return items with a datetime equal or newer than this. The date-time value should be in ISO format. For example, 2021-07-21T00:00:000Z.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "status_optional": {
+        "name": "status",
+        "in": "query",
+        "description": "Task status.",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "ACTIVE",
+            "ACKNOWLEDGED",
+            "COMPLETED",
+            "ERROR",
+            "DELETED"
+          ]
+        }
+      },
+      "accept_language_optional": {
+        "name": "accept-language",
+        "in": "header",
+        "description": "Natural language and locale that the client prefers.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "en"
+        }
+      }
+    },
+    "schemas": {
+      "Action": {
+        "description": "An action",
+        "type": "object",
+        "properties": {
+          "title": {
+            "$ref": "#/components/schemas/Title"
+          },
+          "destination_id": {
+            "$ref": "#/components/schemas/Id"
+          },
+          "message": {
+            "type": "string",
+            "description": "The contents to send to the desired destination (used for all destination types)"
+          },
+          "subject": {
+            "type": "string",
+            "description": "Email subject for email destinations, also used as the event summary for PagerDuty destinations"
+          },
+          "to": {
+            "type": "string",
+            "description": "Comma separated list of email addresses for email destinations"
+          },
+          "cc": {
+            "type": "string",
+            "description": "Comma separated list of email addresses for email destinations"
+          },
+          "bcc": {
+            "type": "string",
+            "description": "Comma separated list of email addresses for email destinations"
+          },
+          "source": {
+            "type": "string",
+            "description": "Alert event source for PagerDuty destinations"
+          },
+          "component": {
+            "type": "string",
+            "description": "Alert event component for PagerDuty destinations"
+          },
+          "group": {
+            "type": "string",
+            "description": "Alert event group for PagerDuty destinations"
+          },
+          "class": {
+            "type": "string",
+            "description": "Alert event class for PagerDuty destinations"
+          },
+          "throttle_enabled": {
+            "type": "boolean"
+          },
+          "throttle": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "integer"
+              },
+              "unit": {
+                "$ref": "#/components/schemas/TimeframeUnit"
+              }
+            }
+          }
+        }
+      },
+      "DestinationRequest": {
+        "description": "A destination",
+        "type": "object",
+        "properties": {
+          "title": {
+            "$ref": "#/components/schemas/Title"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "config_type": {
+            "type": "string",
+            "enum": [
+              "webhook",
+              "email",
+              "pagerduty",
+              "slack",
+              "sns",
+              "ilmt",
+              "iwhi-metering",
+              "ums",
+              "jira"
+            ]
+          },
+          "is_enabled": {
+            "type": "boolean"
+          },
+          "routing_key": {
+            "type": "string",
+            "description": "PagerDuty API integration routing key as obtained from pagerduty.com (only used for PagerDuty destinations)"
+          },
+          "token": {
+            "type": "string",
+            "description": "API token for authentication (used for Slack and ILMT destinations)",
+            "example": "xxxx-xxxxxxxxx-xxxx"
+          },
+          "channel": {
+            "type": "string",
+            "description": "Slack channel ID (C1234567890 not #my-channel-name) (only used for slack destinations)",
+            "example": "C1234567890"
+          },
+          "topic_arn": {
+            "type": "string",
+            "description": "AWS topic ARN (only used for SNS destinations)"
+          },
+          "role_arn": {
+            "type": "string",
+            "description": "AWS role ARN (optional and only used for SNS destinations)"
+          },
+          "service_address": {
+            "type": "string",
+            "x-bhendi-no-ref-rewrite": true,
+            "description": "Service API address (used for ILMT and IWHI metering destinations)"
+          },
+          "api_key": {
+            "type": "string",
+            "description": "API key for authentication (only used for IWHI metering destinations)"
+          },
+          "jira_host": {
+            "type": "string",
+            "x-bhendi-no-ref-rewrite": true,
+            "description": "Jira host URL (only used for Jira destinations)"
+          },
+          "project_key": {
+            "type": "string",
+            "description": "Jira project key (only used for Jira destinations)",
+            "example": "OPS"
+          },
+          "issue_type": {
+            "type": "string",
+            "description": "Jira issue type (only used for Jira destinations)",
+            "example": "Bug"
+          },
+          "username": {
+            "type": "string",
+            "description": "Jira account username / email address (only used for Jira destinations)",
+            "example": "user@example.com"
+          },
+          "api_token": {
+            "type": "string",
+            "writeOnly": true,
+            "description": "Jira API token for authentication (only used for Jira destinations)",
+            "example": "ATATT3xFfGF09_EXAMPLE"
+          },
+          "webhook": {
+            "type": "object",
+            "properties": {
+              "target": {
+                "type": "string",
+                "description": "HTTP(S) URL for webhook destinations (only used for webhook destinations)"
+              },
+              "header_params": {
+                "type": "object",
+                "description": "HTTP header parameters for webhook destinations (only used for webhook destinations)"
+              },
+              "method": {
+                "type": "string",
+                "description": "HTTP method for webhook destinations (only used for webhook destinations)",
+                "enum": [
+                  "POST",
+                  "PUT",
+                  "PATCH"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "Destination": {
+        "type": "object",
+        "description": "Response object to create a destination",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/DestinationRequest"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/schemas/Id"
+              }
+            }
+          }
+        ]
+      },
+      "DestinationResponse": {
+        "description": "A destination response",
+        "$ref": "#/components/schemas/Destination"
+      },
+      "DestinationCreateRequest": {
+        "description": "Request object to create a destination",
+        "$ref": "#/components/schemas/DestinationRequest"
+      },
+      "DestinationCreateResponse": {
+        "description": "Response object to create a destination",
+        "$ref": "#/components/schemas/Destination"
+      },
+      "DestinationsListResponse": {
+        "description": "List of destinations",
+        "type": "object",
+        "properties": {
+          "total": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "search_time": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "offset": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "limit": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "first": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "next": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "previous": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "last": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "destinations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Destination"
+            }
+          }
+        }
+      },
+      "DestinationUpdateRequest": {
+        "description": "Request object to update a destination",
+        "$ref": "#/components/schemas/Destination"
+      },
+      "NotificationCreateRequest": {
+        "description": "Request object to create a Jira ticket notification",
+        "type": "object",
+        "required": [
+          "config_type",
+          "destination_id",
+          "content"
+        ],
+        "properties": {
+          "config_type": {
+            "type": "string",
+            "description": "The type of notification destination",
+            "enum": [
+              "jira"
+            ]
+          },
+          "destination_id": {
+            "$ref": "#/components/schemas/Id"
+          },
+          "content": {
+            "type": "object",
+            "description": "The content used to populate the Jira ticket",
+            "properties": {
+              "overall_assessment": {
+                "type": "object",
+                "description": "AI-generated assessment of the finding",
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "description": "Short summary of the finding"
+                  },
+                  "ai_severity": {
+                    "type": "string",
+                    "description": "AI-assessed severity level (e.g. low, medium, high, critical)"
+                  },
+                  "root_cause": {
+                    "type": "string",
+                    "description": "AI-identified root cause of the finding"
+                  }
+                }
+              },
+              "execution_context": {
+                "type": "object",
+                "description": "Contextual metadata about the finding and its environment",
+                "properties": {
+                  "finding_id": {
+                    "type": "string",
+                    "description": "Unique identifier for the finding"
+                  },
+                  "api_id": {
+                    "type": "string",
+                    "description": "Identifier of the API associated with the finding"
+                  },
+                  "notification_message": {
+                    "type": "string",
+                    "description": "Human-readable message describing the notification trigger"
+                  }
+                }
+              },
+              "recommended_actions": {
+                "type": "array",
+                "description": "Prioritised list of remediation actions",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "priority": {
+                      "type": "integer",
+                      "description": "Numeric priority (1 = highest)"
+                    },
+                    "priority_label": {
+                      "type": "string",
+                      "description": "Human-readable priority label (e.g. CRITICAL, HIGH)"
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "Short title of the recommended action"
+                    },
+                    "category": {
+                      "type": "string",
+                      "description": "Category of the action (e.g. security, performance)"
+                    },
+                    "detailed_explanation": {
+                      "type": "string",
+                      "description": "Full explanation of the recommended action"
+                    },
+                    "implementation_guidance": {
+                      "type": "object",
+                      "description": "Guidance for implementing the action",
+                      "properties": {
+                        "immediate_action": {
+                          "type": "string",
+                          "description": "Immediate step to take"
+                        },
+                        "verification": {
+                          "type": "string",
+                          "description": "How to verify the action was successful"
+                        }
+                      }
+                    },
+                    "evidence": {
+                      "type": "array",
+                      "description": "Supporting evidence for this action",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "NotificationCreateResponse": {
+        "description": "Response object after creating a Jira ticket notification",
+        "type": "object",
+        "properties": {
+          "issue_key": {
+            "type": "string",
+            "description": "The Jira issue key of the created ticket (e.g. OPS-42)",
+            "example": "OPS-42"
+          },
+          "issue_url": {
+            "type": "string",
+            "description": "URL to the created Jira issue",
+            "example": "https://your-org.atlassian.net/browse/OPS-42"
+          },
+          "status": {
+            "type": "string",
+            "description": "Result status of the notification operation",
+            "example": "created"
+          }
+        }
+      },
+      "EngagementConfigResponse": {
+        "type": "object",
+        "description": "Engagement configuration response.",
+        "properties": {
+          "datasources": {
+            "type": "array",
+            "description": "Supported datasources",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Datasource name."
+                },
+                "title": {
+                  "type": "string",
+                  "description": "Translated datasource title."
+                },
+                "fields": {
+                  "$ref": "#/components/schemas/FilterParamList"
+                },
+                "operatorsByType": {
+                  "$ref": "#/components/schemas/OperatorsTypeList"
+                },
+                "metrics": {
+                  "type": "object",
+                  "description": "Available aggregation metrics",
+                  "properties": {
+                    "keywordMetrics": {
+                      "type": "object",
+                      "properties": {
+                        "value_count": {
+                          "type": "string",
+                          "example": "count"
+                        }
+                      }
+                    },
+                    "numberMetrics": {
+                      "type": "object",
+                      "properties": {
+                        "value_count": {
+                          "type": "string",
+                          "example": "count"
+                        },
+                        "sum": {
+                          "type": "string",
+                          "example": "sum"
+                        },
+                        "avg": {
+                          "type": "string",
+                          "example": "average"
+                        },
+                        "min": {
+                          "type": "string",
+                          "example": "min"
+                        },
+                        "max": {
+                          "type": "string",
+                          "example": "max"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "report_types": {
+            "type": "array",
+            "description": "Supported report types",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "$ref": "#/components/schemas/Id"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "requiresType": {
+                  "type": "string"
+                },
+                "types": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "description": "Generic error response.",
+        "additionalProperties": true,
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "message": {
+            "$ref": "#/components/schemas/Message"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/ErrorModels"
+          }
+        }
+      },
+      "ErrorModels": {
+        "type": "array",
+        "description": "Array of more detailed error information.",
+        "items": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string",
+              "description": "A snake case string succinctly identifying the problem."
+            },
+            "message": {
+              "type": "string",
+              "description": "A plainly-written, developer-oriented explanation of the solution to the problem in complete, well-formed sentences."
+            },
+            "more_info": {
+              "type": "string",
+              "description": "A publicly-accessible URL where information about the error can be read."
+            },
+            "target": {
+              "$ref": "#/components/schemas/ErrorTargetModel"
+            }
+          }
+        }
+      },
+      "ErrorTargetModel": {
+        "type": "object",
+        "description": "Contains information about specific error targets.",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Either field, parameter, or header."
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the problematic field (with dot-syntax if necessary), query parameter, or header."
+          }
+        }
+      },
+      "FilterParam": {
+        "type": "object",
+        "description": "Filter parameter.",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "nested": {
+            "type": "boolean"
+          },
+          "nestedFields": {
+            "$ref": "#/components/schemas/FilterParamListLevel1"
+          }
+        }
+      },
+      "FilterParamLevel1": {
+        "type": "object",
+        "description": "Filter parameter for nested fields.",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "nestedFields": {
+            "$ref": "#/components/schemas/FilterParamListLevel2"
+          }
+        }
+      },
+      "FilterParamLevel2": {
+        "type": "object",
+        "description": "Filter parameter for nested fields.",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "nestedFields": {
+            "$ref": "#/components/schemas/FilterParamListLevel3"
+          }
+        }
+      },
+      "FilterParamLevel3": {
+        "type": "object",
+        "description": "Filter parameter for nested fields.",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "nestedFields": {
+            "$ref": "#/components/schemas/FilterParamListLevel4"
+          }
+        }
+      },
+      "FilterParamLevel4": {
+        "type": "object",
+        "description": "Filter parameter for nested fields.",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "nestedFields": {
+            "$ref": "#/components/schemas/FilterParamListLevel5"
+          }
+        }
+      },
+      "FilterParamLevel5": {
+        "type": "object",
+        "description": "Filter parameter for nested fields.",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "FilterParamList": {
+        "type": "array",
+        "description": "Array of filter params.",
+        "items": {
+          "$ref": "#/components/schemas/FilterParam"
+        }
+      },
+      "FilterParamListLevel1": {
+        "type": "array",
+        "description": "Array of filter params for nested fields.",
+        "items": {
+          "$ref": "#/components/schemas/FilterParamLevel1"
+        }
+      },
+      "FilterParamListLevel2": {
+        "type": "array",
+        "description": "Array of filter params for nested fields.",
+        "items": {
+          "$ref": "#/components/schemas/FilterParamLevel2"
+        }
+      },
+      "FilterParamListLevel3": {
+        "type": "array",
+        "description": "Array of filter params for nested fields.",
+        "items": {
+          "$ref": "#/components/schemas/FilterParamLevel3"
+        }
+      },
+      "FilterParamListLevel4": {
+        "type": "array",
+        "description": "Array of filter params for nested fields.",
+        "items": {
+          "$ref": "#/components/schemas/FilterParamLevel4"
+        }
+      },
+      "FilterParamListLevel5": {
+        "type": "array",
+        "description": "Array of filter params for nested fields.",
+        "items": {
+          "$ref": "#/components/schemas/FilterParamLevel5"
+        }
+      },
+      "OperatorsTypeList": {
+        "type": "object",
+        "description": "Object of operators by type.",
+        "properties": {
+          "string": {
+            "$ref": "#/components/schemas/OperatorList"
+          },
+          "number": {
+            "$ref": "#/components/schemas/OperatorList"
+          },
+          "date": {
+            "$ref": "#/components/schemas/OperatorList"
+          },
+          "ipaddress": {
+            "$ref": "#/components/schemas/OperatorList"
+          },
+          "boolean": {
+            "$ref": "#/components/schemas/OperatorList"
+          },
+          "object": {
+            "$ref": "#/components/schemas/OperatorList"
+          }
+        }
+      },
+      "Id": {
+        "type": "string",
+        "description": "ID.",
+        "minLength": 1,
+        "maxLength": 1000
+      },
+      "Message": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Detailed error message.",
+        "example": "Invalid request payload JSON format."
+      },
+      "Metric": {
+        "type": "object",
+        "description": "Aggregation metric",
+        "properties": {
+          "value_count": {
+            "type": "object",
+            "properties": {
+              "field": {
+                "type": "string",
+                "example": "api_name"
+              }
+            }
+          },
+          "sum": {
+            "type": "object",
+            "properties": {
+              "field": {
+                "type": "string",
+                "example": "bytes_sent"
+              }
+            }
+          },
+          "avg": {
+            "type": "object",
+            "properties": {
+              "field": {
+                "type": "string",
+                "example": "bytes_sent"
+              }
+            }
+          },
+          "min": {
+            "type": "object",
+            "properties": {
+              "field": {
+                "type": "string",
+                "example": "bytes_sent"
+              }
+            }
+          },
+          "max": {
+            "type": "object",
+            "properties": {
+              "field": {
+                "type": "string",
+                "example": "bytes_sent"
+              }
+            }
+          }
+        },
+        "additionalProperties": false,
+        "minProperties": 1,
+        "maxProperties": 1
+      },
+      "NonNegativeInteger": {
+        "type": "integer",
+        "description": "Integer greater than or equal to zero.",
+        "minimum": 0
+      },
+      "Operator": {
+        "type": "object",
+        "description": "Operator object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "operator": {
+            "type": "string"
+          }
+        }
+      },
+      "OperatorList": {
+        "type": "array",
+        "description": "Array of available operators",
+        "items": {
+          "$ref": "#/components/schemas/Operator"
+        }
+      },
+      "PaginationLink": {
+        "type": "object",
+        "description": "Pagination link used in list responses.",
+        "properties": {
+          "href": {
+            "type": "string"
+          }
+        }
+      },
+      "AnomalyDetectorRequest": {
+        "type": "object",
+        "description": "An anomaly detector configuration",
+        "additionalProperties": true
+      },
+      "AnomalyDetector": {
+        "type": "object",
+        "description": "An anomaly detector with system-assigned ID",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AnomalyDetectorRequest"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/schemas/Id"
+              }
+            }
+          }
+        ]
+      },
+      "AnomalyDetectorResponse": {
+        "description": "An anomaly detector response",
+        "$ref": "#/components/schemas/AnomalyDetector"
+      },
+      "AnomalyDetectorCreateRequest": {
+        "description": "Request object to create an anomaly detector. Supports an optional start_on_create boolean — when true the director starts the detector immediately after creation in a single API call.",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AnomalyDetectorRequest"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "start_on_create": {
+                "type": "boolean",
+                "description": "When true, the director starts the detector immediately after it is created. The response includes a `started` boolean indicating whether the start succeeded.\n"
+              }
+            }
+          }
+        ]
+      },
+      "AnomalyDetectorCreateResponse": {
+        "description": "Response object to create an anomaly detector",
+        "$ref": "#/components/schemas/AnomalyDetector"
+      },
+      "AnomalyDetectorUpdateRequest": {
+        "description": "Request object to update an anomaly detector",
+        "$ref": "#/components/schemas/AnomalyDetectorRequest"
+      },
+      "AnomalyDetectorTemplateRequest": {
+        "description": "Request body for creating a detector from a template (name is optional)",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Optional custom name for the detector. Defaults to \"{type}-detector\"."
+          },
+          "start_on_create": {
+            "type": "boolean",
+            "description": "When true, the director starts the detector immediately after it is created. The response includes a `started` boolean indicating whether the start succeeded.\n"
+          }
+        }
+      },
+      "AnomalyDetectorsListResponse": {
+        "description": "List of anomaly detectors",
+        "type": "object",
+        "properties": {
+          "total": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "offset": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "limit": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "anomaly_detectors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AnomalyDetector"
+            }
+          }
+        }
+      },
+      "RuleRequest": {
+        "type": "object",
+        "description": "An engagement rule",
+        "properties": {
+          "title": {
+            "$ref": "#/components/schemas/Title"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "per_query"
+            ]
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "data_source": {
+            "type": "string"
+          },
+          "schedule": {
+            "type": "object",
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "schedule_type": {
+                    "type": "string",
+                    "enum": [
+                      "interval"
+                    ]
+                  },
+                  "period_interval": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "period_unit": {
+                    "$ref": "#/components/schemas/TimeframeUnit"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "schedule_type": {
+                    "type": "string",
+                    "enum": [
+                      "cron"
+                    ]
+                  },
+                  "cron_expression": {
+                    "type": "string",
+                    "description": "a unix cron string with the desired schedule"
+                  }
+                }
+              }
+            ]
+          },
+          "metric": {
+            "$ref": "#/components/schemas/Metric"
+          },
+          "group_by": {
+            "type": "string"
+          },
+          "filters": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "timeframe": {
+            "type": "string"
+          },
+          "triggers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Trigger"
+            }
+          }
+        }
+      },
+      "ScheduledReportRequest": {
+        "type": "object",
+        "description": "A scheduled report",
+        "properties": {
+          "report_type": {
+            "type": "string"
+          },
+          "report_name": {
+            "type": "string"
+          },
+          "schedule": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "org_id": {
+            "type": "string"
+          },
+          "destination_id": {
+            "type": "string"
+          },
+          "parameters": {
+            "type": "object"
+          }
+        }
+      },
+      "Rule": {
+        "type": "object",
+        "description": "Response object to create a rule",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/RuleRequest"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/schemas/Id"
+              },
+              "alertHistory": {
+                "$ref": "#/components/schemas/AlertHistory"
+              }
+            }
+          }
+        ]
+      },
+      "ScheduledReport": {
+        "type": "object",
+        "description": "Response object to create a scheduled report",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ScheduledReportRequest"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/schemas/Id"
+              },
+              "last_run": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "next_run": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        ]
+      },
+      "RuleResponse": {
+        "description": "A rule response",
+        "$ref": "#/components/schemas/Rule"
+      },
+      "ScheduledReportResponse": {
+        "description": "A scheduled report response",
+        "$ref": "#/components/schemas/ScheduledReport"
+      },
+      "RuleCreateRequest": {
+        "description": "Request object to create a rule",
+        "$ref": "#/components/schemas/RuleRequest"
+      },
+      "ScheduledReportCreateRequest": {
+        "description": "Request object to create a scheduled report",
+        "$ref": "#/components/schemas/ScheduledReportRequest"
+      },
+      "RuleCreateResponse": {
+        "description": "A rule create response",
+        "$ref": "#/components/schemas/Rule"
+      },
+      "ScheduledReportCreateResponse": {
+        "description": "A scheduled report create response",
+        "$ref": "#/components/schemas/ScheduledReport"
+      },
+      "RuleUpdateRequest": {
+        "description": "Request object to update a rule",
+        "$ref": "#/components/schemas/Rule"
+      },
+      "ScheduledReportUpdateRequest": {
+        "description": "Request object to update a scheduled report",
+        "$ref": "#/components/schemas/ScheduledReport"
+      },
+      "RulesListResponse": {
+        "description": "List of rules",
+        "type": "object",
+        "properties": {
+          "total": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "search_time": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "offset": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "limit": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "first": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "next": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "previous": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "last": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Rule"
+            }
+          }
+        }
+      },
+      "ScheduledReportListResponse": {
+        "description": "List of scheduled reports",
+        "type": "object",
+        "properties": {
+          "total": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "search_time": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "offset": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "limit": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "first": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "next": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "previous": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "last": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "scheduled_reports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ScheduledReport"
+            }
+          }
+        }
+      },
+      "RuleCount": {
+        "type": "integer",
+        "description": "Total number of rules",
+        "minLength": 1,
+        "maxLength": 5
+      },
+      "RulesCountResponse": {
+        "type": "object",
+        "description": "Response object to Rule count",
+        "properties": {
+          "totalRules": {
+            "$ref": "#/components/schemas/RuleCount"
+          }
+        }
+      },
+      "Severity": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 5
+      },
+      "Status": {
+        "type": "integer",
+        "description": "Status code of the error.",
+        "minimum": 400,
+        "maximum": 599,
+        "example": 400
+      },
+      "TaskResponse": {
+        "description": "A task response",
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/Id"
+          },
+          "start_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "rule": {
+            "$ref": "#/components/schemas/Rule"
+          },
+          "trigger_title": {
+            "$ref": "#/components/schemas/Title"
+          },
+          "trigger_id": {
+            "$ref": "#/components/schemas/Id"
+          },
+          "action_execution_results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "action_title": {
+                  "$ref": "#/components/schemas/Title"
+                },
+                "action_id": {
+                  "$ref": "#/components/schemas/Id"
+                },
+                "last_execution_time": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "throttled_count": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "severity": {
+            "$ref": "#/components/schemas/Severity"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACTIVE",
+              "ACKNOWLEDGED",
+              "COMPLETED",
+              "ERROR",
+              "DELETED"
+            ]
+          },
+          "error_message": {
+            "type": "string"
+          },
+          "alert_history": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "timestamp": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "message": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "TasksListResponse": {
+        "description": "List of rules",
+        "type": "object",
+        "properties": {
+          "total": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "search_time": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "offset": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "limit": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "first": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "next": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "previous": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "last": {
+            "$ref": "#/components/schemas/PaginationLink"
+          },
+          "tasks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TaskResponse"
+            }
+          }
+        }
+      },
+      "TimeframeUnit": {
+        "type": "string",
+        "enum": [
+          "MINUTES",
+          "HOURS",
+          "DAYS"
+        ]
+      },
+      "Title": {
+        "type": "string",
+        "description": "The title of this object",
+        "minLength": 3,
+        "maxLength": 120
+      },
+      "TriggerRequest": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "$ref": "#/components/schemas/Title"
+          },
+          "severity": {
+            "$ref": "#/components/schemas/Severity"
+          },
+          "condition": {
+            "type": "object",
+            "properties": {
+              "operator": {
+                "type": "string"
+              },
+              "value": {
+                "type": "integer"
+              }
+            }
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Action"
+            }
+          }
+        }
+      },
+      "Trigger": {
+        "type": "object",
+        "description": "Response object for a trigger",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TriggerRequest"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/schemas/Id"
+              }
+            }
+          }
+        ]
+      },
+      "AlertHistory": {
+        "type": "object",
+        "description": "Response object for alert history",
+        "properties": {
+          "individualAlerts": {
+            "type": "array",
+            "description": "List of individual alert events",
+            "items": {
+              "type": "object"
+            }
+          },
+          "alertsOverTime": {
+            "type": "array",
+            "description": "Aggregated alerts over time intervals",
+            "items": {
+              "type": "object",
+              "properties": {
+                "timestamp": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "Timestamp of the alert aggregation"
+                },
+                "total_alerts": {
+                  "type": "integer",
+                  "description": "Total number of alerts at this timestamp"
+                },
+                "severity_info": {
+                  "type": "array",
+                  "description": "Severity distribution of alerts at this timestamp",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "level": {
+                        "type": "integer",
+                        "description": "Severity level of the alert"
+                      },
+                      "count": {
+                        "type": "integer",
+                        "description": "Number of alerts at this severity level"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "maxAlerts": {
+            "type": "object",
+            "description": "Maximum alerts recorded across all timestamps",
+            "properties": {
+              "value": {
+                "type": "integer",
+                "description": "Highest number of alerts in any time window"
+              },
+              "keys": {
+                "type": "array",
+                "description": "Timestamps where the maximum alerts occurred",
+                "items": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "NotificationCreateResponse": {
+        "description": "A notification create response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/NotificationCreateResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/NotificationCreateResponse"
+            }
+          }
+        }
+      },
+      "DestinationResponse": {
+        "description": "A destination response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DestinationResponse"
+            },
+            "examples": {
+              "UpdateDestination": {
+                "$ref": "#/components/examples/UpdateDestination"
+              }
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/DestinationResponse"
+            },
+            "examples": {
+              "UpdateDestination": {
+                "$ref": "#/components/examples/UpdateDestination"
+              }
+            }
+          }
+        }
+      },
+      "DestinationCreateResponse": {
+        "description": "A destination create response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DestinationCreateResponse"
+            },
+            "examples": {
+              "UpdateDestination": {
+                "$ref": "#/components/examples/UpdateDestination"
+              }
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/DestinationCreateResponse"
+            },
+            "examples": {
+              "UpdateDestination": {
+                "$ref": "#/components/examples/UpdateDestination"
+              }
+            }
+          }
+        }
+      },
+      "DestinationsListResponse": {
+        "description": "List of destinations",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DestinationsListResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/DestinationsListResponse"
+            }
+          }
+        }
+      },
+      "EngagementConfigResponse": {
+        "description": "Engagement configuration supported at requested scope.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/EngagementConfigResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/EngagementConfigResponse"
+            }
+          }
+        }
+      },
+      "Error": {
+        "description": "Unexpected error.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "NoContentResponse": {
+        "description": "The request was successfully processed."
+      },
+      "AnomalyDetectorResponse": {
+        "description": "An anomaly detector response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AnomalyDetectorResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/AnomalyDetectorResponse"
+            }
+          }
+        }
+      },
+      "AnomalyDetectorCreateResponse": {
+        "description": "An anomaly detector create response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AnomalyDetectorCreateResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/AnomalyDetectorCreateResponse"
+            }
+          }
+        }
+      },
+      "AnomalyDetectorsListResponse": {
+        "description": "List of anomaly detectors",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AnomalyDetectorsListResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/AnomalyDetectorsListResponse"
+            }
+          }
+        }
+      },
+      "RuleResponse": {
+        "description": "A rule response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RuleResponse"
+            },
+            "examples": {
+              "UpdateRule": {
+                "$ref": "#/components/examples/UpdateRule"
+              }
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/RuleResponse"
+            },
+            "examples": {
+              "UpdateRule": {
+                "$ref": "#/components/examples/UpdateRule"
+              }
+            }
+          }
+        }
+      },
+      "ScheduledReportResponse": {
+        "description": "A scheduled report response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ScheduledReportResponse"
+            },
+            "examples": {
+              "UpdateScheduledReport": {
+                "$ref": "#/components/examples/UpdateScheduledReport"
+              }
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ScheduledReportResponse"
+            },
+            "examples": {
+              "UpdateScheduledReport": {
+                "$ref": "#/components/examples/UpdateScheduledReport"
+              }
+            }
+          }
+        }
+      },
+      "RuleCreateResponse": {
+        "description": "A rule delete response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RuleCreateResponse"
+            },
+            "examples": {
+              "UpdateRule": {
+                "$ref": "#/components/examples/UpdateRule"
+              }
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/RuleCreateResponse"
+            },
+            "examples": {
+              "UpdateRule": {
+                "$ref": "#/components/examples/UpdateRule"
+              }
+            }
+          }
+        }
+      },
+      "ScheduledReportCreateResponse": {
+        "description": "A scheduled report create response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ScheduledReportCreateResponse"
+            },
+            "examples": {
+              "UpdateRule": {
+                "$ref": "#/components/examples/UpdateScheduledReport"
+              }
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ScheduledReportCreateResponse"
+            },
+            "examples": {
+              "UpdateRule": {
+                "$ref": "#/components/examples/UpdateScheduledReport"
+              }
+            }
+          }
+        }
+      },
+      "RulesListResponse": {
+        "description": "List of rules",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RulesListResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/RulesListResponse"
+            }
+          }
+        }
+      },
+      "RulesCountResponse": {
+        "description": "A number of total Rules",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RulesCountResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/RulesCountResponse"
+            }
+          }
+        }
+      },
+      "ScheduledReportListResponse": {
+        "description": "List of scheduled reports",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ScheduledReportListResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ScheduledReportListResponse"
+            }
+          }
+        }
+      },
+      "TaskResponse": {
+        "description": "A task response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/TaskResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/TaskResponse"
+            }
+          }
+        }
+      },
+      "TasksListResponse": {
+        "description": "List of rules",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/TasksListResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/TasksListResponse"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "oauth": {
+        "type": "oauth2",
+        "description": "API Manager API Token at either Cloud Admin or Provider scope as appropriate for each operation as defined by the x-auth-token attribute.",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "https://apimserver.example.com/api/oauth2/authorize",
+            "scopes": {
+              "engagement:view": "View an engagement object"
+            }
+          },
+          "password": {
+            "tokenUrl": "https://apimserver.example.com/api/token",
+            "refreshUrl": "https://apimserver.example.com/api/token",
+            "scopes": {
+              "engagement:view": "View an engagement object"
+            }
+          },
+          "clientCredentials": {
+            "tokenUrl": "https://apimserver.example.com/api/token",
+            "scopes": {
+              "engagement:view": "View an engagement object"
+            }
+          },
+          "authorizationCode": {
+            "authorizationUrl": "https://apimserver.example.com/api/oauth2/authorize",
+            "tokenUrl": "https://apimserver.example.com/api/token",
+            "refreshUrl": "https://apimserver.example.com/api/token",
+            "scopes": {
+              "engagement:view": "View an engagement object"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-ibm-configuration": {
+    "testable": false
+  }
+}
