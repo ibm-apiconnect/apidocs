@@ -11,20 +11,46 @@
   attachPoint: '#root',
   options: {
       renderSchemaView: true,
-      headerTitle: "API Connect 10.0.LATEST",
+      headerTitle: "API Connect v10.0.LATEST",
       headerActive: true,
       groupByTags: true,
       validateSwagger: false,
       explorerDir: "/../app/",
       routerType: "hash",
       versions: {
+        "10.0.1.1": "10.0.1.1.html",
+        "10.0.1.2": "10.0.1.2.html",
+        "10.0.1.4": "10.0.1.4.html",
+        "10.0.1.5": "10.0.1.5.html",
+        "10.0.1.6": "10.0.1.6.html",
+        "10.0.1.7": "10.0.1.7.html",
+        "10.0.1.8": "10.0.1.8.html",
+        "10.0.1.9": "10.0.1.9.html",
+        "10.0.1.11": "10.0.1.11.html",
+        "10.0.1.12": "10.0.1.12.html",
+        "10.0.1.LATEST": "10.0.1.LATEST.html",
+        "10.0.2.0": "10.0.2.0.html",
+        "10.0.3.0": "10.0.3.0.html",
+        "10.0.4.0": "10.0.4.0.html",
+        "10.0.5.0": "10.0.5.0.html",
+        "10.0.5.1": "10.0.5.1.html",
+        "10.0.5.2": "10.0.5.2.html",
+        "10.0.5.3": "10.0.5.3.html",
+        "10.0.5.4": "10.0.5.4.html",
+        "10.0.5.5": "10.0.5.5.html",
+        "10.0.5.6": "10.0.5.6.html",
+        "10.0.5.7": "10.0.5.7.html",
+        "10.0.5.8": "10.0.5.8.html",
+        "10.0.5.LATEST": "10.0.5.LATEST.html",
+        "10.0.6.0": "10.0.6.0.html",
+        "10.0.7.0": "10.0.7.0.html",
         "10.0.8.0": "10.0.8.0.html",
         "10.0.8.1": "10.0.8.1.html",
         "10.0.8.LATEST": "10.0.8.LATEST.html",
         "10.0.9.0": "10.0.9.0.html",
         "10.0.10.0": "10.0.10.0.html",
         "10.0.LATEST": "10.0.LATEST.html",
-        "v12": "../v12/index.html"      }
+      }
     },
   apis: [
 {
@@ -47,7 +73,7 @@
   },
   "servers": [
     {
-      "url": "https://apimserver.example.com/api",
+      "url": "",
       "description": "APIM base path"
     }
   ],
@@ -22134,6 +22160,13 @@
               }
             }
           },
+          "gateway_endpoints": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -34813,7 +34846,8 @@
           },
           "password": {
             "type": "string",
-            "format": "password"
+            "format": "password",
+            "minLength": 1
           },
           "assertion": {
             "type": "string"
@@ -35343,67 +35377,6 @@
           },
           "payload": {
             "type": "string"
-          }
-        }
-      },
-      "ProxyTokenInfoRequest": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "scope_url": {
-            "type": "string"
-          },
-          "analytics_service": {
-            "type": "string"
-          },
-          "access_token": {
-            "type": "string"
-          },
-          "availability_zone": {
-            "type": "string"
-          }
-        }
-      },
-      "ProxyTokenInfoResponse": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "analytics_client": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "endpoint": {
-                "type": "string"
-              },
-              "tls": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "key": {
-                    "type": "string"
-                  },
-                  "cert": {
-                    "type": "string"
-                  },
-                  "ca": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "updated_at": {
-                    "type": "string",
-                    "format": "date-time"
-                  }
-                }
-              }
-            }
-          },
-          "user_permissions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           }
         }
       },
@@ -37037,10 +37010,6 @@
           }
         }
       },
-      "Analytics": {
-        "type": "object",
-        "additionalProperties": true
-      },
       "OAI3": {
         "type": "object",
         "additionalProperties": true,
@@ -37757,9 +37726,8 @@
           "implicit": {
             "authorizationUrl": "/oauth2/authorize",
             "scopes": {
-              "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
-              "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
+              "api-drafts:view": "List the Draft objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
               "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
               "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id, List the Task History objects, Get the Task History object by name or id",
@@ -37767,30 +37735,29 @@
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
               "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Update the Notification Style object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
-              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Webhook objects, Get the Webhook object by name or id",
               "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
               "product:view": "List all Product objects in all collections, List the Product objects, Get the Product object by id, Get the Product object by name and version, List all API objects in all collections, List the API objects, Get the API object by id, Get the API object by name and version",
               "provider-org:manage": "Create an Organization Invitation object, Clear the Organization Invitation objects, Update the Organization Invitation object by name or id, Delete the Organization Invitation object by name or id, Create a Group object, Clear the Group objects, Update the Group object by name or id, Delete the Group object by name or id",
               "provider-org:view": "List the Organization Invitation objects, Get the Organization Invitation object by name or id, List the Group objects, Get the Group object by name or id",
-              "webhook:manage": "Create a Webhook object, Update the Webhook object by name or id, Delete the Webhook object by name or id",
-              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id, List the Snapshot objects, Get the Snapshot object by name or id"
+              "webhook:manage": "Update the Webhook object by name or id",
+              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id"
             }
           },
           "password": {
             "tokenUrl": "/token",
             "refreshUrl": "/token",
             "scopes": {
-              "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
-              "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
+              "api-drafts:view": "List the Draft objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
               "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
               "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id, List the Task History objects, Get the Task History object by name or id",
@@ -37798,29 +37765,28 @@
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
               "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Update the Notification Style object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
-              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Webhook objects, Get the Webhook object by name or id",
               "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
               "product:view": "List all Product objects in all collections, List the Product objects, Get the Product object by id, Get the Product object by name and version, List all API objects in all collections, List the API objects, Get the API object by id, Get the API object by name and version",
               "provider-org:manage": "Create an Organization Invitation object, Clear the Organization Invitation objects, Update the Organization Invitation object by name or id, Delete the Organization Invitation object by name or id, Create a Group object, Clear the Group objects, Update the Group object by name or id, Delete the Group object by name or id",
               "provider-org:view": "List the Organization Invitation objects, Get the Organization Invitation object by name or id, List the Group objects, Get the Group object by name or id",
-              "webhook:manage": "Create a Webhook object, Update the Webhook object by name or id, Delete the Webhook object by name or id",
-              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id, List the Snapshot objects, Get the Snapshot object by name or id"
+              "webhook:manage": "Update the Webhook object by name or id",
+              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id"
             }
           },
           "clientCredentials": {
             "tokenUrl": "/token",
             "scopes": {
-              "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
-              "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
+              "api-drafts:view": "List the Draft objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
               "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
               "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id, List the Task History objects, Get the Task History object by name or id",
@@ -37828,21 +37794,21 @@
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
               "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Update the Notification Style object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
-              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Webhook objects, Get the Webhook object by name or id",
               "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
               "product:view": "List all Product objects in all collections, List the Product objects, Get the Product object by id, Get the Product object by name and version, List all API objects in all collections, List the API objects, Get the API object by id, Get the API object by name and version",
               "provider-org:manage": "Create an Organization Invitation object, Clear the Organization Invitation objects, Update the Organization Invitation object by name or id, Delete the Organization Invitation object by name or id, Create a Group object, Clear the Group objects, Update the Group object by name or id, Delete the Group object by name or id",
               "provider-org:view": "List the Organization Invitation objects, Get the Organization Invitation object by name or id, List the Group objects, Get the Group object by name or id",
-              "webhook:manage": "Create a Webhook object, Update the Webhook object by name or id, Delete the Webhook object by name or id",
-              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id, List the Snapshot objects, Get the Snapshot object by name or id"
+              "webhook:manage": "Update the Webhook object by name or id",
+              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id"
             }
           },
           "authorizationCode": {
@@ -37850,9 +37816,8 @@
             "tokenUrl": "/token",
             "refreshUrl": "/token",
             "scopes": {
-              "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
-              "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
+              "api-drafts:view": "List the Draft objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
               "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
               "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id, List the Task History objects, Get the Task History object by name or id",
@@ -37860,21 +37825,21 @@
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
               "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Update the Notification Style object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
-              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Webhook objects, Get the Webhook object by name or id",
               "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
               "product:view": "List all Product objects in all collections, List the Product objects, Get the Product object by id, Get the Product object by name and version, List all API objects in all collections, List the API objects, Get the API object by id, Get the API object by name and version",
               "provider-org:manage": "Create an Organization Invitation object, Clear the Organization Invitation objects, Update the Organization Invitation object by name or id, Delete the Organization Invitation object by name or id, Create a Group object, Clear the Group objects, Update the Group object by name or id, Delete the Group object by name or id",
               "provider-org:view": "List the Organization Invitation objects, Get the Organization Invitation object by name or id, List the Group objects, Get the Group object by name or id",
-              "webhook:manage": "Create a Webhook object, Update the Webhook object by name or id, Delete the Webhook object by name or id",
-              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id, List the Snapshot objects, Get the Snapshot object by name or id"
+              "webhook:manage": "Update the Webhook object by name or id",
+              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id"
             }
           }
         }
@@ -37905,7 +37870,7 @@
   },
   "servers": [
     {
-      "url": "https://apimserver.example.com/api",
+      "url": "",
       "description": "APIM base path"
     }
   ],
@@ -63250,89 +63215,6 @@
         ]
       }
     },
-    "/catalogs/{org}/{catalog}/analytics-services/{analytics-service}/analytics": {
-      "description": "The collection of Analytics operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        }
-      ],
-      "post": {
-        "summary": "Create an Analytics object",
-        "description": "Create an Analytics object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
-        "operationId": "analytics_createCatalogScope",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/query"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Analytics"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/Analytics"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Analytics"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Analytics"
-                }
-              }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
-            "headers": {
-              "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Catalog Resources",
-          "Resource: Analytics (Catalog Scope)"
-        ]
-      }
-    },
     "/spaces/{org}/{catalog}/{space}/analytics-services": {
       "description": "The collection of Analytics Service operations",
       "parameters": [
@@ -63458,92 +63340,6 @@
         "tags": [
           "Space Resources",
           "Resource: Analytics Service (Space Scope)"
-        ]
-      }
-    },
-    "/spaces/{org}/{catalog}/{space}/analytics-services/{analytics-service}/analytics": {
-      "description": "The collection of Analytics operations",
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/org"
-        },
-        {
-          "$ref": "#/components/parameters/catalog"
-        },
-        {
-          "$ref": "#/components/parameters/space"
-        },
-        {
-          "$ref": "#/components/parameters/analytics-service"
-        }
-      ],
-      "post": {
-        "summary": "Create an Analytics object",
-        "description": "Create an Analytics object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n",
-        "operationId": "analytics_createSpaceScope",
-        "security": [
-          {
-            "oauth": [
-              "api-analytics:view"
-            ]
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/query"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Analytics"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/Analytics"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Analytics"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Analytics"
-                }
-              }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
-            "headers": {
-              "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Space Resources",
-          "Resource: Analytics (Space Scope)"
         ]
       }
     },
@@ -85361,15 +85157,6 @@
           "type": "string"
         }
       },
-      "analytics": {
-        "name": "analytics",
-        "in": "path",
-        "description": "Analytics name or id",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
       "analytics-service": {
         "name": "analytics-service",
         "in": "path",
@@ -87476,6 +87263,13 @@
                   "format": "date-time"
                 }
               }
+            }
+          },
+          "gateway_endpoints": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
             }
           },
           "metadata": {
@@ -100157,7 +99951,8 @@
           },
           "password": {
             "type": "string",
-            "format": "password"
+            "format": "password",
+            "minLength": 1
           },
           "assertion": {
             "type": "string"
@@ -100687,67 +100482,6 @@
           },
           "payload": {
             "type": "string"
-          }
-        }
-      },
-      "ProxyTokenInfoRequest": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "scope_url": {
-            "type": "string"
-          },
-          "analytics_service": {
-            "type": "string"
-          },
-          "access_token": {
-            "type": "string"
-          },
-          "availability_zone": {
-            "type": "string"
-          }
-        }
-      },
-      "ProxyTokenInfoResponse": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "analytics_client": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "endpoint": {
-                "type": "string"
-              },
-              "tls": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "key": {
-                    "type": "string"
-                  },
-                  "cert": {
-                    "type": "string"
-                  },
-                  "ca": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "updated_at": {
-                    "type": "string",
-                    "format": "date-time"
-                  }
-                }
-              }
-            }
-          },
-          "user_permissions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           }
         }
       },
@@ -102381,10 +102115,6 @@
           }
         }
       },
-      "Analytics": {
-        "type": "object",
-        "additionalProperties": true
-      },
       "OAI3": {
         "type": "object",
         "additionalProperties": true,
@@ -103101,9 +102831,8 @@
           "implicit": {
             "authorizationUrl": "/oauth2/authorize",
             "scopes": {
-              "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
-              "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
+              "api-drafts:view": "List the Draft objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
               "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
               "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id, List the Task History objects, Get the Task History object by name or id",
@@ -103111,30 +102840,29 @@
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
               "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Update the Notification Style object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
-              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Webhook objects, Get the Webhook object by name or id",
               "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
               "product:view": "List all Product objects in all collections, List the Product objects, Get the Product object by id, Get the Product object by name and version, List all API objects in all collections, List the API objects, Get the API object by id, Get the API object by name and version",
               "provider-org:manage": "Create an Organization Invitation object, Clear the Organization Invitation objects, Update the Organization Invitation object by name or id, Delete the Organization Invitation object by name or id, Create a Group object, Clear the Group objects, Update the Group object by name or id, Delete the Group object by name or id",
               "provider-org:view": "List the Organization Invitation objects, Get the Organization Invitation object by name or id, List the Group objects, Get the Group object by name or id",
-              "webhook:manage": "Create a Webhook object, Update the Webhook object by name or id, Delete the Webhook object by name or id",
-              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id, List the Snapshot objects, Get the Snapshot object by name or id"
+              "webhook:manage": "Update the Webhook object by name or id",
+              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id"
             }
           },
           "password": {
             "tokenUrl": "/token",
             "refreshUrl": "/token",
             "scopes": {
-              "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
-              "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
+              "api-drafts:view": "List the Draft objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
               "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
               "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id, List the Task History objects, Get the Task History object by name or id",
@@ -103142,29 +102870,28 @@
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
               "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Update the Notification Style object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
-              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Webhook objects, Get the Webhook object by name or id",
               "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
               "product:view": "List all Product objects in all collections, List the Product objects, Get the Product object by id, Get the Product object by name and version, List all API objects in all collections, List the API objects, Get the API object by id, Get the API object by name and version",
               "provider-org:manage": "Create an Organization Invitation object, Clear the Organization Invitation objects, Update the Organization Invitation object by name or id, Delete the Organization Invitation object by name or id, Create a Group object, Clear the Group objects, Update the Group object by name or id, Delete the Group object by name or id",
               "provider-org:view": "List the Organization Invitation objects, Get the Organization Invitation object by name or id, List the Group objects, Get the Group object by name or id",
-              "webhook:manage": "Create a Webhook object, Update the Webhook object by name or id, Delete the Webhook object by name or id",
-              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id, List the Snapshot objects, Get the Snapshot object by name or id"
+              "webhook:manage": "Update the Webhook object by name or id",
+              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id"
             }
           },
           "clientCredentials": {
             "tokenUrl": "/token",
             "scopes": {
-              "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
-              "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
+              "api-drafts:view": "List the Draft objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
               "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
               "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id, List the Task History objects, Get the Task History object by name or id",
@@ -103172,21 +102899,21 @@
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
               "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Update the Notification Style object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
-              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Webhook objects, Get the Webhook object by name or id",
               "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
               "product:view": "List all Product objects in all collections, List the Product objects, Get the Product object by id, Get the Product object by name and version, List all API objects in all collections, List the API objects, Get the API object by id, Get the API object by name and version",
               "provider-org:manage": "Create an Organization Invitation object, Clear the Organization Invitation objects, Update the Organization Invitation object by name or id, Delete the Organization Invitation object by name or id, Create a Group object, Clear the Group objects, Update the Group object by name or id, Delete the Group object by name or id",
               "provider-org:view": "List the Organization Invitation objects, Get the Organization Invitation object by name or id, List the Group objects, Get the Group object by name or id",
-              "webhook:manage": "Create a Webhook object, Update the Webhook object by name or id, Delete the Webhook object by name or id",
-              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id, List the Snapshot objects, Get the Snapshot object by name or id"
+              "webhook:manage": "Update the Webhook object by name or id",
+              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id"
             }
           },
           "authorizationCode": {
@@ -103194,9 +102921,8 @@
             "tokenUrl": "/token",
             "refreshUrl": "/token",
             "scopes": {
-              "api-analytics:view": "Create an Analytics object",
               "api-drafts:edit": "Clear the Draft objects, Create a Draft API object, Clear all Draft API objects in all collections, Clear the Draft API objects, Update the Draft API object by id, Delete the Draft API object by id, Update the Draft API object by name and version, Delete the Draft API object by name and version",
-              "api-drafts:view": "List the Draft objects, List the Search objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
+              "api-drafts:view": "List the Draft objects, List all Draft API objects in all collections, List the Draft API objects, Get the Draft API object by id, Get the Draft API object by name and version",
               "app:manage:all": "Create a Application object, Clear the Application objects, Update the Application object by name or id, Delete the Application object by name or id, Create a Application Credential object, Update the Application Credential object by name or id, Delete the Application Credential object by name or id, Create a Subscription object, Clear the Subscription objects, Update the Subscription object by name or id, Delete the Subscription object by name or id",
               "app:view:all": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
               "approval:view": "List the Task objects, Get the Task object by name or id, Update the Task object by name or id, List the Task History objects, Get the Task History object by name or id",
@@ -103204,21 +102930,21 @@
               "child:manage": "Clear the Catalog objects, Update the Catalog object by name or id, Delete the Catalog object by name or id, Clear the Space objects, Update the Space object by name or id, Delete the Space object by name or id",
               "child:view": "List the Catalog objects, Get the Catalog object by name or id, List the Space objects, Get the Space object by name or id",
               "cloud:manage": "Update the Cloud Setting object, Update the User Registry Setting object, Update the Notification Style object, Create a Registration object, Clear the Registration objects, Update the Registration object by name or id, Delete the Registration object by name or id, Update the Webhook object by name or id",
-              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Subsystem Service objects, List the Webhook objects, Get the Webhook object by name or id",
+              "cloud:view": "Get the Cloud Setting object, Get the User Registry Setting object, Get the Notification Style object, List all Notification Template objects in all collections, List all Role Default objects in all collections, List the Registration objects, Get the Registration object by name or id, List the Webhook objects, Get the Webhook object by name or id",
               "consumer-org:manage": "Clear the Activation objects, Delete the Activation object by name or id, Create a Consumer Organization object, Clear the Consumer Organization objects, Update the Consumer Organization object by name or id, Delete the Consumer Organization object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
               "consumer-org:view": "List the Activation objects, Get the Activation object by name or id, List the Consumer Organization objects, Get the Consumer Organization object by name or id, List the Payment Method objects, Get the Payment Method object by name or id",
               "my:manage": "Create a API Key object, Delete the API Key object by name or id, Update the Me object, Delete the Me object",
               "my:view": "List the API Key objects, Get the API Key object by name or id, Get the Me object, List the My Permission objects, List the My Task objects, List the Originated Task objects, List the My Organization objects, List the My Catalog objects, List the My Space objects",
-              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Policy object, Update the Policy object by id, Delete the Policy object by id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Create a Tier object, Update the Tier object by name or id, Delete the Tier object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Create a Application Type object, Clear the Application Type objects, Update the Application Type object by name or id, Delete the Application Type object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create a Service object, Clear all Service objects in all collections, Update the Service object by id, Clear the Service objects, Delete the Service object by id, Update the Service object by name and version, Delete the Service object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
-              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Tier object by name or id, List the Tier objects, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Application Type objects, Get the Application Type object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, List all Service objects in all collections, List the Service objects, Get the Service object by id, Get the Service object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
+              "org:manage": "Update the Log Spec object, Create a User Registry object, Clear the User Registry objects, Update the User Registry object by name or id, Delete the User Registry object by name or id, Create a User object, Clear the User objects, Update the User object by name or id, Delete the User object by name or id, Update the Organization Setting object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Update the Member Invitation object by name or id, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Role object, Clear the Role objects, Update the Role object by name or id, Delete the Role object by name or id, Create a Availability Zone object, Clear the Availability Zone objects, Update the Availability Zone object by name or id, Delete the Availability Zone object by name or id, Create a Gateway Service object, Clear the Gateway Service objects, Update the Gateway Service object by name or id, Delete the Gateway Service object by name or id, Create a Portal Service object, Clear the Portal Service objects, Update the Portal Service object by name or id, Delete the Portal Service object by name or id, Create a Analytics Service object, Clear the Analytics Service objects, Update the Analytics Service object by name or id, Delete the Analytics Service object by name or id, Create a Opentelemetry object, Clear the Opentelemetry objects, Update the Opentelemetry object by name or id, Delete the Opentelemetry object by name or id, Create a Oauth Provider object, Clear the Oauth Provider objects, Update the Oauth Provider object by name or id, Delete the Oauth Provider object by name or id, Create a Mail Server object, Clear the Mail Server objects, Update the Mail Server object by name or id, Delete the Mail Server object by name or id, Create a Billing object, Clear the Billing objects, Update the Billing object by name or id, Delete the Billing object by name or id, Clear the Job objects, Delete the Job object by name or id, Create a TLS Server Profile object, Clear all TLS Server Profile objects in all collections, Clear the TLS Server Profile objects, Update the TLS Server Profile object by id, Delete the TLS Server Profile object by id, Update the TLS Server Profile object by name and version, Delete the TLS Server Profile object by name and version, Create a TLS Client Profile object, Clear all TLS Client Profile objects in all collections, Clear the TLS Client Profile objects, Update the TLS Client Profile object by id, Delete the TLS Client Profile object by id, Update the TLS Client Profile object by name and version, Delete the TLS Client Profile object by name and version, Create a Keystore object, Clear the Keystore objects, Update the Keystore object by name or id, Delete the Keystore object by name or id, Create a Truststore object, Clear the Truststore objects, Update the Truststore object by name or id, Delete the Truststore object by name or id, Create a Entry object, Clear the Entry objects, Update the Entry object by name or id, Delete the Entry object by name or id, Create a Jwk Set object, Clear the Jwk Set objects, Delete the Jwk Set object by name or id, Update the Catalog Setting object, Create a Configured Gateway Service object, Clear the Configured Gateway Service objects, Delete the Configured Gateway Service object by name or id, Create a Configured Catalog User Registry object, Delete the Configured Catalog User Registry object by name or id, Create a Configured API User Registry object, Clear the Configured API User Registry objects, Delete the Configured API User Registry object by name or id, Create a Configured TLS Client Profile object, Clear the Configured TLS Client Profile objects, Delete the Configured TLS Client Profile object by id, Delete the Configured TLS Client Profile object by name and version, Create a Configured Billing object, Clear the Configured Billing objects, Delete the Configured Billing object by name or id, Create a Configured Oauth Provider object, Clear the Configured Oauth Provider objects, Delete the Configured Oauth Provider object by name or id, Augment the Configuration Property with additional name/value pairs, Clear the Configuration Property objects, Update the Configuration Property object, Delete the Configuration Property object, Create a Global Policy object, Clear all Global Policy objects in all collections, Clear the Global Policy objects, Update the Global Policy object by id, Delete the Global Policy object by id, Update the Global Policy object by name and version, Delete the Global Policy object by name and version, Create the Global Policy Error object, Update the Global Policy Error object, Delete the Global Policy Error object, Create the Global Policy Prehook object, Update the Global Policy Prehook object, Delete the Global Policy Prehook object, Create the Global Policy Posthook object, Update the Global Policy Posthook object, Delete the Global Policy Posthook object, Update the Space Setting object, Update the Consumer Organization Setting object, Delete the Consumer Organization Setting object, Create a Watsonx Settings object, List the Watsonx Settings objects, Get the Watsonx Settings object by name or id, Update the Watsonx Settings object by name or id, Delete the Watsonx Settings object by name or id",
+              "org:view": "Get the Log Spec object, List the User Registry objects, Get the User Registry object by name or id, List the User objects, Get the User object by name or id, List all Integration objects in all collections, Get the Organization Setting object, Get the Organization object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the Member objects, Get the Member object by name or id, List all Permission objects in all collections, List the Role objects, Get the Role object by name or id, List the Availability Zone objects, Get the Availability Zone object by name or id, List the Gateway Service objects, Get the Gateway Service object by name or id, List all Policy objects in all collections, List the Policy objects, Get the Policy object by id, Get the Policy object by name and version, List all Extension objects in all collections, List the Extension objects, Get the Extension object by id, Get the Extension object by name and version, Create the Gateway Extension object, Get the Gateway Extension object, Update the Gateway Extension object, Delete the Gateway Extension object, List the Portal Service objects, Get the Portal Service object by name or id, List the Analytics Service objects, Get the Analytics Service object by name or id, List the Opentelemetry objects, Get the Opentelemetry object by name or id, List the Oauth Provider objects, Get the Oauth Provider object by name or id, List the Mail Server objects, Get the Mail Server object by name or id, List the Billing objects, Get the Billing object by name or id, List the Job objects, Get the Job object by name or id, List all TLS Server Profile objects in all collections, List the TLS Server Profile objects, Get the TLS Server Profile object by id, Get the TLS Server Profile object by name and version, List all TLS Client Profile objects in all collections, List the TLS Client Profile objects, Get the TLS Client Profile object by id, Get the TLS Client Profile object by name and version, List the Keystore objects, Get the Keystore object by name or id, List the Truststore objects, Get the Truststore object by name or id, List the Entry objects, Get the Entry object by name or id, List the Jwk Set objects, Get the Jwk Set object by name or id, Get the Catalog Setting object, List the Configured Gateway Service objects, Get the Configured Gateway Service object by name or id, List the Configured Catalog User Registry objects, Get the Configured Catalog User Registry object by name or id, List the Configured API User Registry objects, Get the Configured API User Registry object by name or id, List all Configured TLS Client Profile objects in all collections, Clear all Configured TLS Client Profile objects in all collections, List the Configured TLS Client Profile objects, Get the Configured TLS Client Profile object by id, Get the Configured TLS Client Profile object by name and version, List the Configured Billing objects, Get the Configured Billing object by name or id, List the Configured Oauth Provider objects, Get the Configured Oauth Provider object by name or id, List the Configuration Property objects, Get the Configuration Property object, List all Global Policy objects in all collections, List the Global Policy objects, Get the Global Policy object by id, Get the Global Policy object by name and version, Get the Global Policy Error object, Get the Global Policy Prehook object, Get the Global Policy Posthook object, Get the Space Setting object, Get the Consumer Organization Setting object, List the Primary Event objects, Get the Primary Event object by name or id, List the Subscriber Event objects, Get the Subscriber Event object by name or id, List the Task Queue objects, Get the Task Queue object by name or id, List the Resource Service Status objects",
               "product-drafts:edit": "Create a Draft Product object, Clear all Draft Product objects in all collections, Clear the Draft Product objects, Update the Draft Product object by id, Delete the Draft Product object by id, Update the Draft Product object by name and version, Delete the Draft Product object by name and version",
               "product-drafts:view": "List all Draft Product objects in all collections, List the Draft Product objects, Get the Draft Product object by id, Get the Draft Product object by name and version",
               "product:manage": "Clear all Product objects in all collections, Clear the Product objects, Update the Product object by id, Delete the Product object by id, Update the Product object by name and version, Delete the Product object by name and version, Update the API object by id, Update the API object by name and version",
               "product:view": "List all Product objects in all collections, List the Product objects, Get the Product object by id, Get the Product object by name and version, List all API objects in all collections, List the API objects, Get the API object by id, Get the API object by name and version",
               "provider-org:manage": "Create an Organization Invitation object, Clear the Organization Invitation objects, Update the Organization Invitation object by name or id, Delete the Organization Invitation object by name or id, Create a Group object, Clear the Group objects, Update the Group object by name or id, Delete the Group object by name or id",
               "provider-org:view": "List the Organization Invitation objects, Get the Organization Invitation object by name or id, List the Group objects, Get the Group object by name or id",
-              "webhook:manage": "Create a Webhook object, Update the Webhook object by name or id, Delete the Webhook object by name or id",
-              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id, List the Snapshot objects, Get the Snapshot object by name or id"
+              "webhook:manage": "Update the Webhook object by name or id",
+              "webhook:view": "List the Webhook objects, Get the Webhook object by name or id"
             }
           }
         }
@@ -103249,7 +102975,7 @@
   },
   "servers": [
     {
-      "url": "https://apimserver.example.com/consumer-api",
+      "url": "",
       "description": "Consumer apim base path"
     }
   ],
@@ -105446,70 +105172,6 @@
           "$ref": "#/components/parameters/org"
         }
       ],
-      "post": {
-        "summary": "Create a Member object",
-        "description": "Create a Member object\n          \n          Fields allowed but ignored:\n          - id\n          - type\n          - api_version\n          - scope\n          - created_at\n          - updated_at\n          - url\n          - org_url\n          - user_registry_url\n",
-        "operationId": "member_createOrgScope",
-        "security": [
-          {
-            "oauth": [
-              "org:manage"
-            ]
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Member"
-              }
-            },
-            "application/yaml": {
-              "schema": {
-                "$ref": "#/components/schemas/Member"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful create",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Member"
-                }
-              },
-              "application/yaml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Member"
-                }
-              }
-            }
-          },
-          "302": {
-            "description": "Redirect response",
-            "headers": {
-              "Location": {
-                "description": "Redirect payload",
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        },
-        "tags": [
-          "Organization Management",
-          "Resource: Member (Org Scope)"
-        ]
-      },
       "get": {
         "summary": "List the Member objects",
         "description": "List the Member objects",
@@ -112203,7 +111865,7 @@
               "app:view": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
               "my:manage": "Update the Me object, Delete the Me object",
               "my:view": "Get the Me object, List the My Permission objects, List the My Organization objects",
-              "org:manage": "Create a My Organization object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
+              "org:manage": "Create a My Organization object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Delete the Member Invitation object by name or id, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
               "org:view": "List all Permission objects in all collections, Get the Organization object by name or id, Get the Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the User Registry objects, Get the User Registry object by name or id, Get the User object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, Get the Billing object by name or id, List the Billing objects, List the Payment Method objects, Get the Payment Method object by name or id, List the Payment Method Type objects, Get the Payment Method Type object by name or id"
             }
           },
@@ -112216,7 +111878,7 @@
               "app:view": "List the Application objects, Get the Application object by name or id, List the Application Credential objects, Get the Application Credential object by name or id, List the Subscription objects, Get the Subscription object by name or id",
               "my:manage": "Update the Me object, Delete the Me object",
               "my:view": "Get the Me object, List the My Permission objects, List the My Organization objects",
-              "org:manage": "Create a My Organization object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Delete the Member Invitation object by name or id, Create a Member object, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
+              "org:manage": "Create a My Organization object, Update the Organization object by name or id, Delete the Organization object by name or id, Create a Member Invitation object, Clear the Member Invitation objects, Delete the Member Invitation object by name or id, Clear the Member objects, Update the Member object by name or id, Delete the Member object by name or id, Create a Payment Method object, Update the Payment Method object by name or id, Delete the Payment Method object by name or id",
               "org:view": "List all Permission objects in all collections, Get the Organization object by name or id, Get the Group object by name or id, List the Member Invitation objects, Get the Member Invitation object by name or id, List the User Registry objects, Get the User Registry object by name or id, Get the User object by name or id, List the Associate objects, Get the Associate object by name or id, List the Member objects, Get the Member object by name or id, List the Role objects, Get the Role object by name or id, Get the Billing object by name or id, List the Billing objects, List the Payment Method objects, Get the Payment Method object by name or id, List the Payment Method Type objects, Get the Payment Method Type object by name or id"
             }
           }
@@ -112245,7 +111907,7 @@
   },
   "servers": [
     {
-      "url": "https://apimserver.example.com/analytics",
+      "url": "",
       "description": "Analytics V2 base path"
     }
   ],
@@ -135596,6 +135258,18 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_limit_optional"
           }
         ],
         "responses": {
@@ -135651,6 +135325,18 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_limit_optional"
           }
         ],
         "responses": {
@@ -135706,6 +135392,18 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_limit_optional"
           }
         ],
         "responses": {
@@ -136270,6 +135968,18 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_limit_optional"
           }
         ],
         "responses": {
@@ -136807,6 +136517,18 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_limit_optional"
           }
         ],
         "responses": {
@@ -136864,10 +136586,22 @@
             "$ref": "#/components/parameters/report_start_date_optional"
           },
           {
-            "$ref": "#/components/parameters/offset_optional"
+            "$ref": "#/components/parameters/api_offset_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/api_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_limit_optional"
           }
         ],
         "responses": {
@@ -137195,6 +136929,18 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_limit_optional"
           }
         ],
         "responses": {
@@ -137250,6 +136996,18 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_limit_optional"
           }
         ],
         "responses": {
@@ -137305,6 +137063,18 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_limit_optional"
           }
         ],
         "responses": {
@@ -137869,6 +137639,18 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_limit_optional"
           }
         ],
         "responses": {
@@ -138418,6 +138200,18 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_limit_optional"
           }
         ],
         "responses": {
@@ -138475,10 +138269,22 @@
             "$ref": "#/components/parameters/report_start_date_optional"
           },
           {
-            "$ref": "#/components/parameters/offset_optional"
+            "$ref": "#/components/parameters/api_offset_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/api_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_limit_optional"
           }
         ],
         "responses": {
@@ -138821,6 +138627,18 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_limit_optional"
           }
         ],
         "responses": {
@@ -138879,6 +138697,18 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_limit_optional"
           }
         ],
         "responses": {
@@ -138937,6 +138767,18 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_limit_optional"
           }
         ],
         "responses": {
@@ -139464,6 +139306,18 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_limit_optional"
           }
         ],
         "responses": {
@@ -139982,6 +139836,18 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_limit_optional"
           }
         ],
         "responses": {
@@ -140042,10 +139908,22 @@
             "$ref": "#/components/parameters/report_start_date_optional"
           },
           {
-            "$ref": "#/components/parameters/offset_optional"
+            "$ref": "#/components/parameters/api_offset_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/api_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_limit_optional"
           }
         ],
         "responses": {
@@ -140406,6 +140284,18 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_limit_optional"
           }
         ],
         "responses": {
@@ -140467,6 +140357,18 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_limit_optional"
           }
         ],
         "responses": {
@@ -140528,6 +140430,18 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/corg_limit_optional"
           }
         ],
         "responses": {
@@ -140991,6 +140905,18 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_limit_optional"
           }
         ],
         "responses": {
@@ -141533,6 +141459,18 @@
           },
           {
             "$ref": "#/components/parameters/report_start_date_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_limit_optional"
           }
         ],
         "responses": {
@@ -141596,10 +141534,22 @@
             "$ref": "#/components/parameters/report_start_date_optional"
           },
           {
-            "$ref": "#/components/parameters/offset_optional"
+            "$ref": "#/components/parameters/api_offset_optional"
           },
           {
-            "$ref": "#/components/parameters/limit_optional"
+            "$ref": "#/components/parameters/api_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_limit_optional"
           }
         ],
         "responses": {
@@ -147782,6 +147732,26 @@
           "example": "my_consumer_org"
         }
       },
+      "corg_limit_optional": {
+        "name": "corg_limit",
+        "in": "query",
+        "description": "Limits the number of consumer organizations returned in the response. Use this parameter to control pagination and reduce response payload size. Valid range: 1-500. If not specified, a default limit will be applied by the server.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "50"
+        }
+      },
+      "corg_offset_optional": {
+        "name": "corg_offset",
+        "in": "query",
+        "description": "If set, the offset to be applied when requesting a list. e.g. return events starting from the 100th result",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "100"
+        }
+      },
       "gateway-service-name": {
         "name": "gateway-service-name",
         "in": "path",
@@ -148066,6 +148036,16 @@
           "example": "1.0.0"
         }
       },
+      "app_offset_optional": {
+        "name": "app_offset",
+        "in": "query",
+        "description": "If set, the offset to be applied when requesting a list. e.g. return events starting from the 100th result",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "100"
+        }
+      },
       "app_id_optional": {
         "name": "app_id",
         "in": "query",
@@ -148086,6 +148066,26 @@
           "example": "production"
         }
       },
+      "app_limit_optional": {
+        "name": "app_limit",
+        "in": "query",
+        "description": "Limits the number of applications returned in the response. Use this parameter to control pagination and reduce response payload size. Valid range: 1-500. If not specified, a default limit will be applied by the server.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "50"
+        }
+      },
+      "api_limit_optional": {
+        "name": "api_limit",
+        "in": "query",
+        "description": "Limits the number of APIs returned in the response. Use this parameter to control pagination and reduce response payload size. Valid range: 1-500. If not specified, a default limit will be applied by the server.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "50"
+        }
+      },
       "api_resource_id_optional": {
         "name": "api_resource_id",
         "in": "query",
@@ -148094,6 +148094,16 @@
         "schema": {
           "type": "string",
           "example": "70848db2-5d5f-4df3-87e1-dd63f61f290c"
+        }
+      },
+      "api_offset_optional": {
+        "name": "api_offset",
+        "in": "query",
+        "description": "If set, the offset to be applied when requesting a list. e.g. return events starting from the 100th result",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "100"
         }
       },
       "app_name_optional": {
@@ -148301,7 +148311,7 @@
       "catalogId_optional": {
         "name": "catalogId",
         "in": "query",
-        "description": "Filter results by for audit catalog ID.",
+        "description": "Filter results by catalog ID.",
         "required": false,
         "schema": {
           "type": "string",
@@ -149241,6 +149251,26 @@
         "schema": {
           "type": "string",
           "example": "d3fcc626-bf11-4318-8045-8d8502608c88"
+        }
+      },
+      "product_limit_optional": {
+        "name": "product_limit",
+        "in": "query",
+        "description": "Limits the number of products returned in the response. Use this parameter to control pagination and reduce response payload size. Valid range: 1-500. If not specified, a default limit will be applied by the server.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "50"
+        }
+      },
+      "product_offset_optional": {
+        "name": "product_offset",
+        "in": "query",
+        "description": "If set, the offset to be applied when requesting a list. e.g. return events starting from the 100th result",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "100"
         }
       },
       "product_name_optional": {
@@ -154596,7 +154626,7 @@
   },
   "servers": [
     {
-      "url": "https://apimserver.example.com/consumer-analytics",
+      "url": "",
       "description": "Consumer analytics V2 base path"
     }
   ],
@@ -155381,7 +155411,7 @@
   },
   "servers": [
     {
-      "url": "https://apimserver.example.com/engagement",
+      "url": "",
       "description": "Engagement V2 base path"
     }
   ],
@@ -158428,7 +158458,7 @@
   },
   "servers": [
     {
-      "url": "https://apimserver.example.com/portal",
+      "url": "",
       "description": "Portal Admin base path"
     }
   ],
@@ -170733,7 +170763,7 @@
   },
   "servers": [
     {
-      "url": "https://apimserver.example.com/discovery",
+      "url": "",
       "description": "Local laptop testing"
     }
   ],
@@ -175076,7 +175106,7 @@
   },
   "servers": [
     {
-      "url": "https://apimserver.example.com/governance",
+      "url": "",
       "description": "Local laptop testing"
     }
   ],
@@ -180040,7 +180070,7 @@
         "name": "introduction",
         "title": "Introduction",
         "format": "b64html",
-        "content": "PGFydGljbGUgaWQ9ImludHJvZHVjdGlvbiIgY2xhc3M9InBhZ2UiPgoKICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBpbnRyby1oZWFkZXIiPgogICAgICAgIE9wZW4gQVBJIEV4cGxvcmVyIERvY3VtZW50YXRpb24gdjEwLjAuTEFURVNUCiAgICAgIDwvc3Bhbj4KICAgIDwvaDI+CiAgPC9kaXY+CiAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgaW50cm8tY29udGVudCI+CiAgICA8c2VjdGlvbj4KICAgICAgPGgyPkludHJvZHVjdGlvbjwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBwbGF0Zm9ybSBSRVNUIEFQSXMgZG9jdW1lbnRlZCBoZXJlIGZvciBJQk0gQVBJIENvbm5lY3QgdjEwIHByb3ZpZGUgY29tcGxldGUgYWNjZXNzIHRvIHRoZSBjYXBhYmlsaXR5IG9mIHRoZSBwbGF0Zm9ybS4gVGhleSBtYXkgYmUgdXNlZCB0byBhdXRvbWF0ZSBhZG1pbmlzdHJhdGlvbiBvZiB0aGUgcGxhdGZvcm07IGZvciBzY3JpcHRzIGFuZCB0b29scyB0byBzdXBwb3J0IGEgY29udGludW91cyBpbnRlZ3JhdGlvbiBlbnZpcm9ubWVudCBmb3IgQVBJIGRldmVsb3BtZW50IGFuZCBwdWJsaXNoaW5nOyBhbmQgZm9yIG1hbmFnZW1lbnQgb2YgY2F0YWxvZ3Mgb2YgQVBJcyBhbmQgdGhlaXIgc3Vic2NyaWJlcnMuIFRoZSBvcGVyYXRpb25zIHByb3ZpZGVkIGluIHRoZSBSRVNUIEFQSSBhbHNvIGNvcnJlc3BvbmQgZGlyZWN0bHkgd2l0aCBjb21tYW5kcyBpbiB0aGUgdG9vbGtpdCBDTEkuCiAgICAgIDwvcD4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+QVBJczwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBjYXBhYmlsaXR5IG9mIHRoZSBwbGF0Zm9ybSBpcyBjb21wcmlzZWQgb2YgdGhyZWUgQVBJcyB3aGljaCBhcmUgb3JpZW50ZWQgYXQgZGlmZmVyZW50IHNldHMgb2YgdXNlIGNhc2VzOgogICAgICA8L3A+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItYXBpcyI+PC9kaXY+CiAgICA8L3NlY3Rpb24+CiAgPC9kaXY+CjwvYXJ0aWNsZT4K"
+        "content": "PGFydGljbGUgaWQ9ImludHJvZHVjdGlvbiIgY2xhc3M9InBhZ2UiPgoKICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBpbnRyby1oZWFkZXIiPgogICAgICAgIE9wZW4gQVBJIEV4cGxvcmVyIERvY3VtZW50YXRpb24gdjEwLjAuTEFURVNUCiAgICAgIDwvc3Bhbj4KICAgIDwvaDI+CiAgPC9kaXY+CiAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgaW50cm8tY29udGVudCI+CiAgICA8c2VjdGlvbj4KICAgICAgPGgyPkludHJvZHVjdGlvbjwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBwbGF0Zm9ybSBSRVNUIEFQSXMgZG9jdW1lbnRlZCBoZXJlIGZvciBJQk0gQVBJIENvbm5lY3QgdjEwIHByb3ZpZGUgY29tcGxldGUgYWNjZXNzIHRvIHRoZSBjYXBhYmlsaXR5IG9mIHRoZSBwbGF0Zm9ybS4gVGhleSBtYXkgYmUgdXNlZCB0byBhdXRvbWF0ZSBhZG1pbmlzdHJhdGlvbiBvZiB0aGUgcGxhdGZvcm07IGZvciBzY3JpcHRzIGFuZCB0b29scyB0byBzdXBwb3J0IGEgY29udGludW91cyBpbnRlZ3JhdGlvbiBlbnZpcm9ubWVudCBmb3IgQVBJIGRldmVsb3BtZW50IGFuZCBwdWJsaXNoaW5nOyBhbmQgZm9yIG1hbmFnZW1lbnQgb2YgY2F0YWxvZ3Mgb2YgQVBJcyBhbmQgdGhlaXIgc3Vic2NyaWJlcnMuIFRoZSBvcGVyYXRpb25zIHByb3ZpZGVkIGluIHRoZSBSRVNUIEFQSSBhbHNvIGNvcnJlc3BvbmQgZGlyZWN0bHkgd2l0aCBjb21tYW5kcyBpbiB0aGUgdG9vbGtpdCBDTEkuCiAgICAgIDwvcD4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+QVBJczwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBjYXBhYmlsaXR5IG9mIHRoZSBwbGF0Zm9ybSBpcyBjb21wcmlzZWQgb2YgdGhyZWUgQVBJcyB3aGljaCBhcmUgb3JpZW50ZWQgYXQgZGlmZmVyZW50IHNldHMgb2YgdXNlIGNhc2VzOgogICAgICA8L3A+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItYXBpcyI+PC9kaXY+CiAgICA8L3NlY3Rpb24+CiAgICA8c2VjdGlvbj4KICAgICAgPGgyPk1hY2hpbmUtcmVhZGFibGUgT3BlbkFQSSBmaWxlczwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBPcGVuQVBJIGRvY3VtZW50cyBmb3IgdGhlc2UgQVBJcyBhcmUgYXZhaWxhYmxlIGFzIHBsYWluIGZpbGVzIGZvciB0b29scyBhbmQgQUkgYWdlbnRzOgogICAgICAgIDxhIGhyZWY9IjEwLjAuTEFURVNUL29wZW5hcGkvaW5kZXguanNvbiIgdGFyZ2V0PSJfYmxhbmsiIHJlbD0ibm9vcGVuZXIgbm9yZWZlcnJlciI+aW5kZXguanNvbjwvYT4KICAgICAgICAobGlzdCBvZiBBUElzKSBhbmQKICAgICAgICA8YSBocmVmPSIxMC4wLkxBVEVTVC9vcGVuYXBpL2xsbXMudHh0IiB0YXJnZXQ9Il9ibGFuayIgcmVsPSJub29wZW5lciBub3JlZmVycmVyIj5sbG1zLnR4dDwvYT4uCiAgICAgICAgVGhlIHNlcnZlciBVUkxzIGluIHRoZXNlIGRvY3VtZW50cyBhcmUgcGxhY2Vob2xkZXJzLgogICAgICA8L3A+CiAgICA8L3NlY3Rpb24+CiAgPC9kaXY+CjwvYXJ0aWNsZT4K"
       },
       {
         "name": "concepts",
@@ -180055,13 +180085,13 @@
             "name": "auth_clientid_secret",
             "title": "Obtaining a Client ID and Secret",
             "format": "b64html",
-            "content": "PGFydGljbGUgaWQ9ImNsaWVudC1pZC1zZWNyZXQiIGNsYXNzPSJwYWdlIj4KICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBjbGllbnQtaWQtc2VjcmV0LWhlYWRlciI+CiAgICAgIE9idGFpbmluZyBhIENsaWVudCBJRCBhbmQgU2VjcmV0CiAgICAgIDwvc3Bhbj4KICAgIDwvaDI+CiAgPC9kaXY+CiAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgY2xpZW50LWlkLXNlY3JldC1jb250ZW50Ij4KICAgIDxzZWN0aW9uPgogICAgICA8cD5FYWNoIGNsaWVudCBhcHAgdGhhdCBhY2Nlc3NlcyB0aGUgQVBJIENvbm5lY3QgUkVTVCBBUEkgbXVzdCBiZSByZWdpc3RlcmVkIHdpdGggdGhlIEFQSSBDb25uZWN0IGNsb3VkLiBUaGUgcHJvY2VzcyBvZiByZWdpc3RlcmluZyBhIGNsaWVudCBhc3NvY2lhdGVzIHRoZSBhcHBzJ3MgY2xpZW50IElEIHdpdGggYSBzZXQgb2Ygc2NvcGVzIHRoYXQgZGV0ZXJtaW5lIHdoaWNoIG9wZXJhdGlvbnMgdGhlIGFwcCBtYXkgYWNjZXNzLjwvcD4KICAgICAgPHA+VG8gcmVnaXN0ZXIgYSBjbGllbnQgYXBwLCB1c2UgdGhlIDxjb2RlPmFwaWMgcmVnaXN0cmF0aW9uczpjcmVhdGU8L2NvZGU+IEFQSSBDb25uZWN0IHRvb2xraXQgQ0xJIGNvbW1hbmQuIFRoZSBjb21tYW5kIHRha2VzIGFuIGlucHV0IEpTT04gb2JqZWN0IHdpdGggdGhlIGZvbGxvd2luZyBmaWVsZHM6PC9wPgogICAgICA8ZGw+CiAgICAgIDxkdCBzdHlsZT0iZm9udC13ZWlnaHQ6NDAwOyI+bmFtZTo8L2R0PgogICAgICAgIDxkZD5zaG9ydCBuYW1lIHRvIGlkZW50aWZ5IHRoZSBjbGllbnQ8L2RkPgogICAgICA8ZHQgc3R5bGU9ImZvbnQtd2VpZ2h0OjQwMDsiPnRpdGxlOjwvZHQ+CiAgICAgICAgPGRkPmRpc3BsYXkgbmFtZSBvZiB0aGUgY2xpZW50PC9kZD4KICAgICAgPGR0IHN0eWxlPSJmb250LXdlaWdodDo0MDA7Ij5jbGllbnRfaWQ6PC9kdD4KICAgICAgICA8ZGQ+YSBnZW5lcmF0ZWQgY2xpZW50IElEIHZhbHVlPC9kZD4KICAgICAgPGR0IHN0eWxlPSJmb250LXdlaWdodDo0MDA7Ij5jbGllbnRfc2VjcmV0OiA8L2R0PgogICAgICAgIDxkZD5hIGdlbmVyYXRlZCBjbGllbnQgc2VjcmV0IHZhbHVlPC9kZD4KICAgICAgPGR0IHN0eWxlPSJmb250LXdlaWdodDo0MDA7Ij5jbGllbnRfdHlwZTo8L2R0PgogICAgICAgIDxkZD5vbmUgb2YgPGNvZGU+cG9ydGFsPC9jb2RlPiwgPGNvZGU+Z2F0ZXdheTwvY29kZT4sIDxjb2RlPnRvb2xraXQ8L2NvZGU+LCA8Y29kZT5jb25zdW1lcl90b29sa2l0PC9jb2RlPiwgPGNvZGU+dWk8L2NvZGU+LCA8Y29kZT5jb25zdW1lcl91aTwvY29kZT4sIDxjb2RlPmlibV9jbG91ZDwvY29kZT4sIDxjb2RlPm1pZ3JhdGlvbjwvY29kZT4sIDxjb2RlPmp1aHU8L2NvZGU+PC9kZD4KICAgICAgPC9kbD4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8cD5JbiBvcmRlciB0byBydW4gdGhpcyBjb21tYW5kLCB5b3UgbXVzdCBmaXJzdCBsb2cgaW4gdG8gdGhlIEFQSSBDb25uZWN0IHNlcnZlciBhcyBhbiBhZG1pbiB1c2VyIHVzaW5nIHRoZSA8Y29kZT5hcGljIGxvZ2luPC9jb2RlPiBjb21tYW5kLiBXaXRoIG5vIGFyZ3VtZW50cywgdGhlIGxvZ2luIGNvbW1hbmQgcHJvbXB0cyBmb3IgeW91ciB1c2VyIGNyZWRlbnRpYWxzIGFuZCB0aGUgcmVhbG0gaW4gd2hpY2ggdGhlIHVzZXIgYWNjb3VudCBleGlzdHMuIFRoZSByZWFsbSBjb3JyZXNwb25kcyB0byB0aGUgdXNlciByZWdpc3RyeSBpbiB3aGljaCB0aGUgdXNlciBjcmVkZW50aWFscyBhcmUgaGVsZC48L3A+CiAgICAgIDxwPklmIGl0J3MgeW91ciBmaXJzdCB0aW1lIGxvZ2dpbmcgaW4gdXNpbmcgdGhlIHRvb2xraXQgQ0xJLCB5b3UnbGwgbmVlZCB0byBmaW5kIHRoZSBpZGVudGl0eSBwcm92aWRlciB0byB3aGljaCB5b3VyIHVzZXJpZCBiZWxvbmdzLiBZb3UgY2FuIGxpc3QgdGhlIHNldCBvZiBhZG1pbiBpZGVudGl0eSBwcm92aWRlcnMgaW4gdGhlIHN5c3RlbSB1c2luZyB0aGUgPGNvZGU+YXBpYyBpZGVudGl0eS1wcm92aWRlcnM6bGlzdDwvY29kZT4gY29tbWFuZC48L3A+CiAgICA8L3NlY3Rpb24+CiAgICA8c2VjdGlvbj4KICAgICAgPGgzPmxpc3RpbmcgaWRlbnRpdHkgcHJvdmlkZXJzPC9oMz4KICAgICAgPGRpdiBpZD0iZ2V0LXJlYWxtdmFsdWUtcmVxdWVzdCIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgokIGFwaWMgaWRlbnRpdHktcHJvdmlkZXJzOmxpc3QgLS1zY29wZSBhZG1pbiAtLXNlcnZlciBhcGljb25uZWN0LWRldi5pYm0uY29tCmRlZmF1bHQtaWRwLTEKICAgICAgPC9kaXY+CiAgICA8L3NlY3Rpb24+CiAgICA8c2VjdGlvbj4KICAgICAgPGgzPmFwaWMgbG9naW4gZXhhbXBsZTwvaDM+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgokIGFwaWMgbG9naW4KRW50ZXIgeW91ciBBUEkgQ29ubmVjdCBjcmVkZW50aWFscwpTZXJ2ZXI/IGNocmlzbS5hcmdvLXNsLmRldi5jaW9uZGVtYW5kLmNvbQpSZWFsbT8gYWRtaW4vZGVmYXVsdC1pZHAtMQpVc2VybmFtZT8gY2hyaXMKUGFzc3dvcmQ/IApMb2dnZWQgaW50byBhcGljb25uZWN0LWRldi5pYm0uY29tIHN1Y2Nlc3NmdWxseQogICAgICA8L2Rpdj4KICAgICAgPHA+KE5vdGUgdGhhdCB0aGUgcmVhbG0gbmFtZSB1c2VkIGZvciB0aGUgbG9naW4gaGFzIHRoZSB2YWx1ZSAnYWRtaW4vJyBwcmVmaXhlZCB0byB0aGUgcmVhbG0gbmFtZS4pPC9wPgogICAgPC9zZWN0aW9uPgogICAgPHNlY3Rpb24+CiAgICAgIDxoMz5hcGljIHJlZ2lzdHJhdGlvbnM6Y3JlYXRlIGV4YW1wbGU8L2gzPgogICAgICA8cD5UaGlzIEpTT04gY29udGVudCAoPGNvZGU+YXBwMS5qc29uPC9jb2RlPikgcHJvdmlkZXMgdGhlIHBhcmFtZXRlcnMgZm9yIHJlZ2lzdGVyaW5nIGFuIGFwcCBuYW1lZCA8Y29kZT5hcHAxPC9jb2RlPiB1c2luZyB0aGUgPGNvZGU+dG9vbGtpdDwvY29kZT4gY2xpZW50IHR5cGUgYW5kIGEgcHJlLWRlZmluZWQgY2xpZW50IElEIGFuZCBzZWNyZXQ6PC9wPgogICAgICA8ZGl2IGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij4KewogICJuYW1lIjogImFwcDEiLAogICJjbGllbnRfaWQiOiAiYXBwMWlkIiwgCiAgImNsaWVudF9zZWNyZXQiOiAiYXBwMXNlY3JldCIsCiAgImNsaWVudF90eXBlIjogInRvb2xraXQiCn0KICAgICAgPC9kaXY+CiAgICAgIDxwPlRoaXMgZXhhbXBsZSBzaG93cyB0aGUgcmVnaXN0cmF0aW9uIGNvbW1hbmQgdG8gcmVnaXN0ZXIgdGhpcyBhcHA6PC9wPgogICAgICA8ZGl2IGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij4KJCBhcGljIHJlZ2lzdHJhdGlvbnM6Y3JlYXRlIC0tc2VydmVyIGFwaWNvbm5lY3QtZGV2LmlibS5jb20gYXBwMS5qc29uCmFwcDEgICBodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL2Nsb3VkL3JlZ2lzdHJhdGlvbnMvNTExOTYyMjItNzg4Yy00NzRmLWI0YzctMGIzNTFjZTUwOWRlCiAgICAgIDwvZGl2PgogICAgPC9zZWN0aW9uPgo8L2FydGljbGU+Cg=="
+            "content": "PGFydGljbGUgaWQ9ImNsaWVudC1pZC1zZWNyZXQiIGNsYXNzPSJwYWdlIj4KICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBjbGllbnQtaWQtc2VjcmV0LWhlYWRlciI+CiAgICAgIE9idGFpbmluZyBhIENsaWVudCBJRCBhbmQgU2VjcmV0CiAgICAgIDwvc3Bhbj4KICAgIDwvaDI+CiAgPC9kaXY+CiAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgY2xpZW50LWlkLXNlY3JldC1jb250ZW50Ij4KICAgIDxzZWN0aW9uPgogICAgICA8cD5FYWNoIGNsaWVudCBhcHAgdGhhdCBhY2Nlc3NlcyB0aGUgQVBJIENvbm5lY3QgUkVTVCBBUEkgbXVzdCBiZSByZWdpc3RlcmVkIHdpdGggdGhlIEFQSSBDb25uZWN0IGNsb3VkLiBUaGUgcHJvY2VzcyBvZiByZWdpc3RlcmluZyBhIGNsaWVudCBhc3NvY2lhdGVzIHRoZSBhcHBzJ3MgY2xpZW50IElEIHdpdGggYSBzZXQgb2Ygc2NvcGVzIHRoYXQgZGV0ZXJtaW5lIHdoaWNoIG9wZXJhdGlvbnMgdGhlIGFwcCBtYXkgYWNjZXNzLjwvcD4KICAgICAgPHA+VG8gcmVnaXN0ZXIgYSBjbGllbnQgYXBwLCB1c2UgdGhlIDx0dD5hcGljIHJlZ2lzdHJhdGlvbnM6Y3JlYXRlPC90dD4gQVBJIENvbm5lY3QgdG9vbGtpdCBDTEkgY29tbWFuZC4gVGhlIGNvbW1hbmQgdGFrZXMgYW4gaW5wdXQgSlNPTiBvYmplY3Qgd2l0aCB0aGUgZm9sbG93aW5nIGZpZWxkczo8L3A+CiAgICAgIDxkbD4KICAgICAgICA8ZHQ+bmFtZTwvZHQ+CiAgICAgICAgPGRkPnNob3J0IG5hbWUgdG8gaWRlbnRpZnkgdGhlIGNsaWVudDwvZGQ+CiAgICAgICAgCiAgICAgICAgPGR0PnRpdGxlPC9kdD4KICAgICAgICA8ZGQ+ZGlzcGxheSBuYW1lIG9mIHRoZSBjbGllbnQ8L2RkPgogICAgICAgIAogICAgICAgIDxkdD5jbGllbnRfaWQ8L2R0PgogICAgICAgIDxkZD5hIGdlbmVyYXRlZCBjbGllbnQgSUQgdmFsdWU8L2RkPgoKICAgICAgICA8ZHQ+Y2xpZW50X3NlY3JldDwvZHQ+CiAgICAgICAgPGRkPmEgZ2VuZXJhdGVkIGNsaWVudCBzZWNyZXQgdmFsdWU8L2RkPgoKICAgICAgICA8ZHQ+Y2xpZW50X3R5cGU8L2R0PgogICAgICAgIDxkZD5vbmUgb2YgPHR0PnBvcnRhbDwvdHQ+LCA8dHQ+Z2F0ZXdheTwvdHQ+LCA8dHQ+dG9vbGtpdDwvdHQ+LCA8dHQ+Y29uc3VtZXJfdG9vbGtpdDwvdHQ+LCA8dHQ+dWk8L3R0PiwgPHR0PmNvbnN1bWVyX3VpPC90dD4sIDx0dD5pYm1fY2xvdWQ8L3R0PiwgPHR0Pm1pZ3JhdGlvbjwvdHQ+LCA8dHQ+anVodTwvdHQ+PC9kZD4KICAgICAgPC9kbD4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8cD5JbiBvcmRlciB0byBydW4gdGhpcyBjb21tYW5kLCB5b3UgbXVzdCBmaXJzdCBsb2cgaW4gdG8gdGhlIEFQSSBDb25uZWN0IHNlcnZlciBhcyBhbiBhZG1pbiB1c2VyIHVzaW5nIHRoZSA8dHQ+YXBpYyBsb2dpbjwvdHQ+IGNvbW1hbmQuIFdpdGggbm8gYXJndW1lbnRzLCB0aGUgbG9naW4gY29tbWFuZCBwcm9tcHRzIGZvciB5b3VyIHVzZXIgY3JlZGVudGlhbHMgYW5kIHRoZSByZWFsbSBpbiB3aGljaCB0aGUgdXNlciBhY2NvdW50IGV4aXN0cy4gVGhlIHJlYWxtIGNvcnJlc3BvbmRzIHRvIHRoZSB1c2VyIHJlZ2lzdHJ5IGluIHdoaWNoIHRoZSB1c2VyIGNyZWRlbnRpYWxzIGFyZSBoZWxkLjwvcD4KICAgICAgPHA+SWYgaXQncyB5b3VyIGZpcnN0IHRpbWUgbG9nZ2luZyBpbiB1c2luZyB0aGUgdG9vbGtpdCBDTEksIHlvdSdsbCBuZWVkIHRvIGZpbmQgdGhlIGlkZW50aXR5IHByb3ZpZGVyIHRvIHdoaWNoIHlvdXIgdXNlcmlkIGJlbG9uZ3MuIFlvdSBjYW4gbGlzdCB0aGUgc2V0IG9mIGFkbWluIGlkZW50aXR5IHByb3ZpZGVycyBpbiB0aGUgc3lzdGVtIHVzaW5nIHRoZSA8dHQ+YXBpYyBpZGVudGl0eS1wcm92aWRlcnM6bGlzdDwvdHQ+IGNvbW1hbmQuPC9wPgogICAgPC9zZWN0aW9uPgogICAgPHNlY3Rpb24+CiAgICAgIDxoMz5saXN0aW5nIGlkZW50aXR5IHByb3ZpZGVyczwvaDM+CiAgICAgIDxkaXYgaWQ9ImdldC1yZWFsbXZhbHVlLXJlcXVlc3QiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij4KJCBhcGljIGlkZW50aXR5LXByb3ZpZGVyczpsaXN0IC0tc2NvcGUgYWRtaW4gLS1zZXJ2ZXIgYXBpYy5pYm0uY29tCmRlZmF1bHQtaWRwLTEKICAgICAgPC9kaXY+CiAgICA8L3NlY3Rpb24+CiAgICA8c2VjdGlvbj4KICAgICAgPGgzPmFwaWMgbG9naW4gZXhhbXBsZTwvaDM+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgokIGFwaWMgbG9naW4KRW50ZXIgeW91ciBBUEkgQ29ubmVjdCBjcmVkZW50aWFscwpTZXJ2ZXI/IGNocmlzbS5hcmdvLXNsLmRldi5jaW9uZGVtYW5kLmNvbQpSZWFsbT8gYWRtaW4vZGVmYXVsdC1pZHAtMQpVc2VybmFtZT8gY2hyaXMKUGFzc3dvcmQ/IApMb2dnZWQgaW50byBhcGljLmlibS5jb20gc3VjY2Vzc2Z1bGx5CiAgICAgIDwvZGl2PgogICAgICA8cD4oTm90ZSB0aGF0IHRoZSByZWFsbSBuYW1lIHVzZWQgZm9yIHRoZSBsb2dpbiBoYXMgdGhlIHZhbHVlICdhZG1pbi8nIHByZWZpeGVkIHRvIHRoZSByZWFsbSBuYW1lLik8L3A+CiAgICA8L3NlY3Rpb24+CiAgICA8c2VjdGlvbj4KICAgICAgPGgzPmFwaWMgcmVnaXN0cmF0aW9uczpjcmVhdGUgZXhhbXBsZTwvaDM+CiAgICAgIDxwPlRoaXMgSlNPTiBjb250ZW50ICg8dHQ+YXBwMS5qc29uPC90dD4pIHByb3ZpZGVzIHRoZSBwYXJhbWV0ZXJzIGZvciByZWdpc3RlcmluZyBhbiBhcHAgbmFtZWQgPHR0PmFwcDE8L3R0PiB1c2luZyB0aGUgPHR0PnRvb2xraXQ8L3R0PiBjbGllbnQgdHlwZSBhbmQgYSBwcmUtZGVmaW5lZCBjbGllbnQgSUQgYW5kIHNlY3JldDo8L3A+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgp7CiAgIm5hbWUiOiAiYXBwMSIsCiAgImNsaWVudF9pZCI6ICJhcHAxaWQiLCAKICAiY2xpZW50X3NlY3JldCI6ICJhcHAxc2VjcmV0IiwKICAiY2xpZW50X3R5cGUiOiAidG9vbGtpdCIKfQogICAgICA8L2Rpdj4KICAgICAgPHA+VGhpcyBleGFtcGxlIHNob3dzIHRoZSByZWdpc3RyYXRpb24gY29tbWFuZCB0byByZWdpc3RlciB0aGlzIGFwcDo8L3A+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgokIGFwaWMgcmVnaXN0cmF0aW9uczpjcmVhdGUgLS1zZXJ2ZXIgYXBpYy5pYm0uY29tIGFwcDEuanNvbgphcHAxICAgaHR0cHM6Ly9hcGljLmlibS5jb20vYXBpL2Nsb3VkL3JlZ2lzdHJhdGlvbnMvNTExOTYyMjItNzg4Yy00NzRmLWI0YzctMGIzNTFjZTUwOWRlCiAgICAgIDwvZGl2PgogICAgPC9zZWN0aW9uPgo8L2FydGljbGU+Cg=="
           },
             {
             "name": "auth_bearertoken",
             "title": "Getting and Using a Bearer Token",
             "format": "b64html",
-            "content": "PGFydGljbGUgaWQ9ImJlYXJlci10b2tlbiIgY2xhc3M9InBhZ2UiPgogIDxkaXYgY2xhc3M9ImFwaWMtZXhwbG9yZXItZG9jcGFnZV90aXRsZSI+CiAgICA8aDIgY2xhc3M9ImFwaWMtZXhwbG9yZXItZG9jcGFnZV90aXRsZS10ZXh0Ij4KICAgICAgPHNwYW4gY2xhc3M9ImV4cGxvcmVyLWRvYy0taGVhZGVyIGJlYXJlci10b2tlbi1oZWFkZXIiPgogICAgICAgIE9idGFpbmluZyBhbmQgVXNpbmcgYSBCZWFyZXIgVG9rZW4KICAgICAgPC9zcGFuPgogICAgPC9oMj4KICA8L2Rpdj4KICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfY29udGVudCBiZWFyZXItdG9rZW4tY29udGVudCI+CiAgICA8c2VjdGlvbj4KICAgIDxwPkNhbGxzIHRvIHRoZSBBUEkgQ29ubmVjdCBwbGF0Zm9ybSBSRVNUIEFQSXMgYXJlIGF1dGhlbnRpY2F0ZWQgdXNpbmcgYSBiZWFyZXIgdG9rZW4sIHdoaWNoIGlzIG9idGFpbmVkIGZyb20gdGhlIDxjb2RlPi9hcGkvdG9rZW48L2NvZGU+IGVuZHBvaW50LjwvcD4KICAgIDwvc2VjdGlvbj4KICAgIDwhLS0gR2V0dGluZyB0aGUgYmVhcmVyIHRva2VuIHRvIHBlcmZvcm0gdG9vbGtpdCBhY3Rpb25zIC0tPgogICAgPHNlY3Rpb24+CiAgICAgIDxoMz5SZXF1ZXN0aW5nIGEgYmVhcmVyIHRva2VuPC9oMz4KICAgICAgPHA+CiAgICAgICAgVGhlIHJlcXVlc3QgdG8gb2J0YWluIGEgYmVhcmVyIHRva2VuIGlzIGVxdWl2YWxlbnQgdG8gYW4gT0F1dGggMi4wIGFjY2VzcyB0b2tlbiByZXF1ZXN0IHVzaW5nCiAgICAgICAgdGhlIFJlc291cmNlIE93bmVyIFBhc3N3b3JkIENyZWRlbnRpYWxzIGdyYW50IHR5cGUuIEhvd2V2ZXIsIHRoZSByZXF1ZXN0IGNvbnRlbnRzIG11c3QgYmUgc2VudCBhcyBhIEpTT04gcGF5bG9hZCByYXRoZXIgdGhhbiBhcyBmb3JtIGRhdGEuCiAgICAgIDwvcD4KICAgICAgPHA+VGhlIEpTT04gcGF5bG9hZCBmb3IgdGhlIGJlYXJlciB0b2tlbiByZXF1ZXN0IGNvbnRhaW5zIHRoZSBmb2xsb3dpbmcgZmllbGRzOjwvcD4KICAgICAgPGRsPgogICAgICAgIDxkdCBzdHlsZT0iZm9udC13ZWlnaHQ6NDAwOyI+dXNlcm5hbWU6PC9kdD4KICAgICAgICAgIDxkZD5UaGUgdXNlcm5hbWUgZm9yIHRoZSB1c2VyIG1ha2luZyB0aGUgcmVxdWVzdDwvZGQ+CiAgICAgICAgPGR0IHN0eWxlPSJmb250LXdlaWdodDo0MDA7Ij5wYXNzd29yZDo8L2R0PgogICAgICAgICAgPGRkPlRoZSBwYXNzd29yZCBmb3IgdGhlIHVzZXIgbWFraW5nIHRoZSByZXF1ZXN0PC9kZD4KICAgICAgICA8ZHQgc3R5bGU9ImZvbnQtd2VpZ2h0OjQwMDsiPnJlYWxtOjwvZHQ+CiAgICAgICAgICA8ZGQ+SW5kaWNhdGVzIHRoZSB1c2VyIHJlZ2lzdHJ5IGluIHdoaWNoIHRoZSB1c2VyIGNyZWRlbnRpYWxzIGFyZSBoZWxkPC9kZD4KICAgICAgICA8ZHQgc3R5bGU9ImZvbnQtd2VpZ2h0OjQwMDsiPmNsaWVudF9pZDo8L2R0PgogICAgICAgICAgPGRkPlRoZSBjbGllbnQgSUQgb2YgdGhlIGFwcCBtYWtpbmcgdGhlIHJlcXVlc3Q8L2RkPgogICAgICAgIDxkdCBzdHlsZT0iZm9udC13ZWlnaHQ6NDAwOyI+Y2xpZW50X3NlY3JldDo8L2R0PgogICAgICAgICAgPGRkPlRoZSBjbGllbnQgc2VjcmV0IG9mIHRoZSBhcHAgbWFraW5nIHRoZSByZXF1ZXN0PC9kZD4KICAgICAgICA8ZHQgc3R5bGU9ImZvbnQtd2VpZ2h0OjQwMDsiPmdyYW50X3R5cGU6PC9kdD4KICAgICAgICAgIDxkZD5wYXNzd29yZCAoZml4ZWQgdmFsdWUpPC9kZD4KICAgICAgPC9kbD4KICAgICAgPHA+SGVyZSBpcyBhIGN1cmwgZXhhbXBsZSBzaG93aW5nIGEgYmVhcmVyIHRva2VuIHJlcXVlc3QgYW5kIHN1Y2Nlc3NmdWwgcmVzcG9uc2U6PC9wPgogICAgICA8aDQ+UmVxdWVzdDwvaDQ+CiAgICAgIDxkaXYgaWQ9ImdldC1iZWFyZXJ0b2tlbi1yZXF1ZXN0IiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+Y3VybCAtdiAtayAtWCBQT1NUIC1kICd7InVzZXJuYW1lIjogImNocmlzIiwgInBhc3N3b3JkIjogIioqKioiLCAicmVhbG0iOiAicHJvdmlkZXIvZGVmYXVsdC1pZHAtMiIsICJjbGllbnRfaWQiOiAicmVnaXN0ZXJlZC1hcHAtY2xpZW50LWlkIiwgImNsaWVudF9zZWNyZXQiOiAicmVnaXN0ZXJlZC1hcHAtY2xpZW50LXNlY3JldCIsICJncmFudF90eXBlIjogInBhc3N3b3JkIn0nIC1IICdDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL2pzb24nIC1IICdBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24nIGh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvdG9rZW48L2Rpdj4KICAgICAgPHA+VGhlIDxjb2RlPmNsaWVudF9pZDwvY29kZT4gYW5kIDxjb2RlPmNsaWVudF9zZWNyZXQ8L2NvZGU+IHZhbHVlcyBhcmUgdGhlIGFwcCdzIGNyZWRlbnRpYWxzLCBhcyByZWdpc3RlcmVkIHdpdGggCiAgICAgIHRoZSA8Y29kZT5hcGljIHJlZ2lzdHJhdGlvbnM6Y3JlYXRlPC9jb2RlPiBjb21tYW5kLjwvcD4KICAgICAgPGg0PlJlc3BvbnNlPC9oND4KICAgICAgPGRpdiBpZD0iZ2V0LWJlYXJlcnRva2VuLXJlc3BvbnNlIiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+ewoiYWNjZXNzX3Rva2VuIjogImV5SmhiR2NpT2lKSVV6STFOaUlzSW5SNWNDSTZJa3BYVkNKOS5leUpxZEdraU9pSTFNR1ZtT0dRek9DMWxNVFV4TFRRNE5qY3RZbUl3T1Mwd05EQTBOMlV4WmpNM05EY2lMQ0p1WVcxbGMzQmhZMlVpT2lJellqUTFPRFU0Tmkxa1pHTXdMVFExTkRZdE9UaGtaaTAzTW1VeE16TXpZakE1WldFNk1UWXpaRFk0TVdZdFpXVXdNQzAwWVdSaExXRmlOV1F0WkRWa016UmxZamRsT0RWak9qQmpPRFEwTlRneUxUUTFZV010TkRRMk15MWhPVGMxTFRoaU5tUTFaalk1TVRFMVpDSXNJbUYxWkNJNklpOWhjR2t2WTJ4dmRXUXZjbVZuYVhOMGNtRjBhVzl1Y3k4ek9UQmhOalZoWVMwME0yRmhMVFEzTXpVdFlqQTBPUzA0TVRrM01qSXlaREkzWkRBaUxDSnpkV0lpT2lJdllYQnBMM1Z6WlhJdGNtVm5hWE4wY21sbGN5OHpZalExT0RVNE5pMWtaR013TFRRMU5EWXRPVGhrWmkwM01tVXhNek16WWpBNVpXRXZNVFl6WkRZNE1XWXRaV1V3TUMwMFlXUmhMV0ZpTldRdFpEVmtNelJsWWpkbE9EVmpMM1Z6WlhKekx6QmpPRFEwTlRneUxUUTFZV010TkRRMk15MWhPVGMxTFRoaU5tUTFaalk1TVRFMVpDSXNJbWx6Y3lJNklrbENUU0JCVUVrZ1EyOXVibVZqZENJc0ltVjRjQ0k2TVRVek1qVTROakUxTWl3aWFXRjBJam94TlRNeU5UVTNNelV5TENKbmNtRnVkRjkwZVhCbElqb2ljR0Z6YzNkdmNtUWlMQ0oxYzJWeVgzSmxaMmx6ZEhKNVgzVnliQ0k2SWk5aGNHa3ZkWE5sY2kxeVpXZHBjM1J5YVdWekx6TmlORFU0TlRnMkxXUmtZekF0TkRVME5pMDVPR1JtTFRjeVpURXpNek5pTURsbFlTOHhOak5rTmpneFppMWxaVEF3TFRSaFpHRXRZV0kxWkMxa05XUXpOR1ZpTjJVNE5XTWlMQ0p5WldGc2JTSTZJbkJ5YjNacFpHVnlMMlJsWm1GMWJIUXRhV1J3TFRJaUxDSjFjMlZ5Ym1GdFpTSTZJbU5vY21seklpd2lhV1JmZEc5clpXNGlPaUpsZVVwb1lrZGphVTlwU2tsVmVra3hUbWxKYzBsdVVqVmpRMGsyU1d0d1dGWkRTamt1WlhsS2JXRllTbnBrUmpsMVdWY3hiRWxxYjJsUk1taDVZVmhOYVV4RFNuTlpXRTR3V0RJMWFHSlhWV2xQYVVwT1NXbDNhV1JZVG14amJEbHdXa05KTmtsdFNtcE9ha2swVFZkVk1VeFhVbXhPTWtsMFRrUktiVTVwTURSWmFra3dURmRLYWs1cVkzbFpWRUV5V21wUmQwNVRTWE5KYmxaNldsaEtkVmxYTVd4SmFtOXBXVEpvZVdGWVRXbE1RMHB3V1ZoUmFVOXFSVEZOZWtreFRsUmplazVVU2prdWVscHpUWEkwT1VKa2RVOURVbGN4YjI0eVdqZHNaREk0Ym5KS1JWVkRaVEExYm1NNU1sZFJYM2RvTkNJc0luTmpiM0JsY3lJNld5SmpiRzkxWkRwMmFXVjNJaXdpWTJ4dmRXUTZiV0Z1WVdkbElpd2ljSEp2ZG1sa1pYSXRiM0puT25acFpYY2lMQ0p3Y205MmFXUmxjaTF2Y21jNmJXRnVZV2RsSWl3aWIzSm5PblpwWlhjaUxDSnZjbWM2YldGdVlXZGxJaXdpWkhKaFpuUnpPblpwWlhjaUxDSmtjbUZtZEhNNlpXUnBkQ0lzSW1Ob2FXeGtPblpwWlhjaUxDSmphR2xzWkRwamNtVmhkR1VpTENKamFHbHNaRHB0WVc1aFoyVWlMQ0p3Y205a2RXTjBPblpwWlhjaUxDSndjbTlrZFdOME9uTjBZV2RsSWl3aWNISnZaSFZqZERwdFlXNWhaMlVpTENKaGNIQnliM1poYkRwMmFXVjNJaXdpWVhCd2NtOTJZV3c2YldGdVlXZGxJaXdpWVhCcExXRnVZV3g1ZEdsamN6cDJhV1YzSWl3aVlYQnBMV0Z1WVd4NWRHbGpjenB0WVc1aFoyVWlMQ0pqYjI1emRXMWxjaTF2Y21jNmRtbGxkeUlzSW1OdmJuTjFiV1Z5TFc5eVp6cHRZVzVoWjJVaUxDSmhjSEE2ZG1sbGR6cGhiR3dpTENKaGNIQTZiV0Z1WVdkbE9tRnNiQ0lzSW0xNU9uWnBaWGNpTENKdGVUcHRZVzVoWjJVaUxDSjNaV0pvYjI5ck9uWnBaWGNpWFgwLjF5YmV6R0pySldnUlo4ZWM1Y2p5R1FUS2NXQTNpd1RiVjVBdWJYQ294NjAiLAoidG9rZW5fdHlwZSI6ICJCZWFyZXIiLAoiZXhwaXJlc19pbiI6IDI4ODAwCn0KICAgICAgPC9kaXY+CiAgICA8L3NlY3Rpb24+CiAgICA8IS0tIEZpbmRpbmcgdGhlIHJlYWxtIHZhbHVlcyB5b3UncmUgY3VycmVudGx5IGluIC0tPgogICAgPHNlY3Rpb24+CiAgICA8aDM+RmluZGluZyBSZWFsbSBWYWx1ZXM8L2gzPgogICAgICA8cD5UaGUgcmVhbG0gdmFsdWUgdXNlZCBpbiBhIGJlYXJlciB0b2tlbiByZXF1ZXN0IGlzIGEgdmFsdWUgdGhhdCBpZGVudGlmaWVzIHRoZSB1c2VyIHJlZ2lzdHJ5IGluIHdoaWNoIHRoZSByZXF1ZXN0aW5nIHVzZXIncyBjcmVkZW50aWFscyBhcmUgaGVsZC4gVGhpcyBtYXkgbm90IGJlIHRoZSBzYW1lIHJlYWxtIHZhbHVlIGFzIHdhcyB1c2VkIHRvIHJlZ2lzdGVyIHRoZSBhcHA7IGl0IHdpbGwgYmUgdGhlIHNhbWUgb25seSBpZiB0aGUgdXNlciBleGVjdXRpbmcgdGhlIGFwcCBpcyB0aGUgc2FtZSB1c2VyIHRoYXQgcGVyZm9ybWVkIHRoZSBhcHAgcmVnaXN0cmF0aW9uLjwvcD4KICAgICAgPHA+CiAgICAgICAgWW91IGNhbiBxdWVyeSB0aGUgc2V0IG9mIHVzZXIgcmVnaXN0cmllcyB0byBvYnRhaW4gdGhlIGNvbmZpZ3VyZWQgcmVhbG0gdmFsdWVzIHVzaW5nIGFuIHVuYXV0aGVudGljYXRlZCBjYWxsIHRvIHRoZSA8Y29kZT4vY2xvdWQvYWRtaW4vaWRlbnRpdHktcHJvdmlkZXJzPC9jb2RlPiAKICAgICAgICBvciA8Y29kZT4vY2xvdWQvcHJvdmlkZXIvaWRlbnRpdHktcHJvdmlkZXJzPC9jb2RlPiBVUkwgZm9yIGFkbWluIHVzZXJzIG9yIEFQSSBwcm92aWRlciB1c2VycyByZXNwZWN0aXZlbHkuCiAgICAgIDwvcD4KICAgIDxwPkhlcmUgaXMgYW4gZXhhbXBsZSByZXF1ZXN0IGFuZCBzdWNjZXNzZnVsIHJlc3BvbnNlOjwvcD4KICAgIDxoND5SZXF1ZXN0PC9oND4KICAgIDxkaXYgaWQ9ImdldC1yZWFsbXZhbHVlLXJlcXVlc3QiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij4KY3VybCAtdiAtayAtSCAiQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uIiBodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL2Nsb3VkL3Byb3ZpZGVyL2lkZW50aXR5LXByb3ZpZGVycwogICAgPC9kaXY+CiAgICA8aDQ+UmVzcG9uc2U8L2g0PgogICAgPGRpdiBpZD0iZ2V0LXJlYWxtdmFsdWUtcmVzcG9uc2UiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij4KewoidG90YWxfcmVzdWx0cyI6IDEsCiAgInJlc3VsdHMiOiBbCiAgICB7CiAgICAgICJuYW1lIjogImRlZmF1bHQtaWRwLTIiLAogICAgICAidGl0bGUiOiAiQVBJIE1hbmFnZXIgVXNlciBSZWdpc3RyeSIsCiAgICAgICJkZWZhdWx0IjogdHJ1ZSwKICAgICAgInJlZ2lzdHJ5X3R5cGUiOiAibHVyIgogICAgfQogIF0KfQogICAgICA8L2Rpdj4KICAgICAgPHA+QSByZWFsbSB2YWx1ZSBjb25zaXN0cyBvZiBhIHVzZXIgcmVnaXN0cnkgbmFtZSBxdWFsaWZpZWQgd2l0aCB0aGUgY29udGV4dCBpbiB3aGljaCBpdCB1c2VkLCBpbiB0aGUgZm9ybSBjb250ZXh0L3VzZXItcmVnaXN0cnktbmFtZSwgd2hlcmUgdGhlIGNvbnRleHQgaXMgPGNvZGU+YWRtaW48L2NvZGU+IGZvciBjbG91ZCBhZG1pbmlzdHJhdG9yIHVzZXJzIG9yIDxjb2RlPnByb3ZpZGVyPC9jb2RlPiBmb3IgQVBJIHByb3ZpZGVyIHVzZXJzLiBUaGUgcmVhbG0gdmFsdWUgY29ycmVzcG9uZGluZyB0byB0aGUgQVBJIE1hbmFnZXIgVXNlciBSZWdpc3RyeSBmcm9tIHRoZSBleGFtcGxlIGFib3ZlIGlzOgogICAgICA8L3A+CiAgICAgIDxkaXYgaWQ9InJlYWxtdmFsdWUtZXhhbXBsZSIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPiAgcHJvdmlkZXIvZGVmYXVsdC1pZHAtMjwvZGl2PgogICAgICAgICAgICA8cD5Gb3IgY29uc3VtZXIgdXNlcnMsIHRoZSByZWFsbSBjb250ZXh0IGlzIGdpdmVuIGJ5IHRoZSBjYXRhbG9nIGluIHdoaWNoIHRoZSB1c2VyIGlzIHJlZ2lzdGVyZWQuIFRoZSBsaXN0IG9mIHVzZXIgcmVnaXN0cmllcyBmb3IgYSBjYXRhbG9nIGNhbiBiZSBhY2Nlc3NlZCBhdCB0aGUgPGNvZGU+L2NhdGFsb2dzL3tvcmd9L3tjYXRhbG9nfS9jb25maWd1cmVkLWNhdGFsb2ctdXNlci1yZWdpc3RyaWVzPC9jb2RlPiBVUkwuCiAgICAgICAgICAgIDwvcD4KICAgICAgPC9zZWN0aW9uPgogICAgICA8c2VjdGlvbj4KICAgICAgICA8aDI+VXNpbmcgYSBCZWFyZXIgVG9rZW48L2gyPgogICAgICAgIDxwPgogICAgICAgICAgT25jZSBvYnRhaW5lZCwgdGhlIGJlYXJlciB0b2tlbiBtYXkgYmUgdXNlZCB0byBtYWtlIGF1dGhlbnRpY2F0ZWQgQVBJIGNhbGxzLiBUaGUgYmVhcmVyIHRva2VuIGlzIHNlbnQgYXMgdGhlIHZhbHVlIG9mIHRoZSBBdXRob3JpemF0aW9uIGhlYWRlciwgcHJlZml4ZWQgYnkgdGhlIHdvcmQgPGNvZGU+YmVhcmVyOjwvY29kZT4gKGluY2x1ZGluZyB0aGUgY29sb24pLiBIZXJlJ3MgYW4gZXhhbXBsZSBvZiBhbgogICAgICAgICAgYXV0aGVudGljYXRlZCBjYWxsIHRvIHRoZSA8Y29kZT4vbWU8L2NvZGU+IHJlc291cmNlIHVzaW5nIHRoZSBiZWFyZXIgdG9rZW4gb2J0YWluZWQgYWJvdmU6CiAgICAgICAgPC9wPgogICAgICAgIDxoMz5SZXF1ZXN0PC9oMz4KICAgICAgICA8ZGl2IGlkPSJ1c2UtYmVhcmVydG9rZW4tcmVxdWVzdCIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPmN1cmwgLXYgLWsgLUggJ0FjY2VwdDogYXBwbGljYXRpb24vanNvbicgLUggIkF1dGhvcml6YXRpb246IGJlYXJlciBleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKcWRHa2lPaUkxTUdWbU9HUXpPQzFsTVRVeExUUTROamN0WW1Jd09TMHdOREEwTjJVeFpqTTNORGNpTENKdVlXMWxjM0JoWTJVaU9pSXpZalExT0RVNE5pMWtaR013TFRRMU5EWXRPVGhrWmkwM01tVXhNek16WWpBNVpXRTZNVFl6WkRZNE1XWXRaV1V3TUMwMFlXUmhMV0ZpTldRdFpEVmtNelJsWWpkbE9EVmpPakJqT0RRME5UZ3lMVFExWVdNdE5EUTJNeTFoT1RjMUxUaGlObVExWmpZNU1URTFaQ0lzSW1GMVpDSTZJaTloY0drdlkyeHZkV1F2Y21WbmFYTjBjbUYwYVc5dWN5OHpPVEJoTmpWaFlTMDBNMkZoTFRRM016VXRZakEwT1MwNE1UazNNakl5WkRJM1pEQWlMQ0p6ZFdJaU9pSXZZWEJwTDNWelpYSXRjbVZuYVhOMGNtbGxjeTh6WWpRMU9EVTROaTFrWkdNd0xUUTFORFl0T1Roa1ppMDNNbVV4TXpNellqQTVaV0V2TVRZelpEWTRNV1l0WldVd01DMDBZV1JoTFdGaU5XUXRaRFZrTXpSbFlqZGxPRFZqTDNWelpYSnpMekJqT0RRME5UZ3lMVFExWVdNdE5EUTJNeTFoT1RjMUxUaGlObVExWmpZNU1URTFaQ0lzSW1semN5STZJa2xDVFNCQlVFa2dRMjl1Ym1WamRDSXNJbVY0Y0NJNk1UVXpNalU0TmpFMU1pd2lhV0YwSWpveE5UTXlOVFUzTXpVeUxDSm5jbUZ1ZEY5MGVYQmxJam9pY0dGemMzZHZjbVFpTENKMWMyVnlYM0psWjJsemRISjVYM1Z5YkNJNklpOWhjR2t2ZFhObGNpMXlaV2RwYzNSeWFXVnpMek5pTkRVNE5UZzJMV1JrWXpBdE5EVTBOaTA1T0dSbUxUY3laVEV6TXpOaU1EbGxZUzh4TmpOa05qZ3haaTFsWlRBd0xUUmhaR0V0WVdJMVpDMWtOV1F6TkdWaU4yVTROV01pTENKeVpXRnNiU0k2SW5CeWIzWnBaR1Z5TDJSbFptRjFiSFF0YVdSd0xUSWlMQ0oxYzJWeWJtRnRaU0k2SW1Ob2NtbHpJaXdpYVdSZmRHOXJaVzRpT2lKbGVVcG9Za2RqYVU5cFNrbFZla2t4VG1sSmMwbHVValZqUTBrMlNXdHdXRlpEU2prdVpYbEtiV0ZZU25wa1JqbDFXVmN4YkVscWIybFJNbWg1WVZoTmFVeERTbk5aV0U0d1dESTFhR0pYVldsUGFVcE9TV2wzYVdSWVRteGpiRGx3V2tOSk5rbHRTbXBPYWtrMFRWZFZNVXhYVW14T01rbDBUa1JLYlU1cE1EUlpha2t3VEZkS2FrNXFZM2xaVkVFeVdtcFJkMDVUU1hOSmJsWjZXbGhLZFZsWE1XeEphbTlwV1RKb2VXRllUV2xNUTBwd1dWaFJhVTlxUlRGTmVra3hUbFJqZWs1VVNqa3VlbHB6VFhJME9VSmtkVTlEVWxjeGIyNHlXamRzWkRJNGJuSktSVlZEWlRBMWJtTTVNbGRSWDNkb05DSXNJbk5qYjNCbGN5STZXeUpqYkc5MVpEcDJhV1YzSWl3aVkyeHZkV1E2YldGdVlXZGxJaXdpY0hKdmRtbGtaWEl0YjNKbk9uWnBaWGNpTENKd2NtOTJhV1JsY2kxdmNtYzZiV0Z1WVdkbElpd2liM0puT25acFpYY2lMQ0p2Y21jNmJXRnVZV2RsSWl3aVpISmhablJ6T25acFpYY2lMQ0prY21GbWRITTZaV1JwZENJc0ltTm9hV3hrT25acFpYY2lMQ0pqYUdsc1pEcGpjbVZoZEdVaUxDSmphR2xzWkRwdFlXNWhaMlVpTENKd2NtOWtkV04wT25acFpYY2lMQ0p3Y205a2RXTjBPbk4wWVdkbElpd2ljSEp2WkhWamREcHRZVzVoWjJVaUxDSmhjSEJ5YjNaaGJEcDJhV1YzSWl3aVlYQndjbTkyWVd3NmJXRnVZV2RsSWl3aVlYQnBMV0Z1WVd4NWRHbGpjenAyYVdWM0lpd2lZWEJwTFdGdVlXeDVkR2xqY3pwdFlXNWhaMlVpTENKamIyNXpkVzFsY2kxdmNtYzZkbWxsZHlJc0ltTnZibk4xYldWeUxXOXlaenB0WVc1aFoyVWlMQ0poY0hBNmRtbGxkenBoYkd3aUxDSmhjSEE2YldGdVlXZGxPbUZzYkNJc0ltMTVPblpwWlhjaUxDSnRlVHB0WVc1aFoyVWlMQ0ozWldKb2IyOXJPblpwWlhjaVhYMC4xeWJlekdKckpXZ1JaOGVjNWNqeUdRVEtjV0EzaXdUYlY1QXViWENveDYwIiBodHRwczovL3Y2Z3cwNzI2YS5hcmdvMi1zbC5kZXYuY2lvbmRlbWFuZC5jb20vYXBpL21lCiAgICAgICAgPC9kaXY+CiAgICAgICAgPGgzPlJlc3BvbnNlPC9oMz4KICAgICAgICA8ZGl2IGlkPSJ1c2UtYmVhcmVydG9rZW4tcmVzcG9uc2UiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij57CiAgICAgICAgICAidHlwZSI6ICJtZSIsCiAgICAgICAgICAiYXBpX3ZlcnNpb24iOiAiMi4wLjAiLAogICAgICAgICAgIm5hbWUiOiAiMzRiMTBlY2EtMzg3NC00Y2RjLWFjYjgtMzhkZThlODJlYjg1IiwKICAgICAgICAgICJzdGF0ZSI6ICJlbmFibGVkIiwKICAgICAgICAgICJ1c2VybmFtZSI6ICJjaHJpcyIsCiAgICAgICAgICAiZW1haWwiOiAiY2hyaXNAaWJtLmNvbSIsCiAgICAgICAgICAiZmlyc3RfbmFtZSI6ICJDaHJpcyIsCiAgICAgICAgICAibGFzdF9uYW1lIjogIk0iLAogICAgICAgICAgInVybCI6ICJodHRwczovL2FwaWNvbm5lY3QtZGV2LmlibS5jb20vYXBpL3VzZXItcmVnaXN0cmllcy8zMmM2OGQ5ZS0zZmQ2LTQ1NzEtYjljOS1mYTc1NTBlMDc1NjkvMjA4MzM1OWUtNTIzNC00MDM5LWFkNGYtNDBkY2Y3Y2U1ODZlL3VzZXJzLzM0YjEwZWNhLTM4NzQtNGNkYy1hY2I4LTM4ZGU4ZTgyZWI4NSIKICAgICAgICAgIH0KICAgICAgICA8L2Rpdj4KICAgICAgICA8cD5UaGUgPGNvZGU+L21lPC9jb2RlPiByZXNvdXJjZSByZXR1cm5zIGluZm9ybWF0aW9uIGFib3V0IHRoZSB1c2VyIG1ha2luZyB0aGUgcmVxdWVzdC4KICAgICAgICA8L3A+CiAgICAgIDwvc2VjdGlvbj4KICA8L2Rpdj4KPC9hcnRpY2xlPgoK"
+            "content": "ICA8YXJ0aWNsZSBpZD0iYmVhcmVyLXRva2VuIiBjbGFzcz0icGFnZSI+CiAgICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgICA8aDIgY2xhc3M9ImFwaWMtZXhwbG9yZXItZG9jcGFnZV90aXRsZS10ZXh0Ij4KICAgICAgICA8c3BhbiBjbGFzcz0iZXhwbG9yZXItZG9jLS1oZWFkZXIgYmVhcmVyLXRva2VuLWhlYWRlciI+CiAgICAgICAgT2J0YWluaW5nIGFuZCBVc2luZyBhIEJlYXJlciBUb2tlbgogICAgICAgIDwvc3Bhbj4KICAgICAgPC9oMj4KICAgIDwvZGl2PgogICAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgYmVhcmVyLXRva2VuLWNvbnRlbnQiPgogICAgICA8cD5DYWxscyB0byB0aGUgQVBJIENvbm5lY3QgcGxhdGZvcm0gUkVTVCBBUElzIGFyZSBhdXRoZW50aWNhdGVkIHVzaW5nIGEgYmVhcmVyIHRva2VuLCB3aGljaCBpcyBvYnRhaW5lZCBmcm9tIHRoZSA8Y29kZT4vYXBpL3Rva2VuPC9jb2RlPiBlbmRwb2ludC48L3A+CiAgICAgIDxzZWN0aW9uPgogICAgICAgIDxoMz5SZXF1ZXN0aW5nIGEgYmVhcmVyIHRva2VuPC9oMz4KICAgICAgICA8cD4KICAgICAgICAgIFRoZSByZXF1ZXN0IHRvIG9idGFpbiBhIGJlYXJlciB0b2tlbiBpcyBlcXVpdmFsZW50IHRvIGFuIE9BdXRoIDIuMCBhY2Nlc3MgdG9rZW4gcmVxdWVzdCB1c2luZwogICAgICAgICAgdGhlIFJlc291cmNlIE93bmVyIFBhc3N3b3JkIENyZWRlbnRpYWxzIGdyYW50IHR5cGUuIEhvd2V2ZXIsIHRoZSByZXF1ZXN0IGNvbnRlbnRzIG11c3QgYmUgc2VudCBhcyBhIEpTT04gcGF5bG9hZCByYXRoZXIgdGhhbiBhcyBmb3JtIGRhdGEuCiAgICAgICAgPC9wPgogICAgICAgIDxwPlRoZSBKU09OIHBheWxvYWQgZm9yIHRoZSBiZWFyZXIgdG9rZW4gcmVxdWVzdCBjb250YWlucyB0aGUgZm9sbG93aW5nIGZpZWxkczo8L3A+CiAgICAgICAgPGRsPgogICAgICAgICAgPGR0PnVzZXJuYW1lOjwvZHQ+CiAgICAgICAgICA8ZGQ+dGhlIHVzZXJuYW1lIGZvciB0aGUgQVBJIENvbm5lY3QgdXNlciBtYWtpbmcgdGhlIHJlcXVlc3Q8L2RkPgogICAgICAgICAgCiAgICAgICAgICA8ZHQ+cGFzc3dvcmQ6PC9kdD4KICAgICAgICAgIDxkZD50aGUgcGFzc3dvcmQgZm9yIHRoZSBBUEkgQ29ubmVjdCB1c2VyIG1ha2luZyB0aGUgcmVxdWVzdDwvZGQ+CiAgICAgICAgICAKICAgICAgICAgIDxkdD5yZWFsbTo8L2R0PgogICAgICAgICAgPGRkPmluZGljYXRlcyB0aGUgdXNlciByZWdpc3RyeSBpbiB3aGljaCB0aGUgQVBJIENvbm5lY3QgdXNlciBjcmVkZW50aWFscyBhcmUgaGVsZDwvZGQ+CiAgICAgICAgICAKICAgICAgICAgIDxkdD5jbGllbnRfaWQ6PC9kdD4KICAgICAgICAgIDxkZD50aGUgY2xpZW50IElEIG9mIHRoZSBhcHAgbWFraW5nIHRoZSByZXF1ZXN0PC9kZD4KICAgICAgICAgIAogICAgICAgICAgPGR0PmNsaWVudF9zZWNyZXQ6PC9kdD4KICAgICAgICAgIDxkZD50aGUgY2xpZW50IHNlY3JldCBvZiB0aGUgYXBwIG1ha2luZyB0aGUgcmVxdWVzdDwvZGQ+CiAgICAgICAgICAKICAgICAgICAgIDxkdD5ncmFudF90eXBlOjwvZHQ+CiAgICAgICAgICA8ZGQ+cGFzc3dvcmQgKGZpeGVkIHZhbHVlKTwvZGQ+CiAgICAgICAgPC9kbD4KICAgICAgICA8cD5IZXJlIGlzIGEgY3VybCBleGFtcGxlIHNob3dpbmcgYSBiZWFyZXIgdG9rZW4gcmVxdWVzdCBhbmQgc3VjY2Vzc2Z1bCByZXNwb25zZTo8L3A+CiAgICAgICAgPGg0PlJlcXVlc3Q8L2g0PgogICAgICAgIDxkaXYgaWQ9ImdldC1iZWFyZXJ0b2tlbi1yZXF1ZXN0IiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+Y3VybCAtdiAtayAtWCBQT1NUIC1kICd7InVzZXJuYW1lIjogImNocmlzIiwgInBhc3N3b3JkIjogIioqKioiLCAicmVhbG0iOiAicHJvdmlkZXIvZGVmYXVsdC1pZHAtMiIsICJjbGllbnRfaWQiOiAicmVnaXN0ZXJlZC1hcHAtY2xpZW50LWlkIiwgImNsaWVudF9zZWNyZXQiOiAicmVnaXN0ZXJlZC1hcHAtY2xpZW50LXNlY3JldCIsICJncmFudF90eXBlIjogInBhc3N3b3JkIn0nIC1IICdDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL2pzb24nIC1IICdBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24nIGh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvdG9rZW48L2Rpdj4KICAgICAgICA8cD5UaGUgPHR0PmNsaWVudF9pZDwvdHQ+IGFuZCA8dHQ+Y2xpZW50X3NlY3JldDwvdHQ+IHZhbHVlcyBhcmUgdGhlIGFwcCdzIGNyZWRlbnRpYWxzLCBhcyByZWdpc3RlcmVkIHdpdGggCiAgICAgICAgdGhlIDx0dD5hcGljIHJlZ2lzdHJhdGlvbnM6Y3JlYXRlPC90dD4gY29tbWFuZC48L3A+CiAgICAgICAgPGg0PlJlc3BvbnNlPC9oND4KICAgICAgICA8ZGl2IGlkPSJnZXQtYmVhcmVydG9rZW4tcmVzcG9uc2UiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij57CiAgImFjY2Vzc190b2tlbiI6ICJleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKcWRHa2lPaUkxTUdWbU9HUXpPQzFsTVRVeExUUTROamN0WW1Jd09TMHdOREEwTjJVeFpqTTNORGNpTENKdVlXMWxjM0JoWTJVaU9pSXpZalExT0RVNE5pMWtaR013TFRRMU5EWXRPVGhrWmkwM01tVXhNek16WWpBNVpXRTZNVFl6WkRZNE1XWXRaV1V3TUMwMFlXUmhMV0ZpTldRdFpEVmtNelJsWWpkbE9EVmpPakJqT0RRME5UZ3lMVFExWVdNdE5EUTJNeTFoT1RjMUxUaGlObVExWmpZNU1URTFaQ0lzSW1GMVpDSTZJaTloY0drdlkyeHZkV1F2Y21WbmFYTjBjbUYwYVc5dWN5OHpPVEJoTmpWaFlTMDBNMkZoTFRRM016VXRZakEwT1MwNE1UazNNakl5WkRJM1pEQWlMQ0p6ZFdJaU9pSXZZWEJwTDNWelpYSXRjbVZuYVhOMGNtbGxjeTh6WWpRMU9EVTROaTFrWkdNd0xUUTFORFl0T1Roa1ppMDNNbVV4TXpNellqQTVaV0V2TVRZelpEWTRNV1l0WldVd01DMDBZV1JoTFdGaU5XUXRaRFZrTXpSbFlqZGxPRFZqTDNWelpYSnpMekJqT0RRME5UZ3lMVFExWVdNdE5EUTJNeTFoT1RjMUxUaGlObVExWmpZNU1URTFaQ0lzSW1semN5STZJa2xDVFNCQlVFa2dRMjl1Ym1WamRDSXNJbVY0Y0NJNk1UVXpNalU0TmpFMU1pd2lhV0YwSWpveE5UTXlOVFUzTXpVeUxDSm5jbUZ1ZEY5MGVYQmxJam9pY0dGemMzZHZjbVFpTENKMWMyVnlYM0psWjJsemRISjVYM1Z5YkNJNklpOWhjR2t2ZFhObGNpMXlaV2RwYzNSeWFXVnpMek5pTkRVNE5UZzJMV1JrWXpBdE5EVTBOaTA1T0dSbUxUY3laVEV6TXpOaU1EbGxZUzh4TmpOa05qZ3haaTFsWlRBd0xUUmhaR0V0WVdJMVpDMWtOV1F6TkdWaU4yVTROV01pTENKeVpXRnNiU0k2SW5CeWIzWnBaR1Z5TDJSbFptRjFiSFF0YVdSd0xUSWlMQ0oxYzJWeWJtRnRaU0k2SW1Ob2NtbHpJaXdpYVdSZmRHOXJaVzRpT2lKbGVVcG9Za2RqYVU5cFNrbFZla2t4VG1sSmMwbHVValZqUTBrMlNXdHdXRlpEU2prdVpYbEtiV0ZZU25wa1JqbDFXVmN4YkVscWIybFJNbWg1WVZoTmFVeERTbk5aV0U0d1dESTFhR0pYVldsUGFVcE9TV2wzYVdSWVRteGpiRGx3V2tOSk5rbHRTbXBPYWtrMFRWZFZNVXhYVW14T01rbDBUa1JLYlU1cE1EUlpha2t3VEZkS2FrNXFZM2xaVkVFeVdtcFJkMDVUU1hOSmJsWjZXbGhLZFZsWE1XeEphbTlwV1RKb2VXRllUV2xNUTBwd1dWaFJhVTlxUlRGTmVra3hUbFJqZWs1VVNqa3VlbHB6VFhJME9VSmtkVTlEVWxjeGIyNHlXamRzWkRJNGJuSktSVlZEWlRBMWJtTTVNbGRSWDNkb05DSXNJbk5qYjNCbGN5STZXeUpqYkc5MVpEcDJhV1YzSWl3aVkyeHZkV1E2YldGdVlXZGxJaXdpY0hKdmRtbGtaWEl0YjNKbk9uWnBaWGNpTENKd2NtOTJhV1JsY2kxdmNtYzZiV0Z1WVdkbElpd2liM0puT25acFpYY2lMQ0p2Y21jNmJXRnVZV2RsSWl3aVpISmhablJ6T25acFpYY2lMQ0prY21GbWRITTZaV1JwZENJc0ltTm9hV3hrT25acFpYY2lMQ0pqYUdsc1pEcGpjbVZoZEdVaUxDSmphR2xzWkRwdFlXNWhaMlVpTENKd2NtOWtkV04wT25acFpYY2lMQ0p3Y205a2RXTjBPbk4wWVdkbElpd2ljSEp2WkhWamREcHRZVzVoWjJVaUxDSmhjSEJ5YjNaaGJEcDJhV1YzSWl3aVlYQndjbTkyWVd3NmJXRnVZV2RsSWl3aVlYQnBMV0Z1WVd4NWRHbGpjenAyYVdWM0lpd2lZWEJwTFdGdVlXeDVkR2xqY3pwdFlXNWhaMlVpTENKamIyNXpkVzFsY2kxdmNtYzZkbWxsZHlJc0ltTnZibk4xYldWeUxXOXlaenB0WVc1aFoyVWlMQ0poY0hBNmRtbGxkenBoYkd3aUxDSmhjSEE2YldGdVlXZGxPbUZzYkNJc0ltMTVPblpwWlhjaUxDSnRlVHB0WVc1aFoyVWlMQ0ozWldKb2IyOXJPblpwWlhjaVhYMC4xeWJlekdKckpXZ1JaOGVjNWNqeUdRVEtjV0EzaXdUYlY1QXViWENveDYwIiwKICAidG9rZW5fdHlwZSI6ICJCZWFyZXIiLAogICJleHBpcmVzX2luIjogMjg4MDAKfQogICAgICAgIDwvZGl2PgogICAgICA8L3NlY3Rpb24+CiAgICAgIDxzZWN0aW9uPgogICAgICAgIDxoMz5GaW5kaW5nIFJlYWxtIFZhbHVlczwvaDM+CiAgICAgICAgPHA+VGhlIHJlYWxtIHZhbHVlIHVzZWQgaW4gYSBiZWFyZXIgdG9rZW4gcmVxdWVzdCBpcyBhIHZhbHVlIHRoYXQgaWRlbnRpZmllcyB0aGUgdXNlciByZWdpc3RyeSBpbiB3aGljaCB0aGUgcmVxdWVzdGluZyB1c2VyJ3MgY3JlZGVudGlhbHMgYXJlIGhlbGQuIFRoaXMgbWF5IG5vdCBiZSB0aGUgc2FtZSByZWFsbSB2YWx1ZSBhcyB3YXMgdXNlZCB0byByZWdpc3RlciB0aGUgYXBwOyBpdCB3aWxsIGJlIHRoZSBzYW1lIG9ubHkgaWYgdGhlIHVzZXIgZXhlY3V0aW5nIHRoZSBhcHAgaXMgdGhlIHNhbWUgdXNlciB0aGF0IHBlcmZvcm1lZCB0aGUgYXBwIHJlZ2lzdHJhdGlvbi48L3A+CiAgICAgICAgPHA+CiAgICAgICAgICBZb3UgY2FuIHF1ZXJ5IHRoZSBzZXQgb2YgdXNlciByZWdpc3RyaWVzIHRvIG9idGFpbiB0aGUgY29uZmlndXJlZCByZWFsbSB2YWx1ZXMgdXNpbmcgYW4gdW5hdXRoZW50aWNhdGVkIGNhbGwgdG8gdGhlIDxjb2RlPi9jbG91ZC9hZG1pbi9pZGVudGl0eS1wcm92aWRlcnM8L2NvZGU+IAogICAgICAgICAgb3IgPGNvZGU+L2Nsb3VkL3Byb3ZpZGVyL2lkZW50aXR5LXByb3ZpZGVyczwvY29kZT4gVVJMIGZvciBhZG1pbiB1c2VycyBvciBBUEkgcHJvdmlkZXIgdXNlcnMgcmVzcGVjdGl2ZWx5LgogICAgICAgIDwvcD4KICAgICAgPC9zZWN0aW9uPgogICAgICA8cD5IZXJlIGlzIGFuIGV4YW1wbGUgcmVxdWVzdCBhbmQgc3VjY2Vzc2Z1bCByZXNwb25zZTo8L3A+CiAgICAgIDxoND5SZXF1ZXN0PC9oND4KICAgICAgPGRpdiBpZD0iZ2V0LXJlYWxtdmFsdWUtcmVxdWVzdCIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgpjdXJsIC12IC1rIC1IICJBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24iIGh0dHBzOi8vYXBpY29ubmVjdC1kZXYuaWJtLmNvbS9hcGkvY2xvdWQvcHJvdmlkZXIvaWRlbnRpdHktcHJvdmlkZXJzCiAgICAgIDwvZGl2PgogICAgICA8aDQ+UmVzcG9uc2U8L2g0PgogICAgICA8ZGl2IGlkPSJnZXQtcmVhbG12YWx1ZS1yZXNwb25zZSIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPgp7CiAgInRvdGFsX3Jlc3VsdHMiOiAxLAogICJyZXN1bHRzIjogWwogICB7CiAgICAgIm5hbWUiOiAiZGVmYXVsdC1pZHAtMiIsCiAgICAgInRpdGxlIjogIkFQSSBNYW5hZ2VyIFVzZXIgUmVnaXN0cnkiLAogICAgICJkZWZhdWx0IjogdHJ1ZSwKICAgICAicmVnaXN0cnlfdHlwZSI6ICJsdXIiCiAgIH0KICBdCn0KICA8L2Rpdj4KICA8cD5BIHJlYWxtIHZhbHVlIGNvbnNpc3RzIG9mIGEgdXNlciByZWdpc3RyeSBuYW1lIHF1YWxpZmllZCB3aXRoIHRoZSBjb250ZXh0IGluIHdoaWNoIGl0IHVzZWQsIGluIHRoZSBmb3JtIGNvbnRleHQvdXNlci1yZWdpc3RyeS1uYW1lLCB3aGVyZSB0aGUgY29udGV4dCBpcyA8Y29kZT5hZG1pbjwvY29kZT4gZm9yIGNsb3VkIGFkbWluaXN0cmF0b3IgdXNlcnMgb3IgPGNvZGU+cHJvdmlkZXI8L2NvZGU+IGZvciBBUEkgcHJvdmlkZXIgdXNlcnMuIFRoZSByZWFsbSB2YWx1ZSBjb3JyZXNwb25kaW5nIHRvIHRoZSBBUEkgTWFuYWdlciBVc2VyIFJlZ2lzdHJ5IGZyb20gdGhlIGV4YW1wbGUgYWJvdmUgaXM6CiAgPC9wPgogIDxkaXYgaWQ9InJlYWxtdmFsdWUtZXhhbXBsZSIgY2xhc3M9InNob3ctZXhwbG9yZXItY29kZXNuaXBwZXQiPiAgcHJvdmlkZXIvZGVmYXVsdC1pZHAtMjwvZGl2PgogIDxwPkZvciBjb25zdW1lciB1c2VycywgdGhlIHJlYWxtIGNvbnRleHQgaXMgZ2l2ZW4gYnkgdGhlIGNhdGFsb2cgaW4gd2hpY2ggdGhlIHVzZXIgaXMgcmVnaXN0ZXJlZC4gVGhlIGxpc3Qgb2YgdXNlciByZWdpc3RyaWVzIGZvciBhIGNhdGFsb2cgY2FuIGJlIGFjY2Vzc2VkIGF0IHRoZSA8Y29kZT4vY2F0YWxvZ3Mve29yZ30ve2NhdGFsb2d9L2NvbmZpZ3VyZWQtY2F0YWxvZy11c2VyLXJlZ2lzdHJpZXM8L2NvZGU+IFVSTC4KICAgICAgICA8L3A+CiAgIDwvc2VjdGlvbj4KICA8L2Rpdj4KICAgICAgPHNlY3Rpb24+CiAgICAgICAgPGgyPlVzaW5nIGEgQmVhcmVyIFRva2VuPC9oMj4KICAgICAgICA8cD4KICAgICAgICAgIE9uY2Ugb2J0YWluZWQsIHRoZSBiZWFyZXIgdG9rZW4gbWF5IGJlIHVzZWQgdG8gbWFrZSBhdXRoZW50aWNhdGVkIEFQSSBjYWxscy4gVGhlIGJlYXJlciB0b2tlbiBpcyBzZW50IGFzIHRoZSB2YWx1ZSBvZiB0aGUgQXV0aG9yaXphdGlvbiBoZWFkZXIsIHByZWZpeGVkIGJ5IHRoZSB3b3JkIDxjb2RlPmJlYXJlcjo8L2NvZGU+IChpbmNsdWRpbmcgdGhlIGNvbG9uKS4gSGVyZSdzIGFuIGV4YW1wbGUgb2YgYW4KICAgICAgICAgIGF1dGhlbnRpY2F0ZWQgY2FsbCB0byB0aGUgPGNvZGU+L21lPC9jb2RlPiByZXNvdXJjZSB1c2luZyB0aGUgYmVhcmVyIHRva2VuIG9idGFpbmVkIGFib3ZlOgogICAgICAgIDwvcD4KICAgICAgICA8aDM+UmVxdWVzdDwvaDM+CiAgICAgICAgPGRpdiBpZD0idXNlLWJlYXJlcnRva2VuLXJlcXVlc3QiIGNsYXNzPSJzaG93LWV4cGxvcmVyLWNvZGVzbmlwcGV0Ij5jdXJsIC12IC1rIC1IICdBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24nIC1IICJBdXRob3JpemF0aW9uOiBiZWFyZXIgZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnFkR2tpT2lJMU1HVm1PR1F6T0MxbE1UVXhMVFE0TmpjdFltSXdPUzB3TkRBME4yVXhaak0zTkRjaUxDSnVZVzFsYzNCaFkyVWlPaUl6WWpRMU9EVTROaTFrWkdNd0xUUTFORFl0T1Roa1ppMDNNbVV4TXpNellqQTVaV0U2TVRZelpEWTRNV1l0WldVd01DMDBZV1JoTFdGaU5XUXRaRFZrTXpSbFlqZGxPRFZqT2pCak9EUTBOVGd5TFRRMVlXTXRORFEyTXkxaE9UYzFMVGhpTm1RMVpqWTVNVEUxWkNJc0ltRjFaQ0k2SWk5aGNHa3ZZMnh2ZFdRdmNtVm5hWE4wY21GMGFXOXVjeTh6T1RCaE5qVmhZUzAwTTJGaExUUTNNelV0WWpBME9TMDRNVGszTWpJeVpESTNaREFpTENKemRXSWlPaUl2WVhCcEwzVnpaWEl0Y21WbmFYTjBjbWxsY3k4ellqUTFPRFU0Tmkxa1pHTXdMVFExTkRZdE9UaGtaaTAzTW1VeE16TXpZakE1WldFdk1UWXpaRFk0TVdZdFpXVXdNQzAwWVdSaExXRmlOV1F0WkRWa016UmxZamRsT0RWakwzVnpaWEp6THpCak9EUTBOVGd5TFRRMVlXTXRORFEyTXkxaE9UYzFMVGhpTm1RMVpqWTVNVEUxWkNJc0ltbHpjeUk2SWtsQ1RTQkJVRWtnUTI5dWJtVmpkQ0lzSW1WNGNDSTZNVFV6TWpVNE5qRTFNaXdpYVdGMElqb3hOVE15TlRVM016VXlMQ0puY21GdWRGOTBlWEJsSWpvaWNHRnpjM2R2Y21RaUxDSjFjMlZ5WDNKbFoybHpkSEo1WDNWeWJDSTZJaTloY0drdmRYTmxjaTF5WldkcGMzUnlhV1Z6THpOaU5EVTROVGcyTFdSa1l6QXRORFUwTmkwNU9HUm1MVGN5WlRFek16TmlNRGxsWVM4eE5qTmtOamd4WmkxbFpUQXdMVFJoWkdFdFlXSTFaQzFrTldRek5HVmlOMlU0TldNaUxDSnlaV0ZzYlNJNkluQnliM1pwWkdWeUwyUmxabUYxYkhRdGFXUndMVElpTENKMWMyVnlibUZ0WlNJNkltTm9jbWx6SWl3aWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTa2xWZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNqa3VaWGxLYldGWVNucGtSamwxV1ZjeGJFbHFiMmxSTW1oNVlWaE5hVXhEU25OWldFNHdXREkxYUdKWFZXbFBhVXBPU1dsM2FXUllUbXhqYkRsd1drTkpOa2x0U21wT2FrazBUVmRWTVV4WFVteE9Na2wwVGtSS2JVNXBNRFJaYWtrd1RGZEthazVxWTNsWlZFRXlXbXBSZDA1VFNYTkpibFo2V2xoS2RWbFhNV3hKYW05cFdUSm9lV0ZZVFdsTVEwcHdXVmhSYVU5cVJURk5la2t4VGxSamVrNVVTamt1ZWxwelRYSTBPVUprZFU5RFVsY3hiMjR5V2pkc1pESTRibkpLUlZWRFpUQTFibU01TWxkUlgzZG9OQ0lzSW5OamIzQmxjeUk2V3lKamJHOTFaRHAyYVdWM0lpd2lZMnh2ZFdRNmJXRnVZV2RsSWl3aWNISnZkbWxrWlhJdGIzSm5PblpwWlhjaUxDSndjbTkyYVdSbGNpMXZjbWM2YldGdVlXZGxJaXdpYjNKbk9uWnBaWGNpTENKdmNtYzZiV0Z1WVdkbElpd2laSEpoWm5Sek9uWnBaWGNpTENKa2NtRm1kSE02WldScGRDSXNJbU5vYVd4a09uWnBaWGNpTENKamFHbHNaRHBqY21WaGRHVWlMQ0pqYUdsc1pEcHRZVzVoWjJVaUxDSndjbTlrZFdOME9uWnBaWGNpTENKd2NtOWtkV04wT25OMFlXZGxJaXdpY0hKdlpIVmpkRHB0WVc1aFoyVWlMQ0poY0hCeWIzWmhiRHAyYVdWM0lpd2lZWEJ3Y205MllXdzZiV0Z1WVdkbElpd2lZWEJwTFdGdVlXeDVkR2xqY3pwMmFXVjNJaXdpWVhCcExXRnVZV3g1ZEdsamN6cHRZVzVoWjJVaUxDSmpiMjV6ZFcxbGNpMXZjbWM2ZG1sbGR5SXNJbU52Ym5OMWJXVnlMVzl5WnpwdFlXNWhaMlVpTENKaGNIQTZkbWxsZHpwaGJHd2lMQ0poY0hBNmJXRnVZV2RsT21Gc2JDSXNJbTE1T25acFpYY2lMQ0p0ZVRwdFlXNWhaMlVpTENKM1pXSm9iMjlyT25acFpYY2lYWDAuMXliZXpHSnJKV2dSWjhlYzVjanlHUVRLY1dBM2l3VGJWNUF1YlhDb3g2MCIgaHR0cHM6Ly92Nmd3MDcyNmEuYXJnbzItc2wuZGV2LmNpb25kZW1hbmQuY29tL2FwaS9tZTwvZGl2PgogICAgICAgIDxoMz5SZXNwb25zZTwvaDM+CiAgICAgICAgPGRpdiBpZD0idXNlLWJlYXJlcnRva2VuLXJlc3BvbnNlIiBjbGFzcz0ic2hvdy1leHBsb3Jlci1jb2Rlc25pcHBldCI+ewogICAgICAgICAgInR5cGUiOiAibWUiLAogICAgICAgICAgImFwaV92ZXJzaW9uIjogIjIuMC4wIiwKICAgICAgICAgICJuYW1lIjogIjM0YjEwZWNhLTM4NzQtNGNkYy1hY2I4LTM4ZGU4ZTgyZWI4NSIsCiAgICAgICAgICAic3RhdGUiOiAiZW5hYmxlZCIsCiAgICAgICAgICAidXNlcm5hbWUiOiAiY2hyaXMiLAogICAgICAgICAgImVtYWlsIjogImNocmlzQGlibS5jb20iLAogICAgICAgICAgImZpcnN0X25hbWUiOiAiQ2hyaXMiLAogICAgICAgICAgImxhc3RfbmFtZSI6ICJNIiwKICAgICAgICAgICJ1cmwiOiAiaHR0cHM6Ly9hcGljb25uZWN0LWRldi5jb20vYXBpL3VzZXItcmVnaXN0cmllcy8zMmM2OGQ5ZS0zZmQ2LTQ1NzEtYjljOS1mYTc1NTBlMDc1NjkvMjA4MzM1OWUtNTIzNC00MDM5LWFkNGYtNDBkY2Y3Y2U1ODZlL3VzZXJzLzM0YjEwZWNhLTM4NzQtNGNkYy1hY2I4LTM4ZGU4ZTgyZWI4NSIKICAgICAgICAgIH08L2Rpdj4KICAgICAgICA8cD5UaGUgPGNvZGU+L21lPC9jb2RlPiByZXNvdXJjZSByZXR1cm5zIGluZm9ybWF0aW9uIGFib3V0IHRoZSB1c2VyIG1ha2luZyB0aGUgcmVxdWVzdC48L3A+CiAgICAgIDwvc2VjdGlvbj4KICAgIDwvZGl2PgogIDwvYXJ0aWNsZT4K"
           }
         ]
       },

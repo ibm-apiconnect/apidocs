@@ -1,0 +1,784 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "x-ibm-name": "consumer-analytics",
+    "version": "2.0.0",
+    "title": "IBM API Connect Consumer Analytics API",
+    "description": "## API for the API Connect Consumer Analytics dashboard\n",
+    "termsOfService": "https://ww.ibm.com/terms-of-service",
+    "contact": {
+      "name": "IBM",
+      "url": "https://www.ibm.com",
+      "email": "help@ibm.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "",
+      "description": "Consumer analytics V2 base path"
+    }
+  ],
+  "paths": {
+    "/orgs/{org}/dashboard": {
+      "description": "GET data needed to populate the consumer analytics dashboard.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get data to populate the consumer analytics dashboard.",
+        "description": "Get data to populate the consumer analytics dashboard.",
+        "operationId": "dashboard_get",
+        "security": [
+          {
+            "oauth": [
+              "app-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/accept_language_optional"
+          },
+          {
+            "$ref": "#/components/parameters/x_ibm_consumer_context"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/app_name_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Consumer Analytics",
+          "Analytics"
+        ]
+      }
+    },
+    "/orgs/{org}/apps/{app}/dashboard": {
+      "description": "GET data needed to populate the consumer analytics dashboard by app id.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/app"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get data to populate the consumer analytics dashboard by app id.",
+        "description": "Get data to populate the consumer analytics dashboard by app id.",
+        "operationId": "dashboard_getByApp",
+        "security": [
+          {
+            "oauth": [
+              "app-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/offset_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/accept_language_optional"
+          },
+          {
+            "$ref": "#/components/parameters/x_ibm_consumer_context"
+          },
+          {
+            "$ref": "#/components/parameters/api_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/api_version_optional"
+          },
+          {
+            "$ref": "#/components/parameters/plan_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/product_version_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConsumerDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Consumer Analytics",
+          "Analytics"
+        ]
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "accept_language_optional": {
+        "name": "accept-language",
+        "in": "header",
+        "description": "Natural language and locale that the client prefers.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "en"
+        }
+      },
+      "api_name_optional": {
+        "name": "api_name",
+        "in": "query",
+        "description": "Filter results by API name.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "custom_api"
+        }
+      },
+      "api_version_optional": {
+        "name": "api_version",
+        "in": "query",
+        "description": "Filters results by API version.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "1.0.0"
+        }
+      },
+      "app": {
+        "name": "app",
+        "in": "path",
+        "description": "Consumer organization app.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "app_name_optional": {
+        "name": "app_name",
+        "in": "query",
+        "description": "Filters results by application name.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "custom_app"
+        }
+      },
+      "end_time_optional": {
+        "name": "end",
+        "in": "query",
+        "description": "If set, the API will only return events with a datetime equal or older than this. The value must follow the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z. See https://datatracker.ietf.org/doc/html/rfc3339#section-5.6.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "limit_optional": {
+        "name": "limit",
+        "in": "query",
+        "description": "If set, the number of items to return when requesting a list. Maximum: 200",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "50"
+        }
+      },
+      "offset_optional": {
+        "name": "offset",
+        "in": "query",
+        "description": "If set, the offset to be applied when requesting a list. e.g. return events starting from the 100th result",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "100"
+        }
+      },
+      "org": {
+        "name": "org",
+        "in": "path",
+        "description": "Consumer organization name or ID.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "plan_name_optional": {
+        "name": "plan_name",
+        "in": "query",
+        "description": "Filter results by plan name.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "default_plan"
+        }
+      },
+      "product_name_optional": {
+        "name": "product_name",
+        "in": "query",
+        "description": "Filters results by product name.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "custom_product"
+        }
+      },
+      "product_version_optional": {
+        "name": "product_version",
+        "in": "query",
+        "description": "Filters results by product version.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "2.0.0"
+        }
+      },
+      "start_time_optional": {
+        "name": "start",
+        "in": "query",
+        "description": "If set, the API will only return events with a datetime equal or newer than this. The value must follow the date-time notation as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z. See https://datatracker.ietf.org/doc/html/rfc3339#section-5.6.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "timeframe_optional": {
+        "name": "timeframe",
+        "in": "query",
+        "description": "If set, the API will only return events within the indicated timeframe. This parameter will be ignored if either start or end have been specified.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "last1minute",
+            "last5minutes",
+            "last15minutes",
+            "last30minutes",
+            "last1hour",
+            "last4hours",
+            "last12hours",
+            "last24hours",
+            "last7days",
+            "last30days"
+          ]
+        }
+      },
+      "x_ibm_consumer_context": {
+        "name": "X-IBM-Consumer-Context",
+        "in": "header",
+        "description": "Consumer context in the form of {provider-org}.{catalog}, e.g. myorg.mycat\n",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "myorg.mycat"
+        }
+      }
+    },
+    "responses": {
+      "ConsumerDashboardResponse": {
+        "description": "Data needed to populate the consumer analytics Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ConsumerDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ConsumerDashboardResponse"
+            }
+          }
+        }
+      },
+      "Error": {
+        "description": "Unexpected error.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "ApiCallsList": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "data": {
+            "$ref": "#/components/schemas/EventArray"
+          }
+        }
+      },
+      "ConsumerDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the consumer analytics Dashboard.",
+        "properties": {
+          "search_time": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "status_codes": {
+            "$ref": "#/components/schemas/GroupValueDataList"
+          },
+          "min_response_time": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "avg_response_time": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "max_response_time": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_api_calls": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "total_errors": {
+            "$ref": "#/components/schemas/DataItem"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "response_times": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "throttled_calls": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "api_calls_per_day": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "last_api_calls": {
+            "$ref": "#/components/schemas/ApiCallsList"
+          },
+          "top_apis_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          },
+          "top_products_over_time": {
+            "$ref": "#/components/schemas/GroupDateValueItemData"
+          }
+        }
+      },
+      "DataItem": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "number"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "description": "Generic error response.",
+        "additionalProperties": true,
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "message": {
+            "$ref": "#/components/schemas/Message"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/ErrorModels"
+          }
+        }
+      },
+      "ErrorModels": {
+        "type": "array",
+        "description": "Array of more detailed error information.",
+        "items": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string",
+              "description": "A snake case string succinctly identifying the problem."
+            },
+            "message": {
+              "type": "string",
+              "description": "A plainly-written, developer-oriented explanation of the solution to the problem in complete, well-formed sentences."
+            },
+            "more_info": {
+              "type": "string",
+              "description": "A publicly-accessible URL where information about the error can be read."
+            },
+            "target": {
+              "$ref": "#/components/schemas/ErrorTargetModel"
+            }
+          }
+        }
+      },
+      "ErrorTargetModel": {
+        "type": "object",
+        "description": "Contains information about specific error targets.",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Either field, parameter, or header."
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the problematic field (with dot-syntax if necessary), query parameter, or header."
+          }
+        }
+      },
+      "EventArray": {
+        "type": "array",
+        "description": "Array of API events",
+        "items": {
+          "$ref": "#/components/schemas/EventBody"
+        }
+      },
+      "EventBody": {
+        "type": "object",
+        "description": "The API Event logged by the gateway",
+        "additionalProperties": true,
+        "properties": {
+          "api_version": {
+            "type": "string",
+            "description": "The version of the API"
+          },
+          "api_name": {
+            "type": "string",
+            "description": "The name of the API"
+          },
+          "api_id": {
+            "type": "string",
+            "description": "The ID of the API"
+          },
+          "api_resource_id": {
+            "type": "string",
+            "description": "The API resource ID"
+          },
+          "app_lifecycle_state": {
+            "type": "string",
+            "description": "The lifecycle state of the calling application"
+          },
+          "bytes_received": {
+            "type": "number",
+            "description": "The number of bytes received by the gateway"
+          },
+          "bytes_sent": {
+            "type": "number",
+            "description": "The number of bytes sent by the gateway"
+          },
+          "client_id": {
+            "type": "string",
+            "description": "The application client ID used"
+          },
+          "datetime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The date time of the API event from the gateway"
+          },
+          "developer_org_id": {
+            "type": "string",
+            "description": "The consumer organization ID"
+          },
+          "developer_org_name": {
+            "type": "string",
+            "description": "The consumer organization name"
+          },
+          "developer_org_title": {
+            "type": "string",
+            "description": "The consumer organization title"
+          },
+          "headers": {
+            "type": "object",
+            "description": "Internal headers array from ingestion"
+          },
+          "host": {
+            "type": "string",
+            "description": "The ingestion host IP address"
+          },
+          "http_user_agent": {
+            "type": "string",
+            "description": "The caller user agent string",
+            "example": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36"
+          },
+          "org_name": {
+            "type": "string",
+            "description": "The provider organization name"
+          },
+          "org_id": {
+            "type": "string",
+            "description": "The provider organization ID"
+          },
+          "plan_id": {
+            "type": "string",
+            "description": "The plan ID"
+          },
+          "plan_name": {
+            "type": "string",
+            "description": "The plan name"
+          },
+          "product_version": {
+            "type": "string",
+            "description": "The product version"
+          },
+          "product_name": {
+            "type": "string",
+            "description": "The product name"
+          },
+          "product_id": {
+            "type": "string",
+            "description": "The product ID"
+          },
+          "product_title": {
+            "type": "string",
+            "description": "The product title"
+          },
+          "query_string": {
+            "type": "string",
+            "description": "Any provided query parameters"
+          },
+          "request_body": {
+            "type": "string",
+            "description": "The request body payload"
+          },
+          "request_http_headers": {
+            "type": "array",
+            "description": "The request headers",
+            "items": {
+              "$ref": "#/components/schemas/HeaderItem"
+            }
+          },
+          "request_method": {
+            "type": "string",
+            "description": "The request HTTP method"
+          },
+          "request_protocol": {
+            "type": "string",
+            "description": "The request protocol"
+          },
+          "resource_id": {
+            "type": "string",
+            "description": "The resource ID"
+          },
+          "resource_path": {
+            "type": "string",
+            "description": "The resource path"
+          },
+          "response_body": {
+            "type": "string",
+            "description": "The response body payload"
+          },
+          "response_http_headers": {
+            "type": "array",
+            "description": "The response headers",
+            "items": {
+              "$ref": "#/components/schemas/HeaderItem"
+            }
+          },
+          "status_code": {
+            "type": "string",
+            "description": "The HTTP response status code",
+            "example": "200 OK"
+          },
+          "time_to_serve_request": {
+            "type": "number",
+            "description": "The time taken to serve the request"
+          },
+          "uri_path": {
+            "type": "string",
+            "description": "The URI path"
+          }
+        },
+        "required": [
+          "org_name",
+          "org_id",
+          "resource_path",
+          "status_code",
+          "product_name",
+          "product_version",
+          "product_id",
+          "api_name",
+          "api_version",
+          "api_id"
+        ]
+      },
+      "GroupDateValueItem": {
+        "type": "object",
+        "properties": {
+          "group": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "GroupDateValueItemData": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/GroupDateValueItemList"
+          }
+        }
+      },
+      "GroupDateValueItemList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/GroupDateValueItem"
+        }
+      },
+      "GroupValueDataList": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/GroupValueItemList"
+          }
+        }
+      },
+      "GroupValueItem": {
+        "type": "object",
+        "properties": {
+          "group": {
+            "type": "string"
+          },
+          "value": {
+            "type": "integer"
+          }
+        }
+      },
+      "GroupValueItemList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/GroupValueItem"
+        }
+      },
+      "HeaderItem": {
+        "type": "object",
+        "description": "An HTTP header",
+        "additionalProperties": true
+      },
+      "Message": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Detailed error message.",
+        "example": "Invalid request payload JSON format."
+      },
+      "NonNegativeInteger": {
+        "type": "integer",
+        "description": "Integer greater than or equal to zero.",
+        "minimum": 0
+      },
+      "Status": {
+        "type": "integer",
+        "description": "Status code of the error.",
+        "minimum": 400,
+        "maximum": 599,
+        "example": 400
+      }
+    },
+    "securitySchemes": {
+      "oauth": {
+        "type": "oauth2",
+        "description": "API Manager Consumer API Token at appropriate catalog scope.",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "https://apimserver.example.com/consumer-api/oauth2/authorize",
+            "scopes": {
+              "app-analytics:view": "View consumer analytics"
+            }
+          },
+          "password": {
+            "tokenUrl": "https://apimserver.example.com/consumer-api/token",
+            "refreshUrl": "https://apimserver.example.com/consumer-api/token",
+            "scopes": {
+              "app-analytics:view": "View consumer analytics"
+            }
+          },
+          "clientCredentials": {
+            "tokenUrl": "https://apimserver.example.com/consumer-api/token",
+            "scopes": {
+              "app-analytics:view": "View consumer analytics"
+            }
+          },
+          "authorizationCode": {
+            "authorizationUrl": "https://apimserver.example.com/consumer-api/oauth2/authorize",
+            "tokenUrl": "https://apimserver.example.com/consumer-api/token",
+            "refreshUrl": "https://apimserver.example.com/consumer-api/token",
+            "scopes": {
+              "app-analytics:view": "View consumer analytics"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-ibm-configuration": {
+    "testable": false
+  }
+}

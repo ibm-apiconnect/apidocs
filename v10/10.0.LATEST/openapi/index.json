@@ -1,0 +1,63 @@
+{
+  "name": "IBM API Connect public APIs",
+  "stream": "v10",
+  "release": "10.0.LATEST",
+  "specFormat": "OpenAPI (JSON)",
+  "note": "Server URLs in these specs are placeholders (https://apimserver.example.com) and the specs are not directly callable. Use them to understand the API surface.",
+  "apis": [
+    {
+      "title": "IBM API Connect Analytics API",
+      "description": "## API for the API Connect Analytics subsystem\nThis API includes the capability to retrieve information about API events stored in APIC Analytics,  retrieve the data used by the Analytics dashboards in the UI, obtain information on what filter parameters are supported  and also obtain information about internal cluster management, health and operations.\n### API Events\nThere are operations to retrieve a count of events, a list of events or a specific detailed API event at the following  scopes: cloud, provider organization, catalog and space. The API event operations all support a multitude of filter parameters to be able to select the exact events you wish. These filter parameters can be combined together in a single query.\n#### Data selection\nThere are advanced selectors available for these filter parameters too which allow operations such as these:\n- `.../events?consumer_org_id=1234567890` = select all events made by consumer org id 1234567890\n- `.../events?consumer_org_id=not:1234567890` = select all events made by consumer orgs other than id 1234567890\n- `.../events?product_name=contains:loan` = select all events where the product name contained the string 'loan' (equivalent to searching for `*loan*`)\n- `.../events?product_name=notcontains:loan` = select all events where the product name didn't contain the string 'loan'\n- `.../events?product_name=startswith:loa` = select all events where the product name starts with the string 'loa' (equivalent to searching for `loa*`)\n- `.../events?product_name=endswith:oan` = select all events where the product name ends with the string 'oan' (equivalent to searching for `*oan`)\n- `.../events?product_name=regex:[a-z]oan` = select all events where the product name begins with any lowercase alphabetical character and ends with the string 'oan' (WARNING: Regex based queries have a performance impact and should only be used if other queries cannot be used)\n- `.../events?product_name=isset` = select all events where the product_name field has a value that is not null and not an empty string\n- `.../events?product_name=isnotset` = select all events where the product_name field is either null or an empty string\n- `.../events?product_name=oneof:loans,accounts,address` = select all events where the product name is loans, accounts or address\n- `.../events?product_name=oneof:loans\\,accounts,address` = select all events where the product name is either 'loans,account' or 'address' ('\\' escapes the first comma)\n- `.../events?product_name=oneof:loans,accounts\\,address` = select all events where the product name is either 'loans' or 'account,address' ('\\' escapes the second comma)\n- `.../events?product_name=notoneof:loans,accounts,address` = select all events where the product name is neither loans, accounts or address\n- `.../events?product_name=notoneof:loans\\,accounts,address` = select all events where the product name is neither 'loans,account' or 'address' ('\\' escapes the first comma)\n- `.../events?product_name=notoneof:loans,accounts\\,address` = select all events where the product name is neither 'loans' or 'account,address' ('\\' escapes the second comma)\n- `.../events?product_name=equals:not:loan` = select all events where the product name is exactly 'not:loan'\n- `.../events?product_name=not:not:loan` = select all events where the product name is not 'not:loan'\nThese ones only apply to numeric fields:\n- `.../events?bytes_received=1000` = select all events where the received bytes was exactly 1000\n- `.../events?bytes_received=gt:1000` = select all events where the received bytes was greater than 1000\n- `.../events?bytes_received=gte:1000` = select all events where the received bytes was greater than or equals to 1000\n- `.../events?bytes_received=lt:1000` = select all events where the received bytes was less than 1000\n- `.../events?bytes_received=lte:1000` = select all events where the received bytes was less than or equals to 1000\n\nThe full list of possible advanced operator prefixes are: `not`, `contains`, `notcontains`, `startswith`, `endswith`, `regex`, `isset`, `isnotset`, `gt`, `gte`, `lt`, `lte`, `oneof`.\n\nThe exception to the above are the IP address fields `client_ip`, `gateway_ip` and `immediate_client_ip` which only support equality checks and `not` but none of the other operators. However, they do support CIDR based queries, for example:\n- `.../events?client_ip=9.123.234.0/24` = select all events where the client IP address was in the 9.123.234.0 network (netmask 255.255.255.0)\n#### Pagination\nTo control how many results are returned and navigate through pages of results use the standard `limit` and `offset` query parameters. The event list operations will return a maximum of 10,000 api events, to retrieve larger amounts of data use the scroll operations at cloud or organization scope.\n#### Sorting\nTo sort the results based on the field names. By default, the sorting is in ascending order. To sort in descending order, prefix the field name with a -. Example: sort=api_name, sort=-product_name\n#### Returning a subset of fields\nThe `fields` parameter can be used to only return a subset of fields in the api event records. Use a comma separated list of desired fields.\n### Dashboards\nThese operations allow you to download the data used by the APIC Analytics dashboards in the API Manager UI.  These are also at the same variety of scopes and also support the same filter parameters as usable with the API Event operations above.\n### Filter parameters\nThese operations define what filter parameters and operations are available at each scope.  This could be useful in a dynamically generated UI calling the API Event or dashboard operations above.\n### Cluster Management\nThese operations allow the retrieval of information on cluster health and status as well as the ability to perform  maintenance operations on it.\n",
+      "version": "2.0.0",
+      "file": "openapi-analytics-public.json"
+    },
+    {
+      "title": "IBM API Connect Platform - Cloud Management API",
+      "description": "This API provides operations for managing the IBM API Connect cloud configuration.",
+      "version": "2.0.0",
+      "file": "openapi-apim-public-admin.json"
+    },
+    {
+      "title": "IBM API Connect Platform - Provider API",
+      "description": "This API provides operations for accessing API provider capability.",
+      "version": "2.0.0",
+      "file": "openapi-apim-public-provider.json"
+    },
+    {
+      "title": "IBM API Connect Governance API",
+      "description": "This API provides operations for accessing the API Governance capabilities.",
+      "version": "2.0.0",
+      "file": "openapi-compliance-public.json"
+    },
+    {
+      "title": "IBM API Connect Consumer Analytics API",
+      "description": "## API for the API Connect Consumer Analytics dashboard\n",
+      "version": "2.0.0",
+      "file": "openapi-consumer-analytics-public.json"
+    },
+    {
+      "title": "IBM API Connect Platform - Consumer API",
+      "description": "This API provides operations for accessing API consumer content",
+      "version": "2.0.0",
+      "file": "openapi-consumer-public.json"
+    },
+    {
+      "title": "IBM API Connect Discovery API",
+      "description": "This API provides operations for accessing the API Discovery capabilities.",
+      "version": "2.0.0",
+      "file": "openapi-discovery-public.json"
+    },
+    {
+      "title": "IBM API Connect Engagement API",
+      "description": "## API for the API Connect Engagement system\n",
+      "version": "2.0.0",
+      "file": "openapi-engagement-public.json"
+    },
+    {
+      "title": "API Connect Portal Admin API",
+      "description": "API for the API Connect Portal Admin subsystem",
+      "version": "1.0.0",
+      "file": "openapi-portaladmin-public.json"
+    }
+  ]
+}
