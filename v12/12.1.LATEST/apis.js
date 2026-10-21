@@ -24298,6 +24298,15 @@
           "type": "string"
         }
       },
+      "preserve_user_registry": {
+        "name": "preserve_user_registry",
+        "in": "query",
+        "description": "Preserve the federated devportal user registry",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        }
+      },
       "primary-event": {
         "name": "primary-event",
         "in": "path",
@@ -53075,7 +53084,7 @@
             "type": "string"
           },
           "statusCode": {
-            "type": "integer"
+            "type": "string"
           },
           "response": {
             "$ref": "#/components/schemas/ProjectReference"
@@ -74170,6 +74179,11 @@
             "oauth": [
               "org:manage"
             ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/preserve_user_registry"
           }
         ],
         "responses": {
@@ -122369,6 +122383,15 @@
           "type": "string"
         }
       },
+      "preserve_user_registry": {
+        "name": "preserve_user_registry",
+        "in": "query",
+        "description": "Preserve the federated devportal user registry",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        }
+      },
       "primary-event": {
         "name": "primary-event",
         "in": "path",
@@ -151371,7 +151394,7 @@
             "type": "string"
           },
           "statusCode": {
-            "type": "integer"
+            "type": "string"
           },
           "response": {
             "$ref": "#/components/schemas/ProjectReference"
@@ -176297,6 +176320,9 @@
             "$ref": "#/components/parameters/timeframe_optional"
           },
           {
+            "$ref": "#/components/parameters/use_gateway_validation_optional"
+          },
+          {
             "$ref": "#/components/parameters/ai_insights_optional"
           }
         ],
@@ -176349,6 +176375,9 @@
             "$ref": "#/components/parameters/backend_url_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/end_time_optional"
           },
           {
@@ -176362,6 +176391,9 @@
           },
           {
             "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/use_gateway_validation_optional"
           },
           {
             "$ref": "#/components/parameters/timeframe_optional"
@@ -176419,6 +176451,9 @@
             "$ref": "#/components/parameters/end_time_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/error_description_optional"
           },
           {
@@ -176438,6 +176473,9 @@
           },
           {
             "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/use_gateway_validation_optional"
           }
         ],
         "responses": {

@@ -11736,6 +11736,9 @@
             "$ref": "#/components/parameters/timeframe_optional"
           },
           {
+            "$ref": "#/components/parameters/use_gateway_validation_optional"
+          },
+          {
             "$ref": "#/components/parameters/ai_insights_optional"
           }
         ],
@@ -11788,6 +11791,9 @@
             "$ref": "#/components/parameters/backend_url_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/end_time_optional"
           },
           {
@@ -11801,6 +11807,9 @@
           },
           {
             "$ref": "#/components/parameters/status_code_optional"
+          },
+          {
+            "$ref": "#/components/parameters/use_gateway_validation_optional"
           },
           {
             "$ref": "#/components/parameters/timeframe_optional"
@@ -11858,6 +11867,9 @@
             "$ref": "#/components/parameters/end_time_optional"
           },
           {
+            "$ref": "#/components/parameters/gateway_service_name_optional"
+          },
+          {
             "$ref": "#/components/parameters/error_description_optional"
           },
           {
@@ -11877,6 +11889,9 @@
           },
           {
             "$ref": "#/components/parameters/timeframe_optional"
+          },
+          {
+            "$ref": "#/components/parameters/use_gateway_validation_optional"
           }
         ],
         "responses": {

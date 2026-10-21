@@ -18093,6 +18093,11 @@
             ]
           }
         ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/preserve_user_registry"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Successful delete",
@@ -66290,6 +66295,15 @@
           "type": "string"
         }
       },
+      "preserve_user_registry": {
+        "name": "preserve_user_registry",
+        "in": "query",
+        "description": "Preserve the federated devportal user registry",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        }
+      },
       "primary-event": {
         "name": "primary-event",
         "in": "path",
@@ -95292,7 +95306,7 @@
             "type": "string"
           },
           "statusCode": {
-            "type": "integer"
+            "type": "string"
           },
           "response": {
             "$ref": "#/components/schemas/ProjectReference"
