@@ -14818,6 +14818,18 @@
             "$ref": "#/components/parameters/mcp_resource_uri_optional"
           },
           {
+            "$ref": "#/components/parameters/mcp_server_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mcp_server_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mcp_server_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mcp_server_version_optional"
+          },
+          {
             "$ref": "#/components/parameters/mcp_session_id_optional"
           },
           {
@@ -16352,6 +16364,18 @@
             "$ref": "#/components/parameters/mcp_resource_uri_optional"
           },
           {
+            "$ref": "#/components/parameters/mcp_server_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mcp_server_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mcp_server_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mcp_server_version_optional"
+          },
+          {
             "$ref": "#/components/parameters/mcp_session_id_optional"
           },
           {
@@ -17114,6 +17138,18 @@
           },
           {
             "$ref": "#/components/parameters/mcp_resource_uri_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mcp_server_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mcp_server_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mcp_server_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mcp_server_version_optional"
           },
           {
             "$ref": "#/components/parameters/mcp_session_id_optional"

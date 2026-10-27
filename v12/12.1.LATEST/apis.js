@@ -47115,7 +47115,11 @@
                 "$ref": "#/components/schemas/ProjectReferenceList"
               },
               "policy-sequence": {
-                "$ref": "#/components/schemas/ProjectReferenceList"
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/components/schemas/ProjectReference"
+                }
               },
               "extensions": {
                 "type": "object",
@@ -48644,7 +48648,11 @@
             "additionalProperties": false,
             "properties": {
               "policy-sequence": {
-                "$ref": "#/components/schemas/ProjectReferenceList"
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/components/schemas/ProjectReference"
+                }
               },
               "resources": {
                 "description": "Multiple instances of resources can be given",
@@ -48721,7 +48729,11 @@
                 ],
                 "properties": {
                   "policy-sequence": {
-                    "$ref": "#/components/schemas/ProjectReferenceList"
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/components/schemas/ProjectReference"
+                    }
                   },
                   "rest": {
                     "type": "object",
@@ -48777,7 +48789,11 @@
                 ],
                 "properties": {
                   "policy-sequence": {
-                    "$ref": "#/components/schemas/ProjectReferenceList"
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/components/schemas/ProjectReference"
+                    }
                   },
                   "soap": {
                     "type": "object",
@@ -50388,7 +50404,11 @@
                 "type": "string"
               },
               "policy-sequence": {
-                "$ref": "#/components/schemas/ProjectReferenceList"
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/components/schemas/ProjectReference"
+                }
               }
             }
           }
@@ -145425,7 +145445,11 @@
                 "$ref": "#/components/schemas/ProjectReferenceList"
               },
               "policy-sequence": {
-                "$ref": "#/components/schemas/ProjectReferenceList"
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/components/schemas/ProjectReference"
+                }
               },
               "extensions": {
                 "type": "object",
@@ -146954,7 +146978,11 @@
             "additionalProperties": false,
             "properties": {
               "policy-sequence": {
-                "$ref": "#/components/schemas/ProjectReferenceList"
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/components/schemas/ProjectReference"
+                }
               },
               "resources": {
                 "description": "Multiple instances of resources can be given",
@@ -147031,7 +147059,11 @@
                 ],
                 "properties": {
                   "policy-sequence": {
-                    "$ref": "#/components/schemas/ProjectReferenceList"
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/components/schemas/ProjectReference"
+                    }
                   },
                   "rest": {
                     "type": "object",
@@ -147087,7 +147119,11 @@
                 ],
                 "properties": {
                   "policy-sequence": {
-                    "$ref": "#/components/schemas/ProjectReferenceList"
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/components/schemas/ProjectReference"
+                    }
                   },
                   "soap": {
                     "type": "object",
@@ -148698,7 +148734,11 @@
                 "type": "string"
               },
               "policy-sequence": {
-                "$ref": "#/components/schemas/ProjectReferenceList"
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/components/schemas/ProjectReference"
+                }
               }
             }
           }
@@ -179402,6 +179442,18 @@
             "$ref": "#/components/parameters/mcp_resource_uri_optional"
           },
           {
+            "$ref": "#/components/parameters/mcp_server_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mcp_server_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mcp_server_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mcp_server_version_optional"
+          },
+          {
             "$ref": "#/components/parameters/mcp_session_id_optional"
           },
           {
@@ -180936,6 +180988,18 @@
             "$ref": "#/components/parameters/mcp_resource_uri_optional"
           },
           {
+            "$ref": "#/components/parameters/mcp_server_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mcp_server_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mcp_server_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mcp_server_version_optional"
+          },
+          {
             "$ref": "#/components/parameters/mcp_session_id_optional"
           },
           {
@@ -181698,6 +181762,18 @@
           },
           {
             "$ref": "#/components/parameters/mcp_resource_uri_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mcp_server_id_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mcp_server_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mcp_server_title_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mcp_server_version_optional"
           },
           {
             "$ref": "#/components/parameters/mcp_session_id_optional"

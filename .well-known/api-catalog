@@ -1,0 +1,19 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://ibm-apiconnect.github.io/apidocs",
+      "api-catalog": [
+        {
+          "href": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/api-catalog.json",
+          "type": "application/linkset+json",
+          "title": "IBM API Connect v12 (12.1.LATEST) API Catalog"
+        },
+        {
+          "href": "https://ibm-apiconnect.github.io/apidocs/v10/10.0.LATEST/openapi/api-catalog.json",
+          "type": "application/linkset+json",
+          "title": "IBM API Connect v10 (10.0.LATEST) API Catalog"
+        }
+      ]
+    }
+  ]
+}
