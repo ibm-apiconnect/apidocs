@@ -3,7 +3,6 @@
   "stream": "v12",
   "release": "12.1.LATEST",
   "specFormat": "OpenAPI (JSON)",
-  "note": "Server URLs in these specs are placeholders (https://apimserver.example.com) and the specs are not directly callable. Use them to understand the API surface.",
   "apis": [
     {
       "title": "IBM API Connect Analytics API",

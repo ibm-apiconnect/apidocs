@@ -1,6 +1,6 @@
 # IBM API Connect 12.1.LATEST
 
-> Machine-readable OpenAPI specifications for the IBM API Connect v12 (12.1.LATEST) public REST APIs. Server URLs in these specs are placeholders (https://apimserver.example.com) and the specs are not directly callable. Use them to understand the API surface.
+> Machine-readable OpenAPI specifications for the IBM API Connect v12 (12.1.LATEST) public REST APIs.
 
 ## OpenAPI specifications
 

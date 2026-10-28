@@ -13,7 +13,6 @@
       "description": "Public REST APIs for IBM API Connect v12",
       "image": "https://www.ibm.com/favicon.ico",
       "humanURL": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST.html",
-      "baseURL": "https://apimserver.example.com",
       "tags": ["v12", "API Connect"],
       "properties": [
         { "type": "OpenAPI", "url": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/index.json" },
@@ -28,7 +27,6 @@
       "description": "Public REST APIs for IBM API Connect v10",
       "image": "https://www.ibm.com/favicon.ico",
       "humanURL": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.LATEST.html",
-      "baseURL": "https://apimserver.example.com",
       "tags": ["v10", "API Connect"],
       "properties": [
         { "type": "OpenAPI", "url": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.LATEST/openapi/index.json" },
@@ -37,6 +35,58 @@
         { "type": "LLMs.txt", "url": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.LATEST/openapi/llms.txt" },
         { "type": "Documentation", "url": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.LATEST.html" }
       ]
+    }
+  ],
+  "common": [
+    {
+      "type": "Support",
+      "name": "IBM Support",
+      "url": "https://www.ibm.com/mysupport"
+    },
+    {
+      "type": "Community",
+      "name": "IBM API Connect Community",
+      "url": "https://community.ibm.com/community/user/integration/communities/community-home?CommunityKey=2106cca0-a9f9-45c6-9b28-01a28f39ce47"
+    },
+    {
+      "type": "SupportLifetime",
+      "name": "IBM API Connect Support Lifecycle Policy",
+      "url": "https://www.ibm.com/support/pages/ibm-api-connect-support-lifecycle-policy"
+    },
+    {
+      "type": "StatusPage",
+      "name": "IBM SaaS Status",
+      "url": "https://status.platform.saas.ibm.com/status/overview"
+    },
+    {
+      "type": "TermsOfService",
+      "name": "IBM Terms",
+      "url": "https://www.ibm.com/support/customer/csol/terms/"
+    },
+    {
+      "type": "PrivacyPolicy",
+      "name": "IBM Privacy Statement",
+      "url": "https://www.ibm.com/privacy"
+    },
+    {
+      "type": "Security",
+      "name": "IBM PSIRT - security vulnerability management",
+      "url": "https://www.ibm.com/trust/security-psirt"
+    },
+    {
+      "type": "TrustCenter",
+      "name": "IBM Trust Center",
+      "url": "https://www.ibm.com/trust"
+    },
+    {
+      "type": "Compliance",
+      "name": "IBM Cloud compliance programs",
+      "url": "https://www.ibm.com/products/cloud/compliance"
+    },
+    {
+      "type": "DataResidency",
+      "name": "API Connect Enterprise as a Service supported regions",
+      "url": "https://www.ibm.com/docs/en/api-connect/cloud/12.1.1_saas?topic=api-connect-enterprise-as-service-overview"
     }
   ],
   "include": [
