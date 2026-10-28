@@ -1,153 +1,153 @@
 {
   "linkset": [
     {
-      "anchor": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/openapi-analytics-public.json",
+      "anchor": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/openapi-analytics-public.json",
       "service-desc": [
         {
-          "href": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/openapi-analytics-public.json",
+          "href": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/openapi-analytics-public.json",
           "type": "application/vnd.oai.openapi+json",
           "title": "IBM API Connect Analytics API"
         }
       ],
       "service-doc": [
         {
-          "href": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST.html",
+          "href": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST.html",
           "type": "text/html",
           "title": "IBM API Connect 12.1.LATEST API Documentation"
         }
       ]
     },
     {
-      "anchor": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/openapi-apim-public-admin.json",
+      "anchor": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/openapi-apim-public-admin.json",
       "service-desc": [
         {
-          "href": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/openapi-apim-public-admin.json",
+          "href": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/openapi-apim-public-admin.json",
           "type": "application/vnd.oai.openapi+json",
           "title": "IBM API Connect Platform - Cloud Management API"
         }
       ],
       "service-doc": [
         {
-          "href": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST.html",
+          "href": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST.html",
           "type": "text/html",
           "title": "IBM API Connect 12.1.LATEST API Documentation"
         }
       ]
     },
     {
-      "anchor": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/openapi-apim-public-provider.json",
+      "anchor": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/openapi-apim-public-provider.json",
       "service-desc": [
         {
-          "href": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/openapi-apim-public-provider.json",
+          "href": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/openapi-apim-public-provider.json",
           "type": "application/vnd.oai.openapi+json",
           "title": "IBM API Connect Platform - Provider API"
         }
       ],
       "service-doc": [
         {
-          "href": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST.html",
+          "href": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST.html",
           "type": "text/html",
           "title": "IBM API Connect 12.1.LATEST API Documentation"
         }
       ]
     },
     {
-      "anchor": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/openapi-compliance-public.json",
+      "anchor": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/openapi-compliance-public.json",
       "service-desc": [
         {
-          "href": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/openapi-compliance-public.json",
+          "href": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/openapi-compliance-public.json",
           "type": "application/vnd.oai.openapi+json",
           "title": "IBM API Connect Governance API"
         }
       ],
       "service-doc": [
         {
-          "href": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST.html",
+          "href": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST.html",
           "type": "text/html",
           "title": "IBM API Connect 12.1.LATEST API Documentation"
         }
       ]
     },
     {
-      "anchor": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/openapi-consumer-analytics-public.json",
+      "anchor": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/openapi-consumer-analytics-public.json",
       "service-desc": [
         {
-          "href": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/openapi-consumer-analytics-public.json",
+          "href": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/openapi-consumer-analytics-public.json",
           "type": "application/vnd.oai.openapi+json",
           "title": "IBM API Connect Consumer Analytics API"
         }
       ],
       "service-doc": [
         {
-          "href": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST.html",
+          "href": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST.html",
           "type": "text/html",
           "title": "IBM API Connect 12.1.LATEST API Documentation"
         }
       ]
     },
     {
-      "anchor": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/openapi-consumer-public.json",
+      "anchor": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/openapi-consumer-public.json",
       "service-desc": [
         {
-          "href": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/openapi-consumer-public.json",
+          "href": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/openapi-consumer-public.json",
           "type": "application/vnd.oai.openapi+json",
           "title": "IBM API Connect Platform - Consumer API"
         }
       ],
       "service-doc": [
         {
-          "href": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST.html",
+          "href": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST.html",
           "type": "text/html",
           "title": "IBM API Connect 12.1.LATEST API Documentation"
         }
       ]
     },
     {
-      "anchor": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/openapi-discovery-public.json",
+      "anchor": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/openapi-discovery-public.json",
       "service-desc": [
         {
-          "href": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/openapi-discovery-public.json",
+          "href": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/openapi-discovery-public.json",
           "type": "application/vnd.oai.openapi+json",
           "title": "IBM API Connect Discovery API"
         }
       ],
       "service-doc": [
         {
-          "href": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST.html",
+          "href": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST.html",
           "type": "text/html",
           "title": "IBM API Connect 12.1.LATEST API Documentation"
         }
       ]
     },
     {
-      "anchor": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/openapi-engagement-public.json",
+      "anchor": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/openapi-engagement-public.json",
       "service-desc": [
         {
-          "href": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/openapi-engagement-public.json",
+          "href": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/openapi-engagement-public.json",
           "type": "application/vnd.oai.openapi+json",
           "title": "IBM API Connect Engagement API"
         }
       ],
       "service-doc": [
         {
-          "href": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST.html",
+          "href": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST.html",
           "type": "text/html",
           "title": "IBM API Connect 12.1.LATEST API Documentation"
         }
       ]
     },
     {
-      "anchor": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/openapi-portaladmin-public.json",
+      "anchor": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/openapi-portaladmin-public.json",
       "service-desc": [
         {
-          "href": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/openapi-portaladmin-public.json",
+          "href": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/openapi-portaladmin-public.json",
           "type": "application/vnd.oai.openapi+json",
           "title": "API Connect Portal Admin API"
         }
       ],
       "service-doc": [
         {
-          "href": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST.html",
+          "href": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST.html",
           "type": "text/html",
           "title": "IBM API Connect 12.1.LATEST API Documentation"
         }

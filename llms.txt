@@ -4,5 +4,5 @@
 
 ## Latest releases
 
-- [IBM API Connect v12 (12.1.LATEST)](https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/llms.txt)
-- [IBM API Connect v10 (10.0.LATEST)](https://ibm-apiconnect.github.io/apidocs/v10/10.0.LATEST/openapi/llms.txt)
+- [IBM API Connect v12 (12.1.LATEST)](https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/llms.txt)
+- [IBM API Connect v10 (10.0.LATEST)](https://apic-api.apiconnect.ibmcloud.com/v10/10.0.LATEST/openapi/llms.txt)

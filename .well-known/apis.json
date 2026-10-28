@@ -2,90 +2,48 @@
   "name": "IBM API Connect",
   "description": "Machine-readable OpenAPI specifications and developer documentation for IBM API Connect public REST APIs.",
   "image": "https://www.ibm.com/favicon.ico",
-  "tags": [
-    "API Management",
-    "API Connect",
-    "OpenAPI",
-    "REST",
-    "IBM"
-  ],
-  "created": "2026-10-27",
-  "url": "https://ibm-apiconnect.github.io/apidocs/apis.json",
-  "specificationVersion": "0.16",
+  "tags": ["API Management", "API Connect", "OpenAPI", "REST", "IBM"],
+  "created": "2026-10-28",
+  "modified": "2026-10-28",
+  "url": "https://apic-api.apiconnect.ibmcloud.com/apis.json",
+  "specificationVersion": "0.24",
   "apis": [
     {
       "name": "IBM API Connect v12 APIs",
       "description": "Public REST APIs for IBM API Connect v12",
       "image": "https://www.ibm.com/favicon.ico",
-      "humanURL": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST.html",
+      "humanURL": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST.html",
       "baseURL": "https://apimserver.example.com",
-      "tags": [
-        "v12",
-        "API Connect"
-      ],
+      "tags": ["v12", "API Connect"],
       "properties": [
-        {
-          "type": "OpenAPI",
-          "url": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/index.json"
-        },
-        {
-          "type": "APIs.json",
-          "url": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/apis.json"
-        },
-        {
-          "type": "API Catalog",
-          "url": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/api-catalog.json"
-        },
-        {
-          "type": "Documentation",
-          "url": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST.html"
-        }
+        { "type": "OpenAPI", "url": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/index.json" },
+        { "type": "APIs.json", "url": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/apis.json" },
+        { "type": "APICatalog", "url": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/api-catalog.json" },
+        { "type": "LLMs.txt", "url": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/llms.txt" },
+        { "type": "Documentation", "url": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST.html" }
       ]
     },
     {
       "name": "IBM API Connect v10 APIs",
       "description": "Public REST APIs for IBM API Connect v10",
       "image": "https://www.ibm.com/favicon.ico",
-      "humanURL": "https://ibm-apiconnect.github.io/apidocs/v10/10.0.LATEST.html",
+      "humanURL": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.LATEST.html",
       "baseURL": "https://apimserver.example.com",
-      "tags": [
-        "v10",
-        "API Connect"
-      ],
+      "tags": ["v10", "API Connect"],
       "properties": [
-        {
-          "type": "OpenAPI",
-          "url": "https://ibm-apiconnect.github.io/apidocs/v10/10.0.LATEST/openapi/index.json"
-        },
-        {
-          "type": "APIs.json",
-          "url": "https://ibm-apiconnect.github.io/apidocs/v10/10.0.LATEST/openapi/apis.json"
-        },
-        {
-          "type": "API Catalog",
-          "url": "https://ibm-apiconnect.github.io/apidocs/v10/10.0.LATEST/openapi/api-catalog.json"
-        },
-        {
-          "type": "Documentation",
-          "url": "https://ibm-apiconnect.github.io/apidocs/v10/10.0.LATEST.html"
-        }
+        { "type": "OpenAPI", "url": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.LATEST/openapi/index.json" },
+        { "type": "APIs.json", "url": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.LATEST/openapi/apis.json" },
+        { "type": "APICatalog", "url": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.LATEST/openapi/api-catalog.json" },
+        { "type": "LLMs.txt", "url": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.LATEST/openapi/llms.txt" },
+        { "type": "Documentation", "url": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.LATEST.html" }
       ]
     }
   ],
   "include": [
-    {
-      "name": "IBM API Connect v12 APIs.json",
-      "url": "https://ibm-apiconnect.github.io/apidocs/v12/12.1.LATEST/openapi/apis.json"
-    },
-    {
-      "name": "IBM API Connect v10 APIs.json",
-      "url": "https://ibm-apiconnect.github.io/apidocs/v10/10.0.LATEST/openapi/apis.json"
-    }
+    { "name": "IBM API Connect v12 APIs.json", "url": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/apis.json" },
+    { "name": "IBM API Connect v10 APIs.json", "url": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.LATEST/openapi/apis.json" }
   ],
   "maintainers": [
-    {
-      "FN": "IBM API Connect Team",
-      "url": "https://www.ibm.com/products/api-connect"
-    }
+    { "FN": "IBM API Connect Team", "url": "https://www.ibm.com/products/api-connect" }
   ]
 }
