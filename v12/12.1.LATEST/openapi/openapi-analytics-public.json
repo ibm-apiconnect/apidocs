@@ -15,7 +15,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/analytics",
       "description": "Analytics V2 base path"
     }
   ],
@@ -92,6 +92,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -489,6 +492,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -1031,6 +1037,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -1411,6 +1420,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -1805,6 +1817,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -2354,6 +2369,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -2731,6 +2749,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -3229,6 +3250,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -3603,6 +3627,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -4104,6 +4131,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -4463,6 +4493,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -4856,6 +4889,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -5244,6 +5280,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -5627,6 +5666,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -6292,6 +6334,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -6675,6 +6720,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -7062,6 +7110,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -7445,6 +7496,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -7832,6 +7886,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -8217,6 +8274,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -8600,6 +8660,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -8994,6 +9057,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -9393,6 +9459,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -9776,6 +9845,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -10163,6 +10235,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -10546,6 +10621,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -10945,6 +11023,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -11330,6 +11411,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -11685,6 +11769,9 @@
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -11785,6 +11872,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -11798,6 +11888,9 @@
           },
           {
             "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mismatch_category_optional"
           },
           {
             "$ref": "#/components/parameters/offset_optional"
@@ -11858,6 +11951,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -11897,6 +11993,544 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/PolicyErrorsResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/overview": {
+      "description": "Return the data needed to populate the Overview dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Overview dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Overview dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudOverview",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OverviewDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/cost-and-spend": {
+      "description": "Return the data needed to populate the Cost and Spend dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Cost and Spend dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Cost and Spend dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudCostAndSpend",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CostAndSpendDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/savings-and-optimization": {
+      "description": "Return the data needed to populate the Savings and Optimization dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Savings and Optimization dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Savings and Optimization dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudSavingsAndOptimization",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SavingsAndOptimizationDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/cache-performance": {
+      "description": "Return the data needed to populate the Cache Performance dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Cache Performance dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Cache Performance dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudCachePerformance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CachePerformanceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/reliability-and-performance": {
+      "description": "Return the data needed to populate the Reliability and Performance dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Reliability and Performance dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Reliability and Performance dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudReliabilityAndPerformance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ReliabilityAndPerformanceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/usage-and-adoption": {
+      "description": "Return the data needed to populate the Usage and Adoption dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Usage and Adoption dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Usage and Adoption dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudUsageAndAdoption",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/UsageAndAdoptionDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/security-and-compliance": {
+      "description": "Return the data needed to populate the Security and Compliance dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Security and Compliance dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Security and Compliance dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudSecurityAndCompliance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SecurityAndComplianceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/agent-and-tool-quality": {
+      "description": "Return the data needed to populate the Agent and Tool Quality dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Agent and Tool Quality dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Agent and Tool Quality dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudAgentAndToolQuality",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AgentAndToolQualityDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/governance-and-data-health": {
+      "description": "Return the data needed to populate the Governance and Data Health dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Governance and Data Health dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Governance and Data Health dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudGovernanceAndDataHealth",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/GovernanceAndDataHealthDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/idig-filter-options": {
+      "description": "Return the data needed to populate the IDIG Filter Options dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the IDIG Filter Options dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the IDIG Filter Options dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudIdigFilterOptions",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/IdigFilterOptionsResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -11986,6 +12620,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -12367,6 +13004,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -12744,6 +13384,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -13128,6 +13771,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -13508,6 +14154,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -13892,6 +14541,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -14272,6 +14924,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -14665,6 +15320,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -15053,6 +15711,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -15433,6 +16094,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -15817,6 +16481,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -16197,6 +16864,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -16593,6 +17263,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -16975,6 +17648,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -17327,6 +18003,9 @@
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -17427,6 +18106,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -17443,6 +18125,9 @@
           },
           {
             "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mismatch_category_optional"
           },
           {
             "$ref": "#/components/parameters/offset_optional"
@@ -17503,6 +18188,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -17542,6 +18230,574 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/PolicyErrorsResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/overview": {
+      "description": "Return the data needed to populate the Overview dashboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Overview dashboard at org scope\n",
+        "description": "Return the data needed to populate the Overview dashboard at org scope.\n",
+        "operationId": "dashboards_orgOverview",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OverviewDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/cost-and-spend": {
+      "description": "Return the data needed to populate the Cost and Spend dashboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Cost and Spend dashboard at org scope\n",
+        "description": "Return the data needed to populate the Cost and Spend dashboard at org scope.\n",
+        "operationId": "dashboards_orgCostAndSpend",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CostAndSpendDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/savings-and-optimization": {
+      "description": "Return the data needed to populate the Savings and Optimization dashboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Savings and Optimization dashboard at org scope\n",
+        "description": "Return the data needed to populate the Savings and Optimization dashboard at org scope.\n",
+        "operationId": "dashboards_orgSavingsAndOptimization",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SavingsAndOptimizationDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/cache-performance": {
+      "description": "Return the data needed to populate the Cache Performance dashboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Cache Performance dashboard at org scope\n",
+        "description": "Return the data needed to populate the Cache Performance dashboard at org scope.\n",
+        "operationId": "dashboards_orgCachePerformance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CachePerformanceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/reliability-and-performance": {
+      "description": "Return the data needed to populate the Reliability and Performance dashboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Reliability and Performance dashboard at org scope\n",
+        "description": "Return the data needed to populate the Reliability and Performance dashboard at org scope.\n",
+        "operationId": "dashboards_orgReliabilityAndPerformance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ReliabilityAndPerformanceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/usage-and-adoption": {
+      "description": "Return the data needed to populate the Usage and Adoption dashboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Usage and Adoption dashboard at org scope\n",
+        "description": "Return the data needed to populate the Usage and Adoption dashboard at org scope.\n",
+        "operationId": "dashboards_orgUsageAndAdoption",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/UsageAndAdoptionDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/security-and-compliance": {
+      "description": "Return the data needed to populate the Security and Compliance dashboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Security and Compliance dashboard at org scope\n",
+        "description": "Return the data needed to populate the Security and Compliance dashboard at org scope.\n",
+        "operationId": "dashboards_orgSecurityAndCompliance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SecurityAndComplianceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/agent-and-tool-quality": {
+      "description": "Return the data needed to populate the Agent and Tool Quality dashboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Agent and Tool Quality dashboard at org scope\n",
+        "description": "Return the data needed to populate the Agent and Tool Quality dashboard at org scope.\n",
+        "operationId": "dashboards_orgAgentAndToolQuality",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AgentAndToolQualityDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/governance-and-data-health": {
+      "description": "Return the data needed to populate the Governance and Data Health dashboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Governance and Data Health dashboard at org scope\n",
+        "description": "Return the data needed to populate the Governance and Data Health dashboard at org scope.\n",
+        "operationId": "dashboards_orgGovernanceAndDataHealth",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/GovernanceAndDataHealthDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/idig-filter-options": {
+      "description": "Return the data needed to populate the IDIG Filter Options dashboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the IDIG Filter Options dashboard at org scope\n",
+        "description": "Return the data needed to populate the IDIG Filter Options dashboard at org scope.\n",
+        "operationId": "dashboards_orgIdigFilterOptions",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/IdigFilterOptionsResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -17634,6 +18890,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -18015,6 +19274,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -18392,6 +19654,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -18773,6 +20038,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -19150,6 +20418,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -19531,6 +20802,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -19908,6 +21182,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -20296,6 +21573,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -20689,6 +21969,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -21066,6 +22349,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -21447,6 +22733,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -21824,6 +23113,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -22217,6 +23509,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -22596,6 +23891,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -22945,6 +24243,9 @@
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -23042,6 +24343,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -23052,6 +24356,9 @@
           },
           {
             "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mismatch_category_optional"
           },
           {
             "$ref": "#/components/parameters/offset_optional"
@@ -23121,6 +24428,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -23160,6 +24470,604 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/PolicyErrorsResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/overview": {
+      "description": "Return the data needed to populate the Overview dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Overview dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Overview dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogOverview",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OverviewDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/cost-and-spend": {
+      "description": "Return the data needed to populate the Cost and Spend dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Cost and Spend dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Cost and Spend dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogCostAndSpend",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CostAndSpendDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/savings-and-optimization": {
+      "description": "Return the data needed to populate the Savings and Optimization dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Savings and Optimization dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Savings and Optimization dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogSavingsAndOptimization",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SavingsAndOptimizationDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/cache-performance": {
+      "description": "Return the data needed to populate the Cache Performance dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Cache Performance dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Cache Performance dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogCachePerformance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CachePerformanceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/reliability-and-performance": {
+      "description": "Return the data needed to populate the Reliability and Performance dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Reliability and Performance dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Reliability and Performance dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogReliabilityAndPerformance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ReliabilityAndPerformanceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/usage-and-adoption": {
+      "description": "Return the data needed to populate the Usage and Adoption dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Usage and Adoption dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Usage and Adoption dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogUsageAndAdoption",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/UsageAndAdoptionDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/security-and-compliance": {
+      "description": "Return the data needed to populate the Security and Compliance dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Security and Compliance dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Security and Compliance dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogSecurityAndCompliance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SecurityAndComplianceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/agent-and-tool-quality": {
+      "description": "Return the data needed to populate the Agent and Tool Quality dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Agent and Tool Quality dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Agent and Tool Quality dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogAgentAndToolQuality",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AgentAndToolQualityDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/governance-and-data-health": {
+      "description": "Return the data needed to populate the Governance and Data Health dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Governance and Data Health dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Governance and Data Health dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogGovernanceAndDataHealth",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/GovernanceAndDataHealthDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/idig-filter-options": {
+      "description": "Return the data needed to populate the IDIG Filter Options dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the IDIG Filter Options dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the IDIG Filter Options dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogIdigFilterOptions",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/IdigFilterOptionsResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -23255,6 +25163,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -23633,6 +25544,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -24007,6 +25921,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -24385,6 +26302,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -24759,6 +26679,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -25137,6 +27060,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -25511,6 +27437,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -25896,6 +27825,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -26286,6 +28218,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -26660,6 +28595,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -27038,6 +28976,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -27412,6 +29353,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -27802,6 +29746,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -28178,6 +30125,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -28524,6 +30474,9 @@
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -28618,6 +30571,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -28628,6 +30584,9 @@
           },
           {
             "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mismatch_category_optional"
           },
           {
             "$ref": "#/components/parameters/offset_optional"
@@ -28694,6 +30653,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -28727,6 +30689,634 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/PolicyErrorsResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/overview": {
+      "description": "Return the data needed to populate the Overview dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Overview dashboard at space scope\n",
+        "description": "Return the data needed to populate the Overview dashboard at space scope.\n",
+        "operationId": "dashboards_spaceOverview",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OverviewDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/cost-and-spend": {
+      "description": "Return the data needed to populate the Cost and Spend dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Cost and Spend dashboard at space scope\n",
+        "description": "Return the data needed to populate the Cost and Spend dashboard at space scope.\n",
+        "operationId": "dashboards_spaceCostAndSpend",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CostAndSpendDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/savings-and-optimization": {
+      "description": "Return the data needed to populate the Savings and Optimization dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Savings and Optimization dashboard at space scope\n",
+        "description": "Return the data needed to populate the Savings and Optimization dashboard at space scope.\n",
+        "operationId": "dashboards_spaceSavingsAndOptimization",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SavingsAndOptimizationDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/cache-performance": {
+      "description": "Return the data needed to populate the Cache Performance dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Cache Performance dashboard at space scope\n",
+        "description": "Return the data needed to populate the Cache Performance dashboard at space scope.\n",
+        "operationId": "dashboards_spaceCachePerformance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CachePerformanceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/reliability-and-performance": {
+      "description": "Return the data needed to populate the Reliability and Performance dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Reliability and Performance dashboard at space scope\n",
+        "description": "Return the data needed to populate the Reliability and Performance dashboard at space scope.\n",
+        "operationId": "dashboards_spaceReliabilityAndPerformance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ReliabilityAndPerformanceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/usage-and-adoption": {
+      "description": "Return the data needed to populate the Usage and Adoption dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Usage and Adoption dashboard at space scope\n",
+        "description": "Return the data needed to populate the Usage and Adoption dashboard at space scope.\n",
+        "operationId": "dashboards_spaceUsageAndAdoption",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/UsageAndAdoptionDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/security-and-compliance": {
+      "description": "Return the data needed to populate the Security and Compliance dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Security and Compliance dashboard at space scope\n",
+        "description": "Return the data needed to populate the Security and Compliance dashboard at space scope.\n",
+        "operationId": "dashboards_spaceSecurityAndCompliance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SecurityAndComplianceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/agent-and-tool-quality": {
+      "description": "Return the data needed to populate the Agent and Tool Quality dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Agent and Tool Quality dashboard at space scope\n",
+        "description": "Return the data needed to populate the Agent and Tool Quality dashboard at space scope.\n",
+        "operationId": "dashboards_spaceAgentAndToolQuality",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AgentAndToolQualityDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/governance-and-data-health": {
+      "description": "Return the data needed to populate the Governance and Data Health dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Governance and Data Health dashboard at space scope\n",
+        "description": "Return the data needed to populate the Governance and Data Health dashboard at space scope.\n",
+        "operationId": "dashboards_spaceGovernanceAndDataHealth",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/GovernanceAndDataHealthDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/idig-filter-options": {
+      "description": "Return the data needed to populate the IDIG Filter Options dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the IDIG Filter Options dashboard at space scope\n",
+        "description": "Return the data needed to populate the IDIG Filter Options dashboard at space scope.\n",
+        "operationId": "dashboards_spaceIdigFilterOptions",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/IdigFilterOptionsResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -50843,6 +53433,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -51175,6 +53768,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -51511,6 +54107,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -51845,6 +54444,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -52177,6 +54779,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -52516,6 +55121,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -52848,6 +55456,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -53184,6 +55795,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -53518,6 +56132,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -53850,6 +56467,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -54189,6 +56809,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -54524,6 +57147,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -54863,6 +57489,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -55200,6 +57829,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -55535,6 +58167,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -55877,6 +58512,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -56215,6 +58853,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -56557,6 +59198,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -56897,6 +59541,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -57235,6 +59882,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -58455,6 +61105,21 @@
         "style": "deepObject",
         "explode": true
       },
+      "asset_type_optional": {
+        "name": "asset_type",
+        "in": "query",
+        "description": "Global \"lens\" filter for the IDIG dashboards. Restricts the data to LLM proxy traffic or MCP server traffic. `all` and `partner` apply no restriction.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "all",
+            "llm_proxy",
+            "mcp_server",
+            "partner"
+          ]
+        }
+      },
       "ai_insights_optional": {
         "name": "ai_insights",
         "in": "query",
@@ -58462,6 +61127,23 @@
         "required": false,
         "schema": {
           "type": "boolean"
+        }
+      },
+      "mismatch_category_optional": {
+        "name": "category",
+        "in": "query",
+        "description": "Only return status code mismatch events in this category. masked_error - the backend returned 4xx/5xx but the consumer received a success status; gateway_error - the backend succeeded but the consumer received 4xx/5xx; error_translated - both are errors but the status code was changed; other - both are non-error status codes but the status code was changed. Defaults to all.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "all",
+            "masked_error",
+            "gateway_error",
+            "error_translated",
+            "other"
+          ],
+          "default": "all"
         }
       },
       "audit-id": {
@@ -58701,6 +61383,15 @@
         "schema": {
           "type": "string",
           "example": "143"
+        }
+      },
+      "backend_host_optional": {
+        "name": "backend_host",
+        "in": "query",
+        "description": "Filter results by backend_host, the host (and non-default port) of backend_url, for example api.example.com or orders.internal:8443.\n",
+        "required": false,
+        "schema": {
+          "type": "string"
         }
       },
       "backend_url_optional": {
@@ -60935,6 +63626,9 @@
           "total_tokens": {
             "$ref": "#/components/schemas/DataItem"
           },
+          "unapproved_model_requests": {
+            "$ref": "#/components/schemas/DataItem"
+          },
           "token_count_over_time": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
           },
@@ -62083,10 +64777,10 @@
           "search_time": {
             "$ref": "#/components/schemas/NonNegativeInteger"
           },
-          "top_backend_urls_for_4xx_errors_over_time": {
+          "top_backend_hosts_for_4xx_errors_over_time": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
           },
-          "top_backend_urls_for_5xx_errors_over_time": {
+          "top_backend_hosts_for_5xx_errors_over_time": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
           },
           "backend_status_code": {
@@ -62095,18 +64789,80 @@
           "backend_time_to_serve_percentiles": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
           },
-          "top_slowest_backend_requests": {
-            "$ref": "#/components/schemas/BackendSlowRequestsData"
-          },
           "status_code_mismatch": {
             "$ref": "#/components/schemas/BackendStatusCodeMismatchData"
+          },
+          "status_code_translation": {
+            "$ref": "#/components/schemas/BackendStatusCodeTranslationData"
+          },
+          "backend_health": {
+            "$ref": "#/components/schemas/BackendHealthData"
+          },
+          "backend_health_by_api_type": {
+            "$ref": "#/components/schemas/BackendHealthData"
+          },
+          "protocol_errors": {
+            "$ref": "#/components/schemas/BackendProtocolErrorsData"
           },
           "policy_errors": {
             "$ref": "#/components/schemas/BackendPolicyErrorsData"
           }
         }
       },
-      "BackendSlowRequestsData": {
+      "BackendStatusCodeCategory": {
+        "type": "string",
+        "description": "How the consumer (gateway) status code relates to the backend status code. masked_error - the backend returned 4xx/5xx but the consumer received a success status; gateway_error - the backend succeeded but the consumer received 4xx/5xx; error_translated - both are errors but the status code was changed; other - both are non-error status codes but the status code was changed.\n",
+        "enum": [
+          "masked_error",
+          "gateway_error",
+          "error_translated",
+          "other"
+        ]
+      },
+      "BackendStatusCodeTranslationData": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Description of what this data represents"
+          },
+          "total": {
+            "description": "Number of distinct mismatching status code pairs.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
+          },
+          "data": {
+            "type": "array",
+            "description": "The most frequent mismatching status code pairs (up to 20), most frequent first.",
+            "items": {
+              "$ref": "#/components/schemas/BackendStatusCodeTranslationItem"
+            }
+          }
+        }
+      },
+      "BackendStatusCodeTranslationItem": {
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "type": "string",
+            "description": "Status code returned to the consumer."
+          },
+          "backend_status_code": {
+            "type": "string",
+            "description": "Status code returned by the backend."
+          },
+          "value": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "category": {
+            "$ref": "#/components/schemas/BackendStatusCodeCategory"
+          }
+        }
+      },
+      "BackendHealthData": {
         "type": "object",
         "properties": {
           "description": {
@@ -62119,31 +64875,281 @@
           "data": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/BackendSlowRequestItem"
+              "$ref": "#/components/schemas/BackendHealthItem"
             }
           }
         }
       },
-      "BackendSlowRequestItem": {
+      "BackendHealthMetrics": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string"
+          "calls": {
+            "description": "Total API calls.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
           },
-          "date": {
-            "type": "string"
+          "backend_calls": {
+            "description": "API calls where the backend returned a status code.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
           },
-          "value": {
-            "type": "number"
+          "errors_4xx": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
           },
-          "backend_url": {
-            "type": "string"
+          "errors_5xx": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
           },
-          "api_name": {
-            "type": "string"
+          "error_rate_4xx": {
+            "type": "number",
+            "description": "Backend 4xx responses as a percentage of backend calls."
           },
-          "backend_status_code": {
-            "type": "string"
+          "error_rate_5xx": {
+            "type": "number",
+            "description": "Backend 5xx responses as a percentage of backend calls."
+          },
+          "no_backend_response": {
+            "description": "Calls where the gateway returned 502, 503 or 504 and no backend status code was recorded.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
+          },
+          "p50": {
+            "type": "integer",
+            "nullable": true,
+            "description": "50th percentile backend time to serve in milliseconds (cached responses excluded)."
+          },
+          "p95": {
+            "type": "integer",
+            "nullable": true,
+            "description": "95th percentile backend time to serve in milliseconds (cached responses excluded)."
+          },
+          "p99": {
+            "type": "integer",
+            "nullable": true,
+            "description": "99th percentile backend time to serve in milliseconds (cached responses excluded)."
+          }
+        }
+      },
+      "BackendHealthItem": {
+        "description": "Backend health for one group. Rows in backend_health are keyed by backend_host and also include api_type, api_count and top_apis. Rows in backend_health_by_api_type are keyed by api_type.\n",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "backend_host": {
+                "type": "string",
+                "description": "The backend host (with port when it is not the default for the scheme)."
+              },
+              "api_type": {
+                "type": "string",
+                "nullable": true,
+                "description": "The most frequent API type calling this backend host."
+              },
+              "api_count": {
+                "description": "Number of distinct APIs calling this backend host.",
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/NonNegativeInteger"
+                  }
+                ]
+              },
+              "top_apis": {
+                "type": "array",
+                "description": "The APIs that call this backend host most often (up to 3).",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/BackendHealthMetrics"
+          }
+        ]
+      },
+      "BackendProtocolErrorsData": {
+        "type": "object",
+        "description": "Backend errors that HTTP status codes alone do not show, by API type.",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Description of what this data represents"
+          },
+          "graphql": {
+            "$ref": "#/components/schemas/BackendGraphQLErrors"
+          },
+          "llm": {
+            "$ref": "#/components/schemas/BackendLLMErrors"
+          },
+          "mcp": {
+            "$ref": "#/components/schemas/BackendMCPErrors"
+          },
+          "soap": {
+            "$ref": "#/components/schemas/BackendSOAPFaults"
+          }
+        }
+      },
+      "BackendGraphQLErrors": {
+        "type": "object",
+        "properties": {
+          "total_requests": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "responses_with_errors": {
+            "description": "GraphQL responses that contained at least one error.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
+          },
+          "error_count": {
+            "description": "Total number of GraphQL errors returned.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "operation_name": {
+                  "type": "string"
+                },
+                "api_name": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "responses_with_errors": {
+                  "$ref": "#/components/schemas/NonNegativeInteger"
+                },
+                "error_count": {
+                  "$ref": "#/components/schemas/NonNegativeInteger"
+                }
+              }
+            }
+          }
+        }
+      },
+      "BackendLLMErrors": {
+        "type": "object",
+        "properties": {
+          "total_requests": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ai_model": {
+                  "type": "string"
+                },
+                "calls": {
+                  "$ref": "#/components/schemas/NonNegativeInteger"
+                },
+                "backend_calls": {
+                  "$ref": "#/components/schemas/NonNegativeInteger"
+                },
+                "errors_4xx": {
+                  "$ref": "#/components/schemas/NonNegativeInteger"
+                },
+                "errors_5xx": {
+                  "$ref": "#/components/schemas/NonNegativeInteger"
+                },
+                "rate_limited": {
+                  "description": "Calls rejected by the model provider with 429.",
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/NonNegativeInteger"
+                    }
+                  ]
+                },
+                "error_rate": {
+                  "type": "number",
+                  "description": "Provider 4xx and 5xx responses as a percentage of backend calls."
+                },
+                "upstream_latency_p95": {
+                  "type": "integer",
+                  "nullable": true,
+                  "description": "95th percentile upstream (provider) latency in milliseconds (cached responses excluded)."
+                }
+              }
+            }
+          }
+        }
+      },
+      "BackendMCPErrors": {
+        "type": "object",
+        "properties": {
+          "total_requests": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "mcp_server_name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                {
+                  "$ref": "#/components/schemas/BackendHealthMetrics"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "BackendSOAPFaults": {
+        "type": "object",
+        "properties": {
+          "total_requests": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "faults": {
+            "description": "SOAP calls where the backend returned a 5xx status code.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "api_name": {
+                  "type": "string"
+                },
+                "calls": {
+                  "$ref": "#/components/schemas/NonNegativeInteger"
+                },
+                "faults": {
+                  "$ref": "#/components/schemas/NonNegativeInteger"
+                },
+                "fault_rate": {
+                  "type": "number",
+                  "description": "Faults as a percentage of calls."
+                }
+              }
+            }
           }
         }
       },
@@ -62288,11 +65294,37 @@
           "unmatched_value": {
             "$ref": "#/components/schemas/NonNegativeInteger"
           },
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BackendStatusCodeMismatchItem"
-            }
+          "masked_error_value": {
+            "description": "Calls where the backend returned 4xx/5xx but the consumer received a success status.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
+          },
+          "gateway_error_value": {
+            "description": "Calls where the backend succeeded but the consumer received 4xx/5xx.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
+          },
+          "error_translated_value": {
+            "description": "Calls where both status codes are errors but the status code was changed.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
+          },
+          "other_value": {
+            "description": "Calls where both status codes are non-errors but the status code was changed.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
           }
         }
       },
@@ -62496,6 +65528,10 @@
           "app_lifecycle_state": {
             "type": "string",
             "description": "The lifecycle state of the calling application"
+          },
+          "backend_host": {
+            "type": "string",
+            "description": "The host of backend_url, lowercased, with the port when it is not the default for the scheme, e.g. api.example.com or orders.internal:8443\n"
           },
           "backend_method": {
             "type": "string",
@@ -65732,6 +68768,18 @@
           }
         }
       },
+      "QuerySingleResponse": {
+        "type": "object",
+        "description": "A single query, wrapped in a query property.",
+        "required": [
+          "query"
+        ],
+        "properties": {
+          "query": {
+            "$ref": "#/components/schemas/Query"
+          }
+        }
+      },
       "QueryTransferOwnerRequest": {
         "type": "object",
         "required": [
@@ -67217,34 +70265,42 @@
       },
       "AuditResponse": {
         "type": "object",
-        "description": "A single audit record.",
+        "description": "A single audit record: a CADF event as recorded, with ``_id`` added. Field names are as stored (camelCase); events can carry more fields than are listed here.\n",
+        "additionalProperties": true,
         "properties": {
-          "id": {
+          "_id": {
             "type": "string",
             "description": "Unique identifier for the audit record."
           },
-          "org_id": {
+          "@timestamp": {
+            "type": "string",
+            "description": "When the record was stored."
+          },
+          "orgId": {
             "type": "string",
             "description": "Provider organization ID."
           },
-          "catalog_id": {
+          "catalogId": {
             "type": "string",
             "description": "Catalog ID."
           },
-          "space_id": {
+          "spaceId": {
             "type": "string",
             "description": "Space ID."
           },
-          "event_time": {
+          "eventTime": {
             "type": "string",
-            "format": "date-time",
-            "description": "Timestamp of the audit event."
+            "description": "Timestamp of the audit event (ISO 8601, in the requested timezone if one was given)."
           },
-          "event_name": {
+          "eventName": {
             "type": "string",
             "description": "Name of the audit event."
           },
-          "type_uri": {
+          "eventType": {
+            "type": "string",
+            "description": "Type of the audit event."
+          },
+          "typeURI": {
             "type": "string",
             "description": "The type URI."
           },
@@ -67256,23 +70312,21 @@
             "type": "string",
             "description": "Outcome of the event."
           },
-          "event_type": {
-            "type": "string",
-            "description": "Type of the audit event."
-          },
           "reason": {
             "type": "object",
+            "additionalProperties": true,
             "properties": {
-              "reason_code": {
+              "reasonCode": {
                 "type": "integer"
               },
-              "reason_type": {
+              "reasonType": {
                 "type": "string"
               }
             }
           },
           "initiator": {
             "type": "object",
+            "additionalProperties": true,
             "properties": {
               "id": {
                 "type": "string"
@@ -67280,8 +70334,12 @@
               "name": {
                 "type": "string"
               },
+              "typeURI": {
+                "type": "string"
+              },
               "host": {
                 "type": "object",
+                "additionalProperties": true,
                 "properties": {
                   "agent": {
                     "type": "string"
@@ -67290,14 +70348,12 @@
                     "type": "string"
                   }
                 }
-              },
-              "type_uri": {
-                "type": "string"
               }
             }
           },
           "target": {
             "type": "object",
+            "additionalProperties": true,
             "properties": {
               "id": {
                 "type": "string"
@@ -67305,86 +70361,104 @@
               "name": {
                 "type": "string"
               },
-              "type_uri": {
+              "version": {
                 "type": "string"
               },
-              "event_generator": {
+              "typeURI": {
+                "type": "string"
+              },
+              "eventGenerator": {
                 "type": "string"
               }
             }
           },
-          "request_data": {
+          "requestData": {
             "type": "object",
+            "additionalProperties": true,
             "description": "Request details."
           },
-          "response_data": {
+          "responseData": {
             "type": "object",
+            "additionalProperties": true,
             "description": "Response details."
           },
           "attachments": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "component": {
-                  "type": "string"
-                },
-                "eventGenerator": {
-                  "type": "string"
-                },
-                "scope": {
-                  "type": "string"
-                },
-                "method": {
-                  "type": "string"
-                },
-                "summary": {
-                  "type": "string"
-                },
-                "operation": {
-                  "type": "string"
-                },
-                "resource": {
-                  "type": "string"
-                },
-                "user": {
-                  "type": "object",
-                  "properties": {
-                    "url": {
-                      "type": "string"
-                    },
-                    "context": {
-                      "type": "string"
-                    },
-                    "idp_name": {
-                      "type": "string"
-                    },
-                    "name": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "registration": {
-                  "type": "object",
-                  "properties": {
-                    "url": {
-                      "type": "string"
-                    },
-                    "type": {
-                      "type": "string"
-                    }
+            "type": "object",
+            "additionalProperties": true,
+            "description": "API Manager details of the request (operation, resource, user, catalog, org, ...).",
+            "properties": {
+              "component": {
+                "type": "string"
+              },
+              "scope": {
+                "type": "string"
+              },
+              "method": {
+                "type": "string"
+              },
+              "summary": {
+                "type": "string"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "resource": {
+                "type": "string"
+              },
+              "actor_type": {
+                "type": "string"
+              },
+              "user": {
+                "type": "object",
+                "additionalProperties": true,
+                "properties": {
+                  "url": {
+                    "type": "string"
+                  },
+                  "context": {
+                    "type": "string"
+                  },
+                  "idp_name": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
                   }
                 }
+              },
+              "registration": {
+                "type": "object",
+                "additionalProperties": true,
+                "properties": {
+                  "url": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  }
+                }
+              },
+              "org": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "catalog": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "space": {
+                "type": "object",
+                "additionalProperties": true
               }
             }
           },
-          "logSource_type": {
+          "logSourceType": {
             "type": "string",
-            "description": "Log source type of the audit event"
+            "description": "Log source type of the audit event."
           },
-          "logSource_crn": {
+          "logSourceCRN": {
             "type": "string",
-            "description": "Log source CRN of the audit event"
+            "description": "Log source CRN of the audit event."
           }
         }
       },
@@ -68147,6 +71221,761 @@
             }
           }
         }
+      },
+      "OverviewDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Overview Dashboard.",
+        "properties": {
+          "kpis": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "kpiDeltas": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "traffic": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "alerts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "movers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "snapshot": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "CostAndSpendDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Cost and Spend Dashboard.",
+        "properties": {
+          "kpis": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "kpiDeltas": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "spendFlowNodes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "spendFlowLinks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "partnerMix": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "partnerProviderMix": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "partnerModelMix": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "costCeiling": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "dailySpendVsCeiling": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "tokenEfficiency": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "tokenEfficiencyRatio": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "topSpenders": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "tokenUsageOverTime": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "tokensByModel": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "tokensByProvider": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "partnerTokensOverTime": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "partnerTokens": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "topPartnersByTokens": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "agentTokensOverTime": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "agentTokens": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "topAgentsByTokens": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "requestTokenPercentiles": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "responseTokenPercentiles": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "tokenHeatmap": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "piiTokens": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "piiOverheadByPartner": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "piiTokenOverhead": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "topTokenRequests": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "unpricedModels": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "SavingsAndOptimizationDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Savings and Optimization Dashboard.",
+        "properties": {
+          "kpis": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "kpiDeltas": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "waterfall": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "routing": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "routingRules": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "adaptiveRouter": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "embeddingCost": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      },
+      "CachePerformanceDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Cache Performance Dashboard.",
+        "properties": {
+          "kpis": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "kpiDeltas": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "hitRateTrend": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "hitsVsMisses": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "exactVsSemantic": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "hitMissLatency": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "hitRateByProvider": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "hitRateByTool": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "hitRateByServer": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "hitRateByApplication": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "falseHitRisk": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "lookupLatency": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "ttlRecommendations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "bypassReasons": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "ReliabilityAndPerformanceDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Reliability and Performance Dashboard.",
+        "properties": {
+          "kpis": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "kpiDeltas": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "latencyTimeSeries": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "latencyDistributions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "latencyBreakdown": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "statusCodeBuckets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "failingOperations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "errorTypes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "circuitBreakerEvents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "protocolTranslations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "errorsOverTime": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "rateLimitedAgents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "toolHealth": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "UsageAndAdoptionDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Usage and Adoption Dashboard.",
+        "properties": {
+          "kpis": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "assetBreakdown": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "kpiDeltas": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "callsOverTime": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "topConsumers": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "requestHeatmap": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          },
+          "topAssets": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "topOperations": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "assets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "clients": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "operations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "providers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "toolDistribution": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "newSubscribers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "topTools": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "topEndpoints": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "conditional": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      },
+      "SecurityAndComplianceDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Security and Compliance Dashboard.",
+        "properties": {
+          "kpis": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "kpiDeltas": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "policyControls": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "toolGovernance": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "redactionsOverTime": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "piiActivity": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "piiModelTierCoverage": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "modelTierSkipReasons": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "piiNotRedacted": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "clientAnomalies": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "tokenExchangeLog": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "AgentAndToolQualityDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Agent and Tool Quality Dashboard.",
+        "properties": {
+          "kpis": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "kpiDeltas": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "repairKinds": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "payloadSizes": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "emptyResultsRescued": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "payloadDistribution": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "mcpMethodMix": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "jsonRpcErrors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "GovernanceAndDataHealthDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Governance and Data Health Dashboard.",
+        "properties": {
+          "partnerPolicies": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "degradation": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "bypassReasons": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "ungovernedTraffic": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "nonActiveApps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "identityCompleteness": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "loggingCoverage": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "cacheFlagReconciliation": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "flagChanges": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "IdigFilterOptionsResponse": {
+        "type": "object",
+        "description": "Data to display on the IDIG Filter Options Dashboard.",
+        "properties": {
+          "partners": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "assets": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "providers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "providerTotal": {
+            "type": "number"
+          }
+        }
       }
     },
     "responses": {
@@ -68773,12 +72602,12 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/Query"
+              "$ref": "#/components/schemas/QuerySingleResponse"
             }
           },
           "application/yaml": {
             "schema": {
-              "$ref": "#/components/schemas/Query"
+              "$ref": "#/components/schemas/QuerySingleResponse"
             }
           }
         }
@@ -69304,6 +73133,156 @@
           "application/yaml": {
             "schema": {
               "$ref": "#/components/schemas/PolicyErrorsResponse"
+            }
+          }
+        }
+      },
+      "OverviewDashboardResponse": {
+        "description": "Data needed to populate the Overview Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/OverviewDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/OverviewDashboardResponse"
+            }
+          }
+        }
+      },
+      "CostAndSpendDashboardResponse": {
+        "description": "Data needed to populate the Cost and Spend Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CostAndSpendDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/CostAndSpendDashboardResponse"
+            }
+          }
+        }
+      },
+      "SavingsAndOptimizationDashboardResponse": {
+        "description": "Data needed to populate the Savings and Optimization Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SavingsAndOptimizationDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/SavingsAndOptimizationDashboardResponse"
+            }
+          }
+        }
+      },
+      "CachePerformanceDashboardResponse": {
+        "description": "Data needed to populate the Cache Performance Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CachePerformanceDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/CachePerformanceDashboardResponse"
+            }
+          }
+        }
+      },
+      "ReliabilityAndPerformanceDashboardResponse": {
+        "description": "Data needed to populate the Reliability and Performance Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ReliabilityAndPerformanceDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ReliabilityAndPerformanceDashboardResponse"
+            }
+          }
+        }
+      },
+      "UsageAndAdoptionDashboardResponse": {
+        "description": "Data needed to populate the Usage and Adoption Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UsageAndAdoptionDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/UsageAndAdoptionDashboardResponse"
+            }
+          }
+        }
+      },
+      "SecurityAndComplianceDashboardResponse": {
+        "description": "Data needed to populate the Security and Compliance Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SecurityAndComplianceDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/SecurityAndComplianceDashboardResponse"
+            }
+          }
+        }
+      },
+      "AgentAndToolQualityDashboardResponse": {
+        "description": "Data needed to populate the Agent and Tool Quality Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AgentAndToolQualityDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/AgentAndToolQualityDashboardResponse"
+            }
+          }
+        }
+      },
+      "GovernanceAndDataHealthDashboardResponse": {
+        "description": "Data needed to populate the Governance and Data Health Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/GovernanceAndDataHealthDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/GovernanceAndDataHealthDashboardResponse"
+            }
+          }
+        }
+      },
+      "IdigFilterOptionsResponse": {
+        "description": "Data needed to populate the IDIG Filter Options Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/IdigFilterOptionsResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/IdigFilterOptionsResponse"
             }
           }
         }

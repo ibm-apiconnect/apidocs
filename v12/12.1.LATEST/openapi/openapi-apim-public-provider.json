@@ -18,7 +18,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/api",
       "description": "APIM base path"
     }
   ],
@@ -32022,9 +32022,6 @@
           },
           {
             "$ref": "#/components/parameters/expand"
-          },
-          {
-            "$ref": "#/components/parameters/mcp_server_subscriptions"
           }
         ],
         "responses": {
@@ -32104,9 +32101,6 @@
           },
           {
             "$ref": "#/components/parameters/expand"
-          },
-          {
-            "$ref": "#/components/parameters/mcp_server_subscriptions"
           }
         ],
         "responses": {
@@ -32250,9 +32244,6 @@
           },
           {
             "$ref": "#/components/parameters/expand"
-          },
-          {
-            "$ref": "#/components/parameters/mcp_server_subscriptions"
           }
         ],
         "responses": {
@@ -32584,9 +32575,6 @@
           },
           {
             "$ref": "#/components/parameters/expand"
-          },
-          {
-            "$ref": "#/components/parameters/mcp_server_subscriptions"
           }
         ],
         "responses": {
@@ -51810,9 +51798,6 @@
           },
           {
             "$ref": "#/components/parameters/plan_query"
-          },
-          {
-            "$ref": "#/components/parameters/mcp_server_subscriptions"
           }
         ],
         "responses": {
@@ -52188,9 +52173,6 @@
           },
           {
             "$ref": "#/components/parameters/plan_query"
-          },
-          {
-            "$ref": "#/components/parameters/mcp_server_subscriptions"
           }
         ],
         "responses": {
@@ -65962,15 +65944,6 @@
           "type": "string"
         }
       },
-      "mcp_server_subscriptions": {
-        "name": "mcp_server_subscriptions",
-        "in": "query",
-        "description": "Only retrieve subscriptions for MCP Servers",
-        "required": false,
-        "schema": {
-          "type": "boolean"
-        }
-      },
       "mcp_server_url": {
         "name": "mcp_server_url",
         "in": "query",
@@ -67521,7 +67494,12 @@
               "datapower-api-gateway",
               "event-gateway",
               "datapower-nano-gateway",
-              "wm-api-gateway"
+              "wm-api-gateway",
+              "azure-api-gateway",
+              "aws-api-gateway",
+              "apigee-api-gateway",
+              "kong-api-gateway",
+              "mulesoft-api-gateway"
             ]
           },
           "api_kind": {
@@ -71784,7 +71762,8 @@
                     "type": "string",
                     "enum": [
                       "remote",
-                      "local"
+                      "local",
+                      "cascading"
                     ]
                   },
                   "remote_introspection": {
@@ -71793,6 +71772,13 @@
                     "properties": {
                       "gateway_user": {
                         "type": "string"
+                      },
+                      "client_auth_method": {
+                        "type": "string",
+                        "enum": [
+                          "client_credentials",
+                          "client_assertion"
+                        ]
                       }
                     }
                   },
@@ -71811,6 +71797,9 @@
                       },
                       "clock_skew_in_seconds": {
                         "type": "integer"
+                      },
+                      "tls_client_profile_url": {
+                        "type": "string"
                       }
                     }
                   },
@@ -71838,6 +71827,12 @@
                   "refresh_token_url": {
                     "type": "string"
                   },
+                  "additional_grants": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
                   "dcr": {
                     "type": "object",
                     "additionalProperties": false,
@@ -71853,6 +71848,96 @@
                         "additionalProperties": {
                           "type": "string"
                         }
+                      },
+                      "extended_values": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "endpoint_type",
+                            "key",
+                            "value"
+                          ],
+                          "properties": {
+                            "endpoint_type": {
+                              "type": "string",
+                              "enum": [
+                                "client_registration",
+                                "client_update",
+                                "client_delete",
+                                "client_read",
+                                "scope_create",
+                                "scope_read",
+                                "scope_update",
+                                "scope_delete"
+                              ]
+                            },
+                            "key": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "impl_names": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "redirect_uris": {
+                            "type": "string"
+                          },
+                          "token_endpoint_auth_method": {
+                            "type": "string"
+                          },
+                          "grant_types": {
+                            "type": "string"
+                          },
+                          "application_type": {
+                            "type": "string"
+                          },
+                          "response_types": {
+                            "type": "string"
+                          },
+                          "client_name": {
+                            "type": "string"
+                          },
+                          "client_uri": {
+                            "type": "string"
+                          },
+                          "logo_uri": {
+                            "type": "string"
+                          },
+                          "scope": {
+                            "type": "string"
+                          },
+                          "contacts": {
+                            "type": "string"
+                          },
+                          "tos_uri": {
+                            "type": "string"
+                          },
+                          "jwks_uri": {
+                            "type": "string"
+                          },
+                          "client_id": {
+                            "type": "string"
+                          },
+                          "client_secret": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "supported_application_types": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "generate_credentials": {
+                        "type": "boolean"
                       },
                       "auth_type": {
                         "type": "string",
@@ -73180,7 +73265,12 @@
               "datapower-api-gateway",
               "event-gateway",
               "datapower-nano-gateway",
-              "wm-api-gateway"
+              "wm-api-gateway",
+              "azure-api-gateway",
+              "aws-api-gateway",
+              "apigee-api-gateway",
+              "kong-api-gateway",
+              "mulesoft-api-gateway"
             ]
           },
           "oai_version": {
@@ -73324,7 +73414,12 @@
                 "datapower-api-gateway",
                 "event-gateway",
                 "datapower-nano-gateway",
-                "wm-api-gateway"
+                "wm-api-gateway",
+                "azure-api-gateway",
+                "aws-api-gateway",
+                "apigee-api-gateway",
+                "kong-api-gateway",
+                "mulesoft-api-gateway"
               ]
             }
           },
@@ -77820,7 +77915,8 @@
                     "type": "string",
                     "enum": [
                       "remote",
-                      "local"
+                      "local",
+                      "cascading"
                     ]
                   },
                   "remote_introspection": {
@@ -77829,6 +77925,13 @@
                     "properties": {
                       "gateway_user": {
                         "type": "string"
+                      },
+                      "client_auth_method": {
+                        "type": "string",
+                        "enum": [
+                          "client_credentials",
+                          "client_assertion"
+                        ]
                       }
                     }
                   },
@@ -77847,6 +77950,9 @@
                       },
                       "clock_skew_in_seconds": {
                         "type": "integer"
+                      },
+                      "tls_client_profile_url": {
+                        "type": "string"
                       }
                     }
                   },
@@ -77874,6 +77980,12 @@
                   "refresh_token_url": {
                     "type": "string"
                   },
+                  "additional_grants": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
                   "dcr": {
                     "type": "object",
                     "additionalProperties": false,
@@ -77889,6 +78001,96 @@
                         "additionalProperties": {
                           "type": "string"
                         }
+                      },
+                      "extended_values": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "endpoint_type",
+                            "key",
+                            "value"
+                          ],
+                          "properties": {
+                            "endpoint_type": {
+                              "type": "string",
+                              "enum": [
+                                "client_registration",
+                                "client_update",
+                                "client_delete",
+                                "client_read",
+                                "scope_create",
+                                "scope_read",
+                                "scope_update",
+                                "scope_delete"
+                              ]
+                            },
+                            "key": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "impl_names": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "redirect_uris": {
+                            "type": "string"
+                          },
+                          "token_endpoint_auth_method": {
+                            "type": "string"
+                          },
+                          "grant_types": {
+                            "type": "string"
+                          },
+                          "application_type": {
+                            "type": "string"
+                          },
+                          "response_types": {
+                            "type": "string"
+                          },
+                          "client_name": {
+                            "type": "string"
+                          },
+                          "client_uri": {
+                            "type": "string"
+                          },
+                          "logo_uri": {
+                            "type": "string"
+                          },
+                          "scope": {
+                            "type": "string"
+                          },
+                          "contacts": {
+                            "type": "string"
+                          },
+                          "tos_uri": {
+                            "type": "string"
+                          },
+                          "jwks_uri": {
+                            "type": "string"
+                          },
+                          "client_id": {
+                            "type": "string"
+                          },
+                          "client_secret": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "supported_application_types": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "generate_credentials": {
+                        "type": "boolean"
                       },
                       "auth_type": {
                         "type": "string",
@@ -79511,7 +79713,12 @@
                 "datapower-api-gateway",
                 "event-gateway",
                 "datapower-nano-gateway",
-                "wm-api-gateway"
+                "wm-api-gateway",
+                "azure-api-gateway",
+                "aws-api-gateway",
+                "apigee-api-gateway",
+                "kong-api-gateway",
+                "mulesoft-api-gateway"
               ]
             }
           },
@@ -86340,6 +86547,9 @@
             "$ref": "#/components/schemas/ProjectInboundMessaging"
           },
           {
+            "$ref": "#/components/schemas/ProjectInboundMessagingV2"
+          },
+          {
             "$ref": "#/components/schemas/ProjectIAM"
           },
           {
@@ -86362,6 +86572,9 @@
           },
           {
             "$ref": "#/components/schemas/ProjectServiceResultCache"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectServiceResultCacheV2"
           },
           {
             "$ref": "#/components/schemas/ProjectOutboundAlias"
@@ -86425,6 +86638,21 @@
           },
           {
             "$ref": "#/components/schemas/ProjectCORS"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectSOAPEndpoint"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectInboundAuthMessage"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectOutboundAuthMessage"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectSOAPMessageConfig"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectSOAPToRESTMapping"
           }
         ]
       },
@@ -87213,7 +87441,12 @@
               "datapower-api-gateway",
               "event-gateway",
               "datapower-nano-gateway",
-              "wm-api-gateway"
+              "wm-api-gateway",
+              "azure-api-gateway",
+              "aws-api-gateway",
+              "apigee-api-gateway",
+              "kong-api-gateway",
+              "mulesoft-api-gateway"
             ]
           }
         }
@@ -91402,6 +91635,999 @@
           }
         }
       },
+      "ProjectSOAPToRESTMapping": {
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "SOAPToRESTMapping"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "type": "object",
+            "required": [
+              "openapi",
+              "operations"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "openapi": {
+                "$ref": "#/components/schemas/ProjectPath",
+                "description": "Reference to OpenAPI specification containing full REST API definition"
+              },
+              "soap-transformation-settings": {
+                "description": "Transformation settings for SOAP-to-REST response conversion",
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "useSchemaTransform": {
+                    "type": "boolean",
+                    "description": "Use WSDL/XSD schema for XML-to-JSON"
+                  },
+                  "useSchemaDefaults": {
+                    "type": "boolean",
+                    "description": "Do not populate missing elements with defaults"
+                  },
+                  "removeRootNode": {
+                    "type": "boolean",
+                    "description": "Remove SOAP operation wrapper from JSON response"
+                  }
+                }
+              },
+              "operations": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "name",
+                    "path",
+                    "method",
+                    "operationId"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "SOAP operation name"
+                    },
+                    "path": {
+                      "type": "string",
+                      "description": "REST endpoint path"
+                    },
+                    "method": {
+                      "type": "string",
+                      "description": "HTTP method for the REST endpoint"
+                    },
+                    "operationId": {
+                      "type": "string",
+                      "description": "OpenAPI operationId for the REST operation"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Mapping description"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ProjectSOAPEndpoint": {
+        "description": "SOAP Endpoint configuration for backend service connectivity",
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "SOAPEndpoint"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "type": "object",
+            "required": [
+              "url"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "Backend service URL"
+              },
+              "connectTimeout": {
+                "type": "integer",
+                "description": "Connection timeout in milliseconds",
+                "minimum": 0
+              },
+              "readTimeout": {
+                "type": "integer",
+                "description": "Read timeout in milliseconds",
+                "minimum": 0
+              },
+              "nativeServiceTimeout": {
+                "maximum": 4294967295,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "tlsClientProfile": {
+                "type": "string"
+              },
+              "serviceRegistryParameters": {
+                "type": "array",
+                "description": "Service registry parameters for dynamic endpoint resolution",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "name",
+                    "value"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "Parameter name"
+                    },
+                    "value": {
+                      "type": "string",
+                      "description": "Parameter value"
+                    }
+                  }
+                }
+              },
+              "optimizationMethod": {
+                "type": "string",
+                "enum": [
+                  "MTOM",
+                  "SWA",
+                  "NONE"
+                ],
+                "description": "SOAP attachment optimization method (MTOM, SWA, or NONE)"
+              },
+              "passWSSecurityHeaders": {
+                "type": "boolean",
+                "description": "Whether to pass WS-Security headers to the backend service"
+              }
+            }
+          }
+        }
+      },
+      "ProjectSOAPMessageConfig": {
+        "description": "SOAP Message Configuration for JMS message properties",
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "SOAPMessageConfig"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "type": "object",
+            "required": [
+              "connectionUrl"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "connectionUrl": {
+                "type": "string",
+                "description": "JMS connection URL for SOAP message delivery"
+              },
+              "replyTo": {
+                "type": "string",
+                "description": "JMS reply-to destination"
+              },
+              "priority": {
+                "type": "integer",
+                "description": "Message priority (0-9)",
+                "minimum": 0,
+                "maximum": 9
+              },
+              "ttl": {
+                "type": "integer",
+                "description": "Time to live in milliseconds",
+                "minimum": 0
+              },
+              "deliveryMode": {
+                "type": "string",
+                "enum": [
+                  "persistent",
+                  "non_persistent"
+                ],
+                "description": "Message delivery mode"
+              },
+              "property": {
+                "type": "array",
+                "description": "Custom JMS message properties",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "key",
+                    "value"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "key": {
+                      "type": "string",
+                      "description": "Property key (supports variable substitution like ${request.path})"
+                    },
+                    "value": {
+                      "type": "string",
+                      "description": "Property value"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ProjectInboundAuthMessage": {
+        "description": "Inbound Authentication Message policy for SOAP WS-Security",
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "InboundAuthMessage"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "bindingAssertion": {
+                "type": "string",
+                "description": "Binding assertion for the policy"
+              },
+              "requireEncryption": {
+                "type": "array",
+                "description": "Encryption requirements for the message",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "encryptionParts": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "entireBody": {
+                            "type": "boolean",
+                            "description": "Encrypt entire SOAP body"
+                          },
+                          "entireAttachments": {
+                            "type": "boolean",
+                            "description": "Encrypt entire attachments"
+                          },
+                          "headersToSecure": {
+                            "type": "array",
+                            "description": "SOAP headers to encrypt",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "name",
+                                "namespace"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "name": {
+                                  "type": "string",
+                                  "description": "Header name"
+                                },
+                                "namespace": {
+                                  "type": "string",
+                                  "description": "Header namespace URI"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "encryptedElements": {
+                      "type": "array",
+                      "description": "Specific elements to encrypt using XPath",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "xpath"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "xpath": {
+                            "type": "string",
+                            "description": "XPath expression for element selection"
+                          },
+                          "namespace": {
+                            "type": "array",
+                            "description": "Namespace prefixes and URIs for XPath",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "prefix",
+                                "uri"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "prefix": {
+                                  "type": "string",
+                                  "description": "Namespace prefix"
+                                },
+                                "uri": {
+                                  "type": "string",
+                                  "description": "Namespace URI"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "requireSignature": {
+                "type": "array",
+                "description": "Signature requirements for the message",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "signedElements": {
+                      "type": "array",
+                      "description": "Specific elements to sign using XPath",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "xpath"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "xpath": {
+                            "type": "string",
+                            "description": "XPath expression for element selection"
+                          },
+                          "namespace": {
+                            "type": "array",
+                            "description": "Namespace prefixes and URIs for XPath",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "prefix",
+                                "uri"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "prefix": {
+                                  "type": "string",
+                                  "description": "Namespace prefix"
+                                },
+                                "uri": {
+                                  "type": "string",
+                                  "description": "Namespace URI"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "signatureParts": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "entireBody": {
+                            "type": "boolean",
+                            "description": "Sign entire SOAP body"
+                          },
+                          "entireAttachments": {
+                            "type": "boolean",
+                            "description": "Sign entire attachments"
+                          },
+                          "headersToSecure": {
+                            "type": "array",
+                            "description": "SOAP headers to sign",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "name",
+                                "namespace"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "name": {
+                                  "type": "string",
+                                  "description": "Header name"
+                                },
+                                "namespace": {
+                                  "type": "string",
+                                  "description": "Header namespace URI"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "validateSAMLAudienceURI": {
+                "type": "array",
+                "description": "SAML audience URI validation settings",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "allowedURIs": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "uri",
+                          "matchCriteria"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "uri": {
+                            "type": "string",
+                            "description": "Allowed audience URI"
+                          },
+                          "matchCriteria": {
+                            "type": "string",
+                            "enum": [
+                              "exact",
+                              "prefix"
+                            ],
+                            "description": "URI matching criteria"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "tokenAssertion": {
+                "type": "object",
+                "description": "Token assertion requirements",
+                "additionalProperties": false,
+                "properties": {
+                  "requireX509Certificate": {
+                    "type": "boolean",
+                    "description": "Require X.509 certificate token"
+                  },
+                  "requireWSSUsernameToken": {
+                    "type": "boolean",
+                    "description": "Require WS-Security username token"
+                  },
+                  "kerberosTokenAssertion": {
+                    "type": "object",
+                    "description": "Kerberos token assertion settings",
+                    "additionalProperties": false,
+                    "properties": {
+                      "servicePrincipalName": {
+                        "type": "string",
+                        "description": "Service principal name for Kerberos"
+                      },
+                      "servicePrincipalPassword": {
+                        "type": "string",
+                        "description": "Service principal password"
+                      }
+                    }
+                  },
+                  "requireSAMLToken": {
+                    "type": "object",
+                    "description": "SAML token requirements",
+                    "additionalProperties": false,
+                    "properties": {
+                      "samlVersion": {
+                        "type": "string",
+                        "description": "SAML version (e.g., \"2.0\")"
+                      },
+                      "samlSubject": {
+                        "type": "string",
+                        "enum": [
+                          "bearerOfToken",
+                          "holderOfKeySymmetric",
+                          "holderOfKeyPublic"
+                        ],
+                        "description": "SAML subject confirmation method"
+                      },
+                      "wsTrustVersion": {
+                        "type": "string",
+                        "enum": [
+                          "1.0",
+                          "1.3"
+                        ],
+                        "description": "WS-Trust version"
+                      },
+                      "encryptSignature": {
+                        "type": "boolean",
+                        "description": "Whether to encrypt the signature"
+                      },
+                      "issuerAddress": {
+                        "type": "string",
+                        "description": "SAML token issuer address"
+                      },
+                      "metadataReferenceAddress": {
+                        "type": "string",
+                        "description": "Metadata reference address"
+                      },
+                      "algorithmSuite": {
+                        "type": "string",
+                        "enum": [
+                          "Basic128",
+                          "Basic128Rsa15",
+                          "Basic128Sha256",
+                          "Basic128Sha256Rsa15",
+                          "Basic192",
+                          "Basic192Rsa15",
+                          "Basic192Sha256",
+                          "Basic192Sha256Rsa15",
+                          "Basic256",
+                          "Basic256Rsa15",
+                          "Basic256Sha256",
+                          "Basic256Sha256Rsa15",
+                          "TripleDes",
+                          "TripleDesRsa15",
+                          "TripleDesSha256"
+                        ],
+                        "description": "Algorithm suite for encryption and signing"
+                      },
+                      "securityTokenTemplateParameters": {
+                        "type": "array",
+                        "description": "Security token template parameters",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "key",
+                            "value"
+                          ],
+                          "additionalProperties": false,
+                          "properties": {
+                            "key": {
+                              "type": "string",
+                              "description": "Parameter key"
+                            },
+                            "value": {
+                              "type": "string",
+                              "description": "Parameter value"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "customTokenAssertion": {
+                    "type": "array",
+                    "description": "Custom token assertions",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "requireTimeStamp": {
+                "type": "boolean",
+                "description": "Require timestamp in the message"
+              }
+            }
+          }
+        }
+      },
+      "ProjectOutboundAuthMessage": {
+        "description": "Outbound Authentication Message policy for SOAP backend service connectivity",
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "OutboundAuthMessage"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v1"
+            ]
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "noAuth"
+                ],
+                "properties": {
+                  "noAuth": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "signingConfigurations": {
+                        "type": "object",
+                        "required": [
+                          "keystore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "keystore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "encryptionConfiguration": {
+                        "type": "object",
+                        "required": [
+                          "truststore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "truststore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "wssUsername"
+                ],
+                "properties": {
+                  "wssUsername": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "useCustomCredentials"
+                    ],
+                    "properties": {
+                      "useCustomCredentials": {
+                        "type": "object",
+                        "required": [
+                          "username",
+                          "password"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "username": {
+                            "type": "string"
+                          },
+                          "password": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "signingConfigurations": {
+                        "type": "object",
+                        "required": [
+                          "keystore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "keystore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "encryptionConfiguration": {
+                        "type": "object",
+                        "required": [
+                          "truststore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "truststore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kerberos"
+                ],
+                "properties": {
+                  "kerberos": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "useCustomCredentials": {
+                        "type": "object",
+                        "required": [
+                          "clientPassword",
+                          "clientPrincipal",
+                          "servicePrincipal",
+                          "servicePrincipalNameform"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "clientPassword": {
+                            "type": "string"
+                          },
+                          "clientPrincipal": {
+                            "type": "string"
+                          },
+                          "servicePrincipal": {
+                            "type": "string"
+                          },
+                          "servicePrincipalNameform": {
+                            "type": "string",
+                            "enum": [
+                              "Username",
+                              "Hostbased"
+                            ]
+                          }
+                        }
+                      },
+                      "delegateIncomingCredentials": {
+                        "type": "object",
+                        "required": [
+                          "clientPassword",
+                          "clientPrincipal",
+                          "servicePrincipal",
+                          "servicePrincipalNameform"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "clientPassword": {
+                            "type": "string"
+                          },
+                          "clientPrincipal": {
+                            "type": "string"
+                          },
+                          "servicePrincipal": {
+                            "type": "string"
+                          },
+                          "servicePrincipalNameform": {
+                            "type": "string",
+                            "enum": [
+                              "Username",
+                              "Hostbased"
+                            ]
+                          }
+                        }
+                      },
+                      "incomingHTTPBasicAuthCred": {
+                        "type": "object",
+                        "required": [
+                          "servicePrincipal",
+                          "servicePrincipalNameform"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "servicePrincipal": {
+                            "type": "string"
+                          },
+                          "servicePrincipalNameform": {
+                            "type": "string",
+                            "enum": [
+                              "Username",
+                              "Hostbased"
+                            ]
+                          }
+                        }
+                      },
+                      "signingConfigurations": {
+                        "type": "object",
+                        "required": [
+                          "keystore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "keystore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "encryptionConfiguration": {
+                        "type": "object",
+                        "required": [
+                          "truststore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "truststore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "saml"
+                ],
+                "properties": {
+                  "saml": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "issuer"
+                    ],
+                    "properties": {
+                      "issuer": {
+                        "type": "string"
+                      },
+                      "signingConfigurations": {
+                        "type": "object",
+                        "required": [
+                          "keystore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "keystore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "encryptionConfiguration": {
+                        "type": "object",
+                        "required": [
+                          "truststore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "truststore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "alias"
+                ],
+                "properties": {
+                  "alias": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "name"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "removeWssHeader"
+                ],
+                "properties": {
+                  "removeWssHeader": {
+                    "type": "object",
+                    "additionalProperties": false
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
       "ProjectLoadBalancer": {
         "type": "object",
         "required": [
@@ -92863,6 +94089,135 @@
           }
         }
       },
+      "ProjectInboundMessagingV2": {
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "InboundMessaging"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v2"
+            ]
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "rest"
+                ],
+                "properties": {
+                  "rest": {
+                    "type": "object",
+                    "required": [
+                      "alias",
+                      "source"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "alias": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "name",
+                            "type",
+                            "resource",
+                            "httpMethod"
+                          ],
+                          "additionalProperties": false,
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "QUEUE",
+                                "TOPIC"
+                              ]
+                            },
+                            "selector": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "resource": {
+                              "type": "string"
+                            },
+                            "httpMethod": {
+                              "type": "string",
+                              "enum": [
+                                "GET",
+                                "POST",
+                                "PUT",
+                                "DELETE"
+                              ]
+                            },
+                            "contentType": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "soap"
+                ],
+                "properties": {
+                  "soap": {
+                    "type": "object",
+                    "required": [
+                      "jmsProviderEndpointAlias",
+                      "version"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "jmsProviderEndpointAlias": {
+                        "type": "string"
+                      },
+                      "version": {
+                        "type": "string",
+                        "enum": [
+                          "1.1",
+                          "1.2"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
       "ProjectIAM": {
         "type": "object",
         "required": [
@@ -94088,6 +95443,205 @@
                 "type": "string"
               }
             }
+          }
+        }
+      },
+      "ProjectServiceResultCacheV2": {
+        "description": "The Service Result Cache related information is captured in the message ServiceResultCache",
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "CacheServiceResult"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v2"
+            ]
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "rest"
+                ],
+                "properties": {
+                  "rest": {
+                    "type": "object",
+                    "required": [
+                      "condition",
+                      "ttl",
+                      "maxSize"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "condition": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "headerParams": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "name"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "name": {
+                                  "type": "string"
+                                },
+                                "cacheValues": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "queryParams": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "name"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "name": {
+                                  "type": "string"
+                                },
+                                "cacheValues": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "ttl": {
+                        "type": "string"
+                      },
+                      "maxSize": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "soap"
+                ],
+                "properties": {
+                  "soap": {
+                    "type": "object",
+                    "required": [
+                      "condition",
+                      "ttl",
+                      "maxSize"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "condition": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "xPaths": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "xPathExpression"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "xPathExpression": {
+                                  "type": "string"
+                                },
+                                "cacheValues": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
+                                "namespaces": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "required": [
+                                      "prefix",
+                                      "URI"
+                                    ],
+                                    "additionalProperties": false,
+                                    "properties": {
+                                      "prefix": {
+                                        "type": "string"
+                                      },
+                                      "URI": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "headerParams": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "name"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "name": {
+                                  "type": "string"
+                                },
+                                "cacheValues": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "ttl": {
+                        "type": "string"
+                      },
+                      "maxSize": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
         }
       },

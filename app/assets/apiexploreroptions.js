@@ -17,6 +17,7 @@ window.apiConnectExplorer = {
     apiMaxDepth: 9,
     routerType: 'hash',
     exampleArrayItems: 3,
+    // autoGenerateQueryExamples: false,
    // removeIBMKeys: true,
     // enable proxyUrl to route through the webpack dev proxy
     //    proxyUrl: "/api/proxyService"

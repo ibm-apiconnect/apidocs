@@ -42,7 +42,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/api",
       "description": "APIM base path"
     }
   ],
@@ -24055,15 +24055,6 @@
           "type": "string"
         }
       },
-      "mcp_server_subscriptions": {
-        "name": "mcp_server_subscriptions",
-        "in": "query",
-        "description": "Only retrieve subscriptions for MCP Servers",
-        "required": false,
-        "schema": {
-          "type": "boolean"
-        }
-      },
       "mcp_server_url": {
         "name": "mcp_server_url",
         "in": "query",
@@ -25299,7 +25290,12 @@
               "datapower-api-gateway",
               "event-gateway",
               "datapower-nano-gateway",
-              "wm-api-gateway"
+              "wm-api-gateway",
+              "azure-api-gateway",
+              "aws-api-gateway",
+              "apigee-api-gateway",
+              "kong-api-gateway",
+              "mulesoft-api-gateway"
             ]
           },
           "api_kind": {
@@ -29562,7 +29558,8 @@
                     "type": "string",
                     "enum": [
                       "remote",
-                      "local"
+                      "local",
+                      "cascading"
                     ]
                   },
                   "remote_introspection": {
@@ -29571,6 +29568,13 @@
                     "properties": {
                       "gateway_user": {
                         "type": "string"
+                      },
+                      "client_auth_method": {
+                        "type": "string",
+                        "enum": [
+                          "client_credentials",
+                          "client_assertion"
+                        ]
                       }
                     }
                   },
@@ -29589,6 +29593,9 @@
                       },
                       "clock_skew_in_seconds": {
                         "type": "integer"
+                      },
+                      "tls_client_profile_url": {
+                        "type": "string"
                       }
                     }
                   },
@@ -29616,6 +29623,12 @@
                   "refresh_token_url": {
                     "type": "string"
                   },
+                  "additional_grants": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
                   "dcr": {
                     "type": "object",
                     "additionalProperties": false,
@@ -29631,6 +29644,96 @@
                         "additionalProperties": {
                           "type": "string"
                         }
+                      },
+                      "extended_values": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "endpoint_type",
+                            "key",
+                            "value"
+                          ],
+                          "properties": {
+                            "endpoint_type": {
+                              "type": "string",
+                              "enum": [
+                                "client_registration",
+                                "client_update",
+                                "client_delete",
+                                "client_read",
+                                "scope_create",
+                                "scope_read",
+                                "scope_update",
+                                "scope_delete"
+                              ]
+                            },
+                            "key": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "impl_names": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "redirect_uris": {
+                            "type": "string"
+                          },
+                          "token_endpoint_auth_method": {
+                            "type": "string"
+                          },
+                          "grant_types": {
+                            "type": "string"
+                          },
+                          "application_type": {
+                            "type": "string"
+                          },
+                          "response_types": {
+                            "type": "string"
+                          },
+                          "client_name": {
+                            "type": "string"
+                          },
+                          "client_uri": {
+                            "type": "string"
+                          },
+                          "logo_uri": {
+                            "type": "string"
+                          },
+                          "scope": {
+                            "type": "string"
+                          },
+                          "contacts": {
+                            "type": "string"
+                          },
+                          "tos_uri": {
+                            "type": "string"
+                          },
+                          "jwks_uri": {
+                            "type": "string"
+                          },
+                          "client_id": {
+                            "type": "string"
+                          },
+                          "client_secret": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "supported_application_types": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "generate_credentials": {
+                        "type": "boolean"
                       },
                       "auth_type": {
                         "type": "string",
@@ -30958,7 +31061,12 @@
               "datapower-api-gateway",
               "event-gateway",
               "datapower-nano-gateway",
-              "wm-api-gateway"
+              "wm-api-gateway",
+              "azure-api-gateway",
+              "aws-api-gateway",
+              "apigee-api-gateway",
+              "kong-api-gateway",
+              "mulesoft-api-gateway"
             ]
           },
           "oai_version": {
@@ -31102,7 +31210,12 @@
                 "datapower-api-gateway",
                 "event-gateway",
                 "datapower-nano-gateway",
-                "wm-api-gateway"
+                "wm-api-gateway",
+                "azure-api-gateway",
+                "aws-api-gateway",
+                "apigee-api-gateway",
+                "kong-api-gateway",
+                "mulesoft-api-gateway"
               ]
             }
           },
@@ -35598,7 +35711,8 @@
                     "type": "string",
                     "enum": [
                       "remote",
-                      "local"
+                      "local",
+                      "cascading"
                     ]
                   },
                   "remote_introspection": {
@@ -35607,6 +35721,13 @@
                     "properties": {
                       "gateway_user": {
                         "type": "string"
+                      },
+                      "client_auth_method": {
+                        "type": "string",
+                        "enum": [
+                          "client_credentials",
+                          "client_assertion"
+                        ]
                       }
                     }
                   },
@@ -35625,6 +35746,9 @@
                       },
                       "clock_skew_in_seconds": {
                         "type": "integer"
+                      },
+                      "tls_client_profile_url": {
+                        "type": "string"
                       }
                     }
                   },
@@ -35652,6 +35776,12 @@
                   "refresh_token_url": {
                     "type": "string"
                   },
+                  "additional_grants": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
                   "dcr": {
                     "type": "object",
                     "additionalProperties": false,
@@ -35667,6 +35797,96 @@
                         "additionalProperties": {
                           "type": "string"
                         }
+                      },
+                      "extended_values": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "endpoint_type",
+                            "key",
+                            "value"
+                          ],
+                          "properties": {
+                            "endpoint_type": {
+                              "type": "string",
+                              "enum": [
+                                "client_registration",
+                                "client_update",
+                                "client_delete",
+                                "client_read",
+                                "scope_create",
+                                "scope_read",
+                                "scope_update",
+                                "scope_delete"
+                              ]
+                            },
+                            "key": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "impl_names": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "redirect_uris": {
+                            "type": "string"
+                          },
+                          "token_endpoint_auth_method": {
+                            "type": "string"
+                          },
+                          "grant_types": {
+                            "type": "string"
+                          },
+                          "application_type": {
+                            "type": "string"
+                          },
+                          "response_types": {
+                            "type": "string"
+                          },
+                          "client_name": {
+                            "type": "string"
+                          },
+                          "client_uri": {
+                            "type": "string"
+                          },
+                          "logo_uri": {
+                            "type": "string"
+                          },
+                          "scope": {
+                            "type": "string"
+                          },
+                          "contacts": {
+                            "type": "string"
+                          },
+                          "tos_uri": {
+                            "type": "string"
+                          },
+                          "jwks_uri": {
+                            "type": "string"
+                          },
+                          "client_id": {
+                            "type": "string"
+                          },
+                          "client_secret": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "supported_application_types": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "generate_credentials": {
+                        "type": "boolean"
                       },
                       "auth_type": {
                         "type": "string",
@@ -37289,7 +37509,12 @@
                 "datapower-api-gateway",
                 "event-gateway",
                 "datapower-nano-gateway",
-                "wm-api-gateway"
+                "wm-api-gateway",
+                "azure-api-gateway",
+                "aws-api-gateway",
+                "apigee-api-gateway",
+                "kong-api-gateway",
+                "mulesoft-api-gateway"
               ]
             }
           },
@@ -44118,6 +44343,9 @@
             "$ref": "#/components/schemas/ProjectInboundMessaging"
           },
           {
+            "$ref": "#/components/schemas/ProjectInboundMessagingV2"
+          },
+          {
             "$ref": "#/components/schemas/ProjectIAM"
           },
           {
@@ -44140,6 +44368,9 @@
           },
           {
             "$ref": "#/components/schemas/ProjectServiceResultCache"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectServiceResultCacheV2"
           },
           {
             "$ref": "#/components/schemas/ProjectOutboundAlias"
@@ -44203,6 +44434,21 @@
           },
           {
             "$ref": "#/components/schemas/ProjectCORS"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectSOAPEndpoint"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectInboundAuthMessage"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectOutboundAuthMessage"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectSOAPMessageConfig"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectSOAPToRESTMapping"
           }
         ]
       },
@@ -44991,7 +45237,12 @@
               "datapower-api-gateway",
               "event-gateway",
               "datapower-nano-gateway",
-              "wm-api-gateway"
+              "wm-api-gateway",
+              "azure-api-gateway",
+              "aws-api-gateway",
+              "apigee-api-gateway",
+              "kong-api-gateway",
+              "mulesoft-api-gateway"
             ]
           }
         }
@@ -49180,6 +49431,999 @@
           }
         }
       },
+      "ProjectSOAPToRESTMapping": {
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "SOAPToRESTMapping"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "type": "object",
+            "required": [
+              "openapi",
+              "operations"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "openapi": {
+                "$ref": "#/components/schemas/ProjectPath",
+                "description": "Reference to OpenAPI specification containing full REST API definition"
+              },
+              "soap-transformation-settings": {
+                "description": "Transformation settings for SOAP-to-REST response conversion",
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "useSchemaTransform": {
+                    "type": "boolean",
+                    "description": "Use WSDL/XSD schema for XML-to-JSON"
+                  },
+                  "useSchemaDefaults": {
+                    "type": "boolean",
+                    "description": "Do not populate missing elements with defaults"
+                  },
+                  "removeRootNode": {
+                    "type": "boolean",
+                    "description": "Remove SOAP operation wrapper from JSON response"
+                  }
+                }
+              },
+              "operations": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "name",
+                    "path",
+                    "method",
+                    "operationId"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "SOAP operation name"
+                    },
+                    "path": {
+                      "type": "string",
+                      "description": "REST endpoint path"
+                    },
+                    "method": {
+                      "type": "string",
+                      "description": "HTTP method for the REST endpoint"
+                    },
+                    "operationId": {
+                      "type": "string",
+                      "description": "OpenAPI operationId for the REST operation"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Mapping description"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ProjectSOAPEndpoint": {
+        "description": "SOAP Endpoint configuration for backend service connectivity",
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "SOAPEndpoint"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "type": "object",
+            "required": [
+              "url"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "Backend service URL"
+              },
+              "connectTimeout": {
+                "type": "integer",
+                "description": "Connection timeout in milliseconds",
+                "minimum": 0
+              },
+              "readTimeout": {
+                "type": "integer",
+                "description": "Read timeout in milliseconds",
+                "minimum": 0
+              },
+              "nativeServiceTimeout": {
+                "maximum": 4294967295,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "tlsClientProfile": {
+                "type": "string"
+              },
+              "serviceRegistryParameters": {
+                "type": "array",
+                "description": "Service registry parameters for dynamic endpoint resolution",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "name",
+                    "value"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "Parameter name"
+                    },
+                    "value": {
+                      "type": "string",
+                      "description": "Parameter value"
+                    }
+                  }
+                }
+              },
+              "optimizationMethod": {
+                "type": "string",
+                "enum": [
+                  "MTOM",
+                  "SWA",
+                  "NONE"
+                ],
+                "description": "SOAP attachment optimization method (MTOM, SWA, or NONE)"
+              },
+              "passWSSecurityHeaders": {
+                "type": "boolean",
+                "description": "Whether to pass WS-Security headers to the backend service"
+              }
+            }
+          }
+        }
+      },
+      "ProjectSOAPMessageConfig": {
+        "description": "SOAP Message Configuration for JMS message properties",
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "SOAPMessageConfig"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "type": "object",
+            "required": [
+              "connectionUrl"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "connectionUrl": {
+                "type": "string",
+                "description": "JMS connection URL for SOAP message delivery"
+              },
+              "replyTo": {
+                "type": "string",
+                "description": "JMS reply-to destination"
+              },
+              "priority": {
+                "type": "integer",
+                "description": "Message priority (0-9)",
+                "minimum": 0,
+                "maximum": 9
+              },
+              "ttl": {
+                "type": "integer",
+                "description": "Time to live in milliseconds",
+                "minimum": 0
+              },
+              "deliveryMode": {
+                "type": "string",
+                "enum": [
+                  "persistent",
+                  "non_persistent"
+                ],
+                "description": "Message delivery mode"
+              },
+              "property": {
+                "type": "array",
+                "description": "Custom JMS message properties",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "key",
+                    "value"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "key": {
+                      "type": "string",
+                      "description": "Property key (supports variable substitution like ${request.path})"
+                    },
+                    "value": {
+                      "type": "string",
+                      "description": "Property value"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ProjectInboundAuthMessage": {
+        "description": "Inbound Authentication Message policy for SOAP WS-Security",
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "InboundAuthMessage"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "bindingAssertion": {
+                "type": "string",
+                "description": "Binding assertion for the policy"
+              },
+              "requireEncryption": {
+                "type": "array",
+                "description": "Encryption requirements for the message",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "encryptionParts": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "entireBody": {
+                            "type": "boolean",
+                            "description": "Encrypt entire SOAP body"
+                          },
+                          "entireAttachments": {
+                            "type": "boolean",
+                            "description": "Encrypt entire attachments"
+                          },
+                          "headersToSecure": {
+                            "type": "array",
+                            "description": "SOAP headers to encrypt",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "name",
+                                "namespace"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "name": {
+                                  "type": "string",
+                                  "description": "Header name"
+                                },
+                                "namespace": {
+                                  "type": "string",
+                                  "description": "Header namespace URI"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "encryptedElements": {
+                      "type": "array",
+                      "description": "Specific elements to encrypt using XPath",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "xpath"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "xpath": {
+                            "type": "string",
+                            "description": "XPath expression for element selection"
+                          },
+                          "namespace": {
+                            "type": "array",
+                            "description": "Namespace prefixes and URIs for XPath",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "prefix",
+                                "uri"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "prefix": {
+                                  "type": "string",
+                                  "description": "Namespace prefix"
+                                },
+                                "uri": {
+                                  "type": "string",
+                                  "description": "Namespace URI"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "requireSignature": {
+                "type": "array",
+                "description": "Signature requirements for the message",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "signedElements": {
+                      "type": "array",
+                      "description": "Specific elements to sign using XPath",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "xpath"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "xpath": {
+                            "type": "string",
+                            "description": "XPath expression for element selection"
+                          },
+                          "namespace": {
+                            "type": "array",
+                            "description": "Namespace prefixes and URIs for XPath",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "prefix",
+                                "uri"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "prefix": {
+                                  "type": "string",
+                                  "description": "Namespace prefix"
+                                },
+                                "uri": {
+                                  "type": "string",
+                                  "description": "Namespace URI"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "signatureParts": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "entireBody": {
+                            "type": "boolean",
+                            "description": "Sign entire SOAP body"
+                          },
+                          "entireAttachments": {
+                            "type": "boolean",
+                            "description": "Sign entire attachments"
+                          },
+                          "headersToSecure": {
+                            "type": "array",
+                            "description": "SOAP headers to sign",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "name",
+                                "namespace"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "name": {
+                                  "type": "string",
+                                  "description": "Header name"
+                                },
+                                "namespace": {
+                                  "type": "string",
+                                  "description": "Header namespace URI"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "validateSAMLAudienceURI": {
+                "type": "array",
+                "description": "SAML audience URI validation settings",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "allowedURIs": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "uri",
+                          "matchCriteria"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "uri": {
+                            "type": "string",
+                            "description": "Allowed audience URI"
+                          },
+                          "matchCriteria": {
+                            "type": "string",
+                            "enum": [
+                              "exact",
+                              "prefix"
+                            ],
+                            "description": "URI matching criteria"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "tokenAssertion": {
+                "type": "object",
+                "description": "Token assertion requirements",
+                "additionalProperties": false,
+                "properties": {
+                  "requireX509Certificate": {
+                    "type": "boolean",
+                    "description": "Require X.509 certificate token"
+                  },
+                  "requireWSSUsernameToken": {
+                    "type": "boolean",
+                    "description": "Require WS-Security username token"
+                  },
+                  "kerberosTokenAssertion": {
+                    "type": "object",
+                    "description": "Kerberos token assertion settings",
+                    "additionalProperties": false,
+                    "properties": {
+                      "servicePrincipalName": {
+                        "type": "string",
+                        "description": "Service principal name for Kerberos"
+                      },
+                      "servicePrincipalPassword": {
+                        "type": "string",
+                        "description": "Service principal password"
+                      }
+                    }
+                  },
+                  "requireSAMLToken": {
+                    "type": "object",
+                    "description": "SAML token requirements",
+                    "additionalProperties": false,
+                    "properties": {
+                      "samlVersion": {
+                        "type": "string",
+                        "description": "SAML version (e.g., \"2.0\")"
+                      },
+                      "samlSubject": {
+                        "type": "string",
+                        "enum": [
+                          "bearerOfToken",
+                          "holderOfKeySymmetric",
+                          "holderOfKeyPublic"
+                        ],
+                        "description": "SAML subject confirmation method"
+                      },
+                      "wsTrustVersion": {
+                        "type": "string",
+                        "enum": [
+                          "1.0",
+                          "1.3"
+                        ],
+                        "description": "WS-Trust version"
+                      },
+                      "encryptSignature": {
+                        "type": "boolean",
+                        "description": "Whether to encrypt the signature"
+                      },
+                      "issuerAddress": {
+                        "type": "string",
+                        "description": "SAML token issuer address"
+                      },
+                      "metadataReferenceAddress": {
+                        "type": "string",
+                        "description": "Metadata reference address"
+                      },
+                      "algorithmSuite": {
+                        "type": "string",
+                        "enum": [
+                          "Basic128",
+                          "Basic128Rsa15",
+                          "Basic128Sha256",
+                          "Basic128Sha256Rsa15",
+                          "Basic192",
+                          "Basic192Rsa15",
+                          "Basic192Sha256",
+                          "Basic192Sha256Rsa15",
+                          "Basic256",
+                          "Basic256Rsa15",
+                          "Basic256Sha256",
+                          "Basic256Sha256Rsa15",
+                          "TripleDes",
+                          "TripleDesRsa15",
+                          "TripleDesSha256"
+                        ],
+                        "description": "Algorithm suite for encryption and signing"
+                      },
+                      "securityTokenTemplateParameters": {
+                        "type": "array",
+                        "description": "Security token template parameters",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "key",
+                            "value"
+                          ],
+                          "additionalProperties": false,
+                          "properties": {
+                            "key": {
+                              "type": "string",
+                              "description": "Parameter key"
+                            },
+                            "value": {
+                              "type": "string",
+                              "description": "Parameter value"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "customTokenAssertion": {
+                    "type": "array",
+                    "description": "Custom token assertions",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "requireTimeStamp": {
+                "type": "boolean",
+                "description": "Require timestamp in the message"
+              }
+            }
+          }
+        }
+      },
+      "ProjectOutboundAuthMessage": {
+        "description": "Outbound Authentication Message policy for SOAP backend service connectivity",
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "OutboundAuthMessage"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v1"
+            ]
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "noAuth"
+                ],
+                "properties": {
+                  "noAuth": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "signingConfigurations": {
+                        "type": "object",
+                        "required": [
+                          "keystore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "keystore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "encryptionConfiguration": {
+                        "type": "object",
+                        "required": [
+                          "truststore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "truststore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "wssUsername"
+                ],
+                "properties": {
+                  "wssUsername": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "useCustomCredentials"
+                    ],
+                    "properties": {
+                      "useCustomCredentials": {
+                        "type": "object",
+                        "required": [
+                          "username",
+                          "password"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "username": {
+                            "type": "string"
+                          },
+                          "password": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "signingConfigurations": {
+                        "type": "object",
+                        "required": [
+                          "keystore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "keystore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "encryptionConfiguration": {
+                        "type": "object",
+                        "required": [
+                          "truststore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "truststore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kerberos"
+                ],
+                "properties": {
+                  "kerberos": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "useCustomCredentials": {
+                        "type": "object",
+                        "required": [
+                          "clientPassword",
+                          "clientPrincipal",
+                          "servicePrincipal",
+                          "servicePrincipalNameform"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "clientPassword": {
+                            "type": "string"
+                          },
+                          "clientPrincipal": {
+                            "type": "string"
+                          },
+                          "servicePrincipal": {
+                            "type": "string"
+                          },
+                          "servicePrincipalNameform": {
+                            "type": "string",
+                            "enum": [
+                              "Username",
+                              "Hostbased"
+                            ]
+                          }
+                        }
+                      },
+                      "delegateIncomingCredentials": {
+                        "type": "object",
+                        "required": [
+                          "clientPassword",
+                          "clientPrincipal",
+                          "servicePrincipal",
+                          "servicePrincipalNameform"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "clientPassword": {
+                            "type": "string"
+                          },
+                          "clientPrincipal": {
+                            "type": "string"
+                          },
+                          "servicePrincipal": {
+                            "type": "string"
+                          },
+                          "servicePrincipalNameform": {
+                            "type": "string",
+                            "enum": [
+                              "Username",
+                              "Hostbased"
+                            ]
+                          }
+                        }
+                      },
+                      "incomingHTTPBasicAuthCred": {
+                        "type": "object",
+                        "required": [
+                          "servicePrincipal",
+                          "servicePrincipalNameform"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "servicePrincipal": {
+                            "type": "string"
+                          },
+                          "servicePrincipalNameform": {
+                            "type": "string",
+                            "enum": [
+                              "Username",
+                              "Hostbased"
+                            ]
+                          }
+                        }
+                      },
+                      "signingConfigurations": {
+                        "type": "object",
+                        "required": [
+                          "keystore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "keystore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "encryptionConfiguration": {
+                        "type": "object",
+                        "required": [
+                          "truststore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "truststore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "saml"
+                ],
+                "properties": {
+                  "saml": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "issuer"
+                    ],
+                    "properties": {
+                      "issuer": {
+                        "type": "string"
+                      },
+                      "signingConfigurations": {
+                        "type": "object",
+                        "required": [
+                          "keystore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "keystore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "encryptionConfiguration": {
+                        "type": "object",
+                        "required": [
+                          "truststore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "truststore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "alias"
+                ],
+                "properties": {
+                  "alias": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "name"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "removeWssHeader"
+                ],
+                "properties": {
+                  "removeWssHeader": {
+                    "type": "object",
+                    "additionalProperties": false
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
       "ProjectLoadBalancer": {
         "type": "object",
         "required": [
@@ -50641,6 +51885,135 @@
           }
         }
       },
+      "ProjectInboundMessagingV2": {
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "InboundMessaging"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v2"
+            ]
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "rest"
+                ],
+                "properties": {
+                  "rest": {
+                    "type": "object",
+                    "required": [
+                      "alias",
+                      "source"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "alias": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "name",
+                            "type",
+                            "resource",
+                            "httpMethod"
+                          ],
+                          "additionalProperties": false,
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "QUEUE",
+                                "TOPIC"
+                              ]
+                            },
+                            "selector": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "resource": {
+                              "type": "string"
+                            },
+                            "httpMethod": {
+                              "type": "string",
+                              "enum": [
+                                "GET",
+                                "POST",
+                                "PUT",
+                                "DELETE"
+                              ]
+                            },
+                            "contentType": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "soap"
+                ],
+                "properties": {
+                  "soap": {
+                    "type": "object",
+                    "required": [
+                      "jmsProviderEndpointAlias",
+                      "version"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "jmsProviderEndpointAlias": {
+                        "type": "string"
+                      },
+                      "version": {
+                        "type": "string",
+                        "enum": [
+                          "1.1",
+                          "1.2"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
       "ProjectIAM": {
         "type": "object",
         "required": [
@@ -51866,6 +53239,205 @@
                 "type": "string"
               }
             }
+          }
+        }
+      },
+      "ProjectServiceResultCacheV2": {
+        "description": "The Service Result Cache related information is captured in the message ServiceResultCache",
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "CacheServiceResult"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v2"
+            ]
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "rest"
+                ],
+                "properties": {
+                  "rest": {
+                    "type": "object",
+                    "required": [
+                      "condition",
+                      "ttl",
+                      "maxSize"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "condition": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "headerParams": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "name"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "name": {
+                                  "type": "string"
+                                },
+                                "cacheValues": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "queryParams": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "name"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "name": {
+                                  "type": "string"
+                                },
+                                "cacheValues": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "ttl": {
+                        "type": "string"
+                      },
+                      "maxSize": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "soap"
+                ],
+                "properties": {
+                  "soap": {
+                    "type": "object",
+                    "required": [
+                      "condition",
+                      "ttl",
+                      "maxSize"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "condition": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "xPaths": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "xPathExpression"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "xPathExpression": {
+                                  "type": "string"
+                                },
+                                "cacheValues": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
+                                "namespaces": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "required": [
+                                      "prefix",
+                                      "URI"
+                                    ],
+                                    "additionalProperties": false,
+                                    "properties": {
+                                      "prefix": {
+                                        "type": "string"
+                                      },
+                                      "URI": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "headerParams": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "name"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "name": {
+                                  "type": "string"
+                                },
+                                "cacheValues": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "ttl": {
+                        "type": "string"
+                      },
+                      "maxSize": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
         }
       },
@@ -56126,7 +57698,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/api",
       "description": "APIM base path"
     }
   ],
@@ -88130,9 +89702,6 @@
           },
           {
             "$ref": "#/components/parameters/expand"
-          },
-          {
-            "$ref": "#/components/parameters/mcp_server_subscriptions"
           }
         ],
         "responses": {
@@ -88212,9 +89781,6 @@
           },
           {
             "$ref": "#/components/parameters/expand"
-          },
-          {
-            "$ref": "#/components/parameters/mcp_server_subscriptions"
           }
         ],
         "responses": {
@@ -88358,9 +89924,6 @@
           },
           {
             "$ref": "#/components/parameters/expand"
-          },
-          {
-            "$ref": "#/components/parameters/mcp_server_subscriptions"
           }
         ],
         "responses": {
@@ -88692,9 +90255,6 @@
           },
           {
             "$ref": "#/components/parameters/expand"
-          },
-          {
-            "$ref": "#/components/parameters/mcp_server_subscriptions"
           }
         ],
         "responses": {
@@ -107918,9 +109478,6 @@
           },
           {
             "$ref": "#/components/parameters/plan_query"
-          },
-          {
-            "$ref": "#/components/parameters/mcp_server_subscriptions"
           }
         ],
         "responses": {
@@ -108296,9 +109853,6 @@
           },
           {
             "$ref": "#/components/parameters/plan_query"
-          },
-          {
-            "$ref": "#/components/parameters/mcp_server_subscriptions"
           }
         ],
         "responses": {
@@ -122070,15 +123624,6 @@
           "type": "string"
         }
       },
-      "mcp_server_subscriptions": {
-        "name": "mcp_server_subscriptions",
-        "in": "query",
-        "description": "Only retrieve subscriptions for MCP Servers",
-        "required": false,
-        "schema": {
-          "type": "boolean"
-        }
-      },
       "mcp_server_url": {
         "name": "mcp_server_url",
         "in": "query",
@@ -123629,7 +125174,12 @@
               "datapower-api-gateway",
               "event-gateway",
               "datapower-nano-gateway",
-              "wm-api-gateway"
+              "wm-api-gateway",
+              "azure-api-gateway",
+              "aws-api-gateway",
+              "apigee-api-gateway",
+              "kong-api-gateway",
+              "mulesoft-api-gateway"
             ]
           },
           "api_kind": {
@@ -127892,7 +129442,8 @@
                     "type": "string",
                     "enum": [
                       "remote",
-                      "local"
+                      "local",
+                      "cascading"
                     ]
                   },
                   "remote_introspection": {
@@ -127901,6 +129452,13 @@
                     "properties": {
                       "gateway_user": {
                         "type": "string"
+                      },
+                      "client_auth_method": {
+                        "type": "string",
+                        "enum": [
+                          "client_credentials",
+                          "client_assertion"
+                        ]
                       }
                     }
                   },
@@ -127919,6 +129477,9 @@
                       },
                       "clock_skew_in_seconds": {
                         "type": "integer"
+                      },
+                      "tls_client_profile_url": {
+                        "type": "string"
                       }
                     }
                   },
@@ -127946,6 +129507,12 @@
                   "refresh_token_url": {
                     "type": "string"
                   },
+                  "additional_grants": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
                   "dcr": {
                     "type": "object",
                     "additionalProperties": false,
@@ -127961,6 +129528,96 @@
                         "additionalProperties": {
                           "type": "string"
                         }
+                      },
+                      "extended_values": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "endpoint_type",
+                            "key",
+                            "value"
+                          ],
+                          "properties": {
+                            "endpoint_type": {
+                              "type": "string",
+                              "enum": [
+                                "client_registration",
+                                "client_update",
+                                "client_delete",
+                                "client_read",
+                                "scope_create",
+                                "scope_read",
+                                "scope_update",
+                                "scope_delete"
+                              ]
+                            },
+                            "key": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "impl_names": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "redirect_uris": {
+                            "type": "string"
+                          },
+                          "token_endpoint_auth_method": {
+                            "type": "string"
+                          },
+                          "grant_types": {
+                            "type": "string"
+                          },
+                          "application_type": {
+                            "type": "string"
+                          },
+                          "response_types": {
+                            "type": "string"
+                          },
+                          "client_name": {
+                            "type": "string"
+                          },
+                          "client_uri": {
+                            "type": "string"
+                          },
+                          "logo_uri": {
+                            "type": "string"
+                          },
+                          "scope": {
+                            "type": "string"
+                          },
+                          "contacts": {
+                            "type": "string"
+                          },
+                          "tos_uri": {
+                            "type": "string"
+                          },
+                          "jwks_uri": {
+                            "type": "string"
+                          },
+                          "client_id": {
+                            "type": "string"
+                          },
+                          "client_secret": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "supported_application_types": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "generate_credentials": {
+                        "type": "boolean"
                       },
                       "auth_type": {
                         "type": "string",
@@ -129288,7 +130945,12 @@
               "datapower-api-gateway",
               "event-gateway",
               "datapower-nano-gateway",
-              "wm-api-gateway"
+              "wm-api-gateway",
+              "azure-api-gateway",
+              "aws-api-gateway",
+              "apigee-api-gateway",
+              "kong-api-gateway",
+              "mulesoft-api-gateway"
             ]
           },
           "oai_version": {
@@ -129432,7 +131094,12 @@
                 "datapower-api-gateway",
                 "event-gateway",
                 "datapower-nano-gateway",
-                "wm-api-gateway"
+                "wm-api-gateway",
+                "azure-api-gateway",
+                "aws-api-gateway",
+                "apigee-api-gateway",
+                "kong-api-gateway",
+                "mulesoft-api-gateway"
               ]
             }
           },
@@ -133928,7 +135595,8 @@
                     "type": "string",
                     "enum": [
                       "remote",
-                      "local"
+                      "local",
+                      "cascading"
                     ]
                   },
                   "remote_introspection": {
@@ -133937,6 +135605,13 @@
                     "properties": {
                       "gateway_user": {
                         "type": "string"
+                      },
+                      "client_auth_method": {
+                        "type": "string",
+                        "enum": [
+                          "client_credentials",
+                          "client_assertion"
+                        ]
                       }
                     }
                   },
@@ -133955,6 +135630,9 @@
                       },
                       "clock_skew_in_seconds": {
                         "type": "integer"
+                      },
+                      "tls_client_profile_url": {
+                        "type": "string"
                       }
                     }
                   },
@@ -133982,6 +135660,12 @@
                   "refresh_token_url": {
                     "type": "string"
                   },
+                  "additional_grants": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
                   "dcr": {
                     "type": "object",
                     "additionalProperties": false,
@@ -133997,6 +135681,96 @@
                         "additionalProperties": {
                           "type": "string"
                         }
+                      },
+                      "extended_values": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "endpoint_type",
+                            "key",
+                            "value"
+                          ],
+                          "properties": {
+                            "endpoint_type": {
+                              "type": "string",
+                              "enum": [
+                                "client_registration",
+                                "client_update",
+                                "client_delete",
+                                "client_read",
+                                "scope_create",
+                                "scope_read",
+                                "scope_update",
+                                "scope_delete"
+                              ]
+                            },
+                            "key": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "impl_names": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "redirect_uris": {
+                            "type": "string"
+                          },
+                          "token_endpoint_auth_method": {
+                            "type": "string"
+                          },
+                          "grant_types": {
+                            "type": "string"
+                          },
+                          "application_type": {
+                            "type": "string"
+                          },
+                          "response_types": {
+                            "type": "string"
+                          },
+                          "client_name": {
+                            "type": "string"
+                          },
+                          "client_uri": {
+                            "type": "string"
+                          },
+                          "logo_uri": {
+                            "type": "string"
+                          },
+                          "scope": {
+                            "type": "string"
+                          },
+                          "contacts": {
+                            "type": "string"
+                          },
+                          "tos_uri": {
+                            "type": "string"
+                          },
+                          "jwks_uri": {
+                            "type": "string"
+                          },
+                          "client_id": {
+                            "type": "string"
+                          },
+                          "client_secret": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "supported_application_types": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "generate_credentials": {
+                        "type": "boolean"
                       },
                       "auth_type": {
                         "type": "string",
@@ -135619,7 +137393,12 @@
                 "datapower-api-gateway",
                 "event-gateway",
                 "datapower-nano-gateway",
-                "wm-api-gateway"
+                "wm-api-gateway",
+                "azure-api-gateway",
+                "aws-api-gateway",
+                "apigee-api-gateway",
+                "kong-api-gateway",
+                "mulesoft-api-gateway"
               ]
             }
           },
@@ -142448,6 +144227,9 @@
             "$ref": "#/components/schemas/ProjectInboundMessaging"
           },
           {
+            "$ref": "#/components/schemas/ProjectInboundMessagingV2"
+          },
+          {
             "$ref": "#/components/schemas/ProjectIAM"
           },
           {
@@ -142470,6 +144252,9 @@
           },
           {
             "$ref": "#/components/schemas/ProjectServiceResultCache"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectServiceResultCacheV2"
           },
           {
             "$ref": "#/components/schemas/ProjectOutboundAlias"
@@ -142533,6 +144318,21 @@
           },
           {
             "$ref": "#/components/schemas/ProjectCORS"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectSOAPEndpoint"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectInboundAuthMessage"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectOutboundAuthMessage"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectSOAPMessageConfig"
+          },
+          {
+            "$ref": "#/components/schemas/ProjectSOAPToRESTMapping"
           }
         ]
       },
@@ -143321,7 +145121,12 @@
               "datapower-api-gateway",
               "event-gateway",
               "datapower-nano-gateway",
-              "wm-api-gateway"
+              "wm-api-gateway",
+              "azure-api-gateway",
+              "aws-api-gateway",
+              "apigee-api-gateway",
+              "kong-api-gateway",
+              "mulesoft-api-gateway"
             ]
           }
         }
@@ -147510,6 +149315,999 @@
           }
         }
       },
+      "ProjectSOAPToRESTMapping": {
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "SOAPToRESTMapping"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "type": "object",
+            "required": [
+              "openapi",
+              "operations"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "openapi": {
+                "$ref": "#/components/schemas/ProjectPath",
+                "description": "Reference to OpenAPI specification containing full REST API definition"
+              },
+              "soap-transformation-settings": {
+                "description": "Transformation settings for SOAP-to-REST response conversion",
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "useSchemaTransform": {
+                    "type": "boolean",
+                    "description": "Use WSDL/XSD schema for XML-to-JSON"
+                  },
+                  "useSchemaDefaults": {
+                    "type": "boolean",
+                    "description": "Do not populate missing elements with defaults"
+                  },
+                  "removeRootNode": {
+                    "type": "boolean",
+                    "description": "Remove SOAP operation wrapper from JSON response"
+                  }
+                }
+              },
+              "operations": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "name",
+                    "path",
+                    "method",
+                    "operationId"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "SOAP operation name"
+                    },
+                    "path": {
+                      "type": "string",
+                      "description": "REST endpoint path"
+                    },
+                    "method": {
+                      "type": "string",
+                      "description": "HTTP method for the REST endpoint"
+                    },
+                    "operationId": {
+                      "type": "string",
+                      "description": "OpenAPI operationId for the REST operation"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Mapping description"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ProjectSOAPEndpoint": {
+        "description": "SOAP Endpoint configuration for backend service connectivity",
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "SOAPEndpoint"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "type": "object",
+            "required": [
+              "url"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "Backend service URL"
+              },
+              "connectTimeout": {
+                "type": "integer",
+                "description": "Connection timeout in milliseconds",
+                "minimum": 0
+              },
+              "readTimeout": {
+                "type": "integer",
+                "description": "Read timeout in milliseconds",
+                "minimum": 0
+              },
+              "nativeServiceTimeout": {
+                "maximum": 4294967295,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "tlsClientProfile": {
+                "type": "string"
+              },
+              "serviceRegistryParameters": {
+                "type": "array",
+                "description": "Service registry parameters for dynamic endpoint resolution",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "name",
+                    "value"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "Parameter name"
+                    },
+                    "value": {
+                      "type": "string",
+                      "description": "Parameter value"
+                    }
+                  }
+                }
+              },
+              "optimizationMethod": {
+                "type": "string",
+                "enum": [
+                  "MTOM",
+                  "SWA",
+                  "NONE"
+                ],
+                "description": "SOAP attachment optimization method (MTOM, SWA, or NONE)"
+              },
+              "passWSSecurityHeaders": {
+                "type": "boolean",
+                "description": "Whether to pass WS-Security headers to the backend service"
+              }
+            }
+          }
+        }
+      },
+      "ProjectSOAPMessageConfig": {
+        "description": "SOAP Message Configuration for JMS message properties",
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "SOAPMessageConfig"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "type": "object",
+            "required": [
+              "connectionUrl"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "connectionUrl": {
+                "type": "string",
+                "description": "JMS connection URL for SOAP message delivery"
+              },
+              "replyTo": {
+                "type": "string",
+                "description": "JMS reply-to destination"
+              },
+              "priority": {
+                "type": "integer",
+                "description": "Message priority (0-9)",
+                "minimum": 0,
+                "maximum": 9
+              },
+              "ttl": {
+                "type": "integer",
+                "description": "Time to live in milliseconds",
+                "minimum": 0
+              },
+              "deliveryMode": {
+                "type": "string",
+                "enum": [
+                  "persistent",
+                  "non_persistent"
+                ],
+                "description": "Message delivery mode"
+              },
+              "property": {
+                "type": "array",
+                "description": "Custom JMS message properties",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "key",
+                    "value"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "key": {
+                      "type": "string",
+                      "description": "Property key (supports variable substitution like ${request.path})"
+                    },
+                    "value": {
+                      "type": "string",
+                      "description": "Property value"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ProjectInboundAuthMessage": {
+        "description": "Inbound Authentication Message policy for SOAP WS-Security",
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "InboundAuthMessage"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "bindingAssertion": {
+                "type": "string",
+                "description": "Binding assertion for the policy"
+              },
+              "requireEncryption": {
+                "type": "array",
+                "description": "Encryption requirements for the message",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "encryptionParts": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "entireBody": {
+                            "type": "boolean",
+                            "description": "Encrypt entire SOAP body"
+                          },
+                          "entireAttachments": {
+                            "type": "boolean",
+                            "description": "Encrypt entire attachments"
+                          },
+                          "headersToSecure": {
+                            "type": "array",
+                            "description": "SOAP headers to encrypt",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "name",
+                                "namespace"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "name": {
+                                  "type": "string",
+                                  "description": "Header name"
+                                },
+                                "namespace": {
+                                  "type": "string",
+                                  "description": "Header namespace URI"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "encryptedElements": {
+                      "type": "array",
+                      "description": "Specific elements to encrypt using XPath",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "xpath"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "xpath": {
+                            "type": "string",
+                            "description": "XPath expression for element selection"
+                          },
+                          "namespace": {
+                            "type": "array",
+                            "description": "Namespace prefixes and URIs for XPath",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "prefix",
+                                "uri"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "prefix": {
+                                  "type": "string",
+                                  "description": "Namespace prefix"
+                                },
+                                "uri": {
+                                  "type": "string",
+                                  "description": "Namespace URI"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "requireSignature": {
+                "type": "array",
+                "description": "Signature requirements for the message",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "signedElements": {
+                      "type": "array",
+                      "description": "Specific elements to sign using XPath",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "xpath"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "xpath": {
+                            "type": "string",
+                            "description": "XPath expression for element selection"
+                          },
+                          "namespace": {
+                            "type": "array",
+                            "description": "Namespace prefixes and URIs for XPath",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "prefix",
+                                "uri"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "prefix": {
+                                  "type": "string",
+                                  "description": "Namespace prefix"
+                                },
+                                "uri": {
+                                  "type": "string",
+                                  "description": "Namespace URI"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "signatureParts": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "entireBody": {
+                            "type": "boolean",
+                            "description": "Sign entire SOAP body"
+                          },
+                          "entireAttachments": {
+                            "type": "boolean",
+                            "description": "Sign entire attachments"
+                          },
+                          "headersToSecure": {
+                            "type": "array",
+                            "description": "SOAP headers to sign",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "name",
+                                "namespace"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "name": {
+                                  "type": "string",
+                                  "description": "Header name"
+                                },
+                                "namespace": {
+                                  "type": "string",
+                                  "description": "Header namespace URI"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "validateSAMLAudienceURI": {
+                "type": "array",
+                "description": "SAML audience URI validation settings",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "allowedURIs": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "uri",
+                          "matchCriteria"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "uri": {
+                            "type": "string",
+                            "description": "Allowed audience URI"
+                          },
+                          "matchCriteria": {
+                            "type": "string",
+                            "enum": [
+                              "exact",
+                              "prefix"
+                            ],
+                            "description": "URI matching criteria"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "tokenAssertion": {
+                "type": "object",
+                "description": "Token assertion requirements",
+                "additionalProperties": false,
+                "properties": {
+                  "requireX509Certificate": {
+                    "type": "boolean",
+                    "description": "Require X.509 certificate token"
+                  },
+                  "requireWSSUsernameToken": {
+                    "type": "boolean",
+                    "description": "Require WS-Security username token"
+                  },
+                  "kerberosTokenAssertion": {
+                    "type": "object",
+                    "description": "Kerberos token assertion settings",
+                    "additionalProperties": false,
+                    "properties": {
+                      "servicePrincipalName": {
+                        "type": "string",
+                        "description": "Service principal name for Kerberos"
+                      },
+                      "servicePrincipalPassword": {
+                        "type": "string",
+                        "description": "Service principal password"
+                      }
+                    }
+                  },
+                  "requireSAMLToken": {
+                    "type": "object",
+                    "description": "SAML token requirements",
+                    "additionalProperties": false,
+                    "properties": {
+                      "samlVersion": {
+                        "type": "string",
+                        "description": "SAML version (e.g., \"2.0\")"
+                      },
+                      "samlSubject": {
+                        "type": "string",
+                        "enum": [
+                          "bearerOfToken",
+                          "holderOfKeySymmetric",
+                          "holderOfKeyPublic"
+                        ],
+                        "description": "SAML subject confirmation method"
+                      },
+                      "wsTrustVersion": {
+                        "type": "string",
+                        "enum": [
+                          "1.0",
+                          "1.3"
+                        ],
+                        "description": "WS-Trust version"
+                      },
+                      "encryptSignature": {
+                        "type": "boolean",
+                        "description": "Whether to encrypt the signature"
+                      },
+                      "issuerAddress": {
+                        "type": "string",
+                        "description": "SAML token issuer address"
+                      },
+                      "metadataReferenceAddress": {
+                        "type": "string",
+                        "description": "Metadata reference address"
+                      },
+                      "algorithmSuite": {
+                        "type": "string",
+                        "enum": [
+                          "Basic128",
+                          "Basic128Rsa15",
+                          "Basic128Sha256",
+                          "Basic128Sha256Rsa15",
+                          "Basic192",
+                          "Basic192Rsa15",
+                          "Basic192Sha256",
+                          "Basic192Sha256Rsa15",
+                          "Basic256",
+                          "Basic256Rsa15",
+                          "Basic256Sha256",
+                          "Basic256Sha256Rsa15",
+                          "TripleDes",
+                          "TripleDesRsa15",
+                          "TripleDesSha256"
+                        ],
+                        "description": "Algorithm suite for encryption and signing"
+                      },
+                      "securityTokenTemplateParameters": {
+                        "type": "array",
+                        "description": "Security token template parameters",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "key",
+                            "value"
+                          ],
+                          "additionalProperties": false,
+                          "properties": {
+                            "key": {
+                              "type": "string",
+                              "description": "Parameter key"
+                            },
+                            "value": {
+                              "type": "string",
+                              "description": "Parameter value"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "customTokenAssertion": {
+                    "type": "array",
+                    "description": "Custom token assertions",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "requireTimeStamp": {
+                "type": "boolean",
+                "description": "Require timestamp in the message"
+              }
+            }
+          }
+        }
+      },
+      "ProjectOutboundAuthMessage": {
+        "description": "Outbound Authentication Message policy for SOAP backend service connectivity",
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "OutboundAuthMessage"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v1"
+            ]
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "noAuth"
+                ],
+                "properties": {
+                  "noAuth": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "signingConfigurations": {
+                        "type": "object",
+                        "required": [
+                          "keystore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "keystore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "encryptionConfiguration": {
+                        "type": "object",
+                        "required": [
+                          "truststore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "truststore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "wssUsername"
+                ],
+                "properties": {
+                  "wssUsername": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "useCustomCredentials"
+                    ],
+                    "properties": {
+                      "useCustomCredentials": {
+                        "type": "object",
+                        "required": [
+                          "username",
+                          "password"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "username": {
+                            "type": "string"
+                          },
+                          "password": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "signingConfigurations": {
+                        "type": "object",
+                        "required": [
+                          "keystore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "keystore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "encryptionConfiguration": {
+                        "type": "object",
+                        "required": [
+                          "truststore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "truststore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kerberos"
+                ],
+                "properties": {
+                  "kerberos": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "useCustomCredentials": {
+                        "type": "object",
+                        "required": [
+                          "clientPassword",
+                          "clientPrincipal",
+                          "servicePrincipal",
+                          "servicePrincipalNameform"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "clientPassword": {
+                            "type": "string"
+                          },
+                          "clientPrincipal": {
+                            "type": "string"
+                          },
+                          "servicePrincipal": {
+                            "type": "string"
+                          },
+                          "servicePrincipalNameform": {
+                            "type": "string",
+                            "enum": [
+                              "Username",
+                              "Hostbased"
+                            ]
+                          }
+                        }
+                      },
+                      "delegateIncomingCredentials": {
+                        "type": "object",
+                        "required": [
+                          "clientPassword",
+                          "clientPrincipal",
+                          "servicePrincipal",
+                          "servicePrincipalNameform"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "clientPassword": {
+                            "type": "string"
+                          },
+                          "clientPrincipal": {
+                            "type": "string"
+                          },
+                          "servicePrincipal": {
+                            "type": "string"
+                          },
+                          "servicePrincipalNameform": {
+                            "type": "string",
+                            "enum": [
+                              "Username",
+                              "Hostbased"
+                            ]
+                          }
+                        }
+                      },
+                      "incomingHTTPBasicAuthCred": {
+                        "type": "object",
+                        "required": [
+                          "servicePrincipal",
+                          "servicePrincipalNameform"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "servicePrincipal": {
+                            "type": "string"
+                          },
+                          "servicePrincipalNameform": {
+                            "type": "string",
+                            "enum": [
+                              "Username",
+                              "Hostbased"
+                            ]
+                          }
+                        }
+                      },
+                      "signingConfigurations": {
+                        "type": "object",
+                        "required": [
+                          "keystore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "keystore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "encryptionConfiguration": {
+                        "type": "object",
+                        "required": [
+                          "truststore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "truststore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "saml"
+                ],
+                "properties": {
+                  "saml": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "issuer"
+                    ],
+                    "properties": {
+                      "issuer": {
+                        "type": "string"
+                      },
+                      "signingConfigurations": {
+                        "type": "object",
+                        "required": [
+                          "keystore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "keystore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "encryptionConfiguration": {
+                        "type": "object",
+                        "required": [
+                          "truststore",
+                          "alias"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "truststore": {
+                            "type": "string"
+                          },
+                          "alias": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "alias"
+                ],
+                "properties": {
+                  "alias": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "name"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "removeWssHeader"
+                ],
+                "properties": {
+                  "removeWssHeader": {
+                    "type": "object",
+                    "additionalProperties": false
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
       "ProjectLoadBalancer": {
         "type": "object",
         "required": [
@@ -148971,6 +151769,135 @@
           }
         }
       },
+      "ProjectInboundMessagingV2": {
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "InboundMessaging"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v2"
+            ]
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "rest"
+                ],
+                "properties": {
+                  "rest": {
+                    "type": "object",
+                    "required": [
+                      "alias",
+                      "source"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "alias": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "name",
+                            "type",
+                            "resource",
+                            "httpMethod"
+                          ],
+                          "additionalProperties": false,
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "QUEUE",
+                                "TOPIC"
+                              ]
+                            },
+                            "selector": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "resource": {
+                              "type": "string"
+                            },
+                            "httpMethod": {
+                              "type": "string",
+                              "enum": [
+                                "GET",
+                                "POST",
+                                "PUT",
+                                "DELETE"
+                              ]
+                            },
+                            "contentType": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "soap"
+                ],
+                "properties": {
+                  "soap": {
+                    "type": "object",
+                    "required": [
+                      "jmsProviderEndpointAlias",
+                      "version"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "jmsProviderEndpointAlias": {
+                        "type": "string"
+                      },
+                      "version": {
+                        "type": "string",
+                        "enum": [
+                          "1.1",
+                          "1.2"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
       "ProjectIAM": {
         "type": "object",
         "required": [
@@ -150196,6 +153123,205 @@
                 "type": "string"
               }
             }
+          }
+        }
+      },
+      "ProjectServiceResultCacheV2": {
+        "description": "The Service Result Cache related information is captured in the message ServiceResultCache",
+        "type": "object",
+        "required": [
+          "kind",
+          "apiVersion",
+          "metadata",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "CacheServiceResult"
+            ],
+            "type": "string"
+          },
+          "apiVersion": {
+            "type": "string",
+            "enum": [
+              "api.ibm.com/v2"
+            ]
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ProjectMetadata"
+          },
+          "spec": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "rest"
+                ],
+                "properties": {
+                  "rest": {
+                    "type": "object",
+                    "required": [
+                      "condition",
+                      "ttl",
+                      "maxSize"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "condition": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "headerParams": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "name"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "name": {
+                                  "type": "string"
+                                },
+                                "cacheValues": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "queryParams": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "name"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "name": {
+                                  "type": "string"
+                                },
+                                "cacheValues": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "ttl": {
+                        "type": "string"
+                      },
+                      "maxSize": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "soap"
+                ],
+                "properties": {
+                  "soap": {
+                    "type": "object",
+                    "required": [
+                      "condition",
+                      "ttl",
+                      "maxSize"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "condition": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "xPaths": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "xPathExpression"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "xPathExpression": {
+                                  "type": "string"
+                                },
+                                "cacheValues": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
+                                "namespaces": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "required": [
+                                      "prefix",
+                                      "URI"
+                                    ],
+                                    "additionalProperties": false,
+                                    "properties": {
+                                      "prefix": {
+                                        "type": "string"
+                                      },
+                                      "URI": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "headerParams": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "name"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "name": {
+                                  "type": "string"
+                                },
+                                "cacheValues": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "ttl": {
+                        "type": "string"
+                      },
+                      "maxSize": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
         }
       },
@@ -154456,7 +157582,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/consumer-api",
       "description": "Consumer apim base path"
     }
   ],
@@ -164639,7 +167765,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/analytics",
       "description": "Analytics V2 base path"
     }
   ],
@@ -164716,6 +167842,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -165113,6 +168242,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -165655,6 +168787,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -166035,6 +169170,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -166429,6 +169567,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -166978,6 +170119,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -167355,6 +170499,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -167853,6 +171000,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -168227,6 +171377,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -168728,6 +171881,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -169087,6 +172243,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -169480,6 +172639,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -169868,6 +173030,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -170251,6 +173416,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -170916,6 +174084,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -171299,6 +174470,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -171686,6 +174860,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -172069,6 +175246,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -172456,6 +175636,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -172841,6 +176024,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -173224,6 +176410,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -173618,6 +176807,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -174017,6 +177209,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -174400,6 +177595,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -174787,6 +177985,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -175170,6 +178371,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -175569,6 +178773,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -175954,6 +179161,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -176309,6 +179519,9 @@
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -176409,6 +179622,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -176422,6 +179638,9 @@
           },
           {
             "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mismatch_category_optional"
           },
           {
             "$ref": "#/components/parameters/offset_optional"
@@ -176482,6 +179701,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -176521,6 +179743,544 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/PolicyErrorsResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/overview": {
+      "description": "Return the data needed to populate the Overview dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Overview dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Overview dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudOverview",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OverviewDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/cost-and-spend": {
+      "description": "Return the data needed to populate the Cost and Spend dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Cost and Spend dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Cost and Spend dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudCostAndSpend",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CostAndSpendDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/savings-and-optimization": {
+      "description": "Return the data needed to populate the Savings and Optimization dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Savings and Optimization dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Savings and Optimization dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudSavingsAndOptimization",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SavingsAndOptimizationDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/cache-performance": {
+      "description": "Return the data needed to populate the Cache Performance dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Cache Performance dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Cache Performance dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudCachePerformance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CachePerformanceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/reliability-and-performance": {
+      "description": "Return the data needed to populate the Reliability and Performance dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Reliability and Performance dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Reliability and Performance dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudReliabilityAndPerformance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ReliabilityAndPerformanceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/usage-and-adoption": {
+      "description": "Return the data needed to populate the Usage and Adoption dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Usage and Adoption dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Usage and Adoption dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudUsageAndAdoption",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/UsageAndAdoptionDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/security-and-compliance": {
+      "description": "Return the data needed to populate the Security and Compliance dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Security and Compliance dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Security and Compliance dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudSecurityAndCompliance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SecurityAndComplianceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/agent-and-tool-quality": {
+      "description": "Return the data needed to populate the Agent and Tool Quality dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Agent and Tool Quality dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Agent and Tool Quality dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudAgentAndToolQuality",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AgentAndToolQualityDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/governance-and-data-health": {
+      "description": "Return the data needed to populate the Governance and Data Health dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Governance and Data Health dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the Governance and Data Health dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudGovernanceAndDataHealth",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/GovernanceAndDataHealthDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/cloud/dashboards/idig-filter-options": {
+      "description": "Return the data needed to populate the IDIG Filter Options dashboard at cloud scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the IDIG Filter Options dashboard at cloud scope\n",
+        "description": "Return the data needed to populate the IDIG Filter Options dashboard at cloud scope.\n",
+        "operationId": "dashboards_cloudIdigFilterOptions",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/IdigFilterOptionsResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -176610,6 +180370,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -176991,6 +180754,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -177368,6 +181134,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -177752,6 +181521,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -178132,6 +181904,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -178516,6 +182291,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -178896,6 +182674,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -179289,6 +183070,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -179677,6 +183461,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -180057,6 +183844,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -180441,6 +184231,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -180821,6 +184614,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -181217,6 +185013,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -181599,6 +185398,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -181951,6 +185753,9 @@
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -182051,6 +185856,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -182067,6 +185875,9 @@
           },
           {
             "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mismatch_category_optional"
           },
           {
             "$ref": "#/components/parameters/offset_optional"
@@ -182127,6 +185938,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -182166,6 +185980,574 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/PolicyErrorsResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/overview": {
+      "description": "Return the data needed to populate the Overview dashboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Overview dashboard at org scope\n",
+        "description": "Return the data needed to populate the Overview dashboard at org scope.\n",
+        "operationId": "dashboards_orgOverview",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OverviewDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/cost-and-spend": {
+      "description": "Return the data needed to populate the Cost and Spend dashboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Cost and Spend dashboard at org scope\n",
+        "description": "Return the data needed to populate the Cost and Spend dashboard at org scope.\n",
+        "operationId": "dashboards_orgCostAndSpend",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CostAndSpendDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/savings-and-optimization": {
+      "description": "Return the data needed to populate the Savings and Optimization dashboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Savings and Optimization dashboard at org scope\n",
+        "description": "Return the data needed to populate the Savings and Optimization dashboard at org scope.\n",
+        "operationId": "dashboards_orgSavingsAndOptimization",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SavingsAndOptimizationDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/cache-performance": {
+      "description": "Return the data needed to populate the Cache Performance dashboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Cache Performance dashboard at org scope\n",
+        "description": "Return the data needed to populate the Cache Performance dashboard at org scope.\n",
+        "operationId": "dashboards_orgCachePerformance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CachePerformanceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/reliability-and-performance": {
+      "description": "Return the data needed to populate the Reliability and Performance dashboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Reliability and Performance dashboard at org scope\n",
+        "description": "Return the data needed to populate the Reliability and Performance dashboard at org scope.\n",
+        "operationId": "dashboards_orgReliabilityAndPerformance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ReliabilityAndPerformanceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/usage-and-adoption": {
+      "description": "Return the data needed to populate the Usage and Adoption dashboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Usage and Adoption dashboard at org scope\n",
+        "description": "Return the data needed to populate the Usage and Adoption dashboard at org scope.\n",
+        "operationId": "dashboards_orgUsageAndAdoption",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/UsageAndAdoptionDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/security-and-compliance": {
+      "description": "Return the data needed to populate the Security and Compliance dashboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Security and Compliance dashboard at org scope\n",
+        "description": "Return the data needed to populate the Security and Compliance dashboard at org scope.\n",
+        "operationId": "dashboards_orgSecurityAndCompliance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SecurityAndComplianceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/agent-and-tool-quality": {
+      "description": "Return the data needed to populate the Agent and Tool Quality dashboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Agent and Tool Quality dashboard at org scope\n",
+        "description": "Return the data needed to populate the Agent and Tool Quality dashboard at org scope.\n",
+        "operationId": "dashboards_orgAgentAndToolQuality",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AgentAndToolQualityDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/governance-and-data-health": {
+      "description": "Return the data needed to populate the Governance and Data Health dashboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Governance and Data Health dashboard at org scope\n",
+        "description": "Return the data needed to populate the Governance and Data Health dashboard at org scope.\n",
+        "operationId": "dashboards_orgGovernanceAndDataHealth",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/GovernanceAndDataHealthDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/orgs/{org}/dashboards/idig-filter-options": {
+      "description": "Return the data needed to populate the IDIG Filter Options dashboard at org scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the IDIG Filter Options dashboard at org scope\n",
+        "description": "Return the data needed to populate the IDIG Filter Options dashboard at org scope.\n",
+        "operationId": "dashboards_orgIdigFilterOptions",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/IdigFilterOptionsResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -182258,6 +186640,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -182639,6 +187024,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -183016,6 +187404,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -183397,6 +187788,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -183774,6 +188168,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -184155,6 +188552,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -184532,6 +188932,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -184920,6 +189323,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -185313,6 +189719,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -185690,6 +190099,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -186071,6 +190483,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -186448,6 +190863,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -186841,6 +191259,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -187220,6 +191641,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -187569,6 +191993,9 @@
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -187666,6 +192093,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -187676,6 +192106,9 @@
           },
           {
             "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mismatch_category_optional"
           },
           {
             "$ref": "#/components/parameters/offset_optional"
@@ -187745,6 +192178,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -187784,6 +192220,604 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/PolicyErrorsResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/overview": {
+      "description": "Return the data needed to populate the Overview dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Overview dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Overview dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogOverview",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OverviewDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/cost-and-spend": {
+      "description": "Return the data needed to populate the Cost and Spend dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Cost and Spend dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Cost and Spend dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogCostAndSpend",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CostAndSpendDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/savings-and-optimization": {
+      "description": "Return the data needed to populate the Savings and Optimization dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Savings and Optimization dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Savings and Optimization dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogSavingsAndOptimization",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SavingsAndOptimizationDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/cache-performance": {
+      "description": "Return the data needed to populate the Cache Performance dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Cache Performance dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Cache Performance dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogCachePerformance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CachePerformanceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/reliability-and-performance": {
+      "description": "Return the data needed to populate the Reliability and Performance dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Reliability and Performance dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Reliability and Performance dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogReliabilityAndPerformance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ReliabilityAndPerformanceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/usage-and-adoption": {
+      "description": "Return the data needed to populate the Usage and Adoption dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Usage and Adoption dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Usage and Adoption dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogUsageAndAdoption",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/UsageAndAdoptionDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/security-and-compliance": {
+      "description": "Return the data needed to populate the Security and Compliance dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Security and Compliance dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Security and Compliance dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogSecurityAndCompliance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SecurityAndComplianceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/agent-and-tool-quality": {
+      "description": "Return the data needed to populate the Agent and Tool Quality dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Agent and Tool Quality dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Agent and Tool Quality dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogAgentAndToolQuality",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AgentAndToolQualityDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/governance-and-data-health": {
+      "description": "Return the data needed to populate the Governance and Data Health dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Governance and Data Health dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the Governance and Data Health dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogGovernanceAndDataHealth",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/GovernanceAndDataHealthDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/catalogs/{org}/{catalog}/dashboards/idig-filter-options": {
+      "description": "Return the data needed to populate the IDIG Filter Options dashboard at catalog scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the IDIG Filter Options dashboard at catalog scope\n",
+        "description": "Return the data needed to populate the IDIG Filter Options dashboard at catalog scope.\n",
+        "operationId": "dashboards_catalogIdigFilterOptions",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/IdigFilterOptionsResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -187879,6 +192913,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -188257,6 +193294,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -188631,6 +193671,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -189009,6 +194052,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -189383,6 +194429,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -189761,6 +194810,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -190135,6 +195187,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -190520,6 +195575,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -190910,6 +195968,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -191284,6 +196345,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -191662,6 +196726,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -192036,6 +197103,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -192426,6 +197496,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -192802,6 +197875,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -193148,6 +198224,9 @@
             "$ref": "#/components/parameters/api_version_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -193242,6 +198321,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -193252,6 +198334,9 @@
           },
           {
             "$ref": "#/components/parameters/limit_optional"
+          },
+          {
+            "$ref": "#/components/parameters/mismatch_category_optional"
           },
           {
             "$ref": "#/components/parameters/offset_optional"
@@ -193318,6 +198403,9 @@
             "$ref": "#/components/parameters/api_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_status_code_optional"
           },
           {
@@ -193351,6 +198439,634 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/PolicyErrorsResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/overview": {
+      "description": "Return the data needed to populate the Overview dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Overview dashboard at space scope\n",
+        "description": "Return the data needed to populate the Overview dashboard at space scope.\n",
+        "operationId": "dashboards_spaceOverview",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OverviewDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/cost-and-spend": {
+      "description": "Return the data needed to populate the Cost and Spend dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Cost and Spend dashboard at space scope\n",
+        "description": "Return the data needed to populate the Cost and Spend dashboard at space scope.\n",
+        "operationId": "dashboards_spaceCostAndSpend",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CostAndSpendDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/savings-and-optimization": {
+      "description": "Return the data needed to populate the Savings and Optimization dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Savings and Optimization dashboard at space scope\n",
+        "description": "Return the data needed to populate the Savings and Optimization dashboard at space scope.\n",
+        "operationId": "dashboards_spaceSavingsAndOptimization",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SavingsAndOptimizationDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/cache-performance": {
+      "description": "Return the data needed to populate the Cache Performance dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Cache Performance dashboard at space scope\n",
+        "description": "Return the data needed to populate the Cache Performance dashboard at space scope.\n",
+        "operationId": "dashboards_spaceCachePerformance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CachePerformanceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/reliability-and-performance": {
+      "description": "Return the data needed to populate the Reliability and Performance dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Reliability and Performance dashboard at space scope\n",
+        "description": "Return the data needed to populate the Reliability and Performance dashboard at space scope.\n",
+        "operationId": "dashboards_spaceReliabilityAndPerformance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ReliabilityAndPerformanceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/usage-and-adoption": {
+      "description": "Return the data needed to populate the Usage and Adoption dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Usage and Adoption dashboard at space scope\n",
+        "description": "Return the data needed to populate the Usage and Adoption dashboard at space scope.\n",
+        "operationId": "dashboards_spaceUsageAndAdoption",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/UsageAndAdoptionDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/security-and-compliance": {
+      "description": "Return the data needed to populate the Security and Compliance dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Security and Compliance dashboard at space scope\n",
+        "description": "Return the data needed to populate the Security and Compliance dashboard at space scope.\n",
+        "operationId": "dashboards_spaceSecurityAndCompliance",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SecurityAndComplianceDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/agent-and-tool-quality": {
+      "description": "Return the data needed to populate the Agent and Tool Quality dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Agent and Tool Quality dashboard at space scope\n",
+        "description": "Return the data needed to populate the Agent and Tool Quality dashboard at space scope.\n",
+        "operationId": "dashboards_spaceAgentAndToolQuality",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AgentAndToolQualityDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/governance-and-data-health": {
+      "description": "Return the data needed to populate the Governance and Data Health dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the Governance and Data Health dashboard at space scope\n",
+        "description": "Return the data needed to populate the Governance and Data Health dashboard at space scope.\n",
+        "operationId": "dashboards_spaceGovernanceAndDataHealth",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          },
+          {
+            "$ref": "#/components/parameters/bucket_interval_optional"
+          },
+          {
+            "$ref": "#/components/parameters/end_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/start_time_optional"
+          },
+          {
+            "$ref": "#/components/parameters/timeframe_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/GovernanceAndDataHealthDashboardResponse"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "tags": [
+          "Analytics",
+          "Resource: Dashboards"
+        ]
+      }
+    },
+    "/{analytics-service}/spaces/{org}/{catalog}/{space}/dashboards/idig-filter-options": {
+      "description": "Return the data needed to populate the IDIG Filter Options dashboard at space scope.\n",
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/accept_language_optional"
+        },
+        {
+          "$ref": "#/components/parameters/analytics-service"
+        },
+        {
+          "$ref": "#/components/parameters/catalog"
+        },
+        {
+          "$ref": "#/components/parameters/org"
+        },
+        {
+          "$ref": "#/components/parameters/space"
+        }
+      ],
+      "get": {
+        "summary": "Get the data needed to populate the IDIG Filter Options dashboard at space scope\n",
+        "description": "Return the data needed to populate the IDIG Filter Options dashboard at space scope.\n",
+        "operationId": "dashboards_spaceIdigFilterOptions",
+        "security": [
+          {
+            "oauth": [
+              "api-analytics:view"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/asset_type_optional"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/IdigFilterOptionsResponse"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -215467,6 +221183,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -215799,6 +221518,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -216135,6 +221857,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -216469,6 +222194,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -216801,6 +222529,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -217140,6 +222871,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -217472,6 +223206,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -217808,6 +223545,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -218142,6 +223882,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -218474,6 +224217,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -218813,6 +224559,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -219148,6 +224897,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -219487,6 +225239,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -219824,6 +225579,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -220159,6 +225917,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -220501,6 +226262,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -220839,6 +226603,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -221181,6 +226948,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -221521,6 +227291,9 @@
             "$ref": "#/components/parameters/app_name_optional"
           },
           {
+            "$ref": "#/components/parameters/backend_host_optional"
+          },
+          {
             "$ref": "#/components/parameters/backend_method_optional"
           },
           {
@@ -221859,6 +227632,9 @@
           },
           {
             "$ref": "#/components/parameters/app_name_optional"
+          },
+          {
+            "$ref": "#/components/parameters/backend_host_optional"
           },
           {
             "$ref": "#/components/parameters/backend_method_optional"
@@ -223079,6 +228855,21 @@
         "style": "deepObject",
         "explode": true
       },
+      "asset_type_optional": {
+        "name": "asset_type",
+        "in": "query",
+        "description": "Global \"lens\" filter for the IDIG dashboards. Restricts the data to LLM proxy traffic or MCP server traffic. `all` and `partner` apply no restriction.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "all",
+            "llm_proxy",
+            "mcp_server",
+            "partner"
+          ]
+        }
+      },
       "ai_insights_optional": {
         "name": "ai_insights",
         "in": "query",
@@ -223086,6 +228877,23 @@
         "required": false,
         "schema": {
           "type": "boolean"
+        }
+      },
+      "mismatch_category_optional": {
+        "name": "category",
+        "in": "query",
+        "description": "Only return status code mismatch events in this category. masked_error - the backend returned 4xx/5xx but the consumer received a success status; gateway_error - the backend succeeded but the consumer received 4xx/5xx; error_translated - both are errors but the status code was changed; other - both are non-error status codes but the status code was changed. Defaults to all.\n",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "all",
+            "masked_error",
+            "gateway_error",
+            "error_translated",
+            "other"
+          ],
+          "default": "all"
         }
       },
       "audit-id": {
@@ -223325,6 +229133,15 @@
         "schema": {
           "type": "string",
           "example": "143"
+        }
+      },
+      "backend_host_optional": {
+        "name": "backend_host",
+        "in": "query",
+        "description": "Filter results by backend_host, the host (and non-default port) of backend_url, for example api.example.com or orders.internal:8443.\n",
+        "required": false,
+        "schema": {
+          "type": "string"
         }
       },
       "backend_url_optional": {
@@ -225559,6 +231376,9 @@
           "total_tokens": {
             "$ref": "#/components/schemas/DataItem"
           },
+          "unapproved_model_requests": {
+            "$ref": "#/components/schemas/DataItem"
+          },
           "token_count_over_time": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
           },
@@ -226707,10 +232527,10 @@
           "search_time": {
             "$ref": "#/components/schemas/NonNegativeInteger"
           },
-          "top_backend_urls_for_4xx_errors_over_time": {
+          "top_backend_hosts_for_4xx_errors_over_time": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
           },
-          "top_backend_urls_for_5xx_errors_over_time": {
+          "top_backend_hosts_for_5xx_errors_over_time": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
           },
           "backend_status_code": {
@@ -226719,18 +232539,80 @@
           "backend_time_to_serve_percentiles": {
             "$ref": "#/components/schemas/GroupDateValueItemData"
           },
-          "top_slowest_backend_requests": {
-            "$ref": "#/components/schemas/BackendSlowRequestsData"
-          },
           "status_code_mismatch": {
             "$ref": "#/components/schemas/BackendStatusCodeMismatchData"
+          },
+          "status_code_translation": {
+            "$ref": "#/components/schemas/BackendStatusCodeTranslationData"
+          },
+          "backend_health": {
+            "$ref": "#/components/schemas/BackendHealthData"
+          },
+          "backend_health_by_api_type": {
+            "$ref": "#/components/schemas/BackendHealthData"
+          },
+          "protocol_errors": {
+            "$ref": "#/components/schemas/BackendProtocolErrorsData"
           },
           "policy_errors": {
             "$ref": "#/components/schemas/BackendPolicyErrorsData"
           }
         }
       },
-      "BackendSlowRequestsData": {
+      "BackendStatusCodeCategory": {
+        "type": "string",
+        "description": "How the consumer (gateway) status code relates to the backend status code. masked_error - the backend returned 4xx/5xx but the consumer received a success status; gateway_error - the backend succeeded but the consumer received 4xx/5xx; error_translated - both are errors but the status code was changed; other - both are non-error status codes but the status code was changed.\n",
+        "enum": [
+          "masked_error",
+          "gateway_error",
+          "error_translated",
+          "other"
+        ]
+      },
+      "BackendStatusCodeTranslationData": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Description of what this data represents"
+          },
+          "total": {
+            "description": "Number of distinct mismatching status code pairs.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
+          },
+          "data": {
+            "type": "array",
+            "description": "The most frequent mismatching status code pairs (up to 20), most frequent first.",
+            "items": {
+              "$ref": "#/components/schemas/BackendStatusCodeTranslationItem"
+            }
+          }
+        }
+      },
+      "BackendStatusCodeTranslationItem": {
+        "type": "object",
+        "properties": {
+          "status_code": {
+            "type": "string",
+            "description": "Status code returned to the consumer."
+          },
+          "backend_status_code": {
+            "type": "string",
+            "description": "Status code returned by the backend."
+          },
+          "value": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "category": {
+            "$ref": "#/components/schemas/BackendStatusCodeCategory"
+          }
+        }
+      },
+      "BackendHealthData": {
         "type": "object",
         "properties": {
           "description": {
@@ -226743,31 +232625,281 @@
           "data": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/BackendSlowRequestItem"
+              "$ref": "#/components/schemas/BackendHealthItem"
             }
           }
         }
       },
-      "BackendSlowRequestItem": {
+      "BackendHealthMetrics": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string"
+          "calls": {
+            "description": "Total API calls.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
           },
-          "date": {
-            "type": "string"
+          "backend_calls": {
+            "description": "API calls where the backend returned a status code.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
           },
-          "value": {
-            "type": "number"
+          "errors_4xx": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
           },
-          "backend_url": {
-            "type": "string"
+          "errors_5xx": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
           },
-          "api_name": {
-            "type": "string"
+          "error_rate_4xx": {
+            "type": "number",
+            "description": "Backend 4xx responses as a percentage of backend calls."
           },
-          "backend_status_code": {
-            "type": "string"
+          "error_rate_5xx": {
+            "type": "number",
+            "description": "Backend 5xx responses as a percentage of backend calls."
+          },
+          "no_backend_response": {
+            "description": "Calls where the gateway returned 502, 503 or 504 and no backend status code was recorded.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
+          },
+          "p50": {
+            "type": "integer",
+            "nullable": true,
+            "description": "50th percentile backend time to serve in milliseconds (cached responses excluded)."
+          },
+          "p95": {
+            "type": "integer",
+            "nullable": true,
+            "description": "95th percentile backend time to serve in milliseconds (cached responses excluded)."
+          },
+          "p99": {
+            "type": "integer",
+            "nullable": true,
+            "description": "99th percentile backend time to serve in milliseconds (cached responses excluded)."
+          }
+        }
+      },
+      "BackendHealthItem": {
+        "description": "Backend health for one group. Rows in backend_health are keyed by backend_host and also include api_type, api_count and top_apis. Rows in backend_health_by_api_type are keyed by api_type.\n",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "backend_host": {
+                "type": "string",
+                "description": "The backend host (with port when it is not the default for the scheme)."
+              },
+              "api_type": {
+                "type": "string",
+                "nullable": true,
+                "description": "The most frequent API type calling this backend host."
+              },
+              "api_count": {
+                "description": "Number of distinct APIs calling this backend host.",
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/NonNegativeInteger"
+                  }
+                ]
+              },
+              "top_apis": {
+                "type": "array",
+                "description": "The APIs that call this backend host most often (up to 3).",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/BackendHealthMetrics"
+          }
+        ]
+      },
+      "BackendProtocolErrorsData": {
+        "type": "object",
+        "description": "Backend errors that HTTP status codes alone do not show, by API type.",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Description of what this data represents"
+          },
+          "graphql": {
+            "$ref": "#/components/schemas/BackendGraphQLErrors"
+          },
+          "llm": {
+            "$ref": "#/components/schemas/BackendLLMErrors"
+          },
+          "mcp": {
+            "$ref": "#/components/schemas/BackendMCPErrors"
+          },
+          "soap": {
+            "$ref": "#/components/schemas/BackendSOAPFaults"
+          }
+        }
+      },
+      "BackendGraphQLErrors": {
+        "type": "object",
+        "properties": {
+          "total_requests": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "responses_with_errors": {
+            "description": "GraphQL responses that contained at least one error.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
+          },
+          "error_count": {
+            "description": "Total number of GraphQL errors returned.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "operation_name": {
+                  "type": "string"
+                },
+                "api_name": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "responses_with_errors": {
+                  "$ref": "#/components/schemas/NonNegativeInteger"
+                },
+                "error_count": {
+                  "$ref": "#/components/schemas/NonNegativeInteger"
+                }
+              }
+            }
+          }
+        }
+      },
+      "BackendLLMErrors": {
+        "type": "object",
+        "properties": {
+          "total_requests": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ai_model": {
+                  "type": "string"
+                },
+                "calls": {
+                  "$ref": "#/components/schemas/NonNegativeInteger"
+                },
+                "backend_calls": {
+                  "$ref": "#/components/schemas/NonNegativeInteger"
+                },
+                "errors_4xx": {
+                  "$ref": "#/components/schemas/NonNegativeInteger"
+                },
+                "errors_5xx": {
+                  "$ref": "#/components/schemas/NonNegativeInteger"
+                },
+                "rate_limited": {
+                  "description": "Calls rejected by the model provider with 429.",
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/NonNegativeInteger"
+                    }
+                  ]
+                },
+                "error_rate": {
+                  "type": "number",
+                  "description": "Provider 4xx and 5xx responses as a percentage of backend calls."
+                },
+                "upstream_latency_p95": {
+                  "type": "integer",
+                  "nullable": true,
+                  "description": "95th percentile upstream (provider) latency in milliseconds (cached responses excluded)."
+                }
+              }
+            }
+          }
+        }
+      },
+      "BackendMCPErrors": {
+        "type": "object",
+        "properties": {
+          "total_requests": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "mcp_server_name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                {
+                  "$ref": "#/components/schemas/BackendHealthMetrics"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "BackendSOAPFaults": {
+        "type": "object",
+        "properties": {
+          "total_requests": {
+            "$ref": "#/components/schemas/NonNegativeInteger"
+          },
+          "faults": {
+            "description": "SOAP calls where the backend returned a 5xx status code.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "api_name": {
+                  "type": "string"
+                },
+                "calls": {
+                  "$ref": "#/components/schemas/NonNegativeInteger"
+                },
+                "faults": {
+                  "$ref": "#/components/schemas/NonNegativeInteger"
+                },
+                "fault_rate": {
+                  "type": "number",
+                  "description": "Faults as a percentage of calls."
+                }
+              }
+            }
           }
         }
       },
@@ -226912,11 +233044,37 @@
           "unmatched_value": {
             "$ref": "#/components/schemas/NonNegativeInteger"
           },
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BackendStatusCodeMismatchItem"
-            }
+          "masked_error_value": {
+            "description": "Calls where the backend returned 4xx/5xx but the consumer received a success status.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
+          },
+          "gateway_error_value": {
+            "description": "Calls where the backend succeeded but the consumer received 4xx/5xx.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
+          },
+          "error_translated_value": {
+            "description": "Calls where both status codes are errors but the status code was changed.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
+          },
+          "other_value": {
+            "description": "Calls where both status codes are non-errors but the status code was changed.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NonNegativeInteger"
+              }
+            ]
           }
         }
       },
@@ -227120,6 +233278,10 @@
           "app_lifecycle_state": {
             "type": "string",
             "description": "The lifecycle state of the calling application"
+          },
+          "backend_host": {
+            "type": "string",
+            "description": "The host of backend_url, lowercased, with the port when it is not the default for the scheme, e.g. api.example.com or orders.internal:8443\n"
           },
           "backend_method": {
             "type": "string",
@@ -230356,6 +236518,18 @@
           }
         }
       },
+      "QuerySingleResponse": {
+        "type": "object",
+        "description": "A single query, wrapped in a query property.",
+        "required": [
+          "query"
+        ],
+        "properties": {
+          "query": {
+            "$ref": "#/components/schemas/Query"
+          }
+        }
+      },
       "QueryTransferOwnerRequest": {
         "type": "object",
         "required": [
@@ -231841,34 +238015,42 @@
       },
       "AuditResponse": {
         "type": "object",
-        "description": "A single audit record.",
+        "description": "A single audit record: a CADF event as recorded, with ``_id`` added. Field names are as stored (camelCase); events can carry more fields than are listed here.\n",
+        "additionalProperties": true,
         "properties": {
-          "id": {
+          "_id": {
             "type": "string",
             "description": "Unique identifier for the audit record."
           },
-          "org_id": {
+          "@timestamp": {
+            "type": "string",
+            "description": "When the record was stored."
+          },
+          "orgId": {
             "type": "string",
             "description": "Provider organization ID."
           },
-          "catalog_id": {
+          "catalogId": {
             "type": "string",
             "description": "Catalog ID."
           },
-          "space_id": {
+          "spaceId": {
             "type": "string",
             "description": "Space ID."
           },
-          "event_time": {
+          "eventTime": {
             "type": "string",
-            "format": "date-time",
-            "description": "Timestamp of the audit event."
+            "description": "Timestamp of the audit event (ISO 8601, in the requested timezone if one was given)."
           },
-          "event_name": {
+          "eventName": {
             "type": "string",
             "description": "Name of the audit event."
           },
-          "type_uri": {
+          "eventType": {
+            "type": "string",
+            "description": "Type of the audit event."
+          },
+          "typeURI": {
             "type": "string",
             "description": "The type URI."
           },
@@ -231880,23 +238062,21 @@
             "type": "string",
             "description": "Outcome of the event."
           },
-          "event_type": {
-            "type": "string",
-            "description": "Type of the audit event."
-          },
           "reason": {
             "type": "object",
+            "additionalProperties": true,
             "properties": {
-              "reason_code": {
+              "reasonCode": {
                 "type": "integer"
               },
-              "reason_type": {
+              "reasonType": {
                 "type": "string"
               }
             }
           },
           "initiator": {
             "type": "object",
+            "additionalProperties": true,
             "properties": {
               "id": {
                 "type": "string"
@@ -231904,8 +238084,12 @@
               "name": {
                 "type": "string"
               },
+              "typeURI": {
+                "type": "string"
+              },
               "host": {
                 "type": "object",
+                "additionalProperties": true,
                 "properties": {
                   "agent": {
                     "type": "string"
@@ -231914,14 +238098,12 @@
                     "type": "string"
                   }
                 }
-              },
-              "type_uri": {
-                "type": "string"
               }
             }
           },
           "target": {
             "type": "object",
+            "additionalProperties": true,
             "properties": {
               "id": {
                 "type": "string"
@@ -231929,86 +238111,104 @@
               "name": {
                 "type": "string"
               },
-              "type_uri": {
+              "version": {
                 "type": "string"
               },
-              "event_generator": {
+              "typeURI": {
+                "type": "string"
+              },
+              "eventGenerator": {
                 "type": "string"
               }
             }
           },
-          "request_data": {
+          "requestData": {
             "type": "object",
+            "additionalProperties": true,
             "description": "Request details."
           },
-          "response_data": {
+          "responseData": {
             "type": "object",
+            "additionalProperties": true,
             "description": "Response details."
           },
           "attachments": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "component": {
-                  "type": "string"
-                },
-                "eventGenerator": {
-                  "type": "string"
-                },
-                "scope": {
-                  "type": "string"
-                },
-                "method": {
-                  "type": "string"
-                },
-                "summary": {
-                  "type": "string"
-                },
-                "operation": {
-                  "type": "string"
-                },
-                "resource": {
-                  "type": "string"
-                },
-                "user": {
-                  "type": "object",
-                  "properties": {
-                    "url": {
-                      "type": "string"
-                    },
-                    "context": {
-                      "type": "string"
-                    },
-                    "idp_name": {
-                      "type": "string"
-                    },
-                    "name": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "registration": {
-                  "type": "object",
-                  "properties": {
-                    "url": {
-                      "type": "string"
-                    },
-                    "type": {
-                      "type": "string"
-                    }
+            "type": "object",
+            "additionalProperties": true,
+            "description": "API Manager details of the request (operation, resource, user, catalog, org, ...).",
+            "properties": {
+              "component": {
+                "type": "string"
+              },
+              "scope": {
+                "type": "string"
+              },
+              "method": {
+                "type": "string"
+              },
+              "summary": {
+                "type": "string"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "resource": {
+                "type": "string"
+              },
+              "actor_type": {
+                "type": "string"
+              },
+              "user": {
+                "type": "object",
+                "additionalProperties": true,
+                "properties": {
+                  "url": {
+                    "type": "string"
+                  },
+                  "context": {
+                    "type": "string"
+                  },
+                  "idp_name": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
                   }
                 }
+              },
+              "registration": {
+                "type": "object",
+                "additionalProperties": true,
+                "properties": {
+                  "url": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  }
+                }
+              },
+              "org": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "catalog": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "space": {
+                "type": "object",
+                "additionalProperties": true
               }
             }
           },
-          "logSource_type": {
+          "logSourceType": {
             "type": "string",
-            "description": "Log source type of the audit event"
+            "description": "Log source type of the audit event."
           },
-          "logSource_crn": {
+          "logSourceCRN": {
             "type": "string",
-            "description": "Log source CRN of the audit event"
+            "description": "Log source CRN of the audit event."
           }
         }
       },
@@ -232771,6 +238971,761 @@
             }
           }
         }
+      },
+      "OverviewDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Overview Dashboard.",
+        "properties": {
+          "kpis": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "kpiDeltas": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "traffic": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "alerts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "movers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "snapshot": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "CostAndSpendDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Cost and Spend Dashboard.",
+        "properties": {
+          "kpis": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "kpiDeltas": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "spendFlowNodes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "spendFlowLinks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "partnerMix": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "partnerProviderMix": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "partnerModelMix": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "costCeiling": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "dailySpendVsCeiling": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "tokenEfficiency": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "tokenEfficiencyRatio": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "topSpenders": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "tokenUsageOverTime": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "tokensByModel": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "tokensByProvider": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "partnerTokensOverTime": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "partnerTokens": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "topPartnersByTokens": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "agentTokensOverTime": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "agentTokens": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "topAgentsByTokens": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "requestTokenPercentiles": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "responseTokenPercentiles": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "tokenHeatmap": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "piiTokens": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "piiOverheadByPartner": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "piiTokenOverhead": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "topTokenRequests": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "unpricedModels": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "SavingsAndOptimizationDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Savings and Optimization Dashboard.",
+        "properties": {
+          "kpis": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "kpiDeltas": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "waterfall": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "routing": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "routingRules": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "adaptiveRouter": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "embeddingCost": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      },
+      "CachePerformanceDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Cache Performance Dashboard.",
+        "properties": {
+          "kpis": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "kpiDeltas": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "hitRateTrend": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "hitsVsMisses": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "exactVsSemantic": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "hitMissLatency": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "hitRateByProvider": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "hitRateByTool": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "hitRateByServer": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "hitRateByApplication": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "falseHitRisk": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "lookupLatency": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "ttlRecommendations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "bypassReasons": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "ReliabilityAndPerformanceDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Reliability and Performance Dashboard.",
+        "properties": {
+          "kpis": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "kpiDeltas": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "latencyTimeSeries": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "latencyDistributions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "latencyBreakdown": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "statusCodeBuckets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "failingOperations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "errorTypes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "circuitBreakerEvents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "protocolTranslations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "errorsOverTime": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "rateLimitedAgents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "toolHealth": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "UsageAndAdoptionDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Usage and Adoption Dashboard.",
+        "properties": {
+          "kpis": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "assetBreakdown": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "kpiDeltas": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "callsOverTime": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "topConsumers": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "requestHeatmap": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          },
+          "topAssets": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "topOperations": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "assets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "clients": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "operations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "providers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "toolDistribution": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "newSubscribers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "topTools": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "topEndpoints": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "conditional": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      },
+      "SecurityAndComplianceDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Security and Compliance Dashboard.",
+        "properties": {
+          "kpis": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "kpiDeltas": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "policyControls": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "toolGovernance": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "redactionsOverTime": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "piiActivity": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "piiModelTierCoverage": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "modelTierSkipReasons": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "piiNotRedacted": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "clientAnomalies": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "tokenExchangeLog": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "AgentAndToolQualityDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Agent and Tool Quality Dashboard.",
+        "properties": {
+          "kpis": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "kpiDeltas": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "repairKinds": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "payloadSizes": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "emptyResultsRescued": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "payloadDistribution": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "mcpMethodMix": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "jsonRpcErrors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "GovernanceAndDataHealthDashboardResponse": {
+        "type": "object",
+        "description": "Data to display on the Governance and Data Health Dashboard.",
+        "properties": {
+          "partnerPolicies": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "degradation": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "bypassReasons": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "ungovernedTraffic": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "nonActiveApps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "identityCompleteness": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "loggingCoverage": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "cacheFlagReconciliation": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "flagChanges": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "IdigFilterOptionsResponse": {
+        "type": "object",
+        "description": "Data to display on the IDIG Filter Options Dashboard.",
+        "properties": {
+          "partners": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "assets": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "providers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "providerTotal": {
+            "type": "number"
+          }
+        }
       }
     },
     "responses": {
@@ -233397,12 +240352,12 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/Query"
+              "$ref": "#/components/schemas/QuerySingleResponse"
             }
           },
           "application/yaml": {
             "schema": {
-              "$ref": "#/components/schemas/Query"
+              "$ref": "#/components/schemas/QuerySingleResponse"
             }
           }
         }
@@ -233931,6 +240886,156 @@
             }
           }
         }
+      },
+      "OverviewDashboardResponse": {
+        "description": "Data needed to populate the Overview Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/OverviewDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/OverviewDashboardResponse"
+            }
+          }
+        }
+      },
+      "CostAndSpendDashboardResponse": {
+        "description": "Data needed to populate the Cost and Spend Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CostAndSpendDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/CostAndSpendDashboardResponse"
+            }
+          }
+        }
+      },
+      "SavingsAndOptimizationDashboardResponse": {
+        "description": "Data needed to populate the Savings and Optimization Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SavingsAndOptimizationDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/SavingsAndOptimizationDashboardResponse"
+            }
+          }
+        }
+      },
+      "CachePerformanceDashboardResponse": {
+        "description": "Data needed to populate the Cache Performance Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CachePerformanceDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/CachePerformanceDashboardResponse"
+            }
+          }
+        }
+      },
+      "ReliabilityAndPerformanceDashboardResponse": {
+        "description": "Data needed to populate the Reliability and Performance Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ReliabilityAndPerformanceDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/ReliabilityAndPerformanceDashboardResponse"
+            }
+          }
+        }
+      },
+      "UsageAndAdoptionDashboardResponse": {
+        "description": "Data needed to populate the Usage and Adoption Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UsageAndAdoptionDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/UsageAndAdoptionDashboardResponse"
+            }
+          }
+        }
+      },
+      "SecurityAndComplianceDashboardResponse": {
+        "description": "Data needed to populate the Security and Compliance Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SecurityAndComplianceDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/SecurityAndComplianceDashboardResponse"
+            }
+          }
+        }
+      },
+      "AgentAndToolQualityDashboardResponse": {
+        "description": "Data needed to populate the Agent and Tool Quality Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AgentAndToolQualityDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/AgentAndToolQualityDashboardResponse"
+            }
+          }
+        }
+      },
+      "GovernanceAndDataHealthDashboardResponse": {
+        "description": "Data needed to populate the Governance and Data Health Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/GovernanceAndDataHealthDashboardResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/GovernanceAndDataHealthDashboardResponse"
+            }
+          }
+        }
+      },
+      "IdigFilterOptionsResponse": {
+        "description": "Data needed to populate the IDIG Filter Options Dashboard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/IdigFilterOptionsResponse"
+            }
+          },
+          "application/yaml": {
+            "schema": {
+              "$ref": "#/components/schemas/IdigFilterOptionsResponse"
+            }
+          }
+        }
       }
     },
     "securitySchemes": {
@@ -233989,7 +241094,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/consumer-analytics",
       "description": "Consumer analytics V2 base path"
     }
   ],
@@ -234843,7 +241948,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/engagement",
       "description": "Engagement V2 base path"
     }
   ],
@@ -239981,7 +247086,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/portal",
       "description": "Portal Admin base path"
     }
   ],
@@ -252527,7 +259632,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/discovery",
       "description": "Local laptop testing"
     }
   ],
@@ -256883,7 +263988,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/governance",
       "description": "Local laptop testing"
     }
   ],

@@ -26,14 +26,14 @@
       "name": "IBM API Connect v10 APIs",
       "description": "Public REST APIs for IBM API Connect v10",
       "image": "https://www.ibm.com/favicon.ico",
-      "humanURL": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.8.LATEST.html",
+      "humanURL": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.LATEST.html",
       "tags": ["v10", "API Connect"],
       "properties": [
-        { "type": "OpenAPI", "url": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.8.LATEST/openapi/index.json" },
-        { "type": "APIs.json", "url": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.8.LATEST/openapi/apis.json" },
-        { "type": "APICatalog", "url": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.8.LATEST/openapi/api-catalog.json" },
-        { "type": "LLMs.txt", "url": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.8.LATEST/openapi/llms.txt" },
-        { "type": "Documentation", "url": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.8.LATEST.html" }
+        { "type": "OpenAPI", "url": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.LATEST/openapi/index.json" },
+        { "type": "APIs.json", "url": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.LATEST/openapi/apis.json" },
+        { "type": "APICatalog", "url": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.LATEST/openapi/api-catalog.json" },
+        { "type": "LLMs.txt", "url": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.LATEST/openapi/llms.txt" },
+        { "type": "Documentation", "url": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.LATEST.html" }
       ]
     }
   ],
@@ -91,7 +91,7 @@
   ],
   "include": [
     { "name": "IBM API Connect v12 APIs.json", "url": "https://apic-api.apiconnect.ibmcloud.com/v12/12.1.LATEST/openapi/apis.json" },
-    { "name": "IBM API Connect v10 APIs.json", "url": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.8.LATEST/openapi/apis.json" }
+    { "name": "IBM API Connect v10 APIs.json", "url": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.LATEST/openapi/apis.json" }
   ],
   "maintainers": [
     { "FN": "IBM API Connect Team", "url": "https://www.ibm.com/products/api-connect" }
