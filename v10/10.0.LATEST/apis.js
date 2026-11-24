@@ -11,20 +11,45 @@
   attachPoint: '#root',
   options: {
       renderSchemaView: true,
-      headerTitle: "API Connect v10.0.LATEST",
+      headerTitle: "API Connect v10.0.8.LATEST",
       headerActive: true,
       groupByTags: true,
       validateSwagger: false,
       explorerDir: "/../app/",
       routerType: "hash",
       versions: {
+        "10.0.1.1": "10.0.1.1.html",
+        "10.0.1.2": "10.0.1.2.html",
+        "10.0.1.4": "10.0.1.4.html",
+        "10.0.1.5": "10.0.1.5.html",
+        "10.0.1.6": "10.0.1.6.html",
+        "10.0.1.7": "10.0.1.7.html",
+        "10.0.1.8": "10.0.1.8.html",
+        "10.0.1.9": "10.0.1.9.html",
+        "10.0.1.11": "10.0.1.11.html",
+        "10.0.1.12": "10.0.1.12.html",
+        "10.0.1.LATEST": "10.0.1.LATEST.html",
+        "10.0.2.0": "10.0.2.0.html",
+        "10.0.3.0": "10.0.3.0.html",
+        "10.0.4.0": "10.0.4.0.html",
+        "10.0.5.0": "10.0.5.0.html",
+        "10.0.5.1": "10.0.5.1.html",
+        "10.0.5.2": "10.0.5.2.html",
+        "10.0.5.3": "10.0.5.3.html",
+        "10.0.5.4": "10.0.5.4.html",
+        "10.0.5.5": "10.0.5.5.html",
+        "10.0.5.6": "10.0.5.6.html",
+        "10.0.5.7": "10.0.5.7.html",
+        "10.0.5.8": "10.0.5.8.html",
+        "10.0.5.LATEST": "10.0.5.LATEST.html",
+        "10.0.6.0": "10.0.6.0.html",
+        "10.0.7.0": "10.0.7.0.html",
         "10.0.8.0": "10.0.8.0.html",
         "10.0.8.1": "10.0.8.1.html",
         "10.0.8.LATEST": "10.0.8.LATEST.html",
         "10.0.9.0": "10.0.9.0.html",
         "10.0.10.0": "10.0.10.0.html",
         "10.0.LATEST": "10.0.LATEST.html",
-        "v12": "../v12/index.html"
       }
     },
   apis: [
@@ -48,7 +73,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/api",
       "description": "APIM base path"
     }
   ],
@@ -37845,7 +37870,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/api",
       "description": "APIM base path"
     }
   ],
@@ -102950,7 +102975,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/consumer-api",
       "description": "Consumer apim base path"
     }
   ],
@@ -111882,7 +111907,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/analytics",
       "description": "Analytics V2 base path"
     }
   ],
@@ -154601,7 +154626,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/consumer-analytics",
       "description": "Consumer analytics V2 base path"
     }
   ],
@@ -155386,7 +155411,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/engagement",
       "description": "Engagement V2 base path"
     }
   ],
@@ -158433,7 +158458,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/portal",
       "description": "Portal Admin base path"
     }
   ],
@@ -170738,7 +170763,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/discovery",
       "description": "Local laptop testing"
     }
   ],
@@ -175081,7 +175106,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/governance",
       "description": "Local laptop testing"
     }
   ],
@@ -180045,7 +180070,7 @@
         "name": "introduction",
         "title": "Introduction",
         "format": "b64html",
-        "content": "PGFydGljbGUgaWQ9ImludHJvZHVjdGlvbiIgY2xhc3M9InBhZ2UiPgoKICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBpbnRyby1oZWFkZXIiPgogICAgICAgIE9wZW4gQVBJIEV4cGxvcmVyIERvY3VtZW50YXRpb24gdjEwLjAuTEFURVNUCiAgICAgIDwvc3Bhbj4KICAgIDwvaDI+CiAgPC9kaXY+CiAgPGRpdiBjbGFzcz0iYXBpYy1leHBsb3Jlci1kb2NwYWdlX2NvbnRlbnQgaW50cm8tY29udGVudCI+CiAgICA8c2VjdGlvbj4KICAgICAgPGgyPkludHJvZHVjdGlvbjwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBwbGF0Zm9ybSBSRVNUIEFQSXMgZG9jdW1lbnRlZCBoZXJlIGZvciBJQk0gQVBJIENvbm5lY3QgdjEwIHByb3ZpZGUgY29tcGxldGUgYWNjZXNzIHRvIHRoZSBjYXBhYmlsaXR5IG9mIHRoZSBwbGF0Zm9ybS4gVGhleSBtYXkgYmUgdXNlZCB0byBhdXRvbWF0ZSBhZG1pbmlzdHJhdGlvbiBvZiB0aGUgcGxhdGZvcm07IGZvciBzY3JpcHRzIGFuZCB0b29scyB0byBzdXBwb3J0IGEgY29udGludW91cyBpbnRlZ3JhdGlvbiBlbnZpcm9ubWVudCBmb3IgQVBJIGRldmVsb3BtZW50IGFuZCBwdWJsaXNoaW5nOyBhbmQgZm9yIG1hbmFnZW1lbnQgb2YgY2F0YWxvZ3Mgb2YgQVBJcyBhbmQgdGhlaXIgc3Vic2NyaWJlcnMuIFRoZSBvcGVyYXRpb25zIHByb3ZpZGVkIGluIHRoZSBSRVNUIEFQSSBhbHNvIGNvcnJlc3BvbmQgZGlyZWN0bHkgd2l0aCBjb21tYW5kcyBpbiB0aGUgdG9vbGtpdCBDTEkuCiAgICAgIDwvcD4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+QVBJczwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBjYXBhYmlsaXR5IG9mIHRoZSBwbGF0Zm9ybSBpcyBjb21wcmlzZWQgb2YgdGhyZWUgQVBJcyB3aGljaCBhcmUgb3JpZW50ZWQgYXQgZGlmZmVyZW50IHNldHMgb2YgdXNlIGNhc2VzOgogICAgICA8L3A+CiAgICAgIDxkaXYgY2xhc3M9InNob3ctZXhwbG9yZXItYXBpcyI+PC9kaXY+CiAgICA8L3NlY3Rpb24+CiAgICA8c2VjdGlvbj4KICAgICAgPGgyPk1hY2hpbmUtcmVhZGFibGUgT3BlbkFQSSBmaWxlczwvaDI+CiAgICAgIDxwPgogICAgICAgIFRoZSBPcGVuQVBJIGRvY3VtZW50cyBmb3IgdGhlc2UgQVBJcyBhcmUgYXZhaWxhYmxlIGFzIHBsYWluIGZpbGVzIGZvciB0b29scyBhbmQgQUkgYWdlbnRzOgogICAgICAgIDxhIGhyZWY9IjEwLjAuTEFURVNUL29wZW5hcGkvaW5kZXguanNvbiIgdGFyZ2V0PSJfYmxhbmsiIHJlbD0ibm9vcGVuZXIgbm9yZWZlcnJlciI+aW5kZXguanNvbjwvYT4KICAgICAgICAobGlzdCBvZiBBUElzKSBhbmQKICAgICAgICA8YSBocmVmPSIxMC4wLkxBVEVTVC9vcGVuYXBpL2xsbXMudHh0IiB0YXJnZXQ9Il9ibGFuayIgcmVsPSJub29wZW5lciBub3JlZmVycmVyIj5sbG1zLnR4dDwvYT4uCiAgICAgICAgVGhlIHNlcnZlciBVUkxzIGluIHRoZXNlIGRvY3VtZW50cyBhcmUgcGxhY2Vob2xkZXJzLgogICAgICA8L3A+CiAgICA8L3NlY3Rpb24+CiAgPC9kaXY+CjwvYXJ0aWNsZT4K"
+        "content": "PGFydGljbGUgaWQ9ImludHJvZHVjdGlvbiIgY2xhc3M9InBhZ2UiPgoKICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUiPgogICAgPGgyIGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfdGl0bGUtdGV4dCI+CiAgICAgIDxzcGFuIGNsYXNzPSJleHBsb3Jlci1kb2MtLWhlYWRlciBpbnRyby1oZWFkZXIiPgogICAgICAgIE9wZW4gQVBJIEV4cGxvcmVyIERvY3VtZW50YXRpb24gdjEwLjAuOC5MQVRFU1QKICAgICAgPC9zcGFuPgogICAgPC9oMj4KICA8L2Rpdj4KICA8ZGl2IGNsYXNzPSJhcGljLWV4cGxvcmVyLWRvY3BhZ2VfY29udGVudCBpbnRyby1jb250ZW50Ij4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+SW50cm9kdWN0aW9uPC9oMj4KICAgICAgPHA+CiAgICAgICAgVGhlIHBsYXRmb3JtIFJFU1QgQVBJcyBkb2N1bWVudGVkIGhlcmUgZm9yIElCTSBBUEkgQ29ubmVjdCB2MTAgcHJvdmlkZSBjb21wbGV0ZSBhY2Nlc3MgdG8gdGhlIGNhcGFiaWxpdHkgb2YgdGhlIHBsYXRmb3JtLiBUaGV5IG1heSBiZSB1c2VkIHRvIGF1dG9tYXRlIGFkbWluaXN0cmF0aW9uIG9mIHRoZSBwbGF0Zm9ybTsgZm9yIHNjcmlwdHMgYW5kIHRvb2xzIHRvIHN1cHBvcnQgYSBjb250aW51b3VzIGludGVncmF0aW9uIGVudmlyb25tZW50IGZvciBBUEkgZGV2ZWxvcG1lbnQgYW5kIHB1Ymxpc2hpbmc7IGFuZCBmb3IgbWFuYWdlbWVudCBvZiBjYXRhbG9ncyBvZiBBUElzIGFuZCB0aGVpciBzdWJzY3JpYmVycy4gVGhlIG9wZXJhdGlvbnMgcHJvdmlkZWQgaW4gdGhlIFJFU1QgQVBJIGFsc28gY29ycmVzcG9uZCBkaXJlY3RseSB3aXRoIGNvbW1hbmRzIGluIHRoZSB0b29sa2l0IENMSS4KICAgICAgPC9wPgogICAgPC9zZWN0aW9uPgogICAgPHNlY3Rpb24+CiAgICAgIDxoMj5BUElzPC9oMj4KICAgICAgPHA+CiAgICAgICAgVGhlIGNhcGFiaWxpdHkgb2YgdGhlIHBsYXRmb3JtIGlzIGNvbXByaXNlZCBvZiB0aHJlZSBBUElzIHdoaWNoIGFyZSBvcmllbnRlZCBhdCBkaWZmZXJlbnQgc2V0cyBvZiB1c2UgY2FzZXM6CiAgICAgIDwvcD4KICAgICAgPGRpdiBjbGFzcz0ic2hvdy1leHBsb3Jlci1hcGlzIj48L2Rpdj4KICAgIDwvc2VjdGlvbj4KICAgIDxzZWN0aW9uPgogICAgICA8aDI+TWFjaGluZS1yZWFkYWJsZSBPcGVuQVBJIGZpbGVzPC9oMj4KICAgICAgPHA+CiAgICAgICAgVGhlIE9wZW5BUEkgZG9jdW1lbnRzIGZvciB0aGVzZSBBUElzIGFyZSBhdmFpbGFibGUgYXMgcGxhaW4gZmlsZXMgZm9yIHRvb2xzIGFuZCBBSSBhZ2VudHM6CiAgICAgICAgPGEgaHJlZj0iMTAuMC44LkxBVEVTVC9vcGVuYXBpL2luZGV4Lmpzb24iIHRhcmdldD0iX2JsYW5rIiByZWw9Im5vb3BlbmVyIG5vcmVmZXJyZXIiPmluZGV4Lmpzb248L2E+CiAgICAgICAgKGxpc3Qgb2YgQVBJcykgYW5kCiAgICAgICAgPGEgaHJlZj0iMTAuMC44LkxBVEVTVC9vcGVuYXBpL2xsbXMudHh0IiB0YXJnZXQ9Il9ibGFuayIgcmVsPSJub29wZW5lciBub3JlZmVycmVyIj5sbG1zLnR4dDwvYT4uCiAgICAgICAgVGhlIHNlcnZlciBVUkxzIGluIHRoZXNlIGRvY3VtZW50cyBhcmUgcGxhY2Vob2xkZXJzLgogICAgICA8L3A+CiAgICA8L3NlY3Rpb24+CiAgPC9kaXY+CjwvYXJ0aWNsZT4K"
       },
       {
         "name": "concepts",

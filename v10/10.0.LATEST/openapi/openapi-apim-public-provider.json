@@ -18,7 +18,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/api",
       "description": "APIM base path"
     }
   ],

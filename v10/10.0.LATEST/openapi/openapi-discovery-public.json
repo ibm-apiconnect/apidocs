@@ -18,7 +18,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/discovery",
       "description": "Local laptop testing"
     }
   ],

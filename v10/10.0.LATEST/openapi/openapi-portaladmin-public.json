@@ -18,7 +18,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/portal",
       "description": "Portal Admin base path"
     }
   ],

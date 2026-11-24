@@ -15,7 +15,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://apimserver.example.com/analytics",
       "description": "Analytics V2 base path"
     }
   ],
