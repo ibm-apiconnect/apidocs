@@ -9,9 +9,9 @@
           "title": "IBM API Connect v12 (12.1.LATEST) API Catalog"
         },
         {
-          "href": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.LATEST/openapi/api-catalog.json",
+          "href": "https://apic-api.apiconnect.ibmcloud.com/v10/10.0.8.LATEST/openapi/api-catalog.json",
           "type": "application/linkset+json",
-          "title": "IBM API Connect v10 (10.0.LATEST) API Catalog"
+          "title": "IBM API Connect v10 (10.0.8.LATEST) API Catalog"
         }
       ]
     }
