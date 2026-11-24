@@ -1,7 +1,7 @@
 {
   "name": "IBM API Connect public APIs",
   "stream": "v10",
-  "release": "10.0.8.LATEST",
+  "release": "10.0.LATEST",
   "specFormat": "OpenAPI (JSON)",
   "apis": [
     {
